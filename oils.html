@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>精油圖鑑 — 全品項索引 | 精油圖鑑指南</title>
+  <meta name="description" content="完整精油品項索引：茶樹、薄荷、薰衣草、尤加利、甜橙、檸檬、乳香、迷迭香、依蘭、雪松等，依植物科屬分類，快速找到每種精油的完整介紹。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<div class="topbar">🌿 精油圖鑑指南 — 用知識守護您的芳療生活</div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-wrap">
+      <a href="index.html" class="logo-wrap" style="text-decoration:none;">
+        <div class="logo-icon">🌿</div>
+        <div class="logo-text">
+          <div class="site-title">精油圖鑑指南</div>
+          <div class="site-sub">精油學 · 從植物到身心靈</div>
+        </div>
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="encyclopedia.html">圖鑑百科</a></li>
+        <li><a href="oils.html" class="active">精油</a></li>
+        <li><a href="aromatherapy.html">芳療應用</a></li>
+        <li><a href="safety.html">安全指南</a></li>
+      </ul>
+    </nav>
+    <input class="nav-search" type="text" placeholder="搜尋精油..." id="oilSearch" />
+    <button class="menu-toggle">☰</button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="oils-hero">
+  <div class="hero-badge">🌿 共收錄 10 款精油 · 持續更新中</div>
+  <h1>精油圖鑑</h1>
+  <p>從柑橘的明亮、花香的柔美、草本的清新，到樹木的穩定、樹脂的深邃——<br>每一瓶精油都是一座植物的濃縮知識。</p>
+  <!-- Filter chips -->
+  <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:8px;">
+    <button class="btn btn-white" onclick="filterOils('all')" id="f-all" style="padding:7px 18px;font-size:13px;">全部</button>
+    <button class="btn btn-outline" onclick="filterOils('citrus')" id="f-citrus" style="padding:7px 18px;font-size:13px;">🍊 柑橘類</button>
+    <button class="btn btn-outline" onclick="filterOils('floral')" id="f-floral" style="padding:7px 18px;font-size:13px;">🌸 花香類</button>
+    <button class="btn btn-outline" onclick="filterOils('herb')" id="f-herb" style="padding:7px 18px;font-size:13px;">🌿 草本類</button>
+    <button class="btn btn-outline" onclick="filterOils('wood')" id="f-wood" style="padding:7px 18px;font-size:13px;">🌲 樹木類</button>
+    <button class="btn btn-outline" onclick="filterOils('resin')" id="f-resin" style="padding:7px 18px;font-size:13px;">🌳 樹脂類</button>
+  </div>
+</section>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">首頁</a><span class="sep">›</span>
+    <span>精油圖鑑</span>
+  </div>
+</div>
+
+<!-- Oils Content -->
+<div style="max-width:1180px;margin:0 auto;padding:0 20px;">
+
+  <!-- 柑橘類 -->
+  <section class="oil-category-section" data-cat="citrus">
+    <div class="category-header">
+      <span class="category-badge">🍊 柑橘類 Citrus</span>
+      <div class="title-line"></div>
+      <span style="font-size:13px;color:var(--text-light);white-space:nowrap;">主要成分：單萜烯 · 冷壓萃取</span>
+    </div>
+    <div class="oils-full-grid">
+      <a href="oil-sweet-orange.html" class="oil-index-card" data-cat="citrus">
+        <div class="oil-index-emoji">🍊</div>
+        <div class="oil-index-name">甜橙</div>
+        <div class="oil-index-latin">Citrus sinensis</div>
+        <div class="oil-index-desc">溫暖甜蜜的陽光氣息，最親切的情緒精油，驅散焦慮與憂鬱。</div>
+        <div class="oil-index-pills">
+          <span class="oil-index-pill">抗焦慮</span>
+          <span class="oil-index-pill">情緒提振</span>
+          <span class="oil-index-pill">助消化</span>
+        </div>
+      </a>
+      <a href="oil-lemon.html" class="oil-index-card" data-cat="citrus">
+        <div class="oil-index-emoji">🍋</div>
+        <div class="oil-index-name">檸檬</div>
+        <div class="oil-index-latin">Citrus limon</div>
+        <div class="oil-index-desc">清新銳利，淨化空間首選，提振注意力、抗菌除臭效果顯著。</div>
+        <div class="oil-index-pills">
+          <span class="oil-index-pill">淨化</span>
+          <span class="oil-index-pill">抗菌</span>
+          <span class="oil-index-pill">提振</span>
+        </div>
+      </a>
+      <div class="oil-index-card coming-soon" data-cat="citrus">
+        <div class="oil-index-emoji">🍈</div>
+        <div class="oil-index-name">佛手柑</div>
+        <div class="oil-index-latin">Citrus bergamia</div>
+        <div class="oil-index-desc">茶香與柑橘的完美結合，抗憂鬱、放鬆神經，伯爵茶香氣來源。</div>
+        <div class="coming-soon-badge">即將上線</div>
+      </div>
+      <div class="oil-index-card coming-soon" data-cat="citrus">
+        <div class="oil-index-emoji">🍇</div>
+        <div class="oil-index-name">葡萄柚</div>
+        <div class="oil-index-latin">Citrus paradisi</div>
+        <div class="oil-index-desc">輕盈歡快，刺激淋巴循環，有助於水腫與橘皮組織管理。</div>
+        <div class="coming-soon-badge">即將上線</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 花香類 -->
+  <section class="oil-category-section" data-cat="floral">
+    <div class="category-header">
+      <span class="category-badge">🌸 花香類 Floral</span>
+      <div class="title-line"></div>
+      <span style="font-size:13px;color:var(--text-light);white-space:nowrap;">主要成分：酯類・醇類 · 蒸餾或脂吸</span>
+    </div>
+    <div class="oils-full-grid">
+      <a href="oil-lavender.html" class="oil-index-card" data-cat="floral">
+        <div class="oil-index-emoji">💜</div>
+        <div class="oil-index-name">薰衣草</div>
+        <div class="oil-index-latin">Lavandula angustifolia</div>
+        <div class="oil-index-desc">芳療界最萬能的精油，鎮靜、助眠、修復皮膚，幾乎無使用禁忌。</div>
+        <div class="oil-index-pills">
+          <span class="oil-index-pill">助眠</span>
+          <span class="oil-index-pill">放鬆</span>
+          <span class="oil-index-pill">皮膚修復</span>
+        </div>
+      </a>
+      <a href="oil-ylang-ylang.html" class="oil-index-card" data-cat="floral">
+        <div class="oil-index-emoji">🌸</div>
+        <div class="oil-index-name">依蘭</div>
+        <div class="oil-index-latin">Cananga odorata</div>
+        <div class="oil-index-desc">濃郁異國花香，舒緩情緒張力、調節心跳過速，護髮效果絕佳。</div>
+        <div class="oil-index-pills">
+          <span class="oil-index-pill">情緒平衡</span>
+          <span class="oil-index-pill">護髮</span>
+          <span class="oil-index-pill">舒緩心跳</span>
+        </div>
+      </a>
+      <div class="oil-index-card coming-soon" data-cat="floral">
+        <div class="oil-index-emoji">🌹</div>
+        <div class="oil-index-name">玫瑰</div>
+        <div class="oil-index-latin">Rosa damascena</div>
+        <div class="oil-index-desc">精油之后，極度珍貴，深層滋潤皮膚、療癒心靈創傷。</div>
+        <div class="coming-soon-badge">即將上線</div>
+      </div>
+      <div class="oil-index-card coming-soon" data-cat="floral">
+        <div class="oil-index-emoji">🌺</div>
+        <div class="oil-index-name">茉莉</div>
+        <div class="oil-index-latin">Jasminum grandiflorum</div>
+        <div class="oil-index-desc">被稱為「夜后」，催情、抗憂鬱，是香水工業的重要原料。</div>
+        <div class="coming-soon-badge">即將上線</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 草本類 -->
+  <section class="oil-category-section" data-cat="herb">
+    <div class="category-header">
+      <span class="category-badge">🌿 草本類 Herbal</span>
+      <div class="title-line"></div>
+      <span style="font-size:13px;color:var(--text-light);white-space:nowrap;">主要成分：單萜醇・氧化物・酮類</span>
+    </div>
+    <div class="oils-full-grid">
+      <a href="oil-peppermint.html" class="oil-index-card" data-cat="herb">
+        <div class="oil-index-emoji">🌿</div>
+        <div class="oil-index-name">薄荷</div>
+        <div class="oil-index-latin">Mentha × piperita</div>
+        <div class="oil-index-desc">強烈清涼，即時提神醒腦，緩解頭痛、肌肉痛與消化不適。</div>
+        <div class="oil-index-pills">
+          <span class="oil-index-pill">提神</span>
+          <span class="oil-index-pill">止痛</span>
+          <span class="oil-index-pill">消化</span>
+        </div>
+      </a>
+      <a href="oil-rosemary.html" class="oil-index-card" data-cat="herb">
+        <div class="oil-index-emoji">🌱</div>
+        <div class="oil-index-name">迷迭香</div>
+        <div class="oil-index-latin">Salvia rosmarinus</div>
+        <div class="oil-index-desc">增強記憶與專注力，促進頭皮血液循環，刺激性強、療效顯著。</div>
+        <div class="oil-index-pills">
+          <span class="oil-index-pill">記憶力</span>
+          <span class="oil-index-pill">頭皮護理</span>
+          <span class="oil-index-pill">循環</span>
+        </div>
+      </a>
+      <div class="oil-index-card coming-soon" data-cat="herb">
+        <div class="oil-index-emoji">🌿</div>
+        <div class="oil-index-name">羅勒</div>
+        <div class="oil-index-latin">Ocimum basilicum</div>
+        <div class="oil-index-desc">助消化、抗痙攣，緩解肌肉緊張，提振低落的精神狀態。</div>
+        <div class="coming-soon-badge">即將上線</div>
+      </div>
+      <div class="oil-index-card coming-soon" data-cat="herb">
+        <div class="oil-index-emoji">🌾</div>
+        <div class="oil-index-name">快樂鼠尾草</div>
+        <div class="oil-index-latin">Salvia sclarea</div>
+        <div class="oil-index-desc">荷爾蒙調節，緩解經痛與更年期不適，帶來愉快放鬆感。</div>
+        <div class="coming-soon-badge">即將上線</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 樹木類 -->
+  <section class="oil-category-section" data-cat="wood">
+    <div class="category-header">
+      <span class="category-badge">🌲 樹木類 Wood &amp; Needle</span>
+      <div class="title-line"></div>
+      <span style="font-size:13px;color:var(--text-light);white-space:nowrap;">主要成分：氧化物・單萜烯・倍半萜烯</span>
+    </div>
+    <div class="oils-full-grid">
+      <a href="oil-eucalyptus.html" class="oil-index-card" data-cat="wood">
+        <div class="oil-index-emoji">🌿</div>
+        <div class="oil-index-name">尤加利</div>
+        <div class="oil-index-latin">Eucalyptus radiata</div>
+        <div class="oil-index-desc">呼吸道守護者，抗菌、祛痰、提神三合一，日常保養首選品種。</div>
+        <div class="oil-index-pills">
+          <span class="oil-index-pill">呼吸道</span>
+          <span class="oil-index-pill">抗菌</span>
+          <span class="oil-index-pill">提神</span>
+        </div>
+      </a>
+      <a href="oil-tea-tree.html" class="oil-index-card" data-cat="wood">
+        <div class="oil-index-emoji">🌲</div>
+        <div class="oil-index-name">茶樹</div>
+        <div class="oil-index-latin">Melaleuca alternifolia</div>
+        <div class="oil-index-desc">天然抗菌劑，對細菌、病毒、真菌均有效，皮膚護理必備。</div>
+        <div class="oil-index-pills">
+          <span class="oil-index-pill">抗菌</span>
+          <span class="oil-index-pill">皮膚</span>
+          <span class="oil-index-pill">免疫</span>
+        </div>
+      </a>
+      <a href="oil-cedarwood.html" class="oil-index-card" data-cat="wood">
+        <div class="oil-index-emoji">🌲</div>
+        <div class="oil-index-name">雪松</div>
+        <div class="oil-index-latin">Cedrus atlantica</div>
+        <div class="oil-index-desc">大地般的穩定氣息，改善失眠與焦慮，頭皮護理的天然良方。</div>
+        <div class="oil-index-pills">
+          <span class="oil-index-pill">穩定</span>
+          <span class="oil-index-pill">助眠</span>
+          <span class="oil-index-pill">頭皮</span>
+        </div>
+      </a>
+      <div class="oil-index-card coming-soon" data-cat="wood">
+        <div class="oil-index-emoji">🌳</div>
+        <div class="oil-index-name">檀香</div>
+        <div class="oil-index-latin">Santalum album</div>
+        <div class="oil-index-desc">奶香木質，深層滋潤肌膚，冥想與靈性工作的傳統聖品。</div>
+        <div class="coming-soon-badge">即將上線</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 樹脂類 -->
+  <section class="oil-category-section" data-cat="resin" style="padding-bottom:60px;">
+    <div class="category-header">
+      <span class="category-badge">🌳 樹脂類 Resin</span>
+      <div class="title-line"></div>
+      <span style="font-size:13px;color:var(--text-light);white-space:nowrap;">主要成分：單萜烯・倍半萜烯・酸類</span>
+    </div>
+    <div class="oils-full-grid">
+      <a href="oil-frankincense.html" class="oil-index-card" data-cat="resin">
+        <div class="oil-index-emoji">🌳</div>
+        <div class="oil-index-name">乳香</div>
+        <div class="oil-index-latin">Boswellia carterii</div>
+        <div class="oil-index-desc">千年靈性聖油，深化呼吸、抗老化皮膚，冥想與靜心必備。</div>
+        <div class="oil-index-pills">
+          <span class="oil-index-pill">靈性</span>
+          <span class="oil-index-pill">抗老</span>
+          <span class="oil-index-pill">冥想</span>
+        </div>
+      </a>
+      <div class="oil-index-card coming-soon" data-cat="resin">
+        <div class="oil-index-emoji">🌿</div>
+        <div class="oil-index-name">沒藥</div>
+        <div class="oil-index-latin">Commiphora myrrha</div>
+        <div class="oil-index-desc">古老的療癒聖物，抗炎、收斂、促進傷口癒合，常與乳香並用。</div>
+        <div class="coming-soon-badge">即將上線</div>
+      </div>
+      <div class="oil-index-card coming-soon" data-cat="resin">
+        <div class="oil-index-emoji">🍂</div>
+        <div class="oil-index-name">廣藿香</div>
+        <div class="oil-index-latin">Pogostemon cablin</div>
+        <div class="oil-index-desc">濃郁泥土氣息，抗炎、皮膚再生，60年代嬉皮文化的象徵。</div>
+        <div class="coming-soon-badge">即將上線</div>
+      </div>
+      <div class="oil-index-card coming-soon" data-cat="resin">
+        <div class="oil-index-emoji">🌶️</div>
+        <div class="oil-index-name">薑</div>
+        <div class="oil-index-latin">Zingiber officinale</div>
+        <div class="oil-index-desc">溫熱辛辣，促進循環與消化，緩解暈車、噁心感，暖身必備。</div>
+        <div class="coming-soon-badge">即將上線</div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /container -->
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h4>🌿 精油圖鑑指南</h4>
+      <p>致力於提供正確、完整、易懂的精油知識，<br>幫助每個人建立安全有效的芳療生活。</p>
+      <p style="margin-top:14px;font-size:12px;opacity:0.6;">本網站內容僅供教育參考，不構成醫療建議。</p>
+    </div>
+    <div>
+      <h4>精油索引</h4>
+      <ul>
+        <li><a href="oil-sweet-orange.html">甜橙</a></li>
+        <li><a href="oil-lemon.html">檸檬</a></li>
+        <li><a href="oil-lavender.html">薰衣草</a></li>
+        <li><a href="oil-ylang-ylang.html">依蘭</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>&nbsp;</h4>
+      <ul>
+        <li><a href="oil-peppermint.html">薄荷</a></li>
+        <li><a href="oil-rosemary.html">迷迭香</a></li>
+        <li><a href="oil-eucalyptus.html">尤加利</a></li>
+        <li><a href="oil-tea-tree.html">茶樹</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>&nbsp;</h4>
+      <ul>
+        <li><a href="oil-cedarwood.html">雪松</a></li>
+        <li><a href="oil-frankincense.html">乳香</a></li>
+        <li><a href="encyclopedia.html">圖鑑百科</a></li>
+        <li><a href="index.html">回到首頁</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 精油圖鑑指南 · 精油學 · 本站內容採 CC BY-NC 4.0 授權</div>
+</footer>
+
+<button id="backToTop" title="回到頂端">↑</button>
+
+<script>
+const btn = document.getElementById('backToTop');
+window.addEventListener('scroll', () => btn.classList.toggle('show', window.scrollY > 400));
+btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+function filterOils(cat) {
+  // update button styles
+  document.querySelectorAll('[id^="f-"]').forEach(b => {
+    b.style.background = 'transparent';
+    b.style.color = 'white';
+    b.style.borderColor = 'rgba(255,255,255,0.7)';
+  });
+  const active = document.getElementById('f-' + cat);
+  if (active) { active.style.background = 'white'; active.style.color = 'var(--green-dark)'; }
+
+  if (cat === 'all') {
+    document.querySelectorAll('.oil-category-section').forEach(s => s.style.display = '');
+    document.querySelectorAll('.oil-index-card').forEach(c => c.style.display = '');
+  } else {
+    document.querySelectorAll('.oil-category-section').forEach(s => {
+      s.style.display = s.dataset.cat === cat ? '' : 'none';
+    });
+  }
+}
+</script>
+</body>
+</html>
