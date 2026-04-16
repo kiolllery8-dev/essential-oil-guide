@@ -1460,8 +1460,7 @@ footer ul li a:hover { color: var(--white); }
 
 /* Google-style search results */
 .search-results {
-  max-width: 680px;
-  margin: 0 auto;
+  max-width: 100%;
 }
 .search-result-item {
   display: block;

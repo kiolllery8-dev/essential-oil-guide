@@ -6,6 +6,12 @@
       "runtimeExecutable": "python",
       "runtimeArgs": ["-m", "http.server", "3000", "--directory", "C:/Users/User/Desktop/essential-oil-guide"],
       "port": 3000
+    },
+    {
+      "name": "oil-guide-serve",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "serve", "-l", "5174", "C:/Users/User/Desktop/essential-oil-guide"],
+      "port": 5174
     }
   ]
 }
