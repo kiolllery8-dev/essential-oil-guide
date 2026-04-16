@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>精油圖鑑指南</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .od-hero { padding:48px 40px; border-radius:20px; margin-bottom:28px; color:#fff; position:relative; overflow:hidden; display:flex; align-items:center; gap:40px; }
+    .od-hero-emoji { font-size:100px; line-height:1; flex-shrink:0; filter:drop-shadow(0 4px 12px rgba(0,0,0,0.2)); }
+    .od-hero-text { flex:1; }
+    .od-hero h1 { font-size:36px; font-weight:800; margin-bottom:4px; }
+    .od-hero .od-latin { font-size:18px; font-style:italic; opacity:0.85; margin-bottom:12px; }
+    .od-hero .od-cat-badge { display:inline-block; background:rgba(255,255,255,0.2); padding:4px 14px; border-radius:16px; font-size:12px; font-weight:600; letter-spacing:0.5px; }
+
+    .od-grid { display:grid; grid-template-columns:1fr 320px; gap:28px; }
+    @media(max-width:900px) { .od-grid { grid-template-columns:1fr; } }
+
+    /* Info card (right) */
+    .od-info-card { background:#fff; border:1px solid var(--border); border-radius:16px; padding:24px; height:fit-content; position:sticky; top:20px; }
+    .od-info-card h3 { font-size:15px; font-weight:700; margin-bottom:16px; padding-bottom:10px; border-bottom:2px solid var(--beige); }
+    .od-info-row { display:flex; gap:8px; margin-bottom:12px; font-size:13px; line-height:1.6; }
+    .od-info-label { min-width:70px; font-weight:700; color:var(--text-mid); flex-shrink:0; }
+    .od-info-value { color:var(--text-dark); flex:1; }
+
+    /* Properties table */
+    .od-props-table { width:100%; border-collapse:collapse; margin:20px 0; font-size:14px; }
+    .od-props-table th { text-align:left; padding:12px 16px; font-weight:700; font-size:13px; }
+    .od-props-table td { padding:10px 16px; border-bottom:1px solid var(--border); vertical-align:top; line-height:1.7; font-size:13px; }
+    .od-props-table tr:nth-child(even) td { background:#FAFAF7; }
+
+    /* Component bars */
+    .od-comp-list { margin:20px 0; }
+    .od-comp-item { margin-bottom:10px; }
+    .od-comp-name { font-size:13px; font-weight:600; color:var(--text-dark); margin-bottom:3px; display:flex; justify-content:space-between; }
+    .od-comp-bar { height:8px; border-radius:4px; background:#EEEEE8; overflow:hidden; }
+    .od-comp-fill { height:100%; border-radius:4px; transition:width 0.6s ease; }
+
+    /* Tags */
+    .od-tags { display:flex; flex-wrap:wrap; gap:8px; margin:16px 0; }
+    .od-tag { font-size:12px; padding:5px 14px; border-radius:14px; font-weight:600; }
+
+    /* Safety box */
+    .od-safety { border-radius:12px; padding:16px 20px; margin:20px 0; font-size:14px; line-height:1.7; }
+    .od-safety.safe { background:#D8ECD8; color:#1A5C35; border-left:4px solid #88BC88; }
+    .od-safety.caution { background:#FFF3CD; color:#7D6608; border-left:4px solid #E8C060; }
+    .od-safety.danger { background:#FADBD8; color:#922B21; border-left:4px solid #E74C3C; }
+
+    /* Section headings */
+    .od-section-title { font-size:18px; font-weight:800; color:var(--green-dark); margin:32px 0 16px; padding-bottom:10px; display:flex; align-items:center; gap:8px; }
+    .od-section-title::after { content:''; flex:1; height:2px; background:var(--border); }
+
+    /* Nav strip */
+    .od-nav { display:flex; justify-content:space-between; margin:40px 0 0; padding:20px 0; border-top:2px solid var(--border); }
+    .od-nav a { font-size:13px; color:var(--green-mid); text-decoration:none; font-weight:600; }
+    .od-nav a:hover { color:var(--green-dark); }
+
+    #loading { text-align:center; padding:80px 20px; font-size:18px; color:var(--text-light); }
+    #oilContent { display:none; }
+  </style>
+</head>
+<body>
+
+<div class="topbar">🌿 精油圖鑑指南 — 用知識守護您的芳療生活</div>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo-wrap" style="text-decoration:none;display:flex;align-items:center;gap:12px;">
+      <div class="logo-icon">🌿</div>
+      <div class="logo-text">
+        <div class="site-title">精油圖鑑指南</div>
+        <div class="site-sub">精油學 · 從植物到身心靈</div>
+      </div>
+    </a>
+    <nav><ul>
+      <li><a href="index.html">首頁</a></li>
+      <li><a href="encyclopedia.html">圖鑑百科</a></li>
+      <li><a href="oils.html" class="active">精油</a></li>
+      <li><a href="aromatherapy.html">芳療應用</a></li>
+      <li><a href="safety.html">安全指南</a></li>
+    </ul></nav>
+    <input class="nav-search" type="text" placeholder="搜尋精油..." />
+    <button class="menu-toggle">☰</button>
+  </div>
+</header>
+
+<div id="loading">🌿 載入中...</div>
+
+<div id="oilContent">
+  <!-- Hero -->
+  <div class="od-hero" id="odHero">
+    <div class="od-hero-emoji" id="odEmoji">🌿</div>
+    <div class="od-hero-text">
+      <div class="od-cat-badge" id="odCatBadge"></div>
+      <h1 id="odName"></h1>
+      <div class="od-latin" id="odLatin"></div>
+    </div>
+  </div>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb"><div class="breadcrumb-inner">
+    <a href="index.html">首頁</a><span class="sep">›</span>
+    <a href="oils.html">精油索引</a><span class="sep">›</span>
+    <span id="odBreadcrumb"></span>
+  </div></div>
+
+  <!-- Main grid -->
+  <div style="max-width:1100px;margin:0 auto;padding:0 20px 60px;">
+    <div class="od-grid">
+
+      <!-- Left: Main content -->
+      <div>
+        <!-- 藥學屬性與功效 -->
+        <div class="od-section-title">🔬 藥學屬性與功效</div>
+        <table class="od-props-table" id="odPropsTable">
+          <thead><tr><th style="width:180px;">藥學屬性</th><th>適用症候</th></tr></thead>
+          <tbody id="odPropsBody"></tbody>
+        </table>
+
+        <!-- 化學成分 -->
+        <div class="od-section-title">⚗️ 核心化學成分</div>
+        <div class="od-comp-list" id="odCompList"></div>
+
+        <!-- 功效標籤 -->
+        <div class="od-section-title">🏷️ 功效分類</div>
+        <div class="od-tags" id="odTags"></div>
+
+        <!-- 安全注意 -->
+        <div class="od-section-title">⚠️ 注意事項</div>
+        <div class="od-safety" id="odSafety"></div>
+
+        <!-- Navigation -->
+        <div class="od-nav">
+          <a href="#" id="odPrev">← 上一個精油</a>
+          <a href="oils.html">回到索引</a>
+          <a href="#" id="odNext">下一個精油 →</a>
+        </div>
+      </div>
+
+      <!-- Right: Info card -->
+      <div>
+        <div class="od-info-card" id="odInfoCard">
+          <h3 id="odInfoTitle">🌿 精油基本資料</h3>
+          <div class="od-info-row"><div class="od-info-label">學名</div><div class="od-info-value" id="odInfoLatin" style="font-style:italic;"></div></div>
+          <div class="od-info-row"><div class="od-info-label">中文名</div><div class="od-info-value" id="odInfoZh"></div></div>
+          <div class="od-info-row"><div class="od-info-label">植物科屬</div><div class="od-info-value" id="odInfoFamily"></div></div>
+          <div class="od-info-row"><div class="od-info-label">萃取部位</div><div class="od-info-value" id="odInfoExtract"></div></div>
+          <div class="od-info-row"><div class="od-info-label">化學分類</div><div class="od-info-value" id="odInfoCat"></div></div>
+          <div class="od-info-row"><div class="od-info-label">安全等級</div><div class="od-info-value" id="odInfoSafety"></div></div>
+
+          <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);">
+            <a id="odCatLink" href="#" style="display:block;text-align:center;padding:10px;background:var(--beige-light);border-radius:10px;font-size:13px;font-weight:600;color:var(--green-dark);text-decoration:none;">
+              查看同類精油 →
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div><h4>🌿 精油圖鑑指南</h4><p>致力於提供正確、完整、易懂的精油知識。</p></div>
+    <div><h4>精油索引</h4><ul><li><a href="oil-sweet-orange.html">甜橙</a></li><li><a href="oil-lemon.html">檸檬</a></li><li><a href="oil-lavender.html">薰衣草</a></li><li><a href="oil-ylang-ylang.html">依蘭</a></li></ul></div>
+    <div><h4>&nbsp;</h4><ul><li><a href="oil-peppermint.html">薄荷</a></li><li><a href="oil-rosemary.html">迷迭香</a></li><li><a href="oil-eucalyptus.html">尤加利</a></li><li><a href="oil-tea-tree.html">茶樹</a></li></ul></div>
+    <div><h4>&nbsp;</h4><ul><li><a href="oil-cedarwood.html">雪松</a></li><li><a href="oil-frankincense.html">乳香</a></li><li><a href="encyclopedia.html">圖鑑百科</a></li><li><a href="index.html">回到首頁</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 精油圖鑑指南 · 精油學</div>
+</footer>
+
+<button id="backToTop" title="回到頂端">↑</button>
+
+<script>
+const btn=document.getElementById('backToTop');
+window.addEventListener('scroll',()=>btn.classList.toggle('show',window.scrollY>400));
+btn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+// Plant emoji mapping by family keywords
+function getEmoji(family, name) {
+  const f = (family + ' ' + name).toLowerCase();
+  if (f.includes('柑橘') || f.includes('citrus') || f.includes('rutac') || f.includes('芸香') || f.includes('橙') || f.includes('檸檬') || f.includes('柚') || f.includes('桔') || f.includes('萊姆') || f.includes('佛手柑')) return '🍊';
+  if (f.includes('玫瑰') || f.includes('rosa')) return '🌹';
+  if (f.includes('薰衣草') || f.includes('lavand')) return '💜';
+  if (f.includes('茉莉') || f.includes('jasmin') || f.includes('依蘭') || f.includes('canang') || f.includes('花') && f.includes('香')) return '🌸';
+  if (f.includes('松') || f.includes('杉') || f.includes('柏') || f.includes('雲杉') || f.includes('pine') || f.includes('picea') || f.includes('abies') || f.includes('cedar') || f.includes('雪松') || f.includes('junip') || f.includes('杜松') || f.includes('cypress') || f.includes('絲柏')) return '🌲';
+  if (f.includes('樹脂') || f.includes('乳香') || f.includes('沒藥') || f.includes('boswel') || f.includes('commi') || f.includes('安息香') || f.includes('香脂')) return '🌳';
+  if (f.includes('薑') || f.includes('zingi') || f.includes('薑黃') || f.includes('curcu') || f.includes('豆蔻') || f.includes('高良薑')) return '🫚';
+  if (f.includes('胡椒') || f.includes('piper') || f.includes('花椒') || f.includes('zanthox')) return '🌶️';
+  if (f.includes('禾本') || f.includes('poacea') || f.includes('香茅') || f.includes('cymbo') || f.includes('vetiver')) return '🌾';
+  if (f.includes('檀香') || f.includes('santal') || f.includes('廣藿香') || f.includes('沉香')) return '🪵';
+  if (f.includes('菊') || f.includes('astera') || f.includes('compo') || f.includes('艾') || f.includes('萬壽菊') || f.includes('洋甘菊') || f.includes('永久花')) return '🌼';
+  if (f.includes('薄荷') || f.includes('menth') || f.includes('唇形') || f.includes('lamia') || f.includes('百里香') || f.includes('thym') || f.includes('鼠尾') || f.includes('salvi') || f.includes('羅勒') || f.includes('ocim') || f.includes('馬郁蘭') || f.includes('oregano') || f.includes('丁香')) return '🌿';
+  if (f.includes('茶樹') || f.includes('melaleu') || f.includes('白千層') || f.includes('桃金') || f.includes('myrtac') || f.includes('尤加利') || f.includes('eucal')) return '🍃';
+  if (f.includes('水仙') || f.includes('narcis') || f.includes('晚香玉') || f.includes('蘭') || f.includes('含笑') || f.includes('玉蘭') || f.includes('magnol')) return '🪻';
+  return '🌿';
+}
+
+// Parse component percentages
+function parseComponents(str) {
+  const comps = [];
+  // Split by commas or semicolons
+  const parts = str.split(/[,;，；]/).map(s => s.trim()).filter(Boolean);
+  for (const p of parts) {
+    const pctMatch = p.match(/(\d+[\.\d]*)\s*[~–-]\s*(\d+[\.\d]*)%/) || p.match(/(\d+[\.\d]*)%/);
+    let pct = 0;
+    if (pctMatch) {
+      pct = pctMatch[2] ? (parseFloat(pctMatch[1]) + parseFloat(pctMatch[2])) / 2 : parseFloat(pctMatch[1]);
+    }
+    // Clean name (remove percentage text)
+    let name = p.replace(/\(.*?\)/g, '').replace(/\d+[\.\d]*\s*[~–-]?\s*\d*[\.\d]*%/g, '').replace(/[\(\)]/g, '').trim();
+    if (name.length > 30) name = name.substring(0, 28) + '…';
+    comps.push({ name, pct });
+  }
+  return comps.slice(0, 6); // Max 6
+}
+
+// Parse effects into property/symptom pairs
+function parseEffects(str) {
+  const parts = str.split(/[,;，；、]/).map(s => s.trim()).filter(Boolean);
+  const rows = [];
+  // Group into pairs for table rows
+  for (let i = 0; i < parts.length; i += 2) {
+    rows.push({
+      prop: parts[i] || '',
+      symptom: parts[i+1] || ''
+    });
+  }
+  return rows.length ? rows : [{ prop: str, symptom: '' }];
+}
+
+// Safety level labels
+const safetyLabels = { safe: '✅ 安全', caution: '⚠️ 注意', danger: '❌ 危險' };
+const safetyColors = { safe: '#88BC88', caution: '#E8C060', danger: '#E74C3C' };
+
+// Load data and render
+async function init() {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+  if (!id) { window.location.href = 'oils.html'; return; }
+
+  const res = await fetch('assets/data/oils.json');
+  const data = await res.json();
+  const idx = data.findIndex(o => o.id === id);
+  if (idx === -1) { document.getElementById('loading').textContent = '找不到此精油'; return; }
+
+  const oil = data[idx];
+  const accent = oil.accent;
+  const lt = oil.accentLt;
+  const emoji = getEmoji(oil.family, oil.zh);
+
+  // Update page title
+  document.title = oil.zh + ' — ' + oil.latin + ' | 精油圖鑑指南';
+
+  // Hero
+  document.getElementById('odHero').style.background = 'linear-gradient(135deg, ' + accent + ', ' + accent + 'CC)';
+  document.getElementById('odEmoji').textContent = emoji;
+  document.getElementById('odName').textContent = oil.zh;
+  document.getElementById('odLatin').textContent = oil.latin;
+  document.getElementById('odCatBadge').textContent = oil.category;
+  document.getElementById('odBreadcrumb').textContent = oil.zh;
+
+  // Info card
+  document.getElementById('odInfoLatin').textContent = oil.latin;
+  document.getElementById('odInfoZh').textContent = oil.zh;
+  document.getElementById('odInfoFamily').textContent = oil.family || '—';
+  document.getElementById('odInfoExtract').textContent = oil.extractPart || '—';
+  document.getElementById('odInfoCat').textContent = oil.category;
+  document.getElementById('odInfoSafety').innerHTML = '<span style="color:' + safetyColors[oil.safetyLevel] + ';font-weight:700;">' + safetyLabels[oil.safetyLevel] + '</span>';
+  document.getElementById('odInfoCard').style.borderTop = '3px solid ' + accent;
+  document.getElementById('odCatLink').href = oil.catFile;
+  document.getElementById('odCatLink').textContent = '查看同類精油：' + oil.category + ' →';
+
+  // Properties table
+  const rows = parseEffects(oil.effects);
+  let tbody = '';
+  for (const r of rows) {
+    tbody += '<tr><td style="color:' + accent + ';font-weight:600;">' + r.prop + '</td><td>' + r.symptom + '</td></tr>';
+  }
+  document.getElementById('odPropsBody').innerHTML = tbody;
+
+  // Component bars
+  const comps = parseComponents(oil.components);
+  let compHtml = '';
+  for (const c of comps) {
+    const w = c.pct > 0 ? Math.min(c.pct, 100) : 15; // default 15% width if no percentage
+    compHtml += '<div class="od-comp-item">';
+    compHtml += '<div class="od-comp-name"><span>' + c.name + '</span>' + (c.pct > 0 ? '<span style="color:' + accent + ';">' + c.pct.toFixed(1) + '%</span>' : '') + '</div>';
+    compHtml += '<div class="od-comp-bar"><div class="od-comp-fill" style="width:' + w + '%;background:' + accent + ';"></div></div>';
+    compHtml += '</div>';
+  }
+  document.getElementById('odCompList').innerHTML = compHtml;
+
+  // Tags
+  let tagsHtml = '';
+  for (const t of oil.tags) {
+    tagsHtml += '<span class="od-tag" style="background:' + lt + ';color:' + accent + ';">' + t + '</span>';
+  }
+  document.getElementById('odTags').innerHTML = tagsHtml;
+
+  // Safety
+  const safetyEl = document.getElementById('odSafety');
+  safetyEl.className = 'od-safety ' + oil.safetyLevel;
+  safetyEl.innerHTML = '<strong>' + safetyLabels[oil.safetyLevel] + '</strong><br>' + (oil.safetyText || '一般安全，建議稀釋後使用。');
+
+  // Prev/Next nav
+  const prevOil = idx > 0 ? data[idx - 1] : null;
+  const nextOil = idx < data.length - 1 ? data[idx + 1] : null;
+  const prevEl = document.getElementById('odPrev');
+  const nextEl = document.getElementById('odNext');
+  if (prevOil) { prevEl.href = 'oil-detail.html?id=' + prevOil.id; prevEl.textContent = '← ' + prevOil.zh; }
+  else { prevEl.style.visibility = 'hidden'; }
+  if (nextOil) { nextEl.href = 'oil-detail.html?id=' + nextOil.id; nextEl.textContent = nextOil.zh + ' →'; }
+  else { nextEl.style.visibility = 'hidden'; }
+
+  // Show content
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('oilContent').style.display = '';
+}
+
+init();
+</script>
+</body>
+</html>
