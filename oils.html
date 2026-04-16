@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>精油圖鑑 — 全品項索引 | 精油圖鑑指南</title>
-  <meta name="description" content="完整精油品項索引：茶樹、薄荷、薰衣草、尤加利、甜橙、檸檬、乳香、迷迭香、依蘭、雪松等，依植物科屬分類，快速找到每種精油的完整介紹。" />
+  <title>精油圖鑑 — 全品項索引（302+ 種精油） | 精油圖鑑指南</title>
+  <meta name="description" content="全台最完整精油索引：302+ 種精油按12大化學分類整理，涵蓋單萜烯、氧化物、醇類、酚類、酯類、酮類等，快速查找每種精油的學名、成分與功效。" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
@@ -15,15 +15,13 @@
 
 <header>
   <div class="header-inner">
-    <div class="logo-wrap">
-      <a href="index.html" class="logo-wrap" style="text-decoration:none;">
-        <div class="logo-icon">🌿</div>
-        <div class="logo-text">
-          <div class="site-title">精油圖鑑指南</div>
-          <div class="site-sub">精油學 · 從植物到身心靈</div>
-        </div>
-      </a>
-    </div>
+    <a href="index.html" class="logo-wrap" style="text-decoration:none;display:flex;align-items:center;gap:12px;">
+      <div class="logo-icon">🌿</div>
+      <div class="logo-text">
+        <div class="site-title">精油圖鑑指南</div>
+        <div class="site-sub">精油學 · 從植物到身心靈</div>
+      </div>
+    </a>
     <nav>
       <ul>
         <li><a href="index.html">首頁</a></li>
@@ -40,17 +38,36 @@
 
 <!-- Hero -->
 <section class="oils-hero">
-  <div class="hero-badge">🌿 共收錄 10 款精油 · 持續更新中</div>
-  <h1>精油圖鑑</h1>
-  <p>從柑橘的明亮、花香的柔美、草本的清新，到樹木的穩定、樹脂的深邃——<br>每一瓶精油都是一座植物的濃縮知識。</p>
+  <div class="hero-badge">🌿 共收錄 302+ 種精油原料 · 12 大化學分類</div>
+  <h1>精油完全索引</h1>
+  <p>從單萜烯到倍半萜醇，從柑橘的明亮到樹脂的深邃——<br>按化學成分分類，快速找到每種精油的完整資料。</p>
+
+  <!-- Search -->
+  <div style="max-width:400px;margin:16px auto 0;">
+    <input type="text" id="oilSearchMain" placeholder="🔍 輸入精油名稱或拉丁學名搜尋..."
+      style="width:100%;padding:12px 20px;border:2px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.12);color:#fff;border-radius:30px;font-size:14px;outline:none;"
+      onfocus="this.style.borderColor='rgba(255,255,255,0.7)'"
+      onblur="this.style.borderColor='rgba(255,255,255,0.3)'" />
+  </div>
+
   <!-- Filter chips -->
-  <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:8px;">
-    <button class="btn btn-white" onclick="filterOils('all')" id="f-all" style="padding:7px 18px;font-size:13px;">全部</button>
-    <button class="btn btn-outline" onclick="filterOils('citrus')" id="f-citrus" style="padding:7px 18px;font-size:13px;">🍊 柑橘類</button>
-    <button class="btn btn-outline" onclick="filterOils('floral')" id="f-floral" style="padding:7px 18px;font-size:13px;">🌸 花香類</button>
-    <button class="btn btn-outline" onclick="filterOils('herb')" id="f-herb" style="padding:7px 18px;font-size:13px;">🌿 草本類</button>
-    <button class="btn btn-outline" onclick="filterOils('wood')" id="f-wood" style="padding:7px 18px;font-size:13px;">🌲 樹木類</button>
-    <button class="btn btn-outline" onclick="filterOils('resin')" id="f-resin" style="padding:7px 18px;font-size:13px;">🌳 樹脂類</button>
+  <div class="chem-filter-wrap">
+    <button class="chem-chip active" onclick="filterChem('all')" id="fc-all">全部</button>
+    <button class="chem-chip" onclick="filterChem('featured')" id="fc-featured">⭐ 精選</button>
+    <button class="chem-chip" onclick="filterChem('cat01')" id="fc-cat01">單萜烯類 (I)</button>
+    <button class="chem-chip" onclick="filterChem('cat02')" id="fc-cat02">香豆素與內酯</button>
+    <button class="chem-chip" onclick="filterChem('cat03')" id="fc-cat03">氧化物類</button>
+    <button class="chem-chip" onclick="filterChem('cat04')" id="fc-cat04">倍半萜烯類</button>
+    <button class="chem-chip" onclick="filterChem('cat05')" id="fc-cat05">醛類</button>
+    <button class="chem-chip" onclick="filterChem('cat06')" id="fc-cat06">酯類</button>
+    <button class="chem-chip" onclick="filterChem('cat07a')" id="fc-cat07a">脂類</button>
+    <button class="chem-chip" onclick="filterChem('cat07b')" id="fc-cat07b">苯基酯類</button>
+    <button class="chem-chip" onclick="filterChem('cat07c')" id="fc-cat07c">芳香醛酯類</button>
+    <button class="chem-chip" onclick="filterChem('cat08')" id="fc-cat08">倍半萜酮類</button>
+    <button class="chem-chip" onclick="filterChem('cat09')" id="fc-cat09">單萜醇類</button>
+    <button class="chem-chip" onclick="filterChem('cat10')" id="fc-cat10">酚類</button>
+    <button class="chem-chip" onclick="filterChem('cat11')" id="fc-cat11">倍半萜醇類</button>
+    <button class="chem-chip" onclick="filterChem('cat12')" id="fc-cat12">單萜烯類 (XII)</button>
   </div>
 </section>
 
@@ -58,255 +75,2378 @@
 <div class="breadcrumb">
   <div class="breadcrumb-inner">
     <a href="index.html">首頁</a><span class="sep">›</span>
-    <span>精油圖鑑</span>
+    <span>精油完全索引</span>
+  </div>
+</div>
+
+<!-- Search Results Count -->
+<div id="searchInfo" style="max-width:1180px;margin:0 auto;padding:12px 20px 0;display:none;">
+  <div style="background:#FFF3CD;border-radius:10px;padding:10px 16px;font-size:13px;color:#7D6608;">
+    搜尋結果：<span id="searchCount">0</span> 種精油符合
+    <button onclick="clearSearch()" style="margin-left:12px;background:none;border:1px solid #7D6608;color:#7D6608;padding:3px 10px;border-radius:12px;font-size:12px;cursor:pointer;">清除搜尋</button>
   </div>
 </div>
 
 <!-- Oils Content -->
-<div style="max-width:1180px;margin:0 auto;padding:0 20px;">
+<div style="max-width:1180px;margin:0 auto;padding:20px 20px 60px;" id="oilsContainer">
 
-  <!-- 柑橘類 -->
-  <section class="oil-category-section" data-cat="citrus">
-    <div class="category-header">
-      <span class="category-badge">🍊 柑橘類 Citrus</span>
+
+  <!-- 精選精油（有完整頁面） -->
+  <section class="chem-section" data-chem="featured" id="featured">
+    <div class="chem-header">
+      <span class="chem-badge" style="background:linear-gradient(135deg,var(--green-dark),var(--green-mid));">⭐ 精選精油 · 完整頁面</span>
       <div class="title-line"></div>
-      <span style="font-size:13px;color:var(--text-light);white-space:nowrap;">主要成分：單萜烯 · 冷壓萃取</span>
+      <span class="chem-count">10 種精油</span>
     </div>
     <div class="oils-full-grid">
-      <a href="oil-sweet-orange.html" class="oil-index-card" data-cat="citrus">
+      <a href="oil-sweet-orange.html" class="oil-index-card" data-chem="featured" data-name="甜橙" data-latin="citrus sinensis">
         <div class="oil-index-card-img" style="background:linear-gradient(135deg,#c2620a,#f4a022);">🍊</div>
         <div class="oil-index-emoji">🍊</div>
         <div class="oil-index-name">甜橙</div>
         <div class="oil-index-latin">Citrus sinensis</div>
-        <div class="oil-index-desc">溫暖甜蜜的陽光氣息，最親切的情緒精油，驅散焦慮與憂鬱。</div>
-        <div class="oil-index-pills">
-          <span class="oil-index-pill">抗焦慮</span>
-          <span class="oil-index-pill">情緒提振</span>
-          <span class="oil-index-pill">助消化</span>
-        </div>
+        <div class="oil-index-desc">溫暖甜蜜的陽光氣息，最親切的情緒精油。</div>
+        <div class="oil-index-pills"><span class="oil-index-pill">抗焦慮</span><span class="oil-index-pill">情緒提振</span></div>
       </a>
-      <a href="oil-lemon.html" class="oil-index-card" data-cat="citrus">
+      <a href="oil-lemon.html" class="oil-index-card" data-chem="featured" data-name="檸檬" data-latin="citrus limon">
         <div class="oil-index-card-img" style="background:linear-gradient(135deg,#7a7800,#c8bc00);">🍋</div>
         <div class="oil-index-emoji">🍋</div>
         <div class="oil-index-name">檸檬</div>
         <div class="oil-index-latin">Citrus limon</div>
-        <div class="oil-index-desc">清新銳利，淨化空間首選，提振注意力、抗菌除臭效果顯著。</div>
-        <div class="oil-index-pills">
-          <span class="oil-index-pill">淨化</span>
-          <span class="oil-index-pill">抗菌</span>
-          <span class="oil-index-pill">提振</span>
-        </div>
+        <div class="oil-index-desc">清新銳利，淨化空間首選，提振注意力。</div>
+        <div class="oil-index-pills"><span class="oil-index-pill">淨化</span><span class="oil-index-pill">抗菌</span></div>
       </a>
-      <div class="oil-index-card coming-soon" data-cat="citrus">
-        <div class="oil-index-emoji">🍈</div>
-        <div class="oil-index-name">佛手柑</div>
-        <div class="oil-index-latin">Citrus bergamia</div>
-        <div class="oil-index-desc">茶香與柑橘的完美結合，抗憂鬱、放鬆神經，伯爵茶香氣來源。</div>
-        <div class="coming-soon-badge">即將上線</div>
-      </div>
-      <div class="oil-index-card coming-soon" data-cat="citrus">
-        <div class="oil-index-emoji">🍇</div>
-        <div class="oil-index-name">葡萄柚</div>
-        <div class="oil-index-latin">Citrus paradisi</div>
-        <div class="oil-index-desc">輕盈歡快，刺激淋巴循環，有助於水腫與橘皮組織管理。</div>
-        <div class="coming-soon-badge">即將上線</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 花香類 -->
-  <section class="oil-category-section" data-cat="floral">
-    <div class="category-header">
-      <span class="category-badge">🌸 花香類 Floral</span>
-      <div class="title-line"></div>
-      <span style="font-size:13px;color:var(--text-light);white-space:nowrap;">主要成分：酯類・醇類 · 蒸餾或脂吸</span>
-    </div>
-    <div class="oils-full-grid">
-      <a href="oil-lavender.html" class="oil-index-card" data-cat="floral">
+      <a href="oil-lavender.html" class="oil-index-card" data-chem="featured" data-name="薰衣草" data-latin="lavandula angustifolia">
         <div class="oil-index-card-img" style="background:linear-gradient(135deg,#5c4b8a,#9b7fc7);">💜</div>
         <div class="oil-index-emoji">💜</div>
         <div class="oil-index-name">薰衣草</div>
         <div class="oil-index-latin">Lavandula angustifolia</div>
-        <div class="oil-index-desc">芳療界最萬能的精油，鎮靜、助眠、修復皮膚，幾乎無使用禁忌。</div>
-        <div class="oil-index-pills">
-          <span class="oil-index-pill">助眠</span>
-          <span class="oil-index-pill">放鬆</span>
-          <span class="oil-index-pill">皮膚修復</span>
-        </div>
+        <div class="oil-index-desc">芳療界最萬能的精油，鎮靜助眠修復皮膚。</div>
+        <div class="oil-index-pills"><span class="oil-index-pill">助眠</span><span class="oil-index-pill">放鬆</span></div>
       </a>
-      <a href="oil-ylang-ylang.html" class="oil-index-card" data-cat="floral">
+      <a href="oil-ylang-ylang.html" class="oil-index-card" data-chem="featured" data-name="依蘭" data-latin="cananga odorata">
         <div class="oil-index-card-img" style="background:linear-gradient(135deg,#6b3fa0,#c678b0);">🌸</div>
         <div class="oil-index-emoji">🌸</div>
         <div class="oil-index-name">依蘭</div>
         <div class="oil-index-latin">Cananga odorata</div>
-        <div class="oil-index-desc">濃郁異國花香，舒緩情緒張力、調節心跳過速，護髮效果絕佳。</div>
-        <div class="oil-index-pills">
-          <span class="oil-index-pill">情緒平衡</span>
-          <span class="oil-index-pill">護髮</span>
-          <span class="oil-index-pill">舒緩心跳</span>
-        </div>
+        <div class="oil-index-desc">濃郁異國花香，舒緩情緒張力。</div>
+        <div class="oil-index-pills"><span class="oil-index-pill">情緒平衡</span><span class="oil-index-pill">護髮</span></div>
       </a>
-      <div class="oil-index-card coming-soon" data-cat="floral">
-        <div class="oil-index-emoji">🌹</div>
-        <div class="oil-index-name">玫瑰</div>
-        <div class="oil-index-latin">Rosa damascena</div>
-        <div class="oil-index-desc">精油之后，極度珍貴，深層滋潤皮膚、療癒心靈創傷。</div>
-        <div class="coming-soon-badge">即將上線</div>
-      </div>
-      <div class="oil-index-card coming-soon" data-cat="floral">
-        <div class="oil-index-emoji">🌺</div>
-        <div class="oil-index-name">茉莉</div>
-        <div class="oil-index-latin">Jasminum grandiflorum</div>
-        <div class="oil-index-desc">被稱為「夜后」，催情、抗憂鬱，是香水工業的重要原料。</div>
-        <div class="coming-soon-badge">即將上線</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 草本類 -->
-  <section class="oil-category-section" data-cat="herb">
-    <div class="category-header">
-      <span class="category-badge">🌿 草本類 Herbal</span>
-      <div class="title-line"></div>
-      <span style="font-size:13px;color:var(--text-light);white-space:nowrap;">主要成分：單萜醇・氧化物・酮類</span>
-    </div>
-    <div class="oils-full-grid">
-      <a href="oil-peppermint.html" class="oil-index-card" data-cat="herb">
+      <a href="oil-peppermint.html" class="oil-index-card" data-chem="featured" data-name="薄荷" data-latin="mentha piperita">
         <div class="oil-index-card-img" style="background:linear-gradient(135deg,#1a5e40,#2fa874);">🌿</div>
         <div class="oil-index-emoji">🌿</div>
         <div class="oil-index-name">薄荷</div>
         <div class="oil-index-latin">Mentha × piperita</div>
-        <div class="oil-index-desc">強烈清涼，即時提神醒腦，緩解頭痛、肌肉痛與消化不適。</div>
-        <div class="oil-index-pills">
-          <span class="oil-index-pill">提神</span>
-          <span class="oil-index-pill">止痛</span>
-          <span class="oil-index-pill">消化</span>
-        </div>
+        <div class="oil-index-desc">強烈清涼，即時提神醒腦緩解頭痛。</div>
+        <div class="oil-index-pills"><span class="oil-index-pill">提神</span><span class="oil-index-pill">止痛</span></div>
       </a>
-      <a href="oil-rosemary.html" class="oil-index-card" data-cat="herb">
+      <a href="oil-rosemary.html" class="oil-index-card" data-chem="featured" data-name="迷迭香" data-latin="salvia rosmarinus">
         <div class="oil-index-card-img" style="background:linear-gradient(135deg,#1a4a2e,#2e7d4f);">🌱</div>
         <div class="oil-index-emoji">🌱</div>
         <div class="oil-index-name">迷迭香</div>
         <div class="oil-index-latin">Salvia rosmarinus</div>
-        <div class="oil-index-desc">增強記憶與專注力，促進頭皮血液循環，刺激性強、療效顯著。</div>
-        <div class="oil-index-pills">
-          <span class="oil-index-pill">記憶力</span>
-          <span class="oil-index-pill">頭皮護理</span>
-          <span class="oil-index-pill">循環</span>
-        </div>
+        <div class="oil-index-desc">增強記憶與專注力，促進頭皮循環。</div>
+        <div class="oil-index-pills"><span class="oil-index-pill">記憶力</span><span class="oil-index-pill">循環</span></div>
       </a>
-      <div class="oil-index-card coming-soon" data-cat="herb">
-        <div class="oil-index-emoji">🌿</div>
-        <div class="oil-index-name">羅勒</div>
-        <div class="oil-index-latin">Ocimum basilicum</div>
-        <div class="oil-index-desc">助消化、抗痙攣，緩解肌肉緊張，提振低落的精神狀態。</div>
-        <div class="coming-soon-badge">即將上線</div>
-      </div>
-      <div class="oil-index-card coming-soon" data-cat="herb">
-        <div class="oil-index-emoji">🌾</div>
-        <div class="oil-index-name">快樂鼠尾草</div>
-        <div class="oil-index-latin">Salvia sclarea</div>
-        <div class="oil-index-desc">荷爾蒙調節，緩解經痛與更年期不適，帶來愉快放鬆感。</div>
-        <div class="coming-soon-badge">即將上線</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 樹木類 -->
-  <section class="oil-category-section" data-cat="wood">
-    <div class="category-header">
-      <span class="category-badge">🌲 樹木類 Wood &amp; Needle</span>
-      <div class="title-line"></div>
-      <span style="font-size:13px;color:var(--text-light);white-space:nowrap;">主要成分：氧化物・單萜烯・倍半萜烯</span>
-    </div>
-    <div class="oils-full-grid">
-      <a href="oil-eucalyptus.html" class="oil-index-card" data-cat="wood">
+      <a href="oil-eucalyptus.html" class="oil-index-card" data-chem="featured" data-name="尤加利" data-latin="eucalyptus radiata">
         <div class="oil-index-card-img" style="background:linear-gradient(135deg,#3D5A3E,#5B7A4E);">🌿</div>
         <div class="oil-index-emoji">🌿</div>
         <div class="oil-index-name">尤加利</div>
         <div class="oil-index-latin">Eucalyptus radiata</div>
-        <div class="oil-index-desc">呼吸道守護者，抗菌、祛痰、提神三合一，日常保養首選品種。</div>
-        <div class="oil-index-pills">
-          <span class="oil-index-pill">呼吸道</span>
-          <span class="oil-index-pill">抗菌</span>
-          <span class="oil-index-pill">提神</span>
-        </div>
+        <div class="oil-index-desc">呼吸道守護者，抗菌祛痰提神。</div>
+        <div class="oil-index-pills"><span class="oil-index-pill">呼吸道</span><span class="oil-index-pill">抗菌</span></div>
       </a>
-      <a href="oil-tea-tree.html" class="oil-index-card" data-cat="wood">
+      <a href="oil-tea-tree.html" class="oil-index-card" data-chem="featured" data-name="茶樹" data-latin="melaleuca alternifolia">
         <div class="oil-index-card-img" style="background:linear-gradient(135deg,#1a5c28,#2e8a4a);">🌲</div>
         <div class="oil-index-emoji">🌲</div>
         <div class="oil-index-name">茶樹</div>
         <div class="oil-index-latin">Melaleuca alternifolia</div>
-        <div class="oil-index-desc">天然抗菌劑，對細菌、病毒、真菌均有效，皮膚護理必備。</div>
-        <div class="oil-index-pills">
-          <span class="oil-index-pill">抗菌</span>
-          <span class="oil-index-pill">皮膚</span>
-          <span class="oil-index-pill">免疫</span>
-        </div>
+        <div class="oil-index-desc">天然抗菌劑，皮膚護理必備。</div>
+        <div class="oil-index-pills"><span class="oil-index-pill">抗菌</span><span class="oil-index-pill">皮膚</span></div>
       </a>
-      <a href="oil-cedarwood.html" class="oil-index-card" data-cat="wood">
+      <a href="oil-cedarwood.html" class="oil-index-card" data-chem="featured" data-name="雪松" data-latin="cedrus atlantica">
         <div class="oil-index-card-img" style="background:linear-gradient(135deg,#3b2a1a,#7a5c3e);">🌲</div>
         <div class="oil-index-emoji">🌲</div>
         <div class="oil-index-name">雪松</div>
         <div class="oil-index-latin">Cedrus atlantica</div>
-        <div class="oil-index-desc">大地般的穩定氣息，改善失眠與焦慮，頭皮護理的天然良方。</div>
-        <div class="oil-index-pills">
-          <span class="oil-index-pill">穩定</span>
-          <span class="oil-index-pill">助眠</span>
-          <span class="oil-index-pill">頭皮</span>
-        </div>
+        <div class="oil-index-desc">大地般的穩定氣息，改善失眠焦慮。</div>
+        <div class="oil-index-pills"><span class="oil-index-pill">穩定</span><span class="oil-index-pill">助眠</span></div>
       </a>
-      <div class="oil-index-card coming-soon" data-cat="wood">
-        <div class="oil-index-emoji">🌳</div>
-        <div class="oil-index-name">檀香</div>
-        <div class="oil-index-latin">Santalum album</div>
-        <div class="oil-index-desc">奶香木質，深層滋潤肌膚，冥想與靈性工作的傳統聖品。</div>
-        <div class="coming-soon-badge">即將上線</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 樹脂類 -->
-  <section class="oil-category-section" data-cat="resin" style="padding-bottom:60px;">
-    <div class="category-header">
-      <span class="category-badge">🌳 樹脂類 Resin</span>
-      <div class="title-line"></div>
-      <span style="font-size:13px;color:var(--text-light);white-space:nowrap;">主要成分：單萜烯・倍半萜烯・酸類</span>
-    </div>
-    <div class="oils-full-grid">
-      <a href="oil-frankincense.html" class="oil-index-card" data-cat="resin">
+      <a href="oil-frankincense.html" class="oil-index-card" data-chem="featured" data-name="乳香" data-latin="boswellia carterii">
         <div class="oil-index-card-img" style="background:linear-gradient(135deg,#5a3e28,#9c6b3c);">🌳</div>
         <div class="oil-index-emoji">🌳</div>
         <div class="oil-index-name">乳香</div>
         <div class="oil-index-latin">Boswellia carterii</div>
-        <div class="oil-index-desc">千年靈性聖油，深化呼吸、抗老化皮膚，冥想與靜心必備。</div>
-        <div class="oil-index-pills">
-          <span class="oil-index-pill">靈性</span>
-          <span class="oil-index-pill">抗老</span>
-          <span class="oil-index-pill">冥想</span>
-        </div>
+        <div class="oil-index-desc">千年靈性聖油，深化呼吸抗老化。</div>
+        <div class="oil-index-pills"><span class="oil-index-pill">靈性</span><span class="oil-index-pill">抗老</span></div>
       </a>
-      <div class="oil-index-card coming-soon" data-cat="resin">
-        <div class="oil-index-emoji">🌿</div>
-        <div class="oil-index-name">沒藥</div>
-        <div class="oil-index-latin">Commiphora myrrha</div>
-        <div class="oil-index-desc">古老的療癒聖物，抗炎、收斂、促進傷口癒合，常與乳香並用。</div>
-        <div class="coming-soon-badge">即將上線</div>
-      </div>
-      <div class="oil-index-card coming-soon" data-cat="resin">
-        <div class="oil-index-emoji">🍂</div>
-        <div class="oil-index-name">廣藿香</div>
-        <div class="oil-index-latin">Pogostemon cablin</div>
-        <div class="oil-index-desc">濃郁泥土氣息，抗炎、皮膚再生，60年代嬉皮文化的象徵。</div>
-        <div class="coming-soon-badge">即將上線</div>
-      </div>
-      <div class="oil-index-card coming-soon" data-cat="resin">
-        <div class="oil-index-emoji">🌶️</div>
-        <div class="oil-index-name">薑</div>
-        <div class="oil-index-latin">Zingiber officinale</div>
-        <div class="oil-index-desc">溫熱辛辣，促進循環與消化，緩解暈車、噁心感，暖身必備。</div>
-        <div class="coming-soon-badge">即將上線</div>
-      </div>
+    </div>
+  </section>
+
+  <!-- I · 單萜烯類 -->
+  <section class="chem-section" data-chem="cat01" id="cat01">
+    <div class="chem-header">
+      <span class="chem-badge" style="background:#4A2A5A;">I · 單萜烯類</span>
+      <div class="title-line"></div>
+      <span class="chem-count">31 種精油</span>
+    </div>
+    <div class="oil-compact-grid">
+      <a href="compounds-01.html#oil-25" class="oil-compact-card" data-chem="cat01" data-name="利古里亞草" data-latin="artemisia ligustica">
+        <div class="occ-top">
+          <span class="occ-num">25</span>
+          <span class="occ-name">利古里亞草</span>
+        </div>
+        <span class="occ-latin">Artemisia ligustica</span>
+      </a>
+      <a href="compounds-01.html#oil-26" class="oil-compact-card" data-chem="cat01" data-name="圓葉當歸" data-latin="levisticum officinale">
+        <div class="occ-top">
+          <span class="occ-num">26</span>
+          <span class="occ-name">圓葉當歸</span>
+        </div>
+        <span class="occ-latin">Levisticum officinale</span>
+      </a>
+      <a href="compounds-01.html#oil-27" class="oil-compact-card" data-chem="cat01" data-name="側柏酮白蒿" data-latin="artemisia herba-alba">
+        <div class="occ-top">
+          <span class="occ-num">27</span>
+          <span class="occ-name">側柏酮白蒿</span>
+        </div>
+        <span class="occ-latin">Artemisia herba-alba</span>
+      </a>
+      <a href="compounds-01.html#oil-28" class="oil-compact-card" data-chem="cat01" data-name="艾葉" data-latin="artemisia argyi">
+        <div class="occ-top">
+          <span class="occ-num">28</span>
+          <span class="occ-name">艾葉</span>
+        </div>
+        <span class="occ-latin">Artemisia argyi</span>
+      </a>
+      <a href="compounds-01.html#oil-29" class="oil-compact-card" data-chem="cat01" data-name="艾蒿" data-latin="artemisia vulgaris">
+        <div class="occ-top">
+          <span class="occ-num">29</span>
+          <span class="occ-name">艾蒿</span>
+        </div>
+        <span class="occ-latin">Artemisia vulgaris</span>
+      </a>
+      <a href="compounds-01.html#oil-30" class="oil-compact-card" data-chem="cat01" data-name="艾草" data-latin="artemisia princeps">
+        <div class="occ-top">
+          <span class="occ-num">30</span>
+          <span class="occ-name">艾草</span>
+        </div>
+        <span class="occ-latin">Artemisia princeps</span>
+      </a>
+      <a href="compounds-01.html#oil-31" class="oil-compact-card" data-chem="cat01" data-name="假剪股穎風輪菜" data-latin="calamintha nepeta">
+        <div class="occ-top">
+          <span class="occ-num">31</span>
+          <span class="occ-name">假剪股穎風輪菜</span>
+        </div>
+        <span class="occ-latin">Calamintha nepeta</span>
+      </a>
+      <a href="compounds-01.html#oil-32" class="oil-compact-card" data-chem="cat01" data-name="藏茴香" data-latin="carum carvi">
+        <div class="occ-top">
+          <span class="occ-num">32</span>
+          <span class="occ-name">藏茴香</span>
+        </div>
+        <span class="occ-latin">Carum carvi</span>
+      </a>
+      <a href="compounds-01.html#oil-33" class="oil-compact-card" data-chem="cat01" data-name="藍米柏" data-latin="fokienia hodginsii">
+        <div class="occ-top">
+          <span class="occ-num">33</span>
+          <span class="occ-name">藍米柏</span>
+        </div>
+        <span class="occ-latin">Fokienia hodginsii</span>
+      </a>
+      <a href="compounds-01.html#oil-34" class="oil-compact-card" data-chem="cat01" data-name="檸檬" data-latin="citrus limon">
+        <div class="occ-top">
+          <span class="occ-num">34</span>
+          <span class="occ-name">檸檬</span>
+        </div>
+        <span class="occ-latin">Citrus limon</span>
+      </a>
+      <a href="compounds-01.html#oil-35" class="oil-compact-card" data-chem="cat01" data-name="薄荷尤加利" data-latin="eucalyptus dives ct. piperitone">
+        <div class="occ-top">
+          <span class="occ-num">35</span>
+          <span class="occ-name">薄荷尤加利</span>
+        </div>
+        <span class="occ-latin">Eucalyptus dives ct. piperitone</span>
+      </a>
+      <a href="compounds-01.html#oil-36" class="oil-compact-card" data-chem="cat01" data-name="多苞葉尤加利" data-latin="eucalyptus polybractea ct. cryptone">
+        <div class="occ-top">
+          <span class="occ-num">36</span>
+          <span class="occ-name">多苞葉尤加利</span>
+        </div>
+        <span class="occ-latin">Eucalyptus polybractea ct. cryptone</span>
+      </a>
+      <a href="compounds-01.html#oil-37" class="oil-compact-card" data-chem="cat01" data-name="牛膝草" data-latin="hyssopus officinalis">
+        <div class="occ-top">
+          <span class="occ-num">37</span>
+          <span class="occ-name">牛膝草</span>
+        </div>
+        <span class="occ-latin">Hyssopus officinalis</span>
+      </a>
+      <a href="compounds-01.html#oil-38" class="oil-compact-card" data-chem="cat01" data-name="頭狀薰衣草" data-latin="lavandula stoechas">
+        <div class="occ-top">
+          <span class="occ-num">38</span>
+          <span class="occ-name">頭狀薰衣草</span>
+        </div>
+        <span class="occ-latin">Lavandula stoechas</span>
+      </a>
+      <a href="compounds-01.html#oil-39" class="oil-compact-card" data-chem="cat01" data-name="白膠脂" data-latin="pistacia lentiscus">
+        <div class="occ-top">
+          <span class="occ-num">39</span>
+          <span class="occ-name">白膠脂</span>
+        </div>
+        <span class="occ-latin">Pistacia lentiscus</span>
+      </a>
+      <a href="compounds-01.html#oil-40" class="oil-compact-card" data-chem="cat01" data-name="馬郁蘭" data-latin="origanum majorana">
+        <div class="occ-top">
+          <span class="occ-num">40</span>
+          <span class="occ-name">馬郁蘭</span>
+        </div>
+        <span class="occ-latin">Origanum majorana</span>
+      </a>
+      <a href="compounds-01.html#oil-41" class="oil-compact-card" data-chem="cat01" data-name="綠薄荷" data-latin="mentha spicata">
+        <div class="occ-top">
+          <span class="occ-num">41</span>
+          <span class="occ-name">綠薄荷</span>
+        </div>
+        <span class="occ-latin">Mentha spicata</span>
+      </a>
+      <a href="compounds-01.html#oil-42" class="oil-compact-card" data-chem="cat01" data-name="胡椒薄荷" data-latin="mentha x piperita">
+        <div class="occ-top">
+          <span class="occ-num">42</span>
+          <span class="occ-name">胡椒薄荷</span>
+        </div>
+        <span class="occ-latin">Mentha x piperita</span>
+      </a>
+      <a href="compounds-01.html#oil-43" class="oil-compact-card" data-chem="cat01" data-name="檸檬草與香茅" data-latin="cymbopogon citratus / c. nardus">
+        <div class="occ-top">
+          <span class="occ-num">43</span>
+          <span class="occ-name">檸檬草與香茅</span>
+        </div>
+        <span class="occ-latin">Cymbopogon citratus / C. nardus</span>
+      </a>
+      <a href="compounds-01.html#oil-44" class="oil-compact-card" data-chem="cat01" data-name="馬鞭草酮迷迭香" data-latin="rosmarinus officinalis ct. verbenone">
+        <div class="occ-top">
+          <span class="occ-num">44</span>
+          <span class="occ-name">馬鞭草酮迷迭香</span>
+        </div>
+        <span class="occ-latin">Rosmarinus officinalis ct. verbenone</span>
+      </a>
+      <a href="compounds-01.html#oil-45" class="oil-compact-card" data-chem="cat01" data-name="薰衣草葉鼠尾草" data-latin="salvia lavandulifolia">
+        <div class="occ-top">
+          <span class="occ-num">45</span>
+          <span class="occ-name">薰衣草葉鼠尾草</span>
+        </div>
+        <span class="occ-latin">Salvia lavandulifolia</span>
+      </a>
+      <a href="compounds-01.html#oil-46" class="oil-compact-card" data-chem="cat01" data-name="鼠尾草" data-latin="salvia officinalis">
+        <div class="occ-top">
+          <span class="occ-num">46</span>
+          <span class="occ-name">鼠尾草</span>
+        </div>
+        <span class="occ-latin">Salvia officinalis</span>
+      </a>
+      <a href="compounds-01.html#oil-47" class="oil-compact-card" data-chem="cat01" data-name="桉油醇迷迭香" data-latin="rosmarinus officinalis ct. cineole">
+        <div class="occ-top">
+          <span class="occ-num">47</span>
+          <span class="occ-name">桉油醇迷迭香</span>
+        </div>
+        <span class="occ-latin">Rosmarinus officinalis ct. cineole</span>
+      </a>
+      <a href="compounds-01.html#oil-48" class="oil-compact-card" data-chem="cat01" data-name="芳香萬壽菊" data-latin="tagetes minuta">
+        <div class="occ-top">
+          <span class="occ-num">48</span>
+          <span class="occ-name">芳香萬壽菊</span>
+        </div>
+        <span class="occ-latin">Tagetes minuta</span>
+      </a>
+      <a href="compounds-01.html#oil-49" class="oil-compact-card" data-chem="cat01" data-name="萬壽菊" data-latin="tagetes erecta">
+        <div class="occ-top">
+          <span class="occ-num">49</span>
+          <span class="occ-name">萬壽菊</span>
+        </div>
+        <span class="occ-latin">Tagetes erecta</span>
+      </a>
+      <a href="compounds-01.html#oil-50" class="oil-compact-card" data-chem="cat01" data-name="夏白菊" data-latin="tanacetum parthenium">
+        <div class="occ-top">
+          <span class="occ-num">50</span>
+          <span class="occ-name">夏白菊</span>
+        </div>
+        <span class="occ-latin">Tanacetum parthenium</span>
+      </a>
+      <a href="compounds-01.html#oil-51" class="oil-compact-card" data-chem="cat01" data-name="艾菊" data-latin="tanacetum vulgare">
+        <div class="occ-top">
+          <span class="occ-num">51</span>
+          <span class="occ-name">艾菊</span>
+        </div>
+        <span class="occ-latin">Tanacetum vulgare</span>
+      </a>
+      <a href="compounds-01.html#oil-52" class="oil-compact-card" data-chem="cat01" data-name="側柏" data-latin="thuja occidentalis">
+        <div class="occ-top">
+          <span class="occ-num">52</span>
+          <span class="occ-name">側柏</span>
+        </div>
+        <span class="occ-latin">Thuja occidentalis</span>
+      </a>
+      <a href="compounds-01.html#oil-66" class="oil-compact-card" data-chem="cat01" data-name="圓葉當歸" data-latin="angelica archangelica">
+        <div class="occ-top">
+          <span class="occ-num">66</span>
+          <span class="occ-name">圓葉當歸</span>
+        </div>
+        <span class="occ-latin">Angelica archangelica</span>
+      </a>
+      <a href="compounds-01.html#oil-67" class="oil-compact-card" data-chem="cat01" data-name="歐防風" data-latin="pastinaca sativa">
+        <div class="occ-top">
+          <span class="occ-num">67</span>
+          <span class="occ-name">歐防風</span>
+        </div>
+        <span class="occ-latin">Pastinaca sativa</span>
+      </a>
+      <a href="compounds-01.html#oil-68" class="oil-compact-card" data-chem="cat01" data-name="木香" data-latin="saussurea costus">
+        <div class="occ-top">
+          <span class="occ-num">68</span>
+          <span class="occ-name">木香</span>
+        </div>
+        <span class="occ-latin">Saussurea costus</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- II · 香豆素與內酯類 -->
+  <section class="chem-section" data-chem="cat02" id="cat02">
+    <div class="chem-header">
+      <span class="chem-badge" style="background:#5A4A1A;">II · 香豆素與內酯類</span>
+      <div class="title-line"></div>
+      <span class="chem-count">12 種精油</span>
+    </div>
+    <div class="oil-compact-grid">
+      <a href="compounds-02.html#oil-54" class="oil-compact-card" data-chem="cat02" data-name="中國當歸" data-latin="angelica sinensis">
+        <div class="occ-top">
+          <span class="occ-num">54</span>
+          <span class="occ-name">中國當歸</span>
+        </div>
+        <span class="occ-latin">Angelica sinensis</span>
+      </a>
+      <a href="compounds-02.html#oil-55" class="oil-compact-card" data-chem="cat02" data-name="印度當歸" data-latin="angelica glauca">
+        <div class="occ-top">
+          <span class="occ-num">55</span>
+          <span class="occ-name">印度當歸</span>
+        </div>
+        <span class="occ-latin">Angelica glauca</span>
+      </a>
+      <a href="compounds-02.html#oil-56" class="oil-compact-card" data-chem="cat02" data-name="芹菜籽" data-latin="apium graveolens">
+        <div class="occ-top">
+          <span class="occ-num">56</span>
+          <span class="occ-name">芹菜籽</span>
+        </div>
+        <span class="occ-latin">Apium graveolens</span>
+      </a>
+      <a href="compounds-02.html#oil-57" class="oil-compact-card" data-chem="cat02" data-name="辣根" data-latin="armoracia rusticana">
+        <div class="occ-top">
+          <span class="occ-num">57</span>
+          <span class="occ-name">辣根</span>
+        </div>
+        <span class="occ-latin">Armoracia rusticana</span>
+      </a>
+      <a href="compounds-02.html#oil-58" class="oil-compact-card" data-chem="cat02" data-name="蒼朮" data-latin="atractylodes lancea">
+        <div class="occ-top">
+          <span class="occ-num">58</span>
+          <span class="occ-name">蒼朮</span>
+        </div>
+        <span class="occ-latin">Atractylodes lancea</span>
+      </a>
+      <a href="compounds-02.html#oil-59" class="oil-compact-card" data-chem="cat02" data-name="薑黃" data-latin="curcuma longa">
+        <div class="occ-top">
+          <span class="occ-num">59</span>
+          <span class="occ-name">薑黃</span>
+        </div>
+        <span class="occ-latin">Curcuma longa</span>
+      </a>
+      <a href="compounds-02.html#oil-60" class="oil-compact-card" data-chem="cat02" data-name="蛇床子" data-latin="cnidium monnieri">
+        <div class="occ-top">
+          <span class="occ-num">60</span>
+          <span class="occ-name">蛇床子</span>
+        </div>
+        <span class="occ-latin">Cnidium monnieri</span>
+      </a>
+      <a href="compounds-02.html#oil-61" class="oil-compact-card" data-chem="cat02" data-name="新幾內亞厚殼桂" data-latin="cryptocarya massoy">
+        <div class="occ-top">
+          <span class="occ-num">61</span>
+          <span class="occ-name">新幾內亞厚殼桂</span>
+        </div>
+        <span class="occ-latin">Cryptocarya massoy</span>
+      </a>
+      <a href="compounds-02.html#oil-62" class="oil-compact-card" data-chem="cat02" data-name="阿魏" data-latin="ferula assa-foetida">
+        <div class="occ-top">
+          <span class="occ-num">62</span>
+          <span class="occ-name">阿魏</span>
+        </div>
+        <span class="occ-latin">Ferula assa-foetida</span>
+      </a>
+      <a href="compounds-02.html#oil-63" class="oil-compact-card" data-chem="cat02" data-name="土木香" data-latin="inula helenium">
+        <div class="occ-top">
+          <span class="occ-num">63</span>
+          <span class="occ-name">土木香</span>
+        </div>
+        <span class="occ-latin">Inula helenium</span>
+      </a>
+      <a href="compounds-02.html#oil-64" class="oil-compact-card" data-chem="cat02" data-name="大花土木香" data-latin="inula graveolens">
+        <div class="occ-top">
+          <span class="occ-num">64</span>
+          <span class="occ-name">大花土木香</span>
+        </div>
+        <span class="occ-latin">Inula graveolens</span>
+      </a>
+      <a href="compounds-02.html#oil-65" class="oil-compact-card" data-chem="cat02" data-name="川芎" data-latin="ligusticum chuanxiong">
+        <div class="occ-top">
+          <span class="occ-num">65</span>
+          <span class="occ-name">川芎</span>
+        </div>
+        <span class="occ-latin">Ligusticum chuanxiong</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- III · 氧化物類 -->
+  <section class="chem-section" data-chem="cat03" id="cat03">
+    <div class="chem-header">
+      <span class="chem-badge" style="background:#1A4A5A;">III · 氧化物類</span>
+      <div class="title-line"></div>
+      <span class="chem-count">21 種精油</span>
+    </div>
+    <div class="oil-compact-grid">
+      <a href="compounds-03.html#oil-70" class="oil-compact-card" data-chem="cat03" data-name="芳樟葉" data-latin="cinnamomum camphora ct. linalool">
+        <div class="occ-top">
+          <span class="occ-num">70</span>
+          <span class="occ-name">芳樟葉</span>
+        </div>
+        <span class="occ-latin">Cinnamomum camphora ct. linalool</span>
+      </a>
+      <a href="compounds-03.html#oil-71" class="oil-compact-card" data-chem="cat03" data-name="小高良薑" data-latin="alpinia officinarum">
+        <div class="occ-top">
+          <span class="occ-num">71</span>
+          <span class="occ-name">小高良薑</span>
+        </div>
+        <span class="occ-latin">Alpinia officinarum</span>
+      </a>
+      <a href="compounds-03.html#oil-72" class="oil-compact-card" data-chem="cat03" data-name="月桂" data-latin="laurus nobilis">
+        <div class="occ-top">
+          <span class="occ-num">72</span>
+          <span class="occ-name">月桂</span>
+        </div>
+        <span class="occ-latin">Laurus nobilis</span>
+      </a>
+      <a href="compounds-03.html#oil-73" class="oil-compact-card" data-chem="cat03" data-name="桉油醇樟" data-latin="cinnamomum camphora ct. cineole">
+        <div class="occ-top">
+          <span class="occ-num">73</span>
+          <span class="occ-name">桉油醇樟</span>
+        </div>
+        <span class="occ-latin">Cinnamomum camphora ct. cineole</span>
+      </a>
+      <a href="compounds-03.html#oil-74" class="oil-compact-card" data-chem="cat03" data-name="妙嘉白千層" data-latin="melaleuca viridiflora">
+        <div class="occ-top">
+          <span class="occ-num">74</span>
+          <span class="occ-name">妙嘉白千層</span>
+        </div>
+        <span class="occ-latin">Melaleuca viridiflora</span>
+      </a>
+      <a href="compounds-03.html#oil-75" class="oil-compact-card" data-chem="cat03" data-name="豆蔻" data-latin="elettaria cardamomum">
+        <div class="occ-top">
+          <span class="occ-num">75</span>
+          <span class="occ-name">豆蔻</span>
+        </div>
+        <span class="occ-latin">Elettaria cardamomum</span>
+      </a>
+      <a href="compounds-03.html#oil-76" class="oil-compact-card" data-chem="cat03" data-name="藍膠尤加利" data-latin="eucalyptus globulus">
+        <div class="occ-top">
+          <span class="occ-num">76</span>
+          <span class="occ-name">藍膠尤加利</span>
+        </div>
+        <span class="occ-latin">Eucalyptus globulus</span>
+      </a>
+      <a href="compounds-03.html#oil-77" class="oil-compact-card" data-chem="cat03" data-name="史密斯尤加利" data-latin="eucalyptus smithii">
+        <div class="occ-top">
+          <span class="occ-num">77</span>
+          <span class="occ-name">史密斯尤加利</span>
+        </div>
+        <span class="occ-latin">Eucalyptus smithii</span>
+      </a>
+      <a href="compounds-03.html#oil-78" class="oil-compact-card" data-chem="cat03" data-name="澳洲尤加利" data-latin="eucalyptus radiata">
+        <div class="occ-top">
+          <span class="occ-num">78</span>
+          <span class="occ-name">澳洲尤加利</span>
+        </div>
+        <span class="occ-latin">Eucalyptus radiata</span>
+      </a>
+      <a href="compounds-03.html#oil-79" class="oil-compact-card" data-chem="cat03" data-name="露兜永久花" data-latin="helichrysum gymnocephalum">
+        <div class="occ-top">
+          <span class="occ-num">79</span>
+          <span class="occ-name">露兜永久花</span>
+        </div>
+        <span class="occ-latin">Helichrysum gymnocephalum</span>
+      </a>
+      <a href="compounds-03.html#oil-80" class="oil-compact-card" data-chem="cat03" data-name="高地牛膝草" data-latin="hyssopus officinalis var. decumbens">
+        <div class="occ-top">
+          <span class="occ-num">80</span>
+          <span class="occ-name">高地牛膝草</span>
+        </div>
+        <span class="occ-latin">Hyssopus officinalis var. decumbens</span>
+      </a>
+      <a href="compounds-03.html#oil-81" class="oil-compact-card" data-chem="cat03" data-name="印度月桂（桂葉）" data-latin="cinnamomum tamala">
+        <div class="occ-top">
+          <span class="occ-num">81</span>
+          <span class="occ-name">印度月桂（桂葉）</span>
+        </div>
+        <span class="occ-latin">Cinnamomum tamala</span>
+      </a>
+      <a href="compounds-03.html#oil-82" class="oil-compact-card" data-chem="cat03" data-name="穗花薰衣草" data-latin="lavandula latifolia">
+        <div class="occ-top">
+          <span class="occ-num">82</span>
+          <span class="occ-name">穗花薰衣草</span>
+        </div>
+        <span class="occ-latin">Lavandula latifolia</span>
+      </a>
+      <a href="compounds-03.html#oil-83" class="oil-compact-card" data-chem="cat03" data-name="白千層" data-latin="melaleuca cajuputi">
+        <div class="occ-top">
+          <span class="occ-num">83</span>
+          <span class="occ-name">白千層</span>
+        </div>
+        <span class="occ-latin">Melaleuca cajuputi</span>
+      </a>
+      <a href="compounds-03.html#oil-84" class="oil-compact-card" data-chem="cat03" data-name="綠花白千層" data-latin="melaleuca quinquenervia ct. cineole">
+        <div class="occ-top">
+          <span class="occ-num">84</span>
+          <span class="occ-name">綠花白千層</span>
+        </div>
+        <span class="occ-latin">Melaleuca quinquenervia ct. cineole</span>
+      </a>
+      <a href="compounds-03.html#oil-85" class="oil-compact-card" data-chem="cat03" data-name="掃帚茶樹" data-latin="leptospermum scoparium">
+        <div class="occ-top">
+          <span class="occ-num">85</span>
+          <span class="occ-name">掃帚茶樹</span>
+        </div>
+        <span class="occ-latin">Leptospermum scoparium</span>
+      </a>
+      <a href="compounds-03.html#oil-86" class="oil-compact-card" data-chem="cat03" data-name="香桃木" data-latin="myrtus communis ct. cineole">
+        <div class="occ-top">
+          <span class="occ-num">86</span>
+          <span class="occ-name">香桃木</span>
+        </div>
+        <span class="occ-latin">Myrtus communis ct. cineole</span>
+      </a>
+      <a href="compounds-03.html#oil-87" class="oil-compact-card" data-chem="cat03" data-name="桉油醇迷迭香" data-latin="rosmarinus officinalis ct. cineole">
+        <div class="occ-top">
+          <span class="occ-num">87</span>
+          <span class="occ-name">桉油醇迷迭香</span>
+        </div>
+        <span class="occ-latin">Rosmarinus officinalis ct. cineole</span>
+      </a>
+      <a href="compounds-03.html#oil-88" class="oil-compact-card" data-chem="cat03" data-name="三葉鼠尾草" data-latin="salvia fruticosa">
+        <div class="occ-top">
+          <span class="occ-num">88</span>
+          <span class="occ-name">三葉鼠尾草</span>
+        </div>
+        <span class="occ-latin">Salvia fruticosa</span>
+      </a>
+      <a href="compounds-03.html#oil-89" class="oil-compact-card" data-chem="cat03" data-name="圓葉當歸" data-latin="levisticum officinale">
+        <div class="occ-top">
+          <span class="occ-num">89</span>
+          <span class="occ-name">圓葉當歸</span>
+        </div>
+        <span class="occ-latin">Levisticum officinale</span>
+      </a>
+      <a href="compounds-03.html#oil-90" class="oil-compact-card" data-chem="cat03" data-name="鳳梨香百里香" data-latin="thymus mastichina">
+        <div class="occ-top">
+          <span class="occ-num">90</span>
+          <span class="occ-name">鳳梨香百里香</span>
+        </div>
+        <span class="occ-latin">Thymus mastichina</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- IV · 倍半萜烯類 -->
+  <section class="chem-section" data-chem="cat04" id="cat04">
+    <div class="chem-header">
+      <span class="chem-badge" style="background:#2A3A2A;">IV · 倍半萜烯類</span>
+      <div class="title-line"></div>
+      <span class="chem-count">29 種精油</span>
+    </div>
+    <div class="oil-compact-grid">
+      <a href="compounds-04.html#oil-92" class="oil-compact-card" data-chem="cat04" data-name="西洋蓍草" data-latin="achillea millefolium">
+        <div class="occ-top">
+          <span class="occ-num">92</span>
+          <span class="occ-name">西洋蓍草</span>
+        </div>
+        <span class="occ-latin">Achillea millefolium</span>
+      </a>
+      <a href="compounds-04.html#oil-93" class="oil-compact-card" data-chem="cat04" data-name="樹蘭" data-latin="aglaia odorata">
+        <div class="occ-top">
+          <span class="occ-num">93</span>
+          <span class="occ-name">樹蘭</span>
+        </div>
+        <span class="occ-latin">Aglaia odorata</span>
+      </a>
+      <a href="compounds-04.html#oil-94" class="oil-compact-card" data-chem="cat04" data-name="樹艾" data-latin="artemisia arborescens">
+        <div class="occ-top">
+          <span class="occ-num">94</span>
+          <span class="occ-name">樹艾</span>
+        </div>
+        <span class="occ-latin">Artemisia arborescens</span>
+      </a>
+      <a href="compounds-04.html#oil-95" class="oil-compact-card" data-chem="cat04" data-name="澳洲藍絲柏" data-latin="callitris intratropica">
+        <div class="occ-top">
+          <span class="occ-num">95</span>
+          <span class="occ-name">澳洲藍絲柏</span>
+        </div>
+        <span class="occ-latin">Callitris intratropica</span>
+      </a>
+      <a href="compounds-04.html#oil-96" class="oil-compact-card" data-chem="cat04" data-name="大麻" data-latin="cannabis sativa">
+        <div class="occ-top">
+          <span class="occ-num">96</span>
+          <span class="occ-name">大麻</span>
+        </div>
+        <span class="occ-latin">Cannabis sativa</span>
+      </a>
+      <a href="compounds-04.html#oil-97" class="oil-compact-card" data-chem="cat04" data-name="依蘭" data-latin="cananga odorata">
+        <div class="occ-top">
+          <span class="occ-num">97</span>
+          <span class="occ-name">依蘭</span>
+        </div>
+        <span class="occ-latin">Cananga odorata</span>
+      </a>
+      <a href="compounds-04.html#oil-98" class="oil-compact-card" data-chem="cat04" data-name="大葉依蘭" data-latin="cananga odorata var. macrophylla">
+        <div class="occ-top">
+          <span class="occ-num">98</span>
+          <span class="occ-name">大葉依蘭</span>
+        </div>
+        <span class="occ-latin">Cananga odorata var. macrophylla</span>
+      </a>
+      <a href="compounds-04.html#oil-99" class="oil-compact-card" data-chem="cat04" data-name="卡塔菲" data-latin="cedrelopsis grevei">
+        <div class="occ-top">
+          <span class="occ-num">99</span>
+          <span class="occ-name">卡塔菲</span>
+        </div>
+        <span class="occ-latin">Cedrelopsis grevei</span>
+      </a>
+      <a href="compounds-04.html#oil-100" class="oil-compact-card" data-chem="cat04" data-name="台灣紅檜" data-latin="chamaecyparis formosensis">
+        <div class="occ-top">
+          <span class="occ-num">100</span>
+          <span class="occ-name">台灣紅檜</span>
+        </div>
+        <span class="occ-latin">Chamaecyparis formosensis</span>
+      </a>
+      <a href="compounds-04.html#oil-101" class="oil-compact-card" data-chem="cat04" data-name="日本扁柏" data-latin="chamaecyparis obtusa">
+        <div class="occ-top">
+          <span class="occ-num">101</span>
+          <span class="occ-name">日本扁柏</span>
+        </div>
+        <span class="occ-latin">Chamaecyparis obtusa</span>
+      </a>
+      <a href="compounds-04.html#oil-102" class="oil-compact-card" data-chem="cat04" data-name="沒藥" data-latin="commiphora myrrha">
+        <div class="occ-top">
+          <span class="occ-num">102</span>
+          <span class="occ-name">沒藥</span>
+        </div>
+        <span class="occ-latin">Commiphora myrrha</span>
+      </a>
+      <a href="compounds-04.html#oil-103" class="oil-compact-card" data-chem="cat04" data-name="紅沒藥" data-latin="commiphora guidottii">
+        <div class="occ-top">
+          <span class="occ-num">103</span>
+          <span class="occ-name">紅沒藥</span>
+        </div>
+        <span class="occ-latin">Commiphora guidottii</span>
+      </a>
+      <a href="compounds-04.html#oil-104" class="oil-compact-card" data-chem="cat04" data-name="古巴香脂" data-latin="copaifera officinalis">
+        <div class="occ-top">
+          <span class="occ-num">104</span>
+          <span class="occ-name">古巴香脂</span>
+        </div>
+        <span class="occ-latin">Copaifera officinalis</span>
+      </a>
+      <a href="compounds-04.html#oil-105" class="oil-compact-card" data-chem="cat04" data-name="馬鞭草破布子" data-latin="cordia verbenacea">
+        <div class="occ-top">
+          <span class="occ-num">105</span>
+          <span class="occ-name">馬鞭草破布子</span>
+        </div>
+        <span class="occ-latin">Cordia verbenacea</span>
+      </a>
+      <a href="compounds-04.html#oil-106" class="oil-compact-card" data-chem="cat04" data-name="香脂木" data-latin="dacrydium fonkii">
+        <div class="occ-top">
+          <span class="occ-num">106</span>
+          <span class="occ-name">香脂木</span>
+        </div>
+        <span class="occ-latin">Dacrydium fonkii</span>
+      </a>
+      <a href="compounds-04.html#oil-107" class="oil-compact-card" data-chem="cat04" data-name="古芸香脂" data-latin="guaijawood / bulnesia sarmientoi">
+        <div class="occ-top">
+          <span class="occ-num">107</span>
+          <span class="occ-name">古芸香脂</span>
+        </div>
+        <span class="occ-latin">Guaijawood / Bulnesia sarmientoi</span>
+      </a>
+      <a href="compounds-04.html#oil-108" class="oil-compact-card" data-chem="cat04" data-name="德國洋甘菊" data-latin="matricaria chamomilla">
+        <div class="occ-top">
+          <span class="occ-num">108</span>
+          <span class="occ-name">德國洋甘菊</span>
+        </div>
+        <span class="occ-latin">Matricaria chamomilla</span>
+      </a>
+      <a href="compounds-04.html#oil-109" class="oil-compact-card" data-chem="cat04" data-name="蛇麻草" data-latin="humulus lupulus">
+        <div class="occ-top">
+          <span class="occ-num">109</span>
+          <span class="occ-name">蛇麻草</span>
+        </div>
+        <span class="occ-latin">Humulus lupulus</span>
+      </a>
+      <a href="compounds-04.html#oil-110" class="oil-compact-card" data-chem="cat04" data-name="聖約翰草" data-latin="hypericum perforatum">
+        <div class="occ-top">
+          <span class="occ-num">110</span>
+          <span class="occ-name">聖約翰草</span>
+        </div>
+        <span class="occ-latin">Hypericum perforatum</span>
+      </a>
+      <a href="compounds-04.html#oil-111" class="oil-compact-card" data-chem="cat04" data-name="刺檜木" data-latin="juniperus oxycedrus">
+        <div class="occ-top">
+          <span class="occ-num">111</span>
+          <span class="occ-name">刺檜木</span>
+        </div>
+        <span class="occ-latin">Juniperus oxycedrus</span>
+      </a>
+      <a href="compounds-04.html#oil-112" class="oil-compact-card" data-chem="cat04" data-name="維吉尼亞雪松" data-latin="juniperus virginiana">
+        <div class="occ-top">
+          <span class="occ-num">112</span>
+          <span class="occ-name">維吉尼亞雪松</span>
+        </div>
+        <span class="occ-latin">Juniperus virginiana</span>
+      </a>
+      <a href="compounds-04.html#oil-113" class="oil-compact-card" data-chem="cat04" data-name="穗甘松" data-latin="nardostachys jatamansi">
+        <div class="occ-top">
+          <span class="occ-num">113</span>
+          <span class="occ-name">穗甘松</span>
+        </div>
+        <span class="occ-latin">Nardostachys jatamansi</span>
+      </a>
+      <a href="compounds-04.html#oil-114" class="oil-compact-card" data-chem="cat04" data-name="中國甘松" data-latin="nardostachys chinensis">
+        <div class="occ-top">
+          <span class="occ-num">114</span>
+          <span class="occ-name">中國甘松</span>
+        </div>
+        <span class="occ-latin">Nardostachys chinensis</span>
+      </a>
+      <a href="compounds-04.html#oil-115" class="oil-compact-card" data-chem="cat04" data-name="番石榴葉" data-latin="psidium guajava">
+        <div class="occ-top">
+          <span class="occ-num">115</span>
+          <span class="occ-name">番石榴葉</span>
+        </div>
+        <span class="occ-latin">Psidium guajava</span>
+      </a>
+      <a href="compounds-04.html#oil-116" class="oil-compact-card" data-chem="cat04" data-name="五味子" data-latin="schisandra chinensis">
+        <div class="occ-top">
+          <span class="occ-num">116</span>
+          <span class="occ-name">五味子</span>
+        </div>
+        <span class="occ-latin">Schisandra chinensis</span>
+      </a>
+      <a href="compounds-04.html#oil-117" class="oil-compact-card" data-chem="cat04" data-name="一枝黃花" data-latin="solidago canadensis">
+        <div class="occ-top">
+          <span class="occ-num">117</span>
+          <span class="occ-name">一枝黃花</span>
+        </div>
+        <span class="occ-latin">Solidago canadensis</span>
+      </a>
+      <a href="compounds-04.html#oil-118" class="oil-compact-card" data-chem="cat04" data-name="摩洛哥藍艾菊" data-latin="tanacetum annuum">
+        <div class="occ-top">
+          <span class="occ-num">118</span>
+          <span class="occ-name">摩洛哥藍艾菊</span>
+        </div>
+        <span class="occ-latin">Tanacetum annuum</span>
+      </a>
+      <a href="compounds-04.html#oil-119" class="oil-compact-card" data-chem="cat04" data-name="頭狀香科" data-latin="cyperus scariosus">
+        <div class="occ-top">
+          <span class="occ-num">119</span>
+          <span class="occ-name">頭狀香科</span>
+        </div>
+        <span class="occ-latin">Cyperus scariosus</span>
+      </a>
+      <a href="compounds-04.html#oil-120" class="oil-compact-card" data-chem="cat04" data-name="薑" data-latin="zingiber officinale">
+        <div class="occ-top">
+          <span class="occ-num">120</span>
+          <span class="occ-name">薑</span>
+        </div>
+        <span class="occ-latin">Zingiber officinale</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- V · 醛類 -->
+  <section class="chem-section" data-chem="cat05" id="cat05">
+    <div class="chem-header">
+      <span class="chem-badge" style="background:#5A3A1A;">V · 醛類</span>
+      <div class="title-line"></div>
+      <span class="chem-count">16 種精油</span>
+    </div>
+    <div class="oil-compact-grid">
+      <a href="compounds-05.html#oil-122" class="oil-compact-card" data-chem="cat05" data-name="菖蒲" data-latin="acorus calamus">
+        <div class="occ-top">
+          <span class="occ-num">122</span>
+          <span class="occ-name">菖蒲</span>
+        </div>
+        <span class="occ-latin">Acorus calamus</span>
+      </a>
+      <a href="compounds-05.html#oil-123" class="oil-compact-card" data-chem="cat05" data-name="龍艾" data-latin="artemisia dracunculus">
+        <div class="occ-top">
+          <span class="occ-num">123</span>
+          <span class="occ-name">龍艾</span>
+        </div>
+        <span class="occ-latin">Artemisia dracunculus</span>
+      </a>
+      <a href="compounds-05.html#oil-124" class="oil-compact-card" data-chem="cat05" data-name="茴香" data-latin="foeniculum vulgare">
+        <div class="occ-top">
+          <span class="occ-num">124</span>
+          <span class="occ-name">茴香</span>
+        </div>
+        <span class="occ-latin">Foeniculum vulgare</span>
+      </a>
+      <a href="compounds-05.html#oil-125" class="oil-compact-card" data-chem="cat05" data-name="金合歡茶樹" data-latin="melaleuca decora">
+        <div class="occ-top">
+          <span class="occ-num">125</span>
+          <span class="occ-name">金合歡茶樹</span>
+        </div>
+        <span class="occ-latin">Melaleuca decora</span>
+      </a>
+      <a href="compounds-05.html#oil-126" class="oil-compact-card" data-chem="cat05" data-name="鹹亞茶樹" data-latin="melaleuca cajuputi">
+        <div class="occ-top">
+          <span class="occ-num">126</span>
+          <span class="occ-name">鹹亞茶樹</span>
+        </div>
+        <span class="occ-latin">Melaleuca cajuputi</span>
+      </a>
+      <a href="compounds-05.html#oil-127" class="oil-compact-card" data-chem="cat05" data-name="肉豆蔻" data-latin="myristica fragrans">
+        <div class="occ-top">
+          <span class="occ-num">127</span>
+          <span class="occ-name">肉豆蔻</span>
+        </div>
+        <span class="occ-latin">Myristica fragrans</span>
+      </a>
+      <a href="compounds-05.html#oil-128" class="oil-compact-card" data-chem="cat05" data-name="粉紅蓮花" data-latin="nelumbo nucifera">
+        <div class="occ-top">
+          <span class="occ-num">128</span>
+          <span class="occ-name">粉紅蓮花</span>
+        </div>
+        <span class="occ-latin">Nelumbo nucifera</span>
+      </a>
+      <a href="compounds-05.html#oil-129" class="oil-compact-card" data-chem="cat05" data-name="熱帶羅勒" data-latin="ocimum basilicum ct. methyl chavicol">
+        <div class="occ-top">
+          <span class="occ-num">129</span>
+          <span class="occ-name">熱帶羅勒</span>
+        </div>
+        <span class="occ-latin">Ocimum basilicum ct. methyl chavicol</span>
+      </a>
+      <a href="compounds-05.html#oil-130" class="oil-compact-card" data-chem="cat05" data-name="露兜花" data-latin="pandanus odoratissimus">
+        <div class="occ-top">
+          <span class="occ-num">130</span>
+          <span class="occ-name">露兜花</span>
+        </div>
+        <span class="occ-latin">Pandanus odoratissimus</span>
+      </a>
+      <a href="compounds-05.html#oil-131" class="oil-compact-card" data-chem="cat05" data-name="歐白芷" data-latin="angelica archangelica">
+        <div class="occ-top">
+          <span class="occ-num">131</span>
+          <span class="occ-name">歐白芷</span>
+        </div>
+        <span class="occ-latin">Angelica archangelica</span>
+      </a>
+      <a href="compounds-05.html#oil-132" class="oil-compact-card" data-chem="cat05" data-name="平葉歐芹" data-latin="petroselinum crispum">
+        <div class="occ-top">
+          <span class="occ-num">132</span>
+          <span class="occ-name">平葉歐芹</span>
+        </div>
+        <span class="occ-latin">Petroselinum crispum</span>
+      </a>
+      <a href="compounds-05.html#oil-133" class="oil-compact-card" data-chem="cat05" data-name="洋茴香" data-latin="pimpinella anisum">
+        <div class="occ-top">
+          <span class="occ-num">133</span>
+          <span class="occ-name">洋茴香</span>
+        </div>
+        <span class="occ-latin">Pimpinella anisum</span>
+      </a>
+      <a href="compounds-05.html#oil-134" class="oil-compact-card" data-chem="cat05" data-name="西部黃松" data-latin="pinus ponderosa">
+        <div class="occ-top">
+          <span class="occ-num">134</span>
+          <span class="occ-name">西部黃松</span>
+        </div>
+        <span class="occ-latin">Pinus ponderosa</span>
+      </a>
+      <a href="compounds-05.html#oil-135" class="oil-compact-card" data-chem="cat05" data-name="洋茴香蘿文莎葉" data-latin="ravensara anisata">
+        <div class="occ-top">
+          <span class="occ-num">135</span>
+          <span class="occ-name">洋茴香蘿文莎葉</span>
+        </div>
+        <span class="occ-latin">Ravensara anisata</span>
+      </a>
+      <a href="compounds-05.html#oil-136" class="oil-compact-card" data-chem="cat05" data-name="防風" data-latin="levisticum officinale">
+        <div class="occ-top">
+          <span class="occ-num">136</span>
+          <span class="occ-name">防風</span>
+        </div>
+        <span class="occ-latin">Levisticum officinale</span>
+      </a>
+      <a href="compounds-05.html#oil-137" class="oil-compact-card" data-chem="cat05" data-name="甜萬壽菊" data-latin="tagetes lucida">
+        <div class="occ-top">
+          <span class="occ-num">137</span>
+          <span class="occ-name">甜萬壽菊</span>
+        </div>
+        <span class="occ-latin">Tagetes lucida</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- VI · 酯類 -->
+  <section class="chem-section" data-chem="cat06" id="cat06">
+    <div class="chem-header">
+      <span class="chem-badge" style="background:#3A5A1A;">VI · 酯類</span>
+      <div class="title-line"></div>
+      <span class="chem-count">15 種精油</span>
+    </div>
+    <div class="oil-compact-grid">
+      <a href="compounds-06.html#oil-139" class="oil-compact-card" data-chem="cat06" data-name="檸檬香桃木" data-latin="backhousia citriodora">
+        <div class="occ-top">
+          <span class="occ-num">139</span>
+          <span class="occ-name">檸檬香桃木</span>
+        </div>
+        <span class="occ-latin">Backhousia citriodora</span>
+      </a>
+      <a href="compounds-06.html#oil-140" class="oil-compact-card" data-chem="cat06" data-name="泰國青檸葉" data-latin="citrus hystrix">
+        <div class="occ-top">
+          <span class="occ-num">140</span>
+          <span class="occ-name">泰國青檸葉</span>
+        </div>
+        <span class="occ-latin">Citrus hystrix</span>
+      </a>
+      <a href="compounds-06.html#oil-141" class="oil-compact-card" data-chem="cat06" data-name="檸檬葉" data-latin="citrus limon (petitgrain)">
+        <div class="occ-top">
+          <span class="occ-num">141</span>
+          <span class="occ-name">檸檬葉</span>
+        </div>
+        <span class="occ-latin">Citrus limon (Petitgrain)</span>
+      </a>
+      <a href="compounds-06.html#oil-142" class="oil-compact-card" data-chem="cat06" data-name="檸檬香茅" data-latin="cymbopogon citratus">
+        <div class="occ-top">
+          <span class="occ-num">142</span>
+          <span class="occ-name">檸檬香茅</span>
+        </div>
+        <span class="occ-latin">Cymbopogon citratus</span>
+      </a>
+      <a href="compounds-06.html#oil-143" class="oil-compact-card" data-chem="cat06" data-name="爪哇香茅" data-latin="cymbopogon winterianus">
+        <div class="occ-top">
+          <span class="occ-num">143</span>
+          <span class="occ-name">爪哇香茅</span>
+        </div>
+        <span class="occ-latin">Cymbopogon winterianus</span>
+      </a>
+      <a href="compounds-06.html#oil-144" class="oil-compact-card" data-chem="cat06" data-name="檸檬尤加利" data-latin="corymbia citriodora">
+        <div class="occ-top">
+          <span class="occ-num">144</span>
+          <span class="occ-name">檸檬尤加利</span>
+        </div>
+        <span class="occ-latin">Corymbia citriodora</span>
+      </a>
+      <a href="compounds-06.html#oil-145" class="oil-compact-card" data-chem="cat06" data-name="史密斯尤加利" data-latin="eucalyptus smithii">
+        <div class="occ-top">
+          <span class="occ-num">145</span>
+          <span class="occ-name">史密斯尤加利</span>
+        </div>
+        <span class="occ-latin">Eucalyptus smithii</span>
+      </a>
+      <a href="compounds-06.html#oil-146" class="oil-compact-card" data-chem="cat06" data-name="檸檬細籽" data-latin="leptospermum petersonii">
+        <div class="occ-top">
+          <span class="occ-num">146</span>
+          <span class="occ-name">檸檬細籽</span>
+        </div>
+        <span class="occ-latin">Leptospermum petersonii</span>
+      </a>
+      <a href="compounds-06.html#oil-147" class="oil-compact-card" data-chem="cat06" data-name="檸檬馬鞭草" data-latin="aloysia citrodora">
+        <div class="occ-top">
+          <span class="occ-num">147</span>
+          <span class="occ-name">檸檬馬鞭草</span>
+        </div>
+        <span class="occ-latin">Aloysia citrodora</span>
+      </a>
+      <a href="compounds-06.html#oil-148" class="oil-compact-card" data-chem="cat06" data-name="山雞椒" data-latin="litsea cubeba">
+        <div class="occ-top">
+          <span class="occ-num">148</span>
+          <span class="occ-name">山雞椒</span>
+        </div>
+        <span class="occ-latin">Litsea cubeba</span>
+      </a>
+      <a href="compounds-06.html#oil-149" class="oil-compact-card" data-chem="cat06" data-name="蜂蜜香桃木" data-latin="melaleuca teretifolia">
+        <div class="occ-top">
+          <span class="occ-num">149</span>
+          <span class="occ-name">蜂蜜香桃木</span>
+        </div>
+        <span class="occ-latin">Melaleuca teretifolia</span>
+      </a>
+      <a href="compounds-06.html#oil-150" class="oil-compact-card" data-chem="cat06" data-name="香蜂草" data-latin="melissa officinalis">
+        <div class="occ-top">
+          <span class="occ-num">150</span>
+          <span class="occ-name">香蜂草</span>
+        </div>
+        <span class="occ-latin">Melissa officinalis</span>
+      </a>
+      <a href="compounds-06.html#oil-151" class="oil-compact-card" data-chem="cat06" data-name="檸檬桉粉" data-latin="eucalyptus staigeriana">
+        <div class="occ-top">
+          <span class="occ-num">151</span>
+          <span class="occ-name">檸檬桉粉</span>
+        </div>
+        <span class="occ-latin">Eucalyptus staigeriana</span>
+      </a>
+      <a href="compounds-06.html#oil-152" class="oil-compact-card" data-chem="cat06" data-name="紫蘇" data-latin="perilla frutescens">
+        <div class="occ-top">
+          <span class="occ-num">152</span>
+          <span class="occ-name">紫蘇</span>
+        </div>
+        <span class="occ-latin">Perilla frutescens</span>
+      </a>
+      <a href="compounds-06.html#oil-153" class="oil-compact-card" data-chem="cat06" data-name="馬魯科" data-latin="aeollanthus suaveolens">
+        <div class="occ-top">
+          <span class="occ-num">153</span>
+          <span class="occ-name">馬魯科</span>
+        </div>
+        <span class="occ-latin">Aeollanthus suaveolens</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- VII-1 · 脂類 -->
+  <section class="chem-section" data-chem="cat07a" id="cat07a">
+    <div class="chem-header">
+      <span class="chem-badge" style="background:#2A4A3A;">VII-1 · 脂類</span>
+      <div class="title-line"></div>
+      <span class="chem-count">17 種精油</span>
+    </div>
+    <div class="oil-compact-grid">
+      <a href="compounds-07a.html#oil-156" class="oil-compact-card" data-chem="cat07a" data-name="同密助" data-latin="dipteryx odorata">
+        <div class="occ-top">
+          <span class="occ-num">156</span>
+          <span class="occ-name">同密助</span>
+        </div>
+        <span class="occ-latin">Dipteryx odorata</span>
+      </a>
+      <a href="compounds-07a.html#oil-157" class="oil-compact-card" data-chem="cat07a" data-name="羅馬洋甘菊" data-latin="chamaemelum nobile">
+        <div class="occ-top">
+          <span class="occ-num">157</span>
+          <span class="occ-name">羅馬洋甘菊</span>
+        </div>
+        <span class="occ-latin">Chamaemelum nobile</span>
+      </a>
+      <a href="compounds-07a.html#oil-158" class="oil-compact-card" data-chem="cat07a" data-name="墨西哥沉香" data-latin="bursera delpechiana">
+        <div class="occ-top">
+          <span class="occ-num">158</span>
+          <span class="occ-name">墨西哥沉香</span>
+        </div>
+        <span class="occ-latin">Bursera delpechiana</span>
+      </a>
+      <a href="compounds-07a.html#oil-159" class="oil-compact-card" data-chem="cat07a" data-name="苦橙葉" data-latin="citrus aurantium (leaves)">
+        <div class="occ-top">
+          <span class="occ-num">159</span>
+          <span class="occ-name">苦橙葉</span>
+        </div>
+        <span class="occ-latin">Citrus aurantium (leaves)</span>
+      </a>
+      <a href="compounds-07a.html#oil-160" class="oil-compact-card" data-chem="cat07a" data-name="佛手柑" data-latin="citrus bergamia">
+        <div class="occ-top">
+          <span class="occ-num">160</span>
+          <span class="occ-name">佛手柑</span>
+        </div>
+        <span class="occ-latin">Citrus bergamia</span>
+      </a>
+      <a href="compounds-07a.html#oil-161" class="oil-compact-card" data-chem="cat07a" data-name="小飛蓬" data-latin="erigeron canadensis">
+        <div class="occ-top">
+          <span class="occ-num">161</span>
+          <span class="occ-name">小飛蓬</span>
+        </div>
+        <span class="occ-latin">Erigeron canadensis</span>
+      </a>
+      <a href="compounds-07a.html#oil-162" class="oil-compact-card" data-chem="cat07a" data-name="崢角白梅" data-latin="baeckea frutescens">
+        <div class="occ-top">
+          <span class="occ-num">162</span>
+          <span class="occ-name">崢角白梅</span>
+        </div>
+        <span class="occ-latin">Baeckea frutescens</span>
+      </a>
+      <a href="compounds-07a.html#oil-163" class="oil-compact-card" data-chem="cat07a" data-name="玫瑰尤加利" data-latin="eucalyptus rhodantha">
+        <div class="occ-top">
+          <span class="occ-num">163</span>
+          <span class="occ-name">玫瑰尤加利</span>
+        </div>
+        <span class="occ-latin">Eucalyptus rhodantha</span>
+      </a>
+      <a href="compounds-07a.html#oil-164" class="oil-compact-card" data-chem="cat07a" data-name="黃葵" data-latin="abelmoschus moschatus">
+        <div class="occ-top">
+          <span class="occ-num">164</span>
+          <span class="occ-name">黃葵</span>
+        </div>
+        <span class="occ-latin">Abelmoschus moschatus</span>
+      </a>
+      <a href="compounds-07a.html#oil-165" class="oil-compact-card" data-chem="cat07a" data-name="真正薰衣草" data-latin="lavandula angustifolia">
+        <div class="occ-top">
+          <span class="occ-num">165</span>
+          <span class="occ-name">真正薰衣草</span>
+        </div>
+        <span class="occ-latin">Lavandula angustifolia</span>
+      </a>
+      <a href="compounds-07a.html#oil-166" class="oil-compact-card" data-chem="cat07a" data-name="醒目薰衣草" data-latin="lavandula x intermedia">
+        <div class="occ-top">
+          <span class="occ-num">166</span>
+          <span class="occ-name">醒目薰衣草</span>
+        </div>
+        <span class="occ-latin">Lavandula x intermedia</span>
+      </a>
+      <a href="compounds-07a.html#oil-167" class="oil-compact-card" data-chem="cat07a" data-name="檸檬薄荷" data-latin="mentha citrata">
+        <div class="occ-top">
+          <span class="occ-num">167</span>
+          <span class="occ-name">檸檬薄荷</span>
+        </div>
+        <span class="occ-latin">Mentha citrata</span>
+      </a>
+      <a href="compounds-07a.html#oil-168" class="oil-compact-card" data-chem="cat07a" data-name="含笑" data-latin="michelia figo">
+        <div class="occ-top">
+          <span class="occ-num">168</span>
+          <span class="occ-name">含笑</span>
+        </div>
+        <span class="occ-latin">Michelia figo</span>
+      </a>
+      <a href="compounds-07a.html#oil-169" class="oil-compact-card" data-chem="cat07a" data-name="紅香桃木" data-latin="myrtus communis (ct. myrtenyl acetate)">
+        <div class="occ-top">
+          <span class="occ-num">169</span>
+          <span class="occ-name">紅香桃木</span>
+        </div>
+        <span class="occ-latin">Myrtus communis (ct. myrtenyl acetate)</span>
+      </a>
+      <a href="compounds-07a.html#oil-170" class="oil-compact-card" data-chem="cat07a" data-name="水果鼠尾草" data-latin="salvia dorisiana">
+        <div class="occ-top">
+          <span class="occ-num">170</span>
+          <span class="occ-name">水果鼠尾草</span>
+        </div>
+        <span class="occ-latin">Salvia dorisiana</span>
+      </a>
+      <a href="compounds-07a.html#oil-171" class="oil-compact-card" data-chem="cat07a" data-name="快樂鼠尾草" data-latin="salvia sclarea">
+        <div class="occ-top">
+          <span class="occ-num">171</span>
+          <span class="occ-name">快樂鼠尾草</span>
+        </div>
+        <span class="occ-latin">Salvia sclarea</span>
+      </a>
+      <a href="compounds-07a.html#oil-172" class="oil-compact-card" data-chem="cat07a" data-name="蘆爪豆" data-latin="spartium junceum">
+        <div class="occ-top">
+          <span class="occ-num">172</span>
+          <span class="occ-name">蘆爪豆</span>
+        </div>
+        <span class="occ-latin">Spartium junceum</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- VII-2 · 苯基酯類 -->
+  <section class="chem-section" data-chem="cat07b" id="cat07b">
+    <div class="chem-header">
+      <span class="chem-badge" style="background:#5A2A3A;">VII-2 · 苯基酯類</span>
+      <div class="title-line"></div>
+      <span class="chem-count">19 種精油</span>
+    </div>
+    <div class="oil-compact-grid">
+      <a href="compounds-07b.html#oil-174" class="oil-compact-card" data-chem="cat07b" data-name="銀合歡" data-latin="acacia dealbata">
+        <div class="occ-top">
+          <span class="occ-num">174</span>
+          <span class="occ-name">銀合歡</span>
+        </div>
+        <span class="occ-latin">Acacia dealbata</span>
+      </a>
+      <a href="compounds-07b.html#oil-175" class="oil-compact-card" data-chem="cat07b" data-name="大高良薑" data-latin="alpinia galanga">
+        <div class="occ-top">
+          <span class="occ-num">175</span>
+          <span class="occ-name">大高良薑</span>
+        </div>
+        <span class="occ-latin">Alpinia galanga</span>
+      </a>
+      <a href="compounds-07b.html#oil-176" class="oil-compact-card" data-chem="cat07b" data-name="蕕櫛" data-latin="caryopteris incana">
+        <div class="occ-top">
+          <span class="occ-num">176</span>
+          <span class="occ-name">蕕櫛</span>
+        </div>
+        <span class="occ-latin">Caryopteris incana</span>
+      </a>
+      <a href="compounds-07b.html#oil-177" class="oil-compact-card" data-chem="cat07b" data-name="波羅尼花" data-latin="boronia megastigma">
+        <div class="occ-top">
+          <span class="occ-num">177</span>
+          <span class="occ-name">波羅尼花</span>
+        </div>
+        <span class="occ-latin">Boronia megastigma</span>
+      </a>
+      <a href="compounds-07b.html#oil-178" class="oil-compact-card" data-chem="cat07b" data-name="蘇剛達" data-latin="cinnamomum glaucescens">
+        <div class="occ-top">
+          <span class="occ-num">178</span>
+          <span class="occ-name">蘇剛達</span>
+        </div>
+        <span class="occ-latin">Cinnamomum glaucescens</span>
+      </a>
+      <a href="compounds-07b.html#oil-179" class="oil-compact-card" data-chem="cat07b" data-name="桔葉" data-latin="citrus reticulata (leaves)">
+        <div class="occ-top">
+          <span class="occ-num">179</span>
+          <span class="occ-name">桔葉</span>
+        </div>
+        <span class="occ-latin">Citrus reticulata (leaves)</span>
+      </a>
+      <a href="compounds-07b.html#oil-180" class="oil-compact-card" data-chem="cat07b" data-name="沙漠花" data-latin="cistus ladanifer">
+        <div class="occ-top">
+          <span class="occ-num">180</span>
+          <span class="occ-name">沙漠花</span>
+        </div>
+        <span class="occ-latin">Cistus ladanifer</span>
+      </a>
+      <a href="compounds-07b.html#oil-181" class="oil-compact-card" data-chem="cat07b" data-name="芳香白珠" data-latin="gaultheria fragrantissima">
+        <div class="occ-top">
+          <span class="occ-num">181</span>
+          <span class="occ-name">芳香白珠</span>
+        </div>
+        <span class="occ-latin">Gaultheria fragrantissima</span>
+      </a>
+      <a href="compounds-07b.html#oil-182" class="oil-compact-card" data-chem="cat07b" data-name="大花茉莉" data-latin="jasminum grandiflorum">
+        <div class="occ-top">
+          <span class="occ-num">182</span>
+          <span class="occ-name">大花茉莉</span>
+        </div>
+        <span class="occ-latin">Jasminum grandiflorum</span>
+      </a>
+      <a href="compounds-07b.html#oil-183" class="oil-compact-card" data-chem="cat07b" data-name="小花茉莉" data-latin="jasminum sambac">
+        <div class="occ-top">
+          <span class="occ-num">183</span>
+          <span class="occ-name">小花茉莉</span>
+        </div>
+        <span class="occ-latin">Jasminum sambac</span>
+      </a>
+      <a href="compounds-07b.html#oil-184" class="oil-compact-card" data-chem="cat07b" data-name="蘇合香" data-latin="liquidambar orientalis">
+        <div class="occ-top">
+          <span class="occ-num">184</span>
+          <span class="occ-name">蘇合香</span>
+        </div>
+        <span class="occ-latin">Liquidambar orientalis</span>
+      </a>
+      <a href="compounds-07b.html#oil-185" class="oil-compact-card" data-chem="cat07b" data-name="白玉蘭" data-latin="michelia x alba">
+        <div class="occ-top">
+          <span class="occ-num">185</span>
+          <span class="occ-name">白玉蘭</span>
+        </div>
+        <span class="occ-latin">Michelia x alba</span>
+      </a>
+      <a href="compounds-07b.html#oil-186" class="oil-compact-card" data-chem="cat07b" data-name="滇玉蘭" data-latin="michelia yunnanensis">
+        <div class="occ-top">
+          <span class="occ-num">186</span>
+          <span class="occ-name">滇玉蘭</span>
+        </div>
+        <span class="occ-latin">Michelia yunnanensis</span>
+      </a>
+      <a href="compounds-07b.html#oil-187" class="oil-compact-card" data-chem="cat07b" data-name="秘魯香脂" data-latin="myroxylon balsamum var. pereirae">
+        <div class="occ-top">
+          <span class="occ-num">187</span>
+          <span class="occ-name">秘魯香脂</span>
+        </div>
+        <span class="occ-latin">Myroxylon balsamum var. pereirae</span>
+      </a>
+      <a href="compounds-07b.html#oil-188" class="oil-compact-card" data-chem="cat07b" data-name="水仙" data-latin="narcissus poeticus">
+        <div class="occ-top">
+          <span class="occ-num">188</span>
+          <span class="occ-name">水仙</span>
+        </div>
+        <span class="occ-latin">Narcissus poeticus</span>
+      </a>
+      <a href="compounds-07b.html#oil-189" class="oil-compact-card" data-chem="cat07b" data-name="牡丹花" data-latin="paeonia suffruticosa">
+        <div class="occ-top">
+          <span class="occ-num">189</span>
+          <span class="occ-name">牡丹花</span>
+        </div>
+        <span class="occ-latin">Paeonia suffruticosa</span>
+      </a>
+      <a href="compounds-07b.html#oil-190" class="oil-compact-card" data-chem="cat07b" data-name="紅花緬梔" data-latin="plumeria rubra">
+        <div class="occ-top">
+          <span class="occ-num">190</span>
+          <span class="occ-name">紅花緬梔</span>
+        </div>
+        <span class="occ-latin">Plumeria rubra</span>
+      </a>
+      <a href="compounds-07b.html#oil-191" class="oil-compact-card" data-chem="cat07b" data-name="晚香玉" data-latin="polianthes tuberosa">
+        <div class="occ-top">
+          <span class="occ-num">191</span>
+          <span class="occ-name">晚香玉</span>
+        </div>
+        <span class="occ-latin">Polianthes tuberosa</span>
+      </a>
+      <a href="compounds-07b.html#oil-192" class="oil-compact-card" data-chem="cat07b" data-name="五月玫瑰" data-latin="rosa centifolia">
+        <div class="occ-top">
+          <span class="occ-num">192</span>
+          <span class="occ-name">五月玫瑰</span>
+        </div>
+        <span class="occ-latin">Rosa centifolia</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- VII-3 · 芳香醛與芳香酯類 -->
+  <section class="chem-section" data-chem="cat07c" id="cat07c">
+    <div class="chem-header">
+      <span class="chem-badge" style="background:#4A3A2A;">VII-3 · 芳香醛與芳香酯類</span>
+      <div class="title-line"></div>
+      <span class="chem-count">3 種精油</span>
+    </div>
+    <div class="oil-compact-grid">
+      <a href="compounds-07c.html#oil-194" class="oil-compact-card" data-chem="cat07c" data-name="蘇門答臘安息香" data-latin="styrax benzoin">
+        <div class="occ-top">
+          <span class="occ-num">194</span>
+          <span class="occ-name">蘇門答臘安息香</span>
+        </div>
+        <span class="occ-latin">Styrax benzoin</span>
+      </a>
+      <a href="compounds-07c.html#oil-195" class="oil-compact-card" data-chem="cat07c" data-name="暹羅安息香" data-latin="styrax tonkinensis">
+        <div class="occ-top">
+          <span class="occ-num">195</span>
+          <span class="occ-name">暹羅安息香</span>
+        </div>
+        <span class="occ-latin">Styrax tonkinensis</span>
+      </a>
+      <a href="compounds-07c.html#oil-196" class="oil-compact-card" data-chem="cat07c" data-name="香草" data-latin="vanilla planifolia">
+        <div class="occ-top">
+          <span class="occ-num">196</span>
+          <span class="occ-name">香草</span>
+        </div>
+        <span class="occ-latin">Vanilla planifolia</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- VIII · 倍半萜酮類 -->
+  <section class="chem-section" data-chem="cat08" id="cat08">
+    <div class="chem-header">
+      <span class="chem-badge" style="background:#3A2A4A;">VIII · 倍半萜酮類</span>
+      <div class="title-line"></div>
+      <span class="chem-count">16 種精油</span>
+    </div>
+    <div class="oil-compact-grid">
+      <a href="compounds-08.html#oil-198" class="oil-compact-card" data-chem="cat08" data-name="德州白蘿蔔" data-latin="ammi visnaga">
+        <div class="occ-top">
+          <span class="occ-num">198</span>
+          <span class="occ-name">德州白蘿蔔</span>
+        </div>
+        <span class="occ-latin">Ammi visnaga</span>
+      </a>
+      <a href="compounds-08.html#oil-199" class="oil-compact-card" data-chem="cat08" data-name="鑽石" data-latin="callitris intratropica">
+        <div class="occ-top">
+          <span class="occ-num">199</span>
+          <span class="occ-name">鑽石</span>
+        </div>
+        <span class="occ-latin">Callitris intratropica</span>
+      </a>
+      <a href="compounds-08.html#oil-200" class="oil-compact-card" data-chem="cat08" data-name="印蒿" data-latin="artemisia pallens">
+        <div class="occ-top">
+          <span class="occ-num">200</span>
+          <span class="occ-name">印蒿</span>
+        </div>
+        <span class="occ-latin">Artemisia pallens</span>
+      </a>
+      <a href="compounds-08.html#oil-201" class="oil-compact-card" data-chem="cat08" data-name="大西洋雪松" data-latin="cedrus atlantica">
+        <div class="occ-top">
+          <span class="occ-num">201</span>
+          <span class="occ-name">大西洋雪松</span>
+        </div>
+        <span class="occ-latin">Cedrus atlantica</span>
+      </a>
+      <a href="compounds-08.html#oil-202" class="oil-compact-card" data-chem="cat08" data-name="喜馬拉雅雪松" data-latin="cedrus deodara">
+        <div class="occ-top">
+          <span class="occ-num">202</span>
+          <span class="occ-name">喜馬拉雅雪松</span>
+        </div>
+        <span class="occ-latin">Cedrus deodara</span>
+      </a>
+      <a href="compounds-08.html#oil-203" class="oil-compact-card" data-chem="cat08" data-name="杭白菊" data-latin="chrysanthemum morifolium">
+        <div class="occ-top">
+          <span class="occ-num">203</span>
+          <span class="occ-name">杭白菊</span>
+        </div>
+        <span class="occ-latin">Chrysanthemum morifolium</span>
+      </a>
+      <a href="compounds-08.html#oil-204" class="oil-compact-card" data-chem="cat08" data-name="薑黃" data-latin="curcuma longa">
+        <div class="occ-top">
+          <span class="occ-num">204</span>
+          <span class="occ-name">薑黃</span>
+        </div>
+        <span class="occ-latin">Curcuma longa</span>
+      </a>
+      <a href="compounds-08.html#oil-205" class="oil-compact-card" data-chem="cat08" data-name="莪朮" data-latin="curcuma zedoaria">
+        <div class="occ-top">
+          <span class="occ-num">205</span>
+          <span class="occ-name">莪朮</span>
+        </div>
+        <span class="occ-latin">Curcuma zedoaria</span>
+      </a>
+      <a href="compounds-08.html#oil-206" class="oil-compact-card" data-chem="cat08" data-name="莎草" data-latin="cyperus rotundus">
+        <div class="occ-top">
+          <span class="occ-num">206</span>
+          <span class="occ-name">莎草</span>
+        </div>
+        <span class="occ-latin">Cyperus rotundus</span>
+      </a>
+      <a href="compounds-08.html#oil-207" class="oil-compact-card" data-chem="cat08" data-name="義大利永久花" data-latin="helichrysum italicum">
+        <div class="occ-top">
+          <span class="occ-num">207</span>
+          <span class="occ-name">義大利永久花</span>
+        </div>
+        <span class="occ-latin">Helichrysum italicum</span>
+      </a>
+      <a href="compounds-08.html#oil-208" class="oil-compact-card" data-chem="cat08" data-name="大根老鸛草" data-latin="geranium macrorrhizum">
+        <div class="occ-top">
+          <span class="occ-num">208</span>
+          <span class="occ-name">大根老鸛草</span>
+        </div>
+        <span class="occ-latin">Geranium macrorrhizum</span>
+      </a>
+      <a href="compounds-08.html#oil-209" class="oil-compact-card" data-chem="cat08" data-name="薰衣草" data-latin="lavandula stoechas">
+        <div class="occ-top">
+          <span class="occ-num">209</span>
+          <span class="occ-name">薰衣草</span>
+        </div>
+        <span class="occ-latin">Lavandula stoechas</span>
+      </a>
+      <a href="compounds-08.html#oil-210" class="oil-compact-card" data-chem="cat08" data-name="馬纓丹" data-latin="lantana camara">
+        <div class="occ-top">
+          <span class="occ-num">210</span>
+          <span class="occ-name">馬纓丹</span>
+        </div>
+        <span class="occ-latin">Lantana camara</span>
+      </a>
+      <a href="compounds-08.html#oil-211" class="oil-compact-card" data-chem="cat08" data-name="松紅梅" data-latin="leptospermum scoparium">
+        <div class="occ-top">
+          <span class="occ-num">211</span>
+          <span class="occ-name">松紅梅</span>
+        </div>
+        <span class="occ-latin">Leptospermum scoparium</span>
+      </a>
+      <a href="compounds-08.html#oil-212" class="oil-compact-card" data-chem="cat08" data-name="桂花" data-latin="osmanthus fragrans">
+        <div class="occ-top">
+          <span class="occ-num">212</span>
+          <span class="occ-name">桂花</span>
+        </div>
+        <span class="occ-latin">Osmanthus fragrans</span>
+      </a>
+      <a href="compounds-08.html#oil-213" class="oil-compact-card" data-chem="cat08" data-name="紫羅蘭" data-latin="viola odorata">
+        <div class="occ-top">
+          <span class="occ-num">213</span>
+          <span class="occ-name">紫羅蘭</span>
+        </div>
+        <span class="occ-latin">Viola odorata</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- IX · 單萜醇類 -->
+  <section class="chem-section" data-chem="cat09" id="cat09">
+    <div class="chem-header">
+      <span class="chem-badge" style="background:#1A5A3A;">IX · 單萜醇類</span>
+      <div class="title-line"></div>
+      <span class="chem-count">28 種精油</span>
+    </div>
+    <div class="oil-compact-grid">
+      <a href="compounds-09.html#oil-216" class="oil-compact-card" data-chem="cat09" data-name="花梨木" data-latin="aniba rosaeodora">
+        <div class="occ-top">
+          <span class="occ-num">216</span>
+          <span class="occ-name">花梨木</span>
+        </div>
+        <span class="occ-latin">Aniba rosaeodora</span>
+      </a>
+      <a href="compounds-09.html#oil-217" class="oil-compact-card" data-chem="cat09" data-name="芳樟" data-latin="cinnamomum camphora ct. linalool">
+        <div class="occ-top">
+          <span class="occ-num">217</span>
+          <span class="occ-name">芳樟</span>
+        </div>
+        <span class="occ-latin">Cinnamomum camphora ct. linalool</span>
+      </a>
+      <a href="compounds-09.html#oil-218" class="oil-compact-card" data-chem="cat09" data-name="橙花" data-latin="citrus aurantium (flowers)">
+        <div class="occ-top">
+          <span class="occ-num">218</span>
+          <span class="occ-name">橙花</span>
+        </div>
+        <span class="occ-latin">Citrus aurantium (flowers)</span>
+      </a>
+      <a href="compounds-09.html#oil-219" class="oil-compact-card" data-chem="cat09" data-name="芳樟葉" data-latin="cinnamomum camphora ct. linalool (leaf)">
+        <div class="occ-top">
+          <span class="occ-num">219</span>
+          <span class="occ-name">芳樟葉</span>
+        </div>
+        <span class="occ-latin">Cinnamomum camphora ct. linalool (leaf)</span>
+      </a>
+      <a href="compounds-09.html#oil-220" class="oil-compact-card" data-chem="cat09" data-name="巨紫荊" data-latin="cercis gigantea">
+        <div class="occ-top">
+          <span class="occ-num">220</span>
+          <span class="occ-name">巨紫荊</span>
+        </div>
+        <span class="occ-latin">Cercis gigantea</span>
+      </a>
+      <a href="compounds-09.html#oil-221" class="oil-compact-card" data-chem="cat09" data-name="香葉草" data-latin="pelargonium graveolens">
+        <div class="occ-top">
+          <span class="occ-num">221</span>
+          <span class="occ-name">香葉草</span>
+        </div>
+        <span class="occ-latin">Pelargonium graveolens</span>
+      </a>
+      <a href="compounds-09.html#oil-222" class="oil-compact-card" data-chem="cat09" data-name="玫瑰草" data-latin="cymbopogon martinii">
+        <div class="occ-top">
+          <span class="occ-num">222</span>
+          <span class="occ-name">玫瑰草</span>
+        </div>
+        <span class="occ-latin">Cymbopogon martinii</span>
+      </a>
+      <a href="compounds-09.html#oil-223" class="oil-compact-card" data-chem="cat09" data-name="忍冬" data-latin="lonicera japonica">
+        <div class="occ-top">
+          <span class="occ-num">223</span>
+          <span class="occ-name">忍冬</span>
+        </div>
+        <span class="occ-latin">Lonicera japonica</span>
+      </a>
+      <a href="compounds-09.html#oil-224" class="oil-compact-card" data-chem="cat09" data-name="茶樹" data-latin="melaleuca alternifolia">
+        <div class="occ-top">
+          <span class="occ-num">224</span>
+          <span class="occ-name">茶樹</span>
+        </div>
+        <span class="occ-latin">Melaleuca alternifolia</span>
+      </a>
+      <a href="compounds-09.html#oil-225" class="oil-compact-card" data-chem="cat09" data-name="沼澤茶樹" data-latin="melaleuca ericifolia">
+        <div class="occ-top">
+          <span class="occ-num">225</span>
+          <span class="occ-name">沼澤茶樹</span>
+        </div>
+        <span class="occ-latin">Melaleuca ericifolia</span>
+      </a>
+      <a href="compounds-09.html#oil-226" class="oil-compact-card" data-chem="cat09" data-name="胡椒薄荷" data-latin="mentha × piperita">
+        <div class="occ-top">
+          <span class="occ-num">226</span>
+          <span class="occ-name">胡椒薄荷</span>
+        </div>
+        <span class="occ-latin">Mentha × piperita</span>
+      </a>
+      <a href="compounds-09.html#oil-227" class="oil-compact-card" data-chem="cat09" data-name="蜂香薄荷" data-latin="monarda fistulosa">
+        <div class="occ-top">
+          <span class="occ-num">227</span>
+          <span class="occ-name">蜂香薄荷</span>
+        </div>
+        <span class="occ-latin">Monarda fistulosa</span>
+      </a>
+      <a href="compounds-09.html#oil-228" class="oil-compact-card" data-chem="cat09" data-name="可因氏月橘" data-latin="murraya koenigii">
+        <div class="occ-top">
+          <span class="occ-num">228</span>
+          <span class="occ-name">可因氏月橘</span>
+        </div>
+        <span class="occ-latin">Murraya koenigii</span>
+      </a>
+      <a href="compounds-09.html#oil-229" class="oil-compact-card" data-chem="cat09" data-name="檸檬荊芥" data-latin="nepeta cataria var. citriodora">
+        <div class="occ-top">
+          <span class="occ-num">229</span>
+          <span class="occ-name">檸檬荊芥</span>
+        </div>
+        <span class="occ-latin">Nepeta cataria var. citriodora</span>
+      </a>
+      <a href="compounds-09.html#oil-230" class="oil-compact-card" data-chem="cat09" data-name="甜羅勒" data-latin="ocimum basilicum ct. linalool">
+        <div class="occ-top">
+          <span class="occ-num">230</span>
+          <span class="occ-name">甜羅勒</span>
+        </div>
+        <span class="occ-latin">Ocimum basilicum ct. linalool</span>
+      </a>
+      <a href="compounds-09.html#oil-231" class="oil-compact-card" data-chem="cat09" data-name="甜馬郁蘭" data-latin="origanum majorana">
+        <div class="occ-top">
+          <span class="occ-num">231</span>
+          <span class="occ-name">甜馬郁蘭</span>
+        </div>
+        <span class="occ-latin">Origanum majorana</span>
+      </a>
+      <a href="compounds-09.html#oil-232" class="oil-compact-card" data-chem="cat09" data-name="野洋甘菊" data-latin="ormenis mixta">
+        <div class="occ-top">
+          <span class="occ-num">232</span>
+          <span class="occ-name">野洋甘菊</span>
+        </div>
+        <span class="occ-latin">Ormenis mixta</span>
+      </a>
+      <a href="compounds-09.html#oil-233" class="oil-compact-card" data-chem="cat09" data-name="天竺葵" data-latin="pelargonium × asperum">
+        <div class="occ-top">
+          <span class="occ-num">233</span>
+          <span class="occ-name">天竺葵</span>
+        </div>
+        <span class="occ-latin">Pelargonium × asperum</span>
+      </a>
+      <a href="compounds-09.html#oil-234" class="oil-compact-card" data-chem="cat09" data-name="大馬士革玫瑰" data-latin="rosa damascena">
+        <div class="occ-top">
+          <span class="occ-num">234</span>
+          <span class="occ-name">大馬士革玫瑰</span>
+        </div>
+        <span class="occ-latin">Rosa damascena</span>
+      </a>
+      <a href="compounds-09.html#oil-235" class="oil-compact-card" data-chem="cat09" data-name="苦水玫瑰" data-latin="rosa damascena var. semperflorens">
+        <div class="occ-top">
+          <span class="occ-num">235</span>
+          <span class="occ-name">苦水玫瑰</span>
+        </div>
+        <span class="occ-latin">Rosa damascena var. semperflorens</span>
+      </a>
+      <a href="compounds-09.html#oil-236" class="oil-compact-card" data-chem="cat09" data-name="鳳梨鼠尾草" data-latin="salvia elegans">
+        <div class="occ-top">
+          <span class="occ-num">236</span>
+          <span class="occ-name">鳳梨鼠尾草</span>
+        </div>
+        <span class="occ-latin">Salvia elegans</span>
+      </a>
+      <a href="compounds-09.html#oil-237" class="oil-compact-card" data-chem="cat09" data-name="龍腦百里香" data-latin="thymus satureioides">
+        <div class="occ-top">
+          <span class="occ-num">237</span>
+          <span class="occ-name">龍腦百里香</span>
+        </div>
+        <span class="occ-latin">Thymus satureioides</span>
+      </a>
+      <a href="compounds-09.html#oil-238" class="oil-compact-card" data-chem="cat09" data-name="沉香醇百里香" data-latin="thymus vulgaris ct. linalool">
+        <div class="occ-top">
+          <span class="occ-num">238</span>
+          <span class="occ-name">沉香醇百里香</span>
+        </div>
+        <span class="occ-latin">Thymus vulgaris ct. linalool</span>
+      </a>
+      <a href="compounds-09.html#oil-239" class="oil-compact-card" data-chem="cat09" data-name="側柏醇百里香" data-latin="thymus vulgaris ct. thujanol">
+        <div class="occ-top">
+          <span class="occ-num">239</span>
+          <span class="occ-name">側柏醇百里香</span>
+        </div>
+        <span class="occ-latin">Thymus vulgaris ct. thujanol</span>
+      </a>
+      <a href="compounds-09.html#oil-240" class="oil-compact-card" data-chem="cat09" data-name="牻牛兒醇百里香" data-latin="thymus vulgaris ct. geraniol">
+        <div class="occ-top">
+          <span class="occ-num">240</span>
+          <span class="occ-name">牻牛兒醇百里香</span>
+        </div>
+        <span class="occ-latin">Thymus vulgaris ct. geraniol</span>
+      </a>
+      <a href="compounds-09.html#oil-241" class="oil-compact-card" data-chem="cat09" data-name="竹葉花椒" data-latin="zanthoxylum armatum">
+        <div class="occ-top">
+          <span class="occ-num">241</span>
+          <span class="occ-name">竹葉花椒</span>
+        </div>
+        <span class="occ-latin">Zanthoxylum armatum</span>
+      </a>
+      <a href="compounds-09.html#oil-242" class="oil-compact-card" data-chem="cat09" data-name="食茱萸" data-latin="zanthoxylum ailanthoides">
+        <div class="occ-top">
+          <span class="occ-num">242</span>
+          <span class="occ-name">食茱萸</span>
+        </div>
+        <span class="occ-latin">Zanthoxylum ailanthoides</span>
+      </a>
+      <a href="compounds-09.html#oil-243" class="oil-compact-card" data-chem="cat09" data-name="花椒" data-latin="zanthoxylum bungeanum">
+        <div class="occ-top">
+          <span class="occ-num">243</span>
+          <span class="occ-name">花椒</span>
+        </div>
+        <span class="occ-latin">Zanthoxylum bungeanum</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- X · 酚與芳香醛類 -->
+  <section class="chem-section" data-chem="cat10" id="cat10">
+    <div class="chem-header">
+      <span class="chem-badge" style="background:#5A1A1A;">X · 酚與芳香醛類</span>
+      <div class="title-line"></div>
+      <span class="chem-count">22 種精油</span>
+    </div>
+    <div class="oil-compact-grid">
+      <a href="compounds-10.html#oil-246" class="oil-compact-card" data-chem="cat10" data-name="中國肉桂" data-latin="cinnamomum cassia">
+        <div class="occ-top">
+          <span class="occ-num">246</span>
+          <span class="occ-name">中國肉桂</span>
+        </div>
+        <span class="occ-latin">Cinnamomum cassia</span>
+      </a>
+      <a href="compounds-10.html#oil-247" class="oil-compact-card" data-chem="cat10" data-name="台灣土肉桂" data-latin="cinnamomum osmophloeum">
+        <div class="occ-top">
+          <span class="occ-num">247</span>
+          <span class="occ-name">台灣土肉桂</span>
+        </div>
+        <span class="occ-latin">Cinnamomum osmophloeum</span>
+      </a>
+      <a href="compounds-10.html#oil-248" class="oil-compact-card" data-chem="cat10" data-name="印度肉桂" data-latin="cinnamomum tamala">
+        <div class="occ-top">
+          <span class="occ-num">248</span>
+          <span class="occ-name">印度肉桂</span>
+        </div>
+        <span class="occ-latin">Cinnamomum tamala</span>
+      </a>
+      <a href="compounds-10.html#oil-249" class="oil-compact-card" data-chem="cat10" data-name="錫蘭肉桂" data-latin="cinnamomum verum">
+        <div class="occ-top">
+          <span class="occ-num">249</span>
+          <span class="occ-name">錫蘭肉桂</span>
+        </div>
+        <span class="occ-latin">Cinnamomum verum</span>
+      </a>
+      <a href="compounds-10.html#oil-250" class="oil-compact-card" data-chem="cat10" data-name="頭狀百里香" data-latin="thymbra capitata">
+        <div class="occ-top">
+          <span class="occ-num">250</span>
+          <span class="occ-name">頭狀百里香</span>
+        </div>
+        <span class="occ-latin">Thymbra capitata</span>
+      </a>
+      <a href="compounds-10.html#oil-251" class="oil-compact-card" data-chem="cat10" data-name="小茴香" data-latin="cuminum cyminum">
+        <div class="occ-top">
+          <span class="occ-num">251</span>
+          <span class="occ-name">小茴香</span>
+        </div>
+        <span class="occ-latin">Cuminum cyminum</span>
+      </a>
+      <a href="compounds-10.html#oil-252" class="oil-compact-card" data-chem="cat10" data-name="丁香花苞" data-latin="syzygium aromaticum">
+        <div class="occ-top">
+          <span class="occ-num">252</span>
+          <span class="occ-name">丁香花苞</span>
+        </div>
+        <span class="occ-latin">Syzygium aromaticum</span>
+      </a>
+      <a href="compounds-10.html#oil-253" class="oil-compact-card" data-chem="cat10" data-name="丁香羅勒" data-latin="ocimum gratissimum">
+        <div class="occ-top">
+          <span class="occ-num">253</span>
+          <span class="occ-name">丁香羅勒</span>
+        </div>
+        <span class="occ-latin">Ocimum gratissimum</span>
+      </a>
+      <a href="compounds-10.html#oil-254" class="oil-compact-card" data-chem="cat10" data-name="神聖羅勒" data-latin="ocimum tenuiflorum">
+        <div class="occ-top">
+          <span class="occ-num">254</span>
+          <span class="occ-name">神聖羅勒</span>
+        </div>
+        <span class="occ-latin">Ocimum tenuiflorum</span>
+      </a>
+      <a href="compounds-10.html#oil-255" class="oil-compact-card" data-chem="cat10" data-name="野馬郁蘭" data-latin="origanum vulgare">
+        <div class="occ-top">
+          <span class="occ-num">255</span>
+          <span class="occ-name">野馬郁蘭</span>
+        </div>
+        <span class="occ-latin">Origanum vulgare</span>
+      </a>
+      <a href="compounds-10.html#oil-256" class="oil-compact-card" data-chem="cat10" data-name="嚴愛草" data-latin="satureja hortensis">
+        <div class="occ-top">
+          <span class="occ-num">256</span>
+          <span class="occ-name">嚴愛草</span>
+        </div>
+        <span class="occ-latin">Satureja hortensis</span>
+      </a>
+      <a href="compounds-10.html#oil-257" class="oil-compact-card" data-chem="cat10" data-name="希臘野馬郁蘭" data-latin="origanum heracleoticum">
+        <div class="occ-top">
+          <span class="occ-num">257</span>
+          <span class="occ-name">希臘野馬郁蘭</span>
+        </div>
+        <span class="occ-latin">Origanum heracleoticum</span>
+      </a>
+      <a href="compounds-10.html#oil-258" class="oil-compact-card" data-chem="cat10" data-name="多香果" data-latin="pimenta dioica">
+        <div class="occ-top">
+          <span class="occ-num">258</span>
+          <span class="occ-name">多香果</span>
+        </div>
+        <span class="occ-latin">Pimenta dioica</span>
+      </a>
+      <a href="compounds-10.html#oil-259" class="oil-compact-card" data-chem="cat10" data-name="西印度月桂" data-latin="pimenta racemosa">
+        <div class="occ-top">
+          <span class="occ-num">259</span>
+          <span class="occ-name">西印度月桂</span>
+        </div>
+        <span class="occ-latin">Pimenta racemosa</span>
+      </a>
+      <a href="compounds-10.html#oil-260" class="oil-compact-card" data-chem="cat10" data-name="到手香" data-latin="plectranthus amboinicus">
+        <div class="occ-top">
+          <span class="occ-num">260</span>
+          <span class="occ-name">到手香</span>
+        </div>
+        <span class="occ-latin">Plectranthus amboinicus</span>
+      </a>
+      <a href="compounds-10.html#oil-261" class="oil-compact-card" data-chem="cat10" data-name="重味過江藤" data-latin="lippia origanoides">
+        <div class="occ-top">
+          <span class="occ-num">261</span>
+          <span class="occ-name">重味過江藤</span>
+        </div>
+        <span class="occ-latin">Lippia origanoides</span>
+      </a>
+      <a href="compounds-10.html#oil-262" class="oil-compact-card" data-chem="cat10" data-name="黑種草" data-latin="nigella sativa">
+        <div class="occ-top">
+          <span class="occ-num">262</span>
+          <span class="occ-name">黑種草</span>
+        </div>
+        <span class="occ-latin">Nigella sativa</span>
+      </a>
+      <a href="compounds-10.html#oil-263" class="oil-compact-card" data-chem="cat10" data-name="冬季香薄荷" data-latin="satureja montana">
+        <div class="occ-top">
+          <span class="occ-num">263</span>
+          <span class="occ-name">冬季香薄荷</span>
+        </div>
+        <span class="occ-latin">Satureja montana</span>
+      </a>
+      <a href="compounds-10.html#oil-264" class="oil-compact-card" data-chem="cat10" data-name="希臘香薄荷" data-latin="satureja thymbra">
+        <div class="occ-top">
+          <span class="occ-num">264</span>
+          <span class="occ-name">希臘香薄荷</span>
+        </div>
+        <span class="occ-latin">Satureja thymbra</span>
+      </a>
+      <a href="compounds-10.html#oil-265" class="oil-compact-card" data-chem="cat10" data-name="百里酚百里香" data-latin="thymus vulgaris ct. thymol">
+        <div class="occ-top">
+          <span class="occ-num">265</span>
+          <span class="occ-name">百里酚百里香</span>
+        </div>
+        <span class="occ-latin">Thymus vulgaris ct. Thymol</span>
+      </a>
+      <a href="compounds-10.html#oil-266" class="oil-compact-card" data-chem="cat10" data-name="野地百里香" data-latin="thymus serpyllum">
+        <div class="occ-top">
+          <span class="occ-num">266</span>
+          <span class="occ-name">野地百里香</span>
+        </div>
+        <span class="occ-latin">Thymus serpyllum</span>
+      </a>
+      <a href="compounds-10.html#oil-267" class="oil-compact-card" data-chem="cat10" data-name="印度藏茴香" data-latin="trachyspermum ammi">
+        <div class="occ-top">
+          <span class="occ-num">267</span>
+          <span class="occ-name">印度藏茴香</span>
+        </div>
+        <span class="occ-latin">Trachyspermum ammi</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- XI · 倍半萜醇類 -->
+  <section class="chem-section" data-chem="cat11" id="cat11">
+    <div class="chem-header">
+      <span class="chem-badge" style="background:#3A3A1A;">XI · 倍半萜醇類</span>
+      <div class="title-line"></div>
+      <span class="chem-count">23 種精油</span>
+    </div>
+    <div class="oil-compact-grid">
+      <a href="compounds-11.html#oil-270" class="oil-compact-card" data-chem="cat11" data-name="阿米香樹" data-latin="amyris balsamifera">
+        <div class="occ-top">
+          <span class="occ-num">270</span>
+          <span class="occ-name">阿米香樹</span>
+        </div>
+        <span class="occ-latin">Amyris balsamifera</span>
+      </a>
+      <a href="compounds-11.html#oil-271" class="oil-compact-card" data-chem="cat11" data-name="沉香樹" data-latin="aquilaria malaccensis">
+        <div class="occ-top">
+          <span class="occ-num">271</span>
+          <span class="occ-name">沉香樹</span>
+        </div>
+        <span class="occ-latin">Aquilaria malaccensis</span>
+      </a>
+      <a href="compounds-11.html#oil-272" class="oil-compact-card" data-chem="cat11" data-name="玉檀木" data-latin="bulnesia sarmientoi">
+        <div class="occ-top">
+          <span class="occ-num">272</span>
+          <span class="occ-name">玉檀木</span>
+        </div>
+        <span class="occ-latin">Bulnesia sarmientoi</span>
+      </a>
+      <a href="compounds-11.html#oil-273" class="oil-compact-card" data-chem="cat11" data-name="降香" data-latin="dalbergia odorifera">
+        <div class="occ-top">
+          <span class="occ-num">273</span>
+          <span class="occ-name">降香</span>
+        </div>
+        <span class="occ-latin">Dalbergia odorifera</span>
+      </a>
+      <a href="compounds-11.html#oil-274" class="oil-compact-card" data-chem="cat11" data-name="胡蘿蔔籽" data-latin="daucus carota">
+        <div class="occ-top">
+          <span class="occ-num">274</span>
+          <span class="occ-name">胡蘿蔔籽</span>
+        </div>
+        <span class="occ-latin">Daucus carota</span>
+      </a>
+      <a href="compounds-11.html#oil-275" class="oil-compact-card" data-chem="cat11" data-name="暹羅木" data-latin="fokienia hodginsii">
+        <div class="occ-top">
+          <span class="occ-num">275</span>
+          <span class="occ-name">暹羅木</span>
+        </div>
+        <span class="occ-latin">Fokienia hodginsii</span>
+      </a>
+      <a href="compounds-11.html#oil-276" class="oil-compact-card" data-chem="cat11" data-name="白草果" data-latin="aframomum daniellii">
+        <div class="occ-top">
+          <span class="occ-num">276</span>
+          <span class="occ-name">白草果</span>
+        </div>
+        <span class="occ-latin">Aframomum daniellii</span>
+      </a>
+      <a href="compounds-11.html#oil-277" class="oil-compact-card" data-chem="cat11" data-name="黏答答土木香" data-latin="inula graveolens">
+        <div class="occ-top">
+          <span class="occ-num">277</span>
+          <span class="occ-name">黏答答土木香</span>
+        </div>
+        <span class="occ-latin">Inula graveolens</span>
+      </a>
+      <a href="compounds-11.html#oil-278" class="oil-compact-card" data-chem="cat11" data-name="昆士亞" data-latin="kunzea ambigua">
+        <div class="occ-top">
+          <span class="occ-num">278</span>
+          <span class="occ-name">昆士亞</span>
+        </div>
+        <span class="occ-latin">Kunzea ambigua</span>
+      </a>
+      <a href="compounds-11.html#oil-279" class="oil-compact-card" data-chem="cat11" data-name="厚朴" data-latin="magnolia officinalis">
+        <div class="occ-top">
+          <span class="occ-num">279</span>
+          <span class="occ-name">厚朴</span>
+        </div>
+        <span class="occ-latin">Magnolia officinalis</span>
+      </a>
+      <a href="compounds-11.html#oil-280" class="oil-compact-card" data-chem="cat11" data-name="橙花叔醇綠花白千層" data-latin="melaleuca quinquenervia ct. nerolidol">
+        <div class="occ-top">
+          <span class="occ-num">280</span>
+          <span class="occ-name">橙花叔醇綠花白千層</span>
+        </div>
+        <span class="occ-latin">Melaleuca quinquenervia ct. Nerolidol</span>
+      </a>
+      <a href="compounds-11.html#oil-281" class="oil-compact-card" data-chem="cat11" data-name="香脂果豆木" data-latin="myroxylon balsamum">
+        <div class="occ-top">
+          <span class="occ-num">281</span>
+          <span class="occ-name">香脂果豆木</span>
+        </div>
+        <span class="occ-latin">Myroxylon balsamum</span>
+      </a>
+      <a href="compounds-11.html#oil-282" class="oil-compact-card" data-chem="cat11" data-name="新喀里多尼亞松" data-latin="neocallitropsis pancheri">
+        <div class="occ-top">
+          <span class="occ-num">282</span>
+          <span class="occ-name">新喀里多尼亞松</span>
+        </div>
+        <span class="occ-latin">Neocallitropsis pancheri</span>
+      </a>
+      <a href="compounds-11.html#oil-283" class="oil-compact-card" data-chem="cat11" data-name="羌活" data-latin="notopterygium incisum">
+        <div class="occ-top">
+          <span class="occ-num">283</span>
+          <span class="occ-name">羌活</span>
+        </div>
+        <span class="occ-latin">Notopterygium incisum</span>
+      </a>
+      <a href="compounds-11.html#oil-284" class="oil-compact-card" data-chem="cat11" data-name="草澄茄" data-latin="litsea cubeba">
+        <div class="occ-top">
+          <span class="occ-num">284</span>
+          <span class="occ-name">草澄茄</span>
+        </div>
+        <span class="occ-latin">Litsea cubeba</span>
+      </a>
+      <a href="compounds-11.html#oil-285" class="oil-compact-card" data-chem="cat11" data-name="廣藿香" data-latin="pogostemon cablin">
+        <div class="occ-top">
+          <span class="occ-num">285</span>
+          <span class="occ-name">廣藿香</span>
+        </div>
+        <span class="occ-latin">Pogostemon cablin</span>
+      </a>
+      <a href="compounds-11.html#oil-286" class="oil-compact-card" data-chem="cat11" data-name="狹長葉鼠尾草" data-latin="salvia stenophylla">
+        <div class="occ-top">
+          <span class="occ-num">286</span>
+          <span class="occ-name">狹長葉鼠尾草</span>
+        </div>
+        <span class="occ-latin">Salvia stenophylla</span>
+      </a>
+      <a href="compounds-11.html#oil-287" class="oil-compact-card" data-chem="cat11" data-name="檀香" data-latin="santalum album">
+        <div class="occ-top">
+          <span class="occ-num">287</span>
+          <span class="occ-name">檀香</span>
+        </div>
+        <span class="occ-latin">Santalum album</span>
+      </a>
+      <a href="compounds-11.html#oil-288" class="oil-compact-card" data-chem="cat11" data-name="太平洋檀香" data-latin="santalum austrocaledonicum">
+        <div class="occ-top">
+          <span class="occ-num">288</span>
+          <span class="occ-name">太平洋檀香</span>
+        </div>
+        <span class="occ-latin">Santalum austrocaledonicum</span>
+      </a>
+      <a href="compounds-11.html#oil-289" class="oil-compact-card" data-chem="cat11" data-name="塔斯馬尼亞胡椒" data-latin="tasmannia lanceolata">
+        <div class="occ-top">
+          <span class="occ-num">289</span>
+          <span class="occ-name">塔斯馬尼亞胡椒</span>
+        </div>
+        <span class="occ-latin">Tasmannia lanceolata</span>
+      </a>
+      <a href="compounds-11.html#oil-290" class="oil-compact-card" data-chem="cat11" data-name="纈草" data-latin="valeriana officinalis">
+        <div class="occ-top">
+          <span class="occ-num">290</span>
+          <span class="occ-name">纈草</span>
+        </div>
+        <span class="occ-latin">Valeriana officinalis</span>
+      </a>
+      <a href="compounds-11.html#oil-291" class="oil-compact-card" data-chem="cat11" data-name="印度纈草" data-latin="valeriana jatamansi">
+        <div class="occ-top">
+          <span class="occ-num">291</span>
+          <span class="occ-name">印度纈草</span>
+        </div>
+        <span class="occ-latin">Valeriana jatamansi</span>
+      </a>
+      <a href="compounds-11.html#oil-292" class="oil-compact-card" data-chem="cat11" data-name="岩蘭草" data-latin="vetiveria zizanioides">
+        <div class="occ-top">
+          <span class="occ-num">292</span>
+          <span class="occ-name">岩蘭草</span>
+        </div>
+        <span class="occ-latin">Vetiveria zizanioides</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- XII · 單萜烯類 -->
+  <section class="chem-section" data-chem="cat12" id="cat12">
+    <div class="chem-header">
+      <span class="chem-badge" style="background:#1A3A1A;">XII · 單萜烯類</span>
+      <div class="title-line"></div>
+      <span class="chem-count">50 種精油</span>
+    </div>
+    <div class="oil-compact-grid">
+      <a href="compounds-12.html#oil-294" class="oil-compact-card" data-chem="cat12" data-name="歐洲冷杉" data-latin="abies alba">
+        <div class="occ-top">
+          <span class="occ-num">294</span>
+          <span class="occ-name">歐洲冷杉</span>
+        </div>
+        <span class="occ-latin">Abies alba</span>
+      </a>
+      <a href="compounds-12.html#oil-295" class="oil-compact-card" data-chem="cat12" data-name="膠冷杉" data-latin="abies balsamea">
+        <div class="occ-top">
+          <span class="occ-num">295</span>
+          <span class="occ-name">膠冷杉</span>
+        </div>
+        <span class="occ-latin">Abies balsamea</span>
+      </a>
+      <a href="compounds-12.html#oil-296" class="oil-compact-card" data-chem="cat12" data-name="西伯利亞冷杉" data-latin="abies sibirica">
+        <div class="occ-top">
+          <span class="occ-num">296</span>
+          <span class="occ-name">西伯利亞冷杉</span>
+        </div>
+        <span class="occ-latin">Abies sibirica</span>
+      </a>
+      <a href="compounds-12.html#oil-297" class="oil-compact-card" data-chem="cat12" data-name="蒔蘿（全株）" data-latin="anethum graveolens">
+        <div class="occ-top">
+          <span class="occ-num">297</span>
+          <span class="occ-name">蒔蘿（全株）</span>
+        </div>
+        <span class="occ-latin">Anethum graveolens</span>
+      </a>
+      <a href="compounds-12.html#oil-298" class="oil-compact-card" data-chem="cat12" data-name="歐白芷根" data-latin="angelica archangelica">
+        <div class="occ-top">
+          <span class="occ-num">298</span>
+          <span class="occ-name">歐白芷根</span>
+        </div>
+        <span class="occ-latin">Angelica archangelica</span>
+      </a>
+      <a href="compounds-12.html#oil-299" class="oil-compact-card" data-chem="cat12" data-name="白芷" data-latin="angelica dahurica">
+        <div class="occ-top">
+          <span class="occ-num">299</span>
+          <span class="occ-name">白芷</span>
+        </div>
+        <span class="occ-latin">Angelica dahurica</span>
+      </a>
+      <a href="compounds-12.html#oil-300" class="oil-compact-card" data-chem="cat12" data-name="獨活" data-latin="angelica pubescens">
+        <div class="occ-top">
+          <span class="occ-num">300</span>
+          <span class="occ-name">獨活</span>
+        </div>
+        <span class="occ-latin">Angelica pubescens</span>
+      </a>
+      <a href="compounds-12.html#oil-301" class="oil-compact-card" data-chem="cat12" data-name="乳香" data-latin="boswellia sacra / b. carterii">
+        <div class="occ-top">
+          <span class="occ-num">301</span>
+          <span class="occ-name">乳香</span>
+        </div>
+        <span class="occ-latin">Boswellia sacra / B. carterii</span>
+      </a>
+      <a href="compounds-12.html#oil-302" class="oil-compact-card" data-chem="cat12" data-name="印度乳香" data-latin="boswellia serrata">
+        <div class="occ-top">
+          <span class="occ-num">302</span>
+          <span class="occ-name">印度乳香</span>
+        </div>
+        <span class="occ-latin">Boswellia serrata</span>
+      </a>
+      <a href="compounds-12.html#oil-303" class="oil-compact-card" data-chem="cat12" data-name="秘魯聖木" data-latin="bursera graveolens">
+        <div class="occ-top">
+          <span class="occ-num">303</span>
+          <span class="occ-name">秘魯聖木</span>
+        </div>
+        <span class="occ-latin">Bursera graveolens</span>
+      </a>
+      <a href="compounds-12.html#oil-304" class="oil-compact-card" data-chem="cat12" data-name="欖香脂" data-latin="canarium luzonicum">
+        <div class="occ-top">
+          <span class="occ-num">304</span>
+          <span class="occ-name">欖香脂</span>
+        </div>
+        <span class="occ-latin">Canarium luzonicum</span>
+      </a>
+      <a href="compounds-12.html#oil-305" class="oil-compact-card" data-chem="cat12" data-name="岩玫瑰" data-latin="cistus ladanifer">
+        <div class="occ-top">
+          <span class="occ-num">305</span>
+          <span class="occ-name">岩玫瑰</span>
+        </div>
+        <span class="occ-latin">Cistus ladanifer</span>
+      </a>
+      <a href="compounds-12.html#oil-306" class="oil-compact-card" data-chem="cat12" data-name="苦橙" data-latin="citrus aurantium">
+        <div class="occ-top">
+          <span class="occ-num">306</span>
+          <span class="occ-name">苦橙</span>
+        </div>
+        <span class="occ-latin">Citrus aurantium</span>
+      </a>
+      <a href="compounds-12.html#oil-307" class="oil-compact-card" data-chem="cat12" data-name="泰國青檸" data-latin="citrus hystrix">
+        <div class="occ-top">
+          <span class="occ-num">307</span>
+          <span class="occ-name">泰國青檸</span>
+        </div>
+        <span class="occ-latin">Citrus hystrix</span>
+      </a>
+      <a href="compounds-12.html#oil-308" class="oil-compact-card" data-chem="cat12" data-name="日本柚子" data-latin="citrus junos">
+        <div class="occ-top">
+          <span class="occ-num">308</span>
+          <span class="occ-name">日本柚子</span>
+        </div>
+        <span class="occ-latin">Citrus junos</span>
+      </a>
+      <a href="compounds-12.html#oil-309" class="oil-compact-card" data-chem="cat12" data-name="萊姆" data-latin="citrus aurantiifolia">
+        <div class="occ-top">
+          <span class="occ-num">309</span>
+          <span class="occ-name">萊姆</span>
+        </div>
+        <span class="occ-latin">Citrus aurantiifolia</span>
+      </a>
+      <a href="compounds-12.html#oil-310" class="oil-compact-card" data-chem="cat12" data-name="檸檬" data-latin="citrus limon">
+        <div class="occ-top">
+          <span class="occ-num">310</span>
+          <span class="occ-name">檸檬</span>
+        </div>
+        <span class="occ-latin">Citrus limon</span>
+      </a>
+      <a href="compounds-12.html#oil-311" class="oil-compact-card" data-chem="cat12" data-name="葡萄柚" data-latin="citrus paradisi">
+        <div class="occ-top">
+          <span class="occ-num">311</span>
+          <span class="occ-name">葡萄柚</span>
+        </div>
+        <span class="occ-latin">Citrus paradisi</span>
+      </a>
+      <a href="compounds-12.html#oil-312" class="oil-compact-card" data-chem="cat12" data-name="桔（紅/綠）" data-latin="citrus reticulata">
+        <div class="occ-top">
+          <span class="occ-num">312</span>
+          <span class="occ-name">桔（紅/綠）</span>
+        </div>
+        <span class="occ-latin">Citrus reticulata</span>
+      </a>
+      <a href="compounds-12.html#oil-313" class="oil-compact-card" data-chem="cat12" data-name="岬角白梅" data-latin="coleonema album / c. pulchellum">
+        <div class="occ-top">
+          <span class="occ-num">313</span>
+          <span class="occ-name">岬角白梅</span>
+        </div>
+        <span class="occ-latin">Coleonema album / C. pulchellum</span>
+      </a>
+      <a href="compounds-12.html#oil-314" class="oil-compact-card" data-chem="cat12" data-name="海茴香" data-latin="crithmum maritimum">
+        <div class="occ-top">
+          <span class="occ-num">314</span>
+          <span class="occ-name">海茴香</span>
+        </div>
+        <span class="occ-latin">Crithmum maritimum</span>
+      </a>
+      <a href="compounds-12.html#oil-315" class="oil-compact-card" data-chem="cat12" data-name="絲柏" data-latin="cupressus sempervirens">
+        <div class="occ-top">
+          <span class="occ-num">315</span>
+          <span class="occ-name">絲柏</span>
+        </div>
+        <span class="occ-latin">Cupressus sempervirens</span>
+      </a>
+      <a href="compounds-12.html#oil-316" class="oil-compact-card" data-chem="cat12" data-name="非洲藍香茅" data-latin="cymbopogon validus">
+        <div class="occ-top">
+          <span class="occ-num">316</span>
+          <span class="occ-name">非洲藍香茅</span>
+        </div>
+        <span class="occ-latin">Cymbopogon validus</span>
+      </a>
+      <a href="compounds-12.html#oil-317" class="oil-compact-card" data-chem="cat12" data-name="白松香" data-latin="ferula galbaniflua">
+        <div class="occ-top">
+          <span class="occ-num">317</span>
+          <span class="occ-name">白松香</span>
+        </div>
+        <span class="occ-latin">Ferula galbaniflua</span>
+      </a>
+      <a href="compounds-12.html#oil-318" class="oil-compact-card" data-chem="cat12" data-name="連翹" data-latin="forsythia suspensa">
+        <div class="occ-top">
+          <span class="occ-num">318</span>
+          <span class="occ-name">連翹</span>
+        </div>
+        <span class="occ-latin">Forsythia suspensa</span>
+      </a>
+      <a href="compounds-12.html#oil-319" class="oil-compact-card" data-chem="cat12" data-name="高地杜松" data-latin="juniperus communis var. montana">
+        <div class="occ-top">
+          <span class="occ-num">319</span>
+          <span class="occ-name">高地杜松</span>
+        </div>
+        <span class="occ-latin">Juniperus communis var. montana</span>
+      </a>
+      <a href="compounds-12.html#oil-320" class="oil-compact-card" data-chem="cat12" data-name="杜松漿果" data-latin="juniperus communis">
+        <div class="occ-top">
+          <span class="occ-num">320</span>
+          <span class="occ-name">杜松漿果</span>
+        </div>
+        <span class="occ-latin">Juniperus communis</span>
+      </a>
+      <a href="compounds-12.html#oil-321" class="oil-compact-card" data-chem="cat12" data-name="刺檜漿果" data-latin="juniperus oxycedrus">
+        <div class="occ-top">
+          <span class="occ-num">321</span>
+          <span class="occ-name">刺檜漿果</span>
+        </div>
+        <span class="occ-latin">Juniperus oxycedrus</span>
+      </a>
+      <a href="compounds-12.html#oil-322" class="oil-compact-card" data-chem="cat12" data-name="卡奴卡" data-latin="kunzea ambigua">
+        <div class="occ-top">
+          <span class="occ-num">322</span>
+          <span class="occ-name">卡奴卡</span>
+        </div>
+        <span class="occ-latin">Kunzea ambigua</span>
+      </a>
+      <a href="compounds-12.html#oil-323" class="oil-compact-card" data-chem="cat12" data-name="落葉松" data-latin="larix decidua">
+        <div class="occ-top">
+          <span class="occ-num">323</span>
+          <span class="occ-name">落葉松</span>
+        </div>
+        <span class="occ-latin">Larix decidua</span>
+      </a>
+      <a href="compounds-12.html#oil-324" class="oil-compact-card" data-chem="cat12" data-name="格陵蘭喇叭茶" data-latin="ledum groenlandicum">
+        <div class="occ-top">
+          <span class="occ-num">324</span>
+          <span class="occ-name">格陵蘭喇叭茶</span>
+        </div>
+        <span class="occ-latin">Ledum groenlandicum</span>
+      </a>
+      <a href="compounds-12.html#oil-325" class="oil-compact-card" data-chem="cat12" data-name="黑雲杉" data-latin="picea mariana">
+        <div class="occ-top">
+          <span class="occ-num">325</span>
+          <span class="occ-name">黑雲杉</span>
+        </div>
+        <span class="occ-latin">Picea mariana</span>
+      </a>
+      <a href="compounds-12.html#oil-326" class="oil-compact-card" data-chem="cat12" data-name="挪威雲杉" data-latin="picea abies">
+        <div class="occ-top">
+          <span class="occ-num">326</span>
+          <span class="occ-name">挪威雲杉</span>
+        </div>
+        <span class="occ-latin">Picea abies</span>
+      </a>
+      <a href="compounds-12.html#oil-327" class="oil-compact-card" data-chem="cat12" data-name="科西嘉黑松" data-latin="pinus nigra subsp. laricio">
+        <div class="occ-top">
+          <span class="occ-num">327</span>
+          <span class="occ-name">科西嘉黑松</span>
+        </div>
+        <span class="occ-latin">Pinus nigra subsp. laricio</span>
+      </a>
+      <a href="compounds-12.html#oil-328" class="oil-compact-card" data-chem="cat12" data-name="海松" data-latin="pinus pinaster">
+        <div class="occ-top">
+          <span class="occ-num">328</span>
+          <span class="occ-name">海松</span>
+        </div>
+        <span class="occ-latin">Pinus pinaster</span>
+      </a>
+      <a href="compounds-12.html#oil-329" class="oil-compact-card" data-chem="cat12" data-name="歐洲赤松" data-latin="pinus sylvestris">
+        <div class="occ-top">
+          <span class="occ-num">329</span>
+          <span class="occ-name">歐洲赤松</span>
+        </div>
+        <span class="occ-latin">Pinus sylvestris</span>
+      </a>
+      <a href="compounds-12.html#oil-330" class="oil-compact-card" data-chem="cat12" data-name="黑胡椒" data-latin="piper nigrum">
+        <div class="occ-top">
+          <span class="occ-num">330</span>
+          <span class="occ-name">黑胡椒</span>
+        </div>
+        <span class="occ-latin">Piper nigrum</span>
+      </a>
+      <a href="compounds-12.html#oil-331" class="oil-compact-card" data-chem="cat12" data-name="熏陸香" data-latin="pistacia lentiscus">
+        <div class="occ-top">
+          <span class="occ-num">331</span>
+          <span class="occ-name">熏陸香</span>
+        </div>
+        <span class="occ-latin">Pistacia lentiscus</span>
+      </a>
+      <a href="compounds-12.html#oil-332" class="oil-compact-card" data-chem="cat12" data-name="奇歐島熏陸香" data-latin="pistacia lentiscus var. chia">
+        <div class="occ-top">
+          <span class="occ-num">332</span>
+          <span class="occ-name">奇歐島熏陸香</span>
+        </div>
+        <span class="occ-latin">Pistacia lentiscus var. chia</span>
+      </a>
+      <a href="compounds-12.html#oil-333" class="oil-compact-card" data-chem="cat12" data-name="巴西乳香" data-latin="protium heptaphyllum">
+        <div class="occ-top">
+          <span class="occ-num">333</span>
+          <span class="occ-name">巴西乳香</span>
+        </div>
+        <span class="occ-latin">Protium heptaphyllum</span>
+      </a>
+      <a href="compounds-12.html#oil-334" class="oil-compact-card" data-chem="cat12" data-name="道格拉斯杉" data-latin="pseudotsuga menziesii">
+        <div class="occ-top">
+          <span class="occ-num">334</span>
+          <span class="occ-name">道格拉斯杉</span>
+        </div>
+        <span class="occ-latin">Pseudotsuga menziesii</span>
+      </a>
+      <a href="compounds-12.html#oil-335" class="oil-compact-card" data-chem="cat12" data-name="雅麗菊" data-latin="lippia graveolens">
+        <div class="occ-top">
+          <span class="occ-num">335</span>
+          <span class="occ-name">雅麗菊</span>
+        </div>
+        <span class="occ-latin">Lippia graveolens</span>
+      </a>
+      <a href="compounds-12.html#oil-336" class="oil-compact-card" data-chem="cat12" data-name="髯花杜鵑" data-latin="rhododendron anthopogon">
+        <div class="occ-top">
+          <span class="occ-num">336</span>
+          <span class="occ-name">髯花杜鵑</span>
+        </div>
+        <span class="occ-latin">Rhododendron anthopogon</span>
+      </a>
+      <a href="compounds-12.html#oil-337" class="oil-compact-card" data-chem="cat12" data-name="馬達加斯加鹽膚木" data-latin="rhus taratana">
+        <div class="occ-top">
+          <span class="occ-num">337</span>
+          <span class="occ-name">馬達加斯加鹽膚木</span>
+        </div>
+        <span class="occ-latin">Rhus taratana</span>
+      </a>
+      <a href="compounds-12.html#oil-338" class="oil-compact-card" data-chem="cat12" data-name="秘魯胡椒" data-latin="schinus molle">
+        <div class="occ-top">
+          <span class="occ-num">338</span>
+          <span class="occ-name">秘魯胡椒</span>
+        </div>
+        <span class="occ-latin">Schinus molle</span>
+      </a>
+      <a href="compounds-12.html#oil-339" class="oil-compact-card" data-chem="cat12" data-name="巴西胡椒" data-latin="schinus terebinthifolius">
+        <div class="occ-top">
+          <span class="occ-num">339</span>
+          <span class="occ-name">巴西胡椒</span>
+        </div>
+        <span class="occ-latin">Schinus terebinthifolius</span>
+      </a>
+      <a href="compounds-12.html#oil-340" class="oil-compact-card" data-chem="cat12" data-name="香榧" data-latin="torreya nucifera">
+        <div class="occ-top">
+          <span class="occ-num">340</span>
+          <span class="occ-name">香榧</span>
+        </div>
+        <span class="occ-latin">Torreya nucifera</span>
+      </a>
+      <a href="compounds-12.html#oil-341" class="oil-compact-card" data-chem="cat12" data-name="加拿大鐵杉" data-latin="tsuga canadensis">
+        <div class="occ-top">
+          <span class="occ-num">341</span>
+          <span class="occ-name">加拿大鐵杉</span>
+        </div>
+        <span class="occ-latin">Tsuga canadensis</span>
+      </a>
+      <a href="compounds-12.html#oil-342" class="oil-compact-card" data-chem="cat12" data-name="貞節樹" data-latin="vitex agnus-castus">
+        <div class="occ-top">
+          <span class="occ-num">342</span>
+          <span class="occ-name">貞節樹</span>
+        </div>
+        <span class="occ-latin">Vitex agnus-castus</span>
+      </a>
+      <a href="compounds-12.html#oil-343" class="oil-compact-card" data-chem="cat12" data-name="泰國蔘薑" data-latin="zingiber cassumunar">
+        <div class="occ-top">
+          <span class="occ-num">343</span>
+          <span class="occ-name">泰國蔘薑</span>
+        </div>
+        <span class="occ-latin">Zingiber cassumunar</span>
+      </a>
     </div>
   </section>
 
@@ -347,7 +2487,7 @@
       </ul>
     </div>
   </div>
-  <div class="footer-bottom">© 2026 精油圖鑑指南 · 精油學 · 本站內容採 CC BY-NC 4.0 授權</div>
+  <div class="footer-bottom">&copy; 2026 精油圖鑑指南 · 精油學</div>
 </footer>
 
 <button id="backToTop" title="回到頂端">↑</button>
@@ -357,25 +2497,79 @@ const btn = document.getElementById('backToTop');
 window.addEventListener('scroll', () => btn.classList.toggle('show', window.scrollY > 400));
 btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-function filterOils(cat) {
-  // update button styles
-  document.querySelectorAll('[id^="f-"]').forEach(b => {
-    b.style.background = 'transparent';
-    b.style.color = 'white';
-    b.style.borderColor = 'rgba(255,255,255,0.7)';
-  });
-  const active = document.getElementById('f-' + cat);
-  if (active) { active.style.background = 'white'; active.style.color = 'var(--green-dark)'; }
+// Filter by chemical category
+function filterChem(cat) {
+  // Reset chip styles
+  document.querySelectorAll('.chem-chip').forEach(c => c.classList.remove('active'));
+  const active = document.getElementById('fc-' + cat);
+  if (active) active.classList.add('active');
 
   if (cat === 'all') {
-    document.querySelectorAll('.oil-category-section').forEach(s => s.style.display = '');
-    document.querySelectorAll('.oil-index-card').forEach(c => c.style.display = '');
+    document.querySelectorAll('.chem-section').forEach(s => s.style.display = '');
   } else {
-    document.querySelectorAll('.oil-category-section').forEach(s => {
-      s.style.display = s.dataset.cat === cat ? '' : 'none';
+    document.querySelectorAll('.chem-section').forEach(s => {
+      s.style.display = s.dataset.chem === cat ? '' : 'none';
     });
   }
+
+  // Clear search
+  document.getElementById('oilSearchMain').value = '';
+  document.getElementById('searchInfo').style.display = 'none';
+  document.querySelectorAll('.oil-compact-card, .oil-index-card').forEach(c => c.style.display = '');
 }
+
+// Search
+const searchInput = document.getElementById('oilSearchMain');
+const headerSearch = document.getElementById('oilSearch');
+
+function doSearch(query) {
+  query = query.trim().toLowerCase();
+  if (!query) {
+    clearSearch();
+    return;
+  }
+
+  // Show all sections first
+  document.querySelectorAll('.chem-section').forEach(s => s.style.display = '');
+  document.querySelectorAll('.chem-chip').forEach(c => c.classList.remove('active'));
+  document.getElementById('fc-all').classList.add('active');
+
+  let count = 0;
+  document.querySelectorAll('.oil-compact-card, .oil-index-card').forEach(card => {
+    const name = (card.dataset.name || '').toLowerCase();
+    const latin = (card.dataset.latin || '').toLowerCase();
+    const match = name.includes(query) || latin.includes(query);
+    card.style.display = match ? '' : 'none';
+    if (match) count++;
+  });
+
+  // Hide empty sections
+  document.querySelectorAll('.chem-section').forEach(s => {
+    const visibleCards = s.querySelectorAll('.oil-compact-card:not([style*="display: none"]), .oil-compact-card:not([style*="display:none"]), .oil-index-card:not([style*="display: none"]), .oil-index-card:not([style*="display:none"])');
+    let hasVisible = false;
+    visibleCards.forEach(c => { if (c.style.display !== 'none') hasVisible = true; });
+    s.style.display = hasVisible ? '' : 'none';
+  });
+
+  document.getElementById('searchCount').textContent = count;
+  document.getElementById('searchInfo').style.display = '';
+}
+
+function clearSearch() {
+  searchInput.value = '';
+  headerSearch.value = '';
+  document.getElementById('searchInfo').style.display = 'none';
+  document.querySelectorAll('.oil-compact-card, .oil-index-card').forEach(c => c.style.display = '');
+  document.querySelectorAll('.chem-section').forEach(s => s.style.display = '');
+  document.querySelectorAll('.chem-chip').forEach(c => c.classList.remove('active'));
+  document.getElementById('fc-all').classList.add('active');
+}
+
+searchInput.addEventListener('input', () => doSearch(searchInput.value));
+headerSearch.addEventListener('input', () => {
+  searchInput.value = headerSearch.value;
+  doSearch(headerSearch.value);
+});
 </script>
 </body>
 </html>
