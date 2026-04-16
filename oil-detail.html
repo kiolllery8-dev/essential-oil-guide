@@ -188,14 +188,14 @@ function getEmoji(family, name) {
   if (f.includes('茉莉') || f.includes('jasmin') || f.includes('依蘭') || f.includes('canang') || f.includes('花') && f.includes('香')) return '🌸';
   if (f.includes('松') || f.includes('杉') || f.includes('柏') || f.includes('雲杉') || f.includes('pine') || f.includes('picea') || f.includes('abies') || f.includes('cedar') || f.includes('雪松') || f.includes('junip') || f.includes('杜松') || f.includes('cypress') || f.includes('絲柏')) return '🌲';
   if (f.includes('樹脂') || f.includes('乳香') || f.includes('沒藥') || f.includes('boswel') || f.includes('commi') || f.includes('安息香') || f.includes('香脂')) return '🌳';
-  if (f.includes('薑') || f.includes('zingi') || f.includes('薑黃') || f.includes('curcu') || f.includes('豆蔻') || f.includes('高良薑')) return '🫚';
-  if (f.includes('胡椒') || f.includes('piper') || f.includes('花椒') || f.includes('zanthox')) return '🌶️';
+  if (f.includes('薑') || f.includes('zingi') || f.includes('薑黃') || f.includes('curcu') || f.includes('豆蔻') || f.includes('高良薑')) return '🌱';
+  if (f.includes('胡椒') || f.includes('piper') || f.includes('花椒') || f.includes('zanthox')) return '🌶';
   if (f.includes('禾本') || f.includes('poacea') || f.includes('香茅') || f.includes('cymbo') || f.includes('vetiver')) return '🌾';
-  if (f.includes('檀香') || f.includes('santal') || f.includes('廣藿香') || f.includes('沉香')) return '🪵';
+  if (f.includes('檀香') || f.includes('santal') || f.includes('廣藿香') || f.includes('沉香')) return '🌳';
   if (f.includes('菊') || f.includes('astera') || f.includes('compo') || f.includes('艾') || f.includes('萬壽菊') || f.includes('洋甘菊') || f.includes('永久花')) return '🌼';
   if (f.includes('薄荷') || f.includes('menth') || f.includes('唇形') || f.includes('lamia') || f.includes('百里香') || f.includes('thym') || f.includes('鼠尾') || f.includes('salvi') || f.includes('羅勒') || f.includes('ocim') || f.includes('馬郁蘭') || f.includes('oregano') || f.includes('丁香')) return '🌿';
   if (f.includes('茶樹') || f.includes('melaleu') || f.includes('白千層') || f.includes('桃金') || f.includes('myrtac') || f.includes('尤加利') || f.includes('eucal')) return '🍃';
-  if (f.includes('水仙') || f.includes('narcis') || f.includes('晚香玉') || f.includes('蘭') || f.includes('含笑') || f.includes('玉蘭') || f.includes('magnol')) return '🪻';
+  if (f.includes('水仙') || f.includes('narcis') || f.includes('晚香玉') || f.includes('蘭') || f.includes('含笑') || f.includes('玉蘭') || f.includes('magnol')) return '🌺';
   return '🌿';
 }
 
@@ -238,19 +238,23 @@ const safetyColors = { safe: '#88BC88', caution: '#E8C060', danger: '#E74C3C' };
 
 // Load data and render
 async function init() {
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get('id');
+  var loadEl = document.getElementById('loading');
+  try {
+  var params = new URLSearchParams(window.location.search);
+  var id = params.get('id');
   if (!id) { window.location.href = 'oils.html'; return; }
 
-  const res = await fetch('assets/data/oils.json');
-  const data = await res.json();
-  const idx = data.findIndex(o => o.id === id);
-  if (idx === -1) { document.getElementById('loading').textContent = '找不到此精油'; return; }
+  loadEl.textContent = '載入精油資料...';
+  var res = await fetch('assets/data/oils.json');
+  if (!res.ok) { loadEl.textContent = '資料載入失敗 (' + res.status + ')'; return; }
+  var data = await res.json();
+  var idx = data.findIndex(function(o){ return o.id === id; });
+  if (idx === -1) { loadEl.textContent = '找不到編號 ' + id + ' 的精油'; return; }
 
-  const oil = data[idx];
-  const accent = oil.accent;
-  const lt = oil.accentLt;
-  const emoji = getEmoji(oil.family, oil.zh);
+  var oil = data[idx];
+  var accent = oil.accent;
+  var lt = oil.accentLt;
+  var emoji = getEmoji(oil.family, oil.zh);
 
   // Update page title
   document.title = oil.zh + ' — ' + oil.latin + ' | 精油圖鑑指南';
@@ -275,16 +279,16 @@ async function init() {
   document.getElementById('odCatLink').textContent = '查看同類精油：' + oil.category + ' →';
 
   // Properties table
-  const rows = parseEffects(oil.effects);
-  let tbody = '';
+  var rows = parseEffects(oil.effects);
+  var tbody = '';
   for (const r of rows) {
     tbody += '<tr><td style="color:' + accent + ';font-weight:600;">' + r.prop + '</td><td>' + r.symptom + '</td></tr>';
   }
   document.getElementById('odPropsBody').innerHTML = tbody;
 
   // Component bars
-  const comps = parseComponents(oil.components);
-  let compHtml = '';
+  var comps = parseComponents(oil.components);
+  var compHtml = '';
   for (const c of comps) {
     const w = c.pct > 0 ? Math.min(c.pct, 100) : 15; // default 15% width if no percentage
     compHtml += '<div class="od-comp-item">';
@@ -295,22 +299,22 @@ async function init() {
   document.getElementById('odCompList').innerHTML = compHtml;
 
   // Tags
-  let tagsHtml = '';
+  var tagsHtml = '';
   for (const t of oil.tags) {
     tagsHtml += '<span class="od-tag" style="background:' + lt + ';color:' + accent + ';">' + t + '</span>';
   }
   document.getElementById('odTags').innerHTML = tagsHtml;
 
   // Safety
-  const safetyEl = document.getElementById('odSafety');
+  var safetyEl = document.getElementById('odSafety');
   safetyEl.className = 'od-safety ' + oil.safetyLevel;
   safetyEl.innerHTML = '<strong>' + safetyLabels[oil.safetyLevel] + '</strong><br>' + (oil.safetyText || '一般安全，建議稀釋後使用。');
 
   // Prev/Next nav
-  const prevOil = idx > 0 ? data[idx - 1] : null;
-  const nextOil = idx < data.length - 1 ? data[idx + 1] : null;
-  const prevEl = document.getElementById('odPrev');
-  const nextEl = document.getElementById('odNext');
+  var prevOil = idx > 0 ? data[idx - 1] : null;
+  var nextOil = idx < data.length - 1 ? data[idx + 1] : null;
+  var prevEl = document.getElementById('odPrev');
+  var nextEl = document.getElementById('odNext');
   if (prevOil) { prevEl.href = 'oil-detail.html?id=' + prevOil.id; prevEl.textContent = '← ' + prevOil.zh; }
   else { prevEl.style.visibility = 'hidden'; }
   if (nextOil) { nextEl.href = 'oil-detail.html?id=' + nextOil.id; nextEl.textContent = nextOil.zh + ' →'; }
@@ -319,6 +323,11 @@ async function init() {
   // Show content
   document.getElementById('loading').style.display = 'none';
   document.getElementById('oilContent').style.display = '';
+
+  } catch(e) {
+    loadEl.textContent = '載入錯誤：' + e.message;
+    console.error('oil-detail init error:', e);
+  }
 }
 
 init();
