@@ -138,8 +138,8 @@ nav ul li a.active {
    HERO
    ======================================== */
 .hero {
-  background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 60%, var(--green-light) 100%);
-  color: var(--white);
+  background: url('../images/hero-bg.png') center/cover no-repeat;
+  color: var(--green-dark);
   padding: 80px 20px;
   text-align: center;
   position: relative;
