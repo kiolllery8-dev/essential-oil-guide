@@ -957,12 +957,12 @@ footer ul li a:hover { color: var(--white); }
 /* oil index page */
 .oils-hero {
   background: linear-gradient(135deg, var(--green-dark) 0%, #4a7c59 60%, var(--green-light) 100%);
-  color: var(--white);
+  color: var(--green-dark);
   padding: 64px 20px 52px;
   text-align: center;
 }
-.oils-hero h1 { font-size: clamp(28px,5vw,46px); font-weight: 800; margin-bottom: 12px; }
-.oils-hero p { font-size: 16px; opacity: 0.88; max-width: 600px; margin: 0 auto 28px; }
+.oils-hero h1 { font-size: clamp(28px,5vw,46px); font-weight: 800; margin-bottom: 12px; color: var(--green-dark); text-shadow: 0 1px 3px rgba(255,255,255,0.6); }
+.oils-hero p { font-size: 16px; opacity: 1; max-width: 600px; margin: 0 auto 28px; color: var(--text-mid); }
 
 .oil-category-section { padding: 48px 0 16px; }
 .oil-category-section:first-of-type { padding-top: 60px; }
@@ -1497,17 +1497,18 @@ footer ul li a:hover { color: var(--white); }
   font-size: 11px;
   padding: 5px 12px;
   border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.5);
-  background: transparent;
-  color: #fff;
+  border: 1.5px solid var(--green-dark);
+  background: rgba(255,255,255,0.6);
+  color: var(--green-dark);
   cursor: pointer;
   transition: all 0.2s;
   white-space: nowrap;
+  font-weight: 600;
 }
 .chem-chip:hover, .chem-chip.active {
-  background: #fff;
-  color: var(--green-dark);
-  border-color: #fff;
+  background: var(--green-dark);
+  color: #fff;
+  border-color: var(--green-dark);
 }
 
 /* ========================================
