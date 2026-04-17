@@ -138,7 +138,7 @@ nav ul li a.active {
    HERO
    ======================================== */
 .hero {
-  background: url('../images/hero-bg.png') center/cover no-repeat;
+  background: url('../images/hero-home.png') center/cover no-repeat;
   color: var(--green-dark);
   padding: 80px 20px;
   text-align: center;
