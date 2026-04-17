@@ -40,7 +40,7 @@ body {
   font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
   background: var(--bg);
   color: var(--text-dark);
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.8;
 }
 
@@ -145,6 +145,8 @@ nav ul li a.active {
   position: relative;
   overflow: hidden;
 }
+
+.hero, .oils-hero, .oil-cover-hero, .compound-hero { font-size: 16px; }
 
 .hero::before {
   content: "";
