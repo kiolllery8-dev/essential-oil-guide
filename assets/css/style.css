@@ -1,6 +1,7 @@
 /* ========================================
    精油圖鑑指南 - 主樣式表
    ======================================== */
+html { font-size: 130%; }
 
 :root {
   --green-dark:   #3D5A3E;
@@ -40,7 +41,7 @@ body {
   font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
   background: var(--bg);
   color: var(--text-dark);
-  font-size: 20px;
+  font-size: 1rem;
   line-height: 1.8;
 }
 
@@ -146,7 +147,7 @@ nav ul li a.active {
   overflow: hidden;
 }
 
-.hero, .oils-hero, .oil-cover-hero, .compound-hero { font-size: 20px; }
+.hero, .oils-hero, .oil-cover-hero, .compound-hero { font-size: 16px; }
 
 .hero::before {
   content: "";
