@@ -146,7 +146,7 @@ nav ul li a.active {
   overflow: hidden;
 }
 
-.hero, .oils-hero, .oil-cover-hero, .compound-hero { font-size: 16px; }
+.hero, .oils-hero, .oil-cover-hero, .compound-hero { font-size: 20px; }
 
 .hero::before {
   content: "";
@@ -162,8 +162,8 @@ nav ul li a.active {
   border: 1px solid rgba(61,90,62,0.3);
   color: #3D5A3E !important;
   border-radius: 24px;
-  padding: 6px 20px;
-  font-size: 16px;
+  padding: 8px 22px;
+  font-size: 20px;
   letter-spacing: 1px;
   margin-bottom: 20px;
 }
@@ -189,9 +189,9 @@ nav ul li a.active {
 
 .btn {
   display: inline-block;
-  padding: 12px 28px;
+  padding: 14px 34px;
   border-radius: 30px;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
@@ -224,11 +224,11 @@ nav ul li a.active {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 18px;
+  padding: 10px 22px;
   border-radius: 30px;
   background: var(--beige-light);
   border: 1.5px solid var(--border);
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 500;
   color: var(--text-dark);
   transition: background 0.2s, border-color 0.2s;
@@ -242,7 +242,7 @@ nav ul li a.active {
   color: var(--white);
 }
 
-.cat-chip .cat-icon { font-size: 18px; }
+.cat-chip .cat-icon { font-size: 22px; }
 
 /* ========================================
    MAIN LAYOUT
