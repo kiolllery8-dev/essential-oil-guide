@@ -312,13 +312,25 @@ function init() {
   safetyEl.className = 'od-safety ' + oil.safetyLevel;
   safetyEl.innerHTML = '<strong>' + safetyLabels[oil.safetyLevel] + '</strong><br>' + (oil.safetyText || '一般安全，建議稀釋後使用。');
 
-  // Related banner by category
+  // Related banner by specific oil match (Manus images first, fallback to category)
   var bannerEl = document.getElementById('odRelatedBanner');
   var catText = (oil.category || '') + (oil.family || '') + (oil.zh || '');
   var bannerSrc = 'assets/images/oil-detail-banner-herbs.jpg';
-  if (catText.indexOf('柑橘') >= 0 || catText.indexOf('檸檬') >= 0 || catText.indexOf('橙') >= 0 || catText.indexOf('萊姆') >= 0 || catText.indexOf('柚') >= 0 || catText.indexOf('芸香') >= 0) bannerSrc = 'assets/images/oil-detail-banner-citrus.jpg';
-  else if (catText.indexOf('花') >= 0 || catText.indexOf('茉莉') >= 0 || catText.indexOf('玫瑰') >= 0 || catText.indexOf('依蘭') >= 0 || catText.indexOf('薰衣草') >= 0 || catText.indexOf('苯基酯') >= 0) bannerSrc = 'assets/images/oil-detail-banner-florals.jpg';
-  else if (catText.indexOf('樹') >= 0 || catText.indexOf('木') >= 0 || catText.indexOf('松') >= 0 || catText.indexOf('杉') >= 0 || catText.indexOf('檜') >= 0 || catText.indexOf('雪松') >= 0 || catText.indexOf('乳香') >= 0 || catText.indexOf('沒藥') >= 0 || catText.indexOf('倍半萜醇') >= 0) bannerSrc = 'assets/images/oil-detail-banner-woods.jpg';
+  // Specific matches
+  if (oil.zh.indexOf('薰衣草') >= 0) bannerSrc = 'assets/images/manus-lavender-field.jpg';
+  else if (oil.zh.indexOf('薄荷') >= 0) bannerSrc = 'assets/images/manus-mint-dew.jpg';
+  else if (oil.zh.indexOf('佛手柑') >= 0) bannerSrc = 'assets/images/manus-bergamot.jpg';
+  else if (oil.zh.indexOf('洋甘菊') >= 0) bannerSrc = 'assets/images/manus-chamomile.jpg';
+  else if (oil.zh.indexOf('薑') >= 0 || oil.zh.indexOf('薑黃') >= 0) bannerSrc = 'assets/images/manus-ginger-turmeric.jpg';
+  else if (oil.zh.indexOf('肉桂') >= 0 || oil.zh.indexOf('丁香') >= 0 || oil.zh.indexOf('香料') >= 0) bannerSrc = 'assets/images/manus-cinnamon-spices.jpg';
+  else if (oil.zh.indexOf('雪松') >= 0 || oil.zh.indexOf('檀香') >= 0) bannerSrc = 'assets/images/manus-cedar-wood.jpg';
+  else if (oil.zh.indexOf('乳香') >= 0 || oil.zh.indexOf('沒藥') >= 0 || oil.zh.indexOf('安息香') >= 0) bannerSrc = 'assets/images/manus-frankincense-incense.jpg';
+  else if (oil.zh.indexOf('玫瑰') >= 0) bannerSrc = 'assets/images/manus-rose-petals.jpg';
+  else if (oil.zh.indexOf('松') >= 0 || oil.zh.indexOf('杉') >= 0 || oil.zh.indexOf('冷杉') >= 0 || oil.zh.indexOf('雲杉') >= 0) bannerSrc = 'assets/images/manus-pine-resin.jpg';
+  // Category fallbacks
+  else if (catText.indexOf('柑橘') >= 0 || catText.indexOf('檸檬') >= 0 || catText.indexOf('橙') >= 0 || catText.indexOf('萊姆') >= 0 || catText.indexOf('柚') >= 0 || catText.indexOf('芸香') >= 0) bannerSrc = 'assets/images/oil-detail-banner-citrus.jpg';
+  else if (catText.indexOf('花') >= 0 || catText.indexOf('茉莉') >= 0 || catText.indexOf('依蘭') >= 0 || catText.indexOf('苯基酯') >= 0) bannerSrc = 'assets/images/oil-detail-banner-florals.jpg';
+  else if (catText.indexOf('樹') >= 0 || catText.indexOf('木') >= 0 || catText.indexOf('檜') >= 0 || catText.indexOf('倍半萜醇') >= 0) bannerSrc = 'assets/images/oil-detail-banner-woods.jpg';
   bannerEl.src = bannerSrc;
   bannerEl.style.display = 'block';
 
