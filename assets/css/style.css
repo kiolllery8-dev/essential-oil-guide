@@ -806,10 +806,10 @@ footer ul li a:hover { color: var(--white); }
   inset: 0;
   background: linear-gradient(
     105deg,
-    rgba(0,0,0,0.52) 0%,
-    rgba(0,0,0,0.28) 55%,
-    rgba(0,0,0,0.05) 85%,
-    transparent 100%
+    rgba(0,0,0,0.65) 0%,
+    rgba(0,0,0,0.45) 55%,
+    rgba(0,0,0,0.25) 85%,
+    rgba(0,0,0,0.15) 100%
   );
 }
 
@@ -1291,8 +1291,16 @@ footer ul li a:hover { color: var(--white); }
   position: relative;
   overflow: hidden;
 }
-.compound-hero h1 { font-size: 28px; font-weight: 800; margin-bottom: 12px; line-height: 1.4; }
-.compound-hero .ch-desc { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.7; max-width: 580px; }
+.compound-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 0;
+}
+.compound-hero > * { position: relative; z-index: 1; }
+.compound-hero h1 { font-size: 28px; font-weight: 800; margin-bottom: 12px; line-height: 1.4; color: #fff !important; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+.compound-hero .ch-desc { font-size: 14px; color: rgba(255,255,255,0.95); line-height: 1.7; max-width: 580px; text-shadow: 0 1px 4px rgba(0,0,0,0.4); }
 .compound-hero .ch-badge { display:inline-block; background:rgba(255,255,255,0.15); font-size:12px; font-weight:700; padding:4px 14px; border-radius:20px; margin-bottom:16px; letter-spacing:1px; }
 .compound-hero .ch-count { font-size:13px; color:rgba(255,255,255,0.7); margin-top:16px; }
 
