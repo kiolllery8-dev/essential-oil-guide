@@ -8,12 +8,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
   <style>
-    .od-hero { padding:48px 40px; border-radius:20px; margin-bottom:28px; color:#fff; position:relative; overflow:hidden; display:flex; align-items:center; gap:40px; }
-    .od-hero-emoji { font-size:100px; line-height:1; flex-shrink:0; filter:drop-shadow(0 4px 12px rgba(0,0,0,0.2)); }
-    .od-hero-text { flex:1; }
-    .od-hero h1 { font-size:36px; font-weight:800; margin-bottom:4px; }
-    .od-hero .od-latin { font-size:18px; font-style:italic; opacity:0.85; margin-bottom:12px; }
-    .od-hero .od-cat-badge { display:inline-block; background:rgba(255,255,255,0.2); padding:4px 14px; border-radius:16px; font-size:12px; font-weight:600; letter-spacing:0.5px; }
+    .od-hero { padding:64px 48px; border-radius:20px; margin-bottom:28px; color:#fff; position:relative; overflow:hidden; display:flex; align-items:center; gap:40px; min-height:260px; }
+    .od-hero-emoji { font-size:110px; line-height:1; flex-shrink:0; filter:drop-shadow(0 4px 16px rgba(0,0,0,0.5)); }
+    .od-hero-text { flex:1; text-shadow: 0 2px 12px rgba(0,0,0,0.6); }
+    .od-hero h1 { font-size:42px; font-weight:800; margin-bottom:6px; color:#fff; }
+    .od-hero .od-latin { font-size:20px; font-style:italic; opacity:0.95; margin-bottom:14px; color:#fff; }
+    .od-hero .od-cat-badge { display:inline-block; background:rgba(255,255,255,0.25); backdrop-filter:blur(4px); padding:5px 16px; border-radius:16px; font-size:13px; font-weight:600; letter-spacing:0.5px; text-shadow:none; }
 
     .od-grid { display:grid; grid-template-columns:1fr 320px; gap:28px; }
     @media(max-width:900px) { .od-grid { grid-template-columns:1fr; } }
@@ -261,8 +261,42 @@ function init() {
   // Update page title
   document.title = oil.zh + ' — ' + oil.latin + ' | 精油圖鑑指南';
 
-  // Hero
-  document.getElementById('odHero').style.background = 'linear-gradient(135deg, ' + accent + ', ' + accent + 'CC)';
+  // Calculate banner image (reused in Hero background and below Safety)
+  var catText0 = (oil.category || '') + (oil.family || '') + (oil.zh || '');
+  var heroBanner = 'assets/images/oil-detail-banner-herbs.jpg';
+  if (oil.zh.indexOf('薰衣草') >= 0) heroBanner = 'assets/images/banner-lavender-field.jpg';
+  else if (oil.zh.indexOf('洋甘菊') >= 0) heroBanner = 'assets/images/banner-chamomile.jpg';
+  else if (oil.zh.indexOf('薄荷') >= 0) heroBanner = 'assets/images/manus-mint-dew.jpg';
+  else if (oil.zh.indexOf('佛手柑') >= 0) heroBanner = 'assets/images/manus-bergamot.jpg';
+  else if (oil.zh.indexOf('薑黃') >= 0 || oil.zh.indexOf('薑') >= 0) heroBanner = 'assets/images/banner-ginger.jpg';
+  else if (oil.zh.indexOf('肉桂') >= 0) heroBanner = 'assets/images/banner-cinnamon.jpg';
+  else if (oil.zh.indexOf('香草') >= 0 || oil.zh.indexOf('安息香') >= 0) heroBanner = 'assets/images/banner-vanilla.jpg';
+  else if (oil.zh.indexOf('廣藿香') >= 0) heroBanner = 'assets/images/banner-patchouli.jpg';
+  else if (oil.zh.indexOf('岩蘭草') >= 0) heroBanner = 'assets/images/banner-vetiver.jpg';
+  else if (oil.zh.indexOf('快樂鼠尾草') >= 0 || oil.zh.indexOf('鼠尾草') >= 0) heroBanner = 'assets/images/banner-clary-sage.jpg';
+  else if (oil.zh.indexOf('檀香') >= 0) heroBanner = 'assets/images/banner-sandalwood.jpg';
+  else if (oil.zh.indexOf('沒藥') >= 0) heroBanner = 'assets/images/banner-myrrh.jpg';
+  else if (oil.zh.indexOf('杜松') >= 0 || oil.zh.indexOf('刺檜') >= 0) heroBanner = 'assets/images/banner-juniper.jpg';
+  else if (oil.zh.indexOf('茴香') >= 0) heroBanner = 'assets/images/banner-fennel.jpg';
+  else if (oil.zh.indexOf('歐白芷') >= 0 || oil.zh.indexOf('當歸') >= 0) heroBanner = 'assets/images/banner-angelica.jpg';
+  else if (oil.zh.indexOf('龍艾') >= 0 || oil.zh.indexOf('龍蒿') >= 0) heroBanner = 'assets/images/banner-tarragon.jpg';
+  else if (oil.zh.indexOf('黑胡椒') >= 0 || oil.zh.indexOf('胡椒') >= 0) heroBanner = 'assets/images/banner-peppercorn.jpg';
+  else if (oil.zh.indexOf('豆蔻') >= 0) heroBanner = 'assets/images/banner-cardamom.jpg';
+  else if (oil.zh.indexOf('月桂') >= 0) heroBanner = 'assets/images/banner-bay-leaf.jpg';
+  else if (oil.zh.indexOf('永久花') >= 0 || oil.zh.indexOf('蠟菊') >= 0) heroBanner = 'assets/images/banner-helichrysum.jpg';
+  else if (oil.zh.indexOf('香蜂') >= 0 || oil.zh.indexOf('蜂草') >= 0) heroBanner = 'assets/images/banner-melissa.jpg';
+  else if (oil.zh.indexOf('天竺葵') >= 0) heroBanner = 'assets/images/banner-geranium.jpg';
+  else if (oil.zh.indexOf('丁香') >= 0) heroBanner = 'assets/images/manus-cinnamon-spices.jpg';
+  else if (oil.zh.indexOf('雪松') >= 0) heroBanner = 'assets/images/manus-cedar-wood.jpg';
+  else if (oil.zh.indexOf('乳香') >= 0) heroBanner = 'assets/images/manus-frankincense-incense.jpg';
+  else if (oil.zh.indexOf('玫瑰') >= 0) heroBanner = 'assets/images/manus-rose-petals.jpg';
+  else if (oil.zh.indexOf('松') >= 0 || oil.zh.indexOf('杉') >= 0 || oil.zh.indexOf('冷杉') >= 0 || oil.zh.indexOf('雲杉') >= 0) heroBanner = 'assets/images/manus-pine-resin.jpg';
+  else if (catText0.indexOf('柑橘') >= 0 || catText0.indexOf('檸檬') >= 0 || catText0.indexOf('橙') >= 0 || catText0.indexOf('萊姆') >= 0 || catText0.indexOf('柚') >= 0 || catText0.indexOf('芸香') >= 0) heroBanner = 'assets/images/oil-detail-banner-citrus.jpg';
+  else if (catText0.indexOf('花') >= 0 || catText0.indexOf('茉莉') >= 0 || catText0.indexOf('依蘭') >= 0 || catText0.indexOf('苯基酯') >= 0) heroBanner = 'assets/images/oil-detail-banner-florals.jpg';
+  else if (catText0.indexOf('樹') >= 0 || catText0.indexOf('木') >= 0 || catText0.indexOf('檜') >= 0 || catText0.indexOf('倍半萜醇') >= 0) heroBanner = 'assets/images/oil-detail-banner-woods.jpg';
+
+  // Hero — use banner image as background with dark overlay
+  document.getElementById('odHero').style.background = 'linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url(' + heroBanner + ') center/cover no-repeat';
   document.getElementById('odEmoji').textContent = emoji;
   document.getElementById('odName').textContent = oil.zh;
   document.getElementById('odLatin').textContent = oil.latin;
@@ -312,43 +346,9 @@ function init() {
   safetyEl.className = 'od-safety ' + oil.safetyLevel;
   safetyEl.innerHTML = '<strong>' + safetyLabels[oil.safetyLevel] + '</strong><br>' + (oil.safetyText || '一般安全，建議稀釋後使用。');
 
-  // Related banner by specific oil match (30+ banners, fallback to category)
+  // Bottom banner reuses same heroBanner
   var bannerEl = document.getElementById('odRelatedBanner');
-  var catText = (oil.category || '') + (oil.family || '') + (oil.zh || '');
-  var bannerSrc = 'assets/images/oil-detail-banner-herbs.jpg';
-  // Specific banner matches (new batch)
-  if (oil.zh.indexOf('薰衣草') >= 0) bannerSrc = 'assets/images/banner-lavender-field.jpg';
-  else if (oil.zh.indexOf('洋甘菊') >= 0) bannerSrc = 'assets/images/banner-chamomile.jpg';
-  else if (oil.zh.indexOf('薄荷') >= 0) bannerSrc = 'assets/images/manus-mint-dew.jpg';
-  else if (oil.zh.indexOf('佛手柑') >= 0) bannerSrc = 'assets/images/manus-bergamot.jpg';
-  else if (oil.zh.indexOf('薑黃') >= 0 || oil.zh.indexOf('薑') >= 0) bannerSrc = 'assets/images/banner-ginger.jpg';
-  else if (oil.zh.indexOf('肉桂') >= 0) bannerSrc = 'assets/images/banner-cinnamon.jpg';
-  else if (oil.zh.indexOf('香草') >= 0 || oil.zh.indexOf('安息香') >= 0) bannerSrc = 'assets/images/banner-vanilla.jpg';
-  else if (oil.zh.indexOf('廣藿香') >= 0) bannerSrc = 'assets/images/banner-patchouli.jpg';
-  else if (oil.zh.indexOf('岩蘭草') >= 0) bannerSrc = 'assets/images/banner-vetiver.jpg';
-  else if (oil.zh.indexOf('快樂鼠尾草') >= 0 || oil.zh.indexOf('鼠尾草') >= 0) bannerSrc = 'assets/images/banner-clary-sage.jpg';
-  else if (oil.zh.indexOf('檀香') >= 0) bannerSrc = 'assets/images/banner-sandalwood.jpg';
-  else if (oil.zh.indexOf('沒藥') >= 0) bannerSrc = 'assets/images/banner-myrrh.jpg';
-  else if (oil.zh.indexOf('杜松') >= 0 || oil.zh.indexOf('刺檜') >= 0) bannerSrc = 'assets/images/banner-juniper.jpg';
-  else if (oil.zh.indexOf('茴香') >= 0) bannerSrc = 'assets/images/banner-fennel.jpg';
-  else if (oil.zh.indexOf('歐白芷') >= 0 || oil.zh.indexOf('當歸') >= 0) bannerSrc = 'assets/images/banner-angelica.jpg';
-  else if (oil.zh.indexOf('龍艾') >= 0 || oil.zh.indexOf('龍蒿') >= 0) bannerSrc = 'assets/images/banner-tarragon.jpg';
-  else if (oil.zh.indexOf('黑胡椒') >= 0 || oil.zh.indexOf('胡椒') >= 0) bannerSrc = 'assets/images/banner-peppercorn.jpg';
-  else if (oil.zh.indexOf('豆蔻') >= 0) bannerSrc = 'assets/images/banner-cardamom.jpg';
-  else if (oil.zh.indexOf('月桂') >= 0) bannerSrc = 'assets/images/banner-bay-leaf.jpg';
-  else if (oil.zh.indexOf('永久花') >= 0 || oil.zh.indexOf('蠟菊') >= 0) bannerSrc = 'assets/images/banner-helichrysum.jpg';
-  else if (oil.zh.indexOf('香蜂') >= 0 || oil.zh.indexOf('蜂草') >= 0) bannerSrc = 'assets/images/banner-melissa.jpg';
-  else if (oil.zh.indexOf('天竺葵') >= 0) bannerSrc = 'assets/images/banner-geranium.jpg';
-  else if (oil.zh.indexOf('丁香') >= 0) bannerSrc = 'assets/images/manus-cinnamon-spices.jpg';
-  else if (oil.zh.indexOf('雪松') >= 0) bannerSrc = 'assets/images/manus-cedar-wood.jpg';
-  else if (oil.zh.indexOf('乳香') >= 0) bannerSrc = 'assets/images/manus-frankincense-incense.jpg';
-  else if (oil.zh.indexOf('玫瑰') >= 0) bannerSrc = 'assets/images/manus-rose-petals.jpg';
-  else if (oil.zh.indexOf('松') >= 0 || oil.zh.indexOf('杉') >= 0 || oil.zh.indexOf('冷杉') >= 0 || oil.zh.indexOf('雲杉') >= 0) bannerSrc = 'assets/images/manus-pine-resin.jpg';
-  // Category fallbacks
-  else if (catText.indexOf('柑橘') >= 0 || catText.indexOf('檸檬') >= 0 || catText.indexOf('橙') >= 0 || catText.indexOf('萊姆') >= 0 || catText.indexOf('柚') >= 0 || catText.indexOf('芸香') >= 0) bannerSrc = 'assets/images/oil-detail-banner-citrus.jpg';
-  else if (catText.indexOf('花') >= 0 || catText.indexOf('茉莉') >= 0 || catText.indexOf('依蘭') >= 0 || catText.indexOf('苯基酯') >= 0) bannerSrc = 'assets/images/oil-detail-banner-florals.jpg';
-  else if (catText.indexOf('樹') >= 0 || catText.indexOf('木') >= 0 || catText.indexOf('檜') >= 0 || catText.indexOf('倍半萜醇') >= 0) bannerSrc = 'assets/images/oil-detail-banner-woods.jpg';
-  bannerEl.src = bannerSrc;
+  bannerEl.src = heroBanner;
   bannerEl.style.display = 'block';
 
   // Prev/Next nav
