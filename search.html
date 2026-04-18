@@ -185,6 +185,7 @@ function highlight(text, q) {
 
 // Full-site search index (loaded from JSON)
 var fullSiteIndex = [];
+var oilDataLoaded = [];
 
 // Fuzzy matching — token-based, Chinese/English friendly
 function fuzzyScore(text, query) {
@@ -273,14 +274,32 @@ function doSearch(q) {
     }
   }
 
-  // 4. Oil data search
-  if (window.__oilData) {
-    var oilMatches = window.__oilData.filter(function(o) {
-      return (o.z && o.z.indexOf(q) >= 0) || (o.l && o.l.toLowerCase().indexOf(qLower) >= 0);
+  // 4. Oil data search (302 種精油)
+  var oilSource = (oilDataLoaded && oilDataLoaded.length) ? oilDataLoaded : (window.__oilData || []);
+  if (oilSource.length) {
+    var oilMatches = oilSource.filter(function(o) {
+      // Normalize fields: some sources use z/l/n/ci/cl, others use zh/latin/id/category/catFile
+      var zh = o.z || o.zh || '';
+      var latin = o.l || o.latin || '';
+      return (zh && zh.indexOf(q) >= 0) || (latin && latin.toLowerCase().indexOf(qLower) >= 0);
     });
-    for (var jo = 0; jo < Math.min(oilMatches.length, 15); jo++) {
+    for (var jo = 0; jo < Math.min(oilMatches.length, 30); jo++) {
       var ooil = oilMatches[jo];
-      results.push({ title: '🌿 ' + ooil.z, url: 'oil-detail.html?id=' + ooil.n, breadcrumb: '首頁 › 精油 › ' + ooil.cl, cat: ooil.cl, snippet: ooil.l, score: 120 });
+      var ozh = ooil.z || ooil.zh || '';
+      var olatin = ooil.l || ooil.latin || '';
+      var on = ooil.n || ooil.id || '';
+      var ocat = ooil.cl || ooil.category || '精油';
+      var oscore = 120;
+      if (ozh === q) oscore = 180; // exact name match
+      else if (ozh.indexOf(q) === 0) oscore = 150; // starts with
+      results.push({
+        title: '🌿 ' + ozh,
+        url: 'oil-detail.html?id=' + on,
+        breadcrumb: '首頁 › 精油 › ' + ocat,
+        cat: ocat,
+        snippet: olatin,
+        score: oscore
+      });
     }
   }
 
@@ -306,20 +325,21 @@ function doSearch(q) {
   resultList.innerHTML = html;
 }
 
-// Load full-site index from JSON, then kick off URL-param search if any
-fetch('assets/data/search-index.json')
-  .then(function(r){ return r.json(); })
-  .then(function(data){ fullSiteIndex = data; })
-  .catch(function(){})
-  .finally(function(){
-    var params = new URLSearchParams(window.location.search);
-    var q = params.get('q');
-    if (q) {
-      mainInput.value = q;
-      if (navInput) navInput.value = q;
-      doSearch(q);
-    }
-  });
+// Load BOTH full-site index AND oils.json in parallel, then run URL-param search
+Promise.all([
+  fetch('assets/data/search-index.json').then(function(r){ return r.json(); }).catch(function(){ return []; }),
+  fetch('assets/data/oils.json').then(function(r){ return r.json(); }).catch(function(){ return []; })
+]).then(function(pair){
+  fullSiteIndex = pair[0] || [];
+  oilDataLoaded = pair[1] || [];
+  var params = new URLSearchParams(window.location.search);
+  var q = params.get('q');
+  if (q) {
+    mainInput.value = q;
+    if (navInput) navInput.value = q;
+    doSearch(q);
+  }
+});
 
 // Debounce input
 var timer;
