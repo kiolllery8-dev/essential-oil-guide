@@ -261,7 +261,21 @@ function init() {
   // Calculate banner image (reused in Hero background and below Safety)
   var catText0 = (oil.category || '') + (oil.family || '') + (oil.zh || '');
   var heroBanner = 'assets/images/oil-detail-banner-herbs.jpg';
+  // 批次 8：compounds-03/04 單一植物專屬 banner（用 ID 精確匹配）
+  var idBannerMap = {
+    '70':'ho-leaf','71':'lesser-galangal','72':'laurel','73':'ravintsara','74':'niaouli-ct-cineole',
+    '75':'cardamom-pod','76':'blue-gum-eucalyptus','77':'smithii-eucalyptus','78':'radiata-eucalyptus',
+    '79':'pandanus-helichrysum','80':'mountain-hyssop','82':'spike-lavender','83':'cajeput','84':'niaouli',
+    '85':'broom-tea-tree','86':'myrtle-plant','87':'rosemary-cineole','88':'three-lobed-sage',
+    '89':'lovage-round','90':'pineapple-thyme','93':'aglaia','94':'tree-wormwood','95':'blue-cypress',
+    '96':'hemp-plant','97':'ylang-ylang-tree','98':'large-ylang-ylang','99':'katrafay','100':'taiwan-hinoki',
+    '102':'myrrh-tree','103':'bisabolol-myrrh','104':'copaiba','105':'verbenone-cordia','106':'guaiac-wood',
+    '107':'gurjun-balsam','108':'german-chamomile','109':'hops','110':'st-johns-wort','111':'thorny-juniper',
+    '112':'virginia-cedar','113':'spikenard-himalayan','114':'chinese-spikenard','115':'guava-leaf','116':'schisandra'
+  };
+  if (idBannerMap[oil.id]) { heroBanner = 'assets/images/banner-' + idBannerMap[oil.id] + '.jpg'; }
   // 批次 7：compounds-02 香豆素與內酯類（最優先，避開當歸/薑黃等共用衝突）
+  else if (oil.zh.indexOf('中國當歸') >= 0) heroBanner = 'assets/images/banner-chinese-angelica.jpg';
   if (oil.zh.indexOf('中國當歸') >= 0) heroBanner = 'assets/images/banner-chinese-angelica.jpg';
   else if (oil.zh.indexOf('印度當歸') >= 0) heroBanner = 'assets/images/banner-indian-angelica.jpg';
   else if (oil.zh.indexOf('芹菜籽') >= 0) heroBanner = 'assets/images/banner-celery-seed.jpg';
