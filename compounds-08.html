@@ -24,7 +24,7 @@
       <li><a href="aromatherapy.html">芳療應用</a></li>
       <li><a href="safety.html">安全指南</a></li>
     </ul></nav>
-    <input class="nav-search" type="text" placeholder="搜尋精油..." />
+    <input class="nav-search" type="text" placeholder="搜尋精油..." onkeydown="if(event.key===&quot;Enter&quot;&&this.value.trim())location.href=&quot;oils.html?q=&quot;+encodeURIComponent(this.value.trim())" />
     <button class="menu-toggle">☰</button>
   </div>
 </header>

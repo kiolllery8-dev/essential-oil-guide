@@ -1606,6 +1606,13 @@ function filterChem(cat){
 let st;function onSI(v){clearTimeout(st);st=setTimeout(()=>doSearch(v),150);}
 searchInput.addEventListener("input",()=>onSI(searchInput.value));
 headerSearch.addEventListener("input",()=>{searchInput.value=headerSearch.value;onSI(headerSearch.value);});
+
+// Auto-search from URL ?q= parameter
+(function(){
+  var params=new URLSearchParams(window.location.search);
+  var q=params.get('q');
+  if(q){ searchInput.value=q; headerSearch.value=q; doSearch(q); }
+})();
 </script>
 </body>
 </html>
