@@ -261,8 +261,24 @@ function init() {
   // Calculate banner image (reused in Hero background and below Safety)
   var catText0 = (oil.category || '') + (oil.family || '') + (oil.zh || '');
   var heroBanner = 'assets/images/oil-detail-banner-herbs.jpg';
+  // 批次 6：compounds-01 單萜酮/烯類單一植物（最優先）
+  if (oil.zh.indexOf('圓葉當歸') >= 0) heroBanner = 'assets/images/banner-lovage.jpg';
+  else if (oil.zh.indexOf('假剪股穎風輪菜') >= 0) heroBanner = 'assets/images/banner-calamint.jpg';
+  else if (oil.zh.indexOf('藏茴香') >= 0) heroBanner = 'assets/images/banner-caraway.jpg';
+  else if (oil.zh.indexOf('藍米柏') >= 0) heroBanner = 'assets/images/banner-fokienia.jpg';
+  else if (oil.zh.indexOf('薄荷尤加利') >= 0) heroBanner = 'assets/images/banner-peppermint-eucalyptus.jpg';
+  else if (oil.zh.indexOf('多苞葉尤加利') >= 0) heroBanner = 'assets/images/banner-blue-mallee.jpg';
+  else if (oil.zh.indexOf('頭狀薰衣草') >= 0) heroBanner = 'assets/images/banner-stoechas-lavender.jpg';
+  else if (oil.zh.indexOf('白膠脂') >= 0 || oil.zh.indexOf('熏陸香') >= 0) heroBanner = 'assets/images/banner-mastic.jpg';
+  else if (oil.zh.indexOf('綠薄荷') >= 0) heroBanner = 'assets/images/banner-spearmint.jpg';
+  else if (oil.zh.indexOf('胡椒薄荷') >= 0) heroBanner = 'assets/images/banner-peppermint-plant.jpg';
+  else if (oil.zh.indexOf('薰衣草葉鼠尾草') >= 0) heroBanner = 'assets/images/banner-spanish-sage.jpg';
+  else if (oil.zh.indexOf('艾菊') >= 0) heroBanner = 'assets/images/banner-tansy.jpg';
+  else if (oil.zh.indexOf('側柏') >= 0 && oil.zh.indexOf('酮') < 0) heroBanner = 'assets/images/banner-thuja.jpg';
+  else if (oil.zh.indexOf('歐防風') >= 0) heroBanner = 'assets/images/banner-parsnip.jpg';
+  else if (oil.zh.indexOf('木香') >= 0) heroBanner = 'assets/images/banner-costus-root.jpg';
   // 批次 5：松杉針葉類單一植物（優先）
-  if (oil.zh.indexOf('穗甘松') >= 0 || oil.zh.indexOf('中國甘松') >= 0) heroBanner = 'assets/images/banner-spikenard.jpg';
+  else if (oil.zh.indexOf('穗甘松') >= 0 || oil.zh.indexOf('中國甘松') >= 0) heroBanner = 'assets/images/banner-spikenard.jpg';
   else if (oil.zh.indexOf('歐洲冷杉') >= 0) heroBanner = 'assets/images/banner-silver-fir.jpg?v=2';
   else if (oil.zh.indexOf('膠冷杉') >= 0) heroBanner = 'assets/images/banner-balsam-fir.jpg?v=2';
   else if (oil.zh.indexOf('西伯利亞冷杉') >= 0) heroBanner = 'assets/images/banner-siberian-fir.jpg';
