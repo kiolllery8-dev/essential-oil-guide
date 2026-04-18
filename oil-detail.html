@@ -312,19 +312,36 @@ function init() {
   safetyEl.className = 'od-safety ' + oil.safetyLevel;
   safetyEl.innerHTML = '<strong>' + safetyLabels[oil.safetyLevel] + '</strong><br>' + (oil.safetyText || '一般安全，建議稀釋後使用。');
 
-  // Related banner by specific oil match (Manus images first, fallback to category)
+  // Related banner by specific oil match (30+ banners, fallback to category)
   var bannerEl = document.getElementById('odRelatedBanner');
   var catText = (oil.category || '') + (oil.family || '') + (oil.zh || '');
   var bannerSrc = 'assets/images/oil-detail-banner-herbs.jpg';
-  // Specific matches
-  if (oil.zh.indexOf('薰衣草') >= 0) bannerSrc = 'assets/images/manus-lavender-field.jpg';
+  // Specific banner matches (new batch)
+  if (oil.zh.indexOf('薰衣草') >= 0) bannerSrc = 'assets/images/banner-lavender-field.jpg';
+  else if (oil.zh.indexOf('洋甘菊') >= 0) bannerSrc = 'assets/images/banner-chamomile.jpg';
   else if (oil.zh.indexOf('薄荷') >= 0) bannerSrc = 'assets/images/manus-mint-dew.jpg';
   else if (oil.zh.indexOf('佛手柑') >= 0) bannerSrc = 'assets/images/manus-bergamot.jpg';
-  else if (oil.zh.indexOf('洋甘菊') >= 0) bannerSrc = 'assets/images/manus-chamomile.jpg';
-  else if (oil.zh.indexOf('薑') >= 0 || oil.zh.indexOf('薑黃') >= 0) bannerSrc = 'assets/images/manus-ginger-turmeric.jpg';
-  else if (oil.zh.indexOf('肉桂') >= 0 || oil.zh.indexOf('丁香') >= 0 || oil.zh.indexOf('香料') >= 0) bannerSrc = 'assets/images/manus-cinnamon-spices.jpg';
-  else if (oil.zh.indexOf('雪松') >= 0 || oil.zh.indexOf('檀香') >= 0) bannerSrc = 'assets/images/manus-cedar-wood.jpg';
-  else if (oil.zh.indexOf('乳香') >= 0 || oil.zh.indexOf('沒藥') >= 0 || oil.zh.indexOf('安息香') >= 0) bannerSrc = 'assets/images/manus-frankincense-incense.jpg';
+  else if (oil.zh.indexOf('薑黃') >= 0 || oil.zh.indexOf('薑') >= 0) bannerSrc = 'assets/images/banner-ginger.jpg';
+  else if (oil.zh.indexOf('肉桂') >= 0) bannerSrc = 'assets/images/banner-cinnamon.jpg';
+  else if (oil.zh.indexOf('香草') >= 0 || oil.zh.indexOf('安息香') >= 0) bannerSrc = 'assets/images/banner-vanilla.jpg';
+  else if (oil.zh.indexOf('廣藿香') >= 0) bannerSrc = 'assets/images/banner-patchouli.jpg';
+  else if (oil.zh.indexOf('岩蘭草') >= 0) bannerSrc = 'assets/images/banner-vetiver.jpg';
+  else if (oil.zh.indexOf('快樂鼠尾草') >= 0 || oil.zh.indexOf('鼠尾草') >= 0) bannerSrc = 'assets/images/banner-clary-sage.jpg';
+  else if (oil.zh.indexOf('檀香') >= 0) bannerSrc = 'assets/images/banner-sandalwood.jpg';
+  else if (oil.zh.indexOf('沒藥') >= 0) bannerSrc = 'assets/images/banner-myrrh.jpg';
+  else if (oil.zh.indexOf('杜松') >= 0 || oil.zh.indexOf('刺檜') >= 0) bannerSrc = 'assets/images/banner-juniper.jpg';
+  else if (oil.zh.indexOf('茴香') >= 0) bannerSrc = 'assets/images/banner-fennel.jpg';
+  else if (oil.zh.indexOf('歐白芷') >= 0 || oil.zh.indexOf('當歸') >= 0) bannerSrc = 'assets/images/banner-angelica.jpg';
+  else if (oil.zh.indexOf('龍艾') >= 0 || oil.zh.indexOf('龍蒿') >= 0) bannerSrc = 'assets/images/banner-tarragon.jpg';
+  else if (oil.zh.indexOf('黑胡椒') >= 0 || oil.zh.indexOf('胡椒') >= 0) bannerSrc = 'assets/images/banner-peppercorn.jpg';
+  else if (oil.zh.indexOf('豆蔻') >= 0) bannerSrc = 'assets/images/banner-cardamom.jpg';
+  else if (oil.zh.indexOf('月桂') >= 0) bannerSrc = 'assets/images/banner-bay-leaf.jpg';
+  else if (oil.zh.indexOf('永久花') >= 0 || oil.zh.indexOf('蠟菊') >= 0) bannerSrc = 'assets/images/banner-helichrysum.jpg';
+  else if (oil.zh.indexOf('香蜂') >= 0 || oil.zh.indexOf('蜂草') >= 0) bannerSrc = 'assets/images/banner-melissa.jpg';
+  else if (oil.zh.indexOf('天竺葵') >= 0) bannerSrc = 'assets/images/banner-geranium.jpg';
+  else if (oil.zh.indexOf('丁香') >= 0) bannerSrc = 'assets/images/manus-cinnamon-spices.jpg';
+  else if (oil.zh.indexOf('雪松') >= 0) bannerSrc = 'assets/images/manus-cedar-wood.jpg';
+  else if (oil.zh.indexOf('乳香') >= 0) bannerSrc = 'assets/images/manus-frankincense-incense.jpg';
   else if (oil.zh.indexOf('玫瑰') >= 0) bannerSrc = 'assets/images/manus-rose-petals.jpg';
   else if (oil.zh.indexOf('松') >= 0 || oil.zh.indexOf('杉') >= 0 || oil.zh.indexOf('冷杉') >= 0 || oil.zh.indexOf('雲杉') >= 0) bannerSrc = 'assets/images/manus-pine-resin.jpg';
   // Category fallbacks
