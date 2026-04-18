@@ -261,8 +261,19 @@ function init() {
   // Calculate banner image (reused in Hero background and below Safety)
   var catText0 = (oil.category || '') + (oil.family || '') + (oil.zh || '');
   var heroBanner = 'assets/images/oil-detail-banner-herbs.jpg';
+  // 批次 4：樹木/樹脂類單一植物（優先）
+  if (oil.zh.indexOf('茶樹') >= 0 && oil.zh.indexOf('掃帚') < 0) heroBanner = 'assets/images/banner-tea-tree.jpg';
+  else if (oil.zh.indexOf('掃帚茶樹') >= 0) heroBanner = 'assets/images/banner-broom-tea-tree.jpg';
+  else if (oil.zh.indexOf('香桃木') >= 0) heroBanner = 'assets/images/banner-myrtle.jpg';
+  else if (oil.zh.indexOf('紅檜') >= 0 || oil.zh.indexOf('扁柏') >= 0) heroBanner = 'assets/images/banner-taiwan-cypress.jpg';
+  else if (oil.zh.indexOf('胡蘿蔔籽') >= 0) heroBanner = 'assets/images/banner-carrot-seed.jpg';
+  else if (oil.zh.indexOf('檀香') >= 0) heroBanner = 'assets/images/banner-sandalwood-tree.jpg';
+  else if (oil.zh.indexOf('廣藿香') >= 0) heroBanner = 'assets/images/banner-patchouli-leaves.jpg';
+  else if (oil.zh.indexOf('纈草') >= 0) heroBanner = 'assets/images/banner-valerian.jpg';
+  else if (oil.zh.indexOf('秘魯聖木') >= 0 || oil.zh.indexOf('聖木') >= 0) heroBanner = 'assets/images/banner-palo-santo.jpg';
+  else if (oil.zh.indexOf('連翹') >= 0) heroBanner = 'assets/images/banner-forsythia.jpg';
   // 批次 3：花香類單一植物（優先）
-  if (oil.zh.indexOf('依蘭') >= 0) heroBanner = 'assets/images/banner-ylang-ylang-flower.jpg';
+  else if (oil.zh.indexOf('依蘭') >= 0) heroBanner = 'assets/images/banner-ylang-ylang-flower.jpg';
   else if (oil.zh.indexOf('茉莉') >= 0) heroBanner = 'assets/images/banner-jasmine.jpg';
   else if (oil.zh.indexOf('晚香玉') >= 0) heroBanner = 'assets/images/banner-tuberose.jpg';
   else if (oil.zh.indexOf('桂花') >= 0) heroBanner = 'assets/images/banner-osmanthus.jpg';
