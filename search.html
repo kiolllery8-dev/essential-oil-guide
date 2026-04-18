@@ -183,6 +183,41 @@ function highlight(text, q) {
   return text.replace(re, '<mark>$1</mark>');
 }
 
+// Full-site search index (loaded from JSON)
+var fullSiteIndex = [];
+
+// Fuzzy matching — token-based, Chinese/English friendly
+function fuzzyScore(text, query) {
+  if (!text) return 0;
+  text = text.toLowerCase();
+  query = query.toLowerCase().trim();
+  if (!query) return 0;
+  // Exact substring match
+  if (text.indexOf(query) >= 0) return 100;
+  // Token-based: split query into chars (CJK) or words
+  var tokens = [];
+  // CJK char-by-char + latin word-by-word
+  var cjkRe = /[\u4e00-\u9fff]/;
+  var buf = '';
+  for (var i = 0; i < query.length; i++) {
+    var ch = query[i];
+    if (cjkRe.test(ch)) {
+      if (buf.trim()) { tokens.push(buf.trim()); buf = ''; }
+      tokens.push(ch);
+    } else {
+      buf += ch;
+    }
+  }
+  if (buf.trim()) tokens.push(buf.trim());
+  if (tokens.length === 0) return 0;
+  var hits = 0;
+  for (var j = 0; j < tokens.length; j++) {
+    if (text.indexOf(tokens[j]) >= 0) hits++;
+  }
+  if (hits === 0) return 0;
+  return Math.floor((hits / tokens.length) * 60); // 0-60 based on ratio
+}
+
 function doSearch(q) {
   q = q.trim();
   if (!q) {
@@ -192,37 +227,65 @@ function doSearch(q) {
   }
   var qLower = q.toLowerCase();
   var results = [];
-  // Topic direct match first
+
+  // 1. Topic direct match
   for (var k in topicMap) {
     if (q.indexOf(k) >= 0 || k.indexOf(q) >= 0) {
       var t = topicMap[k];
-      results.push({ title: t.title, url: t.url, breadcrumb: '直接對應主題', cat: '主題', snippet: t.snippet, score: 100 });
+      results.push({ title: t.title, url: t.url, breadcrumb: '直接對應主題', cat: '主題', snippet: t.snippet, score: 200 });
     }
   }
-  // Search index
+
+  // 2. Static curated index (for high-quality snippets)
   for (var i = 0; i < searchIndex.length; i++) {
     var item = searchIndex[i];
     var combined = (item.title + ' ' + item.keywords + ' ' + item.snippet).toLowerCase();
     if (combined.indexOf(qLower) >= 0) {
       var score = 0;
-      if (item.title.toLowerCase().indexOf(qLower) >= 0) score += 50;
-      if (item.keywords.toLowerCase().indexOf(qLower) >= 0) score += 30;
-      if (item.snippet.toLowerCase().indexOf(qLower) >= 0) score += 10;
+      if (item.title.toLowerCase().indexOf(qLower) >= 0) score += 150;
+      if (item.keywords.toLowerCase().indexOf(qLower) >= 0) score += 100;
+      if (item.snippet.toLowerCase().indexOf(qLower) >= 0) score += 60;
       results.push({ title: item.title, url: item.url, breadcrumb: item.breadcrumb, cat: item.cat, snippet: item.snippet, score: score });
     }
   }
-  // Also search oil data (fallback to oils.html?q=)
+
+  // 3. Full-site title/description fuzzy search
+  for (var p = 0; p < fullSiteIndex.length; p++) {
+    var page = fullSiteIndex[p];
+    var titleScore = Math.max(fuzzyScore(page.title, q), fuzzyScore(page.h1, q));
+    var descScore = fuzzyScore(page.desc, q);
+    var h2Score = 0;
+    if (page.h2s) {
+      for (var hh = 0; hh < page.h2s.length; hh++) {
+        h2Score = Math.max(h2Score, fuzzyScore(page.h2s[hh], q));
+      }
+    }
+    var totalScore = titleScore * 2 + descScore + h2Score;
+    if (totalScore > 30) {
+      results.push({
+        title: page.title,
+        url: page.url,
+        breadcrumb: '首頁 › ' + page.cat,
+        cat: page.cat,
+        snippet: page.desc || (page.h2s && page.h2s.slice(0,3).join(' · ')) || page.title,
+        score: totalScore
+      });
+    }
+  }
+
+  // 4. Oil data search
   if (window.__oilData) {
     var oilMatches = window.__oilData.filter(function(o) {
       return (o.z && o.z.indexOf(q) >= 0) || (o.l && o.l.toLowerCase().indexOf(qLower) >= 0);
     });
-    for (var j = 0; j < Math.min(oilMatches.length, 10); j++) {
-      var o = oilMatches[j];
-      results.push({ title: '🌿 ' + o.z, url: 'oil-detail.html?id=' + o.n, breadcrumb: '首頁 › 精油 › ' + o.cl, cat: o.cl, snippet: o.l, score: 80 });
+    for (var jo = 0; jo < Math.min(oilMatches.length, 15); jo++) {
+      var ooil = oilMatches[jo];
+      results.push({ title: '🌿 ' + ooil.z, url: 'oil-detail.html?id=' + ooil.n, breadcrumb: '首頁 › 精油 › ' + ooil.cl, cat: ooil.cl, snippet: ooil.l, score: 120 });
     }
   }
+
   results.sort(function(a, b) { return b.score - a.score; });
-  // Dedupe
+  // Dedupe by URL
   var seen = {};
   var uniq = results.filter(function(r) { if (seen[r.url]) return false; seen[r.url] = 1; return true; });
 
@@ -233,26 +296,30 @@ function doSearch(q) {
   }
   var html = '';
   for (var r = 0; r < uniq.length; r++) {
-    var item = uniq[r];
-    html += '<a href="' + item.url + '" class="result-item">';
-    html += '<div class="ri-breadcrumb">' + item.breadcrumb + '</div>';
-    html += '<div class="ri-title">' + highlight(item.title, q) + '<span class="ri-cat-tag">' + item.cat + '</span></div>';
-    html += '<div class="ri-snippet">' + highlight(item.snippet, q) + '</div>';
+    var ritem = uniq[r];
+    html += '<a href="' + ritem.url + '" class="result-item">';
+    html += '<div class="ri-breadcrumb">' + ritem.breadcrumb + '</div>';
+    html += '<div class="ri-title">' + highlight(ritem.title, q) + '<span class="ri-cat-tag">' + ritem.cat + '</span></div>';
+    html += '<div class="ri-snippet">' + highlight(ritem.snippet, q) + '</div>';
     html += '</a>';
   }
   resultList.innerHTML = html;
 }
 
-// URL parameter
-(function() {
-  var params = new URLSearchParams(window.location.search);
-  var q = params.get('q');
-  if (q) {
-    mainInput.value = q;
-    if (navInput) navInput.value = q;
-    doSearch(q);
-  }
-})();
+// Load full-site index from JSON, then kick off URL-param search if any
+fetch('assets/data/search-index.json')
+  .then(function(r){ return r.json(); })
+  .then(function(data){ fullSiteIndex = data; })
+  .catch(function(){})
+  .finally(function(){
+    var params = new URLSearchParams(window.location.search);
+    var q = params.get('q');
+    if (q) {
+      mainInput.value = q;
+      if (navInput) navInput.value = q;
+      doSearch(q);
+    }
+  });
 
 // Debounce input
 var timer;
