@@ -8,12 +8,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
   <style>
-    .od-hero { padding:64px 48px; border-radius:20px; margin-bottom:28px; color:#fff; position:relative; overflow:hidden; display:flex; align-items:center; gap:40px; min-height:260px; }
-    .od-hero-emoji { font-size:110px; line-height:1; flex-shrink:0; filter:drop-shadow(0 4px 16px rgba(0,0,0,0.5)); }
-    .od-hero-text { flex:1; text-shadow: 0 2px 12px rgba(0,0,0,0.6); }
-    .od-hero h1 { font-size:42px; font-weight:800; margin-bottom:6px; color:#fff; }
-    .od-hero .od-latin { font-size:20px; font-style:italic; opacity:0.95; margin-bottom:14px; color:#fff; }
-    .od-hero .od-cat-badge { display:inline-block; background:rgba(255,255,255,0.25); backdrop-filter:blur(4px); padding:5px 16px; border-radius:16px; font-size:13px; font-weight:600; letter-spacing:0.5px; text-shadow:none; }
+    .od-hero { padding:64px 48px; border-radius:20px; margin-bottom:28px; color:#2C2C2C; position:relative; overflow:hidden; display:flex; align-items:center; gap:40px; min-height:260px; }
+    .od-hero-emoji { font-size:110px; line-height:1; flex-shrink:0; filter:drop-shadow(0 2px 8px rgba(255,255,255,0.8)); position:relative; z-index:2; }
+    .od-hero-text { flex:1; position:relative; z-index:2; background:rgba(255,255,255,0.75); backdrop-filter:blur(8px); padding:20px 28px; border-radius:14px; box-shadow:0 4px 16px rgba(0,0,0,0.08); }
+    .od-hero h1 { font-size:42px; font-weight:800; margin-bottom:6px; color:#2C2C2C !important; }
+    .od-hero .od-latin { font-size:20px; font-style:italic; color:#555 !important; margin-bottom:14px; }
+    .od-hero .od-cat-badge { display:inline-block; background:#3D5A3E; color:#fff; padding:5px 16px; border-radius:16px; font-size:13px; font-weight:600; letter-spacing:0.5px; }
 
     .od-grid { display:grid; grid-template-columns:1fr 320px; gap:28px; }
     @media(max-width:900px) { .od-grid { grid-template-columns:1fr; } }
@@ -295,8 +295,8 @@ function init() {
   else if (catText0.indexOf('花') >= 0 || catText0.indexOf('茉莉') >= 0 || catText0.indexOf('依蘭') >= 0 || catText0.indexOf('苯基酯') >= 0) heroBanner = 'assets/images/oil-detail-banner-florals.jpg';
   else if (catText0.indexOf('樹') >= 0 || catText0.indexOf('木') >= 0 || catText0.indexOf('檜') >= 0 || catText0.indexOf('倍半萜醇') >= 0) heroBanner = 'assets/images/oil-detail-banner-woods.jpg';
 
-  // Hero — use banner image as background with dark overlay
-  document.getElementById('odHero').style.background = 'linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url(' + heroBanner + ') center/cover no-repeat';
+  // Hero — use banner image as background (no dark overlay, keep image bright)
+  document.getElementById('odHero').style.background = 'url(' + heroBanner + ') center/cover no-repeat';
   document.getElementById('odEmoji').textContent = emoji;
   document.getElementById('odName').textContent = oil.zh;
   document.getElementById('odLatin').textContent = oil.latin;
