@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>全站搜尋 | 精油圖鑑指南</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .search-hero { padding: 48px 20px 24px; text-align: center; background: linear-gradient(135deg, #F5EFE8, #EAE4DC); }
+    .search-hero h1 { font-size: 32px; font-weight: 800; color: var(--green-dark); margin-bottom: 12px; }
+    .search-main-box { max-width: 640px; margin: 20px auto 0; position: relative; }
+    .search-main-box input { width: 100%; padding: 14px 20px 14px 48px; border: 2px solid var(--green-dark); background: #fff; color: var(--text-dark); border-radius: 30px; font-size: 16px; outline: none; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+    .search-main-box input:focus { border-color: var(--green-mid); box-shadow: 0 4px 20px rgba(61,90,62,0.15); }
+    .search-icon-abs { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); font-size: 18px; }
+    .search-suggest { margin-top: 16px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+    .search-suggest a { font-size: 13px; padding: 4px 14px; border-radius: 14px; background: rgba(61,90,62,0.1); color: var(--green-dark); text-decoration: none; border: 1px solid rgba(61,90,62,0.2); }
+    .search-suggest a:hover { background: var(--green-dark); color: #fff; }
+    .search-results-wrap { max-width: 880px; margin: 0 auto; padding: 28px 20px 60px; }
+    .result-count { font-size: 14px; color: var(--text-mid); margin-bottom: 16px; }
+    .result-item { display: block; padding: 18px 0; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; }
+    .result-item:hover { background: #FAFAF7; margin: 0 -12px; padding: 18px 12px; border-radius: 10px; }
+    .ri-breadcrumb { font-size: 12px; color: var(--green-mid); margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
+    .ri-title { font-size: 18px; font-weight: 700; color: var(--green-dark); margin-bottom: 6px; line-height: 1.4; }
+    .result-item:hover .ri-title { text-decoration: underline; }
+    .ri-snippet { font-size: 14px; color: var(--text-mid); line-height: 1.7; }
+    .ri-cat-tag { display: inline-block; background: #E8F0E8; color: var(--green-dark); font-size: 11px; padding: 2px 10px; border-radius: 10px; margin-left: 8px; }
+    .no-result { text-align: center; padding: 60px 20px; color: var(--text-light); }
+    .no-result-icon { font-size: 64px; margin-bottom: 16px; }
+    mark { background: #FEF3C7; color: #92400E; padding: 0 2px; border-radius: 2px; font-weight: 700; }
+  </style>
+</head>
+<body>
+
+<div class="topbar">🌿 精油圖鑑指南 — 用知識療癒您的生活 社會修行</div>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo-wrap" style="text-decoration:none;display:flex;align-items:center;gap:12px;">
+      <div class="logo-icon">🌿</div>
+      <div class="logo-text">
+        <div class="site-title">精油圖鑑指南</div>
+        <div class="site-sub">精油學 · 從植物到身心靈</div>
+      </div>
+    </a>
+    <nav><ul>
+      <li><a href="index.html">首頁</a></li>
+      <li><a href="encyclopedia.html">圖鑑百科</a></li>
+      <li><a href="oils.html">精油</a></li>
+      <li><a href="aromatherapy.html">芳療應用</a></li>
+      <li><a href="safety.html">安全指南</a></li>
+    </ul></nav>
+    <input class="nav-search" type="text" placeholder="搜尋精油..." id="navSearchInput" onkeydown="if(event.key==='Enter'&&this.value.trim())location.href='search.html?q='+encodeURIComponent(this.value.trim())" />
+    <button class="menu-toggle">☰</button>
+  </div>
+</header>
+
+<div class="search-hero">
+  <h1>🔍 全站搜尋</h1>
+  <p style="color:var(--text-mid);font-size:15px;">搜尋精油、芳療應用、安全指南、化學分類、使用方法......</p>
+  <div class="search-main-box">
+    <span class="search-icon-abs">🔍</span>
+    <input type="text" id="mainSearchInput" placeholder="例：薰衣草、助眠、兒童安全、萃取法..." autofocus />
+  </div>
+  <div class="search-suggest">
+    <a href="?q=兒童">兒童安全</a>
+    <a href="?q=孕婦">孕婦禁忌</a>
+    <a href="?q=助眠">助眠配方</a>
+    <a href="?q=紓壓">紓壓</a>
+    <a href="?q=萃取">萃取方式</a>
+    <a href="?q=塵蟎">防塵蟎</a>
+    <a href="?q=稀釋">稀釋比例</a>
+    <a href="?q=薰衣草">薰衣草</a>
+  </div>
+</div>
+
+<div class="breadcrumb"><div class="breadcrumb-inner">
+  <a href="index.html">首頁</a><span class="sep">›</span><span>全站搜尋</span>
+</div></div>
+
+<div class="search-results-wrap">
+  <div class="result-count" id="resultCount">請輸入關鍵字開始搜尋</div>
+  <div id="resultList"></div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div><h4>🌿 精油圖鑑指南</h4><p>致力於提供正確、完整、易懂的精油知識。</p></div>
+    <div><h4>精油索引</h4><ul><li><a href="oil-sweet-orange.html">甜橙</a></li><li><a href="oil-lemon.html">檸檬</a></li><li><a href="oil-lavender.html">薰衣草</a></li><li><a href="oil-ylang-ylang.html">依蘭</a></li></ul></div>
+    <div><h4>&nbsp;</h4><ul><li><a href="oil-peppermint.html">薄荷</a></li><li><a href="oil-rosemary.html">迷迭香</a></li><li><a href="oil-eucalyptus.html">尤加利</a></li><li><a href="oil-tea-tree.html">茶樹</a></li></ul></div>
+    <div><h4>&nbsp;</h4><ul><li><a href="oil-cedarwood.html">雪松</a></li><li><a href="oil-frankincense.html">乳香</a></li><li><a href="encyclopedia.html">圖鑑百科</a></li><li><a href="index.html">回到首頁</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 精油圖鑑指南 · 精油學</div>
+</footer>
+
+<button id="backToTop" title="回到頂端">↑</button>
+
+<script>
+const btn=document.getElementById('backToTop');
+window.addEventListener('scroll',()=>btn.classList.toggle('show',window.scrollY>400));
+btn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+// Full-site search index
+const searchIndex = [
+  // Main pages
+  { title:'🌿 精油完全索引', url:'oils.html', breadcrumb:'首頁 › 精油', cat:'精油', keywords:'精油 索引 400 種 分類 化學 薰衣草 茶樹 薄荷 尤加利 甜橙 檸檬 迷迭香 乳香 依蘭 雪松', snippet:'按化學成分分類的 400+ 種精油完整索引，支援中文名與拉丁學名搜尋。' },
+  { title:'📚 圖鑑百科', url:'encyclopedia.html', breadcrumb:'首頁 › 圖鑑百科', cat:'百科', keywords:'化學族群 萃取 蒸餾 冷壓 溶劑 調香 前調 中調 後調 產區 法國 澳洲 印度', snippet:'化學族群、萃取方式、調香原理、全球產區——建立完整精油知識體系。' },
+  { title:'🕯️ 芳療應用指南', url:'aromatherapy.html', breadcrumb:'首頁 › 芳療應用', cat:'應用', keywords:'擴香 水氧機 嗅吸 吸入 按摩 稀釋 泡澡 居家 清潔 助眠 專注 紓壓 噴霧 FAQ', snippet:'從擴香到按摩、從情緒調節到居家清潔——掌握精油的每一種使用方式。' },
+  { title:'⚠️ 精油安全指南', url:'safety.html', breadcrumb:'首頁 › 安全指南', cat:'安全', keywords:'安全 稀釋 濃度 孕婦 嬰幼兒 兒童 貓咪 寵物 高血壓 癲癇 光敏 光敏性 急救 儲存 保鮮 選購 禁忌', snippet:'稀釋濃度、特殊族群禁忌、光敏性精油、急救處理、儲存保鮮與選購要點。' },
+  // Articles
+  { title:'🌿 尤加利精油完全指南：藍膠 vs 澳洲', url:'article-eucalyptus.html', breadcrumb:'首頁 › 文章', cat:'文章', keywords:'尤加利 藍膠 澳洲 桉油醇 呼吸道 祛痰 抗菌 比較', snippet:'藍膠尤加利含 80% 桉油醇效果強烈；澳洲尤加利 62-72% 更溫和適合日常。' },
+  { title:'😴 精油助眠完整指南：4款黃金配方', url:'article-sleep.html', breadcrumb:'首頁 › 芳療應用', cat:'文章', keywords:'助眠 失眠 睡眠 薰衣草 沉香醇 GABA 雪松 副交感神經 枕頭 噴霧', snippet:'薰衣草沉香醇作用於 GABA-A 受體、雪松 Cedrol 激活副交感神經，4 款科學配方。' },
+  { title:'🌿 現代人壓力急救包：12款紓壓配方', url:'article-stress.html', breadcrumb:'首頁 › 芳療應用', cat:'文章', keywords:'紓壓 壓力 焦慮 情緒 複方 佛手柑 乳香 依蘭 認知 身體', snippet:'對應認知型、身體型、情緒型、耗竭型四種壓力模式的 12 款紓壓配方。' },
+  { title:'🌱 精油新手入門：5大必備精油完整選購指南', url:'article-beginners.html', breadcrumb:'首頁 › 文章', cat:'文章', keywords:'新手 入門 5大 必備 薰衣草 茶樹 薄荷 甜橙 尤加利 選購 品質 GC/MS', snippet:'從薰衣草、茶樹、薄荷、甜橙到尤加利——5 瓶覆蓋生活 80% 的芳療需求。' },
+  { title:'🔬 洗衣加尤加利精油真的能殺塵蟎？', url:'article-dustmites.html', breadcrumb:'首頁 › 科學驗證', cat:'文章', keywords:'塵蟎 尤加利 過敏 洗衣 醫師 實驗 80% 殺蟎 浸泡', snippet:'醫師實驗證實：洗衣加尤加利精油可殺滅 80% 以上塵蟎，正確用法解析。' },
+  // Compound categories
+  { title:'單萜酮/烯類 I', url:'compounds-01.html', breadcrumb:'首頁 › 化學分類', cat:'化學分類', keywords:'單萜烯 單萜酮 側柏酮 樟腦 艾草 鼠尾草 酮類', snippet:'含側柏酮、樟腦等酮類成分的精油分類。' },
+  { title:'香豆素與內酯類 II', url:'compounds-02.html', breadcrumb:'首頁 › 化學分類', cat:'化學分類', keywords:'香豆素 內酯 當歸 芹菜籽 薑黃 蒼朮', snippet:'含呋喃香豆素、內酯等成分的精油分類。' },
+  { title:'氧化物類 III', url:'compounds-03.html', breadcrumb:'首頁 › 化學分類', cat:'化學分類', keywords:'氧化物 桉油醇 1,8-cineole 尤加利 白千層 豆蔻', snippet:'含 1,8-桉油醇等氧化物成分，呼吸道保健首選。' },
+  { title:'倍半萜烯類 IV', url:'compounds-04.html', breadcrumb:'首頁 › 化學分類', cat:'化學分類', keywords:'倍半萜烯 洋甘菊 依蘭 沒藥 石竹烯', snippet:'含母菊薁、β-石竹烯等大分子，深層療癒。' },
+  { title:'醛類 V', url:'compounds-05.html', breadcrumb:'首頁 › 化學分類', cat:'化學分類', keywords:'醛類 茴香 肉豆蔻 羅勒 苯丙素', snippet:'含茴香腦、細辛腦等苯丙素成分。' },
+  { title:'酯類 VI', url:'compounds-06.html', breadcrumb:'首頁 › 化學分類', cat:'化學分類', keywords:'酯類 檸檬醛 香茅 山雞椒 香蜂草', snippet:'含檸檬醛、香茅醛等，抗菌驅蟲。' },
+  { title:'脂類 VII-1', url:'compounds-07a.html', breadcrumb:'首頁 › 化學分類', cat:'化學分類', keywords:'脂類 羅馬洋甘菊 佛手柑 薰衣草 鎮靜', snippet:'含乙酸沉香酯、乙酸芳樟酯等，鎮靜放鬆。' },
+  { title:'苯基酯類 VII-2', url:'compounds-07b.html', breadcrumb:'首頁 › 化學分類', cat:'化學分類', keywords:'苯基酯 茉莉 玫瑰 晚香玉 花香', snippet:'含苯甲酸苄酯等，異國花香。' },
+  { title:'芳香醛與芳香酯 VII-3', url:'compounds-07c.html', breadcrumb:'首頁 › 化學分類', cat:'化學分類', keywords:'香草 安息香 芳香醛', snippet:'含香草醛、安息香酸酯等。' },
+  { title:'倍半萜酮類 VIII', url:'compounds-08.html', breadcrumb:'首頁 › 化學分類', cat:'化學分類', keywords:'倍半萜酮 雪松 永久花 薑黃', snippet:'含大西洋酮、薑黃酮等。' },
+  { title:'單萜醇類 IX', url:'compounds-09.html', breadcrumb:'首頁 › 化學分類', cat:'化學分類', keywords:'單萜醇 茶樹 天竺葵 玫瑰 沉香醇 牻牛兒醇', snippet:'含沉香醇、牻牛兒醇等，溫和抗菌。' },
+  { title:'酚與芳香醛類 X', url:'compounds-10.html', breadcrumb:'首頁 › 化學分類', cat:'化學分類', keywords:'酚類 肉桂 丁香 百里香 酚', snippet:'含丁香酚、百里酚、肉桂醛等，強效抗菌。' },
+  { title:'倍半萜醇類 XI', url:'compounds-11.html', breadcrumb:'首頁 › 化學分類', cat:'化學分類', keywords:'倍半萜醇 檀香 廣藿香 岩蘭草', snippet:'含檀香醇、廣藿香醇等，深層安定。' },
+  { title:'單萜烯類 XII', url:'compounds-12.html', breadcrumb:'首頁 › 化學分類', cat:'化學分類', keywords:'單萜烯 松 杉 冷杉 雲杉 柏 檜 乳香 柑橘 蒎烯 檸檬烯', snippet:'含 α-蒎烯、檸檬烯等，柑橘針葉樹脂類。' },
+];
+
+// Keyword topic map — redirect to specific anchors
+const topicMap = {
+  '兒童': { title:'兒童精油安全', url:'safety.html', snippet:'嬰幼兒、兒童使用精油的完整禁忌清單與安全濃度指南。'},
+  '嬰': { title:'嬰幼兒精油禁忌', url:'safety.html', snippet:'嬰幼兒使用精油的完整禁忌、安全濃度與適用年齡。'},
+  '孕婦': { title:'孕婦精油禁忌', url:'safety.html', snippet:'孕婦避免使用的精油清單，安全濃度建議。'},
+  '孕': { title:'孕婦精油禁忌', url:'safety.html', snippet:'孕婦避免使用的精油清單，安全濃度建議。'},
+  '貓': { title:'寵物/貓咪精油安全', url:'safety.html', snippet:'貓咪對精油特別敏感，不可用精油清單。'},
+  '寵物': { title:'寵物精油安全', url:'safety.html', snippet:'貓狗等寵物的精油安全使用指南。'},
+  '稀釋': { title:'精油稀釋濃度', url:'safety.html', snippet:'成人 2%、孕婦兒童 0.5-1% 的稀釋濃度建議。'},
+  '濃度': { title:'精油稀釋濃度', url:'safety.html', snippet:'成人 2%、孕婦兒童 0.5-1% 的稀釋濃度建議。'},
+  '萃取': { title:'精油萃取方式', url:'encyclopedia.html#extraction', snippet:'蒸氣蒸餾、冷壓、溶劑萃取、CO2 萃取完整介紹。'},
+  '蒸餾': { title:'蒸氣蒸餾法', url:'encyclopedia.html#extraction', snippet:'最主流的精油萃取方式，使用水蒸氣分離精油。'},
+  '冷壓': { title:'冷壓萃取法', url:'encyclopedia.html#extraction', snippet:'柑橘類果皮精油的主要萃取方式。'},
+  '調香': { title:'調香原理', url:'encyclopedia.html#blending', snippet:'前調、中調、後調的精油調配原理。'},
+  '產區': { title:'全球精油產區', url:'encyclopedia.html#regions', snippet:'法國、澳洲、印度等全球精油主要產區。'},
+  '助眠': { title:'精油助眠指南', url:'article-sleep.html', snippet:'4 款科學助眠配方，薰衣草 + 雪松 + 依蘭。'},
+  '失眠': { title:'精油失眠解決方案', url:'article-sleep.html', snippet:'改善失眠的精油配方與使用方法。'},
+  '睡眠': { title:'精油助眠指南', url:'article-sleep.html', snippet:'深層睡眠配方與 GABA 受體科學原理。'},
+  '紓壓': { title:'12 款紓壓配方', url:'article-stress.html', snippet:'對應 4 種壓力類型的紓壓精油配方。'},
+  '壓力': { title:'現代人壓力急救包', url:'article-stress.html', snippet:'認知型、身體型、情緒型、耗竭型壓力精油配方。'},
+  '焦慮': { title:'抗焦慮精油', url:'article-stress.html', snippet:'佛手柑、乳香、依蘭等抗焦慮精油配方。'},
+  '塵蟎': { title:'精油防塵蟎真相', url:'article-dustmites.html', snippet:'醫師實驗：洗衣加尤加利精油殺滅 80% 塵蟎。'},
+  '過敏': { title:'精油與過敏', url:'article-dustmites.html', snippet:'塵蟎過敏的精油解決方案。'},
+  '新手': { title:'精油新手入門', url:'article-beginners.html', snippet:'5 款必備精油 + 11 點選購避坑指南。'},
+  '入門': { title:'精油新手入門', url:'article-beginners.html', snippet:'5 款必備精油完整選購指南。'},
+  '選購': { title:'精油選購指南', url:'safety.html#buying', snippet:'11 點選購要點，如何辨別精油品質優劣。'},
+  '品質': { title:'精油品質辨別', url:'safety.html#buying', snippet:'GC/MS 報告、有機認證、氣相色譜。'},
+  'GC/MS': { title:'GC/MS 檢測報告', url:'safety.html#buying', snippet:'氣相色譜質譜儀——讀懂精油身份證。'},
+  '擴香': { title:'擴香方式完整指南', url:'aromatherapy.html', snippet:'水氧機、熱蒸發、霧化擴香儀、嗅吸棒等 5 種擴香方式。'},
+  '按摩': { title:'按摩油調製', url:'aromatherapy.html', snippet:'按摩油的黃金稀釋比例與調製教學。'},
+  '泡澡': { title:'泡澡芳療指引', url:'aromatherapy.html', snippet:'泡澡芳療的完整指引與注意事項。'},
+  '清潔': { title:'居家清潔配方', url:'aromatherapy.html', snippet:'天然居家清潔噴霧、廚房油垢、防霉配方。'},
+  '皮膚': { title:'精油皮膚保養', url:'safety.html', snippet:'皮膚類型與精油選擇、刺激性精油警告。'},
+  '頭皮': { title:'頭皮精油護理', url:'oil-rosemary.html', snippet:'迷迭香、雪松等頭皮護理精油。'},
+  '光敏': { title:'光敏性精油', url:'safety.html', snippet:'柑橘類光敏精油完整清單與使用時間建議。'},
+  '儲存': { title:'精油儲存保鮮', url:'safety.html', snippet:'精油保存期限與儲存方式建議。'},
+  '急救': { title:'精油急救指南', url:'safety.html', snippet:'誤食、眼睛接觸、皮膚不適等緊急處理。'},
+  '禁忌': { title:'精油使用禁忌', url:'safety.html', snippet:'特殊族群精油使用禁忌完整清單。'},
+};
+
+// Search logic
+var mainInput = document.getElementById('mainSearchInput');
+var navInput = document.getElementById('navSearchInput');
+var resultList = document.getElementById('resultList');
+var resultCount = document.getElementById('resultCount');
+
+function highlight(text, q) {
+  if (!q) return text;
+  var re = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+  return text.replace(re, '<mark>$1</mark>');
+}
+
+function doSearch(q) {
+  q = q.trim();
+  if (!q) {
+    resultList.innerHTML = '';
+    resultCount.textContent = '請輸入關鍵字開始搜尋';
+    return;
+  }
+  var qLower = q.toLowerCase();
+  var results = [];
+  // Topic direct match first
+  for (var k in topicMap) {
+    if (q.indexOf(k) >= 0 || k.indexOf(q) >= 0) {
+      var t = topicMap[k];
+      results.push({ title: t.title, url: t.url, breadcrumb: '直接對應主題', cat: '主題', snippet: t.snippet, score: 100 });
+    }
+  }
+  // Search index
+  for (var i = 0; i < searchIndex.length; i++) {
+    var item = searchIndex[i];
+    var combined = (item.title + ' ' + item.keywords + ' ' + item.snippet).toLowerCase();
+    if (combined.indexOf(qLower) >= 0) {
+      var score = 0;
+      if (item.title.toLowerCase().indexOf(qLower) >= 0) score += 50;
+      if (item.keywords.toLowerCase().indexOf(qLower) >= 0) score += 30;
+      if (item.snippet.toLowerCase().indexOf(qLower) >= 0) score += 10;
+      results.push({ title: item.title, url: item.url, breadcrumb: item.breadcrumb, cat: item.cat, snippet: item.snippet, score: score });
+    }
+  }
+  // Also search oil data (fallback to oils.html?q=)
+  if (window.__oilData) {
+    var oilMatches = window.__oilData.filter(function(o) {
+      return (o.z && o.z.indexOf(q) >= 0) || (o.l && o.l.toLowerCase().indexOf(qLower) >= 0);
+    });
+    for (var j = 0; j < Math.min(oilMatches.length, 10); j++) {
+      var o = oilMatches[j];
+      results.push({ title: '🌿 ' + o.z, url: 'oil-detail.html?id=' + o.n, breadcrumb: '首頁 › 精油 › ' + o.cl, cat: o.cl, snippet: o.l, score: 80 });
+    }
+  }
+  results.sort(function(a, b) { return b.score - a.score; });
+  // Dedupe
+  var seen = {};
+  var uniq = results.filter(function(r) { if (seen[r.url]) return false; seen[r.url] = 1; return true; });
+
+  resultCount.textContent = '找到 ' + uniq.length + ' 筆「' + q + '」相關結果';
+  if (uniq.length === 0) {
+    resultList.innerHTML = '<div class="no-result"><div class="no-result-icon">🔍</div><div style="font-size:16px;font-weight:600;color:var(--text-dark);">找不到「' + q + '」相關內容</div><div style="font-size:13px;margin-top:8px;">請嘗試：薰衣草、助眠、兒童、萃取、紓壓...</div></div>';
+    return;
+  }
+  var html = '';
+  for (var r = 0; r < uniq.length; r++) {
+    var item = uniq[r];
+    html += '<a href="' + item.url + '" class="result-item">';
+    html += '<div class="ri-breadcrumb">' + item.breadcrumb + '</div>';
+    html += '<div class="ri-title">' + highlight(item.title, q) + '<span class="ri-cat-tag">' + item.cat + '</span></div>';
+    html += '<div class="ri-snippet">' + highlight(item.snippet, q) + '</div>';
+    html += '</a>';
+  }
+  resultList.innerHTML = html;
+}
+
+// URL parameter
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var q = params.get('q');
+  if (q) {
+    mainInput.value = q;
+    if (navInput) navInput.value = q;
+    doSearch(q);
+  }
+})();
+
+// Debounce input
+var timer;
+mainInput.addEventListener('input', function() {
+  clearTimeout(timer);
+  timer = setTimeout(function() { doSearch(mainInput.value); }, 150);
+});
+mainInput.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') {
+    var u = new URL(window.location);
+    u.searchParams.set('q', mainInput.value);
+    window.history.replaceState({}, '', u);
+    doSearch(mainInput.value);
+  }
+});
+</script>
+</body>
+</html>

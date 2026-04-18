@@ -29,7 +29,7 @@
       <li><a href="aromatherapy.html">芳療應用</a></li>
       <li><a href="safety.html">安全指南</a></li>
     </ul></nav>
-    <input class="nav-search" type="text" placeholder="搜尋精油..." id="oilSearch" />
+    <input class="nav-search" type="text" placeholder="搜尋精油..." id="oilSearch" onkeydown="if(event.key===&quot;Enter&quot;&&this.value.trim())location.href=&quot;search.html?q=&quot;+encodeURIComponent(this.value.trim())" />
     <button class="menu-toggle">☰</button>
   </div>
 </header>
@@ -1605,7 +1605,7 @@ function filterChem(cat){
 
 let st;function onSI(v){clearTimeout(st);st=setTimeout(()=>doSearch(v),150);}
 searchInput.addEventListener("input",()=>onSI(searchInput.value));
-headerSearch.addEventListener("input",()=>{searchInput.value=headerSearch.value;onSI(headerSearch.value);});
+// headerSearch (nav-search) 已獨立為全站搜尋，按 Enter 跳 search.html
 
 // Auto-search from URL ?q= parameter
 (function(){
