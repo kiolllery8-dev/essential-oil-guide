@@ -261,8 +261,19 @@ function init() {
   // Calculate banner image (reused in Hero background and below Safety)
   var catText0 = (oil.category || '') + (oil.family || '') + (oil.zh || '');
   var heroBanner = 'assets/images/oil-detail-banner-herbs.jpg';
+  // 批次 2：柑橘細分（優先匹配）
+  if (oil.zh.indexOf('檸檬馬鞭草') >= 0) heroBanner = 'assets/images/banner-lemon-verbena.jpg';
+  else if (oil.zh.indexOf('檸檬香桃木') >= 0) heroBanner = 'assets/images/banner-lemon-myrtle.jpg';
+  else if (oil.zh.indexOf('檸檬香茅') >= 0 || oil.zh.indexOf('檸檬草') >= 0 || oil.zh.indexOf('爪哇香茅') >= 0) heroBanner = 'assets/images/banner-lemongrass.jpg';
+  else if (oil.zh.indexOf('苦橙葉') >= 0 || oil.zh.indexOf('桔葉') >= 0 || oil.zh.indexOf('檸檬葉') >= 0) heroBanner = 'assets/images/banner-petitgrain.jpg';
+  else if (oil.zh.indexOf('橙花') >= 0) heroBanner = 'assets/images/banner-neroli.jpg';
+  else if (oil.zh.indexOf('葡萄柚') >= 0) heroBanner = 'assets/images/banner-grapefruit.jpg';
+  else if (oil.zh.indexOf('萊姆') >= 0) heroBanner = 'assets/images/banner-lime.jpg';
+  else if (oil.zh.indexOf('柚') >= 0) heroBanner = 'assets/images/banner-yuzu.jpg';
+  else if (oil.zh.indexOf('泰國青檸') >= 0) heroBanner = 'assets/images/banner-kaffir-lime.jpg';
+  else if (oil.zh.indexOf('桔') >= 0) heroBanner = 'assets/images/banner-mandarin.jpg';
   // 批次 1：草本類單一精油
-  if (oil.zh.indexOf('艾') >= 0) heroBanner = 'assets/images/banner-mugwort.jpg';
+  else if (oil.zh.indexOf('艾') >= 0) heroBanner = 'assets/images/banner-mugwort.jpg';
   else if (oil.zh.indexOf('萬壽菊') >= 0) heroBanner = 'assets/images/banner-marigold.jpg';
   else if (oil.zh.indexOf('牛膝草') >= 0) heroBanner = 'assets/images/banner-hyssop.jpg';
   else if (oil.zh.indexOf('馬郁蘭') >= 0 || oil.zh.indexOf('馬鬱蘭') >= 0) heroBanner = 'assets/images/banner-marjoram.jpg';
