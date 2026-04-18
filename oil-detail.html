@@ -261,8 +261,19 @@ function init() {
   // Calculate banner image (reused in Hero background and below Safety)
   var catText0 = (oil.category || '') + (oil.family || '') + (oil.zh || '');
   var heroBanner = 'assets/images/oil-detail-banner-herbs.jpg';
+  // 批次 5：松杉針葉類單一植物（優先）
+  if (oil.zh.indexOf('穗甘松') >= 0 || oil.zh.indexOf('中國甘松') >= 0) heroBanner = 'assets/images/banner-spikenard.jpg';
+  else if (oil.zh.indexOf('歐洲冷杉') >= 0) heroBanner = 'assets/images/banner-silver-fir.jpg';
+  else if (oil.zh.indexOf('膠冷杉') >= 0) heroBanner = 'assets/images/banner-balsam-fir.jpg';
+  else if (oil.zh.indexOf('西伯利亞冷杉') >= 0) heroBanner = 'assets/images/banner-siberian-fir.jpg';
+  else if (oil.zh.indexOf('黑雲杉') >= 0) heroBanner = 'assets/images/banner-black-spruce.jpg';
+  else if (oil.zh.indexOf('挪威雲杉') >= 0) heroBanner = 'assets/images/banner-norway-spruce.jpg';
+  else if (oil.zh.indexOf('赤松') >= 0 || oil.zh.indexOf('科西嘉黑松') >= 0 || oil.zh.indexOf('海松') >= 0) heroBanner = 'assets/images/banner-scots-pine.jpg';
+  else if (oil.zh.indexOf('落葉松') >= 0) heroBanner = 'assets/images/banner-larch.jpg';
+  else if (oil.zh.indexOf('鐵杉') >= 0) heroBanner = 'assets/images/banner-hemlock.jpg';
+  else if (oil.zh.indexOf('道格拉斯杉') >= 0) heroBanner = 'assets/images/banner-douglas-fir.jpg';
   // 批次 4：樹木/樹脂類單一植物（優先）
-  if (oil.zh.indexOf('茶樹') >= 0 && oil.zh.indexOf('掃帚') < 0) heroBanner = 'assets/images/banner-tea-tree.jpg';
+  else if (oil.zh.indexOf('茶樹') >= 0 && oil.zh.indexOf('掃帚') < 0) heroBanner = 'assets/images/banner-tea-tree.jpg';
   else if (oil.zh.indexOf('掃帚茶樹') >= 0) heroBanner = 'assets/images/banner-broom-tea-tree.jpg';
   else if (oil.zh.indexOf('香桃木') >= 0) heroBanner = 'assets/images/banner-myrtle.jpg';
   else if (oil.zh.indexOf('紅檜') >= 0 || oil.zh.indexOf('扁柏') >= 0) heroBanner = 'assets/images/banner-taiwan-cypress.jpg';
