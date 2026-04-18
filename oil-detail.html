@@ -261,7 +261,17 @@ function init() {
   // Calculate banner image (reused in Hero background and below Safety)
   var catText0 = (oil.category || '') + (oil.family || '') + (oil.zh || '');
   var heroBanner = 'assets/images/oil-detail-banner-herbs.jpg';
-  if (oil.zh.indexOf('薰衣草') >= 0) heroBanner = 'assets/images/banner-lavender-field.jpg';
+  // 批次 1：草本類單一精油
+  if (oil.zh.indexOf('艾') >= 0) heroBanner = 'assets/images/banner-mugwort.jpg';
+  else if (oil.zh.indexOf('萬壽菊') >= 0) heroBanner = 'assets/images/banner-marigold.jpg';
+  else if (oil.zh.indexOf('牛膝草') >= 0) heroBanner = 'assets/images/banner-hyssop.jpg';
+  else if (oil.zh.indexOf('馬郁蘭') >= 0 || oil.zh.indexOf('馬鬱蘭') >= 0) heroBanner = 'assets/images/banner-marjoram.jpg';
+  else if (oil.zh.indexOf('迷迭香') >= 0) heroBanner = 'assets/images/banner-rosemary.jpg';
+  else if (oil.zh.indexOf('夏白菊') >= 0) heroBanner = 'assets/images/banner-feverfew.jpg';
+  else if (oil.zh.indexOf('蓍草') >= 0 || oil.zh.indexOf('西洋蓍草') >= 0) heroBanner = 'assets/images/banner-yarrow.jpg';
+  else if (oil.zh.indexOf('大麻') >= 0) heroBanner = 'assets/images/banner-cannabis.jpg';
+  else if (oil.zh.indexOf('菖蒲') >= 0) heroBanner = 'assets/images/banner-calamus.jpg';
+  else if (oil.zh.indexOf('薰衣草') >= 0) heroBanner = 'assets/images/banner-lavender-field.jpg';
   else if (oil.zh.indexOf('洋甘菊') >= 0) heroBanner = 'assets/images/banner-chamomile.jpg';
   else if (oil.zh.indexOf('薄荷') >= 0) heroBanner = 'assets/images/manus-mint-dew.jpg';
   else if (oil.zh.indexOf('佛手柑') >= 0) heroBanner = 'assets/images/manus-bergamot.jpg';
