@@ -281,6 +281,9 @@ function init() {
     '315':'cypress-mediterranean','316':'african-blue-grass','317':'galbanum-plant','318':'forsythia-bloom','319':'mountain-juniper','320':'juniper-berry','321':'prickly-juniper','322':'kanuka-leptospermum','323':'larch-pine','324':'labrador-tea','325':'black-spruce-v2','326':'norway-spruce-v2','327':'corsican-pine','328':'maritime-pine','329':'scots-pine-v2','330':'black-pepper-plant','331':'mastic-tree','332':'chios-mastic','333':'brazilian-frankincense','334':'douglas-fir-v2','335':'nelumbo-blue','336':'rhododendron-anthopogon','337':'madagascar-rhus','338':'peruvian-pepper','339':'brazilian-pepper','340':'kaya','341':'hemlock-v2','342':'chaste-tree','343':'thai-ginger-plai'
   };
   if (idBannerMap[oil.id]) { heroBanner = 'assets/images/banner-' + idBannerMap[oil.id] + '.jpg'; }
+  // 補生終極批次：compounds-01 最後 2 張
+  else if (oil.id === '25') heroBanner = 'assets/images/banner-liguria-wormwood.jpg';
+  else if (oil.id === '34') heroBanner = 'assets/images/banner-lemon-citrus.jpg';
   // 批次 7：compounds-02 香豆素與內酯類
   else if (oil.zh.indexOf('中國當歸') >= 0) heroBanner = 'assets/images/banner-chinese-angelica.jpg';
   else if (oil.zh.indexOf('印度當歸') >= 0) heroBanner = 'assets/images/banner-indian-angelica.jpg';
