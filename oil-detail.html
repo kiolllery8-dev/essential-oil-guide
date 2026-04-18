@@ -131,9 +131,6 @@
         <div class="od-section-title">⚠️ 注意事項</div>
         <div class="od-safety" id="odSafety"></div>
 
-        <!-- Related Banner -->
-        <img id="odRelatedBanner" src="" alt="" style="width:100%;height:auto;border-radius:14px;margin:32px 0 0;box-shadow:0 4px 16px rgba(0,0,0,0.08);display:none;" />
-
         <!-- Navigation -->
         <div class="od-nav">
           <a href="#" id="odPrev">← 上一個精油</a>
@@ -346,10 +343,7 @@ function init() {
   safetyEl.className = 'od-safety ' + oil.safetyLevel;
   safetyEl.innerHTML = '<strong>' + safetyLabels[oil.safetyLevel] + '</strong><br>' + (oil.safetyText || '一般安全，建議稀釋後使用。');
 
-  // Bottom banner reuses same heroBanner
-  var bannerEl = document.getElementById('odRelatedBanner');
-  bannerEl.src = heroBanner;
-  bannerEl.style.display = 'block';
+  // (bottom banner removed)
 
   // Prev/Next nav
   var prevOil = idx > 0 ? data[idx - 1] : null;
