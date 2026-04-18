@@ -261,8 +261,21 @@ function init() {
   // Calculate banner image (reused in Hero background and below Safety)
   var catText0 = (oil.category || '') + (oil.family || '') + (oil.zh || '');
   var heroBanner = 'assets/images/oil-detail-banner-herbs.jpg';
+  // 批次 7：compounds-02 香豆素與內酯類（最優先，避開當歸/薑黃等共用衝突）
+  if (oil.zh.indexOf('中國當歸') >= 0) heroBanner = 'assets/images/banner-chinese-angelica.jpg';
+  else if (oil.zh.indexOf('印度當歸') >= 0) heroBanner = 'assets/images/banner-indian-angelica.jpg';
+  else if (oil.zh.indexOf('芹菜籽') >= 0) heroBanner = 'assets/images/banner-celery-seed.jpg';
+  else if (oil.zh.indexOf('辣根') >= 0) heroBanner = 'assets/images/banner-horseradish.jpg';
+  else if (oil.zh.indexOf('蒼朮') >= 0) heroBanner = 'assets/images/banner-atractylodes.jpg';
+  else if (oil.zh.indexOf('薑黃') >= 0) heroBanner = 'assets/images/banner-turmeric.jpg';
+  else if (oil.zh.indexOf('蛇床子') >= 0) heroBanner = 'assets/images/banner-cnidium.jpg';
+  else if (oil.zh.indexOf('新幾內亞厚殼桂') >= 0 || oil.zh.indexOf('厚殼桂') >= 0) heroBanner = 'assets/images/banner-massoy-bark.jpg';
+  else if (oil.zh.indexOf('阿魏') >= 0) heroBanner = 'assets/images/banner-asafoetida.jpg';
+  else if (oil.zh.indexOf('土木香') >= 0 && oil.zh.indexOf('大花') < 0) heroBanner = 'assets/images/banner-elecampane.jpg';
+  else if (oil.zh.indexOf('大花土木香') >= 0) heroBanner = 'assets/images/banner-large-inula.jpg';
+  else if (oil.zh.indexOf('川芎') >= 0) heroBanner = 'assets/images/banner-chuanxiong.jpg';
   // 批次 6：compounds-01 單萜酮/烯類單一植物（最優先）
-  if (oil.zh.indexOf('圓葉當歸') >= 0) heroBanner = 'assets/images/banner-lovage.jpg';
+  else if (oil.zh.indexOf('圓葉當歸') >= 0) heroBanner = 'assets/images/banner-lovage.jpg';
   else if (oil.zh.indexOf('假剪股穎風輪菜') >= 0) heroBanner = 'assets/images/banner-calamint.jpg';
   else if (oil.zh.indexOf('藏茴香') >= 0) heroBanner = 'assets/images/banner-caraway.jpg';
   else if (oil.zh.indexOf('藍米柏') >= 0) heroBanner = 'assets/images/banner-fokienia.jpg';
