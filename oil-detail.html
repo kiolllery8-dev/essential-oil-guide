@@ -261,7 +261,19 @@ function init() {
   // Calculate banner image (reused in Hero background and below Safety)
   var catText0 = (oil.category || '') + (oil.family || '') + (oil.zh || '');
   var heroBanner = 'assets/images/oil-detail-banner-herbs.jpg';
+  // 批次 3：花香類單一植物（優先）
+  if (oil.zh.indexOf('依蘭') >= 0) heroBanner = 'assets/images/banner-ylang-ylang-flower.jpg';
+  else if (oil.zh.indexOf('茉莉') >= 0) heroBanner = 'assets/images/banner-jasmine.jpg';
+  else if (oil.zh.indexOf('晚香玉') >= 0) heroBanner = 'assets/images/banner-tuberose.jpg';
+  else if (oil.zh.indexOf('桂花') >= 0) heroBanner = 'assets/images/banner-osmanthus.jpg';
+  else if (oil.zh.indexOf('水仙') >= 0) heroBanner = 'assets/images/banner-narcissus.jpg';
+  else if (oil.zh.indexOf('牡丹') >= 0) heroBanner = 'assets/images/banner-peony.jpg';
+  else if (oil.zh.indexOf('緬梔') >= 0) heroBanner = 'assets/images/banner-plumeria.jpg';
+  else if (oil.zh.indexOf('玉蘭') >= 0 || oil.zh.indexOf('含笑') >= 0) heroBanner = 'assets/images/banner-magnolia.jpg';
+  else if (oil.zh.indexOf('花梨木') >= 0) heroBanner = 'assets/images/banner-rosewood.jpg';
+  else if (oil.zh.indexOf('銀合歡') >= 0 || oil.zh.indexOf('合歡') >= 0) heroBanner = 'assets/images/banner-mimosa.jpg';
   // 批次 2：柑橘細分（優先匹配）
+  else if (oil.zh.indexOf('檸檬馬鞭草') >= 0) heroBanner = 'assets/images/banner-lemon-verbena.jpg';
   if (oil.zh.indexOf('檸檬馬鞭草') >= 0) heroBanner = 'assets/images/banner-lemon-verbena.jpg';
   else if (oil.zh.indexOf('檸檬香桃木') >= 0) heroBanner = 'assets/images/banner-lemon-myrtle.jpg';
   else if (oil.zh.indexOf('檸檬香茅') >= 0 || oil.zh.indexOf('檸檬草') >= 0 || oil.zh.indexOf('爪哇香茅') >= 0) heroBanner = 'assets/images/banner-lemongrass.jpg';
