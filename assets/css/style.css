@@ -1553,6 +1553,22 @@ footer ul li a:hover { color: var(--white); }
 
 @media (max-width: 640px) {
   nav ul { display: none; }
+  header .header-inner { position: relative; }
+  nav.open ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 12px 20px;
+    z-index: 100;
+    gap: 4px;
+  }
+  nav.open ul li { width: 100%; }
+  nav.open ul li a { width: 100%; padding: 12px 14px; border-radius: 8px; }
   .menu-toggle { display: block; }
   .nav-search { display: none; }
   .hero { padding: 50px 20px; }
