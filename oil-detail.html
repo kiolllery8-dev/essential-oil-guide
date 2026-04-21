@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>精油能量圖譜</title>
+  <title>精油能量圖譜｜精油化學分子索引・芳療應用・安全指南</title>
+  <meta name="description" content="探索 300+ 支精油的化學成分、萃取部位、主要功效與安全提示——精油能量圖譜動態精油詳情頁，涵蓋 12 大化學分類。"
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
@@ -66,6 +67,20 @@
   <link rel="icon" href="favicon.ico">
 
   <script src="assets/js/nav.js" defer></script>
+  <!-- SEO_START -->
+  <link rel="canonical" href="https://intelliverse.tw/oil-detail.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="精油能量圖譜" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:title" content="精油能量圖譜｜精油化學分子索引・芳療應用・安全指南" />
+  <meta property="og:description" content="探索 300+ 支精油的化學成分、萃取部位、主要功效與安全提示——精油能量圖譜動態精油詳情頁，涵蓋 12 大化學分類。" />
+  <meta property="og:url" content="https://intelliverse.tw/oil-detail.html" />
+  <meta property="og:image" content="https://intelliverse.tw/assets/images/site-logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="精油能量圖譜｜精油化學分子索引・芳療應用・安全指南" />
+  <meta name="twitter:description" content="探索 300+ 支精油的化學成分、萃取部位、主要功效與安全提示——精油能量圖譜動態精油詳情頁，涵蓋 12 大化學分類。" />
+  <meta name="twitter:image" content="https://intelliverse.tw/assets/images/site-logo.png" />
+  <!-- SEO_END -->
 
 
 </head>
@@ -93,7 +108,7 @@
     <button class="menu-toggle">☰</button>
   </div>
 </header>
-
+<main>
 <div id="loading">🌿 載入中...</div>
 
 <div id="oilContent">
@@ -169,7 +184,7 @@
     </div>
   </div>
 </div>
-
+</main>
 <footer>
   <div class="footer-inner">
     <div><h4>🌿 精油能量圖譜</h4><p>致力於提供正確、完整、易懂的精油知識。</p></div>
@@ -492,5 +507,33 @@ function init() {
 
 init();
 </script>
+
+  <!-- SEO_DYN -->
+  <script>
+  (function () {
+    try {
+      var params = new URLSearchParams(location.search);
+      var oid = params.get('id');
+      if (!oid || !window.__oilData) return;
+      var oil = (window.__oilData || []).find(function (o) { return String(o.id) === String(oid); });
+      if (!oil) return;
+      var title = (oil.zh || '') + ' ' + (oil.latin || '') + ' | 精油能量圖譜';
+      document.title = title;
+      var url = 'https://intelliverse.tw/oil-detail.html?id=' + encodeURIComponent(oid);
+      function set(sel, attr, val) {
+        var el = document.querySelector(sel);
+        if (el) el.setAttribute(attr, val);
+      }
+      set('link[rel="canonical"]', 'href', url);
+      set('meta[property="og:url"]', 'content', url);
+      set('meta[property="og:title"]', 'content', title);
+      set('meta[name="twitter:title"]', 'content', title);
+      var d = (oil.zh || '') + '（' + (oil.latin || '') + '）：化學分類「' + (oil.category || '') + '」，主要成分：' + ((oil.mainComponents || []).slice(0, 4).join('、') || '') + '。';
+      set('meta[name="description"]', 'content', d.slice(0, 155));
+      set('meta[property="og:description"]', 'content', d.slice(0, 155));
+      set('meta[name="twitter:description"]', 'content', d.slice(0, 155));
+    } catch (e) { /* ignore */ }
+  })();
+  </script>
 </body>
 </html>
