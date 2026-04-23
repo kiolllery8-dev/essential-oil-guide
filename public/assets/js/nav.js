@@ -1,6 +1,6 @@
 /* Mobile hamburger menu — left-slide drawer with backdrop below header */
 (function () {
-  document.addEventListener('DOMContentLoaded', function () {
+  function init() {
     var btn = document.querySelector('.menu-toggle');
     var nav = document.querySelector('header nav');
     var header = document.querySelector('header');
@@ -51,5 +51,12 @@
     nav.querySelectorAll('a').forEach(function (a) {
       a.addEventListener('click', close);
     });
-  });
+  }
+
+  // 如果 DOM 已就緒就直接跑（Next.js Script afterInteractive 會在 DOMContentLoaded 後載入）
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
