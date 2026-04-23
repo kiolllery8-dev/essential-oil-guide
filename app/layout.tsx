@@ -1,13 +1,40 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
 import NavSearch from './components/NavSearch';
+import JsonLd from './components/JsonLd';
+import { organizationSchema, websiteSchema, DEFAULT_OG } from './lib/schema';
 
 export const metadata: Metadata = {
-  title: { default: '精油能量圖譜 - 精油學｜從植物到身心靈的完整知識庫', template: '%s | 精油能量圖譜' },
-  description: '精油從無到有的生成、運用、醫學、芳療、來源、植物、身心靈——最完整的中文精油能量圖譜。',
+  title: {
+    default: '精油能量圖譜 - 精油學｜從植物到身心靈的完整知識庫',
+    template: '%s | 精油能量圖譜',
+  },
+  description:
+    '精油從無到有的生成、運用、醫學、芳療、來源、植物、身心靈——最完整的中文精油能量圖譜，收錄 400+ 種精油化學分類、成分、功效與安全提示。',
   metadataBase: new URL('https://intelliverse.tw'),
-  openGraph: { type: 'website', siteName: '精油能量圖譜', locale: 'zh_TW' },
-  twitter: { card: 'summary_large_image' },
+  keywords: [
+    '精油', '精油學', '芳療', 'aromatherapy', '精油化學', '化學分類',
+    '單萜烯', '倍半萜醇', '薰衣草', '茶樹', '尤加利', '精油功效',
+    '精油安全', '精油百科', '精油知識', 'essential oil',
+  ],
+  applicationName: '精油能量圖譜',
+  authors: [{ name: '靈境智造 Intelliverse', url: 'https://show.intelliverse.tw/' }],
+  publisher: '靈境智造 Intelliverse Studio',
+  creator: '靈境智造 Intelliverse Studio',
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website',
+    siteName: '精油能量圖譜',
+    locale: 'zh_TW',
+    url: 'https://intelliverse.tw/',
+    images: [{ url: DEFAULT_OG, width: 1200, height: 630, alt: '精油能量圖譜' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@intelliverse',
+    creator: '@intelliverse',
+    images: [DEFAULT_OG],
+  },
   icons: {
     icon: [
       { url: '/favicon.ico' },
@@ -16,6 +43,21 @@ export const metadata: Metadata = {
     ],
     apple: '/apple-touch-icon.png',
   },
+  manifest: '/manifest.json',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
+  },
+  other: {
+    'format-detection': 'telephone=no',
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: '#3D5A3E',
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -30,6 +72,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="stylesheet" href="/assets/css/style.css" />
       </head>
       <body>
+        <JsonLd data={[organizationSchema, websiteSchema]} />
+
         <div className="topbar">🌿 精油能量圖譜 — 用知識療癒您的生活 社會修行</div>
 
         <header>
