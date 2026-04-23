@@ -75,11 +75,11 @@
   <meta property="og:title" content="精油能量圖譜｜精油化學分子索引・芳療應用・安全指南" />
   <meta property="og:description" content="探索 300+ 支精油的化學成分、萃取部位、主要功效與安全提示——精油能量圖譜動態精油詳情頁，涵蓋 12 大化學分類。" />
   <meta property="og:url" content="https://intelliverse.tw/oil-detail.html" />
-  <meta property="og:image" content="https://intelliverse.tw/assets/images/site-logo.png" />
+  <meta property="og:image" content="https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/site-logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="精油能量圖譜｜精油化學分子索引・芳療應用・安全指南" />
   <meta name="twitter:description" content="探索 300+ 支精油的化學成分、萃取部位、主要功效與安全提示——精油能量圖譜動態精油詳情頁，涵蓋 12 大化學分類。" />
-  <meta name="twitter:image" content="https://intelliverse.tw/assets/images/site-logo.png" />
+  <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/site-logo.png" />
   <!-- SEO_END -->
 
 
@@ -283,7 +283,7 @@ function init() {
 
   // Calculate banner image (reused in Hero background and below Safety)
   var catText0 = (oil.category || '') + (oil.family || '') + (oil.zh || '');
-  var heroBanner = 'assets/images/oil-detail-banner-herbs.jpg';
+  var heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/oil-detail-banner-herbs.jpg';
   // 批次 8-9：ID 精確匹配全部已生成的 TopView 獨立 banner
   var idBannerMap = {
     '70':'ho-leaf','71':'lesser-galangal','72':'laurel','73':'ravintsara','74':'niaouli-ct-cineole','75':'cardamom-pod','76':'blue-gum-eucalyptus','77':'smithii-eucalyptus','78':'radiata-eucalyptus','79':'pandanus-helichrysum','80':'mountain-hyssop',
@@ -303,134 +303,134 @@ function init() {
     '294':'silver-fir-v2','295':'balsam-fir-v2','296':'siberian-fir-v2','297':'dill-whole','298':'angelica-archangelica','299':'baizhi','300':'duhuo','301':'frankincense-tree','302':'indian-frankincense','303':'palo-santo-tree-plant','304':'elemi','305':'rock-rose','306':'bitter-orange-fruit','307':'kaffir-lime-fruit','308':'yuzu-fruit','309':'lime-fruit','310':'lemon-fruit-tree','311':'grapefruit-fruit','312':'mandarin-red-green','313':'cape-plum','314':'sea-fennel',
     '315':'cypress-mediterranean','316':'african-blue-grass','317':'galbanum-plant','318':'forsythia-bloom','319':'mountain-juniper','320':'juniper-berry','321':'prickly-juniper','322':'kanuka-leptospermum','323':'larch-pine','324':'labrador-tea','325':'black-spruce-v2','326':'norway-spruce-v2','327':'corsican-pine','328':'maritime-pine','329':'scots-pine-v2','330':'black-pepper-plant','331':'mastic-tree','332':'chios-mastic','333':'brazilian-frankincense','334':'douglas-fir-v2','335':'nelumbo-blue','336':'rhododendron-anthopogon','337':'madagascar-rhus','338':'peruvian-pepper','339':'brazilian-pepper','340':'kaya','341':'hemlock-v2','342':'chaste-tree','343':'thai-ginger-plai'
   };
-  if (idBannerMap[oil.id]) { heroBanner = 'assets/images/banner-' + idBannerMap[oil.id] + '.jpg'; }
+  if (idBannerMap[oil.id]) { heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-' + idBannerMap[oil.id] + '.jpg'; }
   // 補生終極批次：compounds-01 最後 2 張
-  else if (oil.id === '25') heroBanner = 'assets/images/banner-liguria-wormwood.jpg';
-  else if (oil.id === '34') heroBanner = 'assets/images/banner-lemon-citrus.jpg';
+  else if (oil.id === '25') heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-liguria-wormwood.jpg';
+  else if (oil.id === '34') heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-lemon-citrus.jpg';
   // 補生 10 張：打散原共用圖/fallback（依 Latin 學名區分）
-  else if (oil.id === '27') heroBanner = 'assets/images/banner-white-wormwood-herba-alba.jpg';
-  else if (oil.id === '28') heroBanner = 'assets/images/banner-chinese-mugwort-argyi.jpg';
-  else if (oil.id === '29') heroBanner = 'assets/images/banner-common-mugwort-vulgaris.jpg';
-  else if (oil.id === '30') heroBanner = 'assets/images/banner-japanese-mugwort-princeps.jpg';
-  else if (oil.id === '26') heroBanner = 'assets/images/banner-lovage-levisticum-plant.jpg';
-  else if (oil.id === '66') heroBanner = 'assets/images/banner-garden-angelica-archangelica.jpg';
-  else if (oil.id === '44') heroBanner = 'assets/images/banner-verbenone-rosemary-flower.jpg';
-  else if (oil.id === '47') heroBanner = 'assets/images/banner-cineole-rosemary-tunisian.jpg';
-  else if (oil.id === '48') heroBanner = 'assets/images/banner-tagetes-minuta-fragrant.jpg';
-  else if (oil.id === '49') heroBanner = 'assets/images/banner-tagetes-erecta-large.jpg';
+  else if (oil.id === '27') heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-white-wormwood-herba-alba.jpg';
+  else if (oil.id === '28') heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-chinese-mugwort-argyi.jpg';
+  else if (oil.id === '29') heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-common-mugwort-vulgaris.jpg';
+  else if (oil.id === '30') heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-japanese-mugwort-princeps.jpg';
+  else if (oil.id === '26') heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-lovage-levisticum-plant.jpg';
+  else if (oil.id === '66') heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-garden-angelica-archangelica.jpg';
+  else if (oil.id === '44') heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-verbenone-rosemary-flower.jpg';
+  else if (oil.id === '47') heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-cineole-rosemary-tunisian.jpg';
+  else if (oil.id === '48') heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-tagetes-minuta-fragrant.jpg';
+  else if (oil.id === '49') heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-tagetes-erecta-large.jpg';
   // 批次 7：compounds-02 香豆素與內酯類
-  else if (oil.zh.indexOf('中國當歸') >= 0) heroBanner = 'assets/images/banner-chinese-angelica.jpg';
-  else if (oil.zh.indexOf('印度當歸') >= 0) heroBanner = 'assets/images/banner-indian-angelica.jpg';
-  else if (oil.zh.indexOf('芹菜籽') >= 0) heroBanner = 'assets/images/banner-celery-seed.jpg';
-  else if (oil.zh.indexOf('辣根') >= 0) heroBanner = 'assets/images/banner-horseradish.jpg';
-  else if (oil.zh.indexOf('蒼朮') >= 0) heroBanner = 'assets/images/banner-atractylodes.jpg';
-  else if (oil.zh.indexOf('薑黃') >= 0) heroBanner = 'assets/images/banner-turmeric.jpg';
-  else if (oil.zh.indexOf('蛇床子') >= 0) heroBanner = 'assets/images/banner-cnidium.jpg';
-  else if (oil.zh.indexOf('新幾內亞厚殼桂') >= 0 || oil.zh.indexOf('厚殼桂') >= 0) heroBanner = 'assets/images/banner-massoy-bark.jpg';
-  else if (oil.zh.indexOf('阿魏') >= 0) heroBanner = 'assets/images/banner-asafoetida.jpg';
-  else if (oil.zh.indexOf('土木香') >= 0 && oil.zh.indexOf('大花') < 0) heroBanner = 'assets/images/banner-elecampane.jpg';
-  else if (oil.zh.indexOf('大花土木香') >= 0) heroBanner = 'assets/images/banner-large-inula.jpg';
-  else if (oil.zh.indexOf('川芎') >= 0) heroBanner = 'assets/images/banner-chuanxiong.jpg';
+  else if (oil.zh.indexOf('中國當歸') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-chinese-angelica.jpg';
+  else if (oil.zh.indexOf('印度當歸') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-indian-angelica.jpg';
+  else if (oil.zh.indexOf('芹菜籽') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-celery-seed.jpg';
+  else if (oil.zh.indexOf('辣根') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-horseradish.jpg';
+  else if (oil.zh.indexOf('蒼朮') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-atractylodes.jpg';
+  else if (oil.zh.indexOf('薑黃') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-turmeric.jpg';
+  else if (oil.zh.indexOf('蛇床子') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-cnidium.jpg';
+  else if (oil.zh.indexOf('新幾內亞厚殼桂') >= 0 || oil.zh.indexOf('厚殼桂') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-massoy-bark.jpg';
+  else if (oil.zh.indexOf('阿魏') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-asafoetida.jpg';
+  else if (oil.zh.indexOf('土木香') >= 0 && oil.zh.indexOf('大花') < 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-elecampane.jpg';
+  else if (oil.zh.indexOf('大花土木香') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-large-inula.jpg';
+  else if (oil.zh.indexOf('川芎') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-chuanxiong.jpg';
   // 批次 6：compounds-01 單萜酮/烯類單一植物（最優先）
-  else if (oil.zh.indexOf('圓葉當歸') >= 0) heroBanner = 'assets/images/banner-lovage.jpg';
-  else if (oil.zh.indexOf('假剪股穎風輪菜') >= 0) heroBanner = 'assets/images/banner-calamint.jpg';
-  else if (oil.zh.indexOf('藏茴香') >= 0) heroBanner = 'assets/images/banner-caraway.jpg';
-  else if (oil.zh.indexOf('藍米柏') >= 0) heroBanner = 'assets/images/banner-fokienia.jpg';
-  else if (oil.zh.indexOf('薄荷尤加利') >= 0) heroBanner = 'assets/images/banner-peppermint-eucalyptus.jpg';
-  else if (oil.zh.indexOf('多苞葉尤加利') >= 0) heroBanner = 'assets/images/banner-blue-mallee.jpg';
-  else if (oil.zh.indexOf('頭狀薰衣草') >= 0) heroBanner = 'assets/images/banner-stoechas-lavender.jpg';
-  else if (oil.zh.indexOf('白膠脂') >= 0 || oil.zh.indexOf('熏陸香') >= 0) heroBanner = 'assets/images/banner-mastic.jpg';
-  else if (oil.zh.indexOf('綠薄荷') >= 0) heroBanner = 'assets/images/banner-spearmint.jpg';
-  else if (oil.zh.indexOf('胡椒薄荷') >= 0) heroBanner = 'assets/images/banner-peppermint-plant.jpg';
-  else if (oil.zh.indexOf('薰衣草葉鼠尾草') >= 0) heroBanner = 'assets/images/banner-spanish-sage.jpg';
-  else if (oil.zh.indexOf('艾菊') >= 0) heroBanner = 'assets/images/banner-tansy.jpg';
-  else if (oil.zh.indexOf('側柏') >= 0 && oil.zh.indexOf('酮') < 0) heroBanner = 'assets/images/banner-thuja.jpg';
-  else if (oil.zh.indexOf('歐防風') >= 0) heroBanner = 'assets/images/banner-parsnip.jpg';
-  else if (oil.zh.indexOf('木香') >= 0) heroBanner = 'assets/images/banner-costus-root.jpg';
+  else if (oil.zh.indexOf('圓葉當歸') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-lovage.jpg';
+  else if (oil.zh.indexOf('假剪股穎風輪菜') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-calamint.jpg';
+  else if (oil.zh.indexOf('藏茴香') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-caraway.jpg';
+  else if (oil.zh.indexOf('藍米柏') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-fokienia.jpg';
+  else if (oil.zh.indexOf('薄荷尤加利') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-peppermint-eucalyptus.jpg';
+  else if (oil.zh.indexOf('多苞葉尤加利') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-blue-mallee.jpg';
+  else if (oil.zh.indexOf('頭狀薰衣草') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-stoechas-lavender.jpg';
+  else if (oil.zh.indexOf('白膠脂') >= 0 || oil.zh.indexOf('熏陸香') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-mastic.jpg';
+  else if (oil.zh.indexOf('綠薄荷') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-spearmint.jpg';
+  else if (oil.zh.indexOf('胡椒薄荷') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-peppermint-plant.jpg';
+  else if (oil.zh.indexOf('薰衣草葉鼠尾草') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-spanish-sage.jpg';
+  else if (oil.zh.indexOf('艾菊') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-tansy.jpg';
+  else if (oil.zh.indexOf('側柏') >= 0 && oil.zh.indexOf('酮') < 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-thuja.jpg';
+  else if (oil.zh.indexOf('歐防風') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-parsnip.jpg';
+  else if (oil.zh.indexOf('木香') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-costus-root.jpg';
   // 批次 5：松杉針葉類單一植物（優先）
-  else if (oil.zh.indexOf('穗甘松') >= 0 || oil.zh.indexOf('中國甘松') >= 0) heroBanner = 'assets/images/banner-spikenard.jpg';
-  else if (oil.zh.indexOf('歐洲冷杉') >= 0) heroBanner = 'assets/images/banner-silver-fir.jpg?v=2';
-  else if (oil.zh.indexOf('膠冷杉') >= 0) heroBanner = 'assets/images/banner-balsam-fir.jpg?v=2';
-  else if (oil.zh.indexOf('西伯利亞冷杉') >= 0) heroBanner = 'assets/images/banner-siberian-fir.jpg';
-  else if (oil.zh.indexOf('黑雲杉') >= 0) heroBanner = 'assets/images/banner-black-spruce.jpg';
-  else if (oil.zh.indexOf('挪威雲杉') >= 0) heroBanner = 'assets/images/banner-norway-spruce.jpg';
-  else if (oil.zh.indexOf('赤松') >= 0 || oil.zh.indexOf('科西嘉黑松') >= 0 || oil.zh.indexOf('海松') >= 0) heroBanner = 'assets/images/banner-scots-pine.jpg';
-  else if (oil.zh.indexOf('落葉松') >= 0) heroBanner = 'assets/images/banner-larch.jpg';
-  else if (oil.zh.indexOf('鐵杉') >= 0) heroBanner = 'assets/images/banner-hemlock.jpg';
-  else if (oil.zh.indexOf('道格拉斯杉') >= 0) heroBanner = 'assets/images/banner-douglas-fir.jpg?v=2';
+  else if (oil.zh.indexOf('穗甘松') >= 0 || oil.zh.indexOf('中國甘松') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-spikenard.jpg';
+  else if (oil.zh.indexOf('歐洲冷杉') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-silver-fir.jpg?v=2';
+  else if (oil.zh.indexOf('膠冷杉') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-balsam-fir.jpg?v=2';
+  else if (oil.zh.indexOf('西伯利亞冷杉') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-siberian-fir.jpg';
+  else if (oil.zh.indexOf('黑雲杉') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-black-spruce.jpg';
+  else if (oil.zh.indexOf('挪威雲杉') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-norway-spruce.jpg';
+  else if (oil.zh.indexOf('赤松') >= 0 || oil.zh.indexOf('科西嘉黑松') >= 0 || oil.zh.indexOf('海松') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-scots-pine.jpg';
+  else if (oil.zh.indexOf('落葉松') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-larch.jpg';
+  else if (oil.zh.indexOf('鐵杉') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-hemlock.jpg';
+  else if (oil.zh.indexOf('道格拉斯杉') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-douglas-fir.jpg?v=2';
   // 批次 4：樹木/樹脂類單一植物（優先）
-  else if (oil.zh.indexOf('茶樹') >= 0 && oil.zh.indexOf('掃帚') < 0) heroBanner = 'assets/images/banner-tea-tree.jpg';
-  else if (oil.zh.indexOf('掃帚茶樹') >= 0) heroBanner = 'assets/images/banner-broom-tea-tree.jpg';
-  else if (oil.zh.indexOf('香桃木') >= 0) heroBanner = 'assets/images/banner-myrtle.jpg';
-  else if (oil.zh.indexOf('紅檜') >= 0 || oil.zh.indexOf('扁柏') >= 0) heroBanner = 'assets/images/banner-taiwan-cypress.jpg';
-  else if (oil.zh.indexOf('胡蘿蔔籽') >= 0) heroBanner = 'assets/images/banner-carrot-seed.jpg';
-  else if (oil.zh.indexOf('檀香') >= 0) heroBanner = 'assets/images/banner-sandalwood-tree.jpg';
-  else if (oil.zh.indexOf('廣藿香') >= 0) heroBanner = 'assets/images/banner-patchouli-leaves.jpg';
-  else if (oil.zh.indexOf('纈草') >= 0) heroBanner = 'assets/images/banner-valerian.jpg';
-  else if (oil.zh.indexOf('秘魯聖木') >= 0 || oil.zh.indexOf('聖木') >= 0) heroBanner = 'assets/images/banner-palo-santo.jpg';
-  else if (oil.zh.indexOf('連翹') >= 0) heroBanner = 'assets/images/banner-forsythia.jpg';
+  else if (oil.zh.indexOf('茶樹') >= 0 && oil.zh.indexOf('掃帚') < 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-tea-tree.jpg';
+  else if (oil.zh.indexOf('掃帚茶樹') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-broom-tea-tree.jpg';
+  else if (oil.zh.indexOf('香桃木') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-myrtle.jpg';
+  else if (oil.zh.indexOf('紅檜') >= 0 || oil.zh.indexOf('扁柏') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-taiwan-cypress.jpg';
+  else if (oil.zh.indexOf('胡蘿蔔籽') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-carrot-seed.jpg';
+  else if (oil.zh.indexOf('檀香') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-sandalwood-tree.jpg';
+  else if (oil.zh.indexOf('廣藿香') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-patchouli-leaves.jpg';
+  else if (oil.zh.indexOf('纈草') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-valerian.jpg';
+  else if (oil.zh.indexOf('秘魯聖木') >= 0 || oil.zh.indexOf('聖木') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-palo-santo.jpg';
+  else if (oil.zh.indexOf('連翹') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-forsythia.jpg';
   // 批次 3：花香類單一植物（優先）
-  else if (oil.zh.indexOf('依蘭') >= 0) heroBanner = 'assets/images/banner-ylang-ylang-flower.jpg';
-  else if (oil.zh.indexOf('茉莉') >= 0) heroBanner = 'assets/images/banner-jasmine.jpg';
-  else if (oil.zh.indexOf('晚香玉') >= 0) heroBanner = 'assets/images/banner-tuberose.jpg';
-  else if (oil.zh.indexOf('桂花') >= 0) heroBanner = 'assets/images/banner-osmanthus.jpg';
-  else if (oil.zh.indexOf('水仙') >= 0) heroBanner = 'assets/images/banner-narcissus.jpg';
-  else if (oil.zh.indexOf('牡丹') >= 0) heroBanner = 'assets/images/banner-peony.jpg';
-  else if (oil.zh.indexOf('緬梔') >= 0) heroBanner = 'assets/images/banner-plumeria.jpg';
-  else if (oil.zh.indexOf('玉蘭') >= 0 || oil.zh.indexOf('含笑') >= 0) heroBanner = 'assets/images/banner-magnolia.jpg';
-  else if (oil.zh.indexOf('花梨木') >= 0) heroBanner = 'assets/images/banner-rosewood.jpg';
-  else if (oil.zh.indexOf('銀合歡') >= 0 || oil.zh.indexOf('合歡') >= 0) heroBanner = 'assets/images/banner-mimosa.jpg';
+  else if (oil.zh.indexOf('依蘭') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-ylang-ylang-flower.jpg';
+  else if (oil.zh.indexOf('茉莉') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-jasmine.jpg';
+  else if (oil.zh.indexOf('晚香玉') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-tuberose.jpg';
+  else if (oil.zh.indexOf('桂花') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-osmanthus.jpg';
+  else if (oil.zh.indexOf('水仙') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-narcissus.jpg';
+  else if (oil.zh.indexOf('牡丹') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-peony.jpg';
+  else if (oil.zh.indexOf('緬梔') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-plumeria.jpg';
+  else if (oil.zh.indexOf('玉蘭') >= 0 || oil.zh.indexOf('含笑') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-magnolia.jpg';
+  else if (oil.zh.indexOf('花梨木') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-rosewood.jpg';
+  else if (oil.zh.indexOf('銀合歡') >= 0 || oil.zh.indexOf('合歡') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-mimosa.jpg';
   // 批次 2：柑橘細分（優先匹配）
-  else if (oil.zh.indexOf('檸檬馬鞭草') >= 0) heroBanner = 'assets/images/banner-lemon-verbena.jpg';
-  else if (oil.zh.indexOf('檸檬香桃木') >= 0) heroBanner = 'assets/images/banner-lemon-myrtle.jpg';
-  else if (oil.zh.indexOf('檸檬香茅') >= 0 || oil.zh.indexOf('檸檬草') >= 0 || oil.zh.indexOf('爪哇香茅') >= 0) heroBanner = 'assets/images/banner-lemongrass.jpg';
-  else if (oil.zh.indexOf('苦橙葉') >= 0 || oil.zh.indexOf('桔葉') >= 0 || oil.zh.indexOf('檸檬葉') >= 0) heroBanner = 'assets/images/banner-petitgrain.jpg';
-  else if (oil.zh.indexOf('橙花') >= 0) heroBanner = 'assets/images/banner-neroli.jpg';
-  else if (oil.zh.indexOf('葡萄柚') >= 0) heroBanner = 'assets/images/banner-grapefruit.jpg';
-  else if (oil.zh.indexOf('萊姆') >= 0) heroBanner = 'assets/images/banner-lime.jpg';
-  else if (oil.zh.indexOf('柚') >= 0) heroBanner = 'assets/images/banner-yuzu.jpg';
-  else if (oil.zh.indexOf('泰國青檸') >= 0) heroBanner = 'assets/images/banner-kaffir-lime.jpg';
-  else if (oil.zh.indexOf('桔') >= 0) heroBanner = 'assets/images/banner-mandarin.jpg';
+  else if (oil.zh.indexOf('檸檬馬鞭草') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-lemon-verbena.jpg';
+  else if (oil.zh.indexOf('檸檬香桃木') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-lemon-myrtle.jpg';
+  else if (oil.zh.indexOf('檸檬香茅') >= 0 || oil.zh.indexOf('檸檬草') >= 0 || oil.zh.indexOf('爪哇香茅') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-lemongrass.jpg';
+  else if (oil.zh.indexOf('苦橙葉') >= 0 || oil.zh.indexOf('桔葉') >= 0 || oil.zh.indexOf('檸檬葉') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-petitgrain.jpg';
+  else if (oil.zh.indexOf('橙花') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-neroli.jpg';
+  else if (oil.zh.indexOf('葡萄柚') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-grapefruit.jpg';
+  else if (oil.zh.indexOf('萊姆') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-lime.jpg';
+  else if (oil.zh.indexOf('柚') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-yuzu.jpg';
+  else if (oil.zh.indexOf('泰國青檸') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-kaffir-lime.jpg';
+  else if (oil.zh.indexOf('桔') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-mandarin.jpg';
   // 批次 1：草本類單一精油
-  else if (oil.zh.indexOf('艾') >= 0) heroBanner = 'assets/images/banner-mugwort.jpg';
-  else if (oil.zh.indexOf('萬壽菊') >= 0) heroBanner = 'assets/images/banner-marigold.jpg';
-  else if (oil.zh.indexOf('牛膝草') >= 0) heroBanner = 'assets/images/banner-hyssop.jpg';
-  else if (oil.zh.indexOf('馬郁蘭') >= 0 || oil.zh.indexOf('馬鬱蘭') >= 0) heroBanner = 'assets/images/banner-marjoram.jpg';
-  else if (oil.zh.indexOf('迷迭香') >= 0) heroBanner = 'assets/images/banner-rosemary.jpg';
-  else if (oil.zh.indexOf('夏白菊') >= 0) heroBanner = 'assets/images/banner-feverfew.jpg';
-  else if (oil.zh.indexOf('蓍草') >= 0 || oil.zh.indexOf('西洋蓍草') >= 0) heroBanner = 'assets/images/banner-yarrow.jpg';
-  else if (oil.zh.indexOf('大麻') >= 0) heroBanner = 'assets/images/banner-cannabis.jpg';
-  else if (oil.zh.indexOf('菖蒲') >= 0) heroBanner = 'assets/images/banner-calamus.jpg';
-  else if (oil.zh.indexOf('薰衣草') >= 0) heroBanner = 'assets/images/banner-lavender-field.jpg';
-  else if (oil.zh.indexOf('洋甘菊') >= 0) heroBanner = 'assets/images/banner-chamomile.jpg';
-  else if (oil.zh.indexOf('薄荷') >= 0) heroBanner = 'assets/images/manus-mint-dew.jpg';
-  else if (oil.zh.indexOf('佛手柑') >= 0) heroBanner = 'assets/images/manus-bergamot.jpg';
-  else if (oil.zh.indexOf('薑黃') >= 0 || oil.zh.indexOf('薑') >= 0) heroBanner = 'assets/images/banner-ginger.jpg';
-  else if (oil.zh.indexOf('肉桂') >= 0) heroBanner = 'assets/images/banner-cinnamon.jpg';
-  else if (oil.zh.indexOf('香草') >= 0 || oil.zh.indexOf('安息香') >= 0) heroBanner = 'assets/images/banner-vanilla.jpg';
-  else if (oil.zh.indexOf('廣藿香') >= 0) heroBanner = 'assets/images/banner-patchouli.jpg';
-  else if (oil.zh.indexOf('岩蘭草') >= 0) heroBanner = 'assets/images/banner-vetiver.jpg';
-  else if (oil.zh.indexOf('快樂鼠尾草') >= 0 || oil.zh.indexOf('鼠尾草') >= 0) heroBanner = 'assets/images/banner-clary-sage.jpg';
-  else if (oil.zh.indexOf('檀香') >= 0) heroBanner = 'assets/images/banner-sandalwood.jpg';
-  else if (oil.zh.indexOf('沒藥') >= 0) heroBanner = 'assets/images/banner-myrrh.jpg';
-  else if (oil.zh.indexOf('杜松') >= 0 || oil.zh.indexOf('刺檜') >= 0) heroBanner = 'assets/images/banner-juniper.jpg';
-  else if (oil.zh.indexOf('茴香') >= 0) heroBanner = 'assets/images/banner-fennel.jpg';
-  else if (oil.zh.indexOf('歐白芷') >= 0 || oil.zh.indexOf('當歸') >= 0) heroBanner = 'assets/images/banner-angelica.jpg';
-  else if (oil.zh.indexOf('龍艾') >= 0 || oil.zh.indexOf('龍蒿') >= 0) heroBanner = 'assets/images/banner-tarragon.jpg';
-  else if (oil.zh.indexOf('黑胡椒') >= 0 || oil.zh.indexOf('胡椒') >= 0) heroBanner = 'assets/images/banner-peppercorn.jpg';
-  else if (oil.zh.indexOf('豆蔻') >= 0) heroBanner = 'assets/images/banner-cardamom.jpg';
-  else if (oil.zh.indexOf('月桂') >= 0) heroBanner = 'assets/images/banner-bay-leaf.jpg';
-  else if (oil.zh.indexOf('永久花') >= 0 || oil.zh.indexOf('蠟菊') >= 0) heroBanner = 'assets/images/banner-helichrysum.jpg';
-  else if (oil.zh.indexOf('香蜂') >= 0 || oil.zh.indexOf('蜂草') >= 0) heroBanner = 'assets/images/banner-melissa.jpg';
-  else if (oil.zh.indexOf('天竺葵') >= 0) heroBanner = 'assets/images/banner-geranium.jpg';
-  else if (oil.zh.indexOf('丁香') >= 0) heroBanner = 'assets/images/manus-cinnamon-spices.jpg';
-  else if (oil.zh.indexOf('雪松') >= 0) heroBanner = 'assets/images/manus-cedar-wood.jpg';
-  else if (oil.zh.indexOf('乳香') >= 0) heroBanner = 'assets/images/manus-frankincense-incense.jpg';
-  else if (oil.zh.indexOf('玫瑰') >= 0) heroBanner = 'assets/images/manus-rose-petals.jpg';
-  else if (oil.zh.indexOf('松') >= 0 || oil.zh.indexOf('杉') >= 0 || oil.zh.indexOf('冷杉') >= 0 || oil.zh.indexOf('雲杉') >= 0) heroBanner = 'assets/images/manus-pine-resin.jpg';
-  else if (catText0.indexOf('柑橘') >= 0 || catText0.indexOf('檸檬') >= 0 || catText0.indexOf('橙') >= 0 || catText0.indexOf('萊姆') >= 0 || catText0.indexOf('柚') >= 0 || catText0.indexOf('芸香') >= 0) heroBanner = 'assets/images/oil-detail-banner-citrus.jpg';
-  else if (catText0.indexOf('花') >= 0 || catText0.indexOf('茉莉') >= 0 || catText0.indexOf('依蘭') >= 0 || catText0.indexOf('苯基酯') >= 0) heroBanner = 'assets/images/oil-detail-banner-florals.jpg';
-  else if (catText0.indexOf('樹') >= 0 || catText0.indexOf('木') >= 0 || catText0.indexOf('檜') >= 0 || catText0.indexOf('倍半萜醇') >= 0) heroBanner = 'assets/images/oil-detail-banner-woods.jpg';
+  else if (oil.zh.indexOf('艾') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-mugwort.jpg';
+  else if (oil.zh.indexOf('萬壽菊') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-marigold.jpg';
+  else if (oil.zh.indexOf('牛膝草') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-hyssop.jpg';
+  else if (oil.zh.indexOf('馬郁蘭') >= 0 || oil.zh.indexOf('馬鬱蘭') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-marjoram.jpg';
+  else if (oil.zh.indexOf('迷迭香') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-rosemary.jpg';
+  else if (oil.zh.indexOf('夏白菊') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-feverfew.jpg';
+  else if (oil.zh.indexOf('蓍草') >= 0 || oil.zh.indexOf('西洋蓍草') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-yarrow.jpg';
+  else if (oil.zh.indexOf('大麻') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-cannabis.jpg';
+  else if (oil.zh.indexOf('菖蒲') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-calamus.jpg';
+  else if (oil.zh.indexOf('薰衣草') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-lavender-field.jpg';
+  else if (oil.zh.indexOf('洋甘菊') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-chamomile.jpg';
+  else if (oil.zh.indexOf('薄荷') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/manus-mint-dew.jpg';
+  else if (oil.zh.indexOf('佛手柑') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/manus-bergamot.jpg';
+  else if (oil.zh.indexOf('薑黃') >= 0 || oil.zh.indexOf('薑') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-ginger.jpg';
+  else if (oil.zh.indexOf('肉桂') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-cinnamon.jpg';
+  else if (oil.zh.indexOf('香草') >= 0 || oil.zh.indexOf('安息香') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-vanilla.jpg';
+  else if (oil.zh.indexOf('廣藿香') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-patchouli.jpg';
+  else if (oil.zh.indexOf('岩蘭草') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-vetiver.jpg';
+  else if (oil.zh.indexOf('快樂鼠尾草') >= 0 || oil.zh.indexOf('鼠尾草') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-clary-sage.jpg';
+  else if (oil.zh.indexOf('檀香') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-sandalwood.jpg';
+  else if (oil.zh.indexOf('沒藥') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-myrrh.jpg';
+  else if (oil.zh.indexOf('杜松') >= 0 || oil.zh.indexOf('刺檜') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-juniper.jpg';
+  else if (oil.zh.indexOf('茴香') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-fennel.jpg';
+  else if (oil.zh.indexOf('歐白芷') >= 0 || oil.zh.indexOf('當歸') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-angelica.jpg';
+  else if (oil.zh.indexOf('龍艾') >= 0 || oil.zh.indexOf('龍蒿') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-tarragon.jpg';
+  else if (oil.zh.indexOf('黑胡椒') >= 0 || oil.zh.indexOf('胡椒') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-peppercorn.jpg';
+  else if (oil.zh.indexOf('豆蔻') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-cardamom.jpg';
+  else if (oil.zh.indexOf('月桂') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-bay-leaf.jpg';
+  else if (oil.zh.indexOf('永久花') >= 0 || oil.zh.indexOf('蠟菊') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-helichrysum.jpg';
+  else if (oil.zh.indexOf('香蜂') >= 0 || oil.zh.indexOf('蜂草') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-melissa.jpg';
+  else if (oil.zh.indexOf('天竺葵') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/banner-geranium.jpg';
+  else if (oil.zh.indexOf('丁香') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/manus-cinnamon-spices.jpg';
+  else if (oil.zh.indexOf('雪松') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/manus-cedar-wood.jpg';
+  else if (oil.zh.indexOf('乳香') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/manus-frankincense-incense.jpg';
+  else if (oil.zh.indexOf('玫瑰') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/manus-rose-petals.jpg';
+  else if (oil.zh.indexOf('松') >= 0 || oil.zh.indexOf('杉') >= 0 || oil.zh.indexOf('冷杉') >= 0 || oil.zh.indexOf('雲杉') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/manus-pine-resin.jpg';
+  else if (catText0.indexOf('柑橘') >= 0 || catText0.indexOf('檸檬') >= 0 || catText0.indexOf('橙') >= 0 || catText0.indexOf('萊姆') >= 0 || catText0.indexOf('柚') >= 0 || catText0.indexOf('芸香') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/oil-detail-banner-citrus.jpg';
+  else if (catText0.indexOf('花') >= 0 || catText0.indexOf('茉莉') >= 0 || catText0.indexOf('依蘭') >= 0 || catText0.indexOf('苯基酯') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/oil-detail-banner-florals.jpg';
+  else if (catText0.indexOf('樹') >= 0 || catText0.indexOf('木') >= 0 || catText0.indexOf('檜') >= 0 || catText0.indexOf('倍半萜醇') >= 0) heroBanner = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/oil-detail-banner-woods.jpg';
 
   // Hero — use banner image as background (no dark overlay, keep image bright)
   document.getElementById('odHero').style.background = 'url(' + heroBanner + ') center/cover no-repeat';
