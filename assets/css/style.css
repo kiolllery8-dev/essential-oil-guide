@@ -70,7 +70,7 @@ header {
   border-bottom: 3px solid var(--green-mid);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1010;
   box-shadow: 0 2px 12px var(--shadow);
 }
 
@@ -1576,25 +1576,91 @@ footer ul li a:hover { color: var(--white); }
 }
 
 @media (max-width: 640px) {
-  nav ul { display: none; }
-  header .header-inner { position: relative; }
-  nav.open ul {
+  /* === Mobile header：漢堡左、標題置中、抽屜從左滑入 === */
+  header .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-left: 56px;
+    padding-right: 56px;
+  }
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0;           /* 隱藏 HTML 裡的 ☰ 文字 */
+    line-height: 1;
+    padding: 6px 10px;
+    z-index: 1012;          /* 在 header(1010) 之上也在 drawer 之上 */
+  }
+  .menu-toggle::after {
+    content: "☰";
+    font-size: 26px;
+    line-height: 1;
+  }
+  body.menu-open .menu-toggle::after {
+    content: "✕";
+  }
+  .logo-wrap {
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+  }
+  .nav-search { display: none; }
+
+  /* 抽屜選單（固定在左側，預設藏在螢幕外；top 由 JS 依實際 header 高度動態設置） */
+  nav ul {
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: calc(100% + 8px);
+    position: fixed;
+    top: var(--drawer-top, 104px);
+    left: 0;
+    width: 280px;
+    max-width: 82vw;
+    height: calc(100vh - var(--drawer-top, 104px));
+    background: #fff;
+    padding: 16px 18px 20px;
+    box-shadow: 4px 4px 28px rgba(0, 0, 0, 0.18);
+    z-index: 1001;
+    transform: translateX(-105%);
+    transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 4px;
+    list-style: none;
+    margin: 0;
+    overflow-y: auto;
+  }
+  nav.open ul { transform: translateX(0); }
+  nav ul li { width: 100%; }
+  nav ul li a {
+    width: 100%;
+    display: block;
+    padding: 14px 16px;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+
+  /* 背景遮罩（只暗化 header 下方） */
+  .nav-backdrop {
+    position: fixed;
+    top: var(--drawer-top, 104px);
     left: 0;
     right: 0;
-    background: #fff;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    padding: 12px 20px;
-    z-index: 100;
-    gap: 4px;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
   }
-  nav.open ul li { width: 100%; }
-  nav.open ul li a { width: 100%; padding: 12px 14px; border-radius: 8px; }
-  .menu-toggle { display: block; }
-  .nav-search { display: none; }
+  body.menu-open .nav-backdrop {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  /* 打開時禁止 body 滾動 */
+  body.menu-open { overflow: hidden; }
   .hero { padding: 50px 20px; }
   .footer-inner { grid-template-columns: 1fr; }
   .encyclo-grid { grid-template-columns: repeat(3, 1fr); }
