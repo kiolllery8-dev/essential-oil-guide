@@ -3,6 +3,8 @@ import { readdirSync } from 'fs';
 import { join } from 'path';
 import oilsData from '../data/oils.json';
 
+export const dynamic = 'force-static';
+
 const SITE = 'https://intelliverse.tw';
 const HTML_DIR = join(process.cwd(), 'html-source');
 
