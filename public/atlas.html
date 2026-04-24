@@ -436,16 +436,24 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);line-height:1.7;min-
     });
   });
 
-  // Auto-resize iframe parent
+  // Auto-resize iframe parent — measure container only, stable, one-shot per resize
+  let lastHeight = 0;
   function sendHeight() {
-    const h = document.documentElement.scrollHeight;
+    const c = document.querySelector('.container');
+    const h = c ? c.offsetHeight + 80 : 2600;
+    if (Math.abs(h - lastHeight) < 10) return; // debounce — ignore tiny fluctuations
+    lastHeight = h;
     if (window.parent !== window) {
       window.parent.postMessage({type:'atlas-height', height: h}, '*');
     }
   }
+  if (document.readyState === 'complete') sendHeight();
   window.addEventListener('load', sendHeight);
-  window.addEventListener('resize', sendHeight);
-  setInterval(sendHeight, 2000);
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(sendHeight, 200);
+  });
 })();
 </script>
 </body>

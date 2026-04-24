@@ -327,10 +327,14 @@
   ></iframe>
   <script>
     (function(){
+      var last = 0;
       window.addEventListener('message', function(e){
         if (e.data && e.data.type === 'atlas-height') {
+          var h = Math.max(1200, Math.min(e.data.height, 4500)); // clamp 1200-4500px
+          if (Math.abs(h - last) < 20) return; // only update on significant change
+          last = h;
           var f = document.getElementById('region-atlas-frame');
-          if (f) f.style.height = (e.data.height + 20) + 'px';
+          if (f) f.style.height = h + 'px';
         }
       });
     })();
