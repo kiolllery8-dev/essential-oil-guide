@@ -2,13 +2,13 @@ import Script from 'next/script';
 
 /**
  * Google Analytics 4 tracking.
- * Controlled by NEXT_PUBLIC_GA_ID env variable.
- * If not set, nothing is rendered (no tracking).
+ * Measurement ID is public — safe to hardcode.
+ * Override via NEXT_PUBLIC_GA_ID env var if needed.
  */
-export default function Analytics() {
-  const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
-  if (!GA_ID) return null;
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-7BXF6SHQXQ';
 
+export default function Analytics() {
+  if (!GA_ID) return null;
   return (
     <>
       <Script
