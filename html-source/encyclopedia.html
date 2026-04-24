@@ -316,29 +316,441 @@
 </section>
 
 <!-- ===== 4. REGIONS ===== -->
-<section class="encyclo-page-section" id="regions" style="background:transparent;padding:0;">
-  <iframe
-    id="region-atlas-frame"
-    src="/atlas.html"
-    title="精油的世界產地 World Map"
-    loading="lazy"
-    style="width:100%;border:0;min-height:2000px;display:block;background:transparent;"
-    scrolling="no"
-  ></iframe>
-  <script>
-    (function(){
-      var last = 0;
-      window.addEventListener('message', function(e){
-        if (e.data && e.data.type === 'atlas-height') {
-          var h = Math.max(1200, Math.min(e.data.height, 4500)); // clamp 1200-4500px
-          if (Math.abs(h - last) < 20) return; // only update on significant change
-          last = h;
-          var f = document.getElementById('region-atlas-frame');
-          if (f) f.style.height = h + 'px';
-        }
+<section class="encyclo-page-section" id="regions" style="padding:0;">
+  <div class="ra-scope">
+    <style>
+    @scope (.ra-scope) {
+    :scope {--bg:transparent;--bg-soft:#EDE4D3;--cream:#FAF6F0;--ink:#2C2419;--ink-soft:#5C4E3F;--milk-tea:#D4B8A8;--clay:#B87A5A;--sage:#7A8670;--forest:#3B4A3F;--ocean:#E3EAE6;--shadow:0 1px 2px rgba(44,36,25,0.04),0 8px 24px rgba(44,36,25,0.06);--shadow-hover:0 2px 4px rgba(44,36,25,0.06),0 20px 40px rgba(44,36,25,0.12);}
+
+:scope {background:transparent;}
+:scope {font-family:'Noto Sans TC',sans-serif;color:var(--ink);line-height:1.7;min-height:100vh;background-image:radial-gradient(circle at 10% 20%,rgba(212,184,168,0.15) 0%,transparent 40%),radial-gradient(circle at 90% 80%,rgba(122,134,112,0.12) 0%,transparent 40%);}
+.container{max-width:1280px;margin:0 auto;padding:40px 24px 60px;}
+.hero{text-align:center;margin-bottom:40px;}
+.hero-kicker{font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:0.4em;color:var(--clay);text-transform:uppercase;margin-bottom:12px;}
+.hero-title{font-family:'Noto Serif TC',serif;font-size:clamp(32px,4.5vw,50px);font-weight:500;letter-spacing:0.05em;color:var(--ink);margin-bottom:8px;line-height:1.2;}
+.hero-title .accent{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;color:var(--clay);}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;letter-spacing:0.15em;color:var(--sage);margin-bottom:16px;}
+.hero-desc{max-width:680px;margin:0 auto;color:var(--ink-soft);font-size:15px;line-height:1.9;}
+.hero-ornament{display:flex;align-items:center;justify-content:center;gap:12px;margin:16px auto 20px;}
+.hero-ornament .line{width:50px;height:1px;background:var(--milk-tea);}
+.hero-ornament .dot{width:6px;height:6px;border-radius:50%;background:var(--clay);}
+.map-section{background:var(--cream);border-radius:24px;padding:28px;box-shadow:var(--shadow);margin-bottom:40px;position:relative;overflow:hidden;}
+.map-wrapper{position:relative;width:100%;background:var(--ocean);border-radius:12px;padding:10px;}
+.world-map{width:100%;height:auto;display:block;}
+.country{stroke-width:0.35;stroke-linejoin:round;transition:filter 0.25s,fill 0.25s;}
+.region[data-region="w_europe"] .country{fill:#D4C3D1;stroke:#AD93A8;}
+.region[data-region="w_europe"] .country[data-producer="true"]{fill:#D4C3D1;stroke:#2C2419;stroke-width:0.8;filter:saturate(1.2);}
+.region[data-region="e_europe"] .country{fill:#C9B5C0;stroke:#A08490;}
+.region[data-region="e_europe"] .country[data-producer="true"]{fill:#C9B5C0;stroke:#2C2419;stroke-width:0.8;filter:saturate(1.2);}
+.region[data-region="nordic"] .country{fill:#DCD6C2;stroke:#B0A98F;}
+.region[data-region="russia"] .country{fill:#C6BFB0;stroke:#968E7C;}
+.region[data-region="mid_east"] .country{fill:#E0C58C;stroke:#B4975B;}
+.region[data-region="mid_east"] .country[data-producer="true"]{fill:#E0C58C;stroke:#2C2419;stroke-width:0.8;filter:saturate(1.2);}
+.region[data-region="n_africa"] .country{fill:#D5A87B;stroke:#A77950;}
+.region[data-region="n_africa"] .country[data-producer="true"]{fill:#D5A87B;stroke:#2C2419;stroke-width:0.8;filter:saturate(1.2);}
+.region[data-region="africa"] .country{fill:#C28E6E;stroke:#8E6146;}
+.region[data-region="africa"] .country[data-producer="true"]{fill:#C28E6E;stroke:#2C2419;stroke-width:0.8;filter:saturate(1.2);}
+.region[data-region="s_asia"] .country{fill:#CC9585;stroke:#9C6856;}
+.region[data-region="s_asia"] .country[data-producer="true"]{fill:#CC9585;stroke:#2C2419;stroke-width:0.8;filter:saturate(1.2);}
+.region[data-region="e_asia"] .country{fill:#B2C296;stroke:#85956A;}
+.region[data-region="e_asia"] .country[data-producer="true"]{fill:#B2C296;stroke:#2C2419;stroke-width:0.8;filter:saturate(1.2);}
+.region[data-region="se_asia"] .country{fill:#9FB78D;stroke:#728B60;}
+.region[data-region="oceania"] .country{fill:#B5C5B8;stroke:#85978A;}
+.region[data-region="oceania"] .country[data-producer="true"]{fill:#B5C5B8;stroke:#2C2419;stroke-width:0.8;filter:saturate(1.2);}
+.region[data-region="n_america"] .country{fill:#E0CBA0;stroke:#B09874;}
+.region[data-region="c_america"] .country{fill:#D8B094;stroke:#A88068;}
+.region[data-region="s_america"] .country{fill:#A5BC88;stroke:#768C5C;}
+.region[data-region="s_america"] .country[data-producer="true"]{fill:#A5BC88;stroke:#2C2419;stroke-width:0.8;filter:saturate(1.2);}
+.region[data-region="antarctica"] .country{fill:#E8E4DC;stroke:#B8B4AC;}
+.country:hover{filter:brightness(0.92) saturate(1.3);cursor:pointer;}
+.graticule{fill:none;stroke:#8B6F4E;stroke-width:0.3;stroke-dasharray:2,3;opacity:0.18;pointer-events:none;}
+.marker{cursor:pointer;}
+.marker-ring{fill:none;stroke-width:1.2;opacity:0;transform-origin:center;}
+.marker-ring-2{fill:none;stroke-width:1.5;opacity:0.9;}
+.marker:hover .marker-ring,.marker.active .marker-ring{animation:pulse 1.8s ease-out infinite;}
+@keyframes pulse{0%{opacity:0.8;r:6;}100%{opacity:0;r:22;}}
+.marker-dot{stroke:var(--cream);stroke-width:2;transition:all 0.3s;filter:drop-shadow(0 1.5px 3px rgba(0,0,0,0.35));}
+.marker:hover .marker-dot,.marker.active .marker-dot{r:8;}
+.marker-number{fill:var(--cream);font-family:'Cormorant Garamond',serif;font-size:8.5px;font-weight:700;text-anchor:middle;dominant-baseline:central;pointer-events:none;}
+.marker-label{fill:var(--ink);font-family:'Noto Serif TC',serif;font-size:11px;font-weight:600;text-anchor:middle;opacity:0.95;pointer-events:none;paint-order:stroke;stroke:var(--cream);stroke-width:3.5px;stroke-linejoin:round;}
+.marker.dimmed{opacity:0.25;}
+.tooltip{position:absolute;background:var(--ink);color:var(--cream);padding:10px 16px;border-radius:8px;font-size:13px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity 0.2s;transform:translate(-50%,-130%);z-index:10;box-shadow:0 4px 12px rgba(0,0,0,0.15);}
+.tooltip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--ink);}
+.tooltip.visible{opacity:1;}
+.region-legend{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px 16px;margin-top:20px;padding:20px 24px;background:var(--bg-soft);border-radius:12px;position:relative;z-index:1;}
+.region-legend-title{grid-column:1/-1;font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.3em;color:var(--clay);text-transform:uppercase;padding-bottom:6px;border-bottom:1px dashed var(--milk-tea);margin-bottom:4px;}
+.region-item{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--ink-soft);}
+.region-swatch{display:inline-block;width:20px;height:12px;border-radius:3px;border:1px solid;flex-shrink:0;}
+.legend-bar{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:20px;position:relative;z-index:1;}
+.legend-chip{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-soft);border:1px solid transparent;border-radius:999px;font-size:13px;cursor:pointer;transition:all 0.25s;color:var(--ink-soft);font-weight:500;font-family:inherit;}
+.legend-chip:hover{background:var(--cream);border-color:var(--milk-tea);}
+.legend-chip.active{background:var(--ink);color:var(--cream);border-color:var(--ink);}
+.legend-chip .dot{width:8px;height:8px;border-radius:50%;}
+.cards-header{text-align:center;margin-bottom:28px;}
+.cards-header h2{font-family:'Noto Serif TC',serif;font-size:26px;font-weight:500;letter-spacing:0.1em;color:var(--ink);margin-bottom:6px;}
+.cards-header p{font-family:'Cormorant Garamond',serif;font-size:16px;letter-spacing:0.2em;color:var(--sage);}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;}
+.card{background:var(--cream);border-radius:18px;padding:28px;box-shadow:var(--shadow);transition:all 0.4s cubic-bezier(0.2,0.8,0.2,1);position:relative;overflow:hidden;border:2px solid transparent;cursor:pointer;}
+.card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:var(--card-accent,var(--milk-tea));}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover);}
+.card.highlighted{border-color:var(--clay);transform:translateY(-4px);box-shadow:var(--shadow-hover);}
+.card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;}
+.card-number{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--card-accent,var(--milk-tea));line-height:1;}
+.card-flag{font-size:32px;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.1));}
+.card-country-en{font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:0.25em;color:var(--ink-soft);text-transform:uppercase;margin-bottom:4px;}
+.card-country{font-family:'Noto Serif TC',serif;font-size:22px;font-weight:500;color:var(--ink);margin-bottom:16px;letter-spacing:0.05em;}
+.card-oils{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
+.oil-tag{font-size:12px;padding:4px 12px;background:var(--bg-soft);border-radius:999px;color:var(--ink-soft);font-weight:500;}
+.oil-tag.featured{background:var(--card-accent,var(--milk-tea));color:var(--cream);}
+.card-divider{height:1px;background:linear-gradient(to right,transparent,var(--milk-tea),transparent);margin:16px 0;}
+.card-note{font-size:13.5px;color:var(--ink-soft);line-height:1.8;}
+.card-note .highlight{color:var(--clay);font-weight:500;}
+.card.dimmed{opacity:0.3;transform:scale(0.98);}
+.footer-note{text-align:center;margin-top:48px;padding-top:28px;border-top:1px solid var(--milk-tea);color:var(--ink-soft);font-size:13px;letter-spacing:0.1em;}
+.footer-note .ornament{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--clay);letter-spacing:0.3em;display:block;margin-bottom:12px;}
+@media(max-width:768px){.container{padding:28px 12px;}.map-section{padding:16px;border-radius:18px;}.marker-label{font-size:9px;}.cards-grid{grid-template-columns:1fr;gap:16px;}.card{padding:24px;}.region-legend{grid-template-columns:repeat(2,1fr);padding:16px;}}
+    }
+    </style>
+<div class="container">
+  <section class="hero">
+    <div class="hero-kicker">Aromatherapy · Origins</div>
+    <h1 class="hero-title">精油的<span class="accent">世界產地</span></h1>
+    <div class="hero-ornament"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
+    <div class="hero-sub">A Journey Through Ten Botanical Terroirs</div>
+    <p class="hero-desc">土壤、氣候、海拔、採收季節都會影響精油的化學組成。<br>即使是同一品種，不同產地的品質與香氣層次也會截然不同。</p>
+  </section>
+
+  <section class="map-section">
+    <div class="map-wrapper">
+      <svg class="world-map" viewBox="0 20 1000 380" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+        <g class="graticule">
+          <line x1="0" y1="250" x2="1000" y2="250"/>
+          <line x1="0" y1="186.1" x2="1000" y2="186.1"/>
+          <line x1="0" y1="313.9" x2="1000" y2="313.9"/>
+          <line x1="500" y1="0" x2="500" y2="500"/>
+        </g>
+        <!-- Simplified continental shapes (approximation) -->
+        <g class="region" data-region="w_europe">
+          <path class="country" data-producer="true" d="M 470 90 L 520 80 L 560 90 L 580 105 L 585 130 L 575 150 L 555 160 L 530 150 L 510 155 L 485 145 L 475 120 Z"><title>西歐（法國/義大利）</title></path>
+        </g>
+        <g class="region" data-region="e_europe">
+          <path class="country" data-producer="true" d="M 560 90 L 620 95 L 640 120 L 625 145 L 590 140 L 575 115 Z"><title>東歐（保加利亞/羅馬尼亞）</title></path>
+        </g>
+        <g class="region" data-region="nordic">
+          <path class="country" d="M 480 40 L 540 30 L 570 55 L 560 85 L 520 85 L 485 65 Z"><title>北歐</title></path>
+        </g>
+        <g class="region" data-region="russia">
+          <path class="country" d="M 600 55 L 780 50 L 900 75 L 920 100 L 880 130 L 800 130 L 700 120 L 620 105 Z"><title>俄羅斯</title></path>
+        </g>
+        <g class="region" data-region="mid_east">
+          <path class="country" data-producer="true" d="M 590 155 L 660 150 L 685 185 L 670 215 L 630 215 L 600 190 Z"><title>中東（阿曼）</title></path>
+        </g>
+        <g class="region" data-region="n_africa">
+          <path class="country" data-producer="true" d="M 450 160 L 560 155 L 590 175 L 585 210 L 525 215 L 475 200 L 455 180 Z"><title>北非（摩洛哥）</title></path>
+        </g>
+        <g class="region" data-region="africa">
+          <path class="country" data-producer="true" d="M 510 215 L 590 215 L 630 240 L 650 290 L 625 340 L 590 350 L 555 335 L 525 300 L 510 260 Z"><title>非洲（馬達加斯加/東非）</title></path>
+        </g>
+        <g class="region" data-region="s_asia">
+          <path class="country" data-producer="true" d="M 685 170 L 740 175 L 745 220 L 720 235 L 685 220 L 675 195 Z"><title>南亞（印度）</title></path>
+        </g>
+        <g class="region" data-region="e_asia">
+          <path class="country" data-producer="true" d="M 745 140 L 860 135 L 890 175 L 870 210 L 810 215 L 755 195 L 745 165 Z"><title>東亞（中國/日本/台灣）</title></path>
+        </g>
+        <g class="region" data-region="se_asia">
+          <path class="country" d="M 790 235 L 870 240 L 890 270 L 855 285 L 810 280 L 785 260 Z"><title>東南亞（印尼）</title></path>
+        </g>
+        <g class="region" data-region="oceania">
+          <path class="country" data-producer="true" d="M 820 305 L 925 310 L 930 355 L 870 375 L 825 350 Z"><title>大洋洲（澳洲）</title></path>
+        </g>
+        <g class="region" data-region="n_america">
+          <path class="country" d="M 130 80 Q 150 60 200 65 L 280 65 L 320 90 L 330 140 L 300 180 L 260 205 L 220 210 L 180 195 L 150 170 L 130 130 Z"><title>北美（美國/加拿大）</title></path>
+        </g>
+        <g class="region" data-region="c_america">
+          <path class="country" d="M 230 215 L 285 220 L 295 250 L 275 270 L 250 265 L 235 245 Z"><title>中美</title></path>
+        </g>
+        <g class="region" data-region="s_america">
+          <path class="country" data-producer="true" d="M 280 270 L 330 275 L 365 320 L 360 380 L 330 420 L 300 410 L 285 370 L 275 320 Z"><title>南美（巴西）</title></path>
+        </g>
+
+        <g id="markers">
+          <g class="marker" data-id="france" data-cats="floral,herbal" transform="translate(517, 120)">
+            <circle class="marker-ring" r="8" stroke="#9A8CAE"/>
+            <circle class="marker-ring-2" r="5" stroke="#9A8CAE"/>
+            <circle class="marker-dot" r="6.5" fill="#9A8CAE"/>
+            <text class="marker-number" y="0">01</text>
+            <text class="marker-label" y="-14">France</text>
+          </g>
+          <g class="marker" data-id="bulgaria" data-cats="floral" transform="translate(578, 128)">
+            <circle class="marker-ring" r="8" stroke="#C89090"/>
+            <circle class="marker-ring-2" r="5" stroke="#C89090"/>
+            <circle class="marker-dot" r="6.5" fill="#C89090"/>
+            <text class="marker-number" y="0">02</text>
+            <text class="marker-label" y="-14">Bulgaria</text>
+          </g>
+          <g class="marker" data-id="italy" data-cats="citrus" transform="translate(541, 138)">
+            <circle class="marker-ring" r="8" stroke="#D4A84B"/>
+            <circle class="marker-ring-2" r="5" stroke="#D4A84B"/>
+            <circle class="marker-dot" r="6.5" fill="#D4A84B"/>
+            <text class="marker-number" y="0">03</text>
+            <text class="marker-label" y="22">Italy</text>
+          </g>
+          <g class="marker" data-id="morocco" data-cats="floral,woody,herbal" transform="translate(485, 175)">
+            <circle class="marker-ring" r="8" stroke="#8B6F4E"/>
+            <circle class="marker-ring-2" r="5" stroke="#8B6F4E"/>
+            <circle class="marker-dot" r="6.5" fill="#8B6F4E"/>
+            <text class="marker-number" y="0">04</text>
+            <text class="marker-label" y="22">Morocco</text>
+          </g>
+          <g class="marker" data-id="oman" data-cats="resin" transform="translate(655, 195)">
+            <circle class="marker-ring" r="8" stroke="#C89A5A"/>
+            <circle class="marker-ring-2" r="5" stroke="#C89A5A"/>
+            <circle class="marker-dot" r="6.5" fill="#C89A5A"/>
+            <text class="marker-number" y="0">05</text>
+            <text class="marker-label" y="-14">Oman</text>
+          </g>
+          <g class="marker" data-id="india" data-cats="herbal,spicy,floral,woody" transform="translate(715, 200)">
+            <circle class="marker-ring" r="8" stroke="#B85C3C"/>
+            <circle class="marker-ring-2" r="5" stroke="#B85C3C"/>
+            <circle class="marker-dot" r="6.5" fill="#B85C3C"/>
+            <text class="marker-number" y="0">06</text>
+            <text class="marker-label" y="22">India</text>
+          </g>
+          <g class="marker" data-id="madagascar" data-cats="floral,spicy,woody" transform="translate(635, 310)">
+            <circle class="marker-ring" r="8" stroke="#7A8670"/>
+            <circle class="marker-ring-2" r="5" stroke="#7A8670"/>
+            <circle class="marker-dot" r="6.5" fill="#7A8670"/>
+            <text class="marker-number" y="0">07</text>
+            <text class="marker-label" y="22">Madagascar</text>
+          </g>
+          <g class="marker" data-id="brazil" data-cats="citrus" transform="translate(335, 330)">
+            <circle class="marker-ring" r="8" stroke="#D4A84B"/>
+            <circle class="marker-ring-2" r="5" stroke="#D4A84B"/>
+            <circle class="marker-dot" r="6.5" fill="#D4A84B"/>
+            <text class="marker-number" y="0">08</text>
+            <text class="marker-label" y="22">Brazil</text>
+          </g>
+          <g class="marker" data-id="australia" data-cats="woody,herbal" transform="translate(875, 335)">
+            <circle class="marker-ring" r="8" stroke="#7A8670"/>
+            <circle class="marker-ring-2" r="5" stroke="#7A8670"/>
+            <circle class="marker-dot" r="6.5" fill="#7A8670"/>
+            <text class="marker-number" y="0">09</text>
+            <text class="marker-label" y="-14">Australia</text>
+          </g>
+          <g class="marker" data-id="taiwan" data-cats="woody,spicy,citrus" transform="translate(852, 200)">
+            <circle class="marker-ring" r="8" stroke="#4A6B57"/>
+            <circle class="marker-ring-2" r="5" stroke="#4A6B57"/>
+            <circle class="marker-dot" r="6.5" fill="#4A6B57"/>
+            <text class="marker-number" y="0">10</text>
+            <text class="marker-label" y="22">Taiwan</text>
+          </g>
+        </g>
+      </svg>
+      <div class="tooltip" id="tooltip"></div>
+    </div>
+
+    <div class="region-legend">
+      <div class="region-legend-title">Regional Palette · 地理分區</div>
+      <div class="region-item"><span class="region-swatch" style="background:#D4C3D1;border-color:#AD93A8"></span><span>西歐</span></div>
+      <div class="region-item"><span class="region-swatch" style="background:#C9B5C0;border-color:#A08490"></span><span>東歐</span></div>
+      <div class="region-item"><span class="region-swatch" style="background:#DCD6C2;border-color:#B0A98F"></span><span>北歐</span></div>
+      <div class="region-item"><span class="region-swatch" style="background:#C6BFB0;border-color:#968E7C"></span><span>俄羅斯 / 中亞</span></div>
+      <div class="region-item"><span class="region-swatch" style="background:#E0C58C;border-color:#B4975B"></span><span>中東</span></div>
+      <div class="region-item"><span class="region-swatch" style="background:#D5A87B;border-color:#A77950"></span><span>北非</span></div>
+      <div class="region-item"><span class="region-swatch" style="background:#C28E6E;border-color:#8E6146"></span><span>撒哈拉以南非洲</span></div>
+      <div class="region-item"><span class="region-swatch" style="background:#CC9585;border-color:#9C6856"></span><span>南亞</span></div>
+      <div class="region-item"><span class="region-swatch" style="background:#B2C296;border-color:#85956A"></span><span>東亞</span></div>
+      <div class="region-item"><span class="region-swatch" style="background:#9FB78D;border-color:#728B60"></span><span>東南亞</span></div>
+      <div class="region-item"><span class="region-swatch" style="background:#B5C5B8;border-color:#85978A"></span><span>大洋洲</span></div>
+      <div class="region-item"><span class="region-swatch" style="background:#E0CBA0;border-color:#B09874"></span><span>北美洲</span></div>
+      <div class="region-item"><span class="region-swatch" style="background:#D8B094;border-color:#A88068"></span><span>中美洲 / 加勒比</span></div>
+      <div class="region-item"><span class="region-swatch" style="background:#A5BC88;border-color:#768C5C"></span><span>南美洲</span></div>
+    </div>
+
+    <div class="legend-bar">
+      <button class="legend-chip active" data-cat="all"><span>全部產地</span></button>
+      <button class="legend-chip" data-cat="floral"><span class="dot" style="background:#C89090"></span><span>花香類</span></button>
+      <button class="legend-chip" data-cat="woody"><span class="dot" style="background:#8B6F4E"></span><span>木質類</span></button>
+      <button class="legend-chip" data-cat="herbal"><span class="dot" style="background:#8FA177"></span><span>草本類</span></button>
+      <button class="legend-chip" data-cat="citrus"><span class="dot" style="background:#D4A84B"></span><span>柑橘類</span></button>
+      <button class="legend-chip" data-cat="spicy"><span class="dot" style="background:#B85C3C"></span><span>辛香類</span></button>
+      <button class="legend-chip" data-cat="resin"><span class="dot" style="background:#C89A5A"></span><span>樹脂類</span></button>
+    </div>
+  </section>
+
+  <div class="cards-header">
+    <h2>十大精油產區速覽</h2>
+    <p>TEN BOTANICAL REGIONS</p>
+  </div>
+
+  <div class="cards-grid">
+    <article class="card" data-id="france" data-cats="floral,herbal" style="--card-accent:#9A8CAE">
+      <div class="card-header"><span class="card-number">01</span><span class="card-flag">🇫🇷</span></div>
+      <div class="card-country-en">France · Provence</div>
+      <div class="card-country">法國普羅旺斯</div>
+      <div class="card-oils"><span class="oil-tag featured">薰衣草</span><span class="oil-tag">迷迭香</span><span class="oil-tag">快樂鼠尾草</span></div>
+      <div class="card-divider"></div>
+      <p class="card-note">格拉斯（<span class="highlight">Grasse</span>）被譽為世界香水之都，普羅旺斯的薰衣草酯類含量為全球最高。</p>
+    </article>
+
+    <article class="card" data-id="bulgaria" data-cats="floral" style="--card-accent:#C89090">
+      <div class="card-header"><span class="card-number">02</span><span class="card-flag">🇧🇬</span></div>
+      <div class="card-country-en">Bulgaria</div>
+      <div class="card-country">保加利亞</div>
+      <div class="card-oils"><span class="oil-tag featured">玫瑰</span><span class="oil-tag">薰衣草</span></div>
+      <div class="card-divider"></div>
+      <p class="card-note"><span class="highlight">玫瑰谷（Rose Valley）</span>孕育最珍貴的大馬士革玫瑰精油，3,500 朵花僅能萃取 1 公克。</p>
+    </article>
+
+    <article class="card" data-id="italy" data-cats="citrus" style="--card-accent:#D4A84B">
+      <div class="card-header"><span class="card-number">03</span><span class="card-flag">🇮🇹</span></div>
+      <div class="card-country-en">Italy · Sicily</div>
+      <div class="card-country">義大利西西里</div>
+      <div class="card-oils"><span class="oil-tag featured">佛手柑</span><span class="oil-tag">檸檬</span></div>
+      <div class="card-divider"></div>
+      <p class="card-note"><span class="highlight">卡拉布里亞（Calabria）</span>產的佛手柑是全球公認最頂級的品種，是伯爵紅茶的靈魂香氛。</p>
+    </article>
+
+    <article class="card" data-id="morocco" data-cats="floral,woody,herbal" style="--card-accent:#8B6F4E">
+      <div class="card-header"><span class="card-number">04</span><span class="card-flag">🇲🇦</span></div>
+      <div class="card-country-en">Morocco</div>
+      <div class="card-country">摩洛哥</div>
+      <div class="card-oils"><span class="oil-tag">玫瑰</span><span class="oil-tag featured">雪松</span><span class="oil-tag">迷迭香</span></div>
+      <div class="card-divider"></div>
+      <p class="card-note"><span class="highlight">阿特拉斯雪松</span>原產地，高海拔玫瑰品質可與法國同級。</p>
+    </article>
+
+    <article class="card" data-id="oman" data-cats="resin" style="--card-accent:#C89A5A">
+      <div class="card-header"><span class="card-number">05</span><span class="card-flag">🇴🇲</span></div>
+      <div class="card-country-en">Oman · Somalia</div>
+      <div class="card-country">阿曼 / 索馬利亞</div>
+      <div class="card-oils"><span class="oil-tag featured">乳香</span><span class="oil-tag">沒藥</span></div>
+      <div class="card-divider"></div>
+      <p class="card-note">最頂級的 <span class="highlight">Boswellia sacra</span> 乳香產自阿曼，自古為皇室與宗教聖品。</p>
+    </article>
+
+    <article class="card" data-id="india" data-cats="herbal,spicy,floral,woody" style="--card-accent:#B85C3C">
+      <div class="card-header"><span class="card-number">06</span><span class="card-flag">🇮🇳</span></div>
+      <div class="card-country-en">India</div>
+      <div class="card-country">印度</div>
+      <div class="card-oils"><span class="oil-tag">薄荷</span><span class="oil-tag">薑</span><span class="oil-tag">茉莉</span><span class="oil-tag featured">檀香</span></div>
+      <div class="card-divider"></div>
+      <p class="card-note">全球最大薄荷精油出口國；<span class="highlight">邁索爾老山檀香</span>享譽國際，木質底香悠長深邃。</p>
+    </article>
+
+    <article class="card" data-id="madagascar" data-cats="floral,spicy,woody" style="--card-accent:#7A8670">
+      <div class="card-header"><span class="card-number">07</span><span class="card-flag">🇲🇬</span></div>
+      <div class="card-country-en">Madagascar</div>
+      <div class="card-country">馬達加斯加</div>
+      <div class="card-oils"><span class="oil-tag featured">依蘭</span><span class="oil-tag">丁香</span><span class="oil-tag">廣藿香</span><span class="oil-tag">沉香</span></div>
+      <div class="card-divider"></div>
+      <p class="card-note">全球最大<span class="highlight">依蘭</span>產地；獨特島嶼生態系孕育多種特有香料植物。</p>
+    </article>
+
+    <article class="card" data-id="brazil" data-cats="citrus" style="--card-accent:#D4A84B">
+      <div class="card-header"><span class="card-number">08</span><span class="card-flag">🇧🇷</span></div>
+      <div class="card-country-en">Brazil · USA</div>
+      <div class="card-country">巴西 / 美國</div>
+      <div class="card-oils"><span class="oil-tag featured">甜橙</span><span class="oil-tag">葡萄柚</span></div>
+      <div class="card-divider"></div>
+      <p class="card-note">巴西為全球最大甜橙精油產地；<span class="highlight">d-Limonene</span> 含量穩定，品質優異。</p>
+    </article>
+
+    <article class="card" data-id="australia" data-cats="woody,herbal" style="--card-accent:#7A8670">
+      <div class="card-header"><span class="card-number">09</span><span class="card-flag">🇦🇺</span></div>
+      <div class="card-country-en">Australia</div>
+      <div class="card-country">澳洲</div>
+      <div class="card-oils"><span class="oil-tag featured">茶樹</span><span class="oil-tag">尤加利</span><span class="oil-tag">藍絲柏</span></div>
+      <div class="card-divider"></div>
+      <p class="card-note"><span class="highlight">ISO 認證茶樹原產地</span>；維多利亞州澳洲尤加利品質最優。</p>
+    </article>
+
+    <article class="card" data-id="taiwan" data-cats="woody,spicy,citrus" style="--card-accent:#4A6B57">
+      <div class="card-header"><span class="card-number">10</span><span class="card-flag">🇹🇼</span></div>
+      <div class="card-country-en">Taiwan</div>
+      <div class="card-country">臺灣</div>
+      <div class="card-oils"><span class="oil-tag featured">檜木</span><span class="oil-tag">肖楠</span><span class="oil-tag">土肉桂</span><span class="oil-tag">台灣香檬</span></div>
+      <div class="card-divider"></div>
+      <p class="card-note"><span class="highlight">阿里山紅檜、太平山扁柏</span>是世界級針葉林精油，千年神木林孕育出沉穩清冽的東方木質香。</p>
+    </article>
+  </div>
+
+  <div class="footer-note">
+    <span class="ornament">· ✦ ·</span>
+    <div>選擇好精油，從認識產地開始</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const tooltip = document.getElementById('tooltip');
+  const markers = document.querySelectorAll('.marker');
+  const cards = document.querySelectorAll('.card');
+  const legendChips = document.querySelectorAll('.legend-chip');
+  const countryNames = {
+    france:'🇫🇷 法國普羅旺斯', bulgaria:'🇧🇬 保加利亞', italy:'🇮🇹 義大利西西里',
+    morocco:'🇲🇦 摩洛哥', oman:'🇴🇲 阿曼 / 索馬利亞', india:'🇮🇳 印度',
+    madagascar:'🇲🇬 馬達加斯加', brazil:'🇧🇷 巴西 / 美國', australia:'🇦🇺 澳洲', taiwan:'🇹🇼 臺灣'
+  };
+
+  markers.forEach(m => {
+    const id = m.dataset.id;
+    m.addEventListener('mousemove', e => {
+      const w = m.closest('.map-wrapper').getBoundingClientRect();
+      tooltip.textContent = countryNames[id];
+      tooltip.style.left = (e.clientX - w.left) + 'px';
+      tooltip.style.top = (e.clientY - w.top) + 'px';
+      tooltip.classList.add('visible');
+    });
+    m.addEventListener('mouseleave', () => tooltip.classList.remove('visible'));
+    m.addEventListener('click', () => {
+      markers.forEach(x => x.classList.remove('active'));
+      cards.forEach(c => c.classList.remove('highlighted'));
+      m.classList.add('active');
+      const t = document.querySelector(`.card[data-id="${id}"]`);
+      if (t) {
+        t.classList.add('highlighted');
+        t.scrollIntoView({behavior:'smooth', block:'center'});
+        setTimeout(() => { t.classList.remove('highlighted'); m.classList.remove('active'); }, 2800);
+      }
+    });
+  });
+
+  cards.forEach(c => {
+    const id = c.dataset.id;
+    c.addEventListener('mouseenter', () => { const m = document.querySelector(`.marker[data-id="${id}"]`); if (m) m.classList.add('active'); });
+    c.addEventListener('mouseleave', () => { const m = document.querySelector(`.marker[data-id="${id}"]`); if (m) m.classList.remove('active'); });
+    c.addEventListener('click', () => {
+      document.querySelector('.map-section').scrollIntoView({behavior:'smooth', block:'center'});
+      const m = document.querySelector(`.marker[data-id="${id}"]`);
+      if (m) {
+        markers.forEach(x => x.classList.remove('active'));
+        setTimeout(() => m.classList.add('active'), 400);
+        setTimeout(() => m.classList.remove('active'), 3500);
+      }
+    });
+  });
+
+  legendChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      legendChips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      const cat = chip.dataset.cat;
+      cards.forEach(card => {
+        const cats = (card.dataset.cats || '').split(',');
+        card.classList.toggle('dimmed', !(cat === 'all' || cats.includes(cat)));
       });
-    })();
-  </script>
+      markers.forEach(m => {
+        const cats = (m.dataset.cats || '').split(',');
+        m.classList.toggle('dimmed', !(cat === 'all' || cats.includes(cat)));
+      });
+    });
+  });
+
+  
+})();
+</script>
+  </div>
 </section>
 
 <!-- ===== 5. SAFETY ===== -->
