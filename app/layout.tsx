@@ -21,7 +21,6 @@ export const metadata: Metadata = {
   authors: [{ name: '靈境智造 Intelliverse', url: 'https://show.intelliverse.tw/' }],
   publisher: '靈境智造 Intelliverse Studio',
   creator: '靈境智造 Intelliverse Studio',
-  alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
     siteName: '精油能量圖譜',
@@ -58,6 +57,12 @@ export const metadata: Metadata = {
   },
   other: {
     'format-detection': 'telephone=no',
+  },
+  alternates: {
+    canonical: '/',
+    types: {
+      'application/rss+xml': [{ url: '/rss.xml', title: '精油能量圖譜 RSS' }],
+    },
   },
 };
 

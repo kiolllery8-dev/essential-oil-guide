@@ -3,10 +3,12 @@ import { join } from 'path';
 import { loadPage } from '../lib/loadHtml';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import ReactDOM from 'react-dom';
 import RawHtml from '../components/RawHtml';
 import JsonLd from '../components/JsonLd';
 import { breadcrumbSchema, articleSchema, SITE, DEFAULT_OG } from '../lib/schema';
 import { faqSchema, SAFETY_FAQ, BEGINNERS_FAQ } from '../lib/faq';
+import { AROMATHERAPY_HOWTOS } from '../lib/howto';
 
 const HTML_DIR = join(process.cwd(), 'html-source');
 
@@ -93,6 +95,9 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   const niceName = SLUG_NAMES[slug] || slug;
   const image = page.ogImage || DEFAULT_OG;
 
+  // Preload LCP image (每頁 hero)
+  ReactDOM.preload(image, { as: 'image', fetchPriority: 'high' });
+
   const crumbs = breadcrumbSchema([
     { name: '首頁', url: '/' },
     { name: niceName, url: `/${slug}/` },
@@ -115,6 +120,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   const schemas: object[] = [crumbs];
   if (isArticle) schemas.push(article);
   if (faqData) schemas.push(faqData);
+  if (slug === 'aromatherapy') schemas.push(...AROMATHERAPY_HOWTOS);
 
   return (
     <>

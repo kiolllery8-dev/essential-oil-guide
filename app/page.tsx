@@ -1,5 +1,6 @@
 import { loadPage } from './lib/loadHtml';
 import type { Metadata } from 'next';
+import ReactDOM from 'react-dom';
 import RawHtml from './components/RawHtml';
 import JsonLd from './components/JsonLd';
 import { breadcrumbSchema, SITE, DEFAULT_OG } from './lib/schema';
@@ -22,6 +23,9 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  // Preload LCP image（首頁 hero）
+  ReactDOM.preload(ogImage, { as: 'image', fetchPriority: 'high' });
+
   const crumbs = breadcrumbSchema([{ name: '首頁', url: '/' }]);
   return (
     <>
