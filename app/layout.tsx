@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
 import NavSearch from './components/NavSearch';
 import JsonLd from './components/JsonLd';
+import Analytics from './components/Analytics';
 import { organizationSchema, websiteSchema, DEFAULT_OG } from './lib/schema';
 
 export const metadata: Metadata = {
@@ -164,6 +165,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </footer>
 
         <Script src="/assets/js/nav.js" strategy="afterInteractive" />
+        <Analytics />
       </body>
     </html>
   );
