@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation';
 import RawHtml from '../components/RawHtml';
 import JsonLd from '../components/JsonLd';
 import { breadcrumbSchema, articleSchema, SITE, DEFAULT_OG } from '../lib/schema';
+import { faqSchema, SAFETY_FAQ, BEGINNERS_FAQ } from '../lib/faq';
 
 const HTML_DIR = join(process.cwd(), 'html-source');
 
@@ -105,9 +106,19 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     image,
   });
 
+  // FAQ schema：safety / article-beginners 頁
+  const faqData =
+    slug === 'safety' ? faqSchema(SAFETY_FAQ) :
+    slug === 'article-beginners' ? faqSchema(BEGINNERS_FAQ) :
+    null;
+
+  const schemas: object[] = [crumbs];
+  if (isArticle) schemas.push(article);
+  if (faqData) schemas.push(faqData);
+
   return (
     <>
-      <JsonLd data={isArticle ? [crumbs, article] : [crumbs]} />
+      <JsonLd data={schemas} />
       <RawHtml html={page.bodyHtml} />
     </>
   );

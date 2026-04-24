@@ -88,10 +88,74 @@ export default async function OilDetail({ params }: { params: Promise<{ id: stri
   const crumbs = breadcrumbSchema(crumbList);
   const article = oilSchema(oil);
 
+  // 相關精油：同化學分類隨機挑 6 支（排除自己）
+  const related = oils
+    .filter((o) => o.catFile === oil.catFile && o.id !== oil.id)
+    .slice(0, 6);
+
   return (
     <>
       <JsonLd data={[crumbs, article]} />
       <RawHtml html={patched} />
+
+      {related.length > 0 && (
+        <section
+          style={{
+            maxWidth: 1100,
+            margin: '40px auto 60px',
+            padding: '0 20px',
+          }}
+          aria-labelledby="related-oils-heading"
+        >
+          <h2
+            id="related-oils-heading"
+            style={{
+              fontSize: 22,
+              marginBottom: 20,
+              color: 'var(--green-dark)',
+              borderLeft: '4px solid var(--green-mid)',
+              paddingLeft: 12,
+            }}
+          >
+            🌿 同「{oil.category}」相關精油
+          </h2>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+              gap: 14,
+            }}
+          >
+            {related.map((r) => (
+              <a
+                key={r.id}
+                href={`/oil/${r.id}/`}
+                style={{
+                  display: 'block',
+                  padding: '16px 18px',
+                  background: 'var(--beige-light)',
+                  borderRadius: 12,
+                  border: '1px solid var(--border)',
+                  textDecoration: 'none',
+                  color: 'inherit',
+                  transition: 'transform .15s, box-shadow .15s',
+                }}
+              >
+                <div style={{ fontWeight: 600, fontSize: 15, marginBottom: 4 }}>{r.zh}</div>
+                <div style={{ fontSize: 12, fontStyle: 'italic', color: 'var(--text-mid)', marginBottom: 8 }}>
+                  {r.latin}
+                </div>
+                {r.components && (
+                  <div style={{ fontSize: 12, color: 'var(--text-mid)', lineHeight: 1.5 }}>
+                    {String(r.components).slice(0, 45)}
+                    {String(r.components).length > 45 ? '…' : ''}
+                  </div>
+                )}
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
     </>
   );
 }
