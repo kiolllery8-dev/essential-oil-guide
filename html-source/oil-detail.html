@@ -60,6 +60,9 @@
 
     #loading { text-align:center; padding:80px 20px; font-size:18px; color:var(--text-light); }
     #oilContent { display:none; }
+    /* Hero 5 大重點功效 */
+    .od-hero-highlights { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }
+    .od-hero-highlight { background:rgba(255,255,255,0.85); border:1px solid rgba(61,90,62,0.25); color:#3D5A3E; padding:4px 12px; border-radius:14px; font-size:12px; font-weight:600; backdrop-filter:blur(4px); }
     /* 新增：Pharmacology / Energy rich content */
     .od-rich-content { font-size:14px; line-height:1.9; color:var(--text-dark); }
     .od-rich-content p { margin:0 0 12px; }
@@ -128,6 +131,7 @@
       <div class="od-cat-badge" id="odCatBadge"></div>
       <h1 id="odName"></h1>
       <div class="od-latin" id="odLatin"></div>
+      <div class="od-hero-highlights" id="odHighlights"></div>
     </div>
   </div>
 
@@ -454,6 +458,21 @@ function init() {
   document.getElementById('odName').textContent = oil.zh;
   document.getElementById('odLatin').textContent = oil.latin;
   document.getElementById('odCatBadge').textContent = oil.category;
+
+  // 5 大重點功效（hero 區塊 badges）
+  var highlightEl = document.getElementById('odHighlights');
+  if (highlightEl && oil.effects) {
+    var eff = String(oil.effects).split(/[、，,]/).map(function(s){return s.trim();}).filter(Boolean);
+    // 不足 5 個就用 tags 補
+    if (eff.length < 5 && Array.isArray(oil.tags)) {
+      for (var i = 0; i < oil.tags.length && eff.length < 5; i++) {
+        if (eff.indexOf(oil.tags[i]) < 0) eff.push(oil.tags[i]);
+      }
+    }
+    highlightEl.innerHTML = eff.slice(0, 5).map(function(e){
+      return '<span class="od-hero-highlight">✦ ' + e + '</span>';
+    }).join('');
+  }
   document.getElementById('odBreadcrumb').textContent = oil.zh;
 
   // Info card
