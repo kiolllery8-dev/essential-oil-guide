@@ -60,6 +60,15 @@
 
     #loading { text-align:center; padding:80px 20px; font-size:18px; color:var(--text-light); }
     #oilContent { display:none; }
+    /* 新增：Pharmacology / Energy rich content */
+    .od-rich-content { font-size:14px; line-height:1.9; color:var(--text-dark); }
+    .od-rich-content p { margin:0 0 12px; }
+    .od-rich-content strong { color:#2C2C2C; }
+    .od-rich-content ul, .od-rich-content ol { margin:8px 0 14px 22px; padding:0; }
+    .od-rich-content li { margin-bottom:6px; }
+    .od-rich-content em { color:#666; }
+    #odEnergySection { background:linear-gradient(135deg, #FBF7F1 0%, #F4EDE4 100%); padding:24px 28px; border-radius:14px; margin:32px 0; border-left:4px solid #C8A673; }
+    #odEnergySection .od-section-title { margin-top:0; color:#8B6F3E; }
   </style>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
@@ -137,6 +146,7 @@
       <div>
         <!-- 藥學屬性與功效 -->
         <div class="od-section-title">🔬 藥學屬性與功效</div>
+        <div id="odPharmacology" class="od-rich-content" style="margin-bottom:24px;"></div>
         <table class="od-props-table" id="odPropsTable">
           <thead><tr><th style="width:180px;">藥學屬性</th><th>適用症候</th></tr></thead>
           <tbody id="odPropsBody"></tbody>
@@ -153,6 +163,12 @@
         <!-- 安全注意 -->
         <div class="od-section-title">⚠️ 注意事項</div>
         <div class="od-safety" id="odSafety"></div>
+
+        <!-- 天然精油的能量 -->
+        <div id="odEnergySection" style="display:none;">
+          <div class="od-section-title">🌙 天然精油的能量</div>
+          <div id="odEnergy" class="od-rich-content"></div>
+        </div>
 
         <!-- Navigation -->
         <div class="od-nav">
@@ -482,6 +498,16 @@ function init() {
   var safetyEl = document.getElementById('odSafety');
   safetyEl.className = 'od-safety ' + oil.safetyLevel;
   safetyEl.innerHTML = '<strong>' + safetyLabels[oil.safetyLevel] + '</strong><br>' + (oil.safetyText || '一般安全，建議稀釋後使用。');
+
+  // Pharmacology (rich HTML) — 藥學屬性與功效 深度內容
+  if (oil.pharmacology) {
+    document.getElementById('odPharmacology').innerHTML = oil.pharmacology;
+  }
+  // Energy — 天然精油的能量（塔羅/靈數/星座/經絡）
+  if (oil.energy) {
+    document.getElementById('odEnergy').innerHTML = oil.energy;
+    document.getElementById('odEnergySection').style.display = 'block';
+  }
 
   // (bottom banner removed)
 
