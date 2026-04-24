@@ -30,6 +30,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  // 直接用 app/ 路由手寫的頁面（非 html-source）
+  ['about', 'disclaimer', 'privacy', 'contact'].forEach((slug) => {
+    urls.push({
+      url: `${SITE}/${slug}/`,
+      changeFrequency: 'monthly',
+      priority: 0.4,
+      lastModified: LAST_MOD,
+    });
+  });
+
   // 35 個靜態頁面
   const hubs = new Set(['encyclopedia', 'oils', 'aromatherapy', 'safety']);
   readdirSync(HTML_DIR)

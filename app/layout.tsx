@@ -139,10 +139,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div>
               <h4>關於</h4>
               <ul>
-                <li><a href="#">網站簡介</a></li>
-                <li><a href="#">免責聲明</a></li>
-                <li><a href="#">隱私政策</a></li>
-                <li><a href="#">聯絡我們</a></li>
+                <li><a href="/about/">網站簡介</a></li>
+                <li><a href="/disclaimer/">免責聲明</a></li>
+                <li><a href="/privacy/">隱私政策</a></li>
+                <li><a href="/contact/">聯絡我們</a></li>
               </ul>
             </div>
           </div>
