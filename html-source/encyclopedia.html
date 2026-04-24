@@ -177,8 +177,27 @@
       以下 5 種主流工法的完整四格流程圖，帶你看懂一滴精油是怎麼來的。
     </p>
 
-    <!-- 5 大萃取法流程圖卡片（大尺寸） -->
-    <div style="display:flex;flex-direction:column;gap:32px;">
+    <style>
+      .extract-flow-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      @media (min-width: 760px) {
+        .extract-flow-grid {
+          grid-template-columns: 1fr 1fr;
+          column-gap: 32px;
+        }
+        .extract-flow-grid > figure:last-child:nth-child(odd) {
+          grid-column: 1 / -1;
+          max-width: calc(50% - 16px);
+          justify-self: center;
+        }
+      }
+    </style>
+
+    <!-- 5 大萃取法流程圖卡片（兩欄 ~45% 寬，最後一張置中） -->
+    <div class="extract-flow-grid">
 
       <figure style="margin:0;border-radius:18px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.15);background:var(--white);">
         <img src="https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/extract-flow-01-steam.jpg" alt="精油蒸餾法四格流程圖：植物原料投入 → 蒸氣高溫穿透 → 冷凝管液化 → 精油與純露分離。代表精油薰衣草，產物為精油與純露。" style="width:100%;height:auto;display:block;" loading="lazy" />
