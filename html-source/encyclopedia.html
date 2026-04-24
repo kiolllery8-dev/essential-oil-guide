@@ -316,20 +316,14 @@
 </section>
 
 <!-- ===== 4. REGIONS ===== -->
-<section class="encyclo-page-section" id="regions">
-  <div style="max-width:1180px;margin:0 auto;">
-    <div class="section-title">
-      <h2>🌍 精油的世界產地</h2>
-      <div class="title-line"></div>
-    </div>
-  </div>
+<section class="encyclo-page-section" id="regions" style="padding:0;">
   <div class="ra-scope">
     <style>
     @scope (.ra-scope) {
     :scope {--bg:transparent;--bg-soft:#EDE4D3;--cream:#FAF6F0;--ink:#2C2419;--ink-soft:#5C4E3F;--milk-tea:#D4B8A8;--clay:#B87A5A;--sage:#7A8670;--forest:#3B4A3F;--ocean:#E3EAE6;--shadow:0 1px 2px rgba(44,36,25,0.04),0 8px 24px rgba(44,36,25,0.06);--shadow-hover:0 2px 4px rgba(44,36,25,0.06),0 20px 40px rgba(44,36,25,0.12);}
 
 :scope {background:transparent;}
-:scope {font-family:'Noto Sans TC',sans-serif;color:var(--ink);line-height:1.7;min-height:100vh;background-image:radial-gradient(circle at 10% 20%,rgba(212,184,168,0.15) 0%,transparent 40%),radial-gradient(circle at 90% 80%,rgba(122,134,112,0.12) 0%,transparent 40%);}
+:scope {font-family:'Noto Sans TC',sans-serif;color:var(--ink);line-height:1.7;min-height:100vh;}
 .container{max-width:1280px;margin:0 auto;padding:40px 24px 60px;}
 .hero{text-align:center;margin-bottom:40px;}
 .hero-kicker{font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:0.4em;color:var(--clay);text-transform:uppercase;margin-bottom:12px;}
@@ -435,120 +429,81 @@
           <line x1="0" y1="313.9" x2="1000" y2="313.9"/>
           <line x1="500" y1="0" x2="500" y2="500"/>
         </g>
-        <!-- Simplified continental shapes (approximation) -->
-        <g class="region" data-region="w_europe">
-          <path class="country" data-producer="true" d="M 470 90 L 520 80 L 560 90 L 580 105 L 585 130 L 575 150 L 555 160 L 530 150 L 510 155 L 485 145 L 475 120 Z"><title>西歐（法國/義大利）</title></path>
+        <g id="countries">
+          <!-- Natural Earth simplified world map paths -->
+          <!-- USING A DIFFERENT APPROACH: use external world map data -->
         </g>
-        <g class="region" data-region="e_europe">
-          <path class="country" data-producer="true" d="M 560 90 L 620 95 L 640 120 L 625 145 L 590 140 L 575 115 Z"><title>東歐（保加利亞/羅馬尼亞）</title></path>
-        </g>
-        <g class="region" data-region="nordic">
-          <path class="country" d="M 480 40 L 540 30 L 570 55 L 560 85 L 520 85 L 485 65 Z"><title>北歐</title></path>
-        </g>
-        <g class="region" data-region="russia">
-          <path class="country" d="M 600 55 L 780 50 L 900 75 L 920 100 L 880 130 L 800 130 L 700 120 L 620 105 Z"><title>俄羅斯</title></path>
-        </g>
-        <g class="region" data-region="mid_east">
-          <path class="country" data-producer="true" d="M 590 155 L 660 150 L 685 185 L 670 215 L 630 215 L 600 190 Z"><title>中東（阿曼）</title></path>
-        </g>
-        <g class="region" data-region="n_africa">
-          <path class="country" data-producer="true" d="M 450 160 L 560 155 L 590 175 L 585 210 L 525 215 L 475 200 L 455 180 Z"><title>北非（摩洛哥）</title></path>
-        </g>
-        <g class="region" data-region="africa">
-          <path class="country" data-producer="true" d="M 510 215 L 590 215 L 630 240 L 650 290 L 625 340 L 590 350 L 555 335 L 525 300 L 510 260 Z"><title>非洲（馬達加斯加/東非）</title></path>
-        </g>
-        <g class="region" data-region="s_asia">
-          <path class="country" data-producer="true" d="M 685 170 L 740 175 L 745 220 L 720 235 L 685 220 L 675 195 Z"><title>南亞（印度）</title></path>
-        </g>
-        <g class="region" data-region="e_asia">
-          <path class="country" data-producer="true" d="M 745 140 L 860 135 L 890 175 L 870 210 L 810 215 L 755 195 L 745 165 Z"><title>東亞（中國/日本/台灣）</title></path>
-        </g>
-        <g class="region" data-region="se_asia">
-          <path class="country" d="M 790 235 L 870 240 L 890 270 L 855 285 L 810 280 L 785 260 Z"><title>東南亞（印尼）</title></path>
-        </g>
-        <g class="region" data-region="oceania">
-          <path class="country" data-producer="true" d="M 820 305 L 925 310 L 930 355 L 870 375 L 825 350 Z"><title>大洋洲（澳洲）</title></path>
-        </g>
-        <g class="region" data-region="n_america">
-          <path class="country" d="M 130 80 Q 150 60 200 65 L 280 65 L 320 90 L 330 140 L 300 180 L 260 205 L 220 210 L 180 195 L 150 170 L 130 130 Z"><title>北美（美國/加拿大）</title></path>
-        </g>
-        <g class="region" data-region="c_america">
-          <path class="country" d="M 230 215 L 285 220 L 295 250 L 275 270 L 250 265 L 235 245 Z"><title>中美</title></path>
-        </g>
-        <g class="region" data-region="s_america">
-          <path class="country" data-producer="true" d="M 280 270 L 330 275 L 365 320 L 360 380 L 330 420 L 300 410 L 285 370 L 275 320 Z"><title>南美（巴西）</title></path>
-        </g>
-
+        <!-- Markers positioned by lat/lng (equirectangular) -->
         <g id="markers">
-          <g class="marker" data-id="france" data-cats="floral,herbal" transform="translate(517, 120)">
+          <g class="marker" data-id="france" data-cats="floral,herbal" transform="translate(516.9, 128.0)">
             <circle class="marker-ring" r="8" stroke="#9A8CAE"/>
             <circle class="marker-ring-2" r="5" stroke="#9A8CAE"/>
             <circle class="marker-dot" r="6.5" fill="#9A8CAE"/>
             <text class="marker-number" y="0">01</text>
-            <text class="marker-label" y="-14">France</text>
+            <text class="marker-label" y="-15">France</text>
           </g>
-          <g class="marker" data-id="bulgaria" data-cats="floral" transform="translate(578, 128)">
+          <g class="marker" data-id="bulgaria" data-cats="floral" transform="translate(569.4, 131.7)">
             <circle class="marker-ring" r="8" stroke="#C89090"/>
             <circle class="marker-ring-2" r="5" stroke="#C89090"/>
             <circle class="marker-dot" r="6.5" fill="#C89090"/>
             <text class="marker-number" y="0">02</text>
-            <text class="marker-label" y="-14">Bulgaria</text>
+            <text class="marker-label" y="-15">Bulgaria</text>
           </g>
-          <g class="marker" data-id="italy" data-cats="citrus" transform="translate(541, 138)">
+          <g class="marker" data-id="italy" data-cats="citrus" transform="translate(544.7, 141.9)">
             <circle class="marker-ring" r="8" stroke="#D4A84B"/>
             <circle class="marker-ring-2" r="5" stroke="#D4A84B"/>
             <circle class="marker-dot" r="6.5" fill="#D4A84B"/>
             <text class="marker-number" y="0">03</text>
             <text class="marker-label" y="22">Italy</text>
           </g>
-          <g class="marker" data-id="morocco" data-cats="floral,woody,herbal" transform="translate(485, 175)">
+          <g class="marker" data-id="morocco" data-cats="floral,woody,herbal" transform="translate(480.3, 161.7)">
             <circle class="marker-ring" r="8" stroke="#8B6F4E"/>
             <circle class="marker-ring-2" r="5" stroke="#8B6F4E"/>
             <circle class="marker-dot" r="6.5" fill="#8B6F4E"/>
             <text class="marker-number" y="0">04</text>
             <text class="marker-label" y="22">Morocco</text>
           </g>
-          <g class="marker" data-id="oman" data-cats="resin" transform="translate(655, 195)">
+          <g class="marker" data-id="oman" data-cats="resin" transform="translate(650.0, 202.8)">
             <circle class="marker-ring" r="8" stroke="#C89A5A"/>
             <circle class="marker-ring-2" r="5" stroke="#C89A5A"/>
             <circle class="marker-dot" r="6.5" fill="#C89A5A"/>
             <text class="marker-number" y="0">05</text>
-            <text class="marker-label" y="-14">Oman</text>
+            <text class="marker-label" y="-15">Oman</text>
           </g>
-          <g class="marker" data-id="india" data-cats="herbal,spicy,floral,woody" transform="translate(715, 200)">
+          <g class="marker" data-id="india" data-cats="herbal,spicy,floral,woody" transform="translate(712.9, 215.8)">
             <circle class="marker-ring" r="8" stroke="#B85C3C"/>
             <circle class="marker-ring-2" r="5" stroke="#B85C3C"/>
             <circle class="marker-dot" r="6.5" fill="#B85C3C"/>
             <text class="marker-number" y="0">06</text>
             <text class="marker-label" y="22">India</text>
           </g>
-          <g class="marker" data-id="madagascar" data-cats="floral,spicy,woody" transform="translate(635, 310)">
+          <g class="marker" data-id="madagascar" data-cats="floral,spicy,woody" transform="translate(630.2, 302.1)">
             <circle class="marker-ring" r="8" stroke="#7A8670"/>
             <circle class="marker-ring-2" r="5" stroke="#7A8670"/>
             <circle class="marker-dot" r="6.5" fill="#7A8670"/>
             <text class="marker-number" y="0">07</text>
             <text class="marker-label" y="22">Madagascar</text>
           </g>
-          <g class="marker" data-id="brazil" data-cats="citrus" transform="translate(335, 330)">
+          <g class="marker" data-id="brazil" data-cats="citrus" transform="translate(368.1, 311.1)">
             <circle class="marker-ring" r="8" stroke="#D4A84B"/>
             <circle class="marker-ring-2" r="5" stroke="#D4A84B"/>
             <circle class="marker-dot" r="6.5" fill="#D4A84B"/>
             <text class="marker-number" y="0">08</text>
             <text class="marker-label" y="22">Brazil</text>
           </g>
-          <g class="marker" data-id="australia" data-cats="woody,herbal" transform="translate(875, 335)">
+          <g class="marker" data-id="australia" data-cats="woody,herbal" transform="translate(904.2, 351.4)">
             <circle class="marker-ring" r="8" stroke="#7A8670"/>
             <circle class="marker-ring-2" r="5" stroke="#7A8670"/>
             <circle class="marker-dot" r="6.5" fill="#7A8670"/>
             <text class="marker-number" y="0">09</text>
-            <text class="marker-label" y="-14">Australia</text>
+            <text class="marker-label" y="-15">Australia</text>
           </g>
-          <g class="marker" data-id="taiwan" data-cats="woody,spicy,citrus" transform="translate(852, 200)">
+          <g class="marker" data-id="taiwan" data-cats="woody,spicy,citrus" transform="translate(836.1, 184.2)">
             <circle class="marker-ring" r="8" stroke="#4A6B57"/>
             <circle class="marker-ring-2" r="5" stroke="#4A6B57"/>
             <circle class="marker-dot" r="6.5" fill="#4A6B57"/>
             <text class="marker-number" y="0">10</text>
-            <text class="marker-label" y="22">Taiwan</text>
+            <text class="marker-label" y="-15">Taiwan</text>
           </g>
         </g>
       </svg>
@@ -698,6 +653,137 @@
     morocco:'🇲🇦 摩洛哥', oman:'🇴🇲 阿曼 / 索馬利亞', india:'🇮🇳 印度',
     madagascar:'🇲🇬 馬達加斯加', brazil:'🇧🇷 巴西 / 美國', australia:'🇦🇺 澳洲', taiwan:'🇹🇼 臺灣'
   };
+  const countryColors = {
+    'w_europe':'#D4C3D1','e_europe':'#C9B5C0','nordic':'#DCD6C2','russia':'#C6BFB0',
+    'mid_east':'#E0C58C','n_africa':'#D5A87B','africa':'#C28E6E','s_asia':'#CC9585',
+    'e_asia':'#B2C296','se_asia':'#9FB78D','oceania':'#B5C5B8','n_america':'#E0CBA0',
+    'c_america':'#D8B094','s_america':'#A5BC88','antarctica':'#E8E4DC'
+  };
+  const countryStrokes = {
+    'w_europe':'#AD93A8','e_europe':'#A08490','nordic':'#B0A98F','russia':'#968E7C',
+    'mid_east':'#B4975B','n_africa':'#A77950','africa':'#8E6146','s_asia':'#9C6856',
+    'e_asia':'#85956A','se_asia':'#728B60','oceania':'#85978A','n_america':'#B09874',
+    'c_america':'#A88068','s_america':'#768C5C','antarctica':'#B8B4AC'
+  };
+
+  // Load detailed world map from TopoJSON (via simplemaps-world or Natural Earth)
+  const countriesEl = document.getElementById('countries');
+  const REGION_MAP = {
+    'France':'w_europe','Italy':'w_europe','Germany':'w_europe','Spain':'w_europe','Portugal':'w_europe',
+    'United Kingdom':'w_europe','Ireland':'w_europe','Netherlands':'w_europe','Belgium':'w_europe',
+    'Luxembourg':'w_europe','Switzerland':'w_europe','Austria':'w_europe','Greece':'w_europe','Cyprus':'w_europe',
+    'Denmark':'w_europe','Malta':'w_europe',
+    'Poland':'e_europe','Czechia':'e_europe','Czech Rep.':'e_europe','Slovakia':'e_europe',
+    'Hungary':'e_europe','Slovenia':'e_europe','Croatia':'e_europe','Bosnia and Herz.':'e_europe',
+    'Serbia':'e_europe','Montenegro':'e_europe','Albania':'e_europe','Macedonia':'e_europe','Kosovo':'e_europe',
+    'Bulgaria':'e_europe','Romania':'e_europe','Moldova':'e_europe','Ukraine':'e_europe','Belarus':'e_europe',
+    'Lithuania':'e_europe','Latvia':'e_europe','Estonia':'e_europe',
+    'Norway':'nordic','Sweden':'nordic','Finland':'nordic','Iceland':'nordic','Greenland':'nordic',
+    'Russia':'russia','Kazakhstan':'russia','Uzbekistan':'russia','Turkmenistan':'russia',
+    'Kyrgyzstan':'russia','Tajikistan':'russia','Mongolia':'russia',
+    'Turkey':'mid_east','Syria':'mid_east','Lebanon':'mid_east','Israel':'mid_east','Palestine':'mid_east',
+    'Jordan':'mid_east','Iraq':'mid_east','Iran':'mid_east','Saudi Arabia':'mid_east','Yemen':'mid_east',
+    'Oman':'mid_east','United Arab Emirates':'mid_east','Qatar':'mid_east','Bahrain':'mid_east',
+    'Kuwait':'mid_east','Armenia':'mid_east','Azerbaijan':'mid_east','Georgia':'mid_east',
+    'Afghanistan':'mid_east','Pakistan':'s_asia',
+    'Egypt':'n_africa','Libya':'n_africa','Tunisia':'n_africa','Algeria':'n_africa','Morocco':'n_africa',
+    'W. Sahara':'n_africa','Western Sahara':'n_africa','Mauritania':'africa','Sudan':'n_africa',
+    'Chad':'africa','Niger':'africa','Mali':'africa','Senegal':'africa','Gambia':'africa',
+    'Guinea':'africa','Guinea-Bissau':'africa','Sierra Leone':'africa','Liberia':'africa',
+    "Côte d'Ivoire":'africa','Ghana':'africa','Togo':'africa','Benin':'africa','Burkina Faso':'africa',
+    'Nigeria':'africa','Cameroon':'africa','Central African Rep.':'africa','Eq. Guinea':'africa',
+    'Gabon':'africa','Congo':'africa','Dem. Rep. Congo':'africa','Angola':'africa','Zambia':'africa',
+    'Malawi':'africa','Mozambique':'africa','Zimbabwe':'africa','Botswana':'africa','Namibia':'africa',
+    'South Africa':'africa','Lesotho':'africa','eSwatini':'africa','Madagascar':'africa',
+    'Tanzania':'africa','Kenya':'africa','Uganda':'africa','Rwanda':'africa','Burundi':'africa',
+    'Ethiopia':'africa','Eritrea':'africa','Djibouti':'africa','Somalia':'africa','Somaliland':'africa',
+    'S. Sudan':'africa','Comoros':'africa',
+    'India':'s_asia','Bangladesh':'s_asia','Bhutan':'s_asia','Nepal':'s_asia','Sri Lanka':'s_asia',
+    'China':'e_asia','Taiwan':'e_asia','Japan':'e_asia','North Korea':'e_asia','South Korea':'e_asia',
+    'Myanmar':'se_asia','Thailand':'se_asia','Laos':'se_asia','Cambodia':'se_asia','Vietnam':'se_asia',
+    'Malaysia':'se_asia','Singapore':'se_asia','Brunei':'se_asia','Indonesia':'se_asia',
+    'Philippines':'se_asia','Timor-Leste':'se_asia','East Timor':'se_asia',
+    'Australia':'oceania','New Zealand':'oceania','Papua New Guinea':'oceania','Fiji':'oceania',
+    'Vanuatu':'oceania','Solomon Is.':'oceania','New Caledonia':'oceania',
+    'United States of America':'n_america','USA':'n_america','Canada':'n_america','Mexico':'n_america',
+    'Guatemala':'c_america','Belize':'c_america','Honduras':'c_america','El Salvador':'c_america',
+    'Nicaragua':'c_america','Costa Rica':'c_america','Panama':'c_america','Cuba':'c_america',
+    'Jamaica':'c_america','Haiti':'c_america','Dominican Rep.':'c_america','Puerto Rico':'c_america',
+    'Bahamas':'c_america','Trinidad and Tobago':'c_america',
+    'Colombia':'s_america','Venezuela':'s_america','Guyana':'s_america','Suriname':'s_america',
+    'Ecuador':'s_america','Peru':'s_america','Bolivia':'s_america','Brazil':'s_america',
+    'Paraguay':'s_america','Uruguay':'s_america','Argentina':'s_america','Chile':'s_america',
+    'Falkland Is.':'s_america',
+    'Antarctica':'antarctica','Fr. S. Antarctic Lands':'antarctica',
+  };
+  const PRODUCERS = new Set(['France','Italy','Morocco','Oman','Madagascar','India','Australia','Brazil','Bulgaria','Taiwan','Egypt']);
+
+  // Fetch Natural Earth world map (via d3-geo hosted version)
+  fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
+    .then(r => r.json())
+    .then(topology => {
+      // Use topojson-client to convert
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js';
+      script.onload = () => {
+        const geo = topojson.feature(topology, topology.objects.countries);
+        renderMap(geo);
+      };
+      document.head.appendChild(script);
+    }).catch(err => console.warn('map load failed', err));
+
+  function project([lng, lat]) {
+    // Equirectangular projection mapped to viewBox 0-1000 x 20-400
+    const x = (lng + 180) * (1000 / 360);
+    const y = 20 + (90 - lat) * (380 / 180);
+    return [x, y];
+  }
+
+  function pathFromGeometry(geometry) {
+    if (!geometry) return '';
+    const parts = [];
+    function polygon(coords) {
+      const ring = coords.map(project);
+      return 'M' + ring.map(p => p[0].toFixed(2) + ',' + p[1].toFixed(2)).join(' L') + 'Z';
+    }
+    if (geometry.type === 'Polygon') {
+      geometry.coordinates.forEach(ring => parts.push(polygon(ring)));
+    } else if (geometry.type === 'MultiPolygon') {
+      geometry.coordinates.forEach(poly => poly.forEach(ring => parts.push(polygon(ring))));
+    }
+    return parts.join(' ');
+  }
+
+  function renderMap(geo) {
+    const SVG_NS = 'http://www.w3.org/2000/svg';
+    // Group by region
+    const byRegion = {};
+    geo.features.forEach(f => {
+      const name = f.properties && (f.properties.name || f.properties.NAME);
+      const region = REGION_MAP[name] || 'unknown';
+      if (!byRegion[region]) byRegion[region] = [];
+      byRegion[region].push(f);
+    });
+    Object.keys(byRegion).forEach(region => {
+      const g = document.createElementNS(SVG_NS, 'g');
+      g.setAttribute('class', 'region');
+      g.setAttribute('data-region', region);
+      byRegion[region].forEach(f => {
+        const name = f.properties.name || f.properties.NAME || '';
+        const d = pathFromGeometry(f.geometry);
+        if (!d) return;
+        const path = document.createElementNS(SVG_NS, 'path');
+        path.setAttribute('class', 'country');
+        path.setAttribute('d', d);
+        if (PRODUCERS.has(name)) path.setAttribute('data-producer', 'true');
+        const title = document.createElementNS(SVG_NS, 'title');
+        title.textContent = name;
+        path.appendChild(title);
+        g.appendChild(path);
+      });
+      countriesEl.appendChild(g);
+    });
+  }
 
   markers.forEach(m => {
     const id = m.dataset.id;
@@ -752,8 +838,6 @@
       });
     });
   });
-
-  
 })();
 </script>
   </div>
