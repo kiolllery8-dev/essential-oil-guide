@@ -535,9 +535,9 @@ function init() {
   var nextOil = idx < data.length - 1 ? data[idx + 1] : null;
   var prevEl = document.getElementById('odPrev');
   var nextEl = document.getElementById('odNext');
-  if (prevOil) { prevEl.href = 'oil-detail.html?id=' + prevOil.id; prevEl.textContent = '← ' + prevOil.zh; }
+  if (prevOil) { prevEl.href = '/oil/' + prevOil.id + '/'; prevEl.textContent = '← ' + prevOil.zh; }
   else { prevEl.style.visibility = 'hidden'; }
-  if (nextOil) { nextEl.href = 'oil-detail.html?id=' + nextOil.id; nextEl.textContent = nextOil.zh + ' →'; }
+  if (nextOil) { nextEl.href = '/oil/' + nextOil.id + '/'; nextEl.textContent = nextOil.zh + ' →'; }
   else { nextEl.style.visibility = 'hidden'; }
 
   // Show content
@@ -564,7 +564,7 @@ init();
       if (!oil) return;
       var title = (oil.zh || '') + ' ' + (oil.latin || '') + ' | 精油能量圖譜';
       document.title = title;
-      var url = 'https://intelliverse.tw/oil-detail.html?id=' + encodeURIComponent(oid);
+      var url = 'https://intelliverse.tw/oil/' + encodeURIComponent(oid) + '/';
       function set(sel, attr, val) {
         var el = document.querySelector(sel);
         if (el) el.setAttribute(attr, val);
