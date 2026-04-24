@@ -31,6 +31,7 @@ const SLUG_NAMES: Record<string, string> = {
   'article-stress': '紓壓配方',
   'article-dustmites': '塵蟎研究',
   'article-eucalyptus': '尤加利精油指南',
+  'article-extraction': '精油萃取方式',
   'oil-lavender': '薰衣草精油',
   'oil-tea-tree': '茶樹精油',
   'oil-peppermint': '薄荷精油',
