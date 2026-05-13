@@ -11,12 +11,16 @@ export const metadata: Metadata = {
     template: '%s | 精油能量圖譜',
   },
   description:
-    '精油從無到有的生成、運用、醫學、芳療、來源、植物、身心靈——最完整的中文精油能量圖譜，收錄 400+ 種精油化學分類、成分、功效與安全提示。',
+    '精油從無到有的生成、運用、醫學、芳療、來源、植物、身心靈——最完整的中文精油能量圖譜，收錄 400+ 種精油化學分類、成分、功效與安全提示。深入認識澳洲、黃金海岸等世界產地的精油風土。',
   metadataBase: new URL('https://intelliverse.tw'),
   keywords: [
     '精油', '精油學', '芳療', 'aromatherapy', '精油化學', '化學分類',
     '單萜烯', '倍半萜醇', '薰衣草', '茶樹', '尤加利', '精油功效',
     '精油安全', '精油百科', '精油知識', 'essential oil',
+    // 地理 / 品牌關鍵字
+    '黃金海岸', '黃金海岸精油', '黃金海岸芳療', 'Gold Coast', 'Gold Coast essential oil',
+    '澳洲', '澳洲精油', '澳洲芳療', '澳洲茶樹', '澳洲尤加利',
+    'Australia', 'Australian essential oil', 'Australian aromatherapy',
   ],
   applicationName: '精油能量圖譜',
   authors: [{ name: '靈境智造 Intelliverse', url: 'https://show.intelliverse.tw/' }],

@@ -23,7 +23,11 @@ export const organizationSchema = {
     height: 64,
   },
   description:
-    '最完整的中文精油知識庫——化學分子、芳療應用、安全指南、400+ 種精油資料庫。',
+    '最完整的中文精油知識庫——化學分子、芳療應用、安全指南、400+ 種精油資料庫；深入介紹澳洲（黃金海岸）等世界各地精油產區。',
+  keywords: [
+    '精油','精油百科','芳療','aromatherapy','澳洲精油','黃金海岸','Gold Coast',
+    'Australia','澳洲','Australian essential oil','薰衣草','茶樹','尤加利',
+  ].join(', '),
   inLanguage: 'zh-TW',
 };
 
