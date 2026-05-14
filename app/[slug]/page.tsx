@@ -6,9 +6,12 @@ import { notFound } from 'next/navigation';
 import ReactDOM from 'react-dom';
 import RawHtml from '../components/RawHtml';
 import JsonLd from '../components/JsonLd';
+import AISummary from '../components/AISummary';
+import RelatedLinks from '../components/RelatedLinks';
 import { breadcrumbSchema, articleSchema, SITE, DEFAULT_OG } from '../lib/schema';
 import { faqSchema, SAFETY_FAQ, BEGINNERS_FAQ } from '../lib/faq';
 import { AROMATHERAPY_HOWTOS } from '../lib/howto';
+import { getPageSummary } from '../lib/pageSummaries';
 
 const HTML_DIR = join(process.cwd(), 'html-source');
 
@@ -32,6 +35,32 @@ const SLUG_NAMES: Record<string, string> = {
   'article-dustmites': '塵蟎研究',
   'article-eucalyptus': '尤加利精油指南',
   'article-extraction': '精油萃取方式',
+  'article-chamomile-comparison': '羅馬 vs 德國洋甘菊比較',
+  'article-children': '兒童芳療指南',
+  'article-pregnancy': '孕期芳療指南',
+  'article-pets': '寵物芳療指南',
+  'article-office': '上班族提神配方',
+  'oil-bergamot': '佛手柑精油',
+  'oil-rose': '玫瑰精油',
+  'oil-geranium': '天竺葵精油',
+  'oil-grapefruit': '葡萄柚精油',
+  'oil-marjoram': '甜馬鬱蘭精油',
+  'oil-ginger': '薑精油',
+  'oil-neroli': '橙花精油',
+  'oil-vetiver': '岩蘭草精油',
+  'oil-clary-sage': '快樂鼠尾草精油',
+  'oil-helichrysum': '義大利永久花精油',
+  'oil-sandalwood': '檀香精油',
+  'oil-jasmine': '茉莉精油',
+  'oil-citronella': '香茅精油',
+  'oil-clove': '丁香精油',
+  'oil-petitgrain': '苦橙葉精油',
+  'oil-juniper': '杜松漿果精油',
+  'oil-cypress': '絲柏精油',
+  'article-conifers': '松柏家族精油比較',
+  'article-hydrosols': '純露完整指南',
+  'article-newbie-mistakes': '10 大新手錯誤',
+  'article-citrus-comparison': '柑橘類精油完整比較',
   'oil-lavender': '薰衣草精油',
   'oil-tea-tree': '茶樹精油',
   'oil-peppermint': '薄荷精油',
@@ -123,10 +152,27 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   if (faqData) schemas.push(faqData);
   if (slug === 'aromatherapy') schemas.push(...AROMATHERAPY_HOWTOS);
 
+  // 取得頁面 AI 摘要（若有手寫版）
+  const aiSummary = getPageSummary(slug);
+
+  // 文章類 / 精油類頁面顯示延伸閱讀；首頁與索引頁不顯示
+  const showRelated = isArticle || slug.startsWith('oil-') || slug === 'safety' || slug === 'aromatherapy';
+
   return (
     <>
       <JsonLd data={schemas} />
+
+      {/* AI 友善「快速答案」區塊（僅當該頁有手寫摘要時顯示） */}
+      {aiSummary && (
+        <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 20px' }}>
+          <AISummary summary={aiSummary} title={`${niceName} 快速答案`} />
+        </div>
+      )}
+
       <RawHtml html={page.bodyHtml} />
+
+      {/* 延伸閱讀（強化內部連結 + AI 引用上下文） */}
+      {showRelated && <RelatedLinks topic={niceName} max={6} />}
     </>
   );
 }
