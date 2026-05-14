@@ -7,11 +7,11 @@ import { organizationSchema, websiteSchema, DEFAULT_OG } from './lib/schema';
 
 export const metadata: Metadata = {
   title: {
-    default: '精油能量圖譜 - 精油學｜從植物到身心靈的完整知識庫',
+    default: '精油能量圖譜｜中文精油百科、芳療應用與安全指南',
     template: '%s | 精油能量圖譜',
   },
   description:
-    '精油從無到有的生成、運用、醫學、芳療、來源、植物、身心靈——最完整的中文精油能量圖譜，收錄 400+ 種精油化學分類、成分、功效與安全提示。深入認識澳洲、黃金海岸等世界產地的精油風土。',
+    '精油能量圖譜：400+ 種精油的化學分類、植物來源、芳療應用（助眠、放鬆、空間香氛、肌膚保養）、安全使用與常見精油問題。涵蓋薰衣草、茶樹、尤加利、薄荷、乳香等常見精油，澳洲、黃金海岸等世界產地，建立完整、正確、易懂的精油學習路徑。',
   metadataBase: new URL('https://intelliverse.tw'),
   keywords: [
     '精油', '精油學', '芳療', 'aromatherapy', '精油化學', '化學分類',

@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import oilsData from '../../../data/oils.json';
 import RawHtml from '../../components/RawHtml';
 import JsonLd from '../../components/JsonLd';
+import AISummary from '../../components/AISummary';
+import RelatedLinks from '../../components/RelatedLinks';
 import { breadcrumbSchema, oilSchema, SITE, DEFAULT_OG } from '../../lib/schema';
 
 interface Oil {
@@ -41,8 +43,12 @@ export async function generateMetadata(
   const { id } = await params;
   const oil = oils.find((o) => o.id === id);
   if (!oil) return {};
-  const title = `${oil.zh}精油完整介紹｜${oil.latin}`;
-  const desc = `${oil.zh}（${oil.latin}）：化學分類「${oil.category || '—'}」，主要成分 ${oil.components || ''}。${oil.safetyText || ''}`.slice(0, 155);
+  // SEO title 格式：{中文}精油｜成分、香氣、使用方式與安全注意
+  const title = `${oil.zh}精油｜成分、香氣、使用方式與安全注意`;
+  // 描述：用 effects（已有的「化解黏液、抗菌、消炎」等實際關鍵詞）+ 化學成分
+  // 讓 AI 搜尋（ChatGPT Search / Perplexity / Google AI Overview）可索引到完整資訊
+  const effectsClean = (oil.effects || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  const desc = `${oil.zh}（${oil.latin}）：${oil.category || '芳療'}精油。主要成分 ${(oil.components || '').slice(0, 32)}。${effectsClean ? `常見芳療應用：${effectsClean.slice(0, 50)}。` : ''}萃取自${oil.extractPart || '植物'}，使用前請參考安全指南。`.slice(0, 155);
   const url = `${SITE}/oil/${id}/`;
   const ogImage = DEFAULT_OG;
 
@@ -93,9 +99,27 @@ export default async function OilDetail({ params }: { params: Promise<{ id: stri
     .filter((o) => o.catFile === oil.catFile && o.id !== oil.id)
     .slice(0, 6);
 
+  // 自動產生「快速答案」摘要（為 AI 搜尋引用優化；保留 effects 內既有關鍵詞）
+  // 包含：植物學名、化學分類、主成分、常見芳療應用、安全提醒
+  const compTrim = (oil.components || '').slice(0, 32);
+  const effectsForAI = (oil.effects || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  const aiSummary = [
+    `${oil.zh}（${oil.latin}）為${oil.category || '常見芳療'}精油，`,
+    `主要化學成分為 ${compTrim}${(oil.components || '').length > 32 ? '…' : ''}。`,
+    `植物科屬 ${oil.family || '—'}，萃取自${oil.extractPart || '植物'}。`,
+    effectsForAI ? `常見芳療應用：${effectsForAI.slice(0, 60)}。` : '',
+    `使用前請參考精油安全指南並做敏感性測試。`,
+  ].filter(Boolean).join('').slice(0, 180);
+
   return (
     <>
       <JsonLd data={[crumbs, article]} />
+
+      {/* AI 友善「快速答案」區塊（Google AI Overview / ChatGPT Search / Perplexity 引用優化） */}
+      <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 20px' }}>
+        <AISummary summary={aiSummary} title={`${oil.zh}精油 快速答案`} />
+      </div>
+
       <RawHtml html={patched} />
 
       {related.length > 0 && (
@@ -156,6 +180,9 @@ export default async function OilDetail({ params }: { params: Promise<{ id: stri
           </div>
         </section>
       )}
+
+      {/* 站內延伸閱讀：強化內部連結深度與 AI 引用上下文 */}
+      <RelatedLinks topic={oil.zh} title={`🌿 與「${oil.zh}」相關的精油知識`} max={6} />
     </>
   );
 }

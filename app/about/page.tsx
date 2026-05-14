@@ -71,6 +71,24 @@ export default function About() {
           本站為 Intelliverse 自主開發的精油知識專案，實驗「AI + 傳統出版品 + 靜態網站」的知識體系建構路徑。
         </p>
 
+        <h2 style={{ marginTop: 32 }}>🔬 內容編輯方法（Editorial Methodology）</h2>
+        <p>
+          為了提升內容透明度與可信度（E-E-A-T），我們公開以下編輯流程：
+        </p>
+        <ul>
+          <li><strong>資料蒐集</strong>：每支精油的化學成分先參照 2-3 份來源（國際芳療機構教材、品牌官網 GC/MS 報告、PubMed 期刊論文）交叉比對。</li>
+          <li><strong>用詞規範</strong>：避免醫療療效宣稱（例：以「日常香氛」「肌膚保養」取代「治療」「殺菌」）；研究類內容會明確標註研究背景與條件。</li>
+          <li><strong>安全標註</strong>：每支精油標註孕婦／嬰幼兒／寵物避用、稀釋比例、光敏性等安全資訊。</li>
+          <li><strong>AI 輔助內容</strong>：本站植物示意圖像以 AI 工具（含 TopView、OpenAI gpt-image 系列）生成，並經人工挑選；文字內容由團隊整理後撰寫，並參考 AI 工具協助提示與校對。</li>
+          <li><strong>持續更新</strong>：發現錯誤或有新研究時會回頭更新；重大版本變更會在頁面「最後更新日」標註。</li>
+        </ul>
+
+        <h2 style={{ marginTop: 32 }}>📅 內容版本</h2>
+        <p style={{ color: 'var(--text-mid)', fontSize: 14 }}>
+          本站最後一次大規模內容審查：<strong>2026 年 5 月</strong>。<br />
+          下一階段計畫：補上個別精油的 GC/MS 來源連結與研究文獻引用清單（人工逐支審核中）。
+        </p>
+
         <h2 style={{ marginTop: 32 }}>💌 聯絡我們</h2>
         <p>有任何建議、指正或合作洽詢，歡迎透過 <a href="/contact/" style={{ color: 'var(--green-dark)' }}>聯絡頁面</a>與我們聯繫。</p>
       </section>

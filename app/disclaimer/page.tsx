@@ -25,7 +25,7 @@ export default function Disclaimer() {
       <JsonLd data={crumbs} />
       <section style={{ maxWidth: 860, margin: '40px auto 80px', padding: '0 24px', lineHeight: 1.85 }}>
         <h1 style={{ fontSize: 38, marginBottom: 20, color: 'var(--green-dark)' }}>⚠️ 免責聲明</h1>
-        <p style={{ color: 'var(--text-mid)', fontSize: 15, marginBottom: 40 }}>最後更新：2026 年 4 月 · 請在使用精油前完整閱讀</p>
+        <p style={{ color: 'var(--text-mid)', fontSize: 15, marginBottom: 40 }}>最後更新：2026 年 5 月 · 請在使用精油前完整閱讀</p>
 
         <h2>一、內容性質</h2>
         <p>
@@ -81,7 +81,14 @@ export default function Disclaimer() {
           <li>AI 生成之植物示意圖像版權屬於本站；商業使用需授權。</li>
         </ul>
 
-        <h2>八、法律管轄</h2>
+        <h2>八、AI 生成內容聲明</h2>
+        <ul>
+          <li>本站植物與場景示意圖像為 AI 圖像工具（TopView / OpenAI gpt-image 系列）生成，並非實際照片。</li>
+          <li>文字內容由 Intelliverse Studio 團隊整理自公開教材與文獻；部分段落於撰稿過程中曾使用 AI 工具協助結構整理與校對，最終內容由團隊審核。</li>
+          <li>AI 工具可能存在資訊過時或不精確的情況，本站<strong>不保證所有內容百分之百正確</strong>，歡迎讀者來信指正。</li>
+        </ul>
+
+        <h2>九、法律管轄</h2>
         <p>
           本聲明適用<strong>中華民國法律</strong>。如因本站內容衍生爭議，雙方同意以<strong>臺灣臺中地方法院</strong>為第一審管轄法院。
         </p>

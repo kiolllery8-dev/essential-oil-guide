@@ -64,7 +64,12 @@ export function breadcrumbSchema(items: Array<{ name: string; url: string }>) {
   };
 }
 
-/** 一般文章（article-* 頁用） */
+/** 一般文章（article-* 頁用）
+ *  注意：datePublished/dateModified 不再硬編碼預設值，避免假日期誤導 Google。
+ *  - 若 opts 沒提供 datePublished，schema 不會輸出該欄位（schema.org 允許 optional）。
+ *  - dateModified 預設用「build 當下日期」作為網站更新訊號，這是合理的。
+ *  - 未來建立 articleMeta 資料表後可逐篇補上正式日期。
+ */
 export function articleSchema(opts: {
   url: string;
   headline: string;
@@ -73,8 +78,10 @@ export function articleSchema(opts: {
   datePublished?: string;
   dateModified?: string;
   keywords?: string[];
+  articleSection?: string;
 }) {
-  const { url, headline, description, image, datePublished, dateModified, keywords } = opts;
+  const { url, headline, description, image, datePublished, dateModified, keywords, articleSection } = opts;
+  const buildToday = new Date().toISOString().slice(0, 10);
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -84,9 +91,10 @@ export function articleSchema(opts: {
     image: [image],
     author: { '@id': `${SITE}/#organization` },
     publisher: { '@id': `${SITE}/#organization` },
-    datePublished: datePublished || '2026-01-01',
-    dateModified: dateModified || '2026-04-21',
+    ...(datePublished ? { datePublished } : {}),
+    dateModified: dateModified || buildToday,
     inLanguage: 'zh-TW',
+    ...(articleSection ? { articleSection } : {}),
     ...(keywords?.length ? { keywords: keywords.join(', ') } : {}),
   };
 }
@@ -105,6 +113,8 @@ export function oilSchema(oil: {
   tags?: string[];
 }) {
   const url = `${SITE}/oil/${oil.id}/`;
+  const effectsClean = (oil.effects || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  const safetyClean = (oil.safetyText || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -112,11 +122,10 @@ export function oilSchema(oil: {
     headline: `${oil.zh}精油完整介紹｜${oil.latin}`,
     name: oil.zh,
     alternateName: oil.latin,
-    description: `${oil.zh}（${oil.latin}）：化學分類「${oil.category || '—'}」，主要成分 ${oil.components || ''}。${oil.safetyText || ''}`.slice(0, 250),
+    description: `${oil.zh}（${oil.latin}）：化學分類「${oil.category || '—'}」，主要成分 ${oil.components || ''}。常見芳療應用：${effectsClean}。${safetyClean}`.slice(0, 300),
     author: { '@id': `${SITE}/#organization` },
     publisher: { '@id': `${SITE}/#organization` },
-    datePublished: '2026-01-01',
-    dateModified: '2026-04-21',
+    dateModified: new Date().toISOString().slice(0, 10),
     inLanguage: 'zh-TW',
     about: {
       '@type': 'ChemicalSubstance',

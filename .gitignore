@@ -6,3 +6,5 @@ out/
 .env.local
 *.log
 next-env.d.ts
+__pycache__/
+*.pyc

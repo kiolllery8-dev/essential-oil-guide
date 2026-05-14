@@ -25,7 +25,7 @@ export default function Privacy() {
       <JsonLd data={crumbs} />
       <section style={{ maxWidth: 860, margin: '40px auto 80px', padding: '0 24px', lineHeight: 1.85 }}>
         <h1 style={{ fontSize: 38, marginBottom: 20, color: 'var(--green-dark)' }}>🔒 隱私政策</h1>
-        <p style={{ color: 'var(--text-mid)', fontSize: 15, marginBottom: 40 }}>最後更新：2026 年 4 月</p>
+        <p style={{ color: 'var(--text-mid)', fontSize: 15, marginBottom: 40 }}>最後更新：2026 年 5 月</p>
 
         <h2>一、政策宣言</h2>
         <p>
