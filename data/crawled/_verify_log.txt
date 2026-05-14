@@ -1,0 +1,612 @@
+searxng: http://192.168.1.236:8080
+crawl4ai: http://192.168.1.236:11235
+wikipedia: https://en.wikipedia.org/w/api.php
+targets: 302 (max-per-run: 320)
+---
+[1/302] #25 利古里亞草          | Artemisia ligustica
+    ❌miss fam:❓ cat:✓
+[2/302] #26 圓葉當歸           | Levisticum officinale
+    ✓exists fam:✓ cat:✓
+[3/302] #27 側柏酮白蒿          | Artemisia herba-alba
+    ✓exists fam:❓ cat:✓
+[4/302] #28 艾葉             | Artemisia argyi
+    ✓exists fam:❓ cat:✓
+[5/302] #29 艾蒿             | Artemisia vulgaris
+    ✓exists fam:✓ cat:✓
+[6/302] #30 艾草             | Artemisia princeps
+    ✓exists fam:❓ cat:✓
+[7/302] #31 假剪股穎風輪菜        | Calamintha nepeta
+    ✓exists fam:❓ cat:✓
+[8/302] #32 藏茴香            | Carum carvi
+    ✓exists fam:✓ cat:✓
+[9/302] #33 藍米柏            | Fokienia hodginsii
+    ✓exists fam:❓ cat:✓
+[10/302] #34 檸檬             | Citrus limon
+    ✓exists fam:✓ cat:⚠️
+[11/302] #35 薄荷尤加利          | Eucalyptus dives ct. piperitone
+    ❌miss fam:❓ cat:❓
+[12/302] #36 多苞葉尤加利         | Eucalyptus polybractea ct. cryptone
+    ✓exists fam:❓ cat:⚠️
+[13/302] #37 牛膝草            | Hyssopus officinalis
+    ✓exists fam:✓ cat:⚠️
+[14/302] #38 頭狀薰衣草          | Lavandula stoechas
+    ✓exists fam:❓ cat:⚠️
+[15/302] #39 白膠脂            | Pistacia lentiscus
+    ✓exists fam:❓ cat:⚠️
+[16/302] #40 馬郁蘭            | Origanum majorana
+    ✓exists fam:❓ cat:⚠️
+[17/302] #41 綠薄荷            | Mentha spicata
+    ✓exists fam:❓ cat:✓
+[18/302] #42 胡椒薄荷           | Mentha x piperita
+    ✓exists fam:❓ cat:⚠️
+[19/302] #43 檸檬草與香茅         | Cymbopogon citratus / C. nardus
+    ❌miss fam:❓ cat:❓
+[20/302] #44 馬鞭草酮迷迭香        | Rosmarinus officinalis ct. verbenone
+    ❌miss fam:❓ cat:⚠️
+[21/302] #45 薰衣草葉鼠尾草        | Salvia lavandulifolia
+    ✓exists fam:❓ cat:⚠️
+[22/302] #46 鼠尾草            | Salvia officinalis
+    ✓exists fam:✓ cat:✓
+[23/302] #47 桉油醇迷迭香         | Rosmarinus officinalis ct. cineole
+    ❌miss fam:❓ cat:⚠️
+[24/302] #48 芳香萬壽菊          | Tagetes minuta
+    ✓exists fam:❓ cat:✓
+[25/302] #49 萬壽菊            | Tagetes erecta
+    ✓exists fam:❓ cat:✓
+[26/302] #50 夏白菊            | Tanacetum parthenium
+    ✓exists fam:✓ cat:✓
+[27/302] #51 艾菊             | Tanacetum vulgare
+    ✓exists fam:❓ cat:✓
+[28/302] #52 側柏             | Thuja occidentalis
+    ✓exists fam:✓ cat:✓
+[29/302] #66 圓葉當歸           | Angelica archangelica
+    ✓exists fam:✓ cat:⚠️
+[30/302] #67 歐防風            | Pastinaca sativa
+    ✓exists fam:✓ cat:⚠️
+[31/302] #68 木香             | Saussurea costus
+    ✓exists fam:❓ cat:❓
+[32/302] #54 中國當歸           | Angelica sinensis
+    ✓exists fam:✓ cat:⚠️
+[33/302] #55 印度當歸           | Angelica glauca
+    ✓exists fam:✓ cat:✓
+[34/302] #56 芹菜籽            | Apium graveolens
+    ✓exists fam:✓ cat:⚠️
+[35/302] #57 辣根             | Armoracia rusticana
+    ✓exists fam:✓ cat:❓
+[36/302] #58 蒼朮             | Atractylodes lancea
+    ✓exists fam:✓ cat:❓
+[37/302] #59 薑黃             | Curcuma longa
+    ✓exists fam:✓ cat:⚠️
+[38/302] #60 蛇床子            | Cnidium monnieri
+    ✓exists fam:❓ cat:✓
+[39/302] #61 新幾內亞厚殼桂        | Cryptocarya massoy
+    ✓exists fam:❓ cat:❓
+[40/302] #62 阿魏             | Ferula assa-foetida
+    ✓exists fam:❓ cat:✓
+[41/302] #63 土木香            | Inula helenium
+    ✓exists fam:✓ cat:⚠️
+[42/302] #64 大花土木香          | Inula graveolens
+    ✓exists fam:❓ cat:⚠️
+[43/302] #65 川芎             | Ligusticum chuanxiong
+    ✓exists fam:❓ cat:❓
+[44/302] #70 芳樟葉            | Cinnamomum camphora ct. linalool
+    ✓exists fam:❓ cat:✓
+[45/302] #71 小高良薑           | Alpinia officinarum
+    ✓exists fam:❓ cat:✓
+[46/302] #72 月桂             | Laurus nobilis
+    ✓exists fam:✓ cat:✓
+[47/302] #73 桉油醇樟           | Cinnamomum camphora ct. cineole
+    ❌miss fam:❓ cat:✓
+[48/302] #74 妙嘉白千層          | Melaleuca viridiflora
+    ✓exists fam:✓ cat:✓
+[49/302] #75 豆蔻             | Elettaria cardamomum
+    ✓exists fam:❓ cat:✓
+[50/302] #76 藍膠尤加利          | Eucalyptus globulus
+    ✓exists fam:✓ cat:✓
+[51/302] #77 史密斯尤加利         | Eucalyptus smithii
+    ✓exists fam:❓ cat:✓
+[52/302] #78 澳洲尤加利          | Eucalyptus radiata
+    ✓exists fam:❓ cat:✓
+[53/302] #79 露兜永久花          | Helichrysum gymnocephalum
+    ✓exists fam:✓ cat:✓
+[54/302] #80 高地牛膝草          | Hyssopus officinalis var. decumbens
+    ✓exists fam:❓ cat:✓
+[55/302] #81 印度月桂（桂葉）       | Cinnamomum tamala
+    ✓exists fam:✓ cat:✓
+[56/302] #82 穗花薰衣草          | Lavandula latifolia
+    ✓exists fam:✓ cat:✓
+[57/302] #83 白千層            | Melaleuca cajuputi
+    ✓exists fam:✓ cat:✓
+[58/302] #84 綠花白千層          | Melaleuca quinquenervia ct. cineole
+    ❌miss fam:❓ cat:✓
+[59/302] #85 掃帚茶樹           | Leptospermum scoparium
+    ✓exists fam:✓ cat:✓
+[60/302] #86 香桃木            | Myrtus communis ct. cineole
+    ✓exists fam:❓ cat:✓
+[61/302] #87 桉油醇迷迭香         | Rosmarinus officinalis ct. cineole
+    ❌miss fam:❓ cat:✓
+[62/302] #88 三葉鼠尾草          | Salvia fruticosa
+    ✓exists fam:❓ cat:✓
+[63/302] #89 圓葉當歸           | Levisticum officinale
+    ✓exists fam:✓ cat:✓
+[64/302] #90 鳳梨香百里香         | Thymus mastichina
+    ✓exists fam:✓ cat:✓
+[65/302] #92 西洋蓍草           | Achillea millefolium
+    ✓exists fam:✓ cat:✓
+[66/302] #93 樹蘭             | Aglaia odorata
+    ✓exists fam:⚠️ cat:⚠️
+[67/302] #94 樹艾             | Artemisia arborescens
+    ✓exists fam:✓ cat:✓
+[68/302] #95 澳洲藍絲柏          | Callitris intratropica
+    ✓exists fam:✓ cat:✓
+[69/302] #96 大麻             | Cannabis sativa
+    ✓exists fam:❓ cat:⚠️
+[70/302] #97 依蘭             | Cananga odorata
+    ✓exists fam:✓ cat:⚠️
+[71/302] #98 大葉依蘭           | Cananga odorata var. macrophylla
+    ✓exists fam:❓ cat:⚠️
+[72/302] #99 卡塔菲            | Cedrelopsis grevei
+    ✓exists fam:❓ cat:✓
+[73/302] #100 台灣紅檜           | Chamaecyparis formosensis
+    ✓exists fam:❓ cat:✓
+[74/302] #101 日本扁柏           | Chamaecyparis obtusa
+    ✓exists fam:❓ cat:✓
+[75/302] #102 沒藥             | Commiphora myrrha
+    ✓exists fam:✓ cat:❓
+[76/302] #103 紅沒藥            | Commiphora guidottii
+    ✓exists fam:❓ cat:⚠️
+[77/302] #104 古巴香脂           | Copaifera officinalis
+    ✓exists fam:✓ cat:✓
+[78/302] #105 馬鞭草破布子         | Cordia verbenacea
+    ✓exists fam:❓ cat:❓
+[79/302] #106 香脂木            | Dacrydium fonkii
+    ✓exists fam:❓ cat:✓
+[80/302] #107 古芸香脂           | Bulnesia sarmientoi
+    ✓exists fam:❓ cat:⚠️
+[81/302] #108 德國洋甘菊          | Matricaria chamomilla
+    ✓exists fam:✓ cat:✓
+[82/302] #109 蛇麻草            | Humulus lupulus
+    ✓exists fam:✓ cat:⚠️
+[83/302] #110 聖約翰草           | Hypericum perforatum
+    ✓exists fam:✓ cat:⚠️
+[84/302] #111 刺檜木            | Juniperus oxycedrus
+    ✓exists fam:❓ cat:✓
+[85/302] #112 維吉尼亞雪松         | Juniperus virginiana
+    ✓exists fam:❓ cat:⚠️
+[86/302] #113 穗甘松            | Nardostachys jatamansi
+    ✓exists fam:✓ cat:⚠️
+[87/302] #114 中國甘松           | Nardostachys chinensis
+    ✓exists fam:✓ cat:⚠️
+[88/302] #115 番石榴葉           | Psidium guajava
+    ✓exists fam:❓ cat:⚠️
+[89/302] #116 五味子            | Schisandra chinensis
+    ✓exists fam:❓ cat:❓
+[90/302] #117 一枝黃花           | Solidago canadensis
+    ✓exists fam:✓ cat:⚠️
+[91/302] #118 摩洛哥藍艾菊         | Tanacetum annuum
+    ✓exists fam:❓ cat:✓
+[92/302] #119 印度香附草          | Cyperus scariosus
+    ✓exists fam:❓ cat:❓
+[93/302] #120 薑              | Zingiber officinale
+    ✓exists fam:✓ cat:❓
+[94/302] #122 菖蒲             | Acorus calamus
+    ✓exists fam:⚠️ cat:❓
+[95/302] #123 龍艾             | Artemisia dracunculus
+    ✓exists fam:✓ cat:⚠️
+[96/302] #124 茴香             | Foeniculum vulgare
+    ✓exists fam:❓ cat:⚠️
+[97/302] #125 金合歡茶樹          | Melaleuca decora
+    ✓exists fam:✓ cat:⚠️
+[98/302] #126 鹹亞茶樹           | Melaleuca cajuputi
+    ✓exists fam:✓ cat:⚠️
+[99/302] #127 肉豆蔻            | Myristica fragrans
+    ✓exists fam:❓ cat:⚠️
+[100/302] #128 粉紅蓮花           | Nelumbo nucifera
+    ✓exists fam:✓ cat:⚠️
+[101/302] #129 熱帶羅勒           | Ocimum basilicum ct. methyl chavicol
+    ❌miss fam:❓ cat:⚠️
+[102/302] #130 露兜花            | Pandanus odoratissimus
+    ✓exists fam:✓ cat:⚠️
+[103/302] #131 歐白芷            | Angelica archangelica
+    ✓exists fam:✓ cat:⚠️
+[104/302] #132 平葉歐芹           | Petroselinum crispum
+    ✓exists fam:✓ cat:⚠️
+[105/302] #133 洋茴香            | Pimpinella anisum
+    ✓exists fam:✓ cat:⚠️
+[106/302] #134 西部黃松           | Pinus ponderosa
+    ✓exists fam:❓ cat:⚠️
+[107/302] #135 洋茴香蘿文莎葉        | Ravensara anisata
+    ❌miss fam:❓ cat:⚠️
+[108/302] #136 防風             | Saposhnikovia divaricata
+    ✓exists fam:✓ cat:⚠️
+[109/302] #137 甜萬壽菊           | Tagetes lucida
+    ✓exists fam:❓ cat:⚠️
+[110/302] #139 檸檬香桃木          | Backhousia citriodora
+    ✓exists fam:✓ cat:⚠️
+[111/302] #140 泰國青檸葉          | Citrus hystrix
+    ✓exists fam:❓ cat:⚠️
+[112/302] #141 檸檬葉            | Citrus limon (Petitgrain)
+    ❌miss fam:❓ cat:⚠️
+[113/302] #142 檸檬香茅           | Cymbopogon citratus
+    ✓exists fam:❓ cat:⚠️
+[114/302] #143 爪哇香茅           | Cymbopogon winterianus
+    ✓exists fam:✓ cat:⚠️
+[115/302] #144 檸檬尤加利          | Corymbia citriodora
+    ✓exists fam:❓ cat:⚠️
+[116/302] #145 史密斯尤加利         | Eucalyptus smithii
+    ✓exists fam:❓ cat:⚠️
+[117/302] #146 檸檬細籽           | Leptospermum petersonii
+    ✓exists fam:❓ cat:⚠️
+[118/302] #147 檸檬馬鞭草          | Aloysia citrodora
+    ✓exists fam:✓ cat:⚠️
+[119/302] #148 山雞椒            | Litsea cubeba
+    ✓exists fam:✓ cat:⚠️
+[120/302] #149 蜂蜜香桃木          | Melaleuca teretifolia
+    ✓exists fam:✓ cat:⚠️
+[121/302] #150 香蜂草            | Melissa officinalis
+    ✓exists fam:❓ cat:⚠️
+[122/302] #151 檸檬桉粉           | Eucalyptus staigeriana
+    ✓exists fam:❓ cat:⚠️
+[123/302] #152 紫蘇             | Perilla frutescens
+    ✓exists fam:✓ cat:⚠️
+[124/302] #153 馬魯科            | Aeollanthus suaveolens
+    ✓exists fam:❓ cat:⚠️
+[125/302] #156 零陵香豆           | Dipteryx odorata
+    ✓exists fam:✓ cat:⚠️
+[126/302] #157 羅馬洋甘菊          | Chamaemelum nobile
+    ✓exists fam:❓ cat:⚠️
+[127/302] #158 墨西哥沉香          | Bursera delpechiana
+    ✓exists fam:❓ cat:⚠️
+[128/302] #159 苦橙葉            | Citrus aurantium (leaves)
+    ✓exists fam:❓ cat:⚠️
+[129/302] #160 佛手柑            | Citrus bergamia
+    ✓exists fam:❓ cat:⚠️
+[130/302] #161 小飛蓬            | Erigeron canadensis
+    ✓exists fam:❓ cat:⚠️
+[131/302] #162 岬角白梅           | Baeckea frutescens
+    ✓exists fam:✓ cat:⚠️
+[132/302] #163 玫瑰尤加利          | Eucalyptus rhodantha
+    ✓exists fam:❓ cat:⚠️
+[133/302] #164 黃葵             | Abelmoschus moschatus
+    ✓exists fam:✓ cat:⚠️
+[134/302] #165 真正薰衣草          | Lavandula angustifolia
+    ✓exists fam:✓ cat:⚠️
+[135/302] #166 醒目薰衣草          | Lavandula x intermedia
+    ✓exists fam:✓ cat:⚠️
+[136/302] #167 檸檬薄荷           | Mentha citrata
+    ✓exists fam:❓ cat:⚠️
+[137/302] #168 含笑             | Michelia figo
+    ✓exists fam:✓ cat:⚠️
+[138/302] #169 紅香桃木           | Myrtus communis (ct. myrtenyl acetate)
+    ✓exists fam:❓ cat:⚠️
+[139/302] #170 水果鼠尾草          | Salvia dorisiana
+    ✓exists fam:❓ cat:⚠️
+[140/302] #171 快樂鼠尾草          | Salvia sclarea
+    ✓exists fam:❓ cat:⚠️
+[141/302] #172 鷹爪豆            | Spartium junceum
+    ✓exists fam:✓ cat:⚠️
+[142/302] #174 銀合歡            | Acacia dealbata
+    ✓exists fam:✓ cat:✓
+[143/302] #175 大高良薑           | Alpinia galanga
+    ✓exists fam:❓ cat:⚠️
+[144/302] #176 蘭香草            | Caryopteris incana
+    ✓exists fam:❓ cat:⚠️
+[145/302] #177 波羅尼花           | Boronia megastigma
+    ✓exists fam:✓ cat:⚠️
+[146/302] #178 蘇剛達            | Cinnamomum glaucescens
+    ✓exists fam:❓ cat:⚠️
+[147/302] #179 桔葉             | Citrus reticulata (leaves)
+    ❌miss fam:❓ cat:✓
+[148/302] #180 沙漠花            | Cistus ladanifer
+    ✓exists fam:✓ cat:❓
+[149/302] #181 芳香白珠           | Gaultheria fragrantissima
+    ✓exists fam:❓ cat:✓
+[150/302] #182 大花茉莉           | Jasminum grandiflorum
+    ✓exists fam:❓ cat:⚠️
+[151/302] #183 小花茉莉           | Jasminum sambac
+    ✓exists fam:❓ cat:✓
+[152/302] #184 蘇合香            | Liquidambar orientalis
+    ✓exists fam:❓ cat:✓
+[153/302] #185 白玉蘭            | Michelia x alba
+    ✓exists fam:❓ cat:⚠️
+[154/302] #186 滇玉蘭            | Michelia yunnanensis
+    ✓exists fam:✓ cat:⚠️
+[155/302] #187 秘魯香脂           | Myroxylon balsamum var. pereirae
+    ✓exists fam:✓ cat:✓
+[156/302] #188 水仙             | Narcissus poeticus
+    ✓exists fam:❓ cat:✓
+[157/302] #189 牡丹花            | Paeonia suffruticosa
+    ✓exists fam:❓ cat:⚠️
+[158/302] #190 紅花緬梔           | Plumeria rubra
+    ✓exists fam:❓ cat:✓
+[159/302] #191 晚香玉            | Polianthes tuberosa
+    ✓exists fam:✓ cat:✓
+[160/302] #192 五月玫瑰           | Rosa centifolia
+    ✓exists fam:❓ cat:✓
+[161/302] #194 蘇門答臘安息香        | Styrax benzoin
+    ✓exists fam:❓ cat:❓
+[162/302] #195 暹羅安息香          | Styrax tonkinensis
+    ✓exists fam:❓ cat:⚠️
+[163/302] #196 香草             | Vanilla planifolia
+    ✓exists fam:❓ cat:⚠️
+[164/302] #198 阿密茴            | Ammi visnaga
+    ✓exists fam:❓ cat:⚠️
+[165/302] #199 澳洲藍絲柏（鑽石級）     | Callitris intratropica
+    ✓exists fam:✓ cat:⚠️
+[166/302] #200 印蒿             | Artemisia pallens
+    ✓exists fam:❓ cat:⚠️
+[167/302] #201 大西洋雪松          | Cedrus atlantica
+    ✓exists fam:✓ cat:✓
+[168/302] #202 喜馬拉雅雪松         | Cedrus deodara
+    ✓exists fam:❓ cat:✓
+[169/302] #203 杭白菊            | Chrysanthemum morifolium
+    ✓exists fam:✓ cat:⚠️
+[170/302] #204 薑黃             | Curcuma longa
+    ✓exists fam:✓ cat:✓
+[171/302] #205 莪朮             | Curcuma zedoaria
+    ✓exists fam:✓ cat:❓
+[172/302] #206 莎草             | Cyperus rotundus
+    ✓exists fam:✓ cat:❓
+[173/302] #207 義大利永久花         | Helichrysum italicum
+    ✓exists fam:✓ cat:⚠️
+[174/302] #208 大根老鸛草          | Geranium macrorrhizum
+    ✓exists fam:✓ cat:❓
+[175/302] #209 薰衣草            | Lavandula stoechas
+    ✓exists fam:❓ cat:⚠️
+[176/302] #210 馬纓丹            | Lantana camara
+    ✓exists fam:✓ cat:⚠️
+[177/302] #211 松紅梅            | Leptospermum scoparium
+    ✓exists fam:✓ cat:⚠️
+[178/302] #212 桂花             | Osmanthus fragrans
+    ✓exists fam:⚠️ cat:⚠️
+[179/302] #213 紫羅蘭            | Viola odorata
+    ✓exists fam:✓ cat:❓
+[180/302] #216 花梨木            | Aniba rosaeodora
+    ✓exists fam:✓ cat:✓
+[181/302] #217 芳樟             | Cinnamomum camphora ct. linalool
+    ✓exists fam:❓ cat:✓
+[182/302] #218 橙花             | Citrus aurantium (flowers)
+    ❌miss fam:❓ cat:✓
+[183/302] #219 芳樟葉            | Cinnamomum camphora ct. linalool (leaf)
+    ❌miss fam:❓ cat:✓
+[184/302] #220 巨紫荊            | Cercis chingii
+    ✓exists fam:❓ cat:✓
+[185/302] #221 香葉草            | Pelargonium graveolens
+    ✓exists fam:❓ cat:✓
+[186/302] #222 玫瑰草            | Cymbopogon martinii
+    ✓exists fam:❓ cat:✓
+[187/302] #223 忍冬             | Lonicera japonica
+    ✓exists fam:❓ cat:✓
+[188/302] #224 茶樹             | Melaleuca alternifolia
+    ✓exists fam:✓ cat:✓
+[189/302] #225 沼澤茶樹           | Melaleuca ericifolia
+    ✓exists fam:✓ cat:✓
+[190/302] #226 胡椒薄荷           | Mentha × piperita
+    ✓exists fam:❓ cat:✓
+[191/302] #227 蜂香薄荷           | Monarda fistulosa
+    ✓exists fam:✓ cat:✓
+[192/302] #228 可因氏月橘          | Murraya koenigii
+    ✓exists fam:✓ cat:✓
+[193/302] #229 檸檬荊芥           | Nepeta cataria var. citriodora
+    ✓exists fam:❓ cat:⚠️
+[194/302] #230 甜羅勒            | Ocimum basilicum ct. linalool
+    ❌miss fam:❓ cat:✓
+[195/302] #231 甜馬郁蘭           | Origanum majorana
+    ✓exists fam:❓ cat:✓
+[196/302] #232 野洋甘菊           | Ormenis mixta
+    ✓exists fam:❓ cat:✓
+[197/302] #233 天竺葵            | Pelargonium × asperum
+    ❌miss fam:❓ cat:✓
+[198/302] #234 大馬士革玫瑰         | Rosa damascena
+    ✓exists fam:❓ cat:✓
+[199/302] #235 苦水玫瑰           | Rosa damascena var. semperflorens
+    ❌miss fam:❓ cat:✓
+[200/302] #236 鳳梨鼠尾草          | Salvia elegans
+    ✓exists fam:❓ cat:✓
+[201/302] #237 龍腦百里香          | Thymus satureioides
+    ✓exists fam:❓ cat:✓
+[202/302] #238 沉香醇百里香         | Thymus vulgaris ct. linalool
+    ❌miss fam:❓ cat:✓
+[203/302] #239 側柏醇百里香         | Thymus vulgaris ct. thujanol
+    ❌miss fam:❓ cat:✓
+[204/302] #240 牻牛兒醇百里香        | Thymus vulgaris ct. geraniol
+    ❌miss fam:❓ cat:✓
+[205/302] #241 竹葉花椒           | Zanthoxylum armatum
+    ✓exists fam:✓ cat:✓
+[206/302] #242 食茱萸            | Zanthoxylum ailanthoides
+    ✓exists fam:❓ cat:⚠️
+[207/302] #243 花椒             | Zanthoxylum bungeanum
+    ✓exists fam:✓ cat:✓
+[208/302] #246 中國肉桂           | Cinnamomum cassia
+    ✓exists fam:❓ cat:✓
+[209/302] #247 台灣土肉桂          | Cinnamomum osmophloeum
+    ✓exists fam:❓ cat:✓
+[210/302] #248 印度肉桂           | Cinnamomum tamala
+    ✓exists fam:✓ cat:✓
+[211/302] #249 錫蘭肉桂           | Cinnamomum verum
+    ✓exists fam:✓ cat:✓
+[212/302] #250 頭狀百里香          | Thymbra capitata
+    ✓exists fam:❓ cat:✓
+[213/302] #251 小茴香            | Cuminum cyminum
+    ✓exists fam:✓ cat:⚠️
+[214/302] #252 丁香花苞           | Syzygium aromaticum
+    ✓exists fam:✓ cat:✓
+[215/302] #253 丁香羅勒           | Ocimum gratissimum
+    ✓exists fam:❓ cat:✓
+[216/302] #254 神聖羅勒           | Ocimum tenuiflorum
+    ✓exists fam:✓ cat:✓
+[217/302] #255 野馬郁蘭           | Origanum vulgare
+    ✓exists fam:✓ cat:✓
+[218/302] #256 嚴愛草            | Satureja hortensis
+    ✓exists fam:❓ cat:✓
+[219/302] #257 希臘野馬郁蘭         | Origanum heracleoticum
+    ❌miss fam:❓ cat:✓
+[220/302] #258 多香果            | Pimenta dioica
+    ✓exists fam:❓ cat:✓
+[221/302] #259 西印度月桂          | Pimenta racemosa
+    ✓exists fam:✓ cat:✓
+[222/302] #260 到手香            | Plectranthus amboinicus
+    ✓exists fam:✓ cat:✓
+[223/302] #261 重味過江藤          | Lippia origanoides
+    ❌miss fam:❓ cat:✓
+[224/302] #262 黑種草            | Nigella sativa
+    ✓exists fam:✓ cat:⚠️
+[225/302] #263 冬季香薄荷          | Satureja montana
+    ✓exists fam:✓ cat:✓
+[226/302] #264 希臘香薄荷          | Satureja thymbra
+    ✓exists fam:✓ cat:✓
+[227/302] #265 百里酚百里香         | Thymus vulgaris ct. Thymol
+    ❌miss fam:❓ cat:✓
+[228/302] #266 野地百里香          | Thymus serpyllum
+    ✓exists fam:✓ cat:✓
+[229/302] #267 印度藏茴香          | Trachyspermum ammi
+    ✓exists fam:✓ cat:✓
+[230/302] #270 阿米香樹           | Amyris balsamifera
+    ✓exists fam:❓ cat:❓
+[231/302] #271 沉香樹            | Aquilaria malaccensis
+    ✓exists fam:✓ cat:⚠️
+[232/302] #272 玉檀木            | Bulnesia sarmientoi
+    ✓exists fam:❓ cat:✓
+[233/302] #273 降香             | Dalbergia odorifera
+    ✓exists fam:❓ cat:✓
+[234/302] #274 胡蘿蔔籽           | Daucus carota
+    ✓exists fam:✓ cat:⚠️
+[235/302] #275 暹羅木            | Fokienia hodginsii
+    ✓exists fam:❓ cat:✓
+[236/302] #276 白草果            | Aframomum daniellii
+    ✓exists fam:✓ cat:⚠️
+[237/302] #277 黏答答土木香         | Inula graveolens
+    ✓exists fam:❓ cat:⚠️
+[238/302] #278 昆士亞            | Kunzea ambigua
+    ✓exists fam:✓ cat:⚠️
+[239/302] #279 厚朴             | Magnolia officinalis
+    ✓exists fam:❓ cat:⚠️
+[240/302] #280 橙花叔醇綠花白千層      | Melaleuca quinquenervia ct. Nerolidol
+    ❌miss fam:❓ cat:✓
+[241/302] #281 香脂果豆木          | Myroxylon balsamum
+    ✓exists fam:✓ cat:⚠️
+[242/302] #282 新喀里多尼亞松        | Neocallitropsis pancheri
+    ✓exists fam:✓ cat:✓
+[243/302] #283 羌活             | Notopterygium incisum
+    ✓exists fam:✓ cat:❓
+[244/302] #284 蓽澄茄            | Litsea cubeba
+    ✓exists fam:✓ cat:⚠️
+[245/302] #285 廣藿香            | Pogostemon cablin
+    ✓exists fam:✓ cat:✓
+[246/302] #286 狹長葉鼠尾草         | Salvia stenophylla
+    ✓exists fam:❓ cat:⚠️
+[247/302] #287 檀香             | Santalum album
+    ✓exists fam:❓ cat:✓
+[248/302] #288 太平洋檀香          | Santalum austrocaledonicum
+    ✓exists fam:✓ cat:✓
+[249/302] #289 塔斯馬尼亞胡椒        | Tasmannia lanceolata
+    ✓exists fam:✓ cat:⚠️
+[250/302] #290 纈草             | Valeriana officinalis
+    ✓exists fam:⚠️ cat:❓
+[251/302] #291 印度纈草           | Valeriana jatamansi
+    ✓exists fam:✓ cat:✓
+[252/302] #292 岩蘭草            | Vetiveria zizanioides
+    ✓exists fam:✓ cat:✓
+[253/302] #294 歐洲冷杉           | Abies alba
+    ✓exists fam:❓ cat:✓
+[254/302] #295 膠冷杉            | Abies balsamea
+    ✓exists fam:❓ cat:✓
+[255/302] #296 西伯利亞冷杉         | Abies sibirica
+    ✓exists fam:❓ cat:✓
+[256/302] #297 蒔蘿（全株）         | Anethum graveolens
+    ✓exists fam:✓ cat:✓
+[257/302] #298 歐白芷根           | Angelica archangelica
+    ✓exists fam:✓ cat:✓
+[258/302] #299 白芷             | Angelica dahurica
+    ✓exists fam:❓ cat:✓
+[259/302] #300 獨活             | Angelica pubescens
+    ✓exists fam:✓ cat:✓
+[260/302] #301 乳香             | Boswellia sacra / B. carterii
+    ❌miss fam:❓ cat:❓
+[261/302] #302 印度乳香           | Boswellia serrata
+    ✓exists fam:❓ cat:✓
+[262/302] #303 秘魯聖木           | Bursera graveolens
+    ✓exists fam:✓ cat:✓
+[263/302] #304 欖香脂            | Canarium luzonicum
+    ✓exists fam:❓ cat:❓
+[264/302] #305 岩玫瑰            | Cistus ladanifer
+    ✓exists fam:✓ cat:✓
+[265/302] #306 苦橙             | Citrus aurantium
+    ✓exists fam:❓ cat:✓
+[266/302] #307 泰國青檸           | Citrus hystrix
+    ✓exists fam:❓ cat:✓
+[267/302] #308 日本柚子           | Citrus junos
+    ✓exists fam:✓ cat:✓
+[268/302] #309 萊姆             | Citrus aurantiifolia
+    ✓exists fam:❓ cat:✓
+[269/302] #310 檸檬             | Citrus limon
+    ✓exists fam:✓ cat:✓
+[270/302] #311 葡萄柚            | Citrus paradisi
+    ✓exists fam:❓ cat:✓
+[271/302] #312 桔（紅/綠）         | Citrus reticulata
+    ✓exists fam:❓ cat:✓
+[272/302] #313 岬角白梅           | Coleonema album / C. pulchellum
+    ❌miss fam:❓ cat:❓
+[273/302] #314 海茴香            | Crithmum maritimum
+    ✓exists fam:✓ cat:✓
+[274/302] #315 絲柏             | Cupressus sempervirens
+    ✓exists fam:❓ cat:✓
+[275/302] #316 非洲藍香茅          | Cymbopogon validus
+    ✓exists fam:❓ cat:⚠️
+[276/302] #317 白松香            | Ferula galbaniflua
+    ✓exists fam:✓ cat:✓
+[277/302] #318 連翹             | Forsythia suspensa
+    ✓exists fam:✓ cat:✓
+[278/302] #319 高地杜松           | Juniperus communis var. montana
+    ❌miss fam:❓ cat:✓
+[279/302] #320 杜松漿果           | Juniperus communis
+    ✓exists fam:✓ cat:✓
+[280/302] #321 刺檜漿果           | Juniperus oxycedrus
+    ✓exists fam:❓ cat:✓
+[281/302] #322 卡奴卡            | Kunzea ericoides
+    ✓exists fam:✓ cat:✓
+[282/302] #323 落葉松            | Larix decidua
+    ✓exists fam:❓ cat:✓
+[283/302] #324 格陵蘭喇叭茶         | Ledum groenlandicum
+    ✓exists fam:✓ cat:✓
+[284/302] #325 黑雲杉            | Picea mariana
+    ✓exists fam:❓ cat:✓
+[285/302] #326 挪威雲杉           | Picea abies
+    ✓exists fam:❓ cat:✓
+[286/302] #327 科西嘉黑松          | Pinus nigra subsp. laricio
+    ✓exists fam:❓ cat:✓
+[287/302] #328 海松             | Pinus pinaster
+    ✓exists fam:❓ cat:✓
+[288/302] #329 歐洲赤松           | Pinus sylvestris
+    ✓exists fam:✓ cat:✓
+[289/302] #330 黑胡椒            | Piper nigrum
+    ✓exists fam:✓ cat:⚠️
+[290/302] #331 熏陸香            | Pistacia lentiscus
+    ✓exists fam:❓ cat:✓
+[291/302] #332 奇歐島熏陸香         | Pistacia lentiscus var. chia
+    ✓exists fam:❓ cat:✓
+[292/302] #333 巴西乳香           | Protium heptaphyllum
+    ✓exists fam:❓ cat:✓
+[293/302] #334 道格拉斯杉          | Pseudotsuga menziesii
+    ✓exists fam:✓ cat:✓
+[294/302] #335 雅麗菊            | Lippia graveolens
+    ✓exists fam:✓ cat:⚠️
+[295/302] #336 髯花杜鵑           | Rhododendron anthopogon
+    ✓exists fam:✓ cat:✓
+[296/302] #337 馬達加斯加鹽膚木       | Rhus taratana
+    ❌miss fam:❓ cat:✓
+[297/302] #338 秘魯胡椒           | Schinus molle
+    ✓exists fam:❓ cat:✓
+[298/302] #339 巴西胡椒           | Schinus terebinthifolius
+    ✓exists fam:✓ cat:✓
+[299/302] #340 香榧             | Torreya nucifera
+    ✓exists fam:❓ cat:✓
+[300/302] #341 加拿大鐵杉          | Tsuga canadensis
+    ✓exists fam:❓ cat:✓
+[301/302] #342 貞節樹            | Vitex agnus-castus
+    ✓exists fam:❓ cat:⚠️
+[302/302] #343 泰國蔘薑           | Zingiber cassumunar
+    ✓exists fam:❓ cat:✓
+report → C:\Users\User\Desktop\essential-oil-guide\data\crawled\oils_verification_report.md
+  records: 303, exists: 274, family ok: 131, cat ok: 164
+  no exists: 29, fam mismatch: 4, cat mismatch: 114, redirects: 83

@@ -1,0 +1,144 @@
+crawl4ai: http://192.168.1.236:11235
+seeds: 80 / visited so far: 1291 / max_pages: 200 / depth: 1
+dry_run=False single_url=None
+output: C:\Users\User\Desktop\essential-oil-guide\data\crawled\twaa_articles.jsonl
+---
+[1/200] d=1 https://www.tw-aa.org/articledetail-1353.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1353.html
+[2/200] d=1 https://www.tw-aa.org/articledetail-1354.html
+[3/200] d=1 https://www.tw-aa.org/articledetail-1356.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1356.html
+[4/200] d=1 https://www.tw-aa.org/articledetail-1357.html
+[5/200] d=1 https://www.tw-aa.org/articledetail-1358.html
+[6/200] d=1 https://www.tw-aa.org/articledetail-1359.html
+[7/200] d=1 https://www.tw-aa.org/articledetail-1360.html
+[8/200] d=1 https://www.tw-aa.org/articledetail-1361.html
+[9/200] d=1 https://www.tw-aa.org/articledetail-1362.html
+[10/200] d=1 https://www.tw-aa.org/articledetail-1363.html
+[11/200] d=1 https://www.tw-aa.org/articledetail-1364.html
+[12/200] d=1 https://www.tw-aa.org/articledetail-1365.html
+[13/200] d=1 https://www.tw-aa.org/articledetail-1366.html
+[14/200] d=1 https://www.tw-aa.org/articledetail-1367.html
+[15/200] d=1 https://www.tw-aa.org/articledetail-1368.html
+[16/200] d=1 https://www.tw-aa.org/articledetail-1370.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1370.html
+[17/200] d=1 https://www.tw-aa.org/articledetail-1371.html
+[18/200] d=1 https://www.tw-aa.org/articledetail-1372.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1372.html
+[19/200] d=1 https://www.tw-aa.org/articledetail-1373.html
+[20/200] d=1 https://www.tw-aa.org/articledetail-1374.html
+[21/200] d=1 https://www.tw-aa.org/articledetail-1375.html
+[22/200] d=1 https://www.tw-aa.org/articledetail-1376.html
+[23/200] d=1 https://www.tw-aa.org/articledetail-1377.html
+[24/200] d=1 https://www.tw-aa.org/articledetail-1378.html
+[25/200] d=1 https://www.tw-aa.org/articledetail-1379.html
+[26/200] d=1 https://www.tw-aa.org/articledetail-1380.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1380.html
+[27/200] d=1 https://www.tw-aa.org/articledetail-1381.html
+[28/200] d=1 https://www.tw-aa.org/articledetail-1382.html
+[29/200] d=1 https://www.tw-aa.org/articledetail-1383.html
+[30/200] d=1 https://www.tw-aa.org/articledetail-1384.html
+[31/200] d=1 https://www.tw-aa.org/articledetail-1385.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1385.html
+[32/200] d=1 https://www.tw-aa.org/articledetail-1386.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1386.html
+[33/200] d=1 https://www.tw-aa.org/articledetail-1395.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1395.html
+[34/200] d=1 https://www.tw-aa.org/articledetail-1403.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1403.html
+[35/200] d=1 https://www.tw-aa.org/articledetail-1404.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1404.html
+[36/200] d=1 https://www.tw-aa.org/articledetail-1405.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1405.html
+[37/200] d=1 https://www.tw-aa.org/articledetail-1406.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1406.html
+[38/200] d=1 https://www.tw-aa.org/articledetail-1407.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1407.html
+[39/200] d=1 https://www.tw-aa.org/articledetail-1408.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1408.html
+[40/200] d=1 https://www.tw-aa.org/articledetail-1409.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1409.html
+[41/200] d=1 https://www.tw-aa.org/articledetail-1410.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1410.html
+[42/200] d=1 https://www.tw-aa.org/articledetail-1411.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1411.html
+[43/200] d=1 https://www.tw-aa.org/articledetail-1412.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1412.html
+[44/200] d=1 https://www.tw-aa.org/articledetail-1413.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1413.html
+[45/200] d=1 https://www.tw-aa.org/articledetail-1414.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1414.html
+[46/200] d=1 https://www.tw-aa.org/articledetail-1415.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1415.html
+[47/200] d=1 https://www.tw-aa.org/articledetail-1416.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1416.html
+[48/200] d=1 https://www.tw-aa.org/articledetail-1417.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1417.html
+[49/200] d=1 https://www.tw-aa.org/articledetail-1418.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1418.html
+[50/200] d=1 https://www.tw-aa.org/articledetail-1419.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1419.html
+[51/200] d=1 https://www.tw-aa.org/articledetail-1420.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1420.html
+[52/200] d=1 https://www.tw-aa.org/articledetail-1421.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1421.html
+[53/200] d=1 https://www.tw-aa.org/articledetail-1422.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1422.html
+[54/200] d=1 https://www.tw-aa.org/articledetail-1423.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1423.html
+[55/200] d=1 https://www.tw-aa.org/articledetail-1424.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1424.html
+[56/200] d=1 https://www.tw-aa.org/articledetail-1425.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1425.html
+[57/200] d=1 https://www.tw-aa.org/articledetail-1426.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1426.html
+[58/200] d=1 https://www.tw-aa.org/articledetail-1427.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1427.html
+[59/200] d=1 https://www.tw-aa.org/articledetail-1428.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1428.html
+[60/200] d=1 https://www.tw-aa.org/articledetail-1429.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1429.html
+[61/200] d=1 https://www.tw-aa.org/articledetail-1430.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1430.html
+[62/200] d=1 https://www.tw-aa.org/articledetail-1431.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1431.html
+[63/200] d=1 https://www.tw-aa.org/articledetail-1432.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1432.html
+[64/200] d=1 https://www.tw-aa.org/articledetail-1433.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1433.html
+[65/200] d=1 https://www.tw-aa.org/articledetail-1434.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1434.html
+[66/200] d=1 https://www.tw-aa.org/articledetail-1435.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1435.html
+[67/200] d=1 https://www.tw-aa.org/articledetail-1436.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1436.html
+[68/200] d=1 https://www.tw-aa.org/articledetail-1437.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1437.html
+[69/200] d=1 https://www.tw-aa.org/articledetail-1438.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1438.html
+[70/200] d=1 https://www.tw-aa.org/articledetail-1439.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1439.html
+[71/200] d=1 https://www.tw-aa.org/articledetail-1440.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1440.html
+[72/200] d=1 https://www.tw-aa.org/articledetail-1441.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1441.html
+[73/200] d=1 https://www.tw-aa.org/articledetail-1442.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1442.html
+[74/200] d=1 https://www.tw-aa.org/articledetail-1443.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1443.html
+[75/200] d=1 https://www.tw-aa.org/articledetail-1444.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1444.html
+[76/200] d=1 https://www.tw-aa.org/articledetail-1445.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1445.html
+[77/200] d=1 https://www.tw-aa.org/articledetail-1446.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1446.html
+[78/200] d=1 https://www.tw-aa.org/articledetail-1447.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1447.html
+[79/200] d=1 https://www.tw-aa.org/articledetail-1448.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1448.html
+[80/200] d=1 https://www.tw-aa.org/articledetail-1449.html
+  ✗ HTTP 500: https://www.tw-aa.org/articledetail-1449.html
+---
+done. visited=1371 written_records=894
+report → C:\Users\User\Desktop\essential-oil-guide\data\crawled\twaa_crawl_report.md
+risk report → C:\Users\User\Desktop\essential-oil-guide\data\crawled\twaa_risk_terms_report.md
