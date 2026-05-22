@@ -85,6 +85,7 @@ const SLUG_NAMES: Record<string, string> = {
   'oil-melissa': '香蜂草精油',
   'oil-sweet-basil': '甜羅勒精油',
   'oil-sweet-fennel': '甜茴香精油',
+  'oil-roman-chamomile': '羅馬洋甘菊精油',
   'compounds-01': '單萜烯類 I',
   'compounds-02': '香豆素與內酯類',
   'compounds-03': '氧化物類',

@@ -103,6 +103,8 @@ export const INTERNAL_LINKS: InternalLink[] = [
   { keyword: '柑橘精油', href: '/oil-mandarin/', title: '柑橘精油完整指南', isOil: true },
   { keyword: '桔子精油', href: '/oil-mandarin/', title: '柑橘精油完整指南', isOil: true },
   { keyword: 'Mandarin', href: '/oil-mandarin/', title: '柑橘精油完整指南', isOil: true },
+  { keyword: '羅馬洋甘菊精油', href: '/oil-roman-chamomile/', title: '羅馬洋甘菊精油完整指南', isOil: true },
+  { keyword: '羅馬洋甘菊', href: '/oil-roman-chamomile/', title: '羅馬洋甘菊精油完整指南', isOil: true },
   { keyword: '德國洋甘菊精油', href: '/oil-german-chamomile/', title: '德國洋甘菊精油完整指南', isOil: true },
   { keyword: '德國洋甘菊', href: '/oil-german-chamomile/', title: '德國洋甘菊精油完整指南', isOil: true },
   { keyword: '母菊天藍烴', href: '/oil-german-chamomile/', title: '德國洋甘菊與母菊天藍烴' },
