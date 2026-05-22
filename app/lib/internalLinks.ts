@@ -99,6 +99,30 @@ export const INTERNAL_LINKS: InternalLink[] = [
   { keyword: '柑橘類', href: '/article-citrus-comparison/', title: '柑橘類精油完整比較' },
   { keyword: '柑橘精油', href: '/article-citrus-comparison/', title: '柑橘類精油完整比較' },
 
+  // ─── IFA 新增精油頁 ───
+  { keyword: '柑橘精油', href: '/oil-mandarin/', title: '柑橘精油完整指南', isOil: true },
+  { keyword: '桔子精油', href: '/oil-mandarin/', title: '柑橘精油完整指南', isOil: true },
+  { keyword: 'Mandarin', href: '/oil-mandarin/', title: '柑橘精油完整指南', isOil: true },
+  { keyword: '德國洋甘菊精油', href: '/oil-german-chamomile/', title: '德國洋甘菊精油完整指南', isOil: true },
+  { keyword: '德國洋甘菊', href: '/oil-german-chamomile/', title: '德國洋甘菊精油完整指南', isOil: true },
+  { keyword: '母菊天藍烴', href: '/oil-german-chamomile/', title: '德國洋甘菊與母菊天藍烴' },
+  { keyword: 'chamazulene', href: '/oil-german-chamomile/', title: '德國洋甘菊母菊天藍烴' },
+  { keyword: '百里香精油', href: '/oil-thyme/', title: '百里香精油完整指南', isOil: true },
+  { keyword: '百里香', href: '/oil-thyme/', title: '百里香精油完整指南', isOil: true },
+  { keyword: 'Thyme', href: '/oil-thyme/', title: '百里香精油完整指南', isOil: true },
+  { keyword: '百里酚', href: '/oil-thyme/', title: '百里香百里酚型化學說明' },
+  { keyword: '香蜂草精油', href: '/oil-melissa/', title: '香蜂草精油完整指南', isOil: true },
+  { keyword: '香蜂草', href: '/oil-melissa/', title: '香蜂草精油完整指南', isOil: true },
+  { keyword: 'Melissa', href: '/oil-melissa/', title: '香蜂草精油完整指南', isOil: true },
+  { keyword: '甜羅勒精油', href: '/oil-sweet-basil/', title: '甜羅勒精油完整指南', isOil: true },
+  { keyword: '甜羅勒', href: '/oil-sweet-basil/', title: '甜羅勒精油完整指南', isOil: true },
+  { keyword: '羅勒精油', href: '/oil-sweet-basil/', title: '甜羅勒精油完整指南', isOil: true },
+  { keyword: 'Sweet Basil', href: '/oil-sweet-basil/', title: '甜羅勒精油完整指南', isOil: true },
+  { keyword: '甜茴香精油', href: '/oil-sweet-fennel/', title: '甜茴香精油完整指南', isOil: true },
+  { keyword: '甜茴香', href: '/oil-sweet-fennel/', title: '甜茴香精油完整指南', isOil: true },
+  { keyword: '茴香精油', href: '/oil-sweet-fennel/', title: '甜茴香精油完整指南', isOil: true },
+  { keyword: '反式茴香腦', href: '/oil-sweet-fennel/', title: '甜茴香反式茴香腦成分說明' },
+
   // ─── 第五波 oil-* ───
   { keyword: '月桂精油', href: '/oil-bay/', title: '月桂精油完整指南', isOil: true },
   { keyword: '月桂', href: '/oil-bay/', title: '月桂精油完整指南', isOil: true },
@@ -125,7 +149,6 @@ export const INTERNAL_LINKS: InternalLink[] = [
   { keyword: '脈輪', href: '/article-spiritual-aromatherapy/#二七個脈輪與精油對應表', title: '脈輪精油對應' },
   { keyword: '冥想精油', href: '/article-spiritual-aromatherapy/#四冥想擴香配方', title: '冥想擴香配方' },
   { keyword: '羅馬洋甘菊', href: '/article-chamomile-comparison/', title: '羅馬 vs 德國洋甘菊比較' },
-  { keyword: '德國洋甘菊', href: '/article-chamomile-comparison/', title: '羅馬 vs 德國洋甘菊比較' },
   { keyword: '洋甘菊比較', href: '/article-chamomile-comparison/', title: '羅馬 vs 德國洋甘菊比較' },
   { keyword: '光敏性', href: '/oil-bergamot/#四光敏性與12小時避光原則', title: '佛手柑光敏性說明' },
 
