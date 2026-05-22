@@ -9,7 +9,7 @@ const SITE = 'https://intelliverse.tw';
 const CDN = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/';
 const HTML_DIR = join(process.cwd(), 'html-source');
 /** 上次大規模內容審查日；下次重大更新時請手動推進 */
-const LAST_MOD = new Date('2026-05-13');
+const LAST_MOD = new Date('2026-05-22');
 
 /** 從原 HTML 抓 og:image（已是 CDN 絕對路徑）*/
 function ogImageOf(filename: string): string | undefined {
