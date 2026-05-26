@@ -27,14 +27,49 @@
   <meta name="twitter:description" content="乳香精油（Boswellia carterii）：千年靈性聖油，深化呼吸、抗老化皮膚，冥想與靜心必備精油。" />
   <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/oil-frankincense.jpg" />
   <!-- SEO_END -->
-
-
-
-  <!-- ===== Product + Article + EEAT JSON-LD ===== -->
+  <!-- ===== Product + Article + DefinedTerm + MedicalWebPage + EEAT JSON-LD ===== -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "DefinedTerm",
+      "@id": "https://intelliverse.tw/oil-frankincense/#term",
+      "name": "乳香精油",
+      "description": "乳香（學名 Boswellia carterii）為橄欖科樹脂類精油，IFA 國際芳療標準認可。本頁為完整知識指南。",
+      "inDefinedTermSet": {
+        "@id": "https://intelliverse.tw/oils/#term-set"
+      },
+      "termCode": "Boswellia carterii",
+      "url": "https://intelliverse.tw/oil-frankincense/"
+    },
+    {
+      "@type": "MedicalWebPage",
+      "@id": "https://intelliverse.tw/oil-frankincense/#medical-page",
+      "name": "乳香精油完整指南",
+      "description": "乳香（Boswellia carterii）精油的化學成分、藥學屬性、安全使用、芳療應用完整介紹",
+      "url": "https://intelliverse.tw/oil-frankincense/",
+      "inLanguage": "zh-TW",
+      "about": {
+        "@id": "https://intelliverse.tw/oil-frankincense/#term"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "audienceType": "芳療愛好者、IFA 學員、精油使用者、健康保養族群"
+      },
+      "datePublished": "2025-08-01",
+      "dateModified": "2026-05-26",
+      "lastReviewed": "2026-05-26",
+      "reviewedBy": {
+        "@id": "https://intelliverse.tw/#author"
+      },
+      "specialty": {
+        "@type": "MedicalSpecialty",
+        "name": "Aromatherapy / 芳香療法"
+      },
+      "medicalAudience": "Patient",
+      "aspect": "overview, chemistry, safety, usage"
+    },
     {
       "@type": [
         "Product",
@@ -114,9 +149,12 @@
     {
       "@type": "Person",
       "@id": "https://intelliverse.tw/#author",
-      "name": "玉玲（Intelliverse Studio 主理人）",
+      "name": "玉玲",
+      "alternateName": "Yuling Lin",
       "jobTitle": "IFA 國際認證芳療師",
-      "description": "30 年 IFA 國際芳療師認證、英國 IFPA 進階課程",
+      "description": "30 年 IFA 國際芳療師認證、英國 IFPA 進階課程、化妝品電商 8 年實務",
+      "url": "https://intelliverse.tw/author-yuling/",
+      "image": "https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/author-yuling.jpg",
       "worksFor": {
         "@id": "https://intelliverse.tw/#organization"
       },
@@ -124,7 +162,29 @@
         "IFA 芳療",
         "精油化學",
         "中醫芳療",
-        "芳療安全"
+        "芳療安全",
+        "GC/MS 精油鑑別"
+      ],
+      "affiliation": [
+        {
+          "@type": "Organization",
+          "name": "International Federation of Aromatherapists",
+          "url": "https://ifaroma.org/"
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "專業認證",
+          "name": "IFA 國際芳療師認證",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "International Federation of Aromatherapists"
+          }
+        }
+      ],
+      "sameAs": [
+        "https://ifaroma.org/"
       ]
     }
   ]

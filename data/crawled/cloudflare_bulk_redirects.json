@@ -1,0 +1,343 @@
+{
+  "_comment": "上傳到 Cloudflare Dashboard → Bulk Redirects → Create New List",
+  "_total_rules": 48,
+  "_target_zone": "intelliverse.tw",
+  "rules": [
+    {
+      "source_url": "https://intelliverse.tw/oil/34/",
+      "target_url": "https://intelliverse.tw/oil-lemon/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/41/",
+      "target_url": "https://intelliverse.tw/oil-spearmint/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/42/",
+      "target_url": "https://intelliverse.tw/oil-peppermint/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/47/",
+      "target_url": "https://intelliverse.tw/oil-rosemary/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/72/",
+      "target_url": "https://intelliverse.tw/oil-bay/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/73/",
+      "target_url": "https://intelliverse.tw/oil-ravintsara/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/76/",
+      "target_url": "https://intelliverse.tw/oil-eucalyptus/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/82/",
+      "target_url": "https://intelliverse.tw/oil-spike-lavender/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/87/",
+      "target_url": "https://intelliverse.tw/oil-rosemary/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/92/",
+      "target_url": "https://intelliverse.tw/oil-yarrow/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/97/",
+      "target_url": "https://intelliverse.tw/oil-ylang-ylang/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/102/",
+      "target_url": "https://intelliverse.tw/oil-myrrh/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/108/",
+      "target_url": "https://intelliverse.tw/oil-german-chamomile/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/120/",
+      "target_url": "https://intelliverse.tw/oil-ginger/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/124/",
+      "target_url": "https://intelliverse.tw/oil-sweet-fennel/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/143/",
+      "target_url": "https://intelliverse.tw/oil-citronella/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/144/",
+      "target_url": "https://intelliverse.tw/oil-lemon-eucalyptus/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/150/",
+      "target_url": "https://intelliverse.tw/oil-melissa/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/157/",
+      "target_url": "https://intelliverse.tw/oil-roman-chamomile/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/159/",
+      "target_url": "https://intelliverse.tw/oil-petitgrain/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/160/",
+      "target_url": "https://intelliverse.tw/oil-bergamot/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/165/",
+      "target_url": "https://intelliverse.tw/oil-lavender/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/166/",
+      "target_url": "https://intelliverse.tw/oil-lavandin/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/171/",
+      "target_url": "https://intelliverse.tw/oil-clary-sage/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/182/",
+      "target_url": "https://intelliverse.tw/oil-jasmine/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/192/",
+      "target_url": "https://intelliverse.tw/oil-rose/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/201/",
+      "target_url": "https://intelliverse.tw/oil-cedarwood/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/207/",
+      "target_url": "https://intelliverse.tw/oil-helichrysum/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/209/",
+      "target_url": "https://intelliverse.tw/oil-lavender/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/218/",
+      "target_url": "https://intelliverse.tw/oil-neroli/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/222/",
+      "target_url": "https://intelliverse.tw/oil-palmarosa/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/224/",
+      "target_url": "https://intelliverse.tw/oil-tea-tree/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/226/",
+      "target_url": "https://intelliverse.tw/oil-peppermint/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/230/",
+      "target_url": "https://intelliverse.tw/oil-sweet-basil/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/233/",
+      "target_url": "https://intelliverse.tw/oil-geranium/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/234/",
+      "target_url": "https://intelliverse.tw/oil-rose/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/238/",
+      "target_url": "https://intelliverse.tw/oil-thyme/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/252/",
+      "target_url": "https://intelliverse.tw/oil-clove/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/285/",
+      "target_url": "https://intelliverse.tw/oil-patchouli/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/287/",
+      "target_url": "https://intelliverse.tw/oil-sandalwood/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/292/",
+      "target_url": "https://intelliverse.tw/oil-vetiver/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/301/",
+      "target_url": "https://intelliverse.tw/oil-frankincense/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/310/",
+      "target_url": "https://intelliverse.tw/oil-lemon/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/311/",
+      "target_url": "https://intelliverse.tw/oil-grapefruit/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/315/",
+      "target_url": "https://intelliverse.tw/oil-cypress/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/320/",
+      "target_url": "https://intelliverse.tw/oil-juniper/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/325/",
+      "target_url": "https://intelliverse.tw/oil-black-spruce/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    },
+    {
+      "source_url": "https://intelliverse.tw/oil/330/",
+      "target_url": "https://intelliverse.tw/oil-black-pepper/",
+      "status_code": 301,
+      "preserve_query_string": false,
+      "preserve_path_suffix": false
+    }
+  ]
+}

@@ -1,0 +1,338 @@
+[
+  {
+    "id": "34",
+    "zh": "檸檬",
+    "old_url": "/oil/34/",
+    "new_url": "/oil-lemon/",
+    "status": "mapped"
+  },
+  {
+    "id": "41",
+    "zh": "綠薄荷",
+    "old_url": "/oil/41/",
+    "new_url": "/oil-spearmint/",
+    "status": "mapped"
+  },
+  {
+    "id": "42",
+    "zh": "胡椒薄荷",
+    "old_url": "/oil/42/",
+    "new_url": "/oil-peppermint/",
+    "status": "mapped"
+  },
+  {
+    "id": "47",
+    "zh": "桉油醇迷迭香",
+    "old_url": "/oil/47/",
+    "new_url": "/oil-rosemary/",
+    "status": "mapped"
+  },
+  {
+    "id": "72",
+    "zh": "月桂",
+    "old_url": "/oil/72/",
+    "new_url": "/oil-bay/",
+    "status": "mapped"
+  },
+  {
+    "id": "73",
+    "zh": "桉油醇樟",
+    "old_url": "/oil/73/",
+    "new_url": "/oil-ravintsara/",
+    "status": "mapped"
+  },
+  {
+    "id": "76",
+    "zh": "藍膠尤加利",
+    "old_url": "/oil/76/",
+    "new_url": "/oil-eucalyptus/",
+    "status": "mapped"
+  },
+  {
+    "id": "82",
+    "zh": "穗花薰衣草",
+    "old_url": "/oil/82/",
+    "new_url": "/oil-spike-lavender/",
+    "status": "mapped"
+  },
+  {
+    "id": "87",
+    "zh": "桉油醇迷迭香",
+    "old_url": "/oil/87/",
+    "new_url": "/oil-rosemary/",
+    "status": "mapped"
+  },
+  {
+    "id": "92",
+    "zh": "西洋蓍草",
+    "old_url": "/oil/92/",
+    "new_url": "/oil-yarrow/",
+    "status": "mapped"
+  },
+  {
+    "id": "97",
+    "zh": "依蘭",
+    "old_url": "/oil/97/",
+    "new_url": "/oil-ylang-ylang/",
+    "status": "mapped"
+  },
+  {
+    "id": "102",
+    "zh": "沒藥",
+    "old_url": "/oil/102/",
+    "new_url": "/oil-myrrh/",
+    "status": "mapped"
+  },
+  {
+    "id": "108",
+    "zh": "德國洋甘菊",
+    "old_url": "/oil/108/",
+    "new_url": "/oil-german-chamomile/",
+    "status": "mapped"
+  },
+  {
+    "id": "120",
+    "zh": "薑",
+    "old_url": "/oil/120/",
+    "new_url": "/oil-ginger/",
+    "status": "mapped"
+  },
+  {
+    "id": "124",
+    "zh": "茴香",
+    "old_url": "/oil/124/",
+    "new_url": "/oil-sweet-fennel/",
+    "status": "mapped"
+  },
+  {
+    "id": "143",
+    "zh": "爪哇香茅",
+    "old_url": "/oil/143/",
+    "new_url": "/oil-citronella/",
+    "status": "mapped"
+  },
+  {
+    "id": "144",
+    "zh": "檸檬尤加利",
+    "old_url": "/oil/144/",
+    "new_url": "/oil-lemon-eucalyptus/",
+    "status": "mapped"
+  },
+  {
+    "id": "150",
+    "zh": "香蜂草",
+    "old_url": "/oil/150/",
+    "new_url": "/oil-melissa/",
+    "status": "mapped"
+  },
+  {
+    "id": "157",
+    "zh": "羅馬洋甘菊",
+    "old_url": "/oil/157/",
+    "new_url": "/oil-roman-chamomile/",
+    "status": "mapped"
+  },
+  {
+    "id": "159",
+    "zh": "苦橙葉",
+    "old_url": "/oil/159/",
+    "new_url": "/oil-petitgrain/",
+    "status": "mapped"
+  },
+  {
+    "id": "160",
+    "zh": "佛手柑",
+    "old_url": "/oil/160/",
+    "new_url": "/oil-bergamot/",
+    "status": "mapped"
+  },
+  {
+    "id": "165",
+    "zh": "真正薰衣草",
+    "old_url": "/oil/165/",
+    "new_url": "/oil-lavender/",
+    "status": "mapped"
+  },
+  {
+    "id": "166",
+    "zh": "醒目薰衣草",
+    "old_url": "/oil/166/",
+    "new_url": "/oil-lavandin/",
+    "status": "mapped"
+  },
+  {
+    "id": "171",
+    "zh": "快樂鼠尾草",
+    "old_url": "/oil/171/",
+    "new_url": "/oil-clary-sage/",
+    "status": "mapped"
+  },
+  {
+    "id": "182",
+    "zh": "大花茉莉",
+    "old_url": "/oil/182/",
+    "new_url": "/oil-jasmine/",
+    "status": "mapped"
+  },
+  {
+    "id": "192",
+    "zh": "五月玫瑰",
+    "old_url": "/oil/192/",
+    "new_url": "/oil-rose/",
+    "status": "mapped"
+  },
+  {
+    "id": "201",
+    "zh": "大西洋雪松",
+    "old_url": "/oil/201/",
+    "new_url": "/oil-cedarwood/",
+    "status": "mapped"
+  },
+  {
+    "id": "207",
+    "zh": "義大利永久花",
+    "old_url": "/oil/207/",
+    "new_url": "/oil-helichrysum/",
+    "status": "mapped"
+  },
+  {
+    "id": "209",
+    "zh": "薰衣草",
+    "old_url": "/oil/209/",
+    "new_url": "/oil-lavender/",
+    "status": "mapped"
+  },
+  {
+    "id": "218",
+    "zh": "橙花",
+    "old_url": "/oil/218/",
+    "new_url": "/oil-neroli/",
+    "status": "mapped"
+  },
+  {
+    "id": "222",
+    "zh": "玫瑰草",
+    "old_url": "/oil/222/",
+    "new_url": "/oil-palmarosa/",
+    "status": "mapped"
+  },
+  {
+    "id": "224",
+    "zh": "茶樹",
+    "old_url": "/oil/224/",
+    "new_url": "/oil-tea-tree/",
+    "status": "mapped"
+  },
+  {
+    "id": "226",
+    "zh": "胡椒薄荷",
+    "old_url": "/oil/226/",
+    "new_url": "/oil-peppermint/",
+    "status": "mapped"
+  },
+  {
+    "id": "230",
+    "zh": "甜羅勒",
+    "old_url": "/oil/230/",
+    "new_url": "/oil-sweet-basil/",
+    "status": "mapped"
+  },
+  {
+    "id": "233",
+    "zh": "天竺葵",
+    "old_url": "/oil/233/",
+    "new_url": "/oil-geranium/",
+    "status": "mapped"
+  },
+  {
+    "id": "234",
+    "zh": "大馬士革玫瑰",
+    "old_url": "/oil/234/",
+    "new_url": "/oil-rose/",
+    "status": "mapped"
+  },
+  {
+    "id": "238",
+    "zh": "沉香醇百里香",
+    "old_url": "/oil/238/",
+    "new_url": "/oil-thyme/",
+    "status": "mapped"
+  },
+  {
+    "id": "252",
+    "zh": "丁香花苞",
+    "old_url": "/oil/252/",
+    "new_url": "/oil-clove/",
+    "status": "mapped"
+  },
+  {
+    "id": "285",
+    "zh": "廣藿香",
+    "old_url": "/oil/285/",
+    "new_url": "/oil-patchouli/",
+    "status": "mapped"
+  },
+  {
+    "id": "287",
+    "zh": "檀香",
+    "old_url": "/oil/287/",
+    "new_url": "/oil-sandalwood/",
+    "status": "mapped"
+  },
+  {
+    "id": "292",
+    "zh": "岩蘭草",
+    "old_url": "/oil/292/",
+    "new_url": "/oil-vetiver/",
+    "status": "mapped"
+  },
+  {
+    "id": "301",
+    "zh": "乳香",
+    "old_url": "/oil/301/",
+    "new_url": "/oil-frankincense/",
+    "status": "mapped"
+  },
+  {
+    "id": "310",
+    "zh": "檸檬",
+    "old_url": "/oil/310/",
+    "new_url": "/oil-lemon/",
+    "status": "mapped"
+  },
+  {
+    "id": "311",
+    "zh": "葡萄柚",
+    "old_url": "/oil/311/",
+    "new_url": "/oil-grapefruit/",
+    "status": "mapped"
+  },
+  {
+    "id": "315",
+    "zh": "絲柏",
+    "old_url": "/oil/315/",
+    "new_url": "/oil-cypress/",
+    "status": "mapped"
+  },
+  {
+    "id": "320",
+    "zh": "杜松漿果",
+    "old_url": "/oil/320/",
+    "new_url": "/oil-juniper/",
+    "status": "mapped"
+  },
+  {
+    "id": "325",
+    "zh": "黑雲杉",
+    "old_url": "/oil/325/",
+    "new_url": "/oil-black-spruce/",
+    "status": "mapped"
+  },
+  {
+    "id": "330",
+    "zh": "黑胡椒",
+    "old_url": "/oil/330/",
+    "new_url": "/oil-black-pepper/",
+    "status": "mapped"
+  }
+]

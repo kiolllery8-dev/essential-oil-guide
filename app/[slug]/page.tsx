@@ -94,6 +94,8 @@ const SLUG_NAMES: Record<string, string> = {
   'oil-lemon-eucalyptus': '檸檬尤加利精油',
   'article-insect-repellent': '天然驅蟲完整指南',
   'article-lavender-comparison': '三大薰衣草精油比較',
+  'author-yuling': '關於作者：玉玲',
+  'references': '引用來源與參考資料',
   'compounds-01': '單萜烯類 I',
   'compounds-02': '香豆素與內酯類',
   'compounds-03': '氧化物類',

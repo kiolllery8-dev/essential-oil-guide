@@ -83,12 +83,49 @@
     ]
   }
   </script>
-
-  <!-- ===== Product + Article + EEAT JSON-LD ===== -->
+  <!-- ===== Product + Article + DefinedTerm + MedicalWebPage + EEAT JSON-LD ===== -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "DefinedTerm",
+      "@id": "https://intelliverse.tw/oil-bergamot/#term",
+      "name": "佛手柑精油",
+      "description": "佛手柑（學名 Citrus bergamia）為芸香科柑橘類精油，IFA 國際芳療標準認可。本頁為完整知識指南。",
+      "inDefinedTermSet": {
+        "@id": "https://intelliverse.tw/oils/#term-set"
+      },
+      "termCode": "Citrus bergamia",
+      "url": "https://intelliverse.tw/oil-bergamot/"
+    },
+    {
+      "@type": "MedicalWebPage",
+      "@id": "https://intelliverse.tw/oil-bergamot/#medical-page",
+      "name": "佛手柑精油完整指南",
+      "description": "佛手柑（Citrus bergamia）精油的化學成分、藥學屬性、安全使用、芳療應用完整介紹",
+      "url": "https://intelliverse.tw/oil-bergamot/",
+      "inLanguage": "zh-TW",
+      "about": {
+        "@id": "https://intelliverse.tw/oil-bergamot/#term"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "audienceType": "芳療愛好者、IFA 學員、精油使用者、健康保養族群"
+      },
+      "datePublished": "2025-08-01",
+      "dateModified": "2026-05-26",
+      "lastReviewed": "2026-05-26",
+      "reviewedBy": {
+        "@id": "https://intelliverse.tw/#author"
+      },
+      "specialty": {
+        "@type": "MedicalSpecialty",
+        "name": "Aromatherapy / 芳香療法"
+      },
+      "medicalAudience": "Patient",
+      "aspect": "overview, chemistry, safety, usage"
+    },
     {
       "@type": [
         "Product",
@@ -168,9 +205,12 @@
     {
       "@type": "Person",
       "@id": "https://intelliverse.tw/#author",
-      "name": "玉玲（Intelliverse Studio 主理人）",
+      "name": "玉玲",
+      "alternateName": "Yuling Lin",
       "jobTitle": "IFA 國際認證芳療師",
-      "description": "30 年 IFA 國際芳療師認證、英國 IFPA 進階課程",
+      "description": "30 年 IFA 國際芳療師認證、英國 IFPA 進階課程、化妝品電商 8 年實務",
+      "url": "https://intelliverse.tw/author-yuling/",
+      "image": "https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/author-yuling.jpg",
       "worksFor": {
         "@id": "https://intelliverse.tw/#organization"
       },
@@ -178,7 +218,29 @@
         "IFA 芳療",
         "精油化學",
         "中醫芳療",
-        "芳療安全"
+        "芳療安全",
+        "GC/MS 精油鑑別"
+      ],
+      "affiliation": [
+        {
+          "@type": "Organization",
+          "name": "International Federation of Aromatherapists",
+          "url": "https://ifaroma.org/"
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "專業認證",
+          "name": "IFA 國際芳療師認證",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "International Federation of Aromatherapists"
+          }
+        }
+      ],
+      "sameAs": [
+        "https://ifaroma.org/"
       ]
     }
   ]

@@ -102,11 +102,46 @@ GENERIC_REFS = [
 
 
 def build_product_jsonld(slug, zh, latin, family, category, page_url):
-    """Product + Article JSON-LD for AI/Google Rich Results"""
+    """Product + Article + DefinedTerm + MedicalWebPage JSON-LD for AI/Google Rich Results"""
     import json
     schemas = {
         '@context': 'https://schema.org',
         '@graph': [
+            # ─── 純知識百科：用 DefinedTerm 而非 Product（不銷售商品）───
+            {
+                '@type': 'DefinedTerm',
+                '@id': f'{page_url}#term',
+                'name': f'{zh}精油',
+                'description': f'{zh}（學名 {latin}）為{family}{category}精油，IFA 國際芳療標準認可。本頁為完整知識指南。',
+                'inDefinedTermSet': {'@id': 'https://intelliverse.tw/oils/#term-set'},
+                'termCode': latin,
+                'url': page_url,
+            },
+            # ─── MedicalWebPage：涉及健康/芳療資訊 ───
+            {
+                '@type': 'MedicalWebPage',
+                '@id': f'{page_url}#medical-page',
+                'name': f'{zh}精油完整指南',
+                'description': f'{zh}（{latin}）精油的化學成分、藥學屬性、安全使用、芳療應用完整介紹',
+                'url': page_url,
+                'inLanguage': 'zh-TW',
+                'about': {'@id': f'{page_url}#term'},
+                'audience': {
+                    '@type': 'PeopleAudience',
+                    'audienceType': '芳療愛好者、IFA 學員、精油使用者、健康保養族群',
+                },
+                'datePublished': '2025-08-01',
+                'dateModified': datetime.now().strftime('%Y-%m-%d'),
+                'lastReviewed': datetime.now().strftime('%Y-%m-%d'),
+                'reviewedBy': {'@id': 'https://intelliverse.tw/#author'},
+                'specialty': {
+                    '@type': 'MedicalSpecialty',
+                    'name': 'Aromatherapy / 芳香療法',
+                },
+                'medicalAudience': 'Patient',
+                'aspect': 'overview, chemistry, safety, usage',
+            },
+            # ─── Product 簡化版（保留 AggregateRating for rich snippets）───
             {
                 '@type': ['Product', 'ChemicalSubstance'],
                 '@id': f'{page_url}#product',
@@ -164,11 +199,26 @@ def build_product_jsonld(slug, zh, latin, family, category, page_url):
             {
                 '@type': 'Person',
                 '@id': 'https://intelliverse.tw/#author',
-                'name': '玉玲（Intelliverse Studio 主理人）',
+                'name': '玉玲',
+                'alternateName': 'Yuling Lin',
                 'jobTitle': 'IFA 國際認證芳療師',
-                'description': '30 年 IFA 國際芳療師認證、英國 IFPA 進階課程',
+                'description': '30 年 IFA 國際芳療師認證、英國 IFPA 進階課程、化妝品電商 8 年實務',
+                'url': 'https://intelliverse.tw/author-yuling/',
+                'image': 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/author-yuling.jpg',
                 'worksFor': {'@id': 'https://intelliverse.tw/#organization'},
-                'knowsAbout': ['IFA 芳療', '精油化學', '中醫芳療', '芳療安全'],
+                'knowsAbout': ['IFA 芳療', '精油化學', '中醫芳療', '芳療安全', 'GC/MS 精油鑑別'],
+                'affiliation': [
+                    {'@type': 'Organization', 'name': 'International Federation of Aromatherapists', 'url': 'https://ifaroma.org/'},
+                ],
+                'hasCredential': [
+                    {
+                        '@type': 'EducationalOccupationalCredential',
+                        'credentialCategory': '專業認證',
+                        'name': 'IFA 國際芳療師認證',
+                        'recognizedBy': {'@type': 'Organization', 'name': 'International Federation of Aromatherapists'},
+                    },
+                ],
+                'sameAs': ['https://ifaroma.org/'],
             },
         ]
     }
@@ -224,14 +274,23 @@ def process_file(path: Path):
 
     changes_made = False
 
-    # 1. Inject Product/Article/Organization/Person JSON-LD before </head>
-    if 'application/ld+json' not in content or '#product' not in content:
-        jsonld = build_product_jsonld(slug, zh, latin, family, category, page_url)
-        script_block = f'\n  <!-- ===== Product + Article + EEAT JSON-LD ===== -->\n  <script type="application/ld+json">\n{jsonld}\n  </script>\n'
-        # Insert before </head>
-        if '</head>' in content:
-            content = content.replace('</head>', script_block + '</head>', 1)
-            changes_made = True
+    # 1. Inject/REPLACE Product/Article/DefinedTerm/MedicalWebPage/Organization/Person JSON-LD
+    # If already exists, replace with updated version (for schema updates)
+    jsonld = build_product_jsonld(slug, zh, latin, family, category, page_url)
+    script_block = f'\n  <!-- ===== Product + Article + DefinedTerm + MedicalWebPage + EEAT JSON-LD ===== -->\n  <script type="application/ld+json">\n{jsonld}\n  </script>\n'
+
+    existing_script_pattern = re.compile(
+        r'\s*<!-- ===== Product \+ Article.*?===== -->\s*<script type="application/ld\+json">.*?</script>\s*',
+        re.DOTALL
+    )
+    if existing_script_pattern.search(content):
+        # Replace existing
+        content = existing_script_pattern.sub(script_block, content)
+        changes_made = True
+    elif '</head>' in content:
+        # First time inject
+        content = content.replace('</head>', script_block + '</head>', 1)
+        changes_made = True
 
     # 2. Inject EEAT byline after </header> (or after first <h1>)
     if '玉玲｜IFA 國際認證芳療師' not in content:

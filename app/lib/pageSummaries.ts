@@ -137,6 +137,10 @@ export const PAGE_SUMMARIES: Record<string, string> = {
     '天然驅蟲完整指南：以 IFA 芳療理論整理 12 大驅蟲精油的化學機制（醛類驅蚊/萜烯驅蟲/酚類強效）、CDC 認證的 OLE 檸檬尤加利、安全使用劑量。18 種 DIY 配方涵蓋戶外、居家、寵物友善、兒童專用、衣物防蛀。寵物家庭高風險清單（茶樹/丁香/薄荷/柑橘類），不取代化學防蚊劑的醫療必需場景。',
   'article-lavender-comparison':
     '薰衣草精油原來有 4-5 種：真正薰衣草（L. angustifolia）vs 穗花薰衣草（L. latifolia）vs 醒目薰衣草（L. × intermedia）vs 頭狀薰衣草（L. stoechas）。化學成分（樟腦/沉香醇/桉油醇）、安全性、用途差異完整對比。買精油前一定要確認學名，避開「薰衣草陷阱」。',
+  'author-yuling':
+    '玉玲｜IFA 國際認證芳療師、英國 IFPA 進階課程結業、台中建築設計背景、化妝品電商 8 年實務。靈境智造 Intelliverse Studio 主理人，整合 30 年芳療專業與 IFA 國際標準，把正確的中文芳療知識帶給台灣使用者。',
+  'references':
+    '本站引用的所有專業書籍、學術文獻、官方機構、植物學分類來源。包含 Tisserand & Young《Essential Oil Safety》、Pierre Franchomme《L\'aromathérapie exactement》、IFA 官方教材、PubMed 論文、APG IV 植物分類、IFRA 香水安全標準等權威資料。',
 
   // ─── 大型索引頁 ─────────────────────────
   'oils':
