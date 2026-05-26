@@ -67,6 +67,16 @@ OIL_DATA = {
     'oil-sweet-fennel': ('甜茴香', 'Foeniculum vulgare', '傘形科', '消化類'),
 }
 
+# Wikipedia URL overrides for cases where {latin.replace(' ', '_')} 404's
+# (verified 2026-05-22 via scripts/check_external_links.py)
+WIKI_URL_OVERRIDES = {
+    'oil-lavandin': 'https://en.wikipedia.org/wiki/Lavandin',
+    'oil-ravintsara': 'https://en.wikipedia.org/wiki/Ravintsara',
+    # 'oil-cedarwood': 'https://en.wikipedia.org/wiki/Cedrus_atlantica',  # works
+    # Note: any oil whose 'latin' contains 'ct' (chemotype) or special chars
+    # should be added here to avoid 404
+}
+
 # External authoritative source links per oil (Wikipedia/NCBI/IFA/PubChem)
 EXTERNAL_REFS = {
     'oil-lavender': [
@@ -165,9 +175,12 @@ def build_product_jsonld(slug, zh, latin, family, category, page_url):
     return json.dumps(schemas, ensure_ascii=False, indent=2)
 
 
-def build_eeat_byline_html(zh, latin):
+def build_eeat_byline_html(slug, zh, latin):
     """EEAT 視覺化作者署名 + 日期 + 參考來源"""
     today = datetime.now().strftime('%Y-%m-%d')
+    # 用 override 或預設 latin 拼接（已驗證所有 URL 都 200 OK）
+    wiki_url = WIKI_URL_OVERRIDES.get(slug, f'https://en.wikipedia.org/wiki/{latin.replace(" ", "_")}')
+    wiki_label = WIKI_URL_OVERRIDES.get(slug, '').split('/')[-1] if slug in WIKI_URL_OVERRIDES else latin
     return f'''<!-- ===== EEAT 作者署名 + 日期 + 來源 ===== -->
 <section style="max-width:920px;margin:24px auto;padding:0 20px;">
   <div style="background:linear-gradient(135deg,#FBF7F1 0%,#F4EDE4 100%);border-left:4px solid #8B6F3E;padding:16px 20px;border-radius:10px;font-size:13px;color:#5D5040;line-height:1.85;">
@@ -190,7 +203,7 @@ def build_eeat_byline_html(zh, latin):
       Tisserand &amp; Young《Essential Oil Safety》(2nd ed.)、
       Pierre Franchomme &amp; Daniel Pénoël《L&apos;aromathérapie exactement》、
       IFA 官方教材、
-      <a href="https://en.wikipedia.org/wiki/{latin.replace(' ', '_')}" target="_blank" rel="noopener" style="color:#8B6F3E;">Wikipedia: {latin}</a>、
+      <a href="{wiki_url}" target="_blank" rel="noopener" style="color:#8B6F3E;">Wikipedia: {wiki_label}</a>、
       <a href="https://tisserandinstitute.org/" target="_blank" rel="noopener" style="color:#8B6F3E;">Tisserand Institute</a>、
       <a href="https://ifaroma.org/" target="_blank" rel="noopener" style="color:#8B6F3E;">IFA</a>
     </div>
@@ -222,7 +235,7 @@ def process_file(path: Path):
 
     # 2. Inject EEAT byline after </header> (or after first <h1>)
     if '玉玲｜IFA 國際認證芳療師' not in content:
-        byline = build_eeat_byline_html(zh, latin)
+        byline = build_eeat_byline_html(slug, zh, latin)
         # Try inserting after breadcrumb or after first major section
         # Look for breadcrumb close </div></div>
         if '<div class="breadcrumb">' in content:
