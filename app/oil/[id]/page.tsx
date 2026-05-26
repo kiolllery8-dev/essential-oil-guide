@@ -33,6 +33,76 @@ const CAT_SLUG_MAP: Record<string, string> = {
   'compounds-12.html': 'compounds-12',
 };
 
+/**
+ * Canonical 重複頁修正：oils.json id → 對應的完整指南 slug
+ *
+ * 修復 SEO 災難：23+ 個精油同時存在 /oil-X/ 和 /oil/N/ 兩個 URL，
+ * 造成 Google 視為重複內容、稀釋排名。
+ *
+ * 規則：
+ *  - 如果 oil.id 在這個 map 裡，則 canonical → /oil-X/
+ *  - 並在頁面顯眼處放「更完整指南 →」按鈕引導用戶 + 爬蟲
+ *  - 麵包屑也指向完整指南
+ *
+ * 來源：手動對照 oils.json 與 46 個 oil-*.html 完整指南
+ */
+const CANONICAL_OVERRIDES: Record<string, string> = {
+  // 柑橘類
+  '34': 'oil-lemon', '310': 'oil-lemon',
+  '144': 'oil-lemon-eucalyptus',
+  '159': 'oil-petitgrain',
+  '160': 'oil-bergamot',
+  '218': 'oil-neroli',
+  '311': 'oil-grapefruit',
+  // 花朵類
+  '182': 'oil-jasmine',
+  '192': 'oil-rose', '234': 'oil-rose',
+  '207': 'oil-helichrysum',
+  // 菊科
+  '92': 'oil-yarrow',
+  '108': 'oil-german-chamomile',
+  '157': 'oil-roman-chamomile',
+  // 薰衣草系
+  '82': 'oil-spike-lavender',
+  '165': 'oil-lavender', '209': 'oil-lavender',
+  '166': 'oil-lavandin',
+  // 香草類
+  '47': 'oil-rosemary', '87': 'oil-rosemary',
+  '150': 'oil-melissa',
+  '171': 'oil-clary-sage',
+  '222': 'oil-palmarosa',
+  '230': 'oil-sweet-basil',
+  '233': 'oil-geranium',
+  '238': 'oil-thyme',
+  // 薄荷類
+  '41': 'oil-spearmint',
+  '42': 'oil-peppermint', '226': 'oil-peppermint',
+  // 呼吸類
+  '72': 'oil-bay',
+  '73': 'oil-ravintsara',
+  '76': 'oil-eucalyptus',
+  '224': 'oil-tea-tree',
+  // 木質/松柏
+  '102': 'oil-myrrh',
+  '201': 'oil-cedarwood',
+  '285': 'oil-patchouli',
+  '287': 'oil-sandalwood',
+  '292': 'oil-vetiver',
+  '315': 'oil-cypress',
+  '320': 'oil-juniper',
+  '325': 'oil-black-spruce',
+  // 辛香類
+  '120': 'oil-ginger',
+  '143': 'oil-citronella',
+  '252': 'oil-clove',
+  '330': 'oil-black-pepper',
+  // 樹脂・其他
+  '124': 'oil-sweet-fennel',
+  '301': 'oil-frankincense',
+  // 柑橘類
+  '97': 'oil-ylang-ylang',
+};
+
 export async function generateStaticParams() {
   return oils.map((o) => ({ id: o.id }));
 }
@@ -49,6 +119,10 @@ export async function generateMetadata(
   // 讓 AI 搜尋（ChatGPT Search / Perplexity / Google AI Overview）可索引到完整資訊
   const effectsClean = (oil.effects || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
   const desc = `${oil.zh}（${oil.latin}）：${oil.category || '芳療'}精油。主要成分 ${(oil.components || '').slice(0, 32)}。${effectsClean ? `常見芳療應用：${effectsClean.slice(0, 50)}。` : ''}萃取自${oil.extractPart || '植物'}，使用前請參考安全指南。`.slice(0, 155);
+
+  // ▼ Canonical 重複頁修正：若有對應的完整指南，canonical 指向 /oil-X/
+  const dedicatedSlug = CANONICAL_OVERRIDES[id];
+  const canonicalUrl = dedicatedSlug ? `${SITE}/${dedicatedSlug}/` : `${SITE}/oil/${id}/`;
   const url = `${SITE}/oil/${id}/`;
   const ogImage = DEFAULT_OG;
 
@@ -56,10 +130,10 @@ export async function generateMetadata(
     title: { absolute: title + ' | 精油能量圖譜' },
     description: desc,
     keywords: [oil.zh, oil.latin, oil.category, '精油', '芳療', ...(oil.tags || [])].filter(Boolean) as string[],
-    alternates: { canonical: url },
+    alternates: { canonical: canonicalUrl },
     openGraph: {
       type: 'article',
-      url,
+      url: canonicalUrl,
       title,
       description: desc,
       images: [{ url: ogImage, width: 1200, height: 630, alt: `${oil.zh} ${oil.latin}` }],
@@ -111,9 +185,50 @@ export default async function OilDetail({ params }: { params: Promise<{ id: stri
     `使用前請參考精油安全指南並做敏感性測試。`,
   ].filter(Boolean).join('').slice(0, 180);
 
+  // ▼ 若有對應的完整指南，顯示醒目導引橫幅（同時做 canonical 收編）
+  const dedicatedSlug = CANONICAL_OVERRIDES[id];
+  const dedicatedBanner = dedicatedSlug ? (
+    <div style={{ maxWidth: 1100, margin: '20px auto 0', padding: '0 20px' }}>
+      <a
+        href={`/${dedicatedSlug}/`}
+        style={{
+          display: 'block',
+          background: 'linear-gradient(135deg,#FBF7F1 0%,#F4EDE4 100%)',
+          border: '2px solid #C8A673',
+          borderRadius: 14,
+          padding: '20px 26px',
+          textDecoration: 'none',
+          color: '#5D4A28',
+          transition: 'transform .15s, box-shadow .2s',
+          boxShadow: '0 2px 8px rgba(200,166,115,0.15)',
+        }}
+        rel="canonical"
+      >
+        <div style={{ display: 'flex', gap: 14, alignItems: 'center' }}>
+          <div style={{ fontSize: 32, flexShrink: 0 }}>📖</div>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: 13, color: '#8B6F3E', fontWeight: 600, marginBottom: 4, letterSpacing: '0.05em' }}>
+              ✦ 推薦閱讀完整指南
+            </div>
+            <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 4 }}>
+              {oil.zh}精油 5000+ 字 IFA 標準完整指南 →
+            </div>
+            <div style={{ fontSize: 13, lineHeight: 1.7, color: '#7A6852' }}>
+              包含：化學成分詳解、IFA + 中醫雙觀點、6 大功效、DIY 配方、安全須知、心靈能量、研究文獻、芳療師筆記、FAQ。
+              本頁（化學分子 datasheet）為簡要版。
+            </div>
+          </div>
+          <div style={{ fontSize: 24, color: '#C8A673', flexShrink: 0 }}>→</div>
+        </div>
+      </a>
+    </div>
+  ) : null;
+
   return (
     <>
       <JsonLd data={[crumbs, article]} />
+
+      {dedicatedBanner}
 
       {/* AI 友善「快速答案」區塊（Google AI Overview / ChatGPT Search / Perplexity 引用優化） */}
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 20px' }}>
