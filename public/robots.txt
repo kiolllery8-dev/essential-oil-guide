@@ -63,3 +63,8 @@ Allow: /
 
 # Sitemap
 Sitemap: https://intelliverse.tw/sitemap.xml
+Sitemap: https://intelliverse.tw/sitemap-images.xml
+
+# AI / LLM citation preference (https://llmstxt.org/)
+# 詳細站點結構與引用偏好見：
+# https://intelliverse.tw/llms.txt
