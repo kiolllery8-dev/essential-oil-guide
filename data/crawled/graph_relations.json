@@ -1,0 +1,1060 @@
+{
+  "oil-lavender": {
+    "contradicts": [
+      "oil-spike-lavender",
+      "oil-lavandin"
+    ],
+    "builds_on": [],
+    "is_base_for": [
+      "oil-lavandin"
+    ],
+    "same_chem": [
+      "oil-lavandin",
+      "oil-thyme",
+      "oil-sweet-basil",
+      "oil-spike-lavender",
+      "oil-peppermint",
+      "oil-marjoram",
+      "oil-clary-sage",
+      "oil-ylang-ylang",
+      "oil-tea-tree",
+      "oil-rose",
+      "oil-roman-chamomile",
+      "oil-petitgrain",
+      "oil-palmarosa",
+      "oil-neroli",
+      "oil-geranium",
+      "oil-citronella",
+      "oil-black-spruce",
+      "oil-bergamot"
+    ],
+    "same_family": [
+      "oil-spike-lavender",
+      "oil-lavandin",
+      "oil-peppermint",
+      "oil-spearmint",
+      "oil-rosemary",
+      "oil-marjoram",
+      "oil-clary-sage",
+      "oil-sweet-basil",
+      "oil-thyme",
+      "oil-melissa",
+      "oil-patchouli"
+    ]
+  },
+  "oil-spike-lavender": {
+    "contradicts": [
+      "oil-lavender"
+    ],
+    "builds_on": [],
+    "is_base_for": [
+      "oil-lavandin"
+    ],
+    "same_chem": [
+      "oil-thyme",
+      "oil-sweet-basil",
+      "oil-rosemary",
+      "oil-peppermint",
+      "oil-marjoram",
+      "oil-lavender",
+      "oil-lavandin",
+      "oil-tea-tree",
+      "oil-rose",
+      "oil-ravintsara",
+      "oil-palmarosa",
+      "oil-neroli",
+      "oil-german-chamomile",
+      "oil-geranium",
+      "oil-eucalyptus",
+      "oil-citronella",
+      "oil-bay"
+    ],
+    "same_family": [
+      "oil-lavender",
+      "oil-lavandin",
+      "oil-peppermint",
+      "oil-spearmint",
+      "oil-rosemary",
+      "oil-marjoram",
+      "oil-clary-sage",
+      "oil-sweet-basil",
+      "oil-thyme",
+      "oil-melissa",
+      "oil-patchouli"
+    ]
+  },
+  "oil-lavandin": {
+    "contradicts": [
+      "oil-lavender"
+    ],
+    "builds_on": [
+      "oil-lavender",
+      "oil-spike-lavender"
+    ],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-lavender",
+      "oil-thyme",
+      "oil-sweet-basil",
+      "oil-spike-lavender",
+      "oil-peppermint",
+      "oil-marjoram",
+      "oil-clary-sage",
+      "oil-ylang-ylang",
+      "oil-tea-tree",
+      "oil-rose",
+      "oil-roman-chamomile",
+      "oil-petitgrain",
+      "oil-palmarosa",
+      "oil-neroli",
+      "oil-geranium",
+      "oil-citronella",
+      "oil-black-spruce",
+      "oil-bergamot"
+    ],
+    "same_family": [
+      "oil-lavender",
+      "oil-spike-lavender",
+      "oil-peppermint",
+      "oil-spearmint",
+      "oil-rosemary",
+      "oil-marjoram",
+      "oil-clary-sage",
+      "oil-sweet-basil",
+      "oil-thyme",
+      "oil-melissa",
+      "oil-patchouli"
+    ]
+  },
+  "oil-tea-tree": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-thyme",
+      "oil-sweet-basil",
+      "oil-spike-lavender",
+      "oil-rose",
+      "oil-peppermint",
+      "oil-palmarosa",
+      "oil-neroli",
+      "oil-marjoram",
+      "oil-lavender",
+      "oil-lavandin",
+      "oil-geranium",
+      "oil-citronella"
+    ],
+    "same_family": [
+      "oil-eucalyptus",
+      "oil-lemon-eucalyptus",
+      "oil-clove"
+    ]
+  },
+  "oil-eucalyptus": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-spike-lavender",
+      "oil-rosemary",
+      "oil-ravintsara",
+      "oil-german-chamomile",
+      "oil-bay"
+    ],
+    "same_family": [
+      "oil-tea-tree",
+      "oil-lemon-eucalyptus",
+      "oil-clove"
+    ]
+  },
+  "oil-peppermint": {
+    "contradicts": [
+      "oil-spearmint"
+    ],
+    "builds_on": [],
+    "is_base_for": [
+      "oil-spearmint"
+    ],
+    "same_chem": [
+      "oil-thyme",
+      "oil-sweet-basil",
+      "oil-spike-lavender",
+      "oil-spearmint",
+      "oil-rosemary",
+      "oil-marjoram",
+      "oil-lavender",
+      "oil-lavandin",
+      "oil-yarrow",
+      "oil-tea-tree",
+      "oil-rose",
+      "oil-palmarosa",
+      "oil-neroli",
+      "oil-geranium",
+      "oil-citronella"
+    ],
+    "same_family": [
+      "oil-lavender",
+      "oil-spike-lavender",
+      "oil-lavandin",
+      "oil-spearmint",
+      "oil-rosemary",
+      "oil-marjoram",
+      "oil-clary-sage",
+      "oil-sweet-basil",
+      "oil-thyme",
+      "oil-melissa",
+      "oil-patchouli"
+    ]
+  },
+  "oil-spearmint": {
+    "contradicts": [
+      "oil-peppermint"
+    ],
+    "builds_on": [
+      "oil-peppermint"
+    ],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-rosemary",
+      "oil-peppermint",
+      "oil-yarrow"
+    ],
+    "same_family": [
+      "oil-lavender",
+      "oil-spike-lavender",
+      "oil-lavandin",
+      "oil-peppermint",
+      "oil-rosemary",
+      "oil-marjoram",
+      "oil-clary-sage",
+      "oil-sweet-basil",
+      "oil-thyme",
+      "oil-melissa",
+      "oil-patchouli"
+    ]
+  },
+  "oil-sweet-orange": {
+    "contradicts": [
+      "oil-lemon"
+    ],
+    "builds_on": [],
+    "is_base_for": [
+      "oil-grapefruit"
+    ],
+    "same_chem": [
+      "oil-mandarin",
+      "oil-lemon",
+      "oil-grapefruit",
+      "oil-bergamot",
+      "oil-juniper",
+      "oil-frankincense",
+      "oil-cypress",
+      "oil-black-spruce",
+      "oil-black-pepper"
+    ],
+    "same_family": [
+      "oil-mandarin",
+      "oil-lemon",
+      "oil-grapefruit",
+      "oil-bergamot",
+      "oil-neroli",
+      "oil-petitgrain"
+    ]
+  },
+  "oil-mandarin": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-sweet-orange",
+      "oil-lemon",
+      "oil-grapefruit",
+      "oil-bergamot",
+      "oil-juniper",
+      "oil-frankincense",
+      "oil-cypress",
+      "oil-black-spruce",
+      "oil-black-pepper"
+    ],
+    "same_family": [
+      "oil-sweet-orange",
+      "oil-lemon",
+      "oil-grapefruit",
+      "oil-bergamot",
+      "oil-neroli",
+      "oil-petitgrain"
+    ]
+  },
+  "oil-lemon": {
+    "contradicts": [
+      "oil-sweet-orange"
+    ],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-sweet-orange",
+      "oil-mandarin",
+      "oil-grapefruit",
+      "oil-bergamot",
+      "oil-juniper",
+      "oil-frankincense",
+      "oil-cypress",
+      "oil-black-spruce",
+      "oil-black-pepper"
+    ],
+    "same_family": [
+      "oil-sweet-orange",
+      "oil-mandarin",
+      "oil-grapefruit",
+      "oil-bergamot",
+      "oil-neroli",
+      "oil-petitgrain"
+    ]
+  },
+  "oil-grapefruit": {
+    "contradicts": [],
+    "builds_on": [
+      "oil-sweet-orange"
+    ],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-sweet-orange",
+      "oil-mandarin",
+      "oil-lemon",
+      "oil-bergamot",
+      "oil-juniper",
+      "oil-frankincense",
+      "oil-cypress",
+      "oil-black-spruce",
+      "oil-black-pepper"
+    ],
+    "same_family": [
+      "oil-sweet-orange",
+      "oil-mandarin",
+      "oil-lemon",
+      "oil-bergamot",
+      "oil-neroli",
+      "oil-petitgrain"
+    ]
+  },
+  "oil-bergamot": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-sweet-orange",
+      "oil-petitgrain",
+      "oil-mandarin",
+      "oil-lemon",
+      "oil-grapefruit",
+      "oil-black-spruce",
+      "oil-ylang-ylang",
+      "oil-roman-chamomile",
+      "oil-lavender",
+      "oil-lavandin",
+      "oil-juniper",
+      "oil-frankincense",
+      "oil-cypress",
+      "oil-clary-sage",
+      "oil-black-pepper"
+    ],
+    "same_family": [
+      "oil-sweet-orange",
+      "oil-mandarin",
+      "oil-lemon",
+      "oil-grapefruit",
+      "oil-neroli",
+      "oil-petitgrain"
+    ]
+  },
+  "oil-neroli": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [
+      "oil-petitgrain"
+    ],
+    "same_chem": [
+      "oil-thyme",
+      "oil-tea-tree",
+      "oil-sweet-basil",
+      "oil-spike-lavender",
+      "oil-rose",
+      "oil-peppermint",
+      "oil-palmarosa",
+      "oil-marjoram",
+      "oil-lavender",
+      "oil-lavandin",
+      "oil-geranium",
+      "oil-citronella"
+    ],
+    "same_family": [
+      "oil-sweet-orange",
+      "oil-mandarin",
+      "oil-lemon",
+      "oil-grapefruit",
+      "oil-bergamot",
+      "oil-petitgrain"
+    ]
+  },
+  "oil-petitgrain": {
+    "contradicts": [],
+    "builds_on": [
+      "oil-neroli"
+    ],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-bergamot",
+      "oil-ylang-ylang",
+      "oil-roman-chamomile",
+      "oil-lavender",
+      "oil-lavandin",
+      "oil-clary-sage",
+      "oil-black-spruce"
+    ],
+    "same_family": [
+      "oil-sweet-orange",
+      "oil-mandarin",
+      "oil-lemon",
+      "oil-grapefruit",
+      "oil-bergamot",
+      "oil-neroli"
+    ]
+  },
+  "oil-rose": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [
+      "oil-palmarosa"
+    ],
+    "same_chem": [
+      "oil-thyme",
+      "oil-tea-tree",
+      "oil-sweet-basil",
+      "oil-spike-lavender",
+      "oil-peppermint",
+      "oil-palmarosa",
+      "oil-neroli",
+      "oil-marjoram",
+      "oil-lavender",
+      "oil-lavandin",
+      "oil-jasmine",
+      "oil-geranium",
+      "oil-citronella"
+    ],
+    "same_family": []
+  },
+  "oil-jasmine": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-rose"
+    ],
+    "same_family": []
+  },
+  "oil-ylang-ylang": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-yarrow",
+      "oil-roman-chamomile",
+      "oil-petitgrain",
+      "oil-myrrh",
+      "oil-lavender",
+      "oil-lavandin",
+      "oil-ginger",
+      "oil-german-chamomile",
+      "oil-clary-sage",
+      "oil-cedarwood",
+      "oil-black-spruce",
+      "oil-black-pepper",
+      "oil-bergamot"
+    ],
+    "same_family": []
+  },
+  "oil-helichrysum": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [],
+    "same_family": [
+      "oil-roman-chamomile",
+      "oil-german-chamomile",
+      "oil-yarrow"
+    ]
+  },
+  "oil-roman-chamomile": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-ylang-ylang",
+      "oil-petitgrain",
+      "oil-lavender",
+      "oil-lavandin",
+      "oil-clary-sage",
+      "oil-black-spruce",
+      "oil-bergamot"
+    ],
+    "same_family": [
+      "oil-helichrysum",
+      "oil-german-chamomile",
+      "oil-yarrow"
+    ]
+  },
+  "oil-german-chamomile": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-yarrow",
+      "oil-ylang-ylang",
+      "oil-spike-lavender",
+      "oil-rosemary",
+      "oil-ravintsara",
+      "oil-myrrh",
+      "oil-ginger",
+      "oil-eucalyptus",
+      "oil-cedarwood",
+      "oil-black-pepper",
+      "oil-bay"
+    ],
+    "same_family": [
+      "oil-helichrysum",
+      "oil-roman-chamomile",
+      "oil-yarrow"
+    ]
+  },
+  "oil-yarrow": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-german-chamomile",
+      "oil-ylang-ylang",
+      "oil-spearmint",
+      "oil-rosemary",
+      "oil-peppermint",
+      "oil-myrrh",
+      "oil-ginger",
+      "oil-cedarwood",
+      "oil-black-pepper"
+    ],
+    "same_family": [
+      "oil-helichrysum",
+      "oil-roman-chamomile",
+      "oil-german-chamomile"
+    ]
+  },
+  "oil-rosemary": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-spike-lavender",
+      "oil-spearmint",
+      "oil-peppermint",
+      "oil-yarrow",
+      "oil-ravintsara",
+      "oil-german-chamomile",
+      "oil-eucalyptus",
+      "oil-bay"
+    ],
+    "same_family": [
+      "oil-lavender",
+      "oil-spike-lavender",
+      "oil-lavandin",
+      "oil-peppermint",
+      "oil-spearmint",
+      "oil-marjoram",
+      "oil-clary-sage",
+      "oil-sweet-basil",
+      "oil-thyme",
+      "oil-melissa",
+      "oil-patchouli"
+    ]
+  },
+  "oil-marjoram": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-thyme",
+      "oil-sweet-basil",
+      "oil-spike-lavender",
+      "oil-peppermint",
+      "oil-lavender",
+      "oil-lavandin",
+      "oil-tea-tree",
+      "oil-rose",
+      "oil-palmarosa",
+      "oil-neroli",
+      "oil-geranium",
+      "oil-citronella"
+    ],
+    "same_family": [
+      "oil-lavender",
+      "oil-spike-lavender",
+      "oil-lavandin",
+      "oil-peppermint",
+      "oil-spearmint",
+      "oil-rosemary",
+      "oil-clary-sage",
+      "oil-sweet-basil",
+      "oil-thyme",
+      "oil-melissa",
+      "oil-patchouli"
+    ]
+  },
+  "oil-clary-sage": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-lavender",
+      "oil-lavandin",
+      "oil-ylang-ylang",
+      "oil-roman-chamomile",
+      "oil-petitgrain",
+      "oil-black-spruce",
+      "oil-bergamot"
+    ],
+    "same_family": [
+      "oil-lavender",
+      "oil-spike-lavender",
+      "oil-lavandin",
+      "oil-peppermint",
+      "oil-spearmint",
+      "oil-rosemary",
+      "oil-marjoram",
+      "oil-sweet-basil",
+      "oil-thyme",
+      "oil-melissa",
+      "oil-patchouli"
+    ]
+  },
+  "oil-sweet-basil": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-thyme",
+      "oil-spike-lavender",
+      "oil-peppermint",
+      "oil-marjoram",
+      "oil-lavender",
+      "oil-lavandin",
+      "oil-tea-tree",
+      "oil-rose",
+      "oil-palmarosa",
+      "oil-neroli",
+      "oil-geranium",
+      "oil-citronella"
+    ],
+    "same_family": [
+      "oil-lavender",
+      "oil-spike-lavender",
+      "oil-lavandin",
+      "oil-peppermint",
+      "oil-spearmint",
+      "oil-rosemary",
+      "oil-marjoram",
+      "oil-clary-sage",
+      "oil-thyme",
+      "oil-melissa",
+      "oil-patchouli"
+    ]
+  },
+  "oil-thyme": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-sweet-basil",
+      "oil-spike-lavender",
+      "oil-peppermint",
+      "oil-marjoram",
+      "oil-lavender",
+      "oil-lavandin",
+      "oil-tea-tree",
+      "oil-rose",
+      "oil-palmarosa",
+      "oil-neroli",
+      "oil-geranium",
+      "oil-clove",
+      "oil-citronella"
+    ],
+    "same_family": [
+      "oil-lavender",
+      "oil-spike-lavender",
+      "oil-lavandin",
+      "oil-peppermint",
+      "oil-spearmint",
+      "oil-rosemary",
+      "oil-marjoram",
+      "oil-clary-sage",
+      "oil-sweet-basil",
+      "oil-melissa",
+      "oil-patchouli"
+    ]
+  },
+  "oil-melissa": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-lemon-eucalyptus",
+      "oil-citronella"
+    ],
+    "same_family": [
+      "oil-lavender",
+      "oil-spike-lavender",
+      "oil-lavandin",
+      "oil-peppermint",
+      "oil-spearmint",
+      "oil-rosemary",
+      "oil-marjoram",
+      "oil-clary-sage",
+      "oil-sweet-basil",
+      "oil-thyme",
+      "oil-patchouli"
+    ]
+  },
+  "oil-geranium": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-thyme",
+      "oil-tea-tree",
+      "oil-sweet-basil",
+      "oil-spike-lavender",
+      "oil-rose",
+      "oil-peppermint",
+      "oil-palmarosa",
+      "oil-neroli",
+      "oil-marjoram",
+      "oil-lavender",
+      "oil-lavandin",
+      "oil-citronella"
+    ],
+    "same_family": []
+  },
+  "oil-palmarosa": {
+    "contradicts": [],
+    "builds_on": [
+      "oil-rose"
+    ],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-citronella",
+      "oil-thyme",
+      "oil-tea-tree",
+      "oil-sweet-basil",
+      "oil-spike-lavender",
+      "oil-rose",
+      "oil-peppermint",
+      "oil-neroli",
+      "oil-marjoram",
+      "oil-lavender",
+      "oil-lavandin",
+      "oil-geranium"
+    ],
+    "same_family": [
+      "oil-vetiver",
+      "oil-citronella"
+    ]
+  },
+  "oil-ravintsara": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-bay",
+      "oil-spike-lavender",
+      "oil-rosemary",
+      "oil-german-chamomile",
+      "oil-eucalyptus"
+    ],
+    "same_family": [
+      "oil-bay"
+    ]
+  },
+  "oil-lemon-eucalyptus": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-melissa",
+      "oil-citronella"
+    ],
+    "same_family": [
+      "oil-tea-tree",
+      "oil-eucalyptus",
+      "oil-clove"
+    ]
+  },
+  "oil-bay": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-ravintsara",
+      "oil-spike-lavender",
+      "oil-rosemary",
+      "oil-german-chamomile",
+      "oil-eucalyptus"
+    ],
+    "same_family": [
+      "oil-ravintsara"
+    ]
+  },
+  "oil-cedarwood": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-ylang-ylang",
+      "oil-yarrow",
+      "oil-vetiver",
+      "oil-sandalwood",
+      "oil-patchouli",
+      "oil-myrrh",
+      "oil-ginger",
+      "oil-german-chamomile",
+      "oil-black-pepper"
+    ],
+    "same_family": [
+      "oil-black-spruce"
+    ]
+  },
+  "oil-sandalwood": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-vetiver",
+      "oil-patchouli",
+      "oil-cedarwood"
+    ],
+    "same_family": []
+  },
+  "oil-juniper": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-cypress",
+      "oil-sweet-orange",
+      "oil-mandarin",
+      "oil-lemon",
+      "oil-grapefruit",
+      "oil-frankincense",
+      "oil-black-spruce",
+      "oil-black-pepper",
+      "oil-bergamot"
+    ],
+    "same_family": [
+      "oil-cypress"
+    ]
+  },
+  "oil-cypress": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-juniper",
+      "oil-sweet-orange",
+      "oil-mandarin",
+      "oil-lemon",
+      "oil-grapefruit",
+      "oil-frankincense",
+      "oil-black-spruce",
+      "oil-black-pepper",
+      "oil-bergamot"
+    ],
+    "same_family": [
+      "oil-juniper"
+    ]
+  },
+  "oil-black-spruce": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-bergamot",
+      "oil-ylang-ylang",
+      "oil-sweet-orange",
+      "oil-roman-chamomile",
+      "oil-petitgrain",
+      "oil-mandarin",
+      "oil-lemon",
+      "oil-lavender",
+      "oil-lavandin",
+      "oil-juniper",
+      "oil-grapefruit",
+      "oil-frankincense",
+      "oil-cypress",
+      "oil-clary-sage",
+      "oil-black-pepper"
+    ],
+    "same_family": [
+      "oil-cedarwood"
+    ]
+  },
+  "oil-patchouli": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-vetiver",
+      "oil-sandalwood",
+      "oil-cedarwood"
+    ],
+    "same_family": [
+      "oil-lavender",
+      "oil-spike-lavender",
+      "oil-lavandin",
+      "oil-peppermint",
+      "oil-spearmint",
+      "oil-rosemary",
+      "oil-marjoram",
+      "oil-clary-sage",
+      "oil-sweet-basil",
+      "oil-thyme",
+      "oil-melissa"
+    ]
+  },
+  "oil-vetiver": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-sandalwood",
+      "oil-patchouli",
+      "oil-cedarwood"
+    ],
+    "same_family": [
+      "oil-palmarosa",
+      "oil-citronella"
+    ]
+  },
+  "oil-ginger": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-ylang-ylang",
+      "oil-yarrow",
+      "oil-myrrh",
+      "oil-german-chamomile",
+      "oil-cedarwood",
+      "oil-black-pepper"
+    ],
+    "same_family": []
+  },
+  "oil-black-pepper": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-ylang-ylang",
+      "oil-yarrow",
+      "oil-sweet-orange",
+      "oil-myrrh",
+      "oil-mandarin",
+      "oil-lemon",
+      "oil-juniper",
+      "oil-grapefruit",
+      "oil-ginger",
+      "oil-german-chamomile",
+      "oil-frankincense",
+      "oil-cypress",
+      "oil-cedarwood",
+      "oil-black-spruce",
+      "oil-bergamot"
+    ],
+    "same_family": []
+  },
+  "oil-clove": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-thyme"
+    ],
+    "same_family": [
+      "oil-tea-tree",
+      "oil-eucalyptus",
+      "oil-lemon-eucalyptus"
+    ]
+  },
+  "oil-citronella": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-palmarosa",
+      "oil-thyme",
+      "oil-tea-tree",
+      "oil-sweet-basil",
+      "oil-spike-lavender",
+      "oil-rose",
+      "oil-peppermint",
+      "oil-neroli",
+      "oil-melissa",
+      "oil-marjoram",
+      "oil-lemon-eucalyptus",
+      "oil-lavender",
+      "oil-lavandin",
+      "oil-geranium"
+    ],
+    "same_family": [
+      "oil-palmarosa",
+      "oil-vetiver"
+    ]
+  },
+  "oil-frankincense": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-sweet-orange",
+      "oil-mandarin",
+      "oil-lemon",
+      "oil-juniper",
+      "oil-grapefruit",
+      "oil-cypress",
+      "oil-black-spruce",
+      "oil-black-pepper",
+      "oil-bergamot"
+    ],
+    "same_family": [
+      "oil-myrrh"
+    ]
+  },
+  "oil-myrrh": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [
+      "oil-ylang-ylang",
+      "oil-yarrow",
+      "oil-ginger",
+      "oil-german-chamomile",
+      "oil-cedarwood",
+      "oil-black-pepper"
+    ],
+    "same_family": [
+      "oil-frankincense"
+    ]
+  },
+  "oil-sweet-fennel": {
+    "contradicts": [],
+    "builds_on": [],
+    "is_base_for": [],
+    "same_chem": [],
+    "same_family": []
+  }
+}
