@@ -11,7 +11,7 @@ interface Oil {
   id: string; zh: string; latin: string; category?: string;
   extractPart?: string; family?: string; safetyText?: string;
   components?: string; effects?: string; tags?: string[];
-  catFile?: string;
+  catFile?: string; pharmacology?: string;
 }
 const oils = oilsData as Oil[];
 
@@ -234,6 +234,65 @@ export default async function OilDetail({ params }: { params: Promise<{ id: stri
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 20px' }}>
         <AISummary summary={aiSummary} title={`${oil.zh}精油 快速答案`} />
       </div>
+
+      {/* ▼ Server-rendered 核心內容（讓非 JS 爬蟲 GPTBot/Perplexity 也看得到 pharmacology）
+          oil-detail.html 是 client-side innerHTML 渲染，AI 爬蟲看不到；這裡把 oils.json 的
+          pharmacology + 結構化資料直接 SSR 進靜態 HTML，解決 thin-content 與 AI 引用問題 */}
+      <section style={{ maxWidth: 1100, margin: '0 auto', padding: '0 20px' }} aria-label={`${oil.zh}精油核心資訊`}>
+        {/* 結構化速覽事實 */}
+        <div style={{
+          display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+          gap: 12, margin: '24px 0',
+        }}>
+          {[
+            ['🌿 植物科屬', oil.family],
+            ['⚗️ 化學分類', oil.category],
+            ['🧪 主要成分', oil.components],
+            ['💧 萃取方式', oil.extractPart],
+          ].filter(([, v]) => v).map(([label, value]) => (
+            <div key={label} style={{
+              background: 'var(--beige-light, #FBF7F1)', border: '1px solid var(--border, #E5D9C0)',
+              borderRadius: 10, padding: '12px 16px',
+            }}>
+              <div style={{ fontSize: 12, color: 'var(--text-light, #8B6F3E)', marginBottom: 4 }}>{label}</div>
+              <div style={{ fontSize: 14, fontWeight: 600, color: '#3D3328', lineHeight: 1.5 }}>{value}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* 藥學屬性主文（pharmacology，~900字 SSR） */}
+        {oil.pharmacology && (
+          <div style={{ fontSize: 15, lineHeight: 1.9, color: '#2C2C2C', margin: '8px 0 24px' }}
+               dangerouslySetInnerHTML={{ __html: oil.pharmacology }} />
+        )}
+
+        {/* 常見芳療應用 */}
+        {effectsForAI && (
+          <div style={{ margin: '16px 0' }}>
+            <h2 style={{ fontSize: 18, fontWeight: 700, color: 'var(--green-dark, #3a5a40)', margin: '0 0 8px' }}>
+              {oil.zh}精油的常見應用方向
+            </h2>
+            <p style={{ fontSize: 15, lineHeight: 1.9, color: '#2C2C2C', margin: 0 }}>
+              {oil.zh}（{oil.latin}）在日常芳療中常見於：{effectsForAI}。
+              建議稀釋後使用，並依個人膚質與狀況斟酌。
+            </p>
+          </div>
+        )}
+
+        {/* 安全提醒 */}
+        {oil.safetyText && (
+          <div style={{
+            background: '#FFF4E6', borderLeft: '4px solid #E8A04B', borderRadius: 8,
+            padding: '14px 18px', margin: '16px 0',
+          }}>
+            <strong style={{ color: '#B5701A', fontSize: 14 }}>⚠️ 安全使用提醒</strong>
+            <p style={{ fontSize: 14, lineHeight: 1.8, color: '#5D4A28', margin: '6px 0 0' }}>
+              {(oil.safetyText || '').replace(/<[^>]+>/g, '')}　使用前請參考
+              <a href="/safety/" style={{ color: '#B5701A', fontWeight: 600 }}>精油安全指南</a>。
+            </p>
+          </div>
+        )}
+      </section>
 
       <RawHtml html={patched} />
 
