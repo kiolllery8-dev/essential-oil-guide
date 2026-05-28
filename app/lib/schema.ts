@@ -111,17 +111,20 @@ export function oilSchema(oil: {
   safetyText?: string;
   category?: string;
   tags?: string[];
+  aliases?: string[];
 }) {
   const url = `${SITE}/oil/${oil.id}/`;
   const effectsClean = (oil.effects || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
   const safetyClean = (oil.safetyText || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  // alternateName 含拉丁學名 + Wikipedia 植物學名別名（幫 AI/搜尋連結實體）
+  const altNames = [oil.latin, ...(oil.aliases || [])].filter(Boolean);
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
     headline: `${oil.zh}精油完整介紹｜${oil.latin}`,
     name: oil.zh,
-    alternateName: oil.latin,
+    alternateName: altNames.length > 1 ? altNames : oil.latin,
     description: `${oil.zh}（${oil.latin}）：化學分類「${oil.category || '—'}」，主要成分 ${oil.components || ''}。常見芳療應用：${effectsClean}。${safetyClean}`.slice(0, 300),
     author: { '@id': `${SITE}/#organization` },
     publisher: { '@id': `${SITE}/#organization` },

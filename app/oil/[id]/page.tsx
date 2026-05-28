@@ -11,7 +11,7 @@ interface Oil {
   id: string; zh: string; latin: string; category?: string;
   extractPart?: string; family?: string; safetyText?: string;
   components?: string; effects?: string; tags?: string[];
-  catFile?: string; pharmacology?: string;
+  catFile?: string; pharmacology?: string; aliases?: string[];
 }
 const oils = oilsData as Oil[];
 
@@ -249,6 +249,7 @@ export default async function OilDetail({ params }: { params: Promise<{ id: stri
             ['⚗️ 化學分類', oil.category],
             ['🧪 主要成分', oil.components],
             ['💧 萃取方式', oil.extractPart],
+            ['📚 別名／學名', (oil.aliases && oil.aliases.length) ? oil.aliases.join('、') : ''],
           ].filter(([, v]) => v).map(([label, value]) => (
             <div key={label} style={{
               background: 'var(--beige-light, #FBF7F1)', border: '1px solid var(--border, #E5D9C0)',
