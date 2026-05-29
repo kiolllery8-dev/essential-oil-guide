@@ -188,12 +188,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     <>
       <JsonLd data={schemas} />
 
-      {/* AI 友善「快速答案」區塊（僅當該頁有手寫摘要時顯示） */}
-      {aiSummary && (
-        <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 20px' }}>
-          <AISummary summary={aiSummary} title={`${niceName} 快速答案`} />
-        </div>
-      )}
+      {/* AI 友善「快速答案」：純 JSON-LD（不顯示給人，供 AI 引用） */}
+      {aiSummary && <AISummary summary={aiSummary} title={`${niceName} 快速答案`} />}
 
       <RawHtml html={page.bodyHtml} />
 

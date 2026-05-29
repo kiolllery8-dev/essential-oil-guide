@@ -39,14 +39,10 @@
 <div class="main-layout">
 <main style="padding:0 20px;max-width:920px;margin:0 auto;">
 
-<section class="ai-summary" itemscope itemtype="https://schema.org/Question" style="background:linear-gradient(135deg,#F5F0E6 0%,#EEE7D8 100%);border-left:4px solid #C8A673;padding:20px 24px;border-radius:12px;margin:28px 0;">
-  <h2 itemprop="name" style="font-size:18px;font-weight:700;color:#8B6F3E;margin:0 0 10px;letter-spacing:0.05em;">✦ 快速答案</h2>
-  <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-    <p itemprop="text" style="font-size:15px;line-height:1.85;color:#3D3328;margin:0;">
-      <strong>貓咪</strong>缺少肝臟葡萄糖醛酸轉移酶，無法代謝多種精油成分（如酚類、單萜烯），茶樹、薄荷、尤加利、柑橘類為<strong>高危險清單</strong>；<strong>狗狗</strong>代謝較好但仍須低劑量（≤ 0.5%）；<strong>鳥類</strong>呼吸系統極度敏感，飼養空間建議完全不使用精油。誤食或大量接觸請立即送急診獸醫。
-    </p>
-  </div>
-</section>
+<!-- 快速答案：純 JSON-LD（不顯示給人，供 AI 引用）-->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Question", "name": "寵物芳療有哪些特性、常見用途與使用注意？", "acceptedAnswer": {"@type": "Answer", "text": "貓咪缺少肝臟葡萄糖醛酸轉移酶，無法代謝多種精油成分（如酚類、單萜烯），茶樹、薄荷、尤加利、柑橘類為高危險清單；狗狗代謝較好但仍須低劑量（≤ 0.5%）；鳥類呼吸系統極度敏感，飼養空間建議完全不使用精油。誤食或大量接觸請立即送急診獸醫。"}}
+</script>
 
 <h2 style="font-size:22px;font-weight:700;color:var(--green-dark);margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid var(--beige);">一、為什麼貓咪對精油特別敏感</h2>
 <p style="font-size:16px;line-height:1.9;">貓咪的肝臟<strong>缺少 UDP-葡萄糖醛酸轉移酶</strong>（UGT），無法代謝以下類型的化合物：</p>

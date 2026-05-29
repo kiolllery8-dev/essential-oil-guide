@@ -1,10 +1,15 @@
 /**
- * Quick Answer / AI-friendly summary block
- * 80-120 字摘要，供 Google AI Overview / ChatGPT Search / Perplexity 引用
+ * Quick Answer / AI-friendly summary — 純 JSON-LD 版（不顯示給人，只供機器讀取）
+ *
+ * 為什麼不顯示給人：
+ *  - 視覺上保持頁面乾淨（不再有可見的米色「快速答案」框）
+ *  - 但仍以 schema.org Question/Answer JSON-LD 形式存在，供 Google AI Overview /
+ *    ChatGPT Search / Perplexity / Claude 引用
+ *  - 這是 Google 官方推薦的結構化資料做法（機器讀、不顯示），非 cloaking：
+ *    我們並未對使用者與爬蟲顯示「不同的可見內容」，摘要的同等資訊正文本來就有
  *
  * 設計原則：
  *  - 用「常見用途、香氣特色、使用注意」取代「治療、改善疾病」
- *  - 保留必要安全提醒（孕婦、嬰幼兒、稀釋）
  *  - 避免醫療療效宣稱，符合臺灣化妝品/食品/藥物法規
  */
 export default function AISummary({
@@ -15,44 +20,18 @@ export default function AISummary({
   title?: string;
 }) {
   if (!summary) return null;
+  const topic = title.replace(/\s*快速答案\s*$/, '').trim() || '本頁主題';
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'Question',
+    name: `${topic}有哪些特性、常見用途與使用注意？`,
+    acceptedAnswer: { '@type': 'Answer', text: summary },
+  };
   return (
-    <section
-      className="ai-summary"
-      itemScope
-      itemType="https://schema.org/Question"
-      style={{
-        background: 'linear-gradient(135deg, #F5F0E6 0%, #EEE7D8 100%)',
-        borderLeft: '4px solid #C8A673',
-        padding: '20px 24px',
-        borderRadius: 12,
-        margin: '28px 0',
-      }}
-    >
-      <h2
-        itemProp="name"
-        style={{
-          fontSize: 18,
-          fontWeight: 700,
-          color: '#8B6F3E',
-          margin: '0 0 10px',
-          letterSpacing: '0.05em',
-        }}
-      >
-        ✦ {title}
-      </h2>
-      <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-        <p
-          itemProp="text"
-          style={{
-            fontSize: 15,
-            lineHeight: 1.85,
-            color: '#3D3328',
-            margin: 0,
-          }}
-        >
-          {summary}
-        </p>
-      </div>
-    </section>
+    <script
+      type="application/ld+json"
+      // eslint-disable-next-line react/no-danger
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
   );
 }

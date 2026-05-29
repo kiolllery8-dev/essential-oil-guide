@@ -230,10 +230,8 @@ export default async function OilDetail({ params }: { params: Promise<{ id: stri
 
       {dedicatedBanner}
 
-      {/* AI 友善「快速答案」區塊（Google AI Overview / ChatGPT Search / Perplexity 引用優化） */}
-      <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 20px' }}>
-        <AISummary summary={aiSummary} title={`${oil.zh}精油 快速答案`} />
-      </div>
+      {/* AI 友善「快速答案」：純 JSON-LD（不顯示給人，供 AI 引用） */}
+      <AISummary summary={aiSummary} title={`${oil.zh}精油 快速答案`} />
 
       {/* ▼ Server-rendered 核心內容（讓非 JS 爬蟲 GPTBot/Perplexity 也看得到 pharmacology）
           oil-detail.html 是 client-side innerHTML 渲染，AI 爬蟲看不到；這裡把 oils.json 的
