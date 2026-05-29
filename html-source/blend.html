@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>調配精油｜依感覺與環境一鍵生成精油配方 | 精油能量圖譜</title>
+  <meta name="description" content="依你的感覺或環境，一鍵產生精油調配配方。內建調香金字塔（前中後調）原理與三種用法稀釋換算，46 支精油即點即連完整指南。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" href="favicon.ico">
+  <script src="assets/js/nav.js" defer></script>
+  <!-- SEO_START -->
+  <link rel="canonical" href="https://intelliverse.tw/blend/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="精油能量圖譜" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:title" content="調配精油｜依感覺與環境一鍵生成精油配方" />
+  <meta property="og:description" content="依你的感覺或環境，一鍵產生精油調配配方。內建調香金字塔（前中後調）原理與三種用法稀釋換算，46 支精油即點即連完整指南。" />
+  <meta property="og:url" content="https://intelliverse.tw/blend/" />
+  <meta property="og:image" content="https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/hero-home.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="調配精油｜依感覺與環境一鍵生成精油配方" />
+  <meta name="twitter:description" content="依你的感覺或環境，一鍵產生精油調配配方。內建調香金字塔（前中後調）原理與三種用法稀釋換算，46 支精油即點即連完整指南。" />
+  <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/hero-home.png" />
+  <!-- SEO_END -->
+</head>
+<body>
+<div class="topbar">🌿 精油能量圖譜 — 用知識療癒您的生活 社會修行</div>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo-wrap" style="text-decoration:none;display:flex;align-items:center;gap:12px;">
+      <div class="logo-icon">🌿</div>
+      <div class="logo-text"><div class="site-title">精油能量圖譜</div><div class="site-sub">精油學 · 從植物到身心靈</div></div>
+    </a>
+    <nav><ul>
+      <li><a href="index.html">首頁</a></li>
+      <li><a href="encyclopedia.html">大百科</a></li>
+      <li><a href="oils.html">精油</a></li>
+      <li><a href="blend.html" class="active">調配精油</a></li>
+      <li><a href="aromatherapy.html">芳療應用</a></li>
+      <li><a href="safety.html">安全指南</a></li>
+    </ul></nav>
+    <input class="nav-search" type="text" placeholder="搜尋精油..." onkeydown="if(event.key===&quot;Enter&quot;&&this.value.trim())location.href=&quot;search.html?q=&quot;+encodeURIComponent(this.value.trim())" />
+    <button class="menu-toggle">☰</button>
+  </div>
+</header>
+<!-- WebApplication schema（放 body 內，避免被 loadHtml 剝除 head）-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "精油調配工具",
+  "url": "https://intelliverse.tw/blend/",
+  "applicationCategory": "LifestyleApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "zh-TW",
+  "description": "依你的感覺或環境，一鍵產生精油調配配方。內建調香金字塔（前中後調）原理與三種用法稀釋換算，46 支精油即點即連完整指南。",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "TWD"},
+  "publisher": {"@id": "https://intelliverse.tw/#organization"},
+  "author": {"@id": "https://intelliverse.tw/#author"}
+}
+</script>
+
+<div class="oil-cover-hero" style="--c1:#5A7A6A;--c2:#88BC88;background:linear-gradient(135deg,#5A7A6A 0%,#88BC88 100%);">
+  <span class="oil-cover-bg-emoji">⚗️</span>
+  <div class="oil-cover-overlay"></div>
+  <div class="oil-cover-content">
+    <span class="oil-cover-cat">🧪 互動工具 · 調香金字塔</span>
+    <h1>調配精油</h1>
+    <p class="oil-cover-latin">依你的感覺與環境，一鍵生成專屬精油配方</p>
+  </div>
+</div>
+
+<div class="breadcrumb"><div class="breadcrumb-inner">
+  <a href="index.html">首頁</a><span class="sep">›</span><span>調配精油</span>
+</div></div>
+
+<main style="max-width:920px;margin:0 auto;padding:0 20px;">
+
+  <section class="ai-summary" itemscope itemtype="https://schema.org/Question" style="background:linear-gradient(135deg,#F5F0E6 0%,#EEE7D8 100%);border-left:4px solid #C8A673;padding:20px 24px;border-radius:12px;margin:28px 0;">
+    <h2 itemprop="name" style="font-size:18px;font-weight:700;color:#8B6F3E;margin:0 0 10px;">✦ 如何調配精油？</h2>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text" style="font-size:15px;line-height:1.85;color:#3D3328;margin:0;">
+        精油調配遵循「調香金字塔」：<strong>前調</strong>（柑橘、薄荷，揮發快、第一印象）、<strong>中調</strong>（薰衣草、天竺葵，配方核心）、<strong>後調</strong>（檀香、乳香，揮發慢、定香延長）。一般比例約前調 3：中調 5：後調 2。本工具依你選的<strong>感覺</strong>（放鬆／提神／冥想…）或<strong>環境</strong>（臥室／辦公室／浴室…）自動產生配方，並換算擴香、滾珠瓶（2%）、按摩油（3%）三種用法的滴數。使用前請參考 <a href="safety.html">精油安全指南</a>。
+      </p>
+    </div>
+  </section>
+
+  <!-- 模式切換 -->
+  <div style="display:flex;gap:10px;margin:24px 0 18px;">
+    <button id="tab-feeling" class="mode-tab" style="flex:1;padding:14px;border:2px solid #88BC88;background:#88BC88;color:#fff;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">😊 依感覺／情緒</button>
+    <button id="tab-env" class="mode-tab" style="flex:1;padding:14px;border:2px solid #88BC88;background:#fff;color:#5A7A6A;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">🏠 依環境／情境</button>
+  </div>
+
+  <!-- 情境按鈕 -->
+  <div id="grid-feeling" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;margin-bottom:28px;">
+    <button class="scenario-btn" data-idx="0" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 10px;background:#fff;border:2px solid var(--border);border-radius:14px;cursor:pointer;transition:all .15s;font-family:inherit;"><span style="font-size:30px;">😴</span><span style="font-size:14px;font-weight:600;color:#3D3328;">放鬆助眠</span></button><button class="scenario-btn" data-idx="1" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 10px;background:#fff;border:2px solid var(--border);border-radius:14px;cursor:pointer;transition:all .15s;font-family:inherit;"><span style="font-size:30px;">😰</span><span style="font-size:14px;font-weight:600;color:#3D3328;">紓壓抗焦慮</span></button><button class="scenario-btn" data-idx="2" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 10px;background:#fff;border:2px solid var(--border);border-radius:14px;cursor:pointer;transition:all .15s;font-family:inherit;"><span style="font-size:30px;">⚡</span><span style="font-size:14px;font-weight:600;color:#3D3328;">提神專注</span></button><button class="scenario-btn" data-idx="3" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 10px;background:#fff;border:2px solid var(--border);border-radius:14px;cursor:pointer;transition:all .15s;font-family:inherit;"><span style="font-size:30px;">🌈</span><span style="font-size:14px;font-weight:600;color:#3D3328;">振奮情緒</span></button><button class="scenario-btn" data-idx="4" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 10px;background:#fff;border:2px solid var(--border);border-radius:14px;cursor:pointer;transition:all .15s;font-family:inherit;"><span style="font-size:30px;">🧘</span><span style="font-size:14px;font-weight:600;color:#3D3328;">冥想沉澱</span></button><button class="scenario-btn" data-idx="5" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 10px;background:#fff;border:2px solid var(--border);border-radius:14px;cursor:pointer;transition:all .15s;font-family:inherit;"><span style="font-size:30px;">💕</span><span style="font-size:14px;font-weight:600;color:#3D3328;">浪漫愉悅</span></button><button class="scenario-btn" data-idx="6" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 10px;background:#fff;border:2px solid var(--border);border-radius:14px;cursor:pointer;transition:all .15s;font-family:inherit;"><span style="font-size:30px;">⚖️</span><span style="font-size:14px;font-weight:600;color:#3D3328;">平衡穩定</span></button>
+  </div>
+  <div id="grid-env" style="display:none;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;margin-bottom:28px;">
+    <button class="scenario-btn" data-idx="7" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 10px;background:#fff;border:2px solid var(--border);border-radius:14px;cursor:pointer;transition:all .15s;font-family:inherit;"><span style="font-size:30px;">🛏️</span><span style="font-size:14px;font-weight:600;color:#3D3328;">臥室助眠</span></button><button class="scenario-btn" data-idx="8" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 10px;background:#fff;border:2px solid var(--border);border-radius:14px;cursor:pointer;transition:all .15s;font-family:inherit;"><span style="font-size:30px;">💼</span><span style="font-size:14px;font-weight:600;color:#3D3328;">辦公室提神</span></button><button class="scenario-btn" data-idx="9" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 10px;background:#fff;border:2px solid var(--border);border-radius:14px;cursor:pointer;transition:all .15s;font-family:inherit;"><span style="font-size:30px;">🛁</span><span style="font-size:14px;font-weight:600;color:#3D3328;">浴室 SPA</span></button><button class="scenario-btn" data-idx="10" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 10px;background:#fff;border:2px solid var(--border);border-radius:14px;cursor:pointer;transition:all .15s;font-family:inherit;"><span style="font-size:30px;">🕉️</span><span style="font-size:14px;font-weight:600;color:#3D3328;">瑜伽冥想</span></button><button class="scenario-btn" data-idx="11" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 10px;background:#fff;border:2px solid var(--border);border-radius:14px;cursor:pointer;transition:all .15s;font-family:inherit;"><span style="font-size:30px;">📚</span><span style="font-size:14px;font-weight:600;color:#3D3328;">讀書專注</span></button><button class="scenario-btn" data-idx="12" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 10px;background:#fff;border:2px solid var(--border);border-radius:14px;cursor:pointer;transition:all .15s;font-family:inherit;"><span style="font-size:30px;">🏡</span><span style="font-size:14px;font-weight:600;color:#3D3328;">客廳迎賓</span></button><button class="scenario-btn" data-idx="13" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 10px;background:#fff;border:2px solid var(--border);border-radius:14px;cursor:pointer;transition:all .15s;font-family:inherit;"><span style="font-size:30px;">✨</span><span style="font-size:14px;font-weight:600;color:#3D3328;">淨化空間</span></button><button class="scenario-btn" data-idx="14" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 10px;background:#fff;border:2px solid var(--border);border-radius:14px;cursor:pointer;transition:all .15s;font-family:inherit;"><span style="font-size:30px;">🎉</span><span style="font-size:14px;font-weight:600;color:#3D3328;">派對歡聚</span></button><button class="scenario-btn" data-idx="15" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 10px;background:#fff;border:2px solid var(--border);border-radius:14px;cursor:pointer;transition:all .15s;font-family:inherit;"><span style="font-size:30px;">🌸</span><span style="font-size:14px;font-weight:600;color:#3D3328;">泡澡放鬆</span></button>
+  </div>
+
+  <!-- 配方結果 -->
+  <div id="result" style="margin-bottom:32px;">
+    <div class="blend-card" data-cat="feeling" data-idx="0" style="display:none;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <span style="font-size:40px;">😴</span>
+        <div>
+          <h3 style="margin:0;font-size:22px;color:var(--green-dark);">放鬆助眠</h3>
+          <span style="font-size:13px;color:var(--text-mid);">依感覺情緒 · 共 8 滴</span>
+        </div>
+      </div>
+      <div style="display:grid;gap:8px;margin-bottom:18px;">
+        <a href="oil-lavender.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #88BC8855;border-left:4px solid #88BC88;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#88BC88;font-size:13px;min-width:30px;">中調</span><span style="flex:1;font-weight:600;font-size:14px;">真正薰衣草</span><span style="background:#88BC8822;color:#88BC88;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">4 滴</span></a>
+        <a href="oil-roman-chamomile.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #88BC8855;border-left:4px solid #88BC88;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#88BC88;font-size:13px;min-width:30px;">中調</span><span style="flex:1;font-weight:600;font-size:14px;">羅馬洋甘菊</span><span style="background:#88BC8822;color:#88BC88;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">2 滴</span></a>
+        <a href="oil-cedarwood.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #7898B855;border-left:4px solid #7898B8;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#7898B8;font-size:13px;min-width:30px;">後調</span><span style="flex:1;font-weight:600;font-size:14px;">大西洋雪松</span><span style="background:#7898B822;color:#7898B8;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">2 滴</span></a>
+      </div>
+      <div style="background:#FBF7F1;border-radius:10px;padding:14px 16px;margin-bottom:14px;">
+        <div style="font-size:13px;font-weight:700;color:#8B6F3E;margin-bottom:8px;">💧 三種用法稀釋換算</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:13px;">
+          <div style="text-align:center;"><div style="font-size:20px;">🌫️</div><div style="font-weight:600;">擴香</div><div style="color:var(--text-mid);">水氧機加 8 滴</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">🧴</div><div style="font-weight:600;">滾珠瓶</div><div style="color:var(--text-mid);">10ml 基底油 + 3 滴(2%)</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">💆</div><div style="font-weight:600;">按摩油</div><div style="color:var(--text-mid);">10ml 基底油 + 5 滴(3%)</div></div>
+        </div>
+      </div>
+      <p style="font-size:14px;line-height:1.85;color:#3D3328;margin:0;background:#EEF5EE;border-left:4px solid #88BC88;padding:12px 16px;border-radius:8px;">
+        <strong>🌿 為什麼這樣調：</strong>薰衣草的乙酸沉香酯安撫神經、羅馬洋甘菊溫柔抗痙攣、雪松後調延長放鬆並接地，是最經典的安眠金字塔。
+      </p>
+    </div>
+    <div class="blend-card" data-cat="feeling" data-idx="1" style="display:none;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <span style="font-size:40px;">😰</span>
+        <div>
+          <h3 style="margin:0;font-size:22px;color:var(--green-dark);">紓壓抗焦慮</h3>
+          <span style="font-size:13px;color:var(--text-mid);">依感覺情緒 · 共 8 滴</span>
+        </div>
+      </div>
+      <div style="display:grid;gap:8px;margin-bottom:18px;">
+        <a href="oil-bergamot.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #E8A04B55;border-left:4px solid #E8A04B;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#E8A04B;font-size:13px;min-width:30px;">前調</span><span style="flex:1;font-weight:600;font-size:14px;">佛手柑</span><span style="background:#E8A04B22;color:#E8A04B;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">3 滴</span></a>
+        <a href="oil-lavender.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #88BC8855;border-left:4px solid #88BC88;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#88BC88;font-size:13px;min-width:30px;">中調</span><span style="flex:1;font-weight:600;font-size:14px;">真正薰衣草</span><span style="background:#88BC8822;color:#88BC88;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">3 滴</span></a>
+        <a href="oil-frankincense.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #7898B855;border-left:4px solid #7898B8;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#7898B8;font-size:13px;min-width:30px;">後調</span><span style="flex:1;font-weight:600;font-size:14px;">乳香</span><span style="background:#7898B822;color:#7898B8;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">2 滴</span></a>
+      </div>
+      <div style="background:#FBF7F1;border-radius:10px;padding:14px 16px;margin-bottom:14px;">
+        <div style="font-size:13px;font-weight:700;color:#8B6F3E;margin-bottom:8px;">💧 三種用法稀釋換算</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:13px;">
+          <div style="text-align:center;"><div style="font-size:20px;">🌫️</div><div style="font-weight:600;">擴香</div><div style="color:var(--text-mid);">水氧機加 8 滴</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">🧴</div><div style="font-weight:600;">滾珠瓶</div><div style="color:var(--text-mid);">10ml 基底油 + 3 滴(2%)</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">💆</div><div style="font-weight:600;">按摩油</div><div style="color:var(--text-mid);">10ml 基底油 + 5 滴(3%)</div></div>
+        </div>
+      </div>
+      <p style="font-size:14px;line-height:1.85;color:#3D3328;margin:0;background:#EEF5EE;border-left:4px solid #88BC88;padding:12px 16px;border-radius:8px;">
+        <strong>🌿 為什麼這樣調：</strong>佛手柑明亮前調瞬間提振、薰衣草穩定情緒、乳香深沉後調拉長呼吸節奏——焦慮急救的黃金組合。
+      </p>
+    </div>
+    <div class="blend-card" data-cat="feeling" data-idx="2" style="display:none;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <span style="font-size:40px;">⚡</span>
+        <div>
+          <h3 style="margin:0;font-size:22px;color:var(--green-dark);">提神專注</h3>
+          <span style="font-size:13px;color:var(--text-mid);">依感覺情緒 · 共 8 滴</span>
+        </div>
+      </div>
+      <div style="display:grid;gap:8px;margin-bottom:18px;">
+        <a href="oil-rosemary.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #88BC8855;border-left:4px solid #88BC88;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#88BC88;font-size:13px;min-width:30px;">中調</span><span style="flex:1;font-weight:600;font-size:14px;">迷迭香</span><span style="background:#88BC8822;color:#88BC88;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">3 滴</span></a>
+        <a href="oil-lemon.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #E8A04B55;border-left:4px solid #E8A04B;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#E8A04B;font-size:13px;min-width:30px;">前調</span><span style="flex:1;font-weight:600;font-size:14px;">檸檬</span><span style="background:#E8A04B22;color:#E8A04B;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">3 滴</span></a>
+        <a href="oil-peppermint.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #E8A04B55;border-left:4px solid #E8A04B;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#E8A04B;font-size:13px;min-width:30px;">前調</span><span style="flex:1;font-weight:600;font-size:14px;">胡椒薄荷</span><span style="background:#E8A04B22;color:#E8A04B;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">2 滴</span></a>
+      </div>
+      <div style="background:#FBF7F1;border-radius:10px;padding:14px 16px;margin-bottom:14px;">
+        <div style="font-size:13px;font-weight:700;color:#8B6F3E;margin-bottom:8px;">💧 三種用法稀釋換算</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:13px;">
+          <div style="text-align:center;"><div style="font-size:20px;">🌫️</div><div style="font-weight:600;">擴香</div><div style="color:var(--text-mid);">水氧機加 8 滴</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">🧴</div><div style="font-weight:600;">滾珠瓶</div><div style="color:var(--text-mid);">10ml 基底油 + 3 滴(2%)</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">💆</div><div style="font-weight:600;">按摩油</div><div style="color:var(--text-mid);">10ml 基底油 + 5 滴(3%)</div></div>
+        </div>
+      </div>
+      <p style="font-size:14px;line-height:1.85;color:#3D3328;margin:0;background:#EEF5EE;border-left:4px solid #88BC88;padding:12px 16px;border-radius:8px;">
+        <strong>🌿 為什麼這樣調：</strong>迷迭香增強記憶與專注、檸檬清新提神、薄荷的薄荷腦瞬間醒腦——咖啡之外的天然提神配方。
+      </p>
+    </div>
+    <div class="blend-card" data-cat="feeling" data-idx="3" style="display:none;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <span style="font-size:40px;">🌈</span>
+        <div>
+          <h3 style="margin:0;font-size:22px;color:var(--green-dark);">振奮情緒</h3>
+          <span style="font-size:13px;color:var(--text-mid);">依感覺情緒 · 共 7 滴</span>
+        </div>
+      </div>
+      <div style="display:grid;gap:8px;margin-bottom:18px;">
+        <a href="oil-sweet-orange.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #E8A04B55;border-left:4px solid #E8A04B;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#E8A04B;font-size:13px;min-width:30px;">前調</span><span style="flex:1;font-weight:600;font-size:14px;">甜橙</span><span style="background:#E8A04B22;color:#E8A04B;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">4 滴</span></a>
+        <a href="oil-geranium.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #88BC8855;border-left:4px solid #88BC88;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#88BC88;font-size:13px;min-width:30px;">中調</span><span style="flex:1;font-weight:600;font-size:14px;">天竺葵</span><span style="background:#88BC8822;color:#88BC88;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">2 滴</span></a>
+        <a href="oil-ylang-ylang.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #88BC8855;border-left:4px solid #88BC88;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#88BC88;font-size:13px;min-width:30px;">中調</span><span style="flex:1;font-weight:600;font-size:14px;">依蘭</span><span style="background:#88BC8822;color:#88BC88;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">1 滴</span></a>
+      </div>
+      <div style="background:#FBF7F1;border-radius:10px;padding:14px 16px;margin-bottom:14px;">
+        <div style="font-size:13px;font-weight:700;color:#8B6F3E;margin-bottom:8px;">💧 三種用法稀釋換算</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:13px;">
+          <div style="text-align:center;"><div style="font-size:20px;">🌫️</div><div style="font-weight:600;">擴香</div><div style="color:var(--text-mid);">水氧機加 7 滴</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">🧴</div><div style="font-weight:600;">滾珠瓶</div><div style="color:var(--text-mid);">10ml 基底油 + 3 滴(2%)</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">💆</div><div style="font-weight:600;">按摩油</div><div style="color:var(--text-mid);">10ml 基底油 + 4 滴(3%)</div></div>
+        </div>
+      </div>
+      <p style="font-size:14px;line-height:1.85;color:#3D3328;margin:0;background:#EEF5EE;border-left:4px solid #88BC88;padding:12px 16px;border-radius:8px;">
+        <strong>🌿 為什麼這樣調：</strong>甜橙的陽光氣息驅散低落、天竺葵平衡情緒高低、依蘭帶來愉悅暖意——情緒低落時的陽光配方。
+      </p>
+    </div>
+    <div class="blend-card" data-cat="feeling" data-idx="4" style="display:none;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <span style="font-size:40px;">🧘</span>
+        <div>
+          <h3 style="margin:0;font-size:22px;color:var(--green-dark);">冥想沉澱</h3>
+          <span style="font-size:13px;color:var(--text-mid);">依感覺情緒 · 共 8 滴</span>
+        </div>
+      </div>
+      <div style="display:grid;gap:8px;margin-bottom:18px;">
+        <a href="oil-frankincense.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #7898B855;border-left:4px solid #7898B8;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#7898B8;font-size:13px;min-width:30px;">後調</span><span style="flex:1;font-weight:600;font-size:14px;">乳香</span><span style="background:#7898B822;color:#7898B8;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">3 滴</span></a>
+        <a href="oil-sandalwood.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #7898B855;border-left:4px solid #7898B8;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#7898B8;font-size:13px;min-width:30px;">後調</span><span style="flex:1;font-weight:600;font-size:14px;">檀香</span><span style="background:#7898B822;color:#7898B8;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">2 滴</span></a>
+        <a href="oil-cedarwood.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #7898B855;border-left:4px solid #7898B8;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#7898B8;font-size:13px;min-width:30px;">後調</span><span style="flex:1;font-weight:600;font-size:14px;">大西洋雪松</span><span style="background:#7898B822;color:#7898B8;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">2 滴</span></a>
+        <a href="oil-sweet-orange.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #E8A04B55;border-left:4px solid #E8A04B;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#E8A04B;font-size:13px;min-width:30px;">前調</span><span style="flex:1;font-weight:600;font-size:14px;">甜橙</span><span style="background:#E8A04B22;color:#E8A04B;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">1 滴</span></a>
+      </div>
+      <div style="background:#FBF7F1;border-radius:10px;padding:14px 16px;margin-bottom:14px;">
+        <div style="font-size:13px;font-weight:700;color:#8B6F3E;margin-bottom:8px;">💧 三種用法稀釋換算</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:13px;">
+          <div style="text-align:center;"><div style="font-size:20px;">🌫️</div><div style="font-weight:600;">擴香</div><div style="color:var(--text-mid);">水氧機加 8 滴</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">🧴</div><div style="font-weight:600;">滾珠瓶</div><div style="color:var(--text-mid);">10ml 基底油 + 3 滴(2%)</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">💆</div><div style="font-weight:600;">按摩油</div><div style="color:var(--text-mid);">10ml 基底油 + 5 滴(3%)</div></div>
+        </div>
+      </div>
+      <p style="font-size:14px;line-height:1.85;color:#3D3328;margin:0;background:#EEF5EE;border-left:4px solid #88BC88;padding:12px 16px;border-radius:8px;">
+        <strong>🌿 為什麼這樣調：</strong>乳香、檀香、雪松三大後調營造神聖沉靜，一滴甜橙提亮層次——千年來聖殿與冥想的香氣語言。
+      </p>
+    </div>
+    <div class="blend-card" data-cat="feeling" data-idx="5" style="display:none;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <span style="font-size:40px;">💕</span>
+        <div>
+          <h3 style="margin:0;font-size:22px;color:var(--green-dark);">浪漫愉悅</h3>
+          <span style="font-size:13px;color:var(--text-mid);">依感覺情緒 · 共 8 滴</span>
+        </div>
+      </div>
+      <div style="display:grid;gap:8px;margin-bottom:18px;">
+        <a href="oil-bergamot.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #E8A04B55;border-left:4px solid #E8A04B;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#E8A04B;font-size:13px;min-width:30px;">前調</span><span style="flex:1;font-weight:600;font-size:14px;">佛手柑</span><span style="background:#E8A04B22;color:#E8A04B;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">3 滴</span></a>
+        <a href="oil-ylang-ylang.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #88BC8855;border-left:4px solid #88BC88;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#88BC88;font-size:13px;min-width:30px;">中調</span><span style="flex:1;font-weight:600;font-size:14px;">依蘭</span><span style="background:#88BC8822;color:#88BC88;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">2 滴</span></a>
+        <a href="oil-palmarosa.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #88BC8855;border-left:4px solid #88BC88;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#88BC88;font-size:13px;min-width:30px;">中調</span><span style="flex:1;font-weight:600;font-size:14px;">玫瑰草</span><span style="background:#88BC8822;color:#88BC88;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">2 滴</span></a>
+        <a href="oil-sandalwood.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #7898B855;border-left:4px solid #7898B8;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#7898B8;font-size:13px;min-width:30px;">後調</span><span style="flex:1;font-weight:600;font-size:14px;">檀香</span><span style="background:#7898B822;color:#7898B8;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">1 滴</span></a>
+      </div>
+      <div style="background:#FBF7F1;border-radius:10px;padding:14px 16px;margin-bottom:14px;">
+        <div style="font-size:13px;font-weight:700;color:#8B6F3E;margin-bottom:8px;">💧 三種用法稀釋換算</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:13px;">
+          <div style="text-align:center;"><div style="font-size:20px;">🌫️</div><div style="font-weight:600;">擴香</div><div style="color:var(--text-mid);">水氧機加 8 滴</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">🧴</div><div style="font-weight:600;">滾珠瓶</div><div style="color:var(--text-mid);">10ml 基底油 + 3 滴(2%)</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">💆</div><div style="font-weight:600;">按摩油</div><div style="color:var(--text-mid);">10ml 基底油 + 5 滴(3%)</div></div>
+        </div>
+      </div>
+      <p style="font-size:14px;line-height:1.85;color:#3D3328;margin:0;background:#EEF5EE;border-left:4px solid #88BC88;padding:12px 16px;border-radius:8px;">
+        <strong>🌿 為什麼這樣調：</strong>佛手柑開場、依蘭與玫瑰草的花香之心、檀香木質定香——溫暖而不甜膩的浪漫氛圍。
+      </p>
+    </div>
+    <div class="blend-card" data-cat="feeling" data-idx="6" style="display:none;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <span style="font-size:40px;">⚖️</span>
+        <div>
+          <h3 style="margin:0;font-size:22px;color:var(--green-dark);">平衡穩定</h3>
+          <span style="font-size:13px;color:var(--text-mid);">依感覺情緒 · 共 7 滴</span>
+        </div>
+      </div>
+      <div style="display:grid;gap:8px;margin-bottom:18px;">
+        <a href="oil-geranium.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #88BC8855;border-left:4px solid #88BC88;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#88BC88;font-size:13px;min-width:30px;">中調</span><span style="flex:1;font-weight:600;font-size:14px;">天竺葵</span><span style="background:#88BC8822;color:#88BC88;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">3 滴</span></a>
+        <a href="oil-lavender.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #88BC8855;border-left:4px solid #88BC88;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#88BC88;font-size:13px;min-width:30px;">中調</span><span style="flex:1;font-weight:600;font-size:14px;">真正薰衣草</span><span style="background:#88BC8822;color:#88BC88;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">2 滴</span></a>
+        <a href="oil-vetiver.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #7898B855;border-left:4px solid #7898B8;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#7898B8;font-size:13px;min-width:30px;">後調</span><span style="flex:1;font-weight:600;font-size:14px;">岩蘭草</span><span style="background:#7898B822;color:#7898B8;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">2 滴</span></a>
+      </div>
+      <div style="background:#FBF7F1;border-radius:10px;padding:14px 16px;margin-bottom:14px;">
+        <div style="font-size:13px;font-weight:700;color:#8B6F3E;margin-bottom:8px;">💧 三種用法稀釋換算</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:13px;">
+          <div style="text-align:center;"><div style="font-size:20px;">🌫️</div><div style="font-weight:600;">擴香</div><div style="color:var(--text-mid);">水氧機加 7 滴</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">🧴</div><div style="font-weight:600;">滾珠瓶</div><div style="color:var(--text-mid);">10ml 基底油 + 3 滴(2%)</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">💆</div><div style="font-weight:600;">按摩油</div><div style="color:var(--text-mid);">10ml 基底油 + 4 滴(3%)</div></div>
+        </div>
+      </div>
+      <p style="font-size:14px;line-height:1.85;color:#3D3328;margin:0;background:#EEF5EE;border-left:4px solid #88BC88;padding:12px 16px;border-radius:8px;">
+        <strong>🌿 為什麼這樣調：</strong>天竺葵平衡荷爾蒙與情緒、薰衣草穩定、岩蘭草深沉接地——適合忽高忽低、需要重心的時刻。
+      </p>
+    </div>
+    <div class="blend-card" data-cat="env" data-idx="7" style="display:none;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <span style="font-size:40px;">🛏️</span>
+        <div>
+          <h3 style="margin:0;font-size:22px;color:var(--green-dark);">臥室助眠</h3>
+          <span style="font-size:13px;color:var(--text-mid);">依環境情境 · 共 8 滴</span>
+        </div>
+      </div>
+      <div style="display:grid;gap:8px;margin-bottom:18px;">
+        <a href="oil-lavender.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #88BC8855;border-left:4px solid #88BC88;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#88BC88;font-size:13px;min-width:30px;">中調</span><span style="flex:1;font-weight:600;font-size:14px;">真正薰衣草</span><span style="background:#88BC8822;color:#88BC88;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">4 滴</span></a>
+        <a href="oil-marjoram.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #88BC8855;border-left:4px solid #88BC88;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#88BC88;font-size:13px;min-width:30px;">中調</span><span style="flex:1;font-weight:600;font-size:14px;">甜馬鬱蘭</span><span style="background:#88BC8822;color:#88BC88;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">2 滴</span></a>
+        <a href="oil-cedarwood.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #7898B855;border-left:4px solid #7898B8;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#7898B8;font-size:13px;min-width:30px;">後調</span><span style="flex:1;font-weight:600;font-size:14px;">大西洋雪松</span><span style="background:#7898B822;color:#7898B8;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">2 滴</span></a>
+      </div>
+      <div style="background:#FBF7F1;border-radius:10px;padding:14px 16px;margin-bottom:14px;">
+        <div style="font-size:13px;font-weight:700;color:#8B6F3E;margin-bottom:8px;">💧 三種用法稀釋換算</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:13px;">
+          <div style="text-align:center;"><div style="font-size:20px;">🌫️</div><div style="font-weight:600;">擴香</div><div style="color:var(--text-mid);">水氧機加 8 滴</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">🧴</div><div style="font-weight:600;">滾珠瓶</div><div style="color:var(--text-mid);">10ml 基底油 + 3 滴(2%)</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">💆</div><div style="font-weight:600;">按摩油</div><div style="color:var(--text-mid);">10ml 基底油 + 5 滴(3%)</div></div>
+        </div>
+      </div>
+      <p style="font-size:14px;line-height:1.85;color:#3D3328;margin:0;background:#EEF5EE;border-left:4px solid #88BC88;padding:12px 16px;border-radius:8px;">
+        <strong>🌿 為什麼這樣調：</strong>薰衣草+甜馬鬱蘭雙重溫和鎮靜、雪松接地，營造深沉睡眠的臥室氛圍。
+      </p>
+    </div>
+    <div class="blend-card" data-cat="env" data-idx="8" style="display:none;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <span style="font-size:40px;">💼</span>
+        <div>
+          <h3 style="margin:0;font-size:22px;color:var(--green-dark);">辦公室提神</h3>
+          <span style="font-size:13px;color:var(--text-mid);">依環境情境 · 共 8 滴</span>
+        </div>
+      </div>
+      <div style="display:grid;gap:8px;margin-bottom:18px;">
+        <a href="oil-rosemary.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #88BC8855;border-left:4px solid #88BC88;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#88BC88;font-size:13px;min-width:30px;">中調</span><span style="flex:1;font-weight:600;font-size:14px;">迷迭香</span><span style="background:#88BC8822;color:#88BC88;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">3 滴</span></a>
+        <a href="oil-lemon.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #E8A04B55;border-left:4px solid #E8A04B;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#E8A04B;font-size:13px;min-width:30px;">前調</span><span style="flex:1;font-weight:600;font-size:14px;">檸檬</span><span style="background:#E8A04B22;color:#E8A04B;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">3 滴</span></a>
+        <a href="oil-grapefruit.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #E8A04B55;border-left:4px solid #E8A04B;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#E8A04B;font-size:13px;min-width:30px;">前調</span><span style="flex:1;font-weight:600;font-size:14px;">葡萄柚</span><span style="background:#E8A04B22;color:#E8A04B;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">2 滴</span></a>
+      </div>
+      <div style="background:#FBF7F1;border-radius:10px;padding:14px 16px;margin-bottom:14px;">
+        <div style="font-size:13px;font-weight:700;color:#8B6F3E;margin-bottom:8px;">💧 三種用法稀釋換算</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:13px;">
+          <div style="text-align:center;"><div style="font-size:20px;">🌫️</div><div style="font-weight:600;">擴香</div><div style="color:var(--text-mid);">水氧機加 8 滴</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">🧴</div><div style="font-weight:600;">滾珠瓶</div><div style="color:var(--text-mid);">10ml 基底油 + 3 滴(2%)</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">💆</div><div style="font-weight:600;">按摩油</div><div style="color:var(--text-mid);">10ml 基底油 + 5 滴(3%)</div></div>
+        </div>
+      </div>
+      <p style="font-size:14px;line-height:1.85;color:#3D3328;margin:0;background:#EEF5EE;border-left:4px solid #88BC88;padding:12px 16px;border-radius:8px;">
+        <strong>🌿 為什麼這樣調：</strong>迷迭香提升專注、檸檬與葡萄柚明亮提神，趕走午後昏沉又不擾鄰座。
+      </p>
+    </div>
+    <div class="blend-card" data-cat="env" data-idx="9" style="display:none;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <span style="font-size:40px;">🛁</span>
+        <div>
+          <h3 style="margin:0;font-size:22px;color:var(--green-dark);">浴室 SPA</h3>
+          <span style="font-size:13px;color:var(--text-mid);">依環境情境 · 共 8 滴</span>
+        </div>
+      </div>
+      <div style="display:grid;gap:8px;margin-bottom:18px;">
+        <a href="oil-eucalyptus.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #E8A04B55;border-left:4px solid #E8A04B;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#E8A04B;font-size:13px;min-width:30px;">前調</span><span style="flex:1;font-weight:600;font-size:14px;">尤加利</span><span style="background:#E8A04B22;color:#E8A04B;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">3 滴</span></a>
+        <a href="oil-peppermint.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #E8A04B55;border-left:4px solid #E8A04B;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#E8A04B;font-size:13px;min-width:30px;">前調</span><span style="flex:1;font-weight:600;font-size:14px;">胡椒薄荷</span><span style="background:#E8A04B22;color:#E8A04B;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">2 滴</span></a>
+        <a href="oil-rosemary.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #88BC8855;border-left:4px solid #88BC88;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#88BC88;font-size:13px;min-width:30px;">中調</span><span style="flex:1;font-weight:600;font-size:14px;">迷迭香</span><span style="background:#88BC8822;color:#88BC88;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">3 滴</span></a>
+      </div>
+      <div style="background:#FBF7F1;border-radius:10px;padding:14px 16px;margin-bottom:14px;">
+        <div style="font-size:13px;font-weight:700;color:#8B6F3E;margin-bottom:8px;">💧 三種用法稀釋換算</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:13px;">
+          <div style="text-align:center;"><div style="font-size:20px;">🌫️</div><div style="font-weight:600;">擴香</div><div style="color:var(--text-mid);">水氧機加 8 滴</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">🧴</div><div style="font-weight:600;">滾珠瓶</div><div style="color:var(--text-mid);">10ml 基底油 + 3 滴(2%)</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">💆</div><div style="font-weight:600;">按摩油</div><div style="color:var(--text-mid);">10ml 基底油 + 5 滴(3%)</div></div>
+        </div>
+      </div>
+      <p style="font-size:14px;line-height:1.85;color:#3D3328;margin:0;background:#EEF5EE;border-left:4px solid #88BC88;padding:12px 16px;border-radius:8px;">
+        <strong>🌿 為什麼這樣調：</strong>尤加利與薄荷的清涼桉葉感打開呼吸、迷迭香活絡循環——居家 SPA 的清新蒸氣。
+      </p>
+    </div>
+    <div class="blend-card" data-cat="env" data-idx="10" style="display:none;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <span style="font-size:40px;">🕉️</span>
+        <div>
+          <h3 style="margin:0;font-size:22px;color:var(--green-dark);">瑜伽冥想</h3>
+          <span style="font-size:13px;color:var(--text-mid);">依環境情境 · 共 8 滴</span>
+        </div>
+      </div>
+      <div style="display:grid;gap:8px;margin-bottom:18px;">
+        <a href="oil-frankincense.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #7898B855;border-left:4px solid #7898B8;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#7898B8;font-size:13px;min-width:30px;">後調</span><span style="flex:1;font-weight:600;font-size:14px;">乳香</span><span style="background:#7898B822;color:#7898B8;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">3 滴</span></a>
+        <a href="oil-sandalwood.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #7898B855;border-left:4px solid #7898B8;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#7898B8;font-size:13px;min-width:30px;">後調</span><span style="flex:1;font-weight:600;font-size:14px;">檀香</span><span style="background:#7898B822;color:#7898B8;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">3 滴</span></a>
+        <a href="oil-vetiver.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #7898B855;border-left:4px solid #7898B8;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#7898B8;font-size:13px;min-width:30px;">後調</span><span style="flex:1;font-weight:600;font-size:14px;">岩蘭草</span><span style="background:#7898B822;color:#7898B8;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">2 滴</span></a>
+      </div>
+      <div style="background:#FBF7F1;border-radius:10px;padding:14px 16px;margin-bottom:14px;">
+        <div style="font-size:13px;font-weight:700;color:#8B6F3E;margin-bottom:8px;">💧 三種用法稀釋換算</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:13px;">
+          <div style="text-align:center;"><div style="font-size:20px;">🌫️</div><div style="font-weight:600;">擴香</div><div style="color:var(--text-mid);">水氧機加 8 滴</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">🧴</div><div style="font-weight:600;">滾珠瓶</div><div style="color:var(--text-mid);">10ml 基底油 + 3 滴(2%)</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">💆</div><div style="font-weight:600;">按摩油</div><div style="color:var(--text-mid);">10ml 基底油 + 5 滴(3%)</div></div>
+        </div>
+      </div>
+      <p style="font-size:14px;line-height:1.85;color:#3D3328;margin:0;background:#EEF5EE;border-left:4px solid #88BC88;padding:12px 16px;border-radius:8px;">
+        <strong>🌿 為什麼這樣調：</strong>三大後調木質與樹脂香緩慢釋放，幫助呼吸沉穩、思緒落定，是瑜伽與冥想的接地香氣。
+      </p>
+    </div>
+    <div class="blend-card" data-cat="env" data-idx="11" style="display:none;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <span style="font-size:40px;">📚</span>
+        <div>
+          <h3 style="margin:0;font-size:22px;color:var(--green-dark);">讀書專注</h3>
+          <span style="font-size:13px;color:var(--text-mid);">依環境情境 · 共 8 滴</span>
+        </div>
+      </div>
+      <div style="display:grid;gap:8px;margin-bottom:18px;">
+        <a href="oil-rosemary.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #88BC8855;border-left:4px solid #88BC88;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#88BC88;font-size:13px;min-width:30px;">中調</span><span style="flex:1;font-weight:600;font-size:14px;">迷迭香</span><span style="background:#88BC8822;color:#88BC88;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">3 滴</span></a>
+        <a href="oil-lemon.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #E8A04B55;border-left:4px solid #E8A04B;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#E8A04B;font-size:13px;min-width:30px;">前調</span><span style="flex:1;font-weight:600;font-size:14px;">檸檬</span><span style="background:#E8A04B22;color:#E8A04B;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">3 滴</span></a>
+        <a href="oil-sweet-basil.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #88BC8855;border-left:4px solid #88BC88;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#88BC88;font-size:13px;min-width:30px;">中調</span><span style="flex:1;font-weight:600;font-size:14px;">甜羅勒</span><span style="background:#88BC8822;color:#88BC88;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">2 滴</span></a>
+      </div>
+      <div style="background:#FBF7F1;border-radius:10px;padding:14px 16px;margin-bottom:14px;">
+        <div style="font-size:13px;font-weight:700;color:#8B6F3E;margin-bottom:8px;">💧 三種用法稀釋換算</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:13px;">
+          <div style="text-align:center;"><div style="font-size:20px;">🌫️</div><div style="font-weight:600;">擴香</div><div style="color:var(--text-mid);">水氧機加 8 滴</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">🧴</div><div style="font-weight:600;">滾珠瓶</div><div style="color:var(--text-mid);">10ml 基底油 + 3 滴(2%)</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">💆</div><div style="font-weight:600;">按摩油</div><div style="color:var(--text-mid);">10ml 基底油 + 5 滴(3%)</div></div>
+        </div>
+      </div>
+      <p style="font-size:14px;line-height:1.85;color:#3D3328;margin:0;background:#EEF5EE;border-left:4px solid #88BC88;padding:12px 16px;border-radius:8px;">
+        <strong>🌿 為什麼這樣調：</strong>迷迭香與甜羅勒養護神經、強化記憶，檸檬保持頭腦清醒——考試與深度工作的專注配方。
+      </p>
+    </div>
+    <div class="blend-card" data-cat="env" data-idx="12" style="display:none;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <span style="font-size:40px;">🏡</span>
+        <div>
+          <h3 style="margin:0;font-size:22px;color:var(--green-dark);">客廳迎賓</h3>
+          <span style="font-size:13px;color:var(--text-mid);">依環境情境 · 共 8 滴</span>
+        </div>
+      </div>
+      <div style="display:grid;gap:8px;margin-bottom:18px;">
+        <a href="oil-sweet-orange.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #E8A04B55;border-left:4px solid #E8A04B;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#E8A04B;font-size:13px;min-width:30px;">前調</span><span style="flex:1;font-weight:600;font-size:14px;">甜橙</span><span style="background:#E8A04B22;color:#E8A04B;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">4 滴</span></a>
+        <a href="oil-bergamot.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #E8A04B55;border-left:4px solid #E8A04B;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#E8A04B;font-size:13px;min-width:30px;">前調</span><span style="flex:1;font-weight:600;font-size:14px;">佛手柑</span><span style="background:#E8A04B22;color:#E8A04B;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">2 滴</span></a>
+        <a href="oil-cedarwood.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #7898B855;border-left:4px solid #7898B8;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#7898B8;font-size:13px;min-width:30px;">後調</span><span style="flex:1;font-weight:600;font-size:14px;">大西洋雪松</span><span style="background:#7898B822;color:#7898B8;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">2 滴</span></a>
+      </div>
+      <div style="background:#FBF7F1;border-radius:10px;padding:14px 16px;margin-bottom:14px;">
+        <div style="font-size:13px;font-weight:700;color:#8B6F3E;margin-bottom:8px;">💧 三種用法稀釋換算</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:13px;">
+          <div style="text-align:center;"><div style="font-size:20px;">🌫️</div><div style="font-weight:600;">擴香</div><div style="color:var(--text-mid);">水氧機加 8 滴</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">🧴</div><div style="font-weight:600;">滾珠瓶</div><div style="color:var(--text-mid);">10ml 基底油 + 3 滴(2%)</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">💆</div><div style="font-weight:600;">按摩油</div><div style="color:var(--text-mid);">10ml 基底油 + 5 滴(3%)</div></div>
+        </div>
+      </div>
+      <p style="font-size:14px;line-height:1.85;color:#3D3328;margin:0;background:#EEF5EE;border-left:4px solid #88BC88;padding:12px 16px;border-radius:8px;">
+        <strong>🌿 為什麼這樣調：</strong>柑橘的溫暖好客感加上雪松的沉穩底蘊，營造放鬆又有質感的待客空間。
+      </p>
+    </div>
+    <div class="blend-card" data-cat="env" data-idx="13" style="display:none;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <span style="font-size:40px;">✨</span>
+        <div>
+          <h3 style="margin:0;font-size:22px;color:var(--green-dark);">淨化空間</h3>
+          <span style="font-size:13px;color:var(--text-mid);">依環境情境 · 共 8 滴</span>
+        </div>
+      </div>
+      <div style="display:grid;gap:8px;margin-bottom:18px;">
+        <a href="oil-tea-tree.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #E8A04B55;border-left:4px solid #E8A04B;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#E8A04B;font-size:13px;min-width:30px;">前調</span><span style="flex:1;font-weight:600;font-size:14px;">茶樹</span><span style="background:#E8A04B22;color:#E8A04B;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">3 滴</span></a>
+        <a href="oil-lemon.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #E8A04B55;border-left:4px solid #E8A04B;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#E8A04B;font-size:13px;min-width:30px;">前調</span><span style="flex:1;font-weight:600;font-size:14px;">檸檬</span><span style="background:#E8A04B22;color:#E8A04B;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">3 滴</span></a>
+        <a href="oil-juniper.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #88BC8855;border-left:4px solid #88BC88;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#88BC88;font-size:13px;min-width:30px;">中調</span><span style="flex:1;font-weight:600;font-size:14px;">杜松漿果</span><span style="background:#88BC8822;color:#88BC88;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">2 滴</span></a>
+      </div>
+      <div style="background:#FBF7F1;border-radius:10px;padding:14px 16px;margin-bottom:14px;">
+        <div style="font-size:13px;font-weight:700;color:#8B6F3E;margin-bottom:8px;">💧 三種用法稀釋換算</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:13px;">
+          <div style="text-align:center;"><div style="font-size:20px;">🌫️</div><div style="font-weight:600;">擴香</div><div style="color:var(--text-mid);">水氧機加 8 滴</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">🧴</div><div style="font-weight:600;">滾珠瓶</div><div style="color:var(--text-mid);">10ml 基底油 + 3 滴(2%)</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">💆</div><div style="font-weight:600;">按摩油</div><div style="color:var(--text-mid);">10ml 基底油 + 5 滴(3%)</div></div>
+        </div>
+      </div>
+      <p style="font-size:14px;line-height:1.85;color:#3D3328;margin:0;background:#EEF5EE;border-left:4px solid #88BC88;padding:12px 16px;border-radius:8px;">
+        <strong>🌿 為什麼這樣調：</strong>茶樹與檸檬清新淨化、杜松漿果傳統用於能量淨化——換季、搬新家、想重整空間時的清新配方。
+      </p>
+    </div>
+    <div class="blend-card" data-cat="env" data-idx="14" style="display:none;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <span style="font-size:40px;">🎉</span>
+        <div>
+          <h3 style="margin:0;font-size:22px;color:var(--green-dark);">派對歡聚</h3>
+          <span style="font-size:13px;color:var(--text-mid);">依環境情境 · 共 8 滴</span>
+        </div>
+      </div>
+      <div style="display:grid;gap:8px;margin-bottom:18px;">
+        <a href="oil-grapefruit.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #E8A04B55;border-left:4px solid #E8A04B;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#E8A04B;font-size:13px;min-width:30px;">前調</span><span style="flex:1;font-weight:600;font-size:14px;">葡萄柚</span><span style="background:#E8A04B22;color:#E8A04B;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">4 滴</span></a>
+        <a href="oil-sweet-orange.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #E8A04B55;border-left:4px solid #E8A04B;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#E8A04B;font-size:13px;min-width:30px;">前調</span><span style="flex:1;font-weight:600;font-size:14px;">甜橙</span><span style="background:#E8A04B22;color:#E8A04B;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">3 滴</span></a>
+        <a href="oil-ylang-ylang.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #88BC8855;border-left:4px solid #88BC88;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#88BC88;font-size:13px;min-width:30px;">中調</span><span style="flex:1;font-weight:600;font-size:14px;">依蘭</span><span style="background:#88BC8822;color:#88BC88;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">1 滴</span></a>
+      </div>
+      <div style="background:#FBF7F1;border-radius:10px;padding:14px 16px;margin-bottom:14px;">
+        <div style="font-size:13px;font-weight:700;color:#8B6F3E;margin-bottom:8px;">💧 三種用法稀釋換算</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:13px;">
+          <div style="text-align:center;"><div style="font-size:20px;">🌫️</div><div style="font-weight:600;">擴香</div><div style="color:var(--text-mid);">水氧機加 8 滴</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">🧴</div><div style="font-weight:600;">滾珠瓶</div><div style="color:var(--text-mid);">10ml 基底油 + 3 滴(2%)</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">💆</div><div style="font-weight:600;">按摩油</div><div style="color:var(--text-mid);">10ml 基底油 + 5 滴(3%)</div></div>
+        </div>
+      </div>
+      <p style="font-size:14px;line-height:1.85;color:#3D3328;margin:0;background:#EEF5EE;border-left:4px solid #88BC88;padding:12px 16px;border-radius:8px;">
+        <strong>🌿 為什麼這樣調：</strong>葡萄柚與甜橙的歡快柑橘氣泡感加一滴依蘭的異國花香，讓聚會氣氛輕鬆愉悅。
+      </p>
+    </div>
+    <div class="blend-card" data-cat="env" data-idx="15" style="display:none;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <span style="font-size:40px;">🌸</span>
+        <div>
+          <h3 style="margin:0;font-size:22px;color:var(--green-dark);">泡澡放鬆</h3>
+          <span style="font-size:13px;color:var(--text-mid);">依環境情境 · 共 7 滴</span>
+        </div>
+      </div>
+      <div style="display:grid;gap:8px;margin-bottom:18px;">
+        <a href="oil-lavender.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #88BC8855;border-left:4px solid #88BC88;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#88BC88;font-size:13px;min-width:30px;">中調</span><span style="flex:1;font-weight:600;font-size:14px;">真正薰衣草</span><span style="background:#88BC8822;color:#88BC88;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">3 滴</span></a>
+        <a href="oil-ylang-ylang.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #88BC8855;border-left:4px solid #88BC88;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#88BC88;font-size:13px;min-width:30px;">中調</span><span style="flex:1;font-weight:600;font-size:14px;">依蘭</span><span style="background:#88BC8822;color:#88BC88;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">2 滴</span></a>
+        <a href="oil-neroli.html" class="blend-oil" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #88BC8855;border-left:4px solid #88BC88;border-radius:8px;text-decoration:none;color:#3D3328;"><span style="font-weight:700;color:#88BC88;font-size:13px;min-width:30px;">中調</span><span style="flex:1;font-weight:600;font-size:14px;">橙花</span><span style="background:#88BC8822;color:#88BC88;font-weight:700;font-size:13px;padding:2px 10px;border-radius:12px;">2 滴</span></a>
+      </div>
+      <div style="background:#FBF7F1;border-radius:10px;padding:14px 16px;margin-bottom:14px;">
+        <div style="font-size:13px;font-weight:700;color:#8B6F3E;margin-bottom:8px;">💧 三種用法稀釋換算</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:13px;">
+          <div style="text-align:center;"><div style="font-size:20px;">🌫️</div><div style="font-weight:600;">擴香</div><div style="color:var(--text-mid);">水氧機加 7 滴</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">🧴</div><div style="font-weight:600;">滾珠瓶</div><div style="color:var(--text-mid);">10ml 基底油 + 3 滴(2%)</div></div>
+          <div style="text-align:center;"><div style="font-size:20px;">💆</div><div style="font-weight:600;">按摩油</div><div style="color:var(--text-mid);">10ml 基底油 + 4 滴(3%)</div></div>
+        </div>
+      </div>
+      <p style="font-size:14px;line-height:1.85;color:#3D3328;margin:0;background:#EEF5EE;border-left:4px solid #88BC88;padding:12px 16px;border-radius:8px;">
+        <strong>🌿 為什麼這樣調：</strong>薰衣草、依蘭、橙花三種花香交織，把浴缸變成療癒的香氛聖殿。
+      </p>
+    </div>
+    <div id="result-empty" style="text-align:center;padding:40px 20px;color:var(--text-mid);background:#FBF7F1;border-radius:14px;">
+      👆 點選上方任一情境，即可看到專屬配方
+    </div>
+  </div>
+
+  <!-- 調香金字塔教學 -->
+  <section style="margin:40px 0;">
+    <h2 style="font-size:22px;color:var(--green-dark);border-bottom:2px solid var(--beige);padding-bottom:8px;">🔺 調香金字塔原理</h2>
+    <p style="font-size:15px;line-height:1.9;">專業調香依精油的<strong>揮發速度</strong>分三層，組合起來香氣才有層次與持久度：</p>
+    <div style="display:grid;gap:10px;margin:16px 0;">
+      <div style="background:#E8A04B18;border-left:4px solid #E8A04B;padding:12px 16px;border-radius:8px;"><strong style="color:#E8A04B;">前調（Top）</strong>：柑橘類、薄荷、尤加利。揮發最快，是第一印象，10-30 分鐘消散。約佔 30%。</div>
+      <div style="background:#88BC8818;border-left:4px solid #88BC88;padding:12px 16px;border-radius:8px;"><strong style="color:#5A7A4A;">中調（Middle）</strong>：薰衣草、天竺葵、迷迭香、洋甘菊。配方的心臟，2-4 小時。約佔 50%。</div>
+      <div style="background:#7898B818;border-left:4px solid #7898B8;padding:12px 16px;border-radius:8px;"><strong style="color:#5A6F98;">後調（Base）</strong>：檀香、乳香、岩蘭草、廣藿香。揮發最慢，定香延長整體香氣，可達數小時至數天。約佔 20%。</div>
+    </div>
+  </section>
+
+  <!-- 稀釋比例表 -->
+  <section style="margin:40px 0;">
+    <h2 style="font-size:22px;color:var(--green-dark);border-bottom:2px solid var(--beige);padding-bottom:8px;">💧 安全稀釋比例</h2>
+    <div style="overflow-x:auto;">
+    <table style="width:100%;border-collapse:collapse;font-size:14px;background:#fff;border-radius:10px;overflow:hidden;margin-top:12px;">
+      <thead><tr style="background:#5A7A6A;color:#fff;">
+        <th style="padding:12px;text-align:left;">用途</th><th style="padding:12px;">濃度</th><th style="padding:12px;">10ml 基底油滴數</th></tr></thead>
+      <tbody>
+        <tr><td style="padding:10px 12px;border:1px solid #E5D9C0;">臉部 / 敏感肌</td><td style="padding:10px 12px;border:1px solid #E5D9C0;text-align:center;">0.5–1%</td><td style="padding:10px 12px;border:1px solid #E5D9C0;text-align:center;">1–2 滴</td></tr>
+        <tr><td style="padding:10px 12px;border:1px solid #E5D9C0;">身體按摩 / 滾珠</td><td style="padding:10px 12px;border:1px solid #E5D9C0;text-align:center;">2–3%</td><td style="padding:10px 12px;border:1px solid #E5D9C0;text-align:center;">4–6 滴</td></tr>
+        <tr><td style="padding:10px 12px;border:1px solid #E5D9C0;">局部急性 / 短期</td><td style="padding:10px 12px;border:1px solid #E5D9C0;text-align:center;">5%</td><td style="padding:10px 12px;border:1px solid #E5D9C0;text-align:center;">10 滴</td></tr>
+        <tr><td style="padding:10px 12px;border:1px solid #E5D9C0;">兒童 / 孕婦</td><td style="padding:10px 12px;border:1px solid #E5D9C0;text-align:center;">≤ 1%</td><td style="padding:10px 12px;border:1px solid #E5D9C0;text-align:center;">先諮詢專業</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13px;color:var(--text-light);margin-top:10px;">※ 1 滴精油 ≈ 0.05ml。柑橘類有光敏性，塗抹後 12 小時避免日曬。詳見 <a href="safety.html">安全指南</a>。</p>
+  </section>
+
+  <div class="info-box" style="background:#FFF4E6;border-left:4px solid #E8A04B;border-radius:8px;padding:16px 20px;margin:24px 0;">
+    <strong style="color:#B5701A;">⚠️ 提醒</strong>
+    <p style="font-size:14px;line-height:1.8;color:#5D4A28;margin:6px 0 0;">本工具配方為一般芳香生活建議，非醫療處方。孕婦、嬰幼兒、慢性病或用藥中請先諮詢專業芳療師或醫師。精油請稀釋後使用並先做肌膚測試。</p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner" style="max-width:1100px;margin:0 auto;padding:32px 20px;">
+    <p>© 2026 精油能量圖譜 · 靈境智造 Intelliverse Studio</p>
+    <p style="font-size:12px;color:#999;margin-top:8px;">本站資訊僅供教育參考，不取代醫療建議。作者：<a href="author-yuling.html" style="color:#8B6F3E;">玉玲（IFA 國際認證芳療師）</a>｜<a href="references.html" style="color:#8B6F3E;">引用來源</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var feelingTab=document.getElementById('tab-feeling'),envTab=document.getElementById('tab-env');
+  var gridF=document.getElementById('grid-feeling'),gridE=document.getElementById('grid-env');
+  var cards=document.querySelectorAll('.blend-card'),empty=document.getElementById('result-empty');
+  function setMode(m){
+    var f=m==='feeling';
+    gridF.style.display=f?'grid':'none';gridE.style.display=f?'none':'grid';
+    feelingTab.style.background=f?'#88BC88':'#fff';feelingTab.style.color=f?'#fff':'#5A7A6A';
+    envTab.style.background=f?'#fff':'#88BC88';envTab.style.color=f?'#5A7A6A':'#fff';
+    showCard(-1);
+  }
+  function showCard(idx){
+    var any=false;
+    cards.forEach(function(c){
+      var on=parseInt(c.getAttribute('data-idx'))===idx;
+      c.style.display=on?'block':'none';if(on)any=true;
+    });
+    empty.style.display=any?'none':'block';
+    document.querySelectorAll('.scenario-btn').forEach(function(b){
+      var on=parseInt(b.getAttribute('data-idx'))===idx;
+      b.style.borderColor=on?'#88BC88':'var(--border)';
+      b.style.background=on?'#EEF5EE':'#fff';
+      b.style.boxShadow=on?'0 4px 12px rgba(136,188,136,0.25)':'none';
+    });
+    if(idx>=0){document.getElementById('result').scrollIntoView({behavior:'smooth',block:'nearest'});}
+  }
+  feelingTab.onclick=function(){setMode('feeling');};
+  envTab.onclick=function(){setMode('env');};
+  document.querySelectorAll('.scenario-btn').forEach(function(b){
+    b.onclick=function(){showCard(parseInt(b.getAttribute('data-idx')));};
+  });
+})();
+</script>
+</body>
+</html>

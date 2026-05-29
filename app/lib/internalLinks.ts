@@ -196,6 +196,12 @@ export const INTERNAL_LINKS: InternalLink[] = [
   { keyword: '辦公室擴香', href: '/article-office/', title: '上班族 5 支提神精油' },
   { keyword: '提神精油', href: '/article-office/', title: '上班族 5 支提神精油' },
 
+  // ─── 調配工具 ───
+  { keyword: '調配精油', href: '/blend/', title: '調配精油互動工具：依感覺與環境生成配方' },
+  { keyword: '精油配方', href: '/blend/', title: '調配精油：16 種情境配方' },
+  { keyword: '調香金字塔', href: '/blend/', title: '調香金字塔：前中後調原理' },
+  { keyword: '精油調配', href: '/blend/', title: '調配精油互動工具' },
+
   // ─── 分類索引頁 ───
   { keyword: '精油化學分類', href: '/oils/', title: '依化學分子分類的精油索引' },
   { keyword: '化學分子索引', href: '/oils/', title: '依化學分子分類的精油索引' },
