@@ -171,6 +171,57 @@ OILS_META = {
     '岩蘭草': ('base', []), '乳香': ('base', []), '沒藥': ('base', ['preg']),
 }
 
+# 每支精油的「適用情境／方向」標籤（供計算器反推配方適合什麼）
+# 措辭以日常香氛／保養／情緒方向為主，整區附免責
+OIL_USES = {
+    '甜橙': ['情緒提振', '放鬆', '兒童安撫', '空間清新'],
+    '柑橘': ['兒童安撫', '助眠', '情緒安撫'],
+    '檸檬': ['提神', '空間淨化', '專注', '消化舒適'],
+    '葡萄柚': ['提神', '循環', '體態按摩', '振奮'],
+    '佛手柑': ['抗焦慮', '情緒平衡', '放鬆', '皮膚'],
+    '橙花': ['助眠', '抗焦慮', '皮膚保養', '安撫心情'],
+    '苦橙葉': ['抗壓', '助眠', '自律神經', '皮膚'],
+    '胡椒薄荷': ['提神', '頭部舒緩', '消化舒適', '鼻部暢通', '肌肉舒緩', '外出舒適'],
+    '綠薄荷': ['提神', '消化舒適', '兒童', '口氣清新'],
+    '尤加利': ['呼吸道', '鼻部暢通', '提神', '空間淨化'],
+    '茶樹': ['日常抗菌', '痘痘', '皮膚', '空間淨化'],
+    '桉油醇樟': ['呼吸道', '換季防護', '提神'],
+    '檸檬尤加利': ['驅蚊', '空間清新', '肌肉舒緩'],
+    '月桂': ['淋巴循環', '消化舒適', '自信', '呼吸'],
+    '玫瑰': ['情緒療癒', '抗齡保養', '皮膚保養', '女性'],
+    '茉莉': ['情緒', '自信', '皮膚', '女性'],
+    '依蘭': ['情緒平衡', '放鬆', '護髮', '浪漫'],
+    '永久花': ['化瘀', '疤痕修復', '皮膚修復', '抗齡保養'],
+    '羅馬洋甘菊': ['助眠', '兒童安撫', '舒緩', '敏感肌'],
+    '德國洋甘菊': ['敏感肌', '皮膚舒緩', '過敏舒緩'],
+    '西洋蓍草': ['皮膚修復', '女性', '化瘀'],
+    '真正薰衣草': ['助眠', '放鬆', '抗焦慮', '皮膚舒緩', '萬用'],
+    '穗花薰衣草': ['呼吸道', '肌肉舒緩', '蚊蟲叮咬', '空間清新'],
+    '醒目薰衣草': ['居家清潔', '空間擴香', '放鬆'],
+    '迷迭香': ['提神', '專注', '記憶', '頭皮養護', '循環', '肌肉舒緩'],
+    '甜馬鬱蘭': ['助眠', '肌肉舒緩', '自律神經', '舒緩'],
+    '快樂鼠尾草': ['女性週期', '經期舒緩', '助眠', '情緒平衡'],
+    '甜羅勒': ['提神', '專注', '消化舒適', '神經疲勞'],
+    '百里香': ['日常抗菌', '換季防護', '呼吸道'],
+    '香蜂草': ['抗焦慮', '助眠', '情緒急救', '敏感肌'],
+    '天竺葵': ['女性平衡', '皮膚', '情緒平衡', '驅蚊'],
+    '玫瑰草': ['保濕', '皮膚', '日常抗菌'],
+    '大西洋雪松': ['助眠', '頭皮養護', '接地', '呼吸'],
+    '檀香': ['冥想', '皮膚保養', '助眠', '接地'],
+    '杜松漿果': ['循環', '淨化', '體態按摩'],
+    '絲柏': ['循環', '收斂', '體味', '靜脈舒緩'],
+    '黑雲杉': ['提神', '能量', '森林浴', '肌肉舒緩'],
+    '廣藿香': ['皮膚修復', '接地', '情緒安定'],
+    '岩蘭草': ['助眠', '接地', '冥想', '抗焦慮'],
+    '薑': ['暖身', '消化舒適', '外出舒適', '循環', '肌肉舒緩'],
+    '黑胡椒': ['循環', '肌肉舒緩', '消化舒適', '暖身'],
+    '丁香': ['日常抗菌', '辛香', '口腔'],
+    '香茅': ['驅蚊', '空間清新'],
+    '乳香': ['冥想', '抗齡保養', '皮膚修復', '呼吸', '放鬆'],
+    '沒藥': ['皮膚修復', '口腔', '冥想'],
+    '甜茴香': ['消化舒適', '女性週期', '脹氣舒緩'],
+}
+
 
 def build_calculator():
     """自訂調配計算器：選精油→即時算前中後調平衡、基底油用量、安全旗標"""
@@ -178,7 +229,8 @@ def build_calculator():
     groups = {'top': [], 'mid': [], 'base': []}
     for name, (note, flags) in OILS_META.items():
         groups[note].append(name)
-    js_data = {name: {'note': note, 'flags': flags, 'slug': SLUG.get(name, '')}
+    js_data = {name: {'note': note, 'flags': flags, 'slug': SLUG.get(name, ''),
+                      'uses': OIL_USES.get(name, [])}
                for name, (note, flags) in OILS_META.items()}
 
     def chips(note):
@@ -194,7 +246,7 @@ def build_calculator():
   <!-- 自訂調配計算器 -->
   <section id="calc" style="margin:44px 0 32px;">
     <h2 style="font-size:22px;color:var(--green-dark);border-bottom:2px solid var(--beige);padding-bottom:8px;">🧪 自己調配（自訂計算器）</h2>
-    <p style="font-size:15px;line-height:1.9;margin:12px 0 18px;">點選你想用的精油（可多選、可調滴數），下方即時算出<strong>前中後調平衡</strong>、<strong>各用途要配多少基底油</strong>，並標出<strong>安全旗標</strong>（光敏／孕婦／幼兒／貓）。</p>
+    <p style="font-size:15px;line-height:1.9;margin:12px 0 18px;">點選你想用的精油（可多選、可調滴數），下方即時算出<strong>這個配方適合什麼情境／方向</strong>、<strong>前中後調平衡</strong>、<strong>各用途要配多少基底油</strong>，並標出<strong>安全旗標</strong>（光敏／孕婦／幼兒／貓）。</p>
 
     <div style="background:#fff;border:1px solid var(--border,#E5D9C0);border-radius:12px;padding:16px 18px;">
       <div style="margin-bottom:10px;"><span style="display:inline-block;width:10px;height:10px;background:{NOTE_COLOR['top']};border-radius:50%;margin-right:6px;"></span><strong style="color:{NOTE_COLOR['top']};font-size:13px;">前調（揮發快）</strong><div style="margin-top:6px;">{chips('top')}</div></div>
@@ -239,11 +291,29 @@ def build_calculator():
       selBox.innerHTML=rows;
 
       // 計算
-      var total=0,byNote={{top:0,mid:0,base:0}},flags={{}};
+      var total=0,byNote={{top:0,mid:0,base:0}},flags={{}},useCount={{}};
       names.forEach(function(n){{
         total+=state[n]; byNote[META[n].note]+=state[n];
         META[n].flags.forEach(function(f){{flags[f]=(flags[f]||[]);flags[f].push(n);}});
+        (META[n].uses||[]).forEach(function(u){{useCount[u]=(useCount[u]||0)+1;}});
       }});
+      // 適用情境：依「幾支選中精油共有此標籤」排序，越多支共有＝越契合
+      var uk=Object.keys(useCount).sort(function(a,b){{return useCount[b]-useCount[a];}});
+      var core=uk.filter(function(u){{return useCount[u]>=2;}});
+      var extra=uk.filter(function(u){{return useCount[u]===1;}});
+      function uTag(u,strong){{
+        return strong
+          ?'<span style="display:inline-block;padding:4px 12px;margin:3px;background:#88BC88;color:#fff;border-radius:14px;font-size:13px;font-weight:700;">'+u+' ×'+useCount[u]+'</span>'
+          :'<span style="display:inline-block;padding:4px 11px;margin:3px;background:#fff;border:1px solid #88BC8866;color:#5A7A4A;border-radius:14px;font-size:13px;">'+u+'</span>';
+      }}
+      var usesHtml='';
+      if(uk.length){{
+        usesHtml='<div style="background:#EEF5EE;border-radius:10px;padding:12px 16px;margin:12px 0;">'
+          +'<div style="font-size:14px;font-weight:700;color:var(--green-dark);margin-bottom:8px;">💡 這個配方適合的情境／方向</div>'
+          +(core.length?'<div style="margin-bottom:6px;"><span style="font-size:12px;color:#5A7A4A;">★ 核心方向（多支精油共有）</span><br>'+core.map(function(u){{return uTag(u,true);}}).join('')+'</div>':'')
+          +(extra.length?'<div><span style="font-size:12px;color:var(--text-mid);">附加面向</span><br>'+extra.map(function(u){{return uTag(u,false);}}).join('')+'</div>':'')
+          +'</div>';
+      }}
       var pct=function(v){{return total?Math.round(v/total*100):0;}};
       // 基底油用量（滴×0.05ml÷濃度）
       var ml=function(p){{return (total*0.05/p).toFixed(1);}};
@@ -272,7 +342,8 @@ def build_calculator():
         +(byNote.mid?'<div style="width:'+pct(byNote.mid)+'%;background:'+NOTE_COLOR.mid+';color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;">中'+pct(byNote.mid)+'%</div>':'')
         +(byNote.base?'<div style="width:'+pct(byNote.base)+'%;background:'+NOTE_COLOR.base+';color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;">後'+pct(byNote.base)+'%</div>':'')
         +'</div>'
-        +'<p style="font-size:13px;color:#5A7A4A;margin:0 0 14px;">'+tip+'</p>'
+        +'<p style="font-size:13px;color:#5A7A4A;margin:0 0 8px;">'+tip+'</p>'
+        +usesHtml
         // 基底油用量
         +'<div style="font-size:13px;font-weight:700;color:#8B6F3E;margin-bottom:8px;">💧 這個配方要配多少基底油</div>'
         +'<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:13px;text-align:center;">'
