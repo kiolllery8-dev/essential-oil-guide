@@ -178,6 +178,17 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   if (faqData) schemas.push(faqData);
   if (slug === 'aromatherapy') schemas.push(...AROMATHERAPY_HOWTOS);
 
+  // Speakable：標示適合語音助理 / AI 朗讀的段落（GEO 訊號）
+  schemas.push({
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${url}#speakable`,
+    url,
+    name: niceName,
+    speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1'] },
+    isPartOf: { '@id': `${SITE}/#website` },
+  });
+
   // 取得頁面 AI 摘要（若有手寫版）
   const aiSummary = getPageSummary(slug);
 
