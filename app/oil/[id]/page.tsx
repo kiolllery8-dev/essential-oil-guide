@@ -113,8 +113,9 @@ export async function generateMetadata(
   const { id } = await params;
   const oil = oils.find((o) => o.id === id);
   if (!oil) return {};
-  // SEO title 格式：{中文}精油｜成分、香氣、使用方式與安全注意
-  const title = `${oil.zh}精油｜成分、香氣、使用方式與安全注意`;
+  // SEO title 格式：對齊 GSC 實測最高頻中文查詢意圖「{X}精油功效」
+  // （臨門一腳分析：排名 8-12 的 datasheet 多被「XX精油功效」查詢觸發，原 title 無「功效」二字）
+  const title = `${oil.zh}精油功效｜成分、香氣、使用與安全`;
   // 描述：用 effects（已有的「化解黏液、抗菌、消炎」等實際關鍵詞）+ 化學成分
   // 讓 AI 搜尋（ChatGPT Search / Perplexity / Google AI Overview）可索引到完整資訊
   const effectsClean = (oil.effects || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
@@ -269,7 +270,7 @@ export default async function OilDetail({ params }: { params: Promise<{ id: stri
         {effectsForAI && (
           <div style={{ margin: '16px 0' }}>
             <h2 style={{ fontSize: 18, fontWeight: 700, color: 'var(--green-dark, #3a5a40)', margin: '0 0 8px' }}>
-              {oil.zh}精油的常見應用方向
+              {oil.zh}精油的功效與常見應用方向
             </h2>
             <p style={{ fontSize: 15, lineHeight: 1.9, color: '#2C2C2C', margin: 0 }}>
               {oil.zh}（{oil.latin}）在日常芳療中常見於：{effectsForAI}。
