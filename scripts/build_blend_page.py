@@ -84,6 +84,32 @@ BLENDS = [
     ('🌸', '泡澡放鬆', 'env', [('真正薰衣草',3,'mid'),('依蘭',2,'mid'),('橙花',2,'mid')],
      '精油先以 1 大匙基底油或全脂奶乳化再入浴，浸泡 15 分鐘',
      '薰衣草、依蘭、橙花三種花香交織，把浴缸變成療癒的香氛聖殿。'),
+    # ── 感覺 / 情緒（擴充）──
+    ('🎯', '專注創意', 'feeling', [('迷迭香',3,'mid'),('佛手柑',3,'top'),('乳香',2,'base')],
+     '創作/企劃工作時擴香；嗅吸棒卡關時補吸',
+     '迷迭香打開記憶與思路、佛手柑提振而不亢奮、乳香拉長專注的呼吸節奏——適合需要靈感又要穩定的腦力工作。'),
+    ('🦁', '勇氣自信', 'feeling', [('甜羅勒',3,'mid'),('黑胡椒',2,'mid'),('佛手柑',3,'top')],
+     '上台/面試/重要決定前掌心嗅吸',
+     '甜羅勒振奮精神主權、黑胡椒點燃行動暖意、佛手柑化解緊繃——「香草之王」配辛香,給你站出去的底氣。'),
+    ('🕊️', '放下釋懷', 'feeling', [('乳香',3,'base'),('永久花',2,'mid'),('橙花',2,'mid')],
+     '情緒卡住、放不下時擴香或塗心口',
+     '乳香深沉地鬆開緊抓的呼吸、永久花化解心裡的瘀堵、橙花溫柔承接——適合需要對自己慈悲、把事情放下的時刻。'),
+    ('🩹', '情緒療傷', 'feeling', [('玫瑰',1,'mid'),('永久花',2,'mid'),('檀香',2,'base')],
+     '低潮、失落、需要被接住時塗心口或擴香',
+     '玫瑰打開心的盔甲、永久花修復情緒瘀傷、檀香沉穩定錨——失去與哀傷時最溫柔的陪伴配方。'),
+    # ── 環境 / 情境（擴充）──
+    ('🚗', '車內清新', 'env', [('胡椒薄荷',2,'top'),('檸檬',3,'top'),('迷迭香',2,'mid')],
+     '車用擴香（通風口夾或微量擴香）；長途防睏',
+     '薄荷醒腦防暈、檸檬清新除悶、迷迭香維持專注——長途駕駛保持清醒、化解車內悶味。'),
+    ('🍳', '廚房除味', 'env', [('檸檬',4,'top'),('甜橙',3,'top'),('迷迭香',2,'mid')],
+     '料理後擴香除味；垃圾桶旁滴於棉球',
+     '檸檬與甜橙的柑橘酸香中和油煙與廚餘味、迷迭香添清新草本——比化學芳香劑天然的廚房除味。'),
+    ('🚪', '玄關迎賓', 'env', [('佛手柑',3,'top'),('大西洋雪松',2,'base'),('檸檬',2,'top')],
+     '入口處擴香，建立第一印象',
+     '佛手柑的明亮好客、雪松的沉穩質感、檸檬的乾淨清新——進門那一刻的香氣名片。'),
+    ('🌧️', '除濕除霉', 'env', [('茶樹',3,'top'),('尤加利',3,'top'),('檸檬',2,'top')],
+     '潮濕季節、浴廁、衣櫥角落擴香或噴霧',
+     '茶樹與尤加利清新淨化潮濕悶味、檸檬提亮——梅雨季、久未通風空間的清爽配方。'),
 ]
 
 NOTE_LABEL = {'top': '前調', 'mid': '中調', 'base': '後調'}
@@ -123,6 +149,251 @@ def oil_chip(name, drops, note):
             f'<span style="flex:1;font-weight:600;font-size:14px;">{name}</span>'
             f'<span style="background:{color}22;color:{color};font-weight:700;font-size:13px;'
             f'padding:2px 10px;border-radius:12px;">{drops} 滴</span></a>')
+
+
+# 46 精油 metadata（供自訂計算器）：note 揮發調性；flags 安全旗標
+# note: top前 / mid中 / base後；flags: photo光敏 preg孕婦避 kids幼兒避 cat貓避
+OILS_META = {
+    '甜橙': ('top', ['photo', 'cat']), '柑橘': ('top', ['photo', 'cat']), '檸檬': ('top', ['photo', 'cat']),
+    '葡萄柚': ('top', ['photo', 'cat']), '佛手柑': ('top', ['photo', 'cat']),
+    '胡椒薄荷': ('top', ['preg', 'kids', 'cat']), '綠薄荷': ('top', []),
+    '檸檬尤加利': ('top', ['kids', 'cat']), '香茅': ('top', ['kids', 'cat']),
+    '尤加利': ('top', ['preg', 'kids', 'cat']), '茶樹': ('top', ['cat']), '桉油醇樟': ('top', ['preg', 'kids']),
+    '橙花': ('mid', []), '玫瑰': ('mid', ['preg']), '茉莉': ('mid', ['preg']), '依蘭': ('mid', []),
+    '永久花': ('mid', []), '羅馬洋甘菊': ('mid', []), '德國洋甘菊': ('mid', []), '西洋蓍草': ('mid', ['preg', 'kids']),
+    '真正薰衣草': ('mid', []), '穗花薰衣草': ('mid', ['preg', 'kids']), '醒目薰衣草': ('mid', ['preg', 'kids']),
+    '迷迭香': ('mid', ['preg', 'kids']), '甜馬鬱蘭': ('mid', ['preg']), '快樂鼠尾草': ('mid', ['preg']),
+    '甜羅勒': ('mid', ['preg']), '百里香': ('mid', ['preg', 'kids', 'cat']), '香蜂草': ('mid', ['preg']),
+    '天竺葵': ('mid', ['cat']), '玫瑰草': ('mid', []), '苦橙葉': ('mid', []), '月桂': ('mid', []),
+    '薑': ('mid', []), '黑胡椒': ('mid', []), '丁香': ('mid', ['preg', 'kids', 'cat']), '甜茴香': ('mid', ['preg', 'kids']),
+    '杜松漿果': ('mid', ['preg']), '絲柏': ('mid', ['preg']), '黑雲杉': ('mid', []),
+    '大西洋雪松': ('base', ['preg']), '檀香': ('base', []), '廣藿香': ('base', []),
+    '岩蘭草': ('base', []), '乳香': ('base', []), '沒藥': ('base', ['preg']),
+}
+
+
+def build_calculator():
+    """自訂調配計算器：選精油→即時算前中後調平衡、基底油用量、安全旗標"""
+    import json
+    groups = {'top': [], 'mid': [], 'base': []}
+    for name, (note, flags) in OILS_META.items():
+        groups[note].append(name)
+    js_data = {name: {'note': note, 'flags': flags, 'slug': SLUG.get(name, '')}
+               for name, (note, flags) in OILS_META.items()}
+
+    def chips(note):
+        c = NOTE_COLOR[note]
+        return ''.join(
+            f'<button type="button" class="calc-oil" data-oil="{n}" '
+            f'style="padding:6px 12px;margin:3px;background:#fff;border:1.5px solid {c}66;'
+            f'border-radius:16px;font-size:13px;font-weight:600;color:#3D3328;cursor:pointer;'
+            f'font-family:inherit;transition:all .12s;">{n}</button>'
+            for n in groups[note])
+
+    return f'''
+  <!-- 自訂調配計算器 -->
+  <section id="calc" style="margin:44px 0 32px;">
+    <h2 style="font-size:22px;color:var(--green-dark);border-bottom:2px solid var(--beige);padding-bottom:8px;">🧪 自己調配（自訂計算器）</h2>
+    <p style="font-size:15px;line-height:1.9;margin:12px 0 18px;">點選你想用的精油（可多選、可調滴數），下方即時算出<strong>前中後調平衡</strong>、<strong>各用途要配多少基底油</strong>，並標出<strong>安全旗標</strong>（光敏／孕婦／幼兒／貓）。</p>
+
+    <div style="background:#fff;border:1px solid var(--border,#E5D9C0);border-radius:12px;padding:16px 18px;">
+      <div style="margin-bottom:10px;"><span style="display:inline-block;width:10px;height:10px;background:{NOTE_COLOR['top']};border-radius:50%;margin-right:6px;"></span><strong style="color:{NOTE_COLOR['top']};font-size:13px;">前調（揮發快）</strong><div style="margin-top:6px;">{chips('top')}</div></div>
+      <div style="margin-bottom:10px;"><span style="display:inline-block;width:10px;height:10px;background:{NOTE_COLOR['mid']};border-radius:50%;margin-right:6px;"></span><strong style="color:#5A7A4A;font-size:13px;">中調（核心）</strong><div style="margin-top:6px;">{chips('mid')}</div></div>
+      <div><span style="display:inline-block;width:10px;height:10px;background:{NOTE_COLOR['base']};border-radius:50%;margin-right:6px;"></span><strong style="color:{NOTE_COLOR['base']};font-size:13px;">後調（定香）</strong><div style="margin-top:6px;">{chips('base')}</div></div>
+    </div>
+
+    <div id="calc-selected" style="margin-top:16px;"></div>
+    <div id="calc-result" style="margin-top:16px;"></div>
+  </section>
+
+  <script>
+  (function(){{
+    var META={json.dumps(js_data, ensure_ascii=False)};
+    var NOTE_LABEL={{top:'前調',mid:'中調',base:'後調'}};
+    var NOTE_COLOR={{top:'{NOTE_COLOR['top']}',mid:'{NOTE_COLOR['mid']}',base:'{NOTE_COLOR['base']}'}};
+    var FLAG={{photo:'☀️ 光敏（塗後避日曬）',preg:'🤰 孕婦避用',kids:'👶 幼兒避用',cat:'🐱 貓家庭避擴香'}};
+    var state={{}};  // oilName -> drops
+    var selBox=document.getElementById('calc-selected');
+    var resBox=document.getElementById('calc-result');
+
+    function render(){{
+      var names=Object.keys(state);
+      // 已選清單
+      if(!names.length){{
+        selBox.innerHTML='<div style="text-align:center;padding:20px;color:var(--text-mid);background:#FBF7F1;border-radius:10px;">👆 點選上方精油開始調配</div>';
+        resBox.innerHTML='';
+        document.querySelectorAll('.calc-oil').forEach(function(b){{b.style.background='#fff';b.style.boxShadow='none';}});
+        return;
+      }}
+      var rows=names.map(function(n){{
+        var c=NOTE_COLOR[META[n].note], slug=META[n].slug;
+        var link=slug?'<a href="'+slug+'.html" style="color:'+c+';text-decoration:none;font-weight:600;">'+n+'</a>':'<strong>'+n+'</strong>';
+        return '<div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:#fff;border:1px solid '+c+'44;border-left:4px solid '+c+';border-radius:8px;margin-bottom:6px;">'
+          +'<span style="font-size:11px;color:'+c+';font-weight:700;min-width:28px;">'+NOTE_LABEL[META[n].note]+'</span>'
+          +'<span style="flex:1;font-size:14px;">'+link+'</span>'
+          +'<button type="button" class="calc-minus" data-oil="'+n+'" style="width:26px;height:26px;border:1px solid '+c+';background:#fff;color:'+c+';border-radius:6px;cursor:pointer;font-size:16px;font-family:inherit;">−</button>'
+          +'<span style="min-width:42px;text-align:center;font-weight:700;font-size:14px;">'+state[n]+' 滴</span>'
+          +'<button type="button" class="calc-plus" data-oil="'+n+'" style="width:26px;height:26px;border:1px solid '+c+';background:'+c+';color:#fff;border-radius:6px;cursor:pointer;font-size:16px;font-family:inherit;">+</button>'
+          +'</div>';
+      }}).join('');
+      selBox.innerHTML=rows;
+
+      // 計算
+      var total=0,byNote={{top:0,mid:0,base:0}},flags={{}};
+      names.forEach(function(n){{
+        total+=state[n]; byNote[META[n].note]+=state[n];
+        META[n].flags.forEach(function(f){{flags[f]=(flags[f]||[]);flags[f].push(n);}});
+      }});
+      var pct=function(v){{return total?Math.round(v/total*100):0;}};
+      // 基底油用量（滴×0.05ml÷濃度）
+      var ml=function(p){{return (total*0.05/p).toFixed(1);}};
+      // 平衡提示
+      var tip='';
+      if(!byNote.base) tip='💡 缺後調定香，香氣易快速消散——可加檀香/乳香/岩蘭草/廣藿香延長尾韻。';
+      else if(!byNote.top) tip='💡 缺前調，第一印象較弱——可加柑橘/薄荷類提亮開場。';
+      else if(byNote.base>byNote.top+byNote.mid) tip='💡 後調偏重，香氣厚重沉穩——若想更輕盈可增前調。';
+      else tip='✅ 前中後三調齊全，層次平衡。';
+
+      var flagHtml='';
+      var fk=Object.keys(flags);
+      if(fk.length){{
+        flagHtml='<div style="background:#FFF4E6;border-left:4px solid #E8A04B;border-radius:8px;padding:12px 16px;margin-top:12px;">'
+          +'<strong style="color:#B5701A;font-size:14px;">⚠️ 安全旗標</strong><div style="font-size:13px;line-height:1.9;color:#5D4A28;margin-top:4px;">'
+          +fk.map(function(f){{return FLAG[f]+'：'+flags[f].join('、');}}).join('<br>')
+          +'</div></div>';
+      }}
+
+      resBox.innerHTML=
+        '<div style="background:#FBF7F1;border-radius:12px;padding:16px 18px;">'
+        +'<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;"><strong style="font-size:16px;color:var(--green-dark);">調配分析</strong><span style="font-size:13px;color:var(--text-mid);">共 '+total+' 滴 · '+names.length+' 支精油</span></div>'
+        // 前中後調比例
+        +'<div style="display:flex;height:28px;border-radius:6px;overflow:hidden;margin-bottom:6px;">'
+        +(byNote.top?'<div style="width:'+pct(byNote.top)+'%;background:'+NOTE_COLOR.top+';color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;">前'+pct(byNote.top)+'%</div>':'')
+        +(byNote.mid?'<div style="width:'+pct(byNote.mid)+'%;background:'+NOTE_COLOR.mid+';color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;">中'+pct(byNote.mid)+'%</div>':'')
+        +(byNote.base?'<div style="width:'+pct(byNote.base)+'%;background:'+NOTE_COLOR.base+';color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;">後'+pct(byNote.base)+'%</div>':'')
+        +'</div>'
+        +'<p style="font-size:13px;color:#5A7A4A;margin:0 0 14px;">'+tip+'</p>'
+        // 基底油用量
+        +'<div style="font-size:13px;font-weight:700;color:#8B6F3E;margin-bottom:8px;">💧 這個配方要配多少基底油</div>'
+        +'<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:13px;text-align:center;">'
+        +'<div><div style="font-size:18px;">🌫️</div><div style="font-weight:600;">擴香</div><div style="color:var(--text-mid);">直接滴 '+total+' 滴入水氧機</div></div>'
+        +'<div><div style="font-size:18px;">🧴</div><div style="font-weight:600;">滾珠瓶 2%</div><div style="color:var(--text-mid);">+ 約 '+ml(0.02)+' ml 基底油</div></div>'
+        +'<div><div style="font-size:18px;">💆</div><div style="font-weight:600;">按摩油 3%</div><div style="color:var(--text-mid);">+ 約 '+ml(0.03)+' ml 基底油</div></div>'
+        +'</div>'
+        +flagHtml
+        +'</div>';
+    }}
+
+    document.querySelectorAll('.calc-oil').forEach(function(b){{
+      b.onclick=function(){{
+        var n=b.getAttribute('data-oil');
+        if(state[n]){{delete state[n];b.style.background='#fff';b.style.boxShadow='none';}}
+        else{{state[n]=2;var c=NOTE_COLOR[META[n].note];b.style.background=c+'22';b.style.boxShadow='0 0 0 2px '+c+'55';}}
+        render();
+      }};
+    }});
+    document.addEventListener('click',function(e){{
+      var n=e.target.getAttribute&&e.target.getAttribute('data-oil');
+      if(!n||!state[n])return;
+      if(e.target.classList.contains('calc-plus')&&state[n]<12)state[n]++;
+      else if(e.target.classList.contains('calc-minus')){{state[n]--;if(state[n]<1)delete state[n];
+        var btn=document.querySelector('.calc-oil[data-oil="'+n+'"]');if(btn&&!state[n]){{btn.style.background='#fff';btn.style.boxShadow='none';}}}}
+      else return;
+      render();
+    }});
+    render();
+  }})();
+  </script>'''
+
+
+# 從網路流傳的精油配方表（多來源）萃取整理的配方主題。
+# 用途名稱依原表保留；惟癌症/腫瘤/結節/結石類已中性化（避免「精油治癌」假訊息致人延誤治療）。
+# 品牌名、原表用法與行銷紅字一律移除。精油組合為合理搭配，滴數引導用上方計算器自調。
+# (emoji, 用途名, [精油（須在 SLUG）])
+EXTRA_TOPICS = [
+    # 面部與肌膚
+    ('💆', '面部精華保養', ['乳香', '真正薰衣草', '天竺葵']),
+    ('☀️', '美膚防曬', ['乳香', '天竺葵', '真正薰衣草']),
+    ('🌅', '曬後美白修復', ['真正薰衣草', '永久花', '乳香']),
+    ('💧', '美膚淡斑', ['檸檬', '乳香', '玫瑰']),
+    ('👁️', '黑眼圈眼袋', ['永久花', '真正薰衣草', '天竺葵']),
+    ('⏳', '抗衰緊緻', ['乳香', '玫瑰', '檀香']),
+    ('🌷', '肌膚回春', ['乳香', '玫瑰', '永久花']),
+    ('✨', '疤痕修復', ['永久花', '乳香', '真正薰衣草']),
+    ('🧴', '痘痘調理', ['茶樹', '真正薰衣草', '天竺葵']),
+    ('💇', '生髮頭皮養護', ['迷迭香', '大西洋雪松', '胡椒薄荷']),
+    # 呼吸／換季
+    ('👃', '鼻炎', ['尤加利', '胡椒薄荷', '茶樹']),
+    ('🗣️', '清咽止咳', ['檸檬', '乳香', '薑']),
+    ('🌬️', '咳嗽有痰', ['尤加利', '乳香', '檸檬']),
+    ('💨', '久咳氣喘', ['乳香', '真正薰衣草', '絲柏']),
+    ('🤧', '感冒配方', ['茶樹', '尤加利', '胡椒薄荷', '檸檬']),
+    ('🛡️', '抗病毒防護', ['茶樹', '桉油醇樟', '檸檬', '丁香']),
+    ('🌡️', '退燒舒緩', ['胡椒薄荷', '真正薰衣草', '檸檬']),
+    # 消化／代謝循環
+    ('🍽️', '消化不良', ['薑', '胡椒薄荷', '甜茴香']),
+    ('🫃', '脾胃養護', ['薑', '甜茴香', '甜羅勒']),
+    ('🍷', '解酒', ['胡椒薄荷', '葡萄柚', '薑']),
+    ('💧', '養腎排毒', ['杜松漿果', '葡萄柚', '絲柏']),
+    ('🧬', '護肝排毒', ['葡萄柚', '迷迭香', '胡椒薄荷']),
+    ('🌊', '淋巴排毒', ['葡萄柚', '絲柏', '杜松漿果', '薑']),
+    ('🍃', '祛濕／體態按摩', ['葡萄柚', '杜松漿果', '絲柏']),
+    # 循環／神經
+    ('❤️', '高血壓舒緩', ['真正薰衣草', '依蘭', '甜馬鬱蘭', '佛手柑']),
+    ('🩸', '血管保養', ['絲柏', '檸檬', '天竺葵']),
+    ('😴', '安神助眠', ['真正薰衣草', '羅馬洋甘菊', '大西洋雪松']),
+    # 肌肉關節
+    ('💪', '五星酸痛', ['胡椒薄荷', '黑胡椒', '薑', '甜馬鬱蘭']),
+    ('🦴', '關節疼痛', ['薑', '黑胡椒', '乳香', '甜馬鬱蘭']),
+    ('🧎', '腰背舒緩', ['甜馬鬱蘭', '黑胡椒', '薑', '檀香']),
+    ('💆‍♂️', '肩頸舒緩', ['胡椒薄荷', '甜馬鬱蘭', '乳香']),
+    # 女性／婦科（纖維瘤類已中性化為胸部舒緩）
+    ('🌸', '暖宮調經', ['快樂鼠尾草', '天竺葵', '甜茴香', '薑']),
+    ('🌺', '子宮保養', ['快樂鼠尾草', '天竺葵', '玫瑰']),
+    ('🤱', '胸部舒緩按摩', ['真正薰衣草', '天竺葵', '乳香']),
+    # 過敏／皮膚舒緩
+    ('🌿', '過敏舒緩', ['德國洋甘菊', '真正薰衣草', '永久花']),
+    ('🩹', '濕疹舒緩', ['德國洋甘菊', '真正薰衣草', '永久花']),
+    # 腹部舒緩（結石類中性化）／呼吸舒緩（結節類中性化）
+    ('🫄', '腹部舒緩按摩', ['胡椒薄荷', '薑', '檸檬']),
+    ('🫁', '呼吸道日常舒緩', ['乳香', '尤加利', '真正薰衣草']),
+    # 其他
+    ('🛡️', '甲狀腺保養', ['乳香', '天竺葵', '檀香']),
+    ('🚗', '暈車舒緩', ['胡椒薄荷', '薑', '檸檬']),
+    ('🔥', '滋補陽氣', ['薑', '黑胡椒', '大西洋雪松']),
+    ('🦟', '戶外防蚊', ['檸檬尤加利', '香茅', '真正薰衣草', '天竺葵']),
+    # 兒童（需稀釋）／學習
+    ('🧒', '兒童日常保養（需稀釋）', ['甜橙', '真正薰衣草', '羅馬洋甘菊']),
+    ('📖', '專注學習（需稀釋）', ['迷迭香', '檸檬', '乳香']),
+]
+
+
+def build_extra_topics():
+    """從網路配方表合規化萃取的「保養與身體」主題卡片區塊"""
+    cards = []
+    for emoji, name, oils in EXTRA_TOPICS:
+        chips = ''.join(
+            f'<a href="{SLUG.get(o,"#")}.html" style="display:inline-block;padding:4px 11px;margin:3px;'
+            f'background:#fff;border:1px solid #C8A67355;border-radius:14px;font-size:13px;'
+            f'color:#5D4A28;text-decoration:none;font-weight:600;">{o}</a>'
+            for o in oils)
+        cards.append(
+            f'<div style="background:#fff;border:1px solid var(--border,#E5D9C0);border-radius:12px;padding:14px 16px;">'
+            f'<div style="font-size:16px;font-weight:700;color:var(--green-dark,#3a5a40);margin-bottom:8px;">{emoji} {name}</div>'
+            f'<div>{chips}</div></div>')
+    return f'''
+  <!-- 更多配方主題（配方參考庫）-->
+  <section style="margin:44px 0 32px;">
+    <h2 style="font-size:22px;color:var(--green-dark);border-bottom:2px solid var(--beige);padding-bottom:8px;">🌿 精油配方參考庫</h2>
+    <div style="background:#FFF4E6;border-left:4px solid #E8A04B;border-radius:8px;padding:14px 18px;margin:14px 0 18px;">
+      <strong style="color:#B5701A;font-size:14px;">⚠️ 重要聲明（請務必閱讀）</strong>
+      <p style="font-size:13px;line-height:1.85;color:#5D4A28;margin:6px 0 0;">以下配方蒐集整理自各家流傳的精油使用紀錄，<strong>用途名稱僅為分類標籤，不代表精油具有任何醫療或治療效果</strong>。精油是輔助身心平衡的芳香生活方式，<strong>不是藥物，無法治療、診斷或預防任何疾病</strong>。身體不適請就醫；切勿以精油取代正規醫療。孕婦、嬰幼兒、慢性病、服藥中者使用前請先諮詢醫師或專業芳療師。</p>
+    </div>
+    <p style="font-size:14px;line-height:1.85;margin:0 0 18px;color:var(--text-mid);">點精油看完整指南，<strong>滴數請用上方「自訂計算器」</strong>依用途調配（臉部 ≤1%、身體 2-3%、擴香適量）。</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;">
+      {''.join(cards)}
+    </div>
+  </section>'''
 
 
 def build():
@@ -172,7 +443,10 @@ def build():
                f'<span style="font-size:14px;font-weight:600;color:#3D3328;">{name}</span></button>')
         (feeling_btns if cat == 'feeling' else env_btns).append(btn)
 
-    desc = '依你的感覺或環境，一鍵產生精油調配配方。內建調香金字塔（前中後調）原理與三種用法稀釋換算，46 支精油即點即連完整指南。'
+    calc_html = build_calculator()
+    extra_html = build_extra_topics()
+
+    desc ='依你的感覺或環境一鍵生成精油配方，或用自訂計算器自己選精油調配。內建調香金字塔（前中後調）平衡分析、基底油用量換算、光敏／孕婦／幼兒／貓安全旗標，46 支精油即點即連完整指南。'
     html = f'''<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -237,13 +511,11 @@ def build():
 
 <main style="max-width:920px;margin:0 auto;padding:0 20px;">
 
-  <section class="ai-summary" itemscope itemtype="https://schema.org/Question" style="background:linear-gradient(135deg,#F5F0E6 0%,#EEE7D8 100%);border-left:4px solid #C8A673;padding:20px 24px;border-radius:12px;margin:28px 0;">
-    <h2 itemprop="name" style="font-size:18px;font-weight:700;color:#8B6F3E;margin:0 0 10px;">✦ 如何調配精油？</h2>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text" style="font-size:15px;line-height:1.85;color:#3D3328;margin:0;">
-        精油調配遵循「調香金字塔」：<strong>前調</strong>（柑橘、薄荷，揮發快、第一印象）、<strong>中調</strong>（薰衣草、天竺葵，配方核心）、<strong>後調</strong>（檀香、乳香，揮發慢、定香延長）。一般比例約前調 3：中調 5：後調 2。本工具依你選的<strong>感覺</strong>（放鬆／提神／冥想…）或<strong>環境</strong>（臥室／辦公室／浴室…）自動產生配方，並換算擴香、滾珠瓶（2%）、按摩油（3%）三種用法的滴數。使用前請參考 <a href="safety.html">精油安全指南</a>。
-      </p>
-    </div>
+  <section class="blend-intro" style="background:linear-gradient(135deg,#F5F0E6 0%,#EEE7D8 100%);border-left:4px solid #C8A673;padding:20px 24px;border-radius:12px;margin:28px 0;">
+    <h2 style="font-size:18px;font-weight:700;color:#8B6F3E;margin:0 0 10px;">✦ 如何調配精油？</h2>
+    <p style="font-size:15px;line-height:1.85;color:#3D3328;margin:0;">
+      精油調配遵循「調香金字塔」：<strong>前調</strong>（柑橘、薄荷，揮發快、第一印象）、<strong>中調</strong>（薰衣草、天竺葵，配方核心）、<strong>後調</strong>（檀香、乳香，揮發慢、定香延長）。一般比例約前調 3：中調 5：後調 2。本頁提供兩種用法：① 依<strong>感覺／環境</strong>一鍵套用 24 組現成配方；② 用下方<strong>自訂計算器</strong>自己選精油，即時算前中後調平衡、基底油用量與安全旗標。使用前請參考 <a href="safety.html">精油安全指南</a>。
+    </p>
   </section>
 
   <!-- 模式切換 -->
@@ -267,6 +539,9 @@ def build():
       👆 點選上方任一情境，即可看到專屬配方
     </div>
   </div>
+
+{calc_html}
+{extra_html}
 
   <!-- 調香金字塔教學 -->
   <section style="margin:40px 0;">
