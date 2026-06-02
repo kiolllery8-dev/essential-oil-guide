@@ -108,6 +108,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <li><a href="/encyclopedia/">大百科</a></li>
                 <li><a href="/oils/">精油</a></li>
                 <li><a href="/blend/">調配精油</a></li>
+                <li><a href="/numerology/">生命靈數</a></li>
                 <li><a href="/aromatherapy/">芳療應用</a></li>
                 <li><a href="/safety/">安全指南</a></li>
               </ul>

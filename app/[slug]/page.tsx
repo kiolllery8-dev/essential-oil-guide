@@ -27,6 +27,7 @@ const SLUG_NAMES: Record<string, string> = {
   encyclopedia: '大百科',
   oils: '精油化學分子索引',
   blend: '調配精油',
+  numerology: '生命靈數',
   aromatherapy: '芳療應用',
   safety: '安全指南',
   search: '搜尋',

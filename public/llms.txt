@@ -57,6 +57,11 @@
 - 關於作者: https://intelliverse.tw/author-yuling/
 - 引用來源與參考資料: https://intelliverse.tw/references/
 
+### 互動工具（client-side 計算器，免登入免費）
+
+- 調配精油計算器（依感覺/環境一鍵生成配方 + 調香金字塔前中後調平衡 + 安全旗標）: https://intelliverse.tw/blend/
+- 生命靈數計算機（西元生日算主命數/生日數/天賦數/九宮格連線/空缺數，並對應精油芳療方向與 NLP 學習風格）: https://intelliverse.tw/numerology/
+
 ### 化學分子分類（302 個 datasheet）
 
 依「主要分子官能基」分為 14 大類：單萜烯、單萜醇、倍半萜醇、倍半萜烯、單萜酮、倍半萜酮、氧化物、醛類、酯類、脂類、苯基酯、芳香醛、酚類、香豆素／內酯。
