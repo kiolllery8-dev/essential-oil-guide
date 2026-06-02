@@ -896,6 +896,15 @@ CALC_JS = r'''
       if((m===z.m1&&d>=z.d1)||(m===z.m2&&d<=z.d2))return z;}
     return null;
   }
+  // 生肖：以「出生當年的農曆年」為準（春節前算前一年）
+  var ZA=['鼠','牛','虎','兔','龍','蛇','馬','羊','猴','雞','狗','豬'];
+  var ZE=['🐀','🐂','🐅','🐇','🐉','🐍','🐎','🐐','🐒','🐓','🐕','🐖'];
+  function zodiacOfBirth(y,m,d){
+    var ly=y, sf=LUNAR.lunar2solar(y,1,1,false); // 該年春節（農曆正月初一）的國曆日
+    if(sf&&sf!==-1){ if(m<sf.m||(m===sf.m&&d<sf.d)) ly=y-1; } // 生日在春節前→屬前一個生肖年
+    var i=((ly-4)%12+12)%12;
+    return {animal:ZA[i], emoji:ZE[i], lunarYear:ly, solarYear:y, beforeSpring:(ly!==y)};
+  }
 
   // 九宮格 SVG
   var GPOS={1:[0,0],4:[1,0],7:[2,0],2:[0,1],5:[1,1],8:[2,1],3:[0,2],6:[1,2],9:[2,2]};
@@ -954,20 +963,22 @@ CALC_JS = r'''
     var flow=reduceNum(reduceNum(m)+reduceNum(d)+reduceNum(pyYear));
     var nextFlow=reduceNum(reduceNum(m)+reduceNum(d)+reduceNum(pyYear+1));
     var flowInfo={flow:flow,next:nextFlow,passed:passed,bm:m,bd:d,ty:ty};
+    var zodiac=zodiacOfBirth(y,m,d);
     var rm=reduceNum(m),rd=reduceNum(d),ry=reduceNum(y);
     var p1=reduceNum(rm+rd),p2=reduceNum(rd+ry),p3=reduceNum(p1+p2),p4=reduceNum(rm+ry);
     var e1=36-life,age=ty-y-(passed?0:1);
     var stages=[{num:p1,from:0,to:e1},{num:p2,from:e1+1,to:e1+9},{num:p3,from:e1+10,to:e1+18},{num:p4,from:e1+19,to:null}];
     var curStage=age<=e1?0:(age<=e1+9?1:(age<=e1+18?2:3));
     setNow(age);
-    render(life,bday,talent,zo,innate,counts,missing,active,flow,ty,first,stages,curStage,age,lunarNote,flowInfo);
+    render(life,bday,talent,zo,innate,counts,missing,active,flow,ty,first,stages,curStage,age,lunarNote,flowInfo,zodiac);
   };
 
-  function render(life,bday,talent,zo,innate,counts,missing,active,flow,ty,combo,stages,curStage,age,lunarNote,flowInfo){
+  function render(life,bday,talent,zo,innate,counts,missing,active,flow,ty,combo,stages,curStage,age,lunarNote,flowInfo,zodiac){
     var lp=D.lifepath[life],talentStr=(''+talent).split('').join(' '),h='';
     h+='<div class="num-card" style="border-top:4px solid '+lp.color+';">';
     h+='<div style="text-align:center;margin-bottom:6px;"><span style="font-size:13px;color:#9A8AA8;">你的生命靈數</span><div style="font-size:28px;font-weight:800;color:#7A5A8E;">'+lp.emoji+' 主命數 '+life+'｜'+lp.tree+'</div><div style="font-size:14px;color:#7A6852;">'+lp.keyword+'</div></div>';
     h+='<div style="text-align:center;margin-bottom:2px;font-size:13px;color:#7A6852;"><span style="display:inline-block;width:11px;height:11px;border-radius:50%;background:'+lp.color+';margin-right:5px;vertical-align:-1px;"></span>代表色 '+lp.colorName+'　·　能量原型 '+lp.archetype+'</div>';
+    h+='<div style="text-align:center;margin-bottom:4px;font-size:14px;color:#7A6852;">'+zodiac.emoji+' 生肖 <b style="color:#7A5A8E;font-size:16px;">'+zodiac.animal+'</b>'+(zodiac.beforeSpring?'<span style="font-size:12px;color:#9A8AA8;">（出生當年農曆 '+zodiac.lunarYear+' 年・春節前）</span>':'')+'</div>';
     if(lunarNote)h+='<div style="text-align:center;font-size:12.5px;color:#9A8AA8;margin-bottom:4px;">📅 '+lunarNote+'</div>';
     h+='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px;">';
     h+=stat(innate,'先天數')+stat(life,'主命數')+stat(bday,'生日數');
