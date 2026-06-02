@@ -347,6 +347,65 @@ COMPAT_DIFF = {
     8: ('莫名的吸引', 55, '說不上理由就是被吸引，需要時間慢慢讀懂對方，磨合期長一點。'),
 }
 
+# ── 四階段大運（高峰期 Pinnacle；每個人生階段被哪個數字能量主導）──
+# 計算用標準西方數字學：P1=月+日、P2=日+年、P3=P1+P2、P4=月+年（皆先縮減）
+# 階段年齡：第一階段 0~(36-主命數)，之後每 9 年一段
+PINNACLE_THEME = {
+    1: '開創與獨立——適合啟動、闖蕩、為自己做主的階段。',
+    2: '關係與合作——學習協調、耐心、與人共事的階段。',
+    3: '表達與創造——發揮才華、社交、享受生活的階段。',
+    4: '築基與務實——踏實工作、建立秩序與安全感的階段。',
+    5: '變化與自由——擁抱改變、嘗試、拓展視野的階段。',
+    6: '責任與愛——關於家庭、照顧、承擔與付出的階段。',
+    7: '內省與智慧——適合學習、沉澱、向內探索的階段。',
+    8: '成就與豐盛——衝刺事業、累積實力與資源的階段。',
+    9: '圓滿與付出——服務、放下、整合與利他的階段。',
+}
+
+# ── 組合數（同一主命數的不同「總和」帶來的性格差異）──
+# key = 生日全部數字相加的「總和兩位數」（先天總和），value = 性格微調
+COMBO = {
+    10: '最純粹的 1——0 放大了 1 的力量，獨立、開創、領導性都最鮮明，是天生的開路先鋒。',
+    19: '1 與 9 的組合——理想色彩濃，是有願景、想為更大目標而開創的領袖型。',
+    28: '經由 2 與 8——比一般 1 更懂合作與經營，領導裡帶著手腕與商業頭腦。',
+    37: '經由 3 與 7——創意加上思辨，用點子和深度去開創，獨來獨往也自得其樂。',
+    46: '經由 4 與 6——務實又有責任感的開創者，腳踏實地地當領導，讓人安心。',
+    11: '大師數！11 是高敏感與直覺的「靈性數」，協調力再加上強烈第六感，天賦與壓力都加倍。',
+    20: '最純粹的 2——0 放大了協調與敏感，是極致的協調者與傾聽者。',
+    29: '經由 2 與 9——同理心特別強，溫柔裡帶著理想，容易為別人付出。',
+    38: '經由 3 與 8——協調力配上表達與企圖，擅長公關、把人與資源連起來。',
+    47: '經由 4 與 7——細膩又務實理性，是安靜可靠、把細節顧好的協調者。',
+    12: '經由 1 與 2——創意裡有開創也有合作，點子比較容易落地。',
+    21: '經由 2 與 1——表達中帶著主見與圓融，能說也能協調。',
+    30: '最純粹的 3——0 放大了表達與創意，是天生的表演者與開心果。',
+    39: '經由 3 與 9——創意加理想，想像力豐富，是有靈魂的創作者。',
+    48: '經由 4 與 8——少見地把創意與務實、商業結合，能把才華變成事業。',
+    13: '經由 1 與 3——務實裡有開創與創意，是能把點子真正做出來的實踐者。',
+    22: '大師數！22 是「建築師數」，務實能量放到最大，有把宏大夢想蓋成真的能力。',
+    31: '經由 3 與 1——表達加開創的務實者，做事有想法、不死板。',
+    40: '最純粹的 4——0 放大了秩序與務實，是極致的組織者與建設好手。',
+    14: '經由 1 與 4——自由裡有開創與紀律，是能管好自己的冒險家。',
+    23: '經由 2 與 3——溝通力滿點，協調加表達，是天生的公關與業務。',
+    32: '經由 3 與 2——表達加協調的自由人，很會帶氣氛、炒熱場子。',
+    41: '經由 4 與 1——務實又獨立的冒險者，愛自由但不亂來。',
+    15: '經由 1 與 5——照顧裡有開創與自由，是不被責任綁死的溫暖領導。',
+    24: '經由 2 與 4——協調加務實，把家和團隊顧得穩穩的可靠照顧者。',
+    33: '大師數！33 是「大愛數」，愛與奉獻放到最大，是療癒者與老師的能量。',
+    42: '經由 4 與 2——務實又體貼，默默把身邊的人照顧好。',
+    16: '經由 1 與 6——思辨裡有開創與責任，是有主見也有溫度的探究者。',
+    25: '經由 2 與 5——敏感加靈活，直覺敏銳、看人很準。',
+    34: '經由 3 與 4——創意加務實，把想法研究透徹再落地。',
+    43: '經由 4 與 3——務實的思考者，鑽研中帶點創意。',
+    17: '經由 1 與 7——企圖心配上獨立與思辨，是有遠見的經營者。',
+    26: '經由 2 與 6——商業頭腦加上協調與責任，是顧及人情的領導者。',
+    35: '經由 3 與 5——表達加靈活，擅長行銷、把生意做活。',
+    44: '大師數！44 是「實業數」，務實與企圖放到最大，有把事業版圖蓋起來的耐力。',
+    18: '經由 1 與 8——理想裡有開創與企圖，是想把大事做成的理想家。',
+    27: '經由 2 與 7——同理加智慧，是溫柔又有深度的療癒型。',
+    36: '經由 3 與 6——創意加愛，用才華服務人、充滿溫度。',
+    45: '經由 4 與 5——務實加靈活，能把博愛落實成具體行動的理想家。',
+}
+
 
 def build_data():
     """組成給前端 JS 用的 JSON（精油已轉成連結 HTML）"""
@@ -373,7 +432,8 @@ def build_data():
                           oilsHtml=ochips(d['oils']), oilwhy=d['oilwhy'])
     return dict(lifepath=lifepath, lines=lines, missing=missing,
                 zodiac=zodiac, nlpQ=nlp_q, nlpRes=nlp_res,
-                yearFlow=year_flow, compatDiff=compat_diff)
+                yearFlow=year_flow, compatDiff=compat_diff,
+                pinnacle=PINNACLE_THEME, combo=COMBO)
 
 
 # ── 數字意義速查（靜態，給 SEO/AI 爬蟲）─────────────────────
@@ -707,10 +767,15 @@ CALC_JS = r'''
     var active=D.lines.filter(function(ln){return ln.nums.every(function(n){return counts[n]>0;});});
     var ty=new Date().getFullYear();
     var flow=reduceNum(reduceNum(m)+reduceNum(d)+reduceNum(ty));
-    render(life,bday,talent,zo,innate,counts,missing,active,flow,ty);
+    var rm=reduceNum(m),rd=reduceNum(d),ry=reduceNum(y);
+    var p1=reduceNum(rm+rd),p2=reduceNum(rd+ry),p3=reduceNum(p1+p2),p4=reduceNum(rm+ry);
+    var e1=36-life,age=ty-y;
+    var stages=[{num:p1,from:0,to:e1},{num:p2,from:e1+1,to:e1+9},{num:p3,from:e1+10,to:e1+18},{num:p4,from:e1+19,to:null}];
+    var curStage=age<=e1?0:(age<=e1+9?1:(age<=e1+18?2:3));
+    render(life,bday,talent,zo,innate,counts,missing,active,flow,ty,first,stages,curStage,age);
   };
 
-  function render(life,bday,talent,zo,innate,counts,missing,active,flow,ty){
+  function render(life,bday,talent,zo,innate,counts,missing,active,flow,ty,combo,stages,curStage,age){
     var lp=D.lifepath[life],talentStr=(''+talent).split('').join(' '),h='';
     h+='<div class="num-card" style="border-top:4px solid '+lp.color+';">';
     h+='<div style="text-align:center;margin-bottom:6px;"><span style="font-size:13px;color:#9A8AA8;">你的生命靈樹</span><div style="font-size:28px;font-weight:800;color:#7A5A8E;">'+lp.emoji+' 主命數 '+life+'｜'+lp.tree+'</div><div style="font-size:14px;color:#7A6852;">'+lp.keyword+'</div></div>';
@@ -736,7 +801,9 @@ CALC_JS = r'''
     });}else{h+='<p style="font-size:14.5px;color:#7A6852;margin:0;">你目前沒有完整的三格連線——這代表你的能量比較分散、不被單一模式定義，反而更有彈性。可以多看主命數與空缺數來認識自己。</p>';}
     h+='</div>';
     h+='<div class="num-card"><h3 class="num-h2">💧 養分 — 生日數 '+bday+' & 天賦數 '+talentStr+'</h3>';
-    h+='<p style="font-size:14.5px;line-height:1.9;margin:0;"><b>生日數 '+bday+'</b>：'+D.lifepath[bday].title+'的特質——'+D.lifepath[bday].keyword+'，是你在日常裡最自然流露的一面。<br><b>天賦數 '+talentStr+'</b>：藏在你身上、可以好好發揮的潛在才能。</p></div>';
+    h+='<p style="font-size:14.5px;line-height:1.9;margin:0 0 10px;"><b>生日數 '+bday+'</b>：'+D.lifepath[bday].title+'的特質——'+D.lifepath[bday].keyword+'，是你在日常裡最自然流露的一面。<br><b>天賦數 '+talentStr+'</b>：藏在你身上、可以好好發揮的潛在才能。</p>';
+    if(D.combo[combo]){h+='<div style="background:#F7F4FA;border-left:4px solid #B79BCB;border-radius:8px;padding:10px 14px;font-size:14px;line-height:1.85;"><b style="color:#7A5A8E;">🔢 你的數字組合 '+combo+'：</b>'+D.combo[combo]+'</div>';}
+    h+='</div>';
     h+='<div class="num-card"><h3 class="num-h2">🌱 土壤與根 — 空缺數功課 & 精油處方</h3>';
     if(missing.length){missing.forEach(function(n){var ms=D.missing[n];
       h+='<div style="margin-bottom:16px;padding-bottom:14px;border-bottom:1px dashed #EEE7D8;">';
@@ -753,6 +820,17 @@ CALC_JS = r'''
     h+='<p style="font-size:14.5px;line-height:1.9;margin:0 0 10px;">'+yf.text+'</p>';
     h+='<div style="font-size:13.5px;">🌿 今年的香氣陪伴：'+yf.oilsHtml+'</div>';
     h+='<div style="font-size:12px;color:#9A8AA8;margin-top:8px;">流年＝出生月＋出生日＋今年（'+ty+'），跨年會自動更新。</div></div>';
+    h+='<div class="num-card"><h3 class="num-h2">⛰️ 人生四階段大運</h3>';
+    h+='<p style="font-size:13.5px;color:#7A6852;margin:0 0 10px;">人生分成四個階段，每段被一個數字能量主導。你現在大約 '+age+' 歲，正走在標亮的那一段。</p>';
+    var labels=['第一階段','第二階段','第三階段','第四階段'];
+    stages.forEach(function(st,i){
+      var on=i===curStage;
+      var range=st.to===null?(st.from+' 歲以後'):(st.from+'–'+st.to+' 歲');
+      h+='<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 12px;margin:6px 0;border-radius:10px;border:1px solid '+(on?'#C8A673':'#EEE7D8')+';background:'+(on?'#FBF6EE':'#fff')+';">';
+      h+='<div style="min-width:66px;text-align:center;"><div style="font-size:11px;color:#9A8AA8;">'+labels[i]+'</div><div style="font-size:23px;font-weight:800;color:#8B6F3E;">'+st.num+'</div><div style="font-size:11px;color:#7A6852;">'+range+'</div></div>';
+      h+='<div style="flex:1;font-size:13.5px;line-height:1.8;color:#3D3328;">'+(on?'<b style="color:#B5701A;">▸ 你現在這裡：</b>':'')+D.pinnacle[st.num]+'</div></div>';
+    });
+    h+='<div style="font-size:12px;color:#9A8AA8;margin-top:6px;">※ 高峰數＝月+日、日+年、兩者相加、月+年（皆先縮減）；年齡為粗估，實際以生日為準。</div></div>';
     h+='<div class="num-card"><h3 class="num-h2">💞 人際合盤</h3><p style="font-size:14.5px;line-height:1.9;margin:0 0 14px;">'+lp.compat+'</p>';
     h+='<div style="background:#FBF7F1;border-radius:10px;padding:14px 16px;">';
     h+='<div style="font-size:14px;font-weight:700;color:#7A5A8E;margin-bottom:6px;">🔮 看你和某個人的緣分</div>';
