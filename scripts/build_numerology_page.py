@@ -476,7 +476,8 @@ def build():
         '<td style="padding:8px 12px;border:1px solid #E5D9C0;">%s</td></tr>' % (n, t)
         for n, t in NUM_MEANING)
 
-    calc_js = CALC_JS.replace('__DATA__', data_json)
+    lunar_js = (Path(__file__).parent / 'lunar_convert.js').read_text(encoding='utf-8')
+    calc_js = lunar_js + '\n' + CALC_JS.replace('__DATA__', data_json)
 
     html = (HTML_HEAD
             + '<body>\n' + HEADER + '\n'
@@ -609,14 +610,19 @@ MAIN_TOP = '''<main style="max-width:980px;margin:0 auto;padding:0 20px;">
 
     <!-- 右：計算器 -->
     <section id="calc" style="flex:1 1 320px;min-width:280px;background:#fff;border:1px solid #E5D9C0;border-radius:12px;padding:18px 22px;display:flex;flex-direction:column;justify-content:center;">
-      <h2 style="font-size:18px;font-weight:700;color:#5A7A4A;margin:0 0 14px;">🔢 輸入你的西元生日</h2>
+      <h2 style="font-size:18px;font-weight:700;color:#5A7A4A;margin:0 0 12px;">🔢 輸入你的生日</h2>
+      <div style="display:flex;gap:16px;align-items:center;margin-bottom:12px;font-size:14px;color:#3D3328;">
+        <label style="cursor:pointer;"><input type="radio" name="cal-type" value="solar" checked style="vertical-align:-1px;margin-right:4px;">國曆</label>
+        <label style="cursor:pointer;"><input type="radio" name="cal-type" value="lunar" style="vertical-align:-1px;margin-right:4px;">農曆</label>
+        <label id="leap-wrap" style="cursor:pointer;display:none;color:#7A5A8E;font-weight:600;"><input type="checkbox" id="num-leap" style="vertical-align:-1px;margin-right:4px;">閏月</label>
+      </div>
       <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
-        <input id="num-y" class="num-sel" type="number" inputmode="numeric" placeholder="西元年（如 1990）" min="1" max="2200" style="width:160px;" />
+        <input id="num-y" class="num-sel" type="number" inputmode="numeric" placeholder="年（如 1990）" min="1" max="2200" style="width:140px;" />
         <select id="num-m" class="num-sel"></select>
         <select id="num-d" class="num-sel"></select>
       </div>
       <button id="num-go" style="margin-top:14px;padding:12px 28px;background:#7A5A8E;color:#fff;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">算出我的生命靈數 ✨</button>
-      <p style="font-size:12px;color:#9A8AA8;margin:12px 0 0;">西元（國曆／陽曆）生日；農曆請先換算成國曆。年份可直接打字輸入。</p>
+      <p style="font-size:12px;color:#9A8AA8;margin:12px 0 0;">預設國曆（陽曆）；選農曆會自動換算成國曆再計算。年份可直接打字輸入。</p>
     </section>
   </div>
 
@@ -678,7 +684,7 @@ EDU_SECTION = '''
     </ul>
 
     <h2 style="font-size:22px;color:var(--green-dark);border-bottom:2px solid var(--beige);padding-bottom:8px;margin-top:32px;">❓ 常見問題</h2>
-    <div class="num-card"><strong style="color:#7A5A8E;">Q：要用國曆還是農曆生日？</strong><p style="margin:8px 0 0;font-size:14.5px;line-height:1.85;">用<strong>西元（國曆／陽曆）</strong>生日。如果你只記得農曆，請先查萬年曆換算成國曆再輸入。</p></div>
+    <div class="num-card"><strong style="color:#7A5A8E;">Q：要用國曆還是農曆生日？</strong><p style="margin:8px 0 0;font-size:14.5px;line-height:1.85;">兩種都可以。預設是<strong>國曆（西元／陽曆）</strong>；如果你只記得農曆，把計算器切到<strong>農曆</strong>（閏月年份再勾「閏月」），系統會自動換算成國曆再計算，不用自己查萬年曆。生命靈數本身是用國曆日期推算的。</p></div>
     <div class="num-card"><strong style="color:#7A5A8E;">Q：主命數和星座哪個準？</strong><p style="margin:8px 0 0;font-size:14.5px;line-height:1.85;">兩者看的角度不同：星座偏「當下的情緒與風格」，生命靈數偏「天生的性格與人生方向」。它們都是認識自己的工具，參考、對照著看就好，不必當成命定。</p></div>
     <div class="num-card"><strong style="color:#7A5A8E;">Q：空缺數是不是不好？</strong><p style="margin:8px 0 0;font-size:14.5px;line-height:1.85;">不是缺點，而是「這輩子要練習的功課」。看見它，你就有機會補上；補上之後，往往會變成你最有故事、最有厚度的地方。</p></div>
     <div class="num-card"><strong style="color:#7A5A8E;">Q：精油真的能改運嗎？</strong><p style="margin:8px 0 0;font-size:14.5px;line-height:1.85;">精油不是法術，也不是藥物。它能做的是在你需要的時候，用香氣支持你的情緒、陪你建立小儀式。把它當成「照顧自己的方式」，而不是「改變命運的工具」。</p></div>
@@ -711,20 +717,31 @@ CALC_JS = r'''
   function sumDigits(n){var s=0;n=Math.abs(n);while(n>0){s+=n%10;n=Math.floor(n/10);}return s;}
   function reduceNum(n){while(n>9)n=sumDigits(n);return n;}
 
-  // 年份改為手動輸入（input）；月、日仍用下拉
+  // 年份改為手動輸入（input）；月、日仍用下拉；可切換國曆／農曆
   var ySel=byId('num-y'),mSel=byId('num-m'),dSel=byId('num-d');
   function opt(v,t){var o=document.createElement('option');o.value=v;o.textContent=t;return o;}
   mSel.appendChild(opt('','月'));
   for(var m=1;m<=12;m++)mSel.appendChild(opt(m,m+' 月'));
+  function calType(){var r=document.querySelector('input[name=cal-type]:checked');return r?r.value:'solar';}
   function fillDays(){
-    var cur=dSel.value,yy=+ySel.value,mm=+mSel.value;
-    var dim=[31,28,31,30,31,30,31,31,30,31,30,31],max=31;
-    if(mm>=1&&mm<=12){max=dim[mm-1];if(mm===2&&yy&&((yy%4===0&&yy%100!==0)||yy%400===0))max=29;}
+    var cur=dSel.value,yy=+ySel.value,mm=+mSel.value,max=31;
+    if(calType()==='lunar'){max=30;}
+    else{var dim=[31,28,31,30,31,30,31,31,30,31,30,31];if(mm>=1&&mm<=12){max=dim[mm-1];if(mm===2&&yy&&((yy%4===0&&yy%100!==0)||yy%400===0))max=29;}}
     dSel.innerHTML='';dSel.appendChild(opt('','日'));
     for(var dd=1;dd<=max;dd++)dSel.appendChild(opt(dd,dd+' 日'));
     if(cur&&+cur<=max)dSel.value=cur;
   }
-  ySel.oninput=fillDays;mSel.onchange=fillDays;fillDays();
+  function updateLeap(){
+    var wrap=byId('leap-wrap'),cb=byId('num-leap');if(!wrap)return;
+    if(calType()!=='lunar'){wrap.style.display='none';cb.checked=false;return;}
+    wrap.style.display='inline-block';
+    var yy=+ySel.value,mm=+mSel.value,has=!!(yy>=1900&&yy<=2100&&mm&&LUNAR.leapMonth(yy)===mm);
+    cb.disabled=!has;if(!has)cb.checked=false;wrap.style.opacity=has?'1':'0.4';
+  }
+  function refresh(){fillDays();updateLeap();}
+  ySel.oninput=refresh;mSel.onchange=refresh;
+  Array.prototype.forEach.call(document.querySelectorAll('input[name=cal-type]'),function(r){r.onchange=refresh;});
+  refresh();
 
   function zodiacOf(m,d){
     for(var i=0;i<D.zodiac.length;i++){var z=D.zodiac[i];
@@ -755,8 +772,17 @@ CALC_JS = r'''
 
   byId('num-go').onclick=function(){
     var y=+ySel.value,m=+mSel.value,d=+dSel.value;
-    if(!y||!m||!d){alert('請先填好完整的西元生日喔（年份直接輸入數字）');return;}
+    if(!y||!m||!d){alert('請先填好完整的生日喔（年份直接輸入數字）');return;}
     if(y<1||y>2200){alert('年份請輸入合理的西元年，例如 1990');return;}
+    var lunarNote='';
+    if(calType()==='lunar'){
+      if(y<1900||y>2100){alert('農曆換算僅支援西元 1900–2100 年');return;}
+      var isLeap=byId('num-leap')&&byId('num-leap').checked;
+      var sol=LUNAR.lunar2solar(y,m,d,isLeap);
+      if(!sol||sol===-1){alert('這個農曆日期不存在喔（可能該農曆月只有 29 天，或該年沒有這個閏月）。請確認後再試。');return;}
+      lunarNote='農曆 '+y+' 年 '+(isLeap?'閏':'')+m+' 月 '+d+' 日　＝　國曆 '+sol.y+'-'+pad(sol.m)+'-'+pad(sol.d);
+      y=sol.y;m=sol.m;d=sol.d;
+    }
     var ymd=''+y+pad(m)+pad(d),digs=ymd.split('').map(Number);
     var first=digs.reduce(function(a,b){return a+b;},0);
     var chain=[first],s=first;while(s>9){s=sumDigits(s);chain.push(s);}
@@ -776,14 +802,15 @@ CALC_JS = r'''
     var e1=36-life,age=ty-y;
     var stages=[{num:p1,from:0,to:e1},{num:p2,from:e1+1,to:e1+9},{num:p3,from:e1+10,to:e1+18},{num:p4,from:e1+19,to:null}];
     var curStage=age<=e1?0:(age<=e1+9?1:(age<=e1+18?2:3));
-    render(life,bday,talent,zo,innate,counts,missing,active,flow,ty,first,stages,curStage,age);
+    render(life,bday,talent,zo,innate,counts,missing,active,flow,ty,first,stages,curStage,age,lunarNote);
   };
 
-  function render(life,bday,talent,zo,innate,counts,missing,active,flow,ty,combo,stages,curStage,age){
+  function render(life,bday,talent,zo,innate,counts,missing,active,flow,ty,combo,stages,curStage,age,lunarNote){
     var lp=D.lifepath[life],talentStr=(''+talent).split('').join(' '),h='';
     h+='<div class="num-card" style="border-top:4px solid '+lp.color+';">';
     h+='<div style="text-align:center;margin-bottom:6px;"><span style="font-size:13px;color:#9A8AA8;">你的生命靈數</span><div style="font-size:28px;font-weight:800;color:#7A5A8E;">'+lp.emoji+' 主命數 '+life+'｜'+lp.tree+'</div><div style="font-size:14px;color:#7A6852;">'+lp.keyword+'</div></div>';
     h+='<div style="text-align:center;margin-bottom:2px;font-size:13px;color:#7A6852;"><span style="display:inline-block;width:11px;height:11px;border-radius:50%;background:'+lp.color+';margin-right:5px;vertical-align:-1px;"></span>代表色 '+lp.colorName+'　·　能量原型 '+lp.archetype+'</div>';
+    if(lunarNote)h+='<div style="text-align:center;font-size:12.5px;color:#9A8AA8;margin-bottom:4px;">📅 '+lunarNote+'</div>';
     h+='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px;">';
     h+=stat(innate,'先天數')+stat(life,'主命數')+stat(bday,'生日數');
     h+=stat(talentStr,'天賦數')+stat(zo?zo.num:'-',(zo?zo.name:'')+'·星座數')+stat(missing.length?missing.join(' '):'無','空缺數');
