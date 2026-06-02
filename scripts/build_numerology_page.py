@@ -34,7 +34,7 @@ def ochips(names):
 # 文字整理自畢達哥拉斯占數傳統，改寫為本站語氣
 LIFEPATH = {
     1: dict(
-        title='開創數', tree='開創之樹', emoji='🌳',
+        title='開創數', tree='開創數', emoji='👑',
         keyword='獨立 · 領導 · 行動',
         good='獨立、積極、有創意、天生的領袖，衝勁十足、精力充沛，點子多、勇於嘗試。',
         bad='強勢、主觀、急躁，事情一出錯容易發火；在感情裡有時顯得太直接、不夠浪漫。',
@@ -47,7 +47,7 @@ LIFEPATH = {
         oilwhy='你的能量很衝、step 很快，木質與薰衣草系的沉穩香氣，最適合在你全力衝刺後，'
                 '幫自己踩個剎車、把呼吸放長、好好沉澱。'),
     2: dict(
-        title='協調數', tree='協調之樹', emoji='🌿',
+        title='協調數', tree='協調數', emoji='🤝',
         keyword='敏感 · 合作 · 體貼',
         good='敏感、體貼、善於分工合作，是天生的外交家與公關人才，溫和親切、重視群體。',
         bad='優柔寡斷、情緒易受他人影響，不擅長獨處，遇事不容易自己做決定。',
@@ -86,7 +86,7 @@ LIFEPATH = {
         oilwhy='你容易把自己繃得很緊，薰衣草與乳香幫你鬆開肩膀、放下控制，'
                 '葡萄柚的輕快則替你打開一點縫隙，讓新的可能透進來。'),
     5: dict(
-        title='自由數', tree='風之樹', emoji='🍃',
+        title='自由數', tree='自由數', emoji='🦋',
         keyword='自由 · 多變 · 善溝通',
         good='聰穎、適應力強、學得快，能言善道、口才一流，熱情豪爽、崇尚自由。',
         bad='博而不精、持續力差，不喜歡被束縛，容易放縱，有時口無遮攔得罪人。',
@@ -99,7 +99,7 @@ LIFEPATH = {
         oilwhy='你像風一樣停不下來，岩蘭草、廣藿香這些厚實的大地系香氣，'
                 '像錨一樣幫你紮根、收斂，讓自由不變成漂泊。'),
     6: dict(
-        title='關懷數', tree='庇蔭之樹', emoji='🌳',
+        title='關懷數', tree='關懷數', emoji='💗',
         keyword='責任 · 奉獻 · 同理',
         good='穩定、可信賴、情感細膩、有正義感，擅長交際、樂於助人，重承諾與責任。',
         bad='容易缺乏自信、好強爭辯，付出不求回報時容易讓自己受傷。',
@@ -412,7 +412,7 @@ def build_data():
     lifepath = {}
     for n, d in LIFEPATH.items():
         lifepath[n] = dict(
-            title=d['title'], tree=d['tree'], emoji=d['emoji'], keyword=d['keyword'],
+            title=d['title'], tree=d['title'], emoji=d['emoji'], keyword=d['keyword'],
             good=d['good'], bad=d['bad'], desc=d['desc'], career=d['career'], love=d['love'],
             oilsHtml=ochips(d['oils']), oilwhy=d['oilwhy'], compat=COMPAT[n],
             color=COLOR[n][0], colorName=COLOR[n][1], archetype=ARCHETYPE[n])
@@ -481,7 +481,7 @@ def build():
     html = (HTML_HEAD
             + '<body>\n' + HEADER + '\n'
             + SCHEMA_BLOCK + '\n'
-            + HERO + BREADCRUMB
+            + BREADCRUMB
             + MAIN_TOP
             + CALC_SECTION
             + NLP_SECTION
@@ -585,40 +585,45 @@ BREADCRUMB = '''<div class="breadcrumb"><div class="breadcrumb-inner">
 </div></div>
 '''
 
-MAIN_TOP = '''<main style="max-width:920px;margin:0 auto;padding:0 20px;">
+MAIN_TOP = '''<main style="max-width:980px;margin:0 auto;padding:0 20px;">
 
-  <section class="blend-intro" style="background:linear-gradient(135deg,#F3EEF6 0%,#EAE2F0 100%);border-left:4px solid #B79BCB;padding:20px 24px;border-radius:12px;margin:28px 0;">
-    <h2 style="font-size:18px;font-weight:700;color:#7A5A8E;margin:0 0 10px;">✦ 什麼是生命靈數？</h2>
-    <p style="font-size:15px;line-height:1.85;color:#3D3328;margin:0 0 8px;">
-      生命靈數源自兩千五百年前的古希臘數學家<strong>畢達哥拉斯</strong>，他相信「數字是宇宙的真理」——
-      每個人的西元生日裡，都藏著一組專屬的數字密碼。把生日的數字一路相加、縮減，就能得到你的
-      <strong>主命數</strong>，再搭配<strong>九宮格連線</strong>與<strong>空缺數</strong>，看見你天生的性格、天賦，
-      以及這輩子要學的功課。這個工具會幫你算好全部，再把每個結果對應到適合的<strong>精油香氣方向</strong>，
-      讓香味陪你走過每一段成長。
-    </p>
-    <p style="font-size:13px;color:#8A7A98;margin:0;">
-      ※ 生命靈數屬於自我探索與娛樂，不是命定，也非醫療診斷；精油在這裡是「情緒陪伴與香氛儀式」，
-      並非藥物。身心不適請就醫，孕婦、嬰幼兒、慢性病或用藥中請先諮詢專業芳療師或醫師。
-    </p>
-  </section>
-'''
+  <div style="margin:26px 0 4px;">
+    <h1 style="font-size:30px;font-weight:800;color:#7A5A8E;margin:0 0 6px;">生命靈數計算機</h1>
+    <p style="font-size:15px;color:#7A6852;margin:0;">用你的生日，看見天生的性格、天賦與該補的功課——再用香氣陪你成長</p>
+  </div>
 
-CALC_SECTION = '''
-  <!-- 生命靈數計算器 -->
-  <section id="calc" style="margin:36px 0;">
-    <h2 style="font-size:22px;color:var(--green-dark);border-bottom:2px solid var(--beige);padding-bottom:8px;">🔢 輸入你的西元生日</h2>
-    <div style="background:#fff;border:1px solid #E5D9C0;border-radius:14px;padding:20px 22px;margin-top:14px;">
+  <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:stretch;margin:18px 0 8px;">
+    <!-- 左：什麼是生命靈數（框）-->
+    <section style="flex:1 1 300px;min-width:280px;background:linear-gradient(135deg,#F3EEF6 0%,#EAE2F0 100%);border:1px solid #DBC9E6;border-left:4px solid #B79BCB;padding:18px 22px;border-radius:12px;">
+      <h2 style="font-size:18px;font-weight:700;color:#7A5A8E;margin:0 0 10px;">✦ 什麼是生命靈數？</h2>
+      <p style="font-size:14.5px;line-height:1.85;color:#3D3328;margin:0 0 8px;">
+        生命靈數源自兩千五百年前的古希臘數學家<strong>畢達哥拉斯</strong>，他相信「數字是宇宙的真理」——
+        每個人的西元生日裡，都藏著一組專屬的數字密碼。把生日的數字一路相加、縮減，就能得到你的
+        <strong>主命數</strong>，再搭配<strong>九宮格連線</strong>與<strong>空缺數</strong>，看見你天生的性格、天賦，
+        以及這輩子要學的功課，最後對應到適合的<strong>精油香氣方向</strong>。
+      </p>
+      <p style="font-size:12.5px;color:#8A7A98;margin:0;">
+        ※ 生命靈數屬於自我探索與娛樂，不是命定、也非醫療診斷；精油在這裡是「情緒陪伴與香氛儀式」，並非藥物。身心不適請就醫，孕婦、嬰幼兒、慢性病或用藥中請先諮詢專業芳療師或醫師。
+      </p>
+    </section>
+
+    <!-- 右：計算器 -->
+    <section id="calc" style="flex:1 1 320px;min-width:280px;background:#fff;border:1px solid #E5D9C0;border-radius:12px;padding:18px 22px;display:flex;flex-direction:column;justify-content:center;">
+      <h2 style="font-size:18px;font-weight:700;color:#5A7A4A;margin:0 0 14px;">🔢 輸入你的西元生日</h2>
       <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
-        <select id="num-y" class="num-sel"></select>
+        <input id="num-y" class="num-sel" type="number" inputmode="numeric" placeholder="西元年（如 1990）" min="1" max="2200" style="width:160px;" />
         <select id="num-m" class="num-sel"></select>
         <select id="num-d" class="num-sel"></select>
-        <button id="num-go" style="padding:12px 28px;background:#7A5A8E;color:#fff;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">算出我的生命靈樹 🌳</button>
       </div>
-      <p style="font-size:12.5px;color:#9A8AA8;margin:12px 0 0;">請填西元（國曆／陽曆）生日。農曆生日請先換算成國曆再輸入。</p>
-    </div>
-    <div id="num-result" style="margin-top:8px;"></div>
-  </section>
+      <button id="num-go" style="margin-top:14px;padding:12px 28px;background:#7A5A8E;color:#fff;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">算出我的生命靈數 ✨</button>
+      <p style="font-size:12px;color:#9A8AA8;margin:12px 0 0;">西元（國曆／陽曆）生日；農曆請先換算成國曆。年份可直接打字輸入。</p>
+    </section>
+  </div>
+
+  <div id="num-result" style="margin-top:8px;"></div>
 '''
+
+CALC_SECTION = ''  # 計算器已併入 MAIN_TOP 的右欄
 
 NLP_SECTION = '''
   <!-- NLP 表象系統測驗 -->
@@ -654,10 +659,10 @@ EDU_SECTION = '''
     </table>
     </div>
 
-    <h2 style="font-size:22px;color:var(--green-dark);border-bottom:2px solid var(--beige);padding-bottom:8px;margin-top:32px;">🌳 為什麼生命靈數可以搭配精油？</h2>
+    <h2 style="font-size:22px;color:var(--green-dark);border-bottom:2px solid var(--beige);padding-bottom:8px;margin-top:32px;">💫 為什麼生命靈數可以搭配精油？</h2>
     <p style="font-size:15px;line-height:1.9;margin:12px 0;">
-      生命靈數幫你看見自己的「樣子」——你的主命數是樹幹（核心性格與天賦）、連線是枝葉（外在優勢）、
-      空缺數是土壤裡要補的養分（人生課題）。而精油，是陪你照顧這棵樹的方式：當你看見自己容易繃緊、
+      生命靈數幫你看見自己的「樣子」——主命數是你的核心性格與天賦、連線是你外在的優勢、
+      空缺數是還沒補上的人生課題。而精油，是陪你照顧自己的方式：當你看見自己容易繃緊、
       容易飄、容易自我批評，就能挑對應方向的香氣，在情緒上給自己一點支持。木質調幫你紮根、花香調溫柔療癒、
       柑橘調帶來明亮、草本調讓思緒清晰——這不是治療，而是用香味，溫柔地陪自己練習成長。每支推薦精油都可以
       點進去看完整的<a href="oils.html">成分與用法指南</a>，調配方式可參考<a href="blend.html">調配精油工具</a>。
@@ -706,11 +711,9 @@ CALC_JS = r'''
   function sumDigits(n){var s=0;n=Math.abs(n);while(n>0){s+=n%10;n=Math.floor(n/10);}return s;}
   function reduceNum(n){while(n>9)n=sumDigits(n);return n;}
 
-  // 填生日下拉
+  // 年份改為手動輸入（input）；月、日仍用下拉
   var ySel=byId('num-y'),mSel=byId('num-m'),dSel=byId('num-d');
   function opt(v,t){var o=document.createElement('option');o.value=v;o.textContent=t;return o;}
-  ySel.appendChild(opt('','年'));
-  for(var y=2026;y>=1920;y--)ySel.appendChild(opt(y,y+' 年'));
   mSel.appendChild(opt('','月'));
   for(var m=1;m<=12;m++)mSel.appendChild(opt(m,m+' 月'));
   function fillDays(){
@@ -721,7 +724,7 @@ CALC_JS = r'''
     for(var dd=1;dd<=max;dd++)dSel.appendChild(opt(dd,dd+' 日'));
     if(cur&&+cur<=max)dSel.value=cur;
   }
-  ySel.onchange=fillDays;mSel.onchange=fillDays;fillDays();
+  ySel.oninput=fillDays;mSel.onchange=fillDays;fillDays();
 
   function zodiacOf(m,d){
     for(var i=0;i<D.zodiac.length;i++){var z=D.zodiac[i];
@@ -752,7 +755,8 @@ CALC_JS = r'''
 
   byId('num-go').onclick=function(){
     var y=+ySel.value,m=+mSel.value,d=+dSel.value;
-    if(!y||!m||!d){alert('請先選好完整的西元生日喔');return;}
+    if(!y||!m||!d){alert('請先填好完整的西元生日喔（年份直接輸入數字）');return;}
+    if(y<1||y>2200){alert('年份請輸入合理的西元年，例如 1990');return;}
     var ymd=''+y+pad(m)+pad(d),digs=ymd.split('').map(Number);
     var first=digs.reduce(function(a,b){return a+b;},0);
     var chain=[first],s=first;while(s>9){s=sumDigits(s);chain.push(s);}
@@ -778,7 +782,7 @@ CALC_JS = r'''
   function render(life,bday,talent,zo,innate,counts,missing,active,flow,ty,combo,stages,curStage,age){
     var lp=D.lifepath[life],talentStr=(''+talent).split('').join(' '),h='';
     h+='<div class="num-card" style="border-top:4px solid '+lp.color+';">';
-    h+='<div style="text-align:center;margin-bottom:6px;"><span style="font-size:13px;color:#9A8AA8;">你的生命靈樹</span><div style="font-size:28px;font-weight:800;color:#7A5A8E;">'+lp.emoji+' 主命數 '+life+'｜'+lp.tree+'</div><div style="font-size:14px;color:#7A6852;">'+lp.keyword+'</div></div>';
+    h+='<div style="text-align:center;margin-bottom:6px;"><span style="font-size:13px;color:#9A8AA8;">你的生命靈數</span><div style="font-size:28px;font-weight:800;color:#7A5A8E;">'+lp.emoji+' 主命數 '+life+'｜'+lp.tree+'</div><div style="font-size:14px;color:#7A6852;">'+lp.keyword+'</div></div>';
     h+='<div style="text-align:center;margin-bottom:2px;font-size:13px;color:#7A6852;"><span style="display:inline-block;width:11px;height:11px;border-radius:50%;background:'+lp.color+';margin-right:5px;vertical-align:-1px;"></span>代表色 '+lp.colorName+'　·　能量原型 '+lp.archetype+'</div>';
     h+='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px;">';
     h+=stat(innate,'先天數')+stat(life,'主命數')+stat(bday,'生日數');
@@ -787,7 +791,7 @@ CALC_JS = r'''
     h+='<div class="num-card" style="text-align:center;"><h3 class="num-h2" style="border:none;">你的九宮格與連線</h3>';
     h+=gridSvg(counts,active);
     h+='<div style="font-size:12.5px;color:#7A6852;margin-top:8px;"><span style="color:#88BC88;font-weight:700;">━ 綠線</span> 主連線（天賦）　<span style="color:#C8A673;font-weight:700;">━ 棕線</span> 副連線　虛線圈＝空缺數</div></div>';
-    h+='<div class="num-card"><h3 class="num-h2">🌳 樹幹 — 主命數 '+life+'：你是一棵「'+lp.tree+'」</h3>';
+    h+='<div class="num-card"><h3 class="num-h2">💠 核心性格 — 主命數 '+life+'（'+lp.tree+'）</h3>';
     h+='<p style="font-size:15px;line-height:1.9;margin:0 0 12px;">'+lp.desc+'</p>';
     h+='<div style="display:grid;gap:8px;font-size:14px;">';
     h+='<div style="background:#F4F9F4;border-left:4px solid #88BC88;padding:10px 14px;border-radius:8px;"><b style="color:#5A7A4A;">✦ 天生優點：</b>'+lp.good+'</div>';
@@ -795,16 +799,16 @@ CALC_JS = r'''
     h+='<div style="background:#F7F4FA;border-left:4px solid #B79BCB;padding:10px 14px;border-radius:8px;"><b style="color:#7A5A8E;">💼 適合的職涯：</b>'+lp.career+'</div>';
     h+='<div style="background:#FFF6F0;border-left:4px solid #E8A04B;padding:10px 14px;border-radius:8px;"><b style="color:#C57A2A;">💞 愛情裡的你：</b>'+lp.love+'</div>';
     h+='</div></div>';
-    h+='<div class="num-card"><h3 class="num-h2">🌿 枝葉 — 你的連線天賦（'+active.length+' 條）</h3>';
+    h+='<div class="num-card"><h3 class="num-h2">🔗 連線天賦（'+active.length+' 條）</h3>';
     if(active.length){active.forEach(function(ln){
       h+='<div class="num-line"><div style="min-width:54px;font-weight:800;color:'+(ln.type==='main'?'#5A7A4A':'#A6863F')+';">'+ln.nums.join('-')+'</div><div><b>'+ln.name+'</b>　'+ln.pos+'<div style="font-size:13px;color:#9A8A78;margin-top:3px;">⚠ '+ln.neg+'</div></div></div>';
     });}else{h+='<p style="font-size:14.5px;color:#7A6852;margin:0;">你目前沒有完整的三格連線——這代表你的能量比較分散、不被單一模式定義，反而更有彈性。可以多看主命數與空缺數來認識自己。</p>';}
     h+='</div>';
-    h+='<div class="num-card"><h3 class="num-h2">💧 養分 — 生日數 '+bday+' & 天賦數 '+talentStr+'</h3>';
+    h+='<div class="num-card"><h3 class="num-h2">💧 生日數 '+bday+' & 天賦數 '+talentStr+'</h3>';
     h+='<p style="font-size:14.5px;line-height:1.9;margin:0 0 10px;"><b>生日數 '+bday+'</b>：'+D.lifepath[bday].title+'的特質——'+D.lifepath[bday].keyword+'，是你在日常裡最自然流露的一面。<br><b>天賦數 '+talentStr+'</b>：藏在你身上、可以好好發揮的潛在才能。</p>';
     if(D.combo[combo]){h+='<div style="background:#F7F4FA;border-left:4px solid #B79BCB;border-radius:8px;padding:10px 14px;font-size:14px;line-height:1.85;"><b style="color:#7A5A8E;">🔢 你的數字組合 '+combo+'：</b>'+D.combo[combo]+'</div>';}
     h+='</div>';
-    h+='<div class="num-card"><h3 class="num-h2">🌱 土壤與根 — 空缺數功課 & 精油處方</h3>';
+    h+='<div class="num-card"><h3 class="num-h2">🧩 空缺數功課 & 精油處方</h3>';
     if(missing.length){missing.forEach(function(n){var ms=D.missing[n];
       h+='<div style="margin-bottom:16px;padding-bottom:14px;border-bottom:1px dashed #EEE7D8;">';
       h+='<div style="font-weight:800;color:#B5701A;font-size:15px;">缺 '+n+'：'+ms.theme+'</div>';
@@ -813,7 +817,7 @@ CALC_JS = r'''
       h+='<div style="font-size:13.5px;">🌿 香氣陪伴：'+ms.oilsHtml+'</div></div>';
     });}else{h+='<p style="font-size:14.5px;color:#7A6852;margin:0;">你的九宮格 1–9 都有圈到，沒有明顯空缺數——能量相對完整、均衡。可以把下面主命數的精油方向，當成日常的香氣陪伴。</p>';}
     h+='</div>';
-    h+='<div class="num-card" style="background:linear-gradient(135deg,#F7F4FA 0%,#F0EAF6 100%);"><h3 class="num-h2" style="border-color:#DCD0E6;">🌸 給「'+lp.tree+'」的精油方向</h3>';
+    h+='<div class="num-card" style="background:linear-gradient(135deg,#F7F4FA 0%,#F0EAF6 100%);"><h3 class="num-h2" style="border-color:#DCD0E6;">🌸 適合你（主命數 '+life+'）的精油方向</h3>';
     h+='<p style="font-size:14.5px;line-height:1.85;margin:0 0 10px;">'+lp.oilwhy+'</p><div>'+lp.oilsHtml+'</div></div>';
     var yf=D.yearFlow[flow];
     h+='<div class="num-card" style="background:linear-gradient(135deg,#FBF6EE 0%,#F5ECDD 100%);"><h3 class="num-h2" style="border-color:#E8D9BE;">📅 '+ty+' 流年運 — 今年你走「'+yf.name+'」</h3>';
