@@ -515,6 +515,33 @@ COMBO = {
 }
 
 
+# ── 個性上的缺點（對照《幸福密碼》密碼 1-9「個性上的缺點」欄；同生命靈數系統）──
+FLAW = {
+    1: '強勢、獨斷、急躁，主觀意識強、我行我素；事情一出錯容易發火，人際上比較淡薄，在感情裡顯得太直接、不夠浪漫。',
+    2: '優柔寡斷、情緒不定、難以捉摸，容易因別人的意見而動搖，害怕孤獨，常因為怕衝突而委屈了自己。',
+    3: '任性、愛面子、虛榮，容易好高騖遠、渙散不集中；多只依自己的喜好行事，不開心時躲進玩笑與敷衍裡。',
+    4: '固執、不易妥協、心胸較窄，容易緊張焦慮；缺乏安全感、不敢冒險，常因此讓機會白白溜走。',
+    5: '博而不精、持續力差、容易放縱，討厭被束縛、索求無度；心直口快，有時不小心就得罪了人。',
+    6: '缺乏自信卻又好強爭辯，容易強行干涉、過度操心；付出不求回報，常把自己累壞，受了傷還往肚裡吞。',
+    7: '冷漠、傲慢、處事不夠圓滑，不容易被討好；習慣質疑、武裝自己，太容易到手的東西反而不珍惜。',
+    8: '物質至上、心高氣傲、排斥他人意見，對想要的東西異常執著；容易把事業與掌控，放在關係與感受之前。',
+    9: '不夠務實、意志不堅、沒耐性，想像太奔放會流於空談；容易心軟被人利用，也容易過度付出到耗竭。',
+}
+
+# ── 人生學習功課（對照《幸福密碼》密碼 1-9「人生學習功課」欄；缺點的成長翻面）──
+LESSON = {
+    1: '學習柔軟與傾聽，把「我」放下一點——真正的領導不是凡事自己扛、壓過別人，而是帶著大家一起走。在堅持裡留一點彈性與溫度。',
+    2: '學習肯定自己、把需要說出口——你的價值不是只在成全別人。練習相信自己的判斷，別讓「怕衝突」把你縮得太小。',
+    3: '學習收斂與專注，把才華真正落地——別停在表面與漂亮話，把點子好好做完；也練習面對不喜歡的事，而不是逃進玩笑裡。',
+    4: '學習放下控制與固執，對變化多一點信任——安全感是由內在給的，不是把每件事都抓在手裡。練習鬆開肩膀、接受「不完美也沒關係」。',
+    5: '學習承諾與堅持，把自由用在對的地方——真正的自由不是逃避，是為自己選的路負起責任。練習把一件事、一段關係好好走完。',
+    6: '學習照顧自己、設立界線——別把所有責任都扛上身。在付出與被愛之間找到平衡，允許自己也被好好照顧。',
+    7: '學習打開心、信任直覺與人——別只活在頭腦裡。把分析放一邊，讓感受與關係靠近你；世界不是只有邏輯。',
+    8: '學習柔軟與分享，把成就和關係放回平衡——錢與權是工具不是目的。追求成功的同時，別讓溫度被壓過去。',
+    9: '學習落地與聚焦，把理想化成行動——也把愛留一些給自己，別無止盡付出到耗竭。先把自己顧好，才走得遠。',
+}
+
+
 def build_data():
     """組成給前端 JS 用的 JSON（精油已轉成連結 HTML）"""
     lifepath = {}
@@ -523,7 +550,8 @@ def build_data():
             title=d['title'], tree=d['title'], emoji=d['emoji'], keyword=d['keyword'],
             good=d['good'], bad=d['bad'], desc=d['desc'], career=d['career'], love=d['love'],
             oilsHtml=ochips(d['oils']), oilwhy=d['oilwhy'], compat=COMPAT[n],
-            color=COLOR[n][0], colorName=COLOR[n][1], archetype=ARCHETYPE[n])
+            color=COLOR[n][0], colorName=COLOR[n][1], archetype=ARCHETYPE[n],
+            flaw=FLAW[n], lesson=LESSON[n])
     year_flow = {n: dict(name=d['name'], theme=d['theme'], areas=d['areas'],
                          advice=d['advice'], oilsHtml=ochips(d['oils']))
                  for n, d in YEAR_FLOW.items()}
@@ -940,7 +968,8 @@ CALC_JS = r'''
     h+='<p style="font-size:15px;line-height:1.9;margin:0 0 12px;">'+lp.desc+'</p>';
     h+='<div style="display:grid;gap:8px;font-size:14px;">';
     h+='<div style="background:#F4F9F4;border-left:4px solid #88BC88;padding:10px 14px;border-radius:8px;"><b style="color:#5A7A4A;">✦ 天生優點：</b>'+lp.good+'</div>';
-    h+='<div style="background:#FDF3F3;border-left:4px solid #D89090;padding:10px 14px;border-radius:8px;"><b style="color:#B56A6A;">✦ 要留意的：</b>'+lp.bad+'</div>';
+    h+='<div style="background:#FDF3F3;border-left:4px solid #D89090;padding:10px 14px;border-radius:8px;"><b style="color:#B56A6A;">✦ 個性上的缺點：</b>'+lp.flaw+'</div>';
+    h+='<div style="background:#F3EFF8;border-left:4px solid #B79BCB;padding:10px 14px;border-radius:8px;"><b style="color:#7A5A8E;">📖 人生學習功課：</b>'+lp.lesson+'</div>';
     h+='<div style="background:#F7F4FA;border-left:4px solid #B79BCB;padding:10px 14px;border-radius:8px;"><b style="color:#7A5A8E;">💼 適合的職涯：</b>'+lp.career+'</div>';
     h+='<div style="background:#FFF6F0;border-left:4px solid #E8A04B;padding:10px 14px;border-radius:8px;"><b style="color:#C57A2A;">💞 愛情裡的你：</b>'+lp.love+'</div>';
     h+='</div></div>';
