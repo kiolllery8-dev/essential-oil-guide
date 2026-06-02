@@ -117,8 +117,7 @@
 
     <!-- 右：計算器 -->
     <section id="calc" style="flex:1 1 320px;min-width:280px;background:#fff;border:1px solid #E5D9C0;border-radius:12px;padding:18px 22px;display:flex;flex-direction:column;justify-content:center;">
-      <h2 style="font-size:18px;font-weight:700;color:#5A7A4A;margin:0 0 8px;">🔢 輸入你的生日</h2>
-      <div id="calc-now" style="font-size:12.5px;color:#9A8AA8;margin-bottom:10px;"></div>
+      <h2 style="font-size:18px;font-weight:700;color:#5A7A4A;margin:0 0 12px;">🔢 輸入你的生日</h2>
       <div style="display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-bottom:12px;font-size:14px;color:#3D3328;">
         <label style="cursor:pointer;"><input type="radio" name="cal-type" value="solar" checked style="vertical-align:-1px;margin-right:4px;">國曆</label>
         <label style="cursor:pointer;"><input type="radio" name="cal-type" value="lunar" style="vertical-align:-1px;margin-right:4px;">農曆</label>
@@ -130,7 +129,8 @@
         <select id="num-m" class="num-sel"></select>
         <select id="num-d" class="num-sel"></select>
       </div>
-      <button id="num-go" style="margin-top:14px;padding:12px 28px;background:#7A5A8E;color:#fff;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">算出我的生命靈數 ✨</button>
+      <div id="calc-now" style="font-size:16px;font-weight:700;color:#7A5A8E;background:#F3EEF6;border:1px solid #DBC9E6;border-radius:10px;padding:10px 14px;margin:12px 0 0;"></div>
+      <button id="num-go" style="margin-top:12px;padding:12px 28px;background:#7A5A8E;color:#fff;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">算出我的生命靈數 ✨</button>
       <p style="font-size:12px;color:#9A8AA8;margin:12px 0 0;">預設國曆（陽曆）；選農曆會自動換算成國曆再計算。年份可直接打字輸入。</p>
     </section>
   </div>
@@ -327,8 +327,10 @@ var LUNAR={
   Array.prototype.forEach.call(document.querySelectorAll('input[name=cal-type]'),function(r){r.onchange=refresh;});
   var rocCb=byId('num-roc');if(rocCb)rocCb.onchange=refresh;
   refresh();
-  (function(){var el=byId('calc-now');if(el){var n=new Date();
-    el.innerHTML='🕒 計算時間：'+n.getFullYear()+'/'+(n.getMonth()+1)+'/'+n.getDate()+' '+pad(n.getHours())+':'+pad(n.getMinutes());}})();
+  function setNow(ageVal){var el=byId('calc-now');if(!el)return;var n=new Date();
+    var t=n.getFullYear()+'/'+(n.getMonth()+1)+'/'+n.getDate()+' '+pad(n.getHours())+':'+pad(n.getMinutes());
+    el.innerHTML='🕒 計算時間 '+t+(ageVal!=null?('　·　🎂 <span style="font-size:22px;">'+ageVal+'</span> 歲'):'');}
+  setNow(null);
 
   function zodiacOf(m,d){
     for(var i=0;i<D.zodiac.length;i++){var z=D.zodiac[i];
@@ -398,6 +400,7 @@ var LUNAR={
     var e1=36-life,age=ty-y-(passed?0:1);
     var stages=[{num:p1,from:0,to:e1},{num:p2,from:e1+1,to:e1+9},{num:p3,from:e1+10,to:e1+18},{num:p4,from:e1+19,to:null}];
     var curStage=age<=e1?0:(age<=e1+9?1:(age<=e1+18?2:3));
+    setNow(age);
     render(life,bday,talent,zo,innate,counts,missing,active,flow,ty,first,stages,curStage,age,lunarNote,flowInfo);
   };
 
@@ -489,7 +492,6 @@ var LUNAR={
       var col=cd.score>=80?'#5FA85F':(cd.score>=60?'#E2872E':'#B56A6A');
       pr.innerHTML='<div style="background:#fff;border:1px solid #E5D9C0;border-left:4px solid '+col+';border-radius:8px;padding:12px 14px;"><div style="font-weight:800;color:'+col+';font-size:15px;">'+life+' × '+pv+' → '+cd.name+'　<span style="font-size:13px;font-weight:600;">緣分指數 '+cd.score+'</span></div><div style="font-size:14px;line-height:1.8;margin-top:6px;color:#3D3328;">'+cd.text+'</div></div>';
     };
-    box.scrollIntoView({behavior:'smooth',block:'start'});
   }
 
   // NLP 測驗
