@@ -748,7 +748,8 @@ MAIN_TOP = '''<main style="max-width:980px;margin:0 auto;padding:0 20px;">
 
     <!-- 右：計算器 -->
     <section id="calc" style="flex:1 1 320px;min-width:280px;background:#fff;border:1px solid #E5D9C0;border-radius:12px;padding:18px 22px;display:flex;flex-direction:column;justify-content:center;">
-      <h2 style="font-size:18px;font-weight:700;color:#5A7A4A;margin:0 0 12px;">🔢 輸入你的生日</h2>
+      <h2 style="font-size:18px;font-weight:700;color:#5A7A4A;margin:0 0 8px;">🔢 輸入你的生日</h2>
+      <div id="calc-now" style="font-size:12.5px;color:#9A8AA8;margin-bottom:10px;"></div>
       <div style="display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-bottom:12px;font-size:14px;color:#3D3328;">
         <label style="cursor:pointer;"><input type="radio" name="cal-type" value="solar" checked style="vertical-align:-1px;margin-right:4px;">國曆</label>
         <label style="cursor:pointer;"><input type="radio" name="cal-type" value="lunar" style="vertical-align:-1px;margin-right:4px;">農曆</label>
@@ -885,6 +886,8 @@ CALC_JS = r'''
   Array.prototype.forEach.call(document.querySelectorAll('input[name=cal-type]'),function(r){r.onchange=refresh;});
   var rocCb=byId('num-roc');if(rocCb)rocCb.onchange=refresh;
   refresh();
+  (function(){var el=byId('calc-now');if(el){var n=new Date();
+    el.innerHTML='🕒 計算時間：'+n.getFullYear()+'/'+(n.getMonth()+1)+'/'+n.getDate()+' '+pad(n.getHours())+':'+pad(n.getMinutes());}})();
 
   function zodiacOf(m,d){
     for(var i=0;i<D.zodiac.length;i++){var z=D.zodiac[i];
@@ -942,17 +945,22 @@ CALC_JS = r'''
     var missing=[];for(var i=1;i<=9;i++)if(counts[i]===0)missing.push(i);
     var innate=digs.filter(function(v){return v>0;}).join(' ');
     var active=D.lines.filter(function(ln){return ln.nums.every(function(n){return counts[n]>0;});});
-    var ty=new Date().getFullYear();
-    var flow=reduceNum(reduceNum(m)+reduceNum(d)+reduceNum(ty));
+    var now=new Date(),ty=now.getFullYear(),cm=now.getMonth()+1,cd=now.getDate();
+    // 流年以「計算當下」為準：生日已過用今年，未過則減 1（仍在上一個流年）
+    var passed=(cm>m)||(cm===m&&cd>=d);
+    var pyYear=passed?ty:ty-1;
+    var flow=reduceNum(reduceNum(m)+reduceNum(d)+reduceNum(pyYear));
+    var nextFlow=reduceNum(reduceNum(m)+reduceNum(d)+reduceNum(pyYear+1));
+    var flowInfo={flow:flow,next:nextFlow,passed:passed,bm:m,bd:d,ty:ty};
     var rm=reduceNum(m),rd=reduceNum(d),ry=reduceNum(y);
     var p1=reduceNum(rm+rd),p2=reduceNum(rd+ry),p3=reduceNum(p1+p2),p4=reduceNum(rm+ry);
-    var e1=36-life,age=ty-y;
+    var e1=36-life,age=ty-y-(passed?0:1);
     var stages=[{num:p1,from:0,to:e1},{num:p2,from:e1+1,to:e1+9},{num:p3,from:e1+10,to:e1+18},{num:p4,from:e1+19,to:null}];
     var curStage=age<=e1?0:(age<=e1+9?1:(age<=e1+18?2:3));
-    render(life,bday,talent,zo,innate,counts,missing,active,flow,ty,first,stages,curStage,age,lunarNote);
+    render(life,bday,talent,zo,innate,counts,missing,active,flow,ty,first,stages,curStage,age,lunarNote,flowInfo);
   };
 
-  function render(life,bday,talent,zo,innate,counts,missing,active,flow,ty,combo,stages,curStage,age,lunarNote){
+  function render(life,bday,talent,zo,innate,counts,missing,active,flow,ty,combo,stages,curStage,age,lunarNote,flowInfo){
     var lp=D.lifepath[life],talentStr=(''+talent).split('').join(' '),h='';
     h+='<div class="num-card" style="border-top:4px solid '+lp.color+';">';
     h+='<div style="text-align:center;margin-bottom:6px;"><span style="font-size:13px;color:#9A8AA8;">你的生命靈數</span><div style="font-size:28px;font-weight:800;color:#7A5A8E;">'+lp.emoji+' 主命數 '+life+'｜'+lp.tree+'</div><div style="font-size:14px;color:#7A6852;">'+lp.keyword+'</div></div>';
@@ -995,10 +1003,15 @@ CALC_JS = r'''
     h+='<div class="num-card" style="background:linear-gradient(135deg,#F7F4FA 0%,#F0EAF6 100%);"><h3 class="num-h2" style="border-color:#DCD0E6;">🌸 適合你（主命數 '+life+'）的精油方向</h3>';
     h+='<p style="font-size:14.5px;line-height:1.85;margin:0 0 10px;">'+lp.oilwhy+'</p><div>'+lp.oilsHtml+'</div></div>';
     var yf=D.yearFlow[flow];
-    h+='<div class="num-card" style="background:linear-gradient(135deg,#FBF6EE 0%,#F5ECDD 100%);"><h3 class="num-h2" style="border-color:#E8D9BE;">📅 '+ty+' 流年運</h3>';
+    var bmd=flowInfo.bm+'/'+flowInfo.bd;
+    var fnote=flowInfo.passed
+      ? '你今年的生日（'+bmd+'）已經過了，目前走<b>流年 '+flowInfo.flow+'</b>；到明年生日後才會換成流年 '+flowInfo.next+'。'
+      : '你今年的生日（'+bmd+'）還沒到，目前還在<b>流年 '+flowInfo.flow+'</b>；等過了生日，就會進入流年 '+flowInfo.next+'。';
+    h+='<div class="num-card" style="background:linear-gradient(135deg,#FBF6EE 0%,#F5ECDD 100%);"><h3 class="num-h2" style="border-color:#E8D9BE;">📅 流年運</h3>';
     h+='<div style="display:flex;gap:14px;align-items:center;margin-bottom:10px;">';
     h+='<div style="flex:none;width:58px;height:58px;border-radius:50%;background:#E8A04B;color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:800;">'+flow+'</div>';
-    h+='<div><div style="font-size:18px;font-weight:800;color:#B5701A;">流年數 '+flow+'｜'+yf.name+'</div><div style="font-size:12.5px;color:#9A8AA8;">今年（'+ty+'）你正走在九年循環的第 '+flow+' 年</div></div></div>';
+    h+='<div><div style="font-size:18px;font-weight:800;color:#B5701A;">流年數 '+flow+'｜'+yf.name+'</div><div style="font-size:12.5px;color:#9A8AA8;">目前你正走在九年循環的第 '+flow+' 年</div></div></div>';
+    h+='<div style="background:#fff;border:1px dashed #E8C98A;border-radius:8px;padding:8px 12px;font-size:13px;line-height:1.7;color:#7A6852;margin-bottom:10px;">🎂 '+fnote+'</div>';
     h+='<p style="font-size:14.5px;line-height:1.9;margin:0 0 12px;"><b style="color:#B5701A;">流年 '+flow+' 代表的影響：</b>'+yf.theme+'</p>';
     h+='<div style="display:grid;gap:7px;margin-bottom:12px;">';
     yf.areas.forEach(function(a){
@@ -1007,7 +1020,7 @@ CALC_JS = r'''
     h+='</div>';
     h+='<div style="background:#FFF4E6;border-left:4px solid #E8A04B;border-radius:8px;padding:10px 14px;font-size:13.5px;line-height:1.8;margin-bottom:10px;"><b style="color:#B5701A;">✦ 今年重點：</b>'+yf.advice+'</div>';
     h+='<div style="font-size:13.5px;">🌿 今年的香氣陪伴：'+yf.oilsHtml+'</div>';
-    h+='<div style="font-size:12px;color:#9A8AA8;margin-top:8px;">流年數＝出生月＋出生日＋今年（'+ty+'）數字相加縮減，跨年會自動更新。</div></div>';
+    h+='<div style="font-size:12px;color:#9A8AA8;margin-top:8px;">流年數＝出生月＋出生日＋年份，數字相加縮減而得；流年從你生日當天換新，生日還沒過就算在前一個流年（以上方「計算時間」為準）。</div></div>';
     h+='<div class="num-card"><h3 class="num-h2">⛰️ 人生四階段大運</h3>';
     h+='<p style="font-size:13.5px;color:#7A6852;margin:0 0 10px;">人生分成四個階段，每段被一個數字能量主導。你現在大約 '+age+' 歲，正走在標亮的那一段。</p>';
     var labels=['第一階段','第二階段','第三階段','第四階段'];
