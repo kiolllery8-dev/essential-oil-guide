@@ -1025,7 +1025,7 @@ CALC_JS = r'''
     h+='<div style="font-size:13.5px;">🌿 今年的香氣陪伴：'+yf.oilsHtml+'</div>';
     h+='<div style="font-size:12px;color:#9A8AA8;margin-top:8px;">流年數＝出生月＋出生日＋年份，數字相加縮減而得；流年從你生日當天換新，生日還沒過就算在前一個流年（以上方「計算時間」為準）。</div></div>';
     h+='<div class="num-card"><h3 class="num-h2">⛰️ 人生四階段大運</h3>';
-    h+='<p style="font-size:13.5px;color:#7A6852;margin:0 0 10px;">人生分成四個階段，每段被一個數字能量主導。你現在大約 '+age+' 歲，正走在標亮的那一段。</p>';
+    h+='<p style="font-size:13.5px;color:#7A6852;margin:0 0 10px;">人生分成四個階段，每段被一個數字能量主導。你現在大約 '+age+' 歲，目前走在下方標示「你現在這裡」的那一段。</p>';
     var labels=['第一階段','第二階段','第三階段','第四階段'];
     stages.forEach(function(st,i){
       var on=i===curStage;
