@@ -297,6 +297,56 @@ COMPAT = {
     9: '和 3、6、7 投緣——理想主義者遇到懂你的人會發光；但要學會把愛，也留一些給自己。',
 }
 
+# ── 代表顏色（脈輪色系；整理自《幸福密碼》靈學表 + 流年顏色表）──
+COLOR = {
+    1: ('#D64545', '紅'), 2: ('#E2872E', '橙'), 3: ('#E5BE2E', '黃'),
+    4: ('#5FA85F', '綠'), 5: ('#3F87C9', '藍'), 6: ('#5B6FB5', '靛'),
+    7: ('#8A5FB5', '紫'), 8: ('#D87FA8', '粉紅'), 9: ('#C9A93F', '金'),
+}
+
+# ── 能量原型（《幸福密碼》密碼身份；趣味象徵）──
+ARCHETYPE = {
+    1: '皇宮貴族', 2: '外圍貴族', 3: '有錢人', 4: '讀書人', 5: '武將',
+    6: '演員', 7: '巫女', 8: '商人', 9: '出家人',
+}
+
+# ── 流年運（個人年 1-9；主題＋香氣方向）──
+# 計算：出生月＋出生日＋當年年份，各位數相加縮減成個位（前端用瀏覽器當下年份，每年自動更新）
+YEAR_FLOW = {
+    1: dict(name='開始年 · 播種', text='新的九年循環從這裡起跑——適合啟動新計畫、換跑道、立新目標。種子先種下，後面幾年才有得收。別怕從零開始。',
+            oils=['迷迭香', '甜羅勒']),
+    2: dict(name='關係年 · 等待', text='步調放慢的一年，重點在「人」——合作、感情、耐心經營。事情不一定快，但關係會加深。學會等待與配合。',
+            oils=['天竺葵', '玫瑰']),
+    3: dict(name='精彩年 · 表達', text='最閃亮、最好玩的一年——創意、社交、戀愛、自我表達都旺。把才華秀出來，盡情享受這份熱鬧。',
+            oils=['甜橙', '佛手柑']),
+    4: dict(name='築基年 · 落實', text='踏實打地基的一年——把計畫落地、把該做的紀律做好。會比較辛苦、瑣碎，但穩穩努力就會長出底氣。',
+            oils=['岩蘭草', '大西洋雪松']),
+    5: dict(name='變動年 · 自由', text='充滿變化與機會的一年——可能換環境、多了選擇、想往外跑。擁抱改變、別怕轉彎，但別衝過頭。',
+            oils=['葡萄柚', '胡椒薄荷']),
+    6: dict(name='責任年 · 愛與家', text='關於家庭、責任與愛的一年——照顧人也被照顧，適合安定、承諾、把家經營好。記得也留點愛給自己。',
+            oils=['真正薰衣草', '天竺葵']),
+    7: dict(name='沉澱年 · 內省', text='向內走的一年——適合休息、學習、沉澱、想清楚。外在可能慢下來，那是讓你充電、看見自己的時候。',
+            oils=['乳香', '檀香']),
+    8: dict(name='收成年 · 豐盛', text='努力開花結果的一年——事業、名利、成就容易豐收，也適合談錢、升遷、做大。穩穩收割前幾年的耕耘。',
+            oils=['廣藿香', '甜橙']),
+    9: dict(name='整理年 · 放下', text='一個循環的結尾——適合結束、清理、放下不再適合的人事物，為下一輪空出位置。先清空，才有新的進來。',
+            oils=['乳香', '永久花']),
+}
+
+# ── 緣分合盤（兩人主命數「相差」→ 緣分類型；整理自《幸福密碼》挑戰指數）──
+# diff: 0-8（兩人主命數差的絕對值）。score 沿用書中分數，純趣味參考。
+COMPAT_DIFF = {
+    0: ('靈魂伴侶', 85, '你們像同一種人，懂彼此的節奏，自在又契合；但太像也要小心一起鑽牛角尖。'),
+    1: ('夢中情人', 80, '互相吸引、充滿想像，是會讓你心動的類型，相處有種剛剛好的甜。'),
+    2: ('兄弟姊妹', 75, '像家人一樣自在、無話不談，沒有壓力——是能長久的那種陪伴。'),
+    3: ('比例懸殊', 50, '兩人步調差得比較多，需要多一點耐心與磨合，但差異也能互補。'),
+    4: ('知己之交', 70, '聊得深、懂彼此，是難得的靈魂知己，淡淡的卻很長久。'),
+    5: ('前世的功課', 45, '像來還願的緣分，相處容易碰到要一起學的課題；走得過會很深。'),
+    6: ('互相依戀', 95, '最有默契、最黏的一對，彼此離不開——緣分裡分數最高的組合。'),
+    7: ('烈火情人', 60, '一見就來電、激情濃烈，火花十足，但也需要練習把熱情變成穩定。'),
+    8: ('莫名的吸引', 55, '說不上理由就是被吸引，需要時間慢慢讀懂對方，磨合期長一點。'),
+}
+
 
 def build_data():
     """組成給前端 JS 用的 JSON（精油已轉成連結 HTML）"""
@@ -305,7 +355,11 @@ def build_data():
         lifepath[n] = dict(
             title=d['title'], tree=d['tree'], emoji=d['emoji'], keyword=d['keyword'],
             good=d['good'], bad=d['bad'], desc=d['desc'], career=d['career'], love=d['love'],
-            oilsHtml=ochips(d['oils']), oilwhy=d['oilwhy'], compat=COMPAT[n])
+            oilsHtml=ochips(d['oils']), oilwhy=d['oilwhy'], compat=COMPAT[n],
+            color=COLOR[n][0], colorName=COLOR[n][1], archetype=ARCHETYPE[n])
+    year_flow = {n: dict(name=d['name'], text=d['text'], oilsHtml=ochips(d['oils']))
+                 for n, d in YEAR_FLOW.items()}
+    compat_diff = {k: dict(name=v[0], score=v[1], text=v[2]) for k, v in COMPAT_DIFF.items()}
     lines = [dict(nums=l[0], name=l[1], pos=l[2], neg=l[3], type=l[4]) for l in LINES]
     missing = {}
     for n, d in MISSING.items():
@@ -318,7 +372,8 @@ def build_data():
         nlp_res[k] = dict(name=d['name'], icon=d['icon'], desc=d['desc'],
                           oilsHtml=ochips(d['oils']), oilwhy=d['oilwhy'])
     return dict(lifepath=lifepath, lines=lines, missing=missing,
-                zodiac=zodiac, nlpQ=nlp_q, nlpRes=nlp_res)
+                zodiac=zodiac, nlpQ=nlp_q, nlpRes=nlp_res,
+                yearFlow=year_flow, compatDiff=compat_diff)
 
 
 # ── 數字意義速查（靜態，給 SEO/AI 爬蟲）─────────────────────
@@ -548,6 +603,15 @@ EDU_SECTION = '''
       點進去看完整的<a href="oils.html">成分與用法指南</a>，調配方式可參考<a href="blend.html">調配精油工具</a>。
     </p>
 
+    <h2 style="font-size:22px;color:var(--green-dark);border-bottom:2px solid var(--beige);padding-bottom:8px;margin-top:32px;">🧭 這個工具還會幫你算什麼？</h2>
+    <ul style="font-size:15px;line-height:2;padding-left:22px;">
+      <li><strong>代表顏色</strong>：每個主命數對應一個脈輪色系（1 紅、2 橙、3 黃、4 綠、5 藍、6 靛、7 紫、8 粉紅、9 金），是你的能量主色。</li>
+      <li><strong>能量原型</strong>：用《幸福密碼》的密碼身份，給你一個象徵原型（如 1 號皇宮貴族、5 號武將、9 號出家人），純趣味象徵。</li>
+      <li><strong>流年運</strong>：用你的生日加上今年年份，算出你正走在九年循環的哪一年（開始年、精彩年、收成年⋯），以及今年適合的香氣方向；跨年會自動更新。</li>
+      <li><strong>緣分合盤</strong>：輸入對方的主命數，用兩人主命數的「相差」看緣分類型（相差 6 互相依戀分數最高、相差 0 靈魂伴侶⋯）。</li>
+      <li><strong>NLP 學習風格</strong>：5 題小測驗看你偏視覺／聽覺／觸覺／自語，給你對應的學習與溝通建議。</li>
+    </ul>
+
     <h2 style="font-size:22px;color:var(--green-dark);border-bottom:2px solid var(--beige);padding-bottom:8px;margin-top:32px;">❓ 常見問題</h2>
     <div class="num-card"><strong style="color:#7A5A8E;">Q：要用國曆還是農曆生日？</strong><p style="margin:8px 0 0;font-size:14.5px;line-height:1.85;">用<strong>西元（國曆／陽曆）</strong>生日。如果你只記得農曆，請先查萬年曆換算成國曆再輸入。</p></div>
     <div class="num-card"><strong style="color:#7A5A8E;">Q：主命數和星座哪個準？</strong><p style="margin:8px 0 0;font-size:14.5px;line-height:1.85;">兩者看的角度不同：星座偏「當下的情緒與風格」，生命靈數偏「天生的性格與人生方向」。它們都是認識自己的工具，參考、對照著看就好，不必當成命定。</p></div>
@@ -641,13 +705,16 @@ CALC_JS = r'''
     var missing=[];for(var i=1;i<=9;i++)if(counts[i]===0)missing.push(i);
     var innate=digs.filter(function(v){return v>0;}).join(' ');
     var active=D.lines.filter(function(ln){return ln.nums.every(function(n){return counts[n]>0;});});
-    render(life,bday,talent,zo,innate,counts,missing,active);
+    var ty=new Date().getFullYear();
+    var flow=reduceNum(reduceNum(m)+reduceNum(d)+reduceNum(ty));
+    render(life,bday,talent,zo,innate,counts,missing,active,flow,ty);
   };
 
-  function render(life,bday,talent,zo,innate,counts,missing,active){
+  function render(life,bday,talent,zo,innate,counts,missing,active,flow,ty){
     var lp=D.lifepath[life],talentStr=(''+talent).split('').join(' '),h='';
-    h+='<div class="num-card" style="border-top:4px solid #7A5A8E;">';
+    h+='<div class="num-card" style="border-top:4px solid '+lp.color+';">';
     h+='<div style="text-align:center;margin-bottom:6px;"><span style="font-size:13px;color:#9A8AA8;">你的生命靈樹</span><div style="font-size:28px;font-weight:800;color:#7A5A8E;">'+lp.emoji+' 主命數 '+life+'｜'+lp.tree+'</div><div style="font-size:14px;color:#7A6852;">'+lp.keyword+'</div></div>';
+    h+='<div style="text-align:center;margin-bottom:2px;font-size:13px;color:#7A6852;"><span style="display:inline-block;width:11px;height:11px;border-radius:50%;background:'+lp.color+';margin-right:5px;vertical-align:-1px;"></span>代表色 '+lp.colorName+'　·　能量原型 '+lp.archetype+'</div>';
     h+='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px;">';
     h+=stat(innate,'先天數')+stat(life,'主命數')+stat(bday,'生日數');
     h+=stat(talentStr,'天賦數')+stat(zo?zo.num:'-',(zo?zo.name:'')+'·星座數')+stat(missing.length?missing.join(' '):'無','空缺數');
@@ -681,8 +748,27 @@ CALC_JS = r'''
     h+='</div>';
     h+='<div class="num-card" style="background:linear-gradient(135deg,#F7F4FA 0%,#F0EAF6 100%);"><h3 class="num-h2" style="border-color:#DCD0E6;">🌸 給「'+lp.tree+'」的精油方向</h3>';
     h+='<p style="font-size:14.5px;line-height:1.85;margin:0 0 10px;">'+lp.oilwhy+'</p><div>'+lp.oilsHtml+'</div></div>';
-    h+='<div class="num-card"><h3 class="num-h2">💞 人際合盤</h3><p style="font-size:14.5px;line-height:1.9;margin:0;">'+lp.compat+'</p></div>';
+    var yf=D.yearFlow[flow];
+    h+='<div class="num-card" style="background:linear-gradient(135deg,#FBF6EE 0%,#F5ECDD 100%);"><h3 class="num-h2" style="border-color:#E8D9BE;">📅 '+ty+' 流年運 — 今年你走「'+yf.name+'」</h3>';
+    h+='<p style="font-size:14.5px;line-height:1.9;margin:0 0 10px;">'+yf.text+'</p>';
+    h+='<div style="font-size:13.5px;">🌿 今年的香氣陪伴：'+yf.oilsHtml+'</div>';
+    h+='<div style="font-size:12px;color:#9A8AA8;margin-top:8px;">流年＝出生月＋出生日＋今年（'+ty+'），跨年會自動更新。</div></div>';
+    h+='<div class="num-card"><h3 class="num-h2">💞 人際合盤</h3><p style="font-size:14.5px;line-height:1.9;margin:0 0 14px;">'+lp.compat+'</p>';
+    h+='<div style="background:#FBF7F1;border-radius:10px;padding:14px 16px;">';
+    h+='<div style="font-size:14px;font-weight:700;color:#7A5A8E;margin-bottom:6px;">🔮 看你和某個人的緣分</div>';
+    h+='<div style="font-size:13px;color:#7A6852;margin-bottom:8px;">選對方的主命數（不知道的話，可以幫他也算一次）：</div>';
+    h+='<select id="partner-sel" class="num-sel" style="font-size:14px;padding:8px 12px;"><option value="">對方主命數…</option>';
+    for(var pn=1;pn<=9;pn++)h+='<option value="'+pn+'">'+pn+' 號 · '+D.lifepath[pn].tree+'</option>';
+    h+='</select><div id="partner-res" style="margin-top:12px;"></div></div></div>';
     var box=byId('num-result');box.innerHTML=h;
+    var ps=byId('partner-sel');
+    if(ps)ps.onchange=function(){
+      var pv=+ps.value,pr=byId('partner-res');
+      if(!pv){pr.innerHTML='';return;}
+      var cd=D.compatDiff[Math.abs(life-pv)];
+      var col=cd.score>=80?'#5FA85F':(cd.score>=60?'#E2872E':'#B56A6A');
+      pr.innerHTML='<div style="background:#fff;border:1px solid #E5D9C0;border-left:4px solid '+col+';border-radius:8px;padding:12px 14px;"><div style="font-weight:800;color:'+col+';font-size:15px;">'+life+' × '+pv+' → '+cd.name+'　<span style="font-size:13px;font-weight:600;">緣分指數 '+cd.score+'</span></div><div style="font-size:14px;line-height:1.8;margin-top:6px;color:#3D3328;">'+cd.text+'</div></div>';
+    };
     box.scrollIntoView({behavior:'smooth',block:'start'});
   }
 
