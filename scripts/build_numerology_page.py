@@ -611,9 +611,10 @@ MAIN_TOP = '''<main style="max-width:980px;margin:0 auto;padding:0 20px;">
     <!-- 右：計算器 -->
     <section id="calc" style="flex:1 1 320px;min-width:280px;background:#fff;border:1px solid #E5D9C0;border-radius:12px;padding:18px 22px;display:flex;flex-direction:column;justify-content:center;">
       <h2 style="font-size:18px;font-weight:700;color:#5A7A4A;margin:0 0 12px;">🔢 輸入你的生日</h2>
-      <div style="display:flex;gap:16px;align-items:center;margin-bottom:12px;font-size:14px;color:#3D3328;">
+      <div style="display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-bottom:12px;font-size:14px;color:#3D3328;">
         <label style="cursor:pointer;"><input type="radio" name="cal-type" value="solar" checked style="vertical-align:-1px;margin-right:4px;">國曆</label>
         <label style="cursor:pointer;"><input type="radio" name="cal-type" value="lunar" style="vertical-align:-1px;margin-right:4px;">農曆</label>
+        <label style="cursor:pointer;"><input type="checkbox" id="num-roc" style="vertical-align:-1px;margin-right:4px;">民國年</label>
         <label id="leap-wrap" style="cursor:pointer;display:none;color:#7A5A8E;font-weight:600;"><input type="checkbox" id="num-leap" style="vertical-align:-1px;margin-right:4px;">閏月</label>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
@@ -723,8 +724,10 @@ CALC_JS = r'''
   mSel.appendChild(opt('','月'));
   for(var m=1;m<=12;m++)mSel.appendChild(opt(m,m+' 月'));
   function calType(){var r=document.querySelector('input[name=cal-type]:checked');return r?r.value:'solar';}
+  function isMinguo(){var c=byId('num-roc');return !!(c&&c.checked);}
+  function westernYear(){var yy=+ySel.value;if(isMinguo()&&yy)yy+=1911;return yy;}
   function fillDays(){
-    var cur=dSel.value,yy=+ySel.value,mm=+mSel.value,max=31;
+    var cur=dSel.value,yy=westernYear(),mm=+mSel.value,max=31;
     if(calType()==='lunar'){max=30;}
     else{var dim=[31,28,31,30,31,30,31,31,30,31,30,31];if(mm>=1&&mm<=12){max=dim[mm-1];if(mm===2&&yy&&((yy%4===0&&yy%100!==0)||yy%400===0))max=29;}}
     dSel.innerHTML='';dSel.appendChild(opt('','日'));
@@ -735,12 +738,14 @@ CALC_JS = r'''
     var wrap=byId('leap-wrap'),cb=byId('num-leap');if(!wrap)return;
     if(calType()!=='lunar'){wrap.style.display='none';cb.checked=false;return;}
     wrap.style.display='inline-block';
-    var yy=+ySel.value,mm=+mSel.value,has=!!(yy>=1900&&yy<=2100&&mm&&LUNAR.leapMonth(yy)===mm);
+    var yy=westernYear(),mm=+mSel.value,has=!!(yy>=1900&&yy<=2100&&mm&&LUNAR.leapMonth(yy)===mm);
     cb.disabled=!has;if(!has)cb.checked=false;wrap.style.opacity=has?'1':'0.4';
   }
-  function refresh(){fillDays();updateLeap();}
+  function updateRoc(){ySel.placeholder=isMinguo()?'民國年（如 79）':'年（如 1990）';}
+  function refresh(){fillDays();updateLeap();updateRoc();}
   ySel.oninput=refresh;mSel.onchange=refresh;
   Array.prototype.forEach.call(document.querySelectorAll('input[name=cal-type]'),function(r){r.onchange=refresh;});
+  var rocCb=byId('num-roc');if(rocCb)rocCb.onchange=refresh;
   refresh();
 
   function zodiacOf(m,d){
@@ -773,14 +778,18 @@ CALC_JS = r'''
   byId('num-go').onclick=function(){
     var y=+ySel.value,m=+mSel.value,d=+dSel.value;
     if(!y||!m||!d){alert('請先填好完整的生日喔（年份直接輸入數字）');return;}
-    if(y<1||y>2200){alert('年份請輸入合理的西元年，例如 1990');return;}
+    var roc=isMinguo(),rawY=y;
+    if(roc){y=y+1911;}
+    if(y<1||y>2200){alert('年份請輸入合理的年份');return;}
     var lunarNote='';
+    if(roc){lunarNote='民國 '+rawY+' 年 ＝ 西元 '+y+' 年';}
     if(calType()==='lunar'){
       if(y<1900||y>2100){alert('農曆換算僅支援西元 1900–2100 年');return;}
       var isLeap=byId('num-leap')&&byId('num-leap').checked;
       var sol=LUNAR.lunar2solar(y,m,d,isLeap);
       if(!sol||sol===-1){alert('這個農曆日期不存在喔（可能該農曆月只有 29 天，或該年沒有這個閏月）。請確認後再試。');return;}
-      lunarNote='農曆 '+y+' 年 '+(isLeap?'閏':'')+m+' 月 '+d+' 日　＝　國曆 '+sol.y+'-'+pad(sol.m)+'-'+pad(sol.d);
+      var ln='農曆 '+y+' 年 '+(isLeap?'閏':'')+m+' 月 '+d+' 日　＝　國曆 '+sol.y+'-'+pad(sol.m)+'-'+pad(sol.d);
+      lunarNote=lunarNote?(lunarNote+'　·　'+ln):ln;
       y=sol.y;m=sol.m;d=sol.d;
     }
     var ymd=''+y+pad(m)+pad(d),digs=ymd.split('').map(Number);
@@ -847,10 +856,13 @@ CALC_JS = r'''
     h+='<div class="num-card" style="background:linear-gradient(135deg,#F7F4FA 0%,#F0EAF6 100%);"><h3 class="num-h2" style="border-color:#DCD0E6;">🌸 適合你（主命數 '+life+'）的精油方向</h3>';
     h+='<p style="font-size:14.5px;line-height:1.85;margin:0 0 10px;">'+lp.oilwhy+'</p><div>'+lp.oilsHtml+'</div></div>';
     var yf=D.yearFlow[flow];
-    h+='<div class="num-card" style="background:linear-gradient(135deg,#FBF6EE 0%,#F5ECDD 100%);"><h3 class="num-h2" style="border-color:#E8D9BE;">📅 '+ty+' 流年運 — 今年你走「'+yf.name+'」</h3>';
-    h+='<p style="font-size:14.5px;line-height:1.9;margin:0 0 10px;">'+yf.text+'</p>';
+    h+='<div class="num-card" style="background:linear-gradient(135deg,#FBF6EE 0%,#F5ECDD 100%);"><h3 class="num-h2" style="border-color:#E8D9BE;">📅 '+ty+' 流年運</h3>';
+    h+='<div style="display:flex;gap:14px;align-items:center;margin-bottom:10px;">';
+    h+='<div style="flex:none;width:58px;height:58px;border-radius:50%;background:#E8A04B;color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:800;">'+flow+'</div>';
+    h+='<div><div style="font-size:18px;font-weight:800;color:#B5701A;">流年數 '+flow+'｜'+yf.name+'</div><div style="font-size:12.5px;color:#9A8AA8;">今年（'+ty+'）你正走在九年循環的第 '+flow+' 年</div></div></div>';
+    h+='<p style="font-size:14.5px;line-height:1.9;margin:0 0 10px;"><b style="color:#B5701A;">流年 '+flow+' 代表的影響：</b>'+yf.text+'</p>';
     h+='<div style="font-size:13.5px;">🌿 今年的香氣陪伴：'+yf.oilsHtml+'</div>';
-    h+='<div style="font-size:12px;color:#9A8AA8;margin-top:8px;">流年＝出生月＋出生日＋今年（'+ty+'），跨年會自動更新。</div></div>';
+    h+='<div style="font-size:12px;color:#9A8AA8;margin-top:8px;">流年數＝出生月＋出生日＋今年（'+ty+'）數字相加縮減，跨年會自動更新。</div></div>';
     h+='<div class="num-card"><h3 class="num-h2">⛰️ 人生四階段大運</h3>';
     h+='<p style="font-size:13.5px;color:#7A6852;margin:0 0 10px;">人生分成四個階段，每段被一個數字能量主導。你現在大約 '+age+' 歲，正走在標亮的那一段。</p>';
     var labels=['第一階段','第二階段','第三階段','第四階段'];
