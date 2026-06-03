@@ -793,7 +793,7 @@ EDU_SECTION = '''
     <ol style="font-size:15px;line-height:2;padding-left:22px;">
       <li><strong>把生日數字全部相加</strong>：西元出生年月日的每個數字相加。以 1977 年 6 月 20 日為例：1+9+7+7+0+6+2+0 = 32。</li>
       <li><strong>縮減成個位數</strong>：如果是兩位數，把兩個數字再相加，直到剩個位數。32 → 3+2 = 5，所以<strong>主命數是 5</strong>。</li>
-      <li><strong>生日數</strong>：只把「日」相加縮減。20 日 → 2+0 = 2。<strong>天賦數</strong>：全部相加後、變成個位數前的那個兩位數（這裡是 32，即 3、2）。</li>
+      <li><strong>生日數（內在）</strong>：只把「日」相加縮減。20 日 → 2+0 = 2。<strong>天賦數</strong>：全部相加後、變成個位數前的那個兩位數（這裡是 32，即 3、2）。</li>
       <li><strong>填九宮格、找連線與空缺</strong>：把出生日期、過程數字、主命數圈進 3×3 九宮格，圈愈多的數字能量愈強；連成線就是你的天賦連線，沒被圈到的 1–9 就是<strong>空缺數</strong>（人生功課）。</li>
     </ol>
 
@@ -981,7 +981,7 @@ CALC_JS = r'''
     h+='<div style="text-align:center;margin-bottom:4px;font-size:14px;color:#7A6852;">'+zodiac.emoji+' 生肖 <b style="color:#7A5A8E;font-size:16px;">'+zodiac.animal+'</b>'+(zodiac.beforeSpring?'<span style="font-size:12px;color:#9A8AA8;">（出生當年農曆 '+zodiac.lunarYear+' 年・春節前）</span>':'')+'</div>';
     if(lunarNote)h+='<div style="text-align:center;font-size:12.5px;color:#9A8AA8;margin-bottom:4px;">📅 '+lunarNote+'</div>';
     h+='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px;">';
-    h+=stat(innate,'先天數')+stat(life,'主命數')+stat(bday,'生日數');
+    h+=stat(innate,'先天數')+stat(life,'主命數')+stat(bday,'生日數（內在）');
     h+=stat(talentStr,'天賦數')+stat(zo?zo.num:'-',(zo?zo.name:'')+'·星座數')+stat(missing.length?missing.join(' '):'無','空缺數');
     h+='</div></div>';
     h+='<div class="num-card" style="text-align:center;"><h3 class="num-h2" style="border:none;">你的九宮格與連線</h3>';
@@ -1001,8 +1001,8 @@ CALC_JS = r'''
       h+='<div class="num-line"><div style="min-width:54px;font-weight:800;color:'+(ln.type==='main'?'#5A7A4A':'#A6863F')+';">'+ln.nums.join('-')+'</div><div><b>'+ln.name+'</b>　'+ln.pos+'<div style="font-size:13px;color:#9A8A78;margin-top:3px;">⚠ '+ln.neg+'</div></div></div>';
     });}else{h+='<p style="font-size:14.5px;color:#7A6852;margin:0;">你目前沒有完整的三格連線——這代表你的能量比較分散、不被單一模式定義，反而更有彈性。可以多看主命數與空缺數來認識自己。</p>';}
     h+='</div>';
-    h+='<div class="num-card"><h3 class="num-h2">💧 生日數 '+bday+' & 天賦數 '+talentStr+'</h3>';
-    h+='<p style="font-size:14.5px;line-height:1.9;margin:0 0 10px;"><b>生日數 '+bday+'</b>：'+D.lifepath[bday].title+'的特質——'+D.lifepath[bday].keyword+'，是你在日常裡最自然流露的一面。<br><b>天賦數 '+talentStr+'</b>：藏在你身上、可以好好發揮的潛在才能。</p>';
+    h+='<div class="num-card"><h3 class="num-h2">💧 生日數（內在） '+bday+' & 天賦數 '+talentStr+'</h3>';
+    h+='<p style="font-size:14.5px;line-height:1.9;margin:0 0 10px;"><b>生日數（內在） '+bday+'</b>：'+D.lifepath[bday].title+'的特質——'+D.lifepath[bday].keyword+'，是你在日常裡最自然流露的一面。<br><b>天賦數 '+talentStr+'</b>：藏在你身上、可以好好發揮的潛在才能。</p>';
     if(D.combo[combo]){h+='<div style="background:#F7F4FA;border-left:4px solid #B79BCB;border-radius:8px;padding:10px 14px;font-size:14px;line-height:1.85;"><b style="color:#7A5A8E;">🔢 你的數字組合 '+combo+'：</b>'+D.combo[combo]+'</div>';}
     h+='</div>';
     h+='<div class="num-card"><h3 class="num-h2">🧩 空缺數功課 & 精油處方</h3>';
