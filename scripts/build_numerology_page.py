@@ -150,6 +150,45 @@ LIFEPATH = {
         oils=['迷迭香', '大西洋雪松', '黑胡椒'],
         oilwhy='你常飄在理想的雲端，迷迭香幫你聚焦、清明，雪松與黑胡椒則像大地與火，'
                 '把你的夢想穩穩地接回地面、化成行動。'),
+    # ── 大師數（縮減時遇 11/22/33 即停，不再降到 2/4/6）──
+    11: dict(
+        title='直覺先知數', tree='直覺先知數', emoji='🔮',
+        keyword='靈感 · 直覺 · 心靈覺醒',
+        good='直覺敏銳、靈感豐富、洞察人心，能啟發與激勵別人，理想性高、帶著靈性天賦。',
+        bad='容易焦慮緊張、完美主義、想太多、情緒起伏大；理想太高時會對現實失望，也常把自己逼得太緊。',
+        desc='你是雙重的 1——既有獨立的意志，又多了一層敏銳的直覺與感受力。你常常「還沒人說就先感覺到了」，'
+             '對人性有很深的洞察，是天生的引路人與啟發者。你像一條高壓電線，能量很強，用得好能照亮別人；'
+             '但也容易因為太敏感而緊繃、焦慮。',
+        career='心靈工作者、療癒師、老師、創作者、顧問——能「啟發、引導、傳遞訊息」的角色最適合你。',
+        love='你對關係很敏感、很投入，但也容易想太多。找一個能讓你安心、接住你情緒的人，別把對方理想化。',
+        oils=['岩蘭草', '真正薰衣草', '乳香'],
+        oilwhy='你的神經很容易繃緊、能量又高，岩蘭草與薰衣草幫你穩住、接地、好好睡；'
+                '乳香則陪你靜心，把那份靈性的敏感，安放成溫柔的力量。'),
+    22: dict(
+        title='宏圖建造數', tree='宏圖建造數', emoji='🏛️',
+        keyword='夢想落地 · 大格局 · 使命實踐',
+        good='有宏觀視野又有務實執行力，能整合資源、把理想變成現實，責任感強、值得信賴。',
+        bad='壓力過大、不懂休息、對自己要求太高，容易因為扛太多而緊繃；有時想得太大，反而遲遲不敢開始。',
+        desc='你是雙重的 2，又被稱為「宇宙工程師」——既有 2 的協調與敏感，又有把大夢想真正蓋出來的能力。'
+             '你看得到別人看不到的大藍圖，而且難得地能腳踏實地、一磚一瓦把它做出來。你的潛力很大，'
+             '也因此常常給自己很大的壓力。',
+        career='建築師、工程師、企業創辦人、專案領導、社會企業——能「把宏大構想落地、帶一群人完成」的位置是你的舞台。',
+        love='你忙於築夢，容易把關係放後面。記得再大的成就也需要有人一起分享，別讓另一半總在等你。',
+        oils=['大西洋雪松', '廣藿香', '佛手柑'],
+        oilwhy='你扛得多、壓力大，雪松與廣藿香幫你紮根、穩住重心、把腳步踩實；'
+                '佛手柑則在你繃太緊時，幫你鬆口氣、把壓力放下一些。'),
+    33: dict(
+        title='至愛療癒數', tree='至愛療癒數', emoji='💗',
+        keyword='慈愛 · 療癒 · 無私奉獻',
+        good='慈愛、有同理心、療癒力強、無私奉獻，能溫柔承接別人的情緒，是天生的給予者與導師。',
+        bad='容易犧牲自我、忽略自身需求、把別人的責任都扛上身；付出太多時容易耗竭，受了傷還往肚裡吞。',
+        desc='你是最高層次的大師數——雙重的 3 加上 6 的愛，讓你天生帶著一股溫柔的療癒力。你對別人有近乎無限的包容，'
+             '總是先想到別人的需要，是很多人的避風港；但也正因為這樣，你很容易犧牲自己、忘了照顧自己。',
+        career='療癒師、諮商師、老師、社福、身心靈工作者——能「以愛陪伴、療癒人」的角色，都是你的天命。',
+        love='你愛得很深、很願意付出，但小心別把自己掏空。找一個也懂得疼你、會把愛還給你的人。',
+        oils=['玫瑰', '橙花', '依蘭'],
+        oilwhy='你總是先愛別人，玫瑰與橙花這些開「心輪」的花香，提醒你也要好好疼自己、修復情緒；'
+                '依蘭則陪你找回那份「我也值得被愛」的柔軟。'),
 }
 
 # ── 連線（八主線 + 四副線）────────────────────────────────────
@@ -295,6 +334,9 @@ COMPAT = {
     7: '和 3、5、9 深刻——心靈與智性的交流讓你著迷；記得偶爾走出腦袋，讓對方靠近你的心。',
     8: '和 2、4、1 互助——你的企圖心需要穩定的後盾；別讓事業與掌控，壓過了感情的溫度。',
     9: '和 3、6、7 投緣——理想主義者遇到懂你的人會發光；但要學會把愛，也留一些給自己。',
+    11: '11 號適合和懂得給你安全感、能接住你敏感的人在一起；也需要對方尊重你獨處充電的時刻。',
+    22: '22 號需要一個能體諒你忙於使命、又願意陪你紮實前進的伴；打拚之餘，也把溫柔留給對方。',
+    33: '33 號最需要一個會主動疼你、把你照顧好的伴——別總是當付出的那一方，讓自己也被好好接住。',
 }
 
 # ── 代表顏色（脈輪色系；整理自《幸福密碼》靈學表 + 流年顏色表）──
@@ -302,12 +344,14 @@ COLOR = {
     1: ('#D64545', '紅'), 2: ('#E2872E', '橙'), 3: ('#E5BE2E', '黃'),
     4: ('#5FA85F', '綠'), 5: ('#3F87C9', '藍'), 6: ('#5B6FB5', '靛'),
     7: ('#8A5FB5', '紫'), 8: ('#D87FA8', '粉紅'), 9: ('#C9A93F', '金'),
+    11: ('#5B4B8A', '靛紫'), 22: ('#C9A93F', '金'), 33: ('#C9849B', '玫瑰金'),
 }
 
 # ── 能量原型（《幸福密碼》密碼身份；趣味象徵）──
 ARCHETYPE = {
     1: '皇宮貴族', 2: '外圍貴族', 3: '有錢人', 4: '讀書人', 5: '武將',
     6: '演員', 7: '巫女', 8: '商人', 9: '出家人',
+    11: '先知／靈媒', 22: '建築師／造夢者', 33: '療癒者／大愛導師',
 }
 
 # ── 流年運（個人年 1-9；分領域詳解）──
@@ -526,6 +570,9 @@ FLAW = {
     7: '孤僻、神秘、愛鑽牛角尖、不願表達自己的問題、逃避、冷漠、想太多，內心缺乏安全感。',
     8: '自以為是、好強好勝、固執、霸氣、善於隱藏，自尊心強。',
     9: '缺乏行動力、消極倦怠、不切實際，容易受外界影響，有時自卑又糊塗。',
+    11: '容易焦慮緊張、完美主義、想太多、情緒起伏大；理想太高時會對現實失望，也常把自己逼得太緊。',
+    22: '壓力過大、不懂休息、對自己要求太高，容易因為扛太多而緊繃；有時想得太大，反而遲遲不敢開始。',
+    33: '容易犧牲自我、忽略自身需求、把別人的責任都扛上身；付出太多時容易耗竭，受了傷還往肚裡吞。',
 }
 
 # ── 人生學習功課（OCR 自《幸福密碼》密碼 1-9「人生學習功課」欄）──
@@ -540,6 +587,9 @@ LESSON = {
     7: '學著放鬆、相信別人，讓自己多一點熱情。',
     8: '學習柔和、重視人際，提升靈性與愛的能量。',
     9: '學習主動、積極、專注，把理想落地、活在當下。',
+    11: '學習把強大的能量穩穩接地，別被自己的敏感淹沒；相信直覺，也照顧好神經與身體，先安頓自己，才能照亮別人。',
+    22: '學習在「成就大事」與「照顧自己」之間取得平衡——你不必一個人扛起全世界；允許自己休息、慢慢來。',
+    33: '先把自己的杯子裝滿，再倒給別人——照顧自己不是自私；設立界線，允許自己也被愛、被照顧。',
 }
 
 
@@ -613,6 +663,15 @@ def build():
         '<tr><td style="padding:8px 12px;border:1px solid #E5D9C0;text-align:center;font-weight:800;color:#8B6F3E;">%d</td>'
         '<td style="padding:8px 12px;border:1px solid #E5D9C0;">%s</td></tr>' % (n, t)
         for n, t in NUM_MEANING)
+    meaning_rows += ('<tr><td colspan="2" style="padding:6px 12px;border:1px solid #E5D9C0;'
+                     'background:#F3EEF6;font-weight:800;color:#7A5A8E;text-align:center;">'
+                     '✦ 大師數（縮減時停在 11／22／33，不再降位）</td></tr>')
+    for n, name, t in [(11, '直覺先知數', '靈感、直覺、靈性覺醒、心靈引導'),
+                       (22, '宏圖建造數', '夢想落地、大格局、建設、使命實踐'),
+                       (33, '至愛療癒數', '慈愛、療癒、無私奉獻、精神導師')]:
+        meaning_rows += ('<tr><td style="padding:8px 12px;border:1px solid #E5D9C0;text-align:center;'
+                         'font-weight:800;color:#7A5A8E;">%d</td><td style="padding:8px 12px;border:1px solid #E5D9C0;">'
+                         '<b style="color:#7A5A8E;">%s</b>——%s</td></tr>' % (n, name, t))
 
     lunar_js = (Path(__file__).parent / 'lunar_convert.js').read_text(encoding='utf-8')
     calc_js = lunar_js + '\n' + CALC_JS.replace('__DATA__', data_json)
@@ -792,7 +851,9 @@ EDU_SECTION = '''
     <p style="font-size:15px;line-height:1.9;margin:12px 0;">計算方法其實很簡單，自己用紙筆就能算：</p>
     <ol style="font-size:15px;line-height:2;padding-left:22px;">
       <li><strong>把生日數字全部相加</strong>：西元出生年月日的每個數字相加。以 1977 年 6 月 20 日為例：1+9+7+7+0+6+2+0 = 32。</li>
-      <li><strong>縮減成個位數</strong>：如果是兩位數，把兩個數字再相加，直到剩個位數。32 → 3+2 = 5，所以<strong>主命數是 5</strong>。</li>
+      <li><strong>縮減成個位數</strong>：如果是兩位數，把兩個數字再相加，直到剩個位數。32 → 3+2 = 5，所以<strong>主命數是 5</strong>。
+        <div style="background:#F3EEF6;border-left:4px solid #B79BCB;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:14px;line-height:1.8;color:#5A4A6A;font-weight:400;">⭐ <b>特例——大師數</b>：若縮減過程中出現 <b>11、22、33</b>，就停在那個數字、不再繼續縮減（不會降到 2／4／6），這稱為「大師數（Master Number）」，代表更高層次的靈魂課題與天賦使命。例：1982/11/29 → 數字總和 33 → 主命數就是 <b>33</b>（不是 6）。</div>
+      </li>
       <li><strong>生日數（內在）</strong>：只把「日」相加縮減。20 日 → 2+0 = 2。<strong>天賦數</strong>：全部相加後、變成個位數前的那個兩位數（這裡是 32，即 3、2）。</li>
       <li><strong>填九宮格、找連線與空缺</strong>：把出生日期、過程數字、主命數圈進 3×3 九宮格，圈愈多的數字能量愈強；連成線就是你的天賦連線，沒被圈到的 1–9 就是<strong>空缺數</strong>（人生功課）。</li>
     </ol>
@@ -824,6 +885,7 @@ EDU_SECTION = '''
     </ul>
 
     <h2 style="font-size:22px;color:var(--green-dark);border-bottom:2px solid var(--beige);padding-bottom:8px;margin-top:32px;">❓ 常見問題</h2>
+    <div class="num-card"><strong style="color:#7A5A8E;">Q：什麼是大師數？我算出來是 11／22／33 嗎？</strong><p style="margin:8px 0 0;font-size:14.5px;line-height:1.85;">大師數是生命靈數裡的特殊數字，包含 <b>11、22、33</b>。當你的生日數字全部相加、縮減的過程中（最終或中間步驟）得到這三個數字之一，就<b>停在那裡、不再縮減</b>，這個數字就是你的主命數。大師數代表更高層次的靈魂使命與挑戰——天賦極大，但人生課題也更重，需要更多的成熟與歷練，才能完整發揮。</p></div>
     <div class="num-card"><strong style="color:#7A5A8E;">Q：要用國曆還是農曆生日？</strong><p style="margin:8px 0 0;font-size:14.5px;line-height:1.85;">兩種都可以。預設是<strong>國曆（西元／陽曆）</strong>；如果你只記得農曆，把計算器切到<strong>農曆</strong>（閏月年份再勾「閏月」），系統會自動換算成國曆再計算，不用自己查萬年曆。生命靈數本身是用國曆日期推算的。</p></div>
     <div class="num-card"><strong style="color:#7A5A8E;">Q：主命數和星座哪個準？</strong><p style="margin:8px 0 0;font-size:14.5px;line-height:1.85;">這沒有標準答案，因它們本來就是不同的東西。星座比較貼近你最近的狀態，像這陣子的心情、跟人相處的方式；生命靈數則是偏向你天生的個性，還有這輩子想走的方向。建議兩個一起對照著看，把它們當成認識自己的線索，至於命不命定，是由自己自身決定。</p></div>
     <div class="num-card"><strong style="color:#7A5A8E;">Q：空缺數是不是不好？</strong><p style="margin:8px 0 0;font-size:14.5px;line-height:1.85;">空缺數不是缺點，比較像留給你的功課。看見它，你就多了一個把它補起來的機會；等你真的補上了，那會變成你最有成就、進步的地方。</p></div>
@@ -856,6 +918,8 @@ CALC_JS = r'''
   function pad(n){return n<10?'0'+n:''+n;}
   function sumDigits(n){var s=0;n=Math.abs(n);while(n>0){s+=n%10;n=Math.floor(n/10);}return s;}
   function reduceNum(n){while(n>9)n=sumDigits(n);return n;}
+  // 大師數：縮減時遇 11/22/33 即停（不再降到 2/4/6）
+  function reduceMaster(n){while(n>9&&n!==11&&n!==22&&n!==33)n=sumDigits(n);return n;}
 
   // 年份改為手動輸入（input）；月、日仍用下拉；可切換國曆／農曆
   var ySel=byId('num-y'),mSel=byId('num-m'),dSel=byId('num-d');
@@ -946,9 +1010,9 @@ CALC_JS = r'''
     }
     var ymd=''+y+pad(m)+pad(d),digs=ymd.split('').map(Number);
     var first=digs.reduce(function(a,b){return a+b;},0);
-    var chain=[first],s=first;while(s>9){s=sumDigits(s);chain.push(s);}
-    var life=chain[chain.length-1];
-    var talent=chain.length>=2?chain[chain.length-2]:chain[0];
+    var chain=[first],s=first;while(s>9&&s!==11&&s!==22&&s!==33){s=sumDigits(s);chain.push(s);}
+    var life=chain[chain.length-1];        // 主命數：可能是 11/22/33（大師數）
+    var talent=first;                       // 天賦數＝出生數字總和
     var bday=reduceNum(d),zo=zodiacOf(m,d);
     var plot=digs.slice();chain.forEach(function(v){(''+v).split('').forEach(function(c){plot.push(+c);});});
     var counts={};for(var i=1;i<=9;i++)counts[i]=0;
@@ -966,7 +1030,7 @@ CALC_JS = r'''
     var zodiac=zodiacOfBirth(y,m,d);
     var rm=reduceNum(m),rd=reduceNum(d),ry=reduceNum(y);
     var p1=reduceNum(rm+rd),p2=reduceNum(rd+ry),p3=reduceNum(p1+p2),p4=reduceNum(rm+ry);
-    var e1=36-life,age=ty-y-(passed?0:1);
+    var e1=36-reduceNum(life),age=ty-y-(passed?0:1);
     var stages=[{num:p1,from:0,to:e1},{num:p2,from:e1+1,to:e1+9},{num:p3,from:e1+10,to:e1+18},{num:p4,from:e1+19,to:null}];
     var curStage=age<=e1?0:(age<=e1+9?1:(age<=e1+18?2:3));
     setNow(age);
@@ -975,8 +1039,9 @@ CALC_JS = r'''
 
   function render(life,bday,talent,zo,innate,counts,missing,active,flow,ty,combo,stages,curStage,age,lunarNote,flowInfo,zodiac){
     var lp=D.lifepath[life],talentStr=(''+talent).split('').join(' '),h='';
+    var isMaster=(life===11||life===22||life===33);
     h+='<div class="num-card" style="border-top:4px solid '+lp.color+';">';
-    h+='<div style="text-align:center;margin-bottom:6px;"><span style="font-size:13px;color:#9A8AA8;">你的生命靈數</span><div style="font-size:28px;font-weight:800;color:#7A5A8E;">'+lp.emoji+' 主命數 '+life+'｜'+lp.tree+'</div><div style="font-size:14px;color:#7A6852;">'+lp.keyword+'</div></div>';
+    h+='<div style="text-align:center;margin-bottom:6px;"><span style="font-size:13px;color:#9A8AA8;">你的生命靈數</span><div style="font-size:28px;font-weight:800;color:#7A5A8E;">'+lp.emoji+' 主命數 '+life+'｜'+lp.tree+(isMaster?' <span style="display:inline-block;font-size:13px;font-weight:700;color:#fff;background:linear-gradient(135deg,#8A5FB5,#C9A93F);padding:2px 10px;border-radius:12px;vertical-align:middle;">✦ 大師數</span>':'')+'</div><div style="font-size:14px;color:#7A6852;">'+lp.keyword+'</div></div>';
     h+='<div style="text-align:center;margin-bottom:2px;font-size:13px;color:#7A6852;"><span style="display:inline-block;width:11px;height:11px;border-radius:50%;background:'+lp.color+';margin-right:5px;vertical-align:-1px;"></span>代表色 '+lp.colorName+'　·　能量原型 '+lp.archetype+'</div>';
     h+='<div style="text-align:center;margin-bottom:4px;font-size:14px;color:#7A6852;">'+zodiac.emoji+' 生肖 <b style="color:#7A5A8E;font-size:16px;">'+zodiac.animal+'</b>'+(zodiac.beforeSpring?'<span style="font-size:12px;color:#9A8AA8;">（出生當年農曆 '+zodiac.lunarYear+' 年・春節前）</span>':'')+'</div>';
     if(lunarNote)h+='<div style="text-align:center;font-size:12.5px;color:#9A8AA8;margin-bottom:4px;">📅 '+lunarNote+'</div>';
@@ -1002,9 +1067,8 @@ CALC_JS = r'''
     });}else{h+='<p style="font-size:14.5px;color:#7A6852;margin:0;">你目前沒有完整的三格連線——這代表你的能量比較分散、不被單一模式定義，反而更有彈性。可以多看主命數與空缺數來認識自己。</p>';}
     h+='</div>';
     h+='<div class="num-card"><h3 class="num-h2">💧 生日數（內在） '+bday+' & 天賦數 '+talentStr+'</h3>';
-    h+='<p style="font-size:14.5px;line-height:1.9;margin:0 0 10px;"><b>生日數（內在） '+bday+'</b>：'+D.lifepath[bday].title+'的特質——'+D.lifepath[bday].keyword+'，是你在日常裡最自然流露的一面。<br><b>天賦數 '+talentStr+'</b>：藏在你身上、可以好好發揮的潛在才能。</p>';
-    if(D.combo[combo]){h+='<div style="background:#F7F4FA;border-left:4px solid #B79BCB;border-radius:8px;padding:10px 14px;font-size:14px;line-height:1.85;"><b style="color:#7A5A8E;">🔢 你的數字組合 '+combo+'：</b>'+D.combo[combo]+'</div>';}
-    h+='</div>';
+    var tDesc=D.combo[talent]?D.combo[talent]:'藏在你身上、可以好好發揮的潛在才能。';
+    h+='<p style="font-size:14.5px;line-height:1.9;margin:0;"><b>生日數（內在） '+bday+'</b>：'+D.lifepath[bday].title+'的特質——'+D.lifepath[bday].keyword+'，是你在日常裡最自然流露的一面。<br><b>天賦數 '+talentStr+'</b>：'+tDesc+'</p></div>';
     h+='<div class="num-card"><h3 class="num-h2">🧩 空缺數功課 & 精油處方</h3>';
     if(missing.length){missing.forEach(function(n){var ms=D.missing[n];
       h+='<div style="margin-bottom:16px;padding-bottom:14px;border-bottom:1px dashed #EEE7D8;">';
@@ -1058,7 +1122,7 @@ CALC_JS = r'''
     if(ps)ps.onchange=function(){
       var pv=+ps.value,pr=byId('partner-res');
       if(!pv){pr.innerHTML='';return;}
-      var cd=D.compatDiff[Math.abs(life-pv)];
+      var cd=D.compatDiff[Math.abs(reduceNum(life)-pv)];
       var col=cd.score>=80?'#5FA85F':(cd.score>=60?'#E2872E':'#B56A6A');
       pr.innerHTML='<div style="background:#fff;border:1px solid #E5D9C0;border-left:4px solid '+col+';border-radius:8px;padding:12px 14px;"><div style="font-weight:800;color:'+col+';font-size:15px;">'+life+' × '+pv+' → '+cd.name+'　<span style="font-size:13px;font-weight:600;">緣分指數 '+cd.score+'</span></div><div style="font-size:14px;line-height:1.8;margin-top:6px;color:#3D3328;">'+cd.text+'</div></div>';
     };
