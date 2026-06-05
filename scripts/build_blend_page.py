@@ -566,23 +566,18 @@ def build():
 }}
 </script>
 
-<div class="oil-cover-hero" style="--c1:#5A7A6A;--c2:#88BC88;background:linear-gradient(135deg,#5A7A6A 0%,#88BC88 100%);">
-  <span class="oil-cover-bg-emoji">⚗️</span>
-  <div class="oil-cover-overlay"></div>
-  <div class="oil-cover-content">
-    <span class="oil-cover-cat">🧪 互動工具 · 調香金字塔</span>
-    <h1>調配精油</h1>
-    <p class="oil-cover-latin">依你的感覺與環境，一鍵生成專屬精油配方</p>
-  </div>
-</div>
-
 <div class="breadcrumb"><div class="breadcrumb-inner">
   <a href="index.html">首頁</a><span class="sep">›</span><span>調配精油</span>
 </div></div>
 
 <main style="max-width:920px;margin:0 auto;padding:0 20px;">
 
-  <section class="blend-intro" style="background:linear-gradient(135deg,#F5F0E6 0%,#EEE7D8 100%);border-left:4px solid #C8A673;padding:20px 24px;border-radius:12px;margin:28px 0;">
+  <div style="margin:26px 0 4px;">
+    <h1 style="font-size:30px;font-weight:800;color:#5A7A4A;margin:0 0 6px;">調配精油</h1>
+    <p style="font-size:15px;color:#7A6852;margin:0;">依你的感覺與環境，一鍵生成專屬精油配方</p>
+  </div>
+
+  <section class="blend-intro" style="background:linear-gradient(135deg,#F5F0E6 0%,#EEE7D8 100%);border-left:4px solid #C8A673;padding:20px 24px;border-radius:12px;margin:20px 0 28px;">
     <h2 style="font-size:18px;font-weight:700;color:#8B6F3E;margin:0 0 10px;">✦ 如何調配精油？</h2>
     <p style="font-size:15px;line-height:1.85;color:#3D3328;margin:0;">
       精油調配遵循「調香金字塔」：<strong>前調</strong>（柑橘、薄荷，揮發快、第一印象）、<strong>中調</strong>（薰衣草、天竺葵，配方核心）、<strong>後調</strong>（檀香、乳香，揮發慢、定香延長）。一般比例約前調 3：中調 5：後調 2。本頁提供兩種用法：① 依<strong>感覺／環境</strong>一鍵套用 24 組現成配方；② 用下方<strong>自訂計算器</strong>自己選精油，即時算前中後調平衡、基底油用量與安全旗標。使用前請參考 <a href="safety.html">精油安全指南</a>。
