@@ -905,7 +905,7 @@ MAIN_BOTTOM = '''
 FOOTER = '''<footer>
   <div class="footer-inner" style="max-width:1100px;margin:0 auto;padding:32px 20px;">
     <p>© 2026 精油能量圖譜 · 靈境智造 Intelliverse Studio</p>
-    <p style="font-size:12px;color:#999;margin-top:8px;">本站資訊僅供教育參考，不取代醫療建議。作者：<a href="author-yuling.html" style="color:#8B6F3E;">玉玲（IFA 國際認證芳療師）</a>｜<a href="references.html" style="color:#8B6F3E;">引用來源</a></p>
+    <p style="font-size:12px;color:#999;margin-top:8px;">本站資訊僅供教育參考，不取代醫療建議。<a href="references.html" style="color:#8B6F3E;">引用來源</a></p>
   </div>
 </footer>
 '''
