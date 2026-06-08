@@ -885,6 +885,7 @@ EDU_SECTION = '''
     </ul>
 
     <h2 style="font-size:22px;color:var(--green-dark);border-bottom:2px solid var(--beige);padding-bottom:8px;margin-top:32px;">❓ 常見問題</h2>
+    <div class="num-card"><strong style="color:#7A5A8E;">Q：生命靈數是不是算命？</strong><p style="margin:8px 0 0;font-size:14.5px;line-height:1.85;">簡單來說：生命靈數不算傳統意義上的「算命」，它更像是一套性格的大數據統計學。傳統算命（如八字、紫微斗數）傾向於「宿命論」，核心在於預測未來的吉凶禍福，讓人在面對命運時顯得較為被動；而生命靈數的重點不在預測吉凶，而是幫你看懂自己天生的性格、天賦與課題，把主導權交回你手上——它告訴你「你是誰、適合往哪走」，而不是「你註定會怎樣」。與其說是算命，不如說是一份認識自己的說明書。</p></div>
     <div class="num-card"><strong style="color:#7A5A8E;">Q：什麼是大師數？我算出來是 11／22／33 嗎？</strong><p style="margin:8px 0 0;font-size:14.5px;line-height:1.85;">大師數是生命靈數裡的特殊數字，包含 <b>11、22、33</b>。當你的生日數字全部相加、縮減的過程中（最終或中間步驟）得到這三個數字之一，就<b>停在那裡、不再縮減</b>，這個數字就是你的主命數。大師數代表更高層次的靈魂使命與挑戰——天賦極大，但人生課題也更重，需要更多的成熟與歷練，才能完整發揮。</p></div>
     <div class="num-card"><strong style="color:#7A5A8E;">Q：要用國曆還是農曆生日？</strong><p style="margin:8px 0 0;font-size:14.5px;line-height:1.85;">兩種都可以。預設是<strong>國曆（西元／陽曆）</strong>；如果你只記得農曆，把計算器切到<strong>農曆</strong>（閏月年份再勾「閏月」），系統會自動換算成國曆再計算，不用自己查萬年曆。生命靈數本身是用國曆日期推算的。</p></div>
     <div class="num-card"><strong style="color:#7A5A8E;">Q：主命數和星座哪個準？</strong><p style="margin:8px 0 0;font-size:14.5px;line-height:1.85;">這沒有標準答案，因它們本來就是不同的東西。星座比較貼近你最近的狀態，像這陣子的心情、跟人相處的方式；生命靈數則是偏向你天生的個性，還有這輩子想走的方向。建議兩個一起對照著看，把它們當成認識自己的線索，至於命不命定，是由自己自身決定。</p></div>
