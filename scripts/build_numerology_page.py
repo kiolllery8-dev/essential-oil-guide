@@ -765,6 +765,21 @@ SCHEMA_BLOCK = '''<script type="application/ld+json">
     {"@type": "HowToStep", "position": 4, "name": "連線與解讀", "text": "把有圈的數字連起來形成連線（如事業線、感情線），對照主命數、連線與空缺數解讀性格、天賦與課題。"}
   ]
 }
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "zh-TW",
+  "mainEntity": [
+    {"@type":"Question","name":"生命靈數是不是算命？","acceptedAnswer":{"@type":"Answer","text":"嚴格說不算。生命靈數比較像一份「性格大數據」，用西元生日換算出 1 到 9 的能量原型，幫你看懂個性與天賦、發揮自己。算命／東方命理（八字、紫微）則擅長看時機與運勢節奏。兩者切入點不同，目的都是了解自己。"}},
+    {"@type":"Question","name":"什麼是大師數？算出來是 11、22、33 嗎？","acceptedAnswer":{"@type":"Answer","text":"大師數是生命靈數裡的特殊數字，包含 11、22、33。當你的生日數字相加縮減的過程中得到這三個數字之一，就停在那裡、不再縮減，這個數字就是你的主命數。大師數代表更高層次的靈魂使命與挑戰，天賦極大，但人生課題也更重。"}},
+    {"@type":"Question","name":"生命靈數要用國曆還是農曆生日？","acceptedAnswer":{"@type":"Answer","text":"兩種都可以。預設用國曆（西元／陽曆）；如果你只記得農曆，把計算器切到農曆（閏月年份再勾閏月），系統會自動換算成國曆再計算。生命靈數本身是用國曆日期推算的。"}},
+    {"@type":"Question","name":"生命靈數和星座哪個準？","acceptedAnswer":{"@type":"Answer","text":"這沒有標準答案，因為它們本來就是不同的東西。星座比較貼近你最近的狀態；生命靈數偏向你天生的個性與這輩子想走的方向。建議兩個一起對照，當成認識自己的線索。"}},
+    {"@type":"Question","name":"生命靈數的空缺數是不是不好？","acceptedAnswer":{"@type":"Answer","text":"空缺數不是缺點，比較像留給你的功課。看見它，你就多了一個把它補起來的機會；等你補上了，那往往會變成你最有成就、進步最多的地方。"}},
+    {"@type":"Question","name":"生命靈數可以對應精油嗎？","acceptedAnswer":{"@type":"Answer","text":"可以。每個生命靈數能量原型都有對應的精油芳療方向，作為情緒陪伴與香氛儀式，幫助你補強空缺數、安定身心、回到自己的能量節奏。"}}
+  ]
+}
 </script>'''
 
 HERO = '''<div class="oil-cover-hero" style="--c1:#7A5A8E;--c2:#B79BCB;background:linear-gradient(135deg,#7A5A8E 0%,#B79BCB 100%);">
