@@ -673,6 +673,23 @@ def build():
                          'font-weight:800;color:#7A5A8E;">%d</td><td style="padding:8px 12px;border:1px solid #E5D9C0;">'
                          '<b style="color:#7A5A8E;">%s</b>——%s</td></tr>' % (n, name, t))
 
+    def _oil_links(oils):
+        out = []
+        for nm in oils:
+            slug = SLUG.get(nm, '')
+            out.append('<a href="/%s/">%s</a>' % (slug, nm) if slug else nm)
+        return '、'.join(out)
+    oil_rows = ''.join(
+        '<tr>'
+        '<td style="padding:10px 12px;border:1px solid #E5D9C0;text-align:center;white-space:nowrap;">'
+        '<b style="color:#7A5A8E;font-size:16px;">%d</b><br><span style="font-size:12px;color:#9A7FB0;font-weight:600;">%s</span></td>'
+        '<td style="padding:10px 12px;border:1px solid #E5D9C0;white-space:nowrap;font-size:13px;color:#6A5A7A;">%s</td>'
+        '<td style="padding:10px 12px;border:1px solid #E5D9C0;font-weight:600;line-height:1.9;">%s</td>'
+        '<td style="padding:10px 12px;border:1px solid #E5D9C0;font-size:13px;line-height:1.7;color:#555;">%s</td>'
+        '</tr>' % (n, LIFEPATH[n]['title'], LIFEPATH[n]['keyword'],
+                   _oil_links(LIFEPATH[n]['oils']), LIFEPATH[n]['oilwhy'])
+        for n in range(1, 10))
+
     lunar_js = (Path(__file__).parent / 'lunar_convert.js').read_text(encoding='utf-8')
     calc_js = lunar_js + '\n' + CALC_JS.replace('__DATA__', data_json)
 
@@ -683,7 +700,7 @@ def build():
             + MAIN_TOP
             + CALC_SECTION
             + NLP_SECTION
-            + EDU_SECTION.replace('__MEANING_ROWS__', meaning_rows)
+            + EDU_SECTION.replace('__MEANING_ROWS__', meaning_rows).replace('__OIL_ROWS__', oil_rows)
             + MAIN_BOTTOM
             + FOOTER
             + '<script>\n' + calc_js + '\n</script>\n'
@@ -889,6 +906,21 @@ EDU_SECTION = '''
       柑橘調帶來明亮、草本調讓思緒清晰——這不是治療，而是用香味，溫柔地陪自己練習成長。每支推薦精油都可以
       點進去看完整的<a href="oils.html">成分與用法指南</a>，調配方式可參考<a href="blend.html">調配精油工具</a>。
     </p>
+
+    <h2 id="numerology-oils" style="font-size:22px;color:var(--green-dark);border-bottom:2px solid var(--beige);padding-bottom:8px;margin-top:32px;">🌿 生命靈數 1–9 對應精油一覽表</h2>
+    <p style="font-size:15px;line-height:1.9;margin:12px 0;">每個生命靈數都有專屬的能量原型，也對應到適合的精油香氣方向——作為<strong>情緒陪伴與香氛儀式</strong>，陪你補強空缺數、回到自己的能量節奏。下表幫你快速對照「幾號人適合哪些精油」，點精油名稱可看完整成分與用法：</p>
+    <div style="overflow-x:auto;">
+    <table style="width:100%;border-collapse:collapse;font-size:14px;background:#fff;border-radius:10px;overflow:hidden;margin-top:12px;">
+      <thead><tr style="background:#7A5A8E;color:#fff;">
+        <th style="padding:10px 12px;white-space:nowrap;">生命靈數</th>
+        <th style="padding:10px 12px;text-align:left;">能量原型</th>
+        <th style="padding:10px 12px;text-align:left;">對應精油</th>
+        <th style="padding:10px 12px;text-align:left;">適合的香氣方向</th>
+      </tr></thead>
+      <tbody>__OIL_ROWS__</tbody>
+    </table>
+    </div>
+    <p style="font-size:13px;color:#8A7A6A;margin:10px 0 0;">※ 大師數 11／22／33 的精油方向，可參考其縮減數（11→2、22→4、33→6）。精油為情緒陪伴與香氛儀式，非醫療用途。</p>
 
     <h2 style="font-size:22px;color:var(--green-dark);border-bottom:2px solid var(--beige);padding-bottom:8px;margin-top:32px;">🧭 這個工具還會幫你算什麼？</h2>
     <ul style="font-size:15px;line-height:2;padding-left:22px;">
