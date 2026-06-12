@@ -45,6 +45,11 @@ def sanitize(s):
         s = s.replace(bad, good)
     return s
 
+# slug → 中文名（canonical，第一個出現者）；給頁面摘要的 oil-* 條目用中文當問法
+REV_SLUG = {}
+for _zh, _s in SLUG.items():
+    REV_SLUG.setdefault(_s, _zh)
+
 kb = []
 seen = set()
 def add(q, a, url, tags, source='site'):
@@ -65,9 +70,11 @@ for o in oils:
     safety = (o.get('safetyText') or '').strip()
     a = f'{zh}（{o.get("latin","")}）屬{o.get("family","")}，主要成分：{o.get("components","")}。常見芳療應用：{o.get("effects","")}。'
     if safety: a += f'安全提醒：{safety}'
-    add(f'{zh}精油', a, url, [zh, o.get('family',''), '精油'] + (o.get('tags') or []))
+    # 有完整指南頁的 46 支＝常見精油（site，正常權重）；其餘 300 支冷門品種＝datasheet（檢索降權，避免霸佔）
+    src = 'site' if slug else 'datasheet'
+    add(f'{zh}精油', a, url, [zh, o.get('family', ''), '精油'] + (o.get('tags') or []), source=src)
     if slug:  # 完整指南頁再給一條別名問法
-        add(f'{zh}精油的功效與用法', a, url, [zh, '功效', '用法'])
+        add(f'{zh}精油的功效與用法', a, url, [zh, '功效', '用法'], source='site')
 
 # 2) 頁面摘要（本站原創 definition-first）
 ps = open(os.path.join(ROOT, 'app', 'lib', 'pageSummaries.ts'), encoding='utf-8').read()
@@ -77,12 +84,26 @@ for m in re.finditer(r"'([a-z0-9-]+)':\s*\n?\s*'([^']+)'", ps):
     if slug in SLUGNAME:
         url = f'{SITE}/{slug}/'; q = f'{SLUGNAME[slug]}是什麼'
     elif slug.startswith('oil-'):
-        url = f'{SITE}/{slug}/'; q = f'{slug[4:]}精油'
+        url = f'{SITE}/{slug}/'; q = f'{REV_SLUG.get(slug, slug[4:])}精油'
     elif slug.startswith('article-'):
         url = f'{SITE}/{slug}/'; q = summ[:14]
     else:
         url = f'{SITE}/{slug}/'; q = summ[:14]
     add(q, summ, url, [slug], source='site-summary')
+
+# 2.5) 確保 46 支常見精油（有完整指南頁）都有「中文名」kb 條目
+#      （oils.json 可能缺某些常見油，如甜橙；補一條保底，讓客服 AI 找得到）
+by_zh = {o.get('zh'): o for o in oils}
+for zh, slug in SLUG.items():
+    url = f'{SITE}/{slug}/'
+    if (f'{zh}精油' + '|' + url) in seen:
+        continue
+    o = by_zh.get(zh)
+    if o:
+        a = f'{zh}（{o.get("latin","")}）屬{o.get("family","")}，主要成分：{o.get("components","")}。常見芳療應用：{o.get("effects","")}。'
+    else:
+        a = f'{zh}精油是常見的芳療精油，可作為香氛陪伴與肌膚保養使用。完整成分、香氣與用法請見頁面。'
+    add(f'{zh}精油', a, url, [zh, '精油'], source='site')
 
 # 3) 文章 FAQ（reference/*_faq.json，客服 QA 對）
 import glob
