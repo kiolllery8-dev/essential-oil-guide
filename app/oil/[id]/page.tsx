@@ -302,7 +302,7 @@ export default async function OilDetail({ params }: { params: Promise<{ id: stri
       )}
 
       {/* 站內延伸閱讀：強化內部連結深度與 AI 引用上下文 */}
-      <RelatedLinks topic={oil.zh} title={`🌿 與「${oil.zh}」相關的精油知識`} max={6} />
+      <RelatedLinks topic={oil.zh} title={`🌿 與「${oil.zh}」相關的精油知識`} max={6} currentPath={`/oil/${oil.id}/`} />
     </>
   );
 }

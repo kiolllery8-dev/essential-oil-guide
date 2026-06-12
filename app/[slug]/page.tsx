@@ -207,7 +207,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       <RawHtml html={page.bodyHtml} />
 
       {/* 延伸閱讀（強化內部連結 + AI 引用上下文） */}
-      {showRelated && <RelatedLinks topic={niceName} max={6} />}
+      {showRelated && <RelatedLinks topic={niceName} max={6} currentPath={`/${slug}/`} />}
     </>
   );
 }

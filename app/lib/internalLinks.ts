@@ -196,11 +196,15 @@ export const INTERNAL_LINKS: InternalLink[] = [
   { keyword: '辦公室擴香', href: '/article-office/', title: '上班族 5 支提神精油' },
   { keyword: '提神精油', href: '/article-office/', title: '上班族 5 支提神精油' },
 
-  // ─── 調配工具 ───
+  // ─── 互動工具 ───
   { keyword: '調配精油', href: '/blend/', title: '調配精油互動工具：依感覺與環境生成配方' },
   { keyword: '精油配方', href: '/blend/', title: '調配精油：16 種情境配方' },
   { keyword: '調香金字塔', href: '/blend/', title: '調香金字塔：前中後調原理' },
   { keyword: '精油調配', href: '/blend/', title: '調配精油互動工具' },
+  { keyword: '生命靈數計算機', href: '/numerology/', title: '生命靈數計算機：主命數、九宮格與精油對應' },
+  { keyword: '生命靈數', href: '/numerology/', title: '生命靈數計算機：免費算主命數與對應精油' },
+  { keyword: '生命靈數對應精油', href: '/numerology/#numerology-oils', title: '生命靈數 1–9 對應精油一覽表' },
+  { keyword: '算命 vs 生命靈數', href: '/numerology-vs-fortune-telling/', title: '算命 vs 生命靈數：7 面向完整對照表' },
 
   // ─── 分類索引頁 ───
   { keyword: '精油化學分類', href: '/oils/', title: '依化學分子分類的精油索引' },
@@ -285,17 +289,65 @@ function escapeAttr(s: string): string {
   return s.replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
+/** 主推頁：補位時優先輸血的互動工具（每頁帶到 1 條，按頁輪替不同目標） */
+const PROMOTED_HREFS = ['/numerology/', '/blend/', '/numerology-vs-fortune-telling/'];
+
+/** 簡單可重現的字串雜湊（static export 需 deterministic，不可用 Math.random） */
+function hashStr(s: string): number {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+  return h;
+}
+
 /**
  * 取得「相關連結」清單（給文章末尾 / 側欄使用）
  *
- * @param topic 主題關鍵字（例如「薰衣草」、「澳洲」、「化學」）
- * @param max   最多回傳幾筆（預設 6）
+ * @param topic       主題關鍵字（例如「薰衣草」、「澳洲」、「化學」）
+ * @param max         最多回傳幾筆（預設 6）
+ * @param currentPath 當前頁路徑（如 '/oil-lavender/'）— 用於排除自連與決定輪替
+ *
+ * 規則：
+ *  1) 不回傳指向自己的連結（修掉 75 個自連）
+ *  2) 同一 href 只出現一次（多關鍵詞同目標時去重）
+ *  3) 補位不再固定取前 6 筆 → 以 currentPath 雜湊決定起點輪替，
+ *     讓 172 條連結平均分布，而非火力全灌同 6 支油
+ *  4) 每頁保證帶到 1 條主推工具頁（numerology / blend / 對照表，輪替）
  */
-export function getRelatedLinks(topic: string, max = 6): InternalLink[] {
-  if (!topic) return INTERNAL_LINKS.slice(0, max);
+export function getRelatedLinks(topic: string, max = 6, currentPath = ''): InternalLink[] {
+  const norm = (p: string) => p.split('#')[0];
+  const self = norm(currentPath);
+  const seen = new Set<string>();
+  const pick = (l: InternalLink) => {
+    const key = norm(l.href);
+    if (self && key === self) return false;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  };
+
   const lower = topic.toLowerCase();
-  // 先抓「關鍵詞包含 topic」的條目，再用其他熱門條目補滿
-  const direct = INTERNAL_LINKS.filter((l) => l.keyword.toLowerCase().includes(lower) || lower.includes(l.keyword.toLowerCase()));
-  const others = INTERNAL_LINKS.filter((l) => !direct.includes(l));
-  return [...direct, ...others].slice(0, max);
+  const direct = topic
+    ? INTERNAL_LINKS.filter((l) => l.keyword.toLowerCase().includes(lower) || lower.includes(l.keyword.toLowerCase())).filter(pick)
+    : [];
+
+  const out: InternalLink[] = [...direct];
+
+  // 4) 工具頁輸血：若 direct 沒包含任何主推頁，插入一條（按頁輪替）
+  const h = hashStr(self || topic);
+  if (!out.some((l) => PROMOTED_HREFS.includes(norm(l.href)))) {
+    for (let i = 0; i < PROMOTED_HREFS.length; i++) {
+      const target = PROMOTED_HREFS[(h + i) % PROMOTED_HREFS.length];
+      const entry = INTERNAL_LINKS.find((l) => norm(l.href) === target);
+      if (entry && pick(entry)) { out.push(entry); break; }
+    }
+  }
+
+  // 3) 輪替補位：從雜湊起點繞一圈，平均分配其餘條目
+  const start = h % INTERNAL_LINKS.length;
+  for (let i = 0; i < INTERNAL_LINKS.length && out.length < max; i++) {
+    const l = INTERNAL_LINKS[(start + i) % INTERNAL_LINKS.length];
+    if (pick(l)) out.push(l);
+  }
+
+  return out.slice(0, max);
 }

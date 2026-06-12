@@ -14,12 +14,15 @@ export default function RelatedLinks({
   topic,
   title = '🌿 延伸閱讀',
   max = 6,
+  currentPath = '',
 }: {
   topic?: string;
   title?: string;
   max?: number;
+  /** 當前頁路徑（如 '/oil-lavender/'）— 排除自連、決定補位輪替 */
+  currentPath?: string;
 }) {
-  const links = getRelatedLinks(topic || '', max);
+  const links = getRelatedLinks(topic || '', max, currentPath);
   if (!links.length) return null;
 
   return (
