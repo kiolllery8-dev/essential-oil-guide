@@ -30,61 +30,384 @@
   <!-- SEO_END -->
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "引用來源與參考資料",
-    "headline": "引用來源與參考資料｜精油能量圖譜",
-    "description": "精油能量圖譜引用的所有專業書籍、學術論文、官方機構、植物學分類與法規標準來源。",
-    "url": "https://intelliverse.tw/references/",
-    "inLanguage": "zh-TW",
-    "isPartOf": {"@type":"WebSite","name":"精油能量圖譜","url":"https://intelliverse.tw/"},
-    "author": {"@id":"https://intelliverse.tw/#author"},
-    "publisher": {"@type":"Organization","name":"靈境智造 Intelliverse Studio","url":"https://intelliverse.tw/"},
-    "mainEntity": {
-      "@type": "ItemList",
-      "name": "完整引用清單",
-      "itemListOrder": "https://schema.org/ItemListOrderAscending",
-      "numberOfItems": 24,
-      "itemListElement": [
-        {"@type":"ListItem","position":1,"item":{"@type":"Book","name":"Essential Oil Safety: A Guide for Health Care Professionals","author":[{"@type":"Person","name":"Robert Tisserand"},{"@type":"Person","name":"Rodney Young"}],"datePublished":"2014","publisher":{"@type":"Organization","name":"Churchill Livingstone Elsevier"},"bookEdition":"2nd","isbn":"978-0443062414","inLanguage":"en"}},
-        {"@type":"ListItem","position":2,"item":{"@type":"Book","name":"L'aromathérapie exactement","author":[{"@type":"Person","name":"Pierre Franchomme"},{"@type":"Person","name":"Daniel Pénoël"}],"datePublished":"2001","publisher":{"@type":"Organization","name":"Roger Jollois"},"isbn":"978-2876810013","inLanguage":"fr"}},
-        {"@type":"ListItem","position":3,"item":{"@type":"Book","name":"The Encyclopedia of Essential Oils","author":{"@type":"Person","name":"Julia Lawless"},"datePublished":"2013","publisher":{"@type":"Organization","name":"Conari Press"},"bookEdition":"Revised","isbn":"978-1573246149","inLanguage":"en"}},
-        {"@type":"ListItem","position":4,"item":{"@type":"Book","name":"The Complete Guide to Aromatherapy","author":{"@type":"Person","name":"Salvatore Battaglia"},"datePublished":"2018","publisher":{"@type":"Organization","name":"Black Pepper Creative Pty Ltd"},"bookEdition":"3rd","isbn":"978-0646937967","inLanguage":"en"}},
-        {"@type":"ListItem","position":5,"item":{"@type":"Book","name":"The Healing Intelligence of Essential Oils","author":{"@type":"Person","name":"Kurt Schnaubelt"},"datePublished":"2011","publisher":{"@type":"Organization","name":"Healing Arts Press"},"isbn":"978-1594774256","inLanguage":"en"}},
-        {"@type":"ListItem","position":6,"item":{"@type":"Book","name":"Essential Oils in Colour","author":{"@type":"Person","name":"Rosemary Caddy"},"datePublished":"1997","publisher":{"@type":"Organization","name":"Amberwood Publishing"},"isbn":"978-1899308118","inLanguage":"en"}},
-        {"@type":"ListItem","position":7,"item":{"@type":"Book","name":"Aromatherapy for Healing the Spirit","author":{"@type":"Person","name":"Gabriel Mojay"},"datePublished":"1996","publisher":{"@type":"Organization","name":"Healing Arts Press"},"isbn":"978-0892817917","inLanguage":"en"}},
-        {"@type":"ListItem","position":8,"item":{"@type":"Book","name":"Aromatherapy: An A-Z","author":{"@type":"Person","name":"Patricia Davis"},"datePublished":"2005","publisher":{"@type":"Organization","name":"Vermilion"},"bookEdition":"3rd","isbn":"978-0091906610","inLanguage":"en"}},
-        {"@type":"ListItem","position":9,"item":{"@type":"Book","name":"方療應用全書","author":{"@type":"Person","name":"呂秀齡"},"datePublished":"2017","publisher":{"@type":"Organization","name":"城邦文化"},"inLanguage":"zh-TW"}},
-        {"@type":"ListItem","position":10,"item":{"@type":"Book","name":"IFA 芳療課程（中文版）","author":{"@type":"Person","name":"Joanna Hoare"},"inLanguage":"zh-TW"}},
-        {"@type":"ListItem","position":11,"item":{"@type":"Book","name":"破解精油（中文版）","inLanguage":"zh-TW"}},
-        {"@type":"ListItem","position":12,"item":{"@type":"Organization","name":"International Federation of Aromatherapists (IFA)","url":"https://ifaroma.org/","foundingDate":"1985","foundingLocation":"United Kingdom"}},
-        {"@type":"ListItem","position":13,"item":{"@type":"Organization","name":"International Federation of Professional Aromatherapists (IFPA)","url":"https://ifparoma.org/"}},
-        {"@type":"ListItem","position":14,"item":{"@type":"Organization","name":"National Association for Holistic Aromatherapy (NAHA)","url":"https://naha.org/"}},
-        {"@type":"ListItem","position":15,"item":{"@type":"Organization","name":"Alliance of International Aromatherapists (AIA)","url":"https://www.alliance-aromatherapists.org/"}},
-        {"@type":"ListItem","position":16,"item":{"@type":"Organization","name":"Tisserand Institute","url":"https://tisserandinstitute.org/"}},
-        {"@type":"ListItem","position":17,"item":{"@type":"WebSite","name":"Robert Tisserand 個人網站","url":"https://roberttisserand.com/"}},
-        {"@type":"ListItem","position":18,"item":{"@type":"WebSite","name":"AromaWeb","url":"https://www.aromaweb.com/"}},
-        {"@type":"ListItem","position":19,"item":{"@type":"WebSite","name":"PubMed (NCBI)","url":"https://pubmed.ncbi.nlm.nih.gov/"}},
-        {"@type":"ListItem","position":20,"item":{"@type":"WebSite","name":"PubChem","url":"https://pubchem.ncbi.nlm.nih.gov/"}},
-        {"@type":"ListItem","position":21,"item":{"@type":"WebSite","name":"ScienceDirect","url":"https://www.sciencedirect.com/"}},
-        {"@type":"ListItem","position":22,"item":{"@type":"WebSite","name":"World Flora Online (WFO)","url":"https://www.worldfloraonline.org/"}},
-        {"@type":"ListItem","position":23,"item":{"@type":"WebSite","name":"GBIF","url":"https://www.gbif.org/"}},
-        {"@type":"ListItem","position":24,"item":{"@type":"Organization","name":"IFRA (International Fragrance Association)","url":"https://ifrafragrance.org/"}}
-      ]
-    }
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "引用來源與參考資料",
+  "headline": "引用來源與參考資料｜精油能量圖譜",
+  "description": "精油能量圖譜引用的所有專業書籍、學術論文、官方機構、植物學分類與法規標準來源。",
+  "url": "https://intelliverse.tw/references/",
+  "inLanguage": "zh-TW",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "精油能量圖譜",
+    "url": "https://intelliverse.tw/"
+  },
+  "author": {
+    "@id": "https://intelliverse.tw/#organization"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "靈境智造 Intelliverse Studio",
+    "url": "https://intelliverse.tw/"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "完整引用清單",
+    "itemListOrder": "https://schema.org/ItemListOrderAscending",
+    "numberOfItems": 24,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Book",
+          "name": "Essential Oil Safety: A Guide for Health Care Professionals",
+          "author": [
+            {
+              "@type": "Person",
+              "name": "Robert Tisserand"
+            },
+            {
+              "@type": "Person",
+              "name": "Rodney Young"
+            }
+          ],
+          "datePublished": "2014",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Churchill Livingstone Elsevier"
+          },
+          "bookEdition": "2nd",
+          "isbn": "978-0443062414",
+          "inLanguage": "en"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Book",
+          "name": "L'aromathérapie exactement",
+          "author": [
+            {
+              "@type": "Person",
+              "name": "Pierre Franchomme"
+            },
+            {
+              "@type": "Person",
+              "name": "Daniel Pénoël"
+            }
+          ],
+          "datePublished": "2001",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Roger Jollois"
+          },
+          "isbn": "978-2876810013",
+          "inLanguage": "fr"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Book",
+          "name": "The Encyclopedia of Essential Oils",
+          "author": {
+            "@type": "Person",
+            "name": "Julia Lawless"
+          },
+          "datePublished": "2013",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Conari Press"
+          },
+          "bookEdition": "Revised",
+          "isbn": "978-1573246149",
+          "inLanguage": "en"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "Book",
+          "name": "The Complete Guide to Aromatherapy",
+          "author": {
+            "@type": "Person",
+            "name": "Salvatore Battaglia"
+          },
+          "datePublished": "2018",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Black Pepper Creative Pty Ltd"
+          },
+          "bookEdition": "3rd",
+          "isbn": "978-0646937967",
+          "inLanguage": "en"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "Book",
+          "name": "The Healing Intelligence of Essential Oils",
+          "author": {
+            "@type": "Person",
+            "name": "Kurt Schnaubelt"
+          },
+          "datePublished": "2011",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Healing Arts Press"
+          },
+          "isbn": "978-1594774256",
+          "inLanguage": "en"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": {
+          "@type": "Book",
+          "name": "Essential Oils in Colour",
+          "author": {
+            "@type": "Person",
+            "name": "Rosemary Caddy"
+          },
+          "datePublished": "1997",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Amberwood Publishing"
+          },
+          "isbn": "978-1899308118",
+          "inLanguage": "en"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "item": {
+          "@type": "Book",
+          "name": "Aromatherapy for Healing the Spirit",
+          "author": {
+            "@type": "Person",
+            "name": "Gabriel Mojay"
+          },
+          "datePublished": "1996",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Healing Arts Press"
+          },
+          "isbn": "978-0892817917",
+          "inLanguage": "en"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "item": {
+          "@type": "Book",
+          "name": "Aromatherapy: An A-Z",
+          "author": {
+            "@type": "Person",
+            "name": "Patricia Davis"
+          },
+          "datePublished": "2005",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Vermilion"
+          },
+          "bookEdition": "3rd",
+          "isbn": "978-0091906610",
+          "inLanguage": "en"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 9,
+        "item": {
+          "@type": "Book",
+          "name": "方療應用全書",
+          "author": {
+            "@type": "Person",
+            "name": "呂秀齡"
+          },
+          "datePublished": "2017",
+          "publisher": {
+            "@type": "Organization",
+            "name": "城邦文化"
+          },
+          "inLanguage": "zh-TW"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 10,
+        "item": {
+          "@type": "Book",
+          "name": "IFA 芳療課程（中文版）",
+          "author": {
+            "@type": "Person",
+            "name": "Joanna Hoare"
+          },
+          "inLanguage": "zh-TW"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 11,
+        "item": {
+          "@type": "Book",
+          "name": "破解精油（中文版）",
+          "inLanguage": "zh-TW"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 12,
+        "item": {
+          "@type": "Organization",
+          "name": "International Federation of Aromatherapists (IFA)",
+          "url": "https://ifaroma.org/",
+          "foundingDate": "1985",
+          "foundingLocation": "United Kingdom"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 13,
+        "item": {
+          "@type": "Organization",
+          "name": "International Federation of Professional Aromatherapists (IFPA)",
+          "url": "https://ifparoma.org/"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 14,
+        "item": {
+          "@type": "Organization",
+          "name": "National Association for Holistic Aromatherapy (NAHA)",
+          "url": "https://naha.org/"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 15,
+        "item": {
+          "@type": "Organization",
+          "name": "Alliance of International Aromatherapists (AIA)",
+          "url": "https://www.alliance-aromatherapists.org/"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 16,
+        "item": {
+          "@type": "Organization",
+          "name": "Tisserand Institute",
+          "url": "https://tisserandinstitute.org/"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 17,
+        "item": {
+          "@type": "WebSite",
+          "name": "Robert Tisserand 個人網站",
+          "url": "https://roberttisserand.com/"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 18,
+        "item": {
+          "@type": "WebSite",
+          "name": "AromaWeb",
+          "url": "https://www.aromaweb.com/"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 19,
+        "item": {
+          "@type": "WebSite",
+          "name": "PubMed (NCBI)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 20,
+        "item": {
+          "@type": "WebSite",
+          "name": "PubChem",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 21,
+        "item": {
+          "@type": "WebSite",
+          "name": "ScienceDirect",
+          "url": "https://www.sciencedirect.com/"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 22,
+        "item": {
+          "@type": "WebSite",
+          "name": "World Flora Online (WFO)",
+          "url": "https://www.worldfloraonline.org/"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 23,
+        "item": {
+          "@type": "WebSite",
+          "name": "GBIF",
+          "url": "https://www.gbif.org/"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 24,
+        "item": {
+          "@type": "Organization",
+          "name": "IFRA (International Fragrance Association)",
+          "url": "https://ifrafragrance.org/"
+        }
+      }
+    ]
   }
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type":"ListItem","position":1,"name":"首頁","item":"https://intelliverse.tw/"},
-      {"@type":"ListItem","position":2,"name":"引用來源與參考資料","item":"https://intelliverse.tw/references/"}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首頁",
+      "item": "https://intelliverse.tw/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "引用來源與參考資料",
+      "item": "https://intelliverse.tw/references/"
+    }
+  ]
+}
   </script>
 
 </head>

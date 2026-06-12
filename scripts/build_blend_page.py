@@ -562,7 +562,7 @@ def build():
   "description": "{desc}",
   "offers": {{"@type": "Offer", "price": "0", "priceCurrency": "TWD"}},
   "publisher": {{"@id": "https://intelliverse.tw/#organization"}},
-  "author": {{"@id": "https://intelliverse.tw/#author"}}
+  "author": {{"@id": "https://intelliverse.tw/#organization"}}
 }}
 </script>
 

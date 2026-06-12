@@ -765,7 +765,7 @@ SCHEMA_BLOCK = '''<script type="application/ld+json">
   "description": "輸入西元生日，免費計算生命靈數主命數、生日數、天賦數、九宮格連線與空缺數，並對應精油芳療方向。",
   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "TWD"},
   "publisher": {"@id": "https://intelliverse.tw/#organization"},
-  "author": {"@id": "https://intelliverse.tw/#author"}
+  "author": {"@id": "https://intelliverse.tw/#organization"}
 }
 </script>
 <script type="application/ld+json">

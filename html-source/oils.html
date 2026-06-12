@@ -96,8 +96,16 @@
 
   <!-- 快速答案：純 JSON-LD（不顯示給人，供 AI 引用）-->
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Question", "name": "精油按化學分子怎麼分類？", "acceptedAnswer": {"@type": "Answer", "text": "精油由數十到上百種揮發性化學分子組成，依「主要分子官能基」可分為 14 大類：單萜烯類（柑橘、松柏）、單萜醇類（薰衣草、玫瑰）、倍半萜烯類（依蘭、薑）、倍半萜醇類（檀香、岩蘭草、廣藿香）、單萜酮類（薄荷、樟腦）、倍半萜酮類（永久花）、氧化物類（尤加利、Ravintsara）、醛類（檸檬醛）、酯類（佛手柑、快樂鼠尾草）、脂類、苯基酯類（茉莉）、芳香醛類（肉桂）、酚類（丁香、牛至）、香豆素／內酯類。同類分子分享共通的香氣調性、使用情境與安全注意（例如酚類強刺激、柑橘類光敏）。"}}
-</script>
+{
+  "@context": "https://schema.org",
+  "@type": "Question",
+  "name": "精油按化學分子怎麼分類？",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "精油由數十到上百種揮發性化學分子組成，依「主要分子官能基」可分為 14 大類：單萜烯類（柑橘、松柏）、單萜醇類（薰衣草、玫瑰）、倍半萜烯類（依蘭、薑）、倍半萜醇類（檀香、岩蘭草、廣藿香）、單萜酮類（薄荷、樟腦）、倍半萜酮類（永久花）、氧化物類（尤加利、Ravintsara）、醛類（檸檬醛）、酯類（佛手柑、快樂鼠尾草）、脂類、苯基酯類（茉莉）、芳香醛類（肉桂）、酚類（丁香、牛至）、香豆素／內酯類。同類分子分享共通的香氣調性、使用情境與安全注意（例如酚類強刺激、柑橘類光敏）。"
+  }
+}
+  </script>
 
   <h2 style="font-size:22px;color:var(--green-dark);margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid var(--beige);">14 大化學分類速覽</h2>
 
@@ -2354,59 +2362,13 @@
     }
   ]
 }
-</script>
+  </script>
 
 <!-- Organization-Person-EEAT -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://intelliverse.tw/#organization",
-      "name": "靈境智造 Intelliverse Studio",
-      "alternateName": "精油能量圖譜",
-      "url": "https://intelliverse.tw/",
-      "logo": "https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/logo.png",
-      "sameAs": [
-        "https://github.com/kiolllery8-dev/essential-oil-guide"
-      ],
-      "description": "結合 IFA 芳療專業、化妝品電商實務、設計思維的精油知識平台",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "臺中",
-        "addressRegion": "臺中市",
-        "addressCountry": "TW"
-      }
-    },
-    {
-      "@type": "Person",
-      "@id": "https://intelliverse.tw/#author",
-      "name": "靈境智造 Intelliverse Studio",
-      "description": "IFA 國際芳療師認證、英國 IFPA 進階課程、化妝品電商實務經驗。專精於精油化學分類、IFA 芳療標準、中醫五行與精油的跨領域整合。",
-      "jobTitle": "精油知識內容團隊",
-      "worksFor": {
-        "@id": "https://intelliverse.tw/#organization"
-      },
-      "knowsAbout": [
-        "IFA 國際芳療標準",
-        "精油化學分類",
-        "中醫芳療",
-        "芳療安全使用",
-        "GC/MS 精油鑑別"
-      ],
-      "hasCredential": [
-        {
-          "@type": "EducationalOccupationalCredential",
-          "credentialCategory": "專業認證",
-          "name": "IFA 國際芳療師認證",
-          "recognizedBy": {
-            "@type": "Organization",
-            "name": "International Federation of Aromatherapists"
-          }
-        }
-      ]
-    },
     {
       "@type": "WebPage",
       "@id": "https://intelliverse.tw/oils/#webpage",
@@ -2419,10 +2381,10 @@
         "@id": "https://intelliverse.tw/#organization"
       },
       "author": {
-        "@id": "https://intelliverse.tw/#author"
+        "@id": "https://intelliverse.tw/#organization"
       },
       "reviewedBy": {
-        "@id": "https://intelliverse.tw/#author"
+        "@id": "https://intelliverse.tw/#organization"
       },
       "datePublished": "2025-08-01",
       "dateModified": "2026-05-22",
@@ -2431,21 +2393,10 @@
         "@type": "ImageObject",
         "url": "https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/hero-oils.png"
       }
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://intelliverse.tw/#website",
-      "url": "https://intelliverse.tw/",
-      "name": "精油能量圖譜",
-      "description": "台灣最完整的 IFA 標準精油知識平台",
-      "publisher": {
-        "@id": "https://intelliverse.tw/#organization"
-      },
-      "inLanguage": "zh-TW"
     }
   ]
 }
-</script>
+  </script>
 
 <!-- DefinedTermSet-chemistry -->
 <script type="application/ld+json">
@@ -2556,7 +2507,7 @@
     }
   ]
 }
-</script>
+  </script>
 
 <script type="application/ld+json">
 {
@@ -2571,32 +2522,128 @@
     "name": "14 大化學分類精油",
     "numberOfItems": 14,
     "itemListElement": [
-      {"@type":"ListItem","position":1,"name":"單萜烯類","url":"https://intelliverse.tw/oils/#cat12","description":"柑橘類、松柏類；α-蒎烯、檸檬烯為主"},
-      {"@type":"ListItem","position":2,"name":"單萜醇類","url":"https://intelliverse.tw/oils/#cat09","description":"薰衣草、玫瑰、天竺葵；化學最溫和"},
-      {"@type":"ListItem","position":3,"name":"倍半萜醇類","url":"https://intelliverse.tw/oils/#cat11","description":"檀香、岩蘭草、廣藿香；定香之王"},
-      {"@type":"ListItem","position":4,"name":"倍半萜烯類","url":"https://intelliverse.tw/oils/#cat04","description":"依蘭、薑、洋甘菊；β-石竹烯"},
-      {"@type":"ListItem","position":5,"name":"單萜酮類","url":"https://intelliverse.tw/oils/#cat01","description":"薄荷、樟腦；孕婦嬰幼兒避用"},
-      {"@type":"ListItem","position":6,"name":"倍半萜酮類","url":"https://intelliverse.tw/oils/#cat08","description":"永久花、薑黃；化瘀消腫"},
-      {"@type":"ListItem","position":7,"name":"氧化物類","url":"https://intelliverse.tw/oils/#cat03","description":"尤加利、桉油醇樟；1,8-桉葉素"},
-      {"@type":"ListItem","position":8,"name":"醛類","url":"https://intelliverse.tw/oils/#cat05","description":"檸檬香茅、山雞椒；檸檬醛"},
-      {"@type":"ListItem","position":9,"name":"酯類","url":"https://intelliverse.tw/oils/#cat06","description":"佛手柑、快樂鼠尾草；乙酸沉香酯"},
-      {"@type":"ListItem","position":10,"name":"脂類","url":"https://intelliverse.tw/oils/#cat07a","description":"苦橙葉、頭狀薰衣草"},
-      {"@type":"ListItem","position":11,"name":"苯基酯類","url":"https://intelliverse.tw/oils/#cat07b","description":"茉莉、玫瑰原精；乙酸苄酯"},
-      {"@type":"ListItem","position":12,"name":"芳香醛與芳香酯","url":"https://intelliverse.tw/oils/#cat07c","description":"秘魯香脂、肉桂"},
-      {"@type":"ListItem","position":13,"name":"酚與芳香醛類","url":"https://intelliverse.tw/oils/#cat10","description":"丁香、牛至；強刺激 ≤ 1%"},
-      {"@type":"ListItem","position":14,"name":"香豆素與內酯類","url":"https://intelliverse.tw/oils/#cat02","description":"佛手柑內酯；光敏 12h"}
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "單萜烯類",
+        "url": "https://intelliverse.tw/oils/#cat12",
+        "description": "柑橘類、松柏類；α-蒎烯、檸檬烯為主"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "單萜醇類",
+        "url": "https://intelliverse.tw/oils/#cat09",
+        "description": "薰衣草、玫瑰、天竺葵；化學最溫和"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "倍半萜醇類",
+        "url": "https://intelliverse.tw/oils/#cat11",
+        "description": "檀香、岩蘭草、廣藿香；定香之王"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "倍半萜烯類",
+        "url": "https://intelliverse.tw/oils/#cat04",
+        "description": "依蘭、薑、洋甘菊；β-石竹烯"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "單萜酮類",
+        "url": "https://intelliverse.tw/oils/#cat01",
+        "description": "薄荷、樟腦；孕婦嬰幼兒避用"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "name": "倍半萜酮類",
+        "url": "https://intelliverse.tw/oils/#cat08",
+        "description": "永久花、薑黃；化瘀消腫"
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "name": "氧化物類",
+        "url": "https://intelliverse.tw/oils/#cat03",
+        "description": "尤加利、桉油醇樟；1,8-桉葉素"
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "name": "醛類",
+        "url": "https://intelliverse.tw/oils/#cat05",
+        "description": "檸檬香茅、山雞椒；檸檬醛"
+      },
+      {
+        "@type": "ListItem",
+        "position": 9,
+        "name": "酯類",
+        "url": "https://intelliverse.tw/oils/#cat06",
+        "description": "佛手柑、快樂鼠尾草；乙酸沉香酯"
+      },
+      {
+        "@type": "ListItem",
+        "position": 10,
+        "name": "脂類",
+        "url": "https://intelliverse.tw/oils/#cat07a",
+        "description": "苦橙葉、頭狀薰衣草"
+      },
+      {
+        "@type": "ListItem",
+        "position": 11,
+        "name": "苯基酯類",
+        "url": "https://intelliverse.tw/oils/#cat07b",
+        "description": "茉莉、玫瑰原精；乙酸苄酯"
+      },
+      {
+        "@type": "ListItem",
+        "position": 12,
+        "name": "芳香醛與芳香酯",
+        "url": "https://intelliverse.tw/oils/#cat07c",
+        "description": "秘魯香脂、肉桂"
+      },
+      {
+        "@type": "ListItem",
+        "position": 13,
+        "name": "酚與芳香醛類",
+        "url": "https://intelliverse.tw/oils/#cat10",
+        "description": "丁香、牛至；強刺激 ≤ 1%"
+      },
+      {
+        "@type": "ListItem",
+        "position": 14,
+        "name": "香豆素與內酯類",
+        "url": "https://intelliverse.tw/oils/#cat02",
+        "description": "佛手柑內酯；光敏 12h"
+      }
     ]
   },
-  "isPartOf": {"@id":"https://intelliverse.tw/#website"},
+  "isPartOf": {
+    "@id": "https://intelliverse.tw/#website"
+  },
   "breadcrumb": {
-    "@type":"BreadcrumbList",
-    "itemListElement":[
-      {"@type":"ListItem","position":1,"name":"首頁","item":"https://intelliverse.tw/"},
-      {"@type":"ListItem","position":2,"name":"精油完全索引","item":"https://intelliverse.tw/oils/"}
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "首頁",
+        "item": "https://intelliverse.tw/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "精油完全索引",
+        "item": "https://intelliverse.tw/oils/"
+      }
     ]
   }
 }
-</script>
+  </script>
 
 <footer>
   <div class="footer-inner">

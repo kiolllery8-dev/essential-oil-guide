@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next';
 import { readdirSync, readFileSync } from 'fs';
 import { join } from 'path';
 import oilsData from '../data/oils.json';
+import { CANONICAL_OVERRIDES } from './lib/canonicalOverrides';
 
 export const dynamic = 'force-static';
 
@@ -48,6 +49,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .filter((f) => f.endsWith('.html'))
     .map((f) => f.replace(/\.html$/, ''))
     .filter((s) => s !== 'index' && s !== 'oil-detail' && !s.startsWith('googlef'))
+    // author-yuling（刻意無入口）與 search（純工具頁）不進 sitemap
+    .filter((s) => s !== 'author-yuling' && s !== 'search')
     .forEach((slug) => {
       const og = ogImageOf(`${slug}.html`);
       urls.push({
@@ -59,9 +62,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       });
     });
 
-  // 302 個精油靜態頁（都帶 fallback banner，未來可加 idBannerMap 對應）
+  // 精油靜態頁（排除 canonical 已收編到 /oil-X/ 的 id，避免 sitemap 與 canonical 矛盾）
   const oilBanner = `${CDN}oil-detail-banner-herbs.jpg`;
-  (oilsData as Array<{ id: string }>).forEach((o) => {
+  (oilsData as Array<{ id: string }>)
+    .filter((o) => !(o.id in CANONICAL_OVERRIDES))
+    .forEach((o) => {
     urls.push({
       url: `${SITE}/oil/${o.id}/`,
       changeFrequency: 'monthly',

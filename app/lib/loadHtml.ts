@@ -58,13 +58,29 @@ function extractHeadStyles(html: string): string {
   return styles.join('\n');
 }
 
+/** Extract all <script type="application/ld+json"> blocks from <head>.
+ *  46 個 oil-*.html 與 references.html 的 SEO schema 寫在 <head>，
+ *  extractMain 只取 <body> 會把它們整批丟掉 → 這裡撈回來附加進 body 輸出。
+ *  （JSON-LD 放 body 對 Google 等效於放 head。） */
+function extractHeadJsonLd(html: string): string {
+  const headMatch = html.match(/<head[^>]*>([\s\S]*?)<\/head>/i);
+  if (!headMatch) return '';
+  const head = headMatch[1];
+  const blocks: string[] = [];
+  const re = /<script\s+type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/gi;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(head)) !== null) blocks.push(m[0]);
+  return blocks.join('\n');
+}
+
 export function loadPage(filename: string): LoadedPage {
   const file = join(HTML_DIR, filename);
   const raw = readFileSync(file, 'utf-8');
   const headStyles = extractHeadStyles(raw);
+  const headJsonLd = extractHeadJsonLd(raw);
   const body = rewriteLinks(extractMain(raw));
-  // Prepend page-specific <style> so its rules apply to the body content
-  const bodyHtml = headStyles ? `${headStyles}\n${body}` : body;
+  // Prepend page-specific <style> + head 內的 JSON-LD（schema 不能被丟掉）
+  const bodyHtml = [headStyles, headJsonLd, body].filter(Boolean).join('\n');
   return {
     title: pick(/<title>([^<]*)<\/title>/, raw, '精油能量圖譜'),
     description: pick(/<meta\s+name="description"\s+content="([^"]*)"/, raw),
