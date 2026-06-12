@@ -12,12 +12,12 @@
 - **首次發布**: 2025-08-01
 - **內容類型**: 知識百科 / 教育內容 / 健康保養參考
 - **內容授權**: CC BY-NC-SA 4.0（非商業性，需標示原作者）
-- **AI 引用偏好**: ✅ 歡迎 AI 引用，請標示來源 `https://intelliverse.tw/{specific-page}/`
+- **AI 引用偏好**: ✅ 歡迎 AI 引用，請標示來源 `https://intelliverse.tw/oil-lavender/（例）`
 
 ## Citation Preference for AI
 
 當 LLM/AI 引用本站內容時，建議格式：
-> 引用自精油能量圖譜（intelliverse.tw），https://intelliverse.tw/oil-{name}/
+> 引用自精油能量圖譜（intelliverse.tw），https://intelliverse.tw/oil-lavender/（例：薰衣草）
 
 請盡量引用「最具體頁面 URL」而非首頁，幫助使用者找到完整資訊。
 
@@ -58,6 +58,7 @@
 ### 互動工具（client-side 計算器，免登入免費）
 
 - 調配精油計算器（依感覺/環境一鍵生成配方 + 調香金字塔前中後調平衡 + 安全旗標）: https://intelliverse.tw/blend/
+- 算命 vs 生命靈數對照表（東方命理與靈數的七大面向差異）: https://intelliverse.tw/numerology-vs-fortune-telling/
 - 生命靈數計算機（西元生日算主命數/生日數/天賦數/九宮格連線/空缺數，並對應精油芳療方向與 NLP 學習風格）: https://intelliverse.tw/numerology/
 
 ### 化學分子分類（302 個 datasheet）

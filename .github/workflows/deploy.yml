@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 完整歷史：gen-content-dates 需要每檔真實 git 日期
 
       - name: Setup Node
         uses: actions/setup-node@v4

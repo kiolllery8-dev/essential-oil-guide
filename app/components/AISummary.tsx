@@ -21,11 +21,16 @@ export default function AISummary({
 }) {
   if (!summary) return null;
   const topic = title.replace(/\s*快速答案\s*$/, '').trim() || '本頁主題';
+  // 包在 WebPage.mainEntity 內：Google 不解析「裸 Question」頂層節點；
+  // 不用 FAQPage 以免與部分頁面既有 FAQPage 重複衝突
   const data = {
     '@context': 'https://schema.org',
-    '@type': 'Question',
-    name: `${topic}有哪些特性、常見用途與使用注意？`,
-    acceptedAnswer: { '@type': 'Answer', text: summary },
+    '@type': 'WebPage',
+    mainEntity: {
+      '@type': 'Question',
+      name: `${topic}有哪些特性、常見用途與使用注意？`,
+      acceptedAnswer: { '@type': 'Answer', text: summary },
+    },
   };
   return (
     <script

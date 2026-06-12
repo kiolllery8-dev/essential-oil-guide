@@ -7,6 +7,7 @@ import AISummary from '../../components/AISummary';
 import RelatedLinks from '../../components/RelatedLinks';
 import { breadcrumbSchema, oilSchema, SITE, DEFAULT_OG } from '../../lib/schema';
 import { CANONICAL_OVERRIDES } from '../../lib/canonicalOverrides';
+import contentDatesJson from '../../../data/content-dates.json';
 
 interface Oil {
   id: string; zh: string; latin: string; category?: string;
@@ -113,7 +114,12 @@ export default async function OilDetail({ params }: { params: Promise<{ id: stri
   crumbList.push({ name: oil.zh, url: `/oil/${id}/` });
 
   const crumbs = breadcrumbSchema(crumbList);
-  const article = oilSchema(oil);
+  // canonical 收編頁：schema url 同步指向 /oil-X/，與 <link rel=canonical> 一致
+  const dedicated = CANONICAL_OVERRIDES[id];
+  const article = oilSchema(oil, {
+    canonicalUrl: dedicated ? `${SITE}/${dedicated}/` : undefined,
+    dateModified: (contentDatesJson as Record<string, string>)['data/oils.json'],
+  });
 
   // 相關精油：同化學分類隨機挑 6 支（排除自己）
   const related = oils

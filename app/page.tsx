@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import ReactDOM from 'react-dom';
 import RawHtml from './components/RawHtml';
 import JsonLd from './components/JsonLd';
+import AISummary from './components/AISummary';
+import { getPageSummary } from './lib/pageSummaries';
 import { breadcrumbSchema, SITE, DEFAULT_OG } from './lib/schema';
 
 const page = loadPage('index.html');
@@ -27,9 +29,12 @@ export default function Home() {
   ReactDOM.preload(ogImage, { as: 'image', fetchPriority: 'high' });
 
   const crumbs = breadcrumbSchema([{ name: '首頁', url: '/' }]);
+  const aiSummary = getPageSummary('index');
   return (
     <>
       <JsonLd data={crumbs} />
+      {/* 首頁快速答案（definition-first，GEO 訊號） */}
+      {aiSummary && <AISummary summary={aiSummary} title="精油 快速答案" />}
       <RawHtml html={page.bodyHtml} />
     </>
   );

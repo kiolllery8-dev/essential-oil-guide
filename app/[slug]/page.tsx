@@ -12,8 +12,12 @@ import { breadcrumbSchema, articleSchema, SITE, DEFAULT_OG } from '../lib/schema
 import { faqSchema, SAFETY_FAQ, BEGINNERS_FAQ } from '../lib/faq';
 import { AROMATHERAPY_HOWTOS } from '../lib/howto';
 import { getPageSummary } from '../lib/pageSummaries';
+import contentDates from '../../data/content-dates.json';
 
 const HTML_DIR = join(process.cwd(), 'html-source');
+
+/** 不進索引的頁：search（純工具）、author-yuling（刻意無入口）。皆已排除於 sitemap。 */
+const NOINDEX_SLUGS = new Set(['search', 'author-yuling']);
 
 function listSlugs(): string[] {
   return readdirSync(HTML_DIR)
@@ -132,6 +136,7 @@ export async function generateMetadata(
     title: { absolute: page.title },
     description: page.description,
     alternates: { canonical: url },
+    ...(NOINDEX_SLUGS.has(slug) ? { robots: { index: false, follow: true } } : {}),
     openGraph: {
       type: slug.startsWith('article-') ? 'article' : 'website',
       url,
@@ -167,6 +172,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     headline: page.title.replace(/\s*\|\s*精油能量圖譜\s*$/, ''),
     description: page.description || '',
     image,
+    dateModified: (contentDates as Record<string, string>)[slug],
   });
 
   // FAQ schema：safety / article-beginners 頁

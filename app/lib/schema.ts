@@ -5,7 +5,7 @@
 
 export const SITE = 'https://intelliverse.tw';
 export const SITE_NAME = '精油能量圖譜';
-export const LOGO = `${SITE}/favicon-64.png`;
+export const LOGO = `${SITE}/android-chrome-192.png`; // Google 要求 Organization logo ≥112×112
 export const DEFAULT_OG = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/hero-home.png';
 
 /** 站域級 Organization 架構 */
@@ -14,14 +14,15 @@ export const organizationSchema = {
   '@type': 'Organization',
   '@id': `${SITE}/#organization`,
   name: SITE_NAME,
-  alternateName: ['精油能量圖譜', 'Essential Oil Energy Map'],
+  alternateName: ['精油能量圖譜', 'Essential Oil Energy Map', '靈境智造 Intelliverse Studio'],
   url: SITE,
   logo: {
     '@type': 'ImageObject',
     url: LOGO,
-    width: 64,
-    height: 64,
+    width: 192,
+    height: 192,
   },
+  sameAs: ['https://show.intelliverse.tw/'],
   description:
     '最完整的中文精油知識庫——化學分子、芳療應用、安全指南、400+ 種精油資料庫；深入介紹澳洲（黃金海岸）等世界各地精油產區。',
   keywords: [
@@ -81,7 +82,6 @@ export function articleSchema(opts: {
   articleSection?: string;
 }) {
   const { url, headline, description, image, datePublished, dateModified, keywords, articleSection } = opts;
-  const buildToday = new Date().toISOString().slice(0, 10);
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -92,7 +92,8 @@ export function articleSchema(opts: {
     author: { '@id': `${SITE}/#organization` },
     publisher: { '@id': `${SITE}/#organization` },
     ...(datePublished ? { datePublished } : {}),
-    dateModified: dateModified || buildToday,
+    // 沒有真實日期就不輸出，避免每次 build 全站「假更新」讓 Google 不信任日期
+    ...(dateModified ? { dateModified } : {}),
     inLanguage: 'zh-TW',
     ...(articleSection ? { articleSection } : {}),
     ...(keywords?.length ? { keywords: keywords.join(', ') } : {}),
@@ -112,8 +113,9 @@ export function oilSchema(oil: {
   category?: string;
   tags?: string[];
   aliases?: string[];
-}) {
-  const url = `${SITE}/oil/${oil.id}/`;
+}, opts?: { canonicalUrl?: string; dateModified?: string }) {
+  // canonical 收編頁（/oil/N → /oil-X/）的 schema url 對齊 canonical，避免訊號互相矛盾
+  const url = opts?.canonicalUrl || `${SITE}/oil/${oil.id}/`;
   const effectsClean = (oil.effects || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
   const safetyClean = (oil.safetyText || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
   // alternateName 含拉丁學名 + Wikipedia 植物學名別名（幫 AI/搜尋連結實體）
@@ -128,7 +130,8 @@ export function oilSchema(oil: {
     description: `${oil.zh}（${oil.latin}）：化學分類「${oil.category || '—'}」，主要成分 ${oil.components || ''}。常見芳療應用：${effectsClean}。${safetyClean}`.slice(0, 300),
     author: { '@id': `${SITE}/#organization` },
     publisher: { '@id': `${SITE}/#organization` },
-    dateModified: new Date().toISOString().slice(0, 10),
+    image: [DEFAULT_OG], // Article 結構化資料必要欄位
+    ...(opts?.dateModified ? { dateModified: opts.dateModified } : {}),
     inLanguage: 'zh-TW',
     about: {
       '@type': 'ChemicalSubstance',

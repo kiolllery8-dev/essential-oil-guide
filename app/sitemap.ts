@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next';
 import { readdirSync, readFileSync } from 'fs';
 import { join } from 'path';
 import oilsData from '../data/oils.json';
+import contentDates from '../data/content-dates.json';
 import { CANONICAL_OVERRIDES } from './lib/canonicalOverrides';
 
 export const dynamic = 'force-static';
@@ -9,9 +10,11 @@ export const dynamic = 'force-static';
 const SITE = 'https://intelliverse.tw';
 const CDN = 'https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/';
 const HTML_DIR = join(process.cwd(), 'html-source');
-/** lastmod 用 build（部署）當下日期：static export 每次部署即內容快照，
- *  反映「站有更新」的真實訊號，避免手動日期過時造成 Googlebot 信心下降 */
+/** lastmod 改用 git 內容日期（data/content-dates.json，由 scripts/gen-content-dates.mjs 產出）：
+ *  「全站每次 build 同一天更新」是假訊號，Google 會折扣；查無日期的頁才 fallback build 日 */
 const LAST_MOD = new Date();
+const DATES = contentDates as Record<string, string>;
+const dateOf = (slug: string): Date => (DATES[slug] ? new Date(DATES[slug]) : LAST_MOD);
 
 /** 從原 HTML 抓 og:image（已是 CDN 絕對路徑）*/
 function ogImageOf(filename: string): string | undefined {
@@ -57,7 +60,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: `${SITE}/${slug}/`,
         changeFrequency: 'weekly',
         priority: hubs.has(slug) ? 0.9 : 0.7,
-        lastModified: LAST_MOD,
+        lastModified: dateOf(slug),
         ...(og ? { images: [og] } : {}),
       });
     });
@@ -71,7 +74,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${SITE}/oil/${o.id}/`,
       changeFrequency: 'monthly',
       priority: 0.6,
-      lastModified: LAST_MOD,
+      lastModified: dateOf('data/oils.json'),
       images: [oilBanner],
     });
   });
