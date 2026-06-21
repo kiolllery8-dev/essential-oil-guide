@@ -35,6 +35,20 @@
     .num-stat b{display:block;font-size:23px;color:#8B6F3E;line-height:1.2;word-break:break-all;}
     .num-stat span{font-size:11.5px;color:#7A6852;}
     .num-line{display:flex;gap:10px;padding:10px 0;border-bottom:1px dashed #EEE7D8;}
+    .pk-stage{border-radius:10px;padding:10px 12px;margin:8px 0;border:1px solid #EEE7D8;background:#fff;}
+    .pk-stage.on{border-color:#C8A673;background:#FBF6EE;}
+    .pk-top{display:flex;gap:12px;align-items:center;}
+    .pk-num{min-width:62px;text-align:center;flex:none;}
+    .pk-num b{display:block;font-size:28px;font-weight:800;color:#8B6F3E;line-height:1.1;}
+    .pk-name{font-size:14px;color:#555;font-weight:600;}
+    .pk-here{color:#8B6B4A;font-weight:800;}
+    .pk-key{display:inline-block;margin-top:6px;padding:3px 11px;background:#F5EFE8;border:1px solid #E5D9C0;border-radius:12px;font-size:12px;color:#8B6B4A;font-weight:600;}
+    .pk-toggle{display:inline-flex;align-items:center;gap:5px;margin-top:9px;background:none;border:none;padding:0;font-size:12.5px;font-family:inherit;color:#7A6852;cursor:pointer;}
+    .pk-toggle .pk-arrow{transition:transform .3s ease;}
+    .pk-toggle.open .pk-arrow{transform:rotate(180deg);}
+    .pk-detail{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+    .pk-detail.open{max-height:520px;}
+    .pk-detail-inner{font-size:13.5px;line-height:1.85;color:#3D3328;padding-top:8px;}
     .nlp-opt{display:block;width:100%;text-align:left;padding:11px 14px;margin:6px 0;background:#fff;border:1.5px solid #E5D9C0;border-radius:10px;font-size:14px;font-family:inherit;color:#3D3328;cursor:pointer;transition:all .12s;}
     .nlp-opt:hover{border-color:#88BC88;background:#F4F9F4;}
     .nlp-opt.on{border-color:#88BC88;background:#EAF4EA;font-weight:600;}
@@ -333,6 +347,23 @@ var LUNAR={
   function reduceNum(n){while(n>9)n=sumDigits(n);return n;}
   // 大師數：縮減時遇 11/22/33 即停（不再降到 2/4/6）
   function reduceMaster(n){while(n>9&&n!==11&&n!==22&&n!==33)n=sumDigits(n);return n;}
+  // 高峰數專用：第三、四高峰縮減時遇 10/11/22 即停（理解數／先知數／宏圖數）
+  function reducePeak(n){while(n>9&&n!==10&&n!==11&&n!==22)n=sumDigits(n);return n;}
+  // 四個高峰數的完整解析資料
+  var PINNACLE_DATA={
+    1:{name:"獨立數",keyword:"獨立 · 勇氣 · 領導",desc:"學習獨立自主、主動出擊，展現非凡勇氣與屢敗屢戰的精神。這是讓自己快速進步成長的時期，被迫用上所有天賦才能，擁有強大個人感、信念與領導力。小心不要太自我中心或剛愎自用，要保有柔軟彈性，打開心胸接納不同意見。"},
+    2:{name:"合作數",keyword:"敏感 · 直覺 · 協調",desc:"學習透過溫和方式達到有力量的說服，適合扮演調停者、外交家的輔佐角色。需要培養耐心與覺察力，挑戰如何在二元對立中取得平衡。要克服過於敏感的問題，發揮善解人意與洞察能力，朝正向特質發展。"},
+    3:{name:"創意數",keyword:"表達 · 創意 · 社交",desc:"自我表達能力大幅提升，被創意、藝術天分所吸引並達到高峰。充滿社交活動與感性，擁有獨特魅力可吸引更多朋友。小心避免太過放縱而缺乏生產力，要學會專注、持續與自律，才不會太過任性。"},
+    4:{name:"奠基數",keyword:"勤奮 · 秩序 · 組織",desc:"處於辛勤工作或獲得報酬的階段，因努力而打下持久的基礎。有值得依賴、負責任、務實的特質，以務實的方式生活或關心他人。小心不要把精力全部耗盡在細節上，要了解持久的事物是要有條有理地達成而不要心急。"},
+    5:{name:"自由數",keyword:"自由 · 冒險 · 變化",desc:"對自由、旅行、冒險有所嚮往，處於實驗、學習、認識廣大世界的時期。語文、文字、溝通等表達能力可能提升，能擁有新工作、新冒險、新機會。要避免太過自由無拘無束，在某個領域保有一定穩定的發展，讓自由不變成漂泊。"},
+    6:{name:"責任數",keyword:"關愛 · 家庭 · 責任",desc:"由於責任與義務的增加，花許多時間與家人、朋友或社群相處，感受充滿愛、親密感與溫暖。由照顧、幫助他人而感到滿足與存在感。小心太過付出而不考慮自己的立場，必須學會維持自己的尊嚴，知道自己的界線在哪裡。"},
+    7:{name:"智慧數",keyword:"內省 · 靈性 · 智慧",desc:"處於靈魂探索與心靈成長的時期，面臨個人存在、人生意義等深層問題。分析能力更強、直覺力更敏銳，充滿靈性成長、增加知識與智慧的機會。小心避免太過分析吹毛求疵，或太過理想化而憤世嫉俗。"},
+    8:{name:"成就數",keyword:"財富 · 成就 · 權威",desc:"處理商業、財務、事業的能力增強，是物質、回報或財富有所提升與收割的時期。能夠加強個人能力，組織團隊、創立事業，即使遇到麻煩也會視為挑戰而非威脅。小心不要忘記人性與心靈層面，不要被金錢、權勢蒙蔽了雙眼。"},
+    9:{name:"博愛數",keyword:"愛 · 同理 · 人道",desc:"高度理想主義者，最大的滿足感來自幫助他人以成就自己。感受到強烈的責任感與同情心，可能投身社會理念或慈善活動。必須提醒自己取得平衡，衡量自身能力，自我犧牲必須要有個限度，才能在顧及自身的情況下讓周遭環境更加美好。"},
+    10:{name:"理解數",keyword:"引導 · 鼓勵 · 洞察",desc:"只出現在第三或第四高峰期，代表靈性與成熟度接近頂點。具有理解他人需求的獨特力量，在引導和鼓勵有需要的人方面扮演至關重要的角色，這是一個令人興奮且雙贏的責任。"},
+    11:{name:"先知數",keyword:"直覺 · 靈性 · 啟示",desc:"只出現在第三或第四高峰期，是高度直覺與靈性成長的時期。充滿強度的啟示會湧入心頭，必須學會透過信念讓自己的人生站穩腳步。需要具備慈悲心、節制、正直和冥想練習，才能發揮最大潛力。"},
+    22:{name:"宏圖數",keyword:"大計畫 · 建設 · 巨大成就",desc:"只出現在第三或第四高峰期，處於吃力但充滿潛力的時期。會設法駕馭個人力量並面對巨大挑戰，努力實踐某項大計畫或夢想，甚至謀求社會整體的幸福。必須全心全意地投入才能實現，付出努力後能獲得極大的成就。"}
+  };
 
   // 年份改為手動輸入（input）；月、日仍用下拉；可切換國曆／農曆
   var ySel=byId('num-y'),mSel=byId('num-m'),dSel=byId('num-d');
@@ -442,7 +473,7 @@ var LUNAR={
     var flowInfo={flow:flow,next:nextFlow,passed:passed,bm:m,bd:d,ty:ty};
     var zodiac=zodiacOfBirth(y,m,d);
     var rm=reduceNum(m),rd=reduceNum(d),ry=reduceNum(y);
-    var p1=reduceNum(rm+rd),p2=reduceNum(rd+ry),p3=reduceNum(p1+p2),p4=reduceNum(rm+ry);
+    var p1=reduceNum(rm+rd),p2=reduceNum(rd+ry),p3=reducePeak(p1+p2),p4=reducePeak(rm+ry);
     var e1=36-reduceNum(life),age=ty-y-(passed?0:1);
     var stages=[{num:p1,from:0,to:e1},{num:p2,from:e1+1,to:e1+9},{num:p3,from:e1+10,to:e1+18},{num:p4,from:e1+19,to:null}];
     var curStage=age<=e1?0:(age<=e1+9?1:(age<=e1+18?2:3));
@@ -513,16 +544,24 @@ var LUNAR={
     h+='<div style="font-size:13.5px;">🌿 今年的香氣陪伴：'+yf.oilsHtml+'</div>';
     h+='<div style="font-size:12px;color:#9A8AA8;margin-top:8px;">流年數＝出生月＋出生日＋年份，數字相加縮減而得；流年從你生日當天換新，生日還沒過就算在前一個流年（以上方「計算時間」為準）。</div></div>';
     h+='<div class="num-card"><h3 class="num-h2">⛰️ 人生四階段大運</h3>';
-    h+='<p style="font-size:13.5px;color:#7A6852;margin:0 0 10px;">人生分成四個階段，每段被一個數字能量主導。你現在大約 '+age+' 歲，目前走在下方標示「你現在這裡」的那一段。</p>';
-    var labels=['第一階段','第二階段','第三階段','第四階段'];
+    h+='<p style="font-size:13.5px;color:#7A6852;margin:0 0 12px;line-height:1.8;">人生分為四個高峰期，每段被一個數字能量主導，代表那段時間最需要培養的特質。你現在大約 <b style="color:#8B6B4A;">'+age+'</b> 歲，目前走在標示「你現在這裡」的那一段。</p>';
+    var pkLabels=['第一高峰期','第二高峰期','第三高峰期','第四高峰期'];
     stages.forEach(function(st,i){
       var on=i===curStage;
       var range=st.to===null?(st.from+' 歲以後'):(st.from+'–'+st.to+' 歲');
-      h+='<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 12px;margin:6px 0;border-radius:10px;border:1px solid '+(on?'#C8A673':'#EEE7D8')+';background:'+(on?'#FBF6EE':'#fff')+';">';
-      h+='<div style="min-width:66px;text-align:center;"><div style="font-size:11px;color:#9A8AA8;">'+labels[i]+'</div><div style="font-size:23px;font-weight:800;color:#8B6F3E;">'+st.num+'</div><div style="font-size:11px;color:#7A6852;">'+range+'</div></div>';
-      h+='<div style="flex:1;font-size:13.5px;line-height:1.8;color:#3D3328;">'+(on?'<b style="color:#B5701A;">▸ 你現在這裡：</b>':'')+D.pinnacle[st.num]+'</div></div>';
+      var pd=PINNACLE_DATA[st.num]||{name:'',keyword:'',desc:''};
+      h+='<div class="pk-stage'+(on?' on':'')+'">';
+      h+='<div class="pk-top">';
+      h+='<div class="pk-num"><div style="font-size:11px;color:#9A8AA8;">'+pkLabels[i]+'</div><b>'+st.num+'</b><div style="font-size:11px;color:#7A6852;">'+range+'</div></div>';
+      h+='<div style="flex:1;min-width:0;">';
+      h+='<div class="pk-name">'+pd.name+(on?' <span class="pk-here">▸ 你現在這裡</span>':'')+'</div>';
+      h+='<div class="pk-key">'+pd.keyword+'</div>';
+      h+='</div></div>';
+      h+='<button type="button" class="pk-toggle">展開詳細說明 <span class="pk-arrow">▾</span></button>';
+      h+='<div class="pk-detail"><div class="pk-detail-inner">'+pd.desc+'</div></div>';
+      h+='</div>';
     });
-    h+='<div style="font-size:12px;color:#9A8AA8;margin-top:6px;">※ 高峰數＝月+日、日+年、兩者相加、月+年（皆先縮減）；年齡為粗估，實際以生日為準。</div></div>';
+    h+='<div style="font-size:12px;color:#9A8AA8;margin-top:10px;line-height:1.75;">高峰數公式：第一＝月+日、第二＝日+年、第三＝兩者相加、第四＝月+年（皆先化約）；第三、四高峰遇到 10、11、22 時保留主數不再化約。年齡為粗估，實際以生日為準。</div></div>';
     h+='<div class="num-card"><h3 class="num-h2">💞 人際合盤</h3><p style="font-size:14.5px;line-height:1.9;margin:0 0 14px;">'+lp.compat+'</p>';
     h+='<div style="background:#FBF7F1;border-radius:10px;padding:14px 16px;">';
     h+='<div style="font-size:14px;font-weight:700;color:#7A5A8E;margin-bottom:6px;">🔮 看你和某個人的緣分</div>';
@@ -531,6 +570,13 @@ var LUNAR={
     for(var pn=1;pn<=9;pn++)h+='<option value="'+pn+'">'+pn+' 號 · '+D.lifepath[pn].tree+'</option>';
     h+='</select><div id="partner-res" style="margin-top:12px;"></div></div></div>';
     var box=byId('num-result');box.innerHTML=h;
+    Array.prototype.forEach.call(box.querySelectorAll('.pk-toggle'),function(btn){
+      btn.onclick=function(){
+        var d=btn.nextElementSibling,open=d.classList.toggle('open');
+        btn.classList.toggle('open',open);
+        btn.firstChild.nodeValue=open?'收合說明 ':'展開詳細說明 ';
+      };
+    });
     var ps=byId('partner-sel');
     if(ps)ps.onchange=function(){
       var pv=+ps.value,pr=byId('partner-res');
