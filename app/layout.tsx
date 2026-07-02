@@ -164,14 +164,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
           </div>
           <div className="footer-bottom">
-            © 2026 精油能量圖譜 · 精油學 · 本站內容採 CC BY-NC 4.0 授權
-            <br />
-            網頁設計 by <a
+            © 2026 精油能量圖譜 · 精油學 · 網頁設計 by <a
               href="https://show.intelliverse.tw/"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: 'inherit', textDecoration: 'underline' }}
-            >靈境智造 Intelliverse</a> · 讓 AI 幫你賺錢
+            >靈境智造 Intelliverse</a> · 有更多想法歡迎聯繫我們
           </div>
         </footer>
 
