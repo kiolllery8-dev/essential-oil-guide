@@ -5,7 +5,7 @@ import RawHtml from '../../components/RawHtml';
 import JsonLd from '../../components/JsonLd';
 import AISummary from '../../components/AISummary';
 import RelatedLinks from '../../components/RelatedLinks';
-import { breadcrumbSchema, oilSchema, SITE, DEFAULT_OG } from '../../lib/schema';
+import { breadcrumbSchema, oilSchema, sanitizeEffects, compBrief, SITE, DEFAULT_OG } from '../../lib/schema';
 import { CANONICAL_OVERRIDES } from '../../lib/canonicalOverrides';
 import contentDatesJson from '../../../data/content-dates.json';
 
@@ -63,10 +63,11 @@ export async function generateMetadata(
   // SEO title 格式：對齊 GSC 實測最高頻中文查詢意圖「{X}精油功效」
   // （臨門一腳分析：排名 8-12 的 datasheet 多被「XX精油功效」查詢觸發，原 title 無「功效」二字）
   const title = `${oil.zh}精油功效｜成分、香氣、使用與安全`;
-  // 描述：用 effects（已有的「化解黏液、抗菌、消炎」等實際關鍵詞）+ 化學成分
-  // 讓 AI 搜尋（ChatGPT Search / Perplexity / Google AI Overview）可索引到完整資訊
-  const effectsClean = (oil.effects || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
-  const desc = `${oil.zh}（${oil.latin}）：${oil.category || '芳療'}精油。主要成分 ${(oil.components || '').slice(0, 32)}。${effectsClean ? `常見芳療應用：${effectsClean.slice(0, 50)}。` : ''}萃取自${oil.extractPart || '植物'}，使用前請參考安全指南。`.slice(0, 155);
+  // 描述：用 effects + 化學成分讓 AI 搜尋可索引到完整資訊。
+  // 合規：meta 是機器可讀層，effects 原文療效詞（抗菌/消炎/調經…）經 sanitizeEffects 轉中性語氣；
+  // 成分用 compBrief 在「、」邊界截斷，避免「香茅醇 (C。」殘缺亂碼。
+  const effectsClean = sanitizeEffects((oil.effects || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim());
+  const desc = `${oil.zh}（${oil.latin}）：${oil.category || '芳療'}精油。主要成分 ${compBrief(oil.components || '', 34)}。${effectsClean ? `常見芳療應用：${effectsClean.slice(0, 50)}。` : ''}萃取自${oil.extractPart || '植物'}，使用前請參考安全指南。`.slice(0, 155);
 
   // ▼ Canonical 重複頁修正：若有對應的完整指南，canonical 指向 /oil-X/
   const dedicatedSlug = CANONICAL_OVERRIDES[id];
@@ -77,7 +78,10 @@ export async function generateMetadata(
   return {
     title: { absolute: title + ' | 精油能量圖譜' },
     description: desc,
-    keywords: [oil.zh, oil.latin, oil.category, '精油', '芳療', ...(oil.tags || [])].filter(Boolean) as string[],
+    // keywords 過 sanitize（tags 內含「消炎止痛」等療效標籤）＋去重
+    keywords: Array.from(new Set(
+      ([oil.zh, oil.latin, oil.category, '精油', '芳療', ...(oil.tags || [])].filter(Boolean) as string[]).map((k) => sanitizeEffects(k))
+    )),
     alternates: { canonical: canonicalUrl },
     openGraph: {
       type: 'article',
@@ -98,7 +102,16 @@ export default async function OilDetail({ params }: { params: Promise<{ id: stri
   // Reuse the original oil-detail.html body. Patch the JS so it picks up the id
   // from our static path instead of the (missing) ?id= query string.
   const page = loadPage('oil-detail.html');
+
+  // ▼ 頁重瘦身（2.66MB → ~250KB）：模板把「全站 302 支精油完整資料（~1.07MB）」內嵌進
+  //   每一頁的 window.__oilData，且該 bodyHtml 又被 RSC flight payload 整包鏡像一次（×2）。
+  //   client 端實際只用到 data.findIndex(id)、data[idx±1]（上/下一支導覽）與 .find(id)，
+  //   所以只注入「當前這支＋前後鄰居」3 筆即可保留全部功能。
+  const idx = oils.findIndex((o) => o.id === id);
+  const slim = oils.slice(Math.max(0, idx - 1), idx + 2);
+  const slimScript = `<script>window.__oilData=${JSON.stringify(slim).replace(/<\//g, '<\\/')}</script>`;
   const patched = page.bodyHtml
+    .replace(/<script>window\.__oilData=\[[\s\S]*?<\/script>/, () => slimScript)
     .replace(/var\s+id\s*=\s*params\.get\(['"]id['"]\)\s*;/g, `var id = ${JSON.stringify(id)};`)
     .replace(/var\s+oid\s*=\s*params\.get\(['"]id['"]\)\s*;/g, `var oid = ${JSON.stringify(id)};`);
 
@@ -128,11 +141,12 @@ export default async function OilDetail({ params }: { params: Promise<{ id: stri
 
   // 自動產生「快速答案」摘要（為 AI 搜尋引用優化；保留 effects 內既有關鍵詞）
   // 包含：植物學名、化學分類、主成分、常見芳療應用、安全提醒
-  const compTrim = (oil.components || '').slice(0, 32);
-  const effectsForAI = (oil.effects || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  // 合規＋截斷修正：AI 摘要（會輸出成 Question/Answer JSON-LD）同樣過 sanitize；成分在「、」邊界截斷
+  const compTrim = compBrief(oil.components || '', 34);
+  const effectsForAI = sanitizeEffects((oil.effects || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim());
   const aiSummary = [
     `${oil.zh}（${oil.latin}）為${oil.category || '常見芳療'}精油，`,
-    `主要化學成分為 ${compTrim}${(oil.components || '').length > 32 ? '…' : ''}。`,
+    `主要化學成分為 ${compTrim}${(oil.components || '').length > compTrim.length ? ' 等' : ''}。`,
     `植物科屬 ${oil.family || '—'}，萃取自${oil.extractPart || '植物'}。`,
     effectsForAI ? `常見芳療應用：${effectsForAI.slice(0, 60)}。` : '',
     `使用前請參考精油安全指南並做敏感性測試。`,
@@ -155,7 +169,6 @@ export default async function OilDetail({ params }: { params: Promise<{ id: stri
           transition: 'transform .15s, box-shadow .2s',
           boxShadow: '0 2px 8px rgba(200,166,115,0.15)',
         }}
-        rel="canonical"
       >
         <div style={{ display: 'flex', gap: 14, alignItems: 'center' }}>
           <div style={{ fontSize: 32, flexShrink: 0 }}>📖</div>

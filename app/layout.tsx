@@ -82,6 +82,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="zh-TW">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
+        {/* 字型 woff2 實際來源是 fonts.gstatic.com（跨來源需 crossorigin）；
+            少這條 preconnect 會在關鍵字型路徑多一次完整 TLS 連線建立 */}
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" />
         <link
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800&display=swap"
           rel="stylesheet"

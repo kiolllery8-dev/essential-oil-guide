@@ -212,6 +212,31 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
       <RawHtml html={page.bodyHtml} />
 
+      {/* /safety/ 的 FAQPage schema 之 Q&A 必須在頁面可見（Google 規範），
+          用原生 <details> 渲染成可見手風琴——內容恆在 DOM，爬蟲與使用者都讀得到。
+          （article-beginners 已有頁內可見 FAQ，schema 已對齊該內容，故此處不重複渲染） */}
+      {slug === 'safety' && (
+        <section
+          aria-label="精油安全常見問題"
+          style={{ maxWidth: 900, margin: '8px auto 0', padding: '0 20px' }}
+        >
+          <h2 style={{ fontSize: 22, color: 'var(--green-dark)', borderLeft: '4px solid var(--green-mid)', paddingLeft: 12, margin: '24px 0 16px' }}>
+            🛡️ 精油安全常見問題
+          </h2>
+          {SAFETY_FAQ.map((it, i) => (
+            <details
+              key={i}
+              style={{ background: 'var(--beige-light, #FBF7F1)', border: '1px solid var(--border, #E5D9C0)', borderRadius: 10, padding: '4px 16px', marginBottom: 10 }}
+            >
+              <summary style={{ cursor: 'pointer', fontWeight: 700, color: '#3D3328', padding: '12px 0', fontSize: 15 }}>
+                {it.q}
+              </summary>
+              <p style={{ fontSize: 14, lineHeight: 1.9, color: '#5D4A28', margin: '0 0 12px' }}>{it.a}</p>
+            </details>
+          ))}
+        </section>
+      )}
+
       {/* 延伸閱讀（強化內部連結 + AI 引用上下文） */}
       {showRelated && <RelatedLinks topic={niceName} max={6} currentPath={`/${slug}/`} />}
     </>

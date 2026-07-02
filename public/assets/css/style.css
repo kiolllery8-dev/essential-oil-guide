@@ -139,7 +139,9 @@ nav ul li a.active {
    HERO
    ======================================== */
 .hero {
-  background: url('../images/hero-home.png') center/cover no-repeat;
+  /* 修復：原相對路徑 ../images/hero-home.png 在站上 404（repo 無此目錄），
+     且 CDN 原檔是 611KB PNG；改指 CDN 70KB WebP（照片內容用 WebP 才合理） */
+  background: url('https://cdn.jsdelivr.net/gh/kiolllery8-dev/essential-oil-cdn@main/images/hero-home.webp') center/cover no-repeat;
   color: var(--green-dark);
   padding: 44px 20px;
   text-align: center;
