@@ -655,8 +655,8 @@ HEADER = '''<div class="topbar">🌿 精油能量圖譜 — 用知識療癒您�
   </div>
 </header>'''
 
-DESC = ('輸入西元生日，免費計算你的生命靈數主命數、生日數、天賦數、星座數、九宮格連線與空缺數，'
-        '並對應精油芳療方向與 NLP 學習風格。源自畢達哥拉斯占數，結合芳香療法的自我探索工具。')
+DESC = ('輸入西元生日，免費計算你的生命靈數主命數、九宮格連線與空缺數，並附 1-9 號人完整性格解析、'
+        '生命靈數配對速配表與對應精油方向。源自畢達哥拉斯占數，結合芳香療法的自我探索工具。')
 
 
 def build():
@@ -692,8 +692,68 @@ def build():
                    _oil_links(LIFEPATH[n]['oils']), LIFEPATH[n]['oilwhy'])
         for n in range(1, 10))
 
+    # ── 深度 1–9 靜態解析（SEO：把原本只在計算器 JS 裡的 LIFEPATH 資料靜態渲染出來，
+    #    讓爬蟲讀得到，鎖定「生命靈數1」～「生命靈數9」個別數字查詢，合計約 7,500/月）──
+    deep_cards = ''
+    for n in range(1, 10):
+        lp = LIFEPATH[n]
+        deep_cards += (
+            '<div id="lp-%d" style="background:#fff;border:1px solid #E5D9C0;border-left:5px solid %s;'
+            'border-radius:14px;padding:22px 24px;margin:0 0 18px;">'
+            '<h3 style="font-size:20px;color:#5D4A6E;margin:0 0 4px;">%s 生命靈數 %d 號人：%s</h3>'
+            '<div style="font-size:13px;color:#9A7FB0;font-weight:700;letter-spacing:.05em;margin-bottom:12px;">%s</div>'
+            '<p style="font-size:15px;line-height:1.9;color:#3D3328;margin:0 0 14px;">%s</p>'
+            '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:12px;">'
+            '<div style="background:#F6F2F8;border-radius:10px;padding:12px 16px;"><b style="color:#5D8A5D;">✨ 天生優勢</b>'
+            '<p style="font-size:14px;line-height:1.8;margin:6px 0 0;color:#444;">%s</p></div>'
+            '<div style="background:#FBF4F0;border-radius:10px;padding:12px 16px;"><b style="color:#B5701A;">🌱 要留意的</b>'
+            '<p style="font-size:14px;line-height:1.8;margin:6px 0 0;color:#444;">%s</p></div></div>'
+            '<p style="font-size:14px;line-height:1.85;margin:0 0 6px;"><b style="color:#8B6F3E;">💼 適合的舞台：</b>%s</p>'
+            '<p style="font-size:14px;line-height:1.85;margin:0 0 6px;"><b style="color:#8B6F3E;">💕 愛情裡的你：</b>%s</p>'
+            '<p style="font-size:14px;line-height:1.85;margin:0;"><b style="color:#8B6F3E;">🌿 對應精油：</b>%s——%s</p>'
+            '</div>' % (
+                n, COLOR[n][0], lp['emoji'], n, lp['title'], lp['keyword'], lp['desc'],
+                lp['good'], lp['bad'], lp['career'], lp['love'], _oil_links(lp['oils']), lp['oilwhy']))
+
+    # ── 生命靈數配對（SEO：鎖定「生命靈數配對／配對表／你和誰最速配」約 4,600/月，皆 KD0）──
+    compat_legend = ''.join(
+        '<tr><td style="padding:8px 12px;border:1px solid #E5D9C0;font-weight:700;color:#5D4A6E;white-space:nowrap;">%s</td>'
+        '<td style="padding:8px 12px;border:1px solid #E5D9C0;text-align:center;font-weight:800;color:#B5701A;">%d 分</td>'
+        '<td style="padding:8px 12px;border:1px solid #E5D9C0;font-size:13px;line-height:1.7;color:#555;">%s</td></tr>'
+        % (name, score, desc) for name, score, desc in sorted(COMPAT_DIFF.values(), key=lambda x: -x[1]))
+    compat_rows = ''.join(
+        '<tr><td style="padding:8px 12px;border:1px solid #E5D9C0;text-align:center;font-weight:800;color:%s;font-size:16px;">%d</td>'
+        '<td style="padding:8px 12px;border:1px solid #E5D9C0;font-size:13px;line-height:1.8;color:#444;">%s</td></tr>'
+        % (COLOR[n][0], n, COMPAT[n]) for n in range(1, 10))
+
     lunar_js = (Path(__file__).parent / 'lunar_convert.js').read_text(encoding='utf-8')
     calc_js = lunar_js + '\n' + CALC_JS.replace('__DATA__', data_json)
+
+    deep_section = (
+        '<section style="max-width:980px;margin:8px auto 0;padding:0 20px;">'
+        '<h2 style="font-size:24px;color:var(--green-dark);border-bottom:2px solid var(--beige);padding-bottom:8px;margin:36px 0 8px;">'
+        '🔎 生命靈數 1–9 號人完整解析</h2>'
+        '<p style="font-size:15px;line-height:1.9;color:#5D4A28;margin:0 0 22px;">'
+        '算出你的主命數後，往下找到對應的號碼，看看你天生的性格、優勢、要練習的功課，'
+        '還有適合陪伴你的精油。以下 1–9 號的解讀整理自《幸福密碼》數字能量傳統，並以本站語氣改寫。</p>'
+        + deep_cards +
+        '<h2 id="compat" style="font-size:24px;color:var(--green-dark);border-bottom:2px solid var(--beige);padding-bottom:8px;margin:40px 0 8px;">'
+        '💞 生命靈數配對：你和誰最速配？</h2>'
+        '<p style="font-size:15px;line-height:1.9;color:#5D4A28;margin:0 0 16px;">'
+        '把兩個人的主命數相減，看差值落在哪一種「緣分關係」，就能看出你們的默契指數。'
+        '差值 0 是靈魂伴侶、差 6 是最黏的互相依戀，差 3 則要多一點磨合。</p>'
+        '<div style="overflow-x:auto;margin-bottom:20px;"><table style="width:100%;border-collapse:collapse;font-size:14px;min-width:420px;">'
+        '<thead><tr style="background:#F3EEF6;"><th style="padding:8px 12px;border:1px solid #E5D9C0;text-align:left;">緣分關係（主命數差值對應）</th>'
+        '<th style="padding:8px 12px;border:1px solid #E5D9C0;">默契指數</th><th style="padding:8px 12px;border:1px solid #E5D9C0;text-align:left;">說明</th></tr></thead>'
+        '<tbody>' + compat_legend + '</tbody></table></div>'
+        '<h3 style="font-size:18px;color:#5D4A6E;margin:8px 0 10px;">各主命數的速配對象</h3>'
+        '<div style="overflow-x:auto;"><table style="width:100%;border-collapse:collapse;font-size:14px;min-width:420px;">'
+        '<thead><tr style="background:#F3EEF6;"><th style="padding:8px 12px;border:1px solid #E5D9C0;">主命數</th>'
+        '<th style="padding:8px 12px;border:1px solid #E5D9C0;text-align:left;">和誰最有緣</th></tr></thead>'
+        '<tbody>' + compat_rows + '</tbody></table></div>'
+        '<p style="font-size:13px;color:#8B7355;margin:14px 0 0;">💡 想精算兩人配對？上方計算器輸入生日即可算出你的主命數，'
+        '再對照這張表就能看出你和心儀對象的緣分關係。配對僅供娛樂與自我覺察參考，真正的關係還是靠彼此經營。</p>'
+        '</section>')
 
     html = (HTML_HEAD
             + '<body>\n' + HEADER + '\n'
@@ -703,6 +763,7 @@ def build():
             + CALC_SECTION
             + NLP_SECTION
             + EDU_SECTION.replace('__MEANING_ROWS__', meaning_rows).replace('__OIL_ROWS__', oil_rows)
+            + deep_section
             + MAIN_BOTTOM
             + FOOTER
             + '<script>\n' + calc_js + '\n</script>\n'
@@ -715,7 +776,7 @@ HTML_HEAD = '''<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>生命靈數計算機｜免費算主命數、九宮格連線、空缺數與精油處方 | 精油能量圖譜</title>
+  <title>生命靈數計算機｜免費算主命數＋1-9號人解析、配對與九宮格 | 精油能量圖譜</title>
   <meta name="description" content="''' + DESC + '''" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -944,7 +1005,21 @@ EDU_SECTION = '''
 '''
 
 MAIN_BOTTOM = '''
-  <div class="info-box" style="background:#FFF4E6;border-left:4px solid #E8A04B;border-radius:8px;padding:16px 20px;margin:24px 0;">
+  <section style="max-width:980px;margin:8px auto 0;padding:0 20px;">
+    <h2 style="font-size:22px;color:var(--green-dark);border-bottom:2px solid var(--beige);padding-bottom:8px;margin:32px 0 14px;">🔢 延伸閱讀：數字與象徵</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;">
+      <a href="/numerology-vs-fortune-telling/" style="flex:1;min-width:240px;padding:14px 18px;background:var(--beige-light,#FBF7F1);border:1px solid var(--border,#E5D9C0);border-radius:12px;text-decoration:none;color:inherit;">
+        <div style="font-weight:700;font-size:15px;color:var(--green-dark);margin-bottom:3px;">🔮 算命 vs 生命靈數</div>
+        <div style="font-size:13px;color:#7A6A5A;line-height:1.6;">兩者差在哪？七大面向一張對照表看懂</div>
+      </a>
+      <a href="/article-angel-number-1111/" style="flex:1;min-width:240px;padding:14px 18px;background:var(--beige-light,#FBF7F1);border:1px solid var(--border,#E5D9C0);border-radius:12px;text-decoration:none;color:inherit;">
+        <div style="font-weight:700;font-size:15px;color:var(--green-dark);margin-bottom:3px;">✨ 1111 天使數字是什麼</div>
+        <div style="font-size:13px;color:#7A6A5A;line-height:1.6;">意義、愛情、11:11 許願，與生命靈數大師數 11 的關係</div>
+      </a>
+    </div>
+  </section>
+
+  <div class="info-box" style="background:#FFF4E6;border-left:4px solid #E8A04B;border-radius:8px;padding:16px 20px;margin:24px auto;max-width:980px;">
     <strong style="color:#B5701A;">⚠️ 溫馨提醒</strong>
     <p style="font-size:14px;line-height:1.8;color:#5D4A28;margin:6px 0 0;">生命靈數為自我探索與休閒娛樂，測算結果僅供參考，不代表命定。本頁精油建議屬於一般芳香生活方向，非醫療處方，無法治療、診斷或預防疾病。孕婦、嬰幼兒、慢性病或用藥中請先諮詢專業芳療師或醫師；精油請稀釋後使用並先做肌膚測試。</p>
   </div>
