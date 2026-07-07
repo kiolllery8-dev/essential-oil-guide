@@ -152,6 +152,34 @@ export default async function OilDetail({ params }: { params: Promise<{ id: stri
     `使用前請參考精油安全指南並做敏感性測試。`,
   ].filter(Boolean).join('').slice(0, 180);
 
+  // ▼ 家族指南連結：同名家族的 datasheet（如玫瑰尤加利、藍膠尤加利）用「X精油功效與完整指南」
+  //   精準錨文字指向主指南，把家族查詢的排名訊號集中到對的頁。
+  //   （Ahrefs 實測：「尤加利精油功效」vol 2800 排的是 /oil/163/ 玫瑰尤加利 datasheet 而非指南——就是缺這條內鏈）
+  //   長詞優先比對，避免「玫瑰尤加利」誤配到玫瑰、「綠薄荷」誤配到薄荷。
+  const FAMILY_GUIDE: Array<[string, string, string]> = [
+    // [zh 關鍵字, 指南 slug, 指南主詞]
+    ['檸檬尤加利', 'oil-lemon-eucalyptus', '檸檬尤加利'], ['尤加利', 'oil-eucalyptus', '尤加利'],
+    ['穗花薰衣草', 'oil-spike-lavender', '穗花薰衣草'], ['醒目薰衣草', 'oil-lavandin', '醒目薰衣草'], ['薰衣草', 'oil-lavender', '薰衣草'],
+    ['綠薄荷', 'oil-spearmint', '綠薄荷'], ['薄荷', 'oil-peppermint', '薄荷'],
+    ['玫瑰草', 'oil-palmarosa', '玫瑰草'], ['玫瑰', 'oil-rose', '玫瑰'],
+    ['德國洋甘菊', 'oil-german-chamomile', '德國洋甘菊'], ['羅馬洋甘菊', 'oil-roman-chamomile', '羅馬洋甘菊'],
+    ['茶樹', 'oil-tea-tree', '茶樹'], ['雪松', 'oil-cedarwood', '雪松'], ['迷迭香', 'oil-rosemary', '迷迭香'],
+    ['乳香', 'oil-frankincense', '乳香'], ['檀香', 'oil-sandalwood', '檀香'], ['茉莉', 'oil-jasmine', '茉莉'],
+    ['依蘭', 'oil-ylang-ylang', '依蘭'], ['杜松', 'oil-juniper', '杜松'], ['百里香', 'oil-thyme', '百里香'],
+    ['橙花', 'oil-neroli', '橙花'], ['苦橙葉', 'oil-petitgrain', '苦橙葉'], ['甜橙', 'oil-sweet-orange', '甜橙'],
+    ['香茅', 'oil-citronella', '香茅'], ['檸檬', 'oil-lemon', '檸檬'],
+    ['絲柏', 'oil-cypress', '絲柏'], ['沒藥', 'oil-myrrh', '沒藥'], ['廣藿香', 'oil-patchouli', '廣藿香'],
+    ['黑胡椒', 'oil-black-pepper', '黑胡椒'], ['天竺葵', 'oil-geranium', '天竺葵'], ['葡萄柚', 'oil-grapefruit', '葡萄柚'],
+    ['佛手柑', 'oil-bergamot', '佛手柑'], ['快樂鼠尾草', 'oil-clary-sage', '快樂鼠尾草'], ['永久花', 'oil-helichrysum', '永久花'],
+    ['岩蘭草', 'oil-vetiver', '岩蘭草'], ['香蜂草', 'oil-melissa', '香蜂草'], ['羅勒', 'oil-sweet-basil', '甜羅勒'],
+    ['茴香', 'oil-sweet-fennel', '甜茴香'], ['馬鬱蘭', 'oil-marjoram', '甜馬鬱蘭'], ['丁香', 'oil-clove', '丁香'],
+    ['月桂', 'oil-bay', '月桂'], ['蓍草', 'oil-yarrow', '西洋蓍草'], ['雲杉', 'oil-black-spruce', '黑雲杉'],
+    ['桉油醇樟', 'oil-ravintsara', '桉油醇樟'],
+  ];
+  const familyHit = FAMILY_GUIDE.find(([kw]) => (oil.zh || '').includes(kw));
+  // 自己就是該指南收編對象時交給 dedicatedBanner；家族連結只給「同族但不同種」的頁
+  const familyGuide = familyHit && !CANONICAL_OVERRIDES[id] ? { slug: familyHit[1], name: familyHit[2] } : null;
+
   // ▼ 若有對應的完整指南，顯示醒目導引橫幅（同時做 canonical 收編）
   const dedicatedSlug = CANONICAL_OVERRIDES[id];
   const dedicatedBanner = dedicatedSlug ? (
@@ -195,6 +223,29 @@ export default async function OilDetail({ params }: { params: Promise<{ id: stri
       <JsonLd data={[crumbs, article]} />
 
       {dedicatedBanner}
+
+      {/* 家族指南連結（同族不同種的 datasheet → 主指南；精準錨文字集中排名訊號） */}
+      {familyGuide && (
+        <div style={{ maxWidth: 1100, margin: '16px auto 0', padding: '0 20px' }}>
+          <a
+            href={`/${familyGuide.slug}/`}
+            style={{
+              display: 'flex', alignItems: 'center', gap: 10,
+              background: 'var(--beige-light, #FBF7F1)',
+              border: '1px solid var(--border, #E5D9C0)',
+              borderRadius: 10, padding: '12px 18px',
+              textDecoration: 'none', color: '#5D4A28', fontSize: 14,
+            }}
+          >
+            <span style={{ fontSize: 18 }}>🌿</span>
+            <span>
+              {oil.zh}屬於{familyGuide.name}家族——想看常見品種的完整介紹？閱讀
+              <strong style={{ color: '#8B6F3E' }}>{familyGuide.name}精油功效與完整指南</strong>
+            </span>
+            <span style={{ marginLeft: 'auto', color: '#C8A673' }}>→</span>
+          </a>
+        </div>
+      )}
 
       {/* AI 友善「快速答案」：純 JSON-LD（不顯示給人，供 AI 引用） */}
       <AISummary summary={aiSummary} title={`${oil.zh}精油 快速答案`} />
