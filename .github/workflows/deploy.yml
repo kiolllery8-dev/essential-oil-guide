@@ -52,3 +52,39 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      # IndexNow：部署後自動通知 Bing/Yandex（Copilot/ChatGPT 都吃 Bing 索引；GEO P0）
+      # 只推最近 3 天內容有變動的 URL（sitemap lastmod 為 git 內容日期，避免整包 358 條洗版）
+      - name: Notify IndexNow (Bing/Yandex)
+        run: |
+          curl -s https://intelliverse.tw/sitemap.xml -o sitemap.xml
+          python3 - <<'PY'
+          import xml.etree.ElementTree as ET, json, urllib.request, datetime
+          ns = {'sm': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
+          root = ET.parse('sitemap.xml').getroot()
+          cutoff = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=3)
+          urls = []
+          for u in root.findall('sm:url', ns):
+              loc = u.find('sm:loc', ns); lm = u.find('sm:lastmod', ns)
+              if loc is None: continue
+              if lm is not None:
+                  try:
+                      if datetime.datetime.fromisoformat(lm.text.replace('Z', '+00:00')) < cutoff:
+                          continue
+                  except Exception: pass
+              urls.append(loc.text)
+          urls = urls[:200]
+          if not urls:
+              print('IndexNow: 無近期變動 URL，跳過'); raise SystemExit
+          key = 'cb187285fac7ad8ef500998dea9b6f6f2487cb90db7a73528bc650f68189212c'
+          body = json.dumps({'host': 'intelliverse.tw', 'key': key,
+                             'keyLocation': f'https://intelliverse.tw/{key}.txt', 'urlList': urls}).encode()
+          for ep in ('https://api.indexnow.org/IndexNow', 'https://www.bing.com/indexnow'):
+              req = urllib.request.Request(ep, data=body, headers={'Content-Type': 'application/json; charset=utf-8'}, method='POST')
+              try:
+                  with urllib.request.urlopen(req, timeout=30) as r:
+                      print(f'{ep} -> {r.status} ({len(urls)} URLs)')
+              except Exception as e:
+                  print(f'{ep} -> {e}')  # 通知失敗不擋部署
+          PY
+        continue-on-error: true

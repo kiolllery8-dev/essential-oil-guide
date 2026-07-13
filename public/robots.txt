@@ -76,6 +76,18 @@ Allow: /
 User-agent: MistralAI-User
 Allow: /
 
+User-agent: Grok
+Allow: /
+
+User-agent: GrokBot
+Allow: /
+
+User-agent: xAI-Crawler
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
 # Sitemap
 Sitemap: https://intelliverse.tw/sitemap.xml
 Sitemap: https://intelliverse.tw/sitemap-images.xml
