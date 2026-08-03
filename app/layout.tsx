@@ -112,9 +112,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <li><a href="/encyclopedia/">大百科</a></li>
                 <li><a href="/oils/">精油</a></li>
                 <li><a href="/blend/">調配精油</a></li>
-                <li><a href="/numerology/">生命靈數</a></li>
+                {/* 人格算命：命理／身心靈自我探索工具與知識（桌機 hover 展開、手機抽屜內直接列出） */}
+                <li className="has-sub">
+                  <a href="/numerology/" aria-haspopup="true">人格算命<span className="nav-caret" aria-hidden="true">▾</span></a>
+                  <ul className="subnav">
+                    <li><a href="/numerology/">生命靈數計算機</a></li>
+                    <li><a href="/numerology/#lp-1">生命靈數 1–9 解析</a></li>
+                    <li><a href="/numerology/#compat">生命靈數配對</a></li>
+                    <li><a href="/numerology-vs-fortune-telling/">算命 vs 生命靈數</a></li>
+                    <li><a href="/article-angel-numbers/">天使數字</a></li>
+                    <li><a href="/article-tarot-basics/">塔羅牌入門</a></li>
+                    <li><a href="/article-chakra-oils/">七脈輪與精油</a></li>
+                    <li><a href="/article-spiritual-aromatherapy/">心靈芳療</a></li>
+                    <li><a href="/article-meditation-oils/">冥想入門</a></li>
+                  </ul>
+                </li>
                 <li><a href="/aromatherapy/">芳療應用</a></li>
-                <li><a href="/safety/">安全指南</a></li>
               </ul>
             </nav>
             <NavSearch />
