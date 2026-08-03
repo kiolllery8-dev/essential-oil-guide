@@ -110,8 +110,14 @@ export default async function OilDetail({ params }: { params: Promise<{ id: stri
   const idx = oils.findIndex((o) => o.id === id);
   const slim = oils.slice(Math.max(0, idx - 1), idx + 2);
   const slimScript = `<script>window.__oilData=${JSON.stringify(slim).replace(/<\//g, '<\\/')}</script>`;
+  // SSR 填 h1／學名：模板的 <h1 id="odName"></h1> 原本要等 client JS 才有字，
+  // 爬蟲與無 JS 環境看到的是「空 h1」（SEO 硬傷）。這裡在 build 時就把油名寫進去，
+  // client JS 之後仍會覆寫成同樣的值，等於無害的 no-op。
+  const esc = (s: string) => String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   const patched = page.bodyHtml
     .replace(/<script>window\.__oilData=\[[\s\S]*?<\/script>/, () => slimScript)
+    .replace(/<h1 id="odName">\s*<\/h1>/, `<h1 id="odName">${esc(oil.zh)}精油</h1>`)
+    .replace(/(<div[^>]*id="odLatin"[^>]*>)\s*(<\/div>)/, (m, open, close) => `${open}${esc(oil.latin)}${close}`)
     .replace(/var\s+id\s*=\s*params\.get\(['"]id['"]\)\s*;/g, `var id = ${JSON.stringify(id)};`)
     .replace(/var\s+oid\s*=\s*params\.get\(['"]id['"]\)\s*;/g, `var oid = ${JSON.stringify(id)};`);
 
@@ -180,6 +186,23 @@ export default async function OilDetail({ params }: { params: Promise<{ id: stri
   // 自己就是該指南收編對象時交給 dedicatedBanner；家族連結只給「同族但不同種」的頁
   const familyGuide = familyHit && !CANONICAL_OVERRIDES[id] ? { slug: familyHit[1], name: familyHit[2] } : null;
 
+  // ▼ SSR 區塊內容盤點：全空時整段不輸出，避免只剩空殼標題／空白格線
+  //   （pharmacology 可能是 "<p></p>" 之類的空殼，所以先去標籤再判斷有沒有實字）
+  const factRows: Array<[string, string]> = (
+    [
+      ['🌿 植物科屬', oil.family],
+      ['⚗️ 化學分類', oil.category],
+      ['🧪 主要成分', oil.components],
+      ['💧 萃取方式', oil.extractPart],
+      ['📚 別名／學名', oil.aliases && oil.aliases.length ? oil.aliases.join('、') : ''],
+    ] as Array<[string, string | undefined]>
+  ).filter((row): row is [string, string] => Boolean(row[1] && row[1].trim()));
+
+  const pharmaHtml = (oil.pharmacology || '').trim();
+  const pharmaHasText = pharmaHtml.replace(/<[^>]+>/g, '').replace(/&nbsp;|\s/g, '').length > 0;
+  const safetyPlain = (oil.safetyText || '').replace(/<[^>]+>/g, '').trim();
+  const hasSsrContent = factRows.length > 0 || pharmaHasText || Boolean(effectsForAI) || Boolean(safetyPlain);
+
   // ▼ 若有對應的完整指南，顯示醒目導引橫幅（同時做 canonical 收編）
   const dedicatedSlug = CANONICAL_OVERRIDES[id];
   const dedicatedBanner = dedicatedSlug ? (
@@ -191,7 +214,8 @@ export default async function OilDetail({ params }: { params: Promise<{ id: stri
           background: 'linear-gradient(135deg,#FBF7F1 0%,#F4EDE4 100%)',
           border: '2px solid #C8A673',
           borderRadius: 14,
-          padding: '20px 26px',
+          // 窄螢幕不要被 26px 左右內距吃掉版面
+          padding: '20px clamp(14px, 4vw, 26px)',
           textDecoration: 'none',
           color: '#5D4A28',
           transition: 'transform .15s, box-shadow .2s',
@@ -222,6 +246,23 @@ export default async function OilDetail({ params }: { params: Promise<{ id: stri
     <>
       <JsonLd data={[crumbs, article]} />
 
+      {/* 可見麵包屑（SSR）：與上方 BreadcrumbList schema 同一份 crumbList，
+          靜態 HTML 就看得到（模板原本那條包在 display:none 的 #oilContent 裡，要等 JS 才出現） */}
+      <nav className="breadcrumb" aria-label="麵包屑">
+        <div className="breadcrumb-inner" style={{ flexWrap: 'wrap', rowGap: 4 }}>
+          {crumbList.map((c, i) => (
+            <span key={c.url} style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+              {i > 0 && <span className="sep">›</span>}
+              {i === crumbList.length - 1 ? (
+                <span aria-current="page">{c.name}</span>
+              ) : (
+                <a href={c.url}>{c.name}</a>
+              )}
+            </span>
+          ))}
+        </div>
+      </nav>
+
       {dedicatedBanner}
 
       {/* 家族指南連結（同族不同種的 datasheet → 主指南；精準錨文字集中排名訊號） */}
@@ -230,10 +271,10 @@ export default async function OilDetail({ params }: { params: Promise<{ id: stri
           <a
             href={`/${familyGuide.slug}/`}
             style={{
-              display: 'flex', alignItems: 'center', gap: 10,
+              display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap',
               background: 'var(--beige-light, #FBF7F1)',
               border: '1px solid var(--border, #E5D9C0)',
-              borderRadius: 10, padding: '12px 18px',
+              borderRadius: 10, padding: '12px clamp(12px, 3.5vw, 18px)',
               textDecoration: 'none', color: '#5D4A28', fontSize: 14,
             }}
           >
@@ -253,33 +294,31 @@ export default async function OilDetail({ params }: { params: Promise<{ id: stri
       {/* ▼ Server-rendered 核心內容（讓非 JS 爬蟲 GPTBot/Perplexity 也看得到 pharmacology）
           oil-detail.html 是 client-side innerHTML 渲染，AI 爬蟲看不到；這裡把 oils.json 的
           pharmacology + 結構化資料直接 SSR 進靜態 HTML，解決 thin-content 與 AI 引用問題 */}
+      {hasSsrContent && (
       <section style={{ maxWidth: 1100, margin: '0 auto', padding: '0 20px' }} aria-label={`${oil.zh}精油核心資訊`}>
         {/* 結構化速覽事實 */}
+        {factRows.length > 0 && (
         <div style={{
           display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
           gap: 12, margin: '24px 0',
         }}>
-          {[
-            ['🌿 植物科屬', oil.family],
-            ['⚗️ 化學分類', oil.category],
-            ['🧪 主要成分', oil.components],
-            ['💧 萃取方式', oil.extractPart],
-            ['📚 別名／學名', (oil.aliases && oil.aliases.length) ? oil.aliases.join('、') : ''],
-          ].filter(([, v]) => v).map(([label, value]) => (
+          {factRows.map(([label, value]) => (
             <div key={label} style={{
               background: 'var(--beige-light, #FBF7F1)', border: '1px solid var(--border, #E5D9C0)',
               borderRadius: 10, padding: '12px 16px',
+              overflowWrap: 'anywhere',
             }}>
               <div style={{ fontSize: 12, color: 'var(--text-light, #8B6F3E)', marginBottom: 4 }}>{label}</div>
               <div style={{ fontSize: 14, fontWeight: 600, color: '#3D3328', lineHeight: 1.5 }}>{value}</div>
             </div>
           ))}
         </div>
+        )}
 
-        {/* 藥學屬性主文（pharmacology，~900字 SSR） */}
-        {oil.pharmacology && (
-          <div style={{ fontSize: 15, lineHeight: 1.9, color: '#2C2C2C', margin: '8px 0 24px' }}
-               dangerouslySetInnerHTML={{ __html: oil.pharmacology }} />
+        {/* 藥學屬性主文（pharmacology，~900字 SSR）；空殼標籤（如 <p></p>）不輸出容器 */}
+        {pharmaHasText && (
+          <div style={{ fontSize: 15, lineHeight: 1.9, color: '#2C2C2C', margin: '8px 0 24px', overflowWrap: 'anywhere' }}
+               dangerouslySetInnerHTML={{ __html: pharmaHtml }} />
         )}
 
         {/* 常見芳療應用 */}
@@ -296,19 +335,20 @@ export default async function OilDetail({ params }: { params: Promise<{ id: stri
         )}
 
         {/* 安全提醒 */}
-        {oil.safetyText && (
+        {safetyPlain && (
           <div style={{
             background: '#FFF4E6', borderLeft: '4px solid #E8A04B', borderRadius: 8,
             padding: '14px 18px', margin: '16px 0',
           }}>
             <strong style={{ color: '#B5701A', fontSize: 14 }}>⚠️ 安全使用提醒</strong>
             <p style={{ fontSize: 14, lineHeight: 1.8, color: '#5D4A28', margin: '6px 0 0' }}>
-              {(oil.safetyText || '').replace(/<[^>]+>/g, '')}　使用前請參考
+              {safetyPlain}　使用前請參考
               <a href="/safety/" style={{ color: '#B5701A', fontWeight: 600 }}>精油安全指南</a>。
             </p>
           </div>
         )}
       </section>
+      )}
 
       <RawHtml html={patched} />
 
