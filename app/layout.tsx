@@ -90,7 +90,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800&display=swap"
           rel="stylesheet"
         />
-        <link rel="stylesheet" href="/assets/css/style.css" />
+        {/* ?v= 版本號：CDN 會長期快取 style.css，改樣式時務必同步 bump，否則新 HTML 配舊 CSS 會破版 */}
+        <link rel="stylesheet" href="/assets/css/style.css?v=20260713" />
+        {/* 關鍵內嵌樣式：nav 下拉的「預設收合」不能只靠外部 CSS——
+            若 CDN 還在送舊版 style.css，子選單會整包攤在導覽列上破版。這段保證不會發生。 */}
+        <style dangerouslySetInnerHTML={{ __html: `
+nav ul li.has-sub{position:relative}
+nav ul li.has-sub>a{display:flex;align-items:center;gap:4px}
+.nav-caret{font-size:12px;line-height:1;opacity:.7}
+.subnav{position:absolute;top:100%;left:0;min-width:200px;background:#fff;border:1px solid var(--border,#E5D9C0);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.1);padding:6px;display:none;flex-direction:column;gap:2px;z-index:200}
+nav ul li.has-sub:hover>.subnav,nav ul li.has-sub:focus-within>.subnav{display:flex}
+.subnav li a{display:block;white-space:nowrap;padding:8px 14px;font-size:15px;font-weight:500;border-radius:6px;color:var(--text-dark,#2C2C2C)}
+.subnav li a:hover{background:var(--green-light,#6B8E5A);color:#fff}
+@media(max-width:640px){
+.subnav{position:static;display:flex;border:none;box-shadow:none;background:transparent;padding:2px 0 6px 12px;min-width:0;border-left:2px solid var(--border,#E5D9C0);margin-left:14px}
+.subnav li a{padding:10px 14px;font-size:15px;white-space:normal}
+.nav-caret{display:none}
+}` }} />
       </head>
       <body>
         <JsonLd data={[organizationSchema, websiteSchema]} />
