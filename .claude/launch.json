@@ -12,6 +12,12 @@
       "runtimeExecutable": "npx",
       "runtimeArgs": ["--yes", "serve", "-l", "5174", "C:/Users/User/Desktop/essential-oil-guide"],
       "port": 5174
+    },
+    {
+      "name": "oil-guide-out",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "serve", "-l", "5175", "C:/Users/User/Desktop/essential-oil-guide/out"],
+      "port": 5175
     }
   ]
 }
