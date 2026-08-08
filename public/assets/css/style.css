@@ -120,41 +120,6 @@ nav ul li a.active {
   color: var(--white);
 }
 
-/* ── nav 下拉選單（人格算命）──
-   桌機：hover / 鍵盤 focus 展開；手機（≤640px 抽屜）另有規則直接攤平列出 */
-nav ul li.has-sub { position: relative; }
-nav ul li.has-sub > a { display: flex; align-items: center; gap: 4px; }
-.nav-caret { font-size: 12px; line-height: 1; opacity: .7; }
-
-.subnav {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  min-width: 200px;
-  background: var(--white, #fff);
-  border: 1px solid var(--border, #E5D9C0);
-  border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, .1);
-  padding: 6px;
-  display: none;
-  flex-direction: column;
-  gap: 2px;
-  z-index: 200;
-}
-nav ul li.has-sub:hover > .subnav,
-nav ul li.has-sub:focus-within > .subnav { display: flex; }
-
-.subnav li a {
-  display: block;
-  white-space: nowrap;
-  padding: 8px 14px;
-  font-size: 15px;
-  font-weight: 500;
-  border-radius: 6px;
-  color: var(--text-dark);
-}
-.subnav li a:hover { background: var(--green-light); color: var(--white); }
-
 .nav-search {
   border: 1.5px solid var(--border);
   border-radius: 20px;
@@ -1671,25 +1636,6 @@ footer ul li a:hover { color: var(--white); }
   }
   nav.open ul { transform: translateX(0); }
   nav ul li { width: 100%; }
-
-  /* 抽屜內的下拉：不用 hover，直接攤平成縮排子選單（手機沒有 hover） */
-  nav ul li.has-sub > .subnav {
-    position: static;
-    display: flex;
-    border: none;
-    box-shadow: none;
-    background: transparent;
-    padding: 2px 0 6px 12px;
-    min-width: 0;
-    border-left: 2px solid var(--border, #E5D9C0);
-    margin-left: 14px;
-  }
-  nav ul li.has-sub > .subnav li a {
-    padding: 10px 14px;
-    font-size: 15px;
-    white-space: normal;
-  }
-  .nav-caret { display: none; }
   nav ul li a {
     width: 100%;
     display: block;

@@ -90,23 +90,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800&display=swap"
           rel="stylesheet"
         />
-        {/* ?v= 版本號：CDN 會長期快取 style.css，改樣式時務必同步 bump，否則新 HTML 配舊 CSS 會破版 */}
-        <link rel="stylesheet" href="/assets/css/style.css?v=20260713" />
-        {/* 關鍵內嵌樣式：nav 下拉的「預設收合」不能只靠外部 CSS——
-            若 CDN 還在送舊版 style.css，子選單會整包攤在導覽列上破版。這段保證不會發生。 */}
-        <style dangerouslySetInnerHTML={{ __html: `
-nav ul li.has-sub{position:relative}
-nav ul li.has-sub>a{display:flex;align-items:center;gap:4px}
-.nav-caret{font-size:12px;line-height:1;opacity:.7}
-.subnav{position:absolute;top:100%;left:0;min-width:200px;background:#fff;border:1px solid var(--border,#E5D9C0);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.1);padding:6px;display:none;flex-direction:column;gap:2px;z-index:200}
-nav ul li.has-sub:hover>.subnav,nav ul li.has-sub:focus-within>.subnav{display:flex}
-.subnav li a{display:block;white-space:nowrap;padding:8px 14px;font-size:15px;font-weight:500;border-radius:6px;color:var(--text-dark,#2C2C2C)}
-.subnav li a:hover{background:var(--green-light,#6B8E5A);color:#fff}
-@media(max-width:640px){
-.subnav{position:static;display:flex;border:none;box-shadow:none;background:transparent;padding:2px 0 6px 12px;min-width:0;border-left:2px solid var(--border,#E5D9C0);margin-left:14px}
-.subnav li a{padding:10px 14px;font-size:15px;white-space:normal}
-.nav-caret{display:none}
-}` }} />
+        <link rel="stylesheet" href="/assets/css/style.css" />
       </head>
       <body>
         <JsonLd data={[organizationSchema, websiteSchema]} />
@@ -128,23 +112,9 @@ nav ul li.has-sub:hover>.subnav,nav ul li.has-sub:focus-within>.subnav{display:f
                 <li><a href="/encyclopedia/">大百科</a></li>
                 <li><a href="/oils/">精油</a></li>
                 <li><a href="/blend/">調配精油</a></li>
-                {/* 生命靈數（計算機本體）拉到第一層，不收在 dropdown 裡 */}
                 <li><a href="/numerology/">生命靈數</a></li>
-                {/* 人格算命：命理／身心靈自我探索工具與知識（桌機 hover 展開、手機抽屜內直接列出） */}
-                <li className="has-sub">
-                  <a href="/numerology/" aria-haspopup="true">人格算命<span className="nav-caret" aria-hidden="true">▾</span></a>
-                  <ul className="subnav">
-                    <li><a href="/numerology/#lp-1">生命靈數 1–9 解析</a></li>
-                    <li><a href="/numerology/#compat">生命靈數配對</a></li>
-                    <li><a href="/numerology-vs-fortune-telling/">算命 vs 生命靈數</a></li>
-                    <li><a href="/article-angel-numbers/">天使數字</a></li>
-                    <li><a href="/article-tarot-basics/">塔羅牌入門</a></li>
-                    <li><a href="/article-chakra-oils/">七脈輪與精油</a></li>
-                    <li><a href="/article-spiritual-aromatherapy/">心靈芳療</a></li>
-                    <li><a href="/article-meditation-oils/">冥想入門</a></li>
-                  </ul>
-                </li>
                 <li><a href="/aromatherapy/">芳療應用</a></li>
+                <li><a href="/safety/">安全指南</a></li>
               </ul>
             </nav>
             <NavSearch />
