@@ -1809,8 +1809,7 @@ CALC_JS = r'''
       h+='<details'+(on?' open':'')+' style="margin:8px 0;border-radius:10px;border:1px solid '+(on?'#C8A673':'#EEE7D8')+';background:'+(on?'#FBF6EE':'#fff')+';overflow:hidden;">';
       h+='<summary style="display:flex;gap:12px;align-items:center;padding:12px 14px;cursor:pointer;list-style:none;">';
       h+='<div style="min-width:70px;text-align:center;"><div style="font-size:11px;color:#9A8AA8;">'+labels[i]+'</div><div style="font-size:26px;font-weight:800;color:'+(big?'#7A5A8E':'#8B6F3E')+';line-height:1.1;">'+st.num+'</div><div style="font-size:11px;color:#7A6852;">'+range+'</div></div>';
-      h+='<div style="flex:1;"><div style="font-size:15px;font-weight:700;color:#3D3328;">'+(on?'<span style="color:#B5701A;">▸ 你現在這裡 · </span>':'')+(pk?pk.name:'')+'</div>';
-      h+='<div style="font-size:13.5px;line-height:1.7;color:#7A6852;margin-top:2px;">'+(pk?pk.core:'')+'</div></div>';
+      h+='<div style="flex:1;"><div style="font-size:14.5px;font-weight:700;line-height:1.7;color:#3D3328;">'+(on?'<span style="color:#B5701A;">▸ 你現在這裡 · </span>':'')+(pk?pk.core:'')+'</div></div>';
       h+='<span style="font-size:12px;color:#9A8AA8;flex:none;">展開 ▾</span></summary>';
       if(pk){
         h+='<div style="padding:0 16px 16px;">';
@@ -1834,15 +1833,13 @@ CALC_JS = r'''
     h+='<div class="num-card"><h3 class="num-h2">🎯 挑戰數 — 你一生要練的功課</h3>';
     h+='<p style="font-size:13.5px;color:#7A6852;margin:0 0 10px;">這四個數字不是缺點，是會在人生不同階段反覆出現、逼你長大的題目。階段的年齡分界與上方的高峰數相同。重複出現的數字，代表那個功課在你身上特別重。</p>';
     var chLabels=['第一階段','第二階段','第三階段','第四階段'];
-    var chNote=['','','（一生最重）',''];
     extra.ch.forEach(function(c,i){
       var cd2=D.challenge[c],st=stages[i],on=i===curStage;
       var range=st.to===null?(st.from+' 歲以後'):(st.from+'–'+st.to+' 歲');
       h+='<details'+(on?' open':'')+' style="margin:8px 0;border-radius:10px;border:1px solid '+(on?'#C8A673':'#EEE7D8')+';background:'+(on?'#FBF6EE':'#fff')+';overflow:hidden;">';
       h+='<summary style="display:flex;gap:12px;align-items:center;padding:12px 14px;cursor:pointer;list-style:none;">';
       h+='<div style="min-width:70px;text-align:center;"><div style="font-size:11px;color:#9A8AA8;">'+chLabels[i]+'</div><div style="font-size:26px;font-weight:800;color:#8B6F3E;line-height:1.1;">'+c+'</div><div style="font-size:11px;color:#7A6852;">'+range+'</div></div>';
-      h+='<div style="flex:1;"><div style="font-size:15px;font-weight:700;color:#3D3328;">'+(on?'<span style="color:#B5701A;">▸ 你現在這裡 · </span>':'')+cd2.name+chNote[i]+'</div>';
-      h+='<div style="font-size:13.5px;line-height:1.7;color:#7A6852;margin-top:2px;">'+cd2.text.split('。')[0]+'。</div></div>';
+      h+='<div style="flex:1;"><div style="font-size:14.5px;font-weight:700;line-height:1.7;color:#3D3328;">'+(on?'<span style="color:#B5701A;">▸ 你現在這裡 · </span>':'')+cd2.text.split('。')[0]+'。</div></div>';
       h+='<span style="font-size:12px;color:#9A8AA8;flex:none;">展開 ▾</span></summary>';
       h+='<div style="padding:0 16px 16px;"><div style="font-size:14.5px;line-height:1.95;color:#3D3328;">'+cd2.text+'</div></div>';
       h+='</details>';
