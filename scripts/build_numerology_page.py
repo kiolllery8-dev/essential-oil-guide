@@ -595,6 +595,68 @@ LESSON = {
 }
 
 
+# ── 挑戰數 0-8（一生反覆出現的功課）──────────────────────────
+# 計算：C1=|生月數-生日數|、C2=|生年數-生日數|、C3=|C1-C2|、C4=|生年數-生月數|
+# 內容依《幸福密碼》1-9 的低頻表現（FLAW）與學習功課（LESSON）推導改寫，
+# 語氣定調為「要練習的地方」而非「缺陷」，避免變成負面標籤。
+CHALLENGE = {
+    0: ('全面', '你沒有特別突出的單一挑戰——這既輕鬆也麻煩。輕鬆在於沒有哪一項會一直絆住你；'
+                '麻煩在於少了那個逼你成長的固定課題，容易什麼都碰一點、什麼都不夠深。'
+                '練習：自己挑一件事當作長期功課，主動給自己一個要跨過的坎。'),
+    1: ('自主', '你要練的是「為自己做主」。容易在該表態時退讓、把決定權交出去，事後又懊悔；'
+                '也可能反過來用強硬掩飾心虛。練習：先從小事開始表達立場，不必贏，只要說出口。'),
+    2: ('協調', '你要練的是「與人並肩」。容易一個人硬扛，或是太在意別人臉色而委屈自己，'
+                '兩種都會讓關係緊繃。練習：練習開口求助，也練習拒絕——這兩件其實是同一件事。'),
+    3: ('表達', '你要練的是「把想法說出來」。心裡戲很多但話到嘴邊就收，'
+                '或者反過來說得太滿、事後覺得自己講太多。練習：先寫下來再說，讓表達有形狀。'),
+    4: ('踏實', '你要練的是「把事情做完」。想法很多、開頭很快，但收尾常常沒力；'
+                '也可能過度追求秩序而卡住不敢動。練習：把大目標切小，每次只完成一格。'),
+    5: ('分寸', '你要練的是「自由與承諾的平衡」。容易在「想跑」和「該留」之間拉扯，'
+                '選了任一邊都不甘心。練習：先承諾一件小事並且做滿一輪，體驗約束帶來的踏實。'),
+    6: ('界線', '你要練的是「照顧人但不掏空自己」。容易把別人的責任攬上身，'
+                '付出後又期待回報而失落。練習：每次想幫忙前，先問「這是誰的功課」。'),
+    7: ('信任', '你要練的是「讓人靠近」。習慣自己想、自己扛，用分析代替感受，久了會孤立。'
+                '練習：把還沒想清楚的事，也講給一個人聽。'),
+    8: ('資源', '你要練的是「和金錢與權力好好相處」。可能極度渴望掌控，也可能刻意迴避談錢，'
+                '兩種是同一個結。練習：把收支攤開來看，讓數字變成中性的資訊。'),
+}
+
+# ── 限制數（生月數＋生日數，不化約；成長環境給的隱形框架）────────
+# 範圍 2-18。原創改寫，定調「可以鬆開的框」而非宿命。
+LIMIT = {
+    2: '從小被期待「乖、聽話、不要吵」，你很早學會察言觀色。要鬆開的是：不需要先讓所有人舒服，你才有資格開口。',
+    3: '成長環境重視表現與反應快，你習慣用有趣掩飾不安。要鬆開的是：允許自己有不精采、說不出漂亮話的時候。',
+    4: '家裡強調規矩與安全，你把「穩定」內化成唯一選項。要鬆開的是：改變不等於失控，試錯也是一種踏實。',
+    5: '成長過程變動多、或管束忽鬆忽緊，你學會隨時準備離開。要鬆開的是：留下來不代表被困住。',
+    6: '你很早被賦予照顧者的角色，習慣把別人放前面。要鬆開的是：你不是靠付出才換到位置的。',
+    7: '環境裡少有人真的懂你，你把自己收進腦袋裡。要鬆開的是：被理解不必先證明自己夠聰明。',
+    8: '家中對成就或金錢的態度很鮮明（極度重視或極度匱乏），成了你的內建尺。要鬆開的是：你的價值不等於你的成績單。',
+    9: '你從小懂事、替大局著想，情緒常被自己壓下去。要鬆開的是：有需求不是自私。',
+    10: '被期待要獨當一面，你不太會示弱。要鬆開的是：一個人扛完並不會比較光榮。',
+    11: '你對氛圍極度敏感，很早學會替空氣裡的緊張負責。要鬆開的是：別人的情緒不是你造成的。',
+    12: '你習慣用活潑與配合換取和諧。要鬆開的是：安靜下來、掃興一次，關係也不會就此壞掉。',
+    13: '你被要求「先把該做的做完」，玩樂總帶著罪惡感。要鬆開的是：休息不是偷懶，是恢復。',
+    14: '成長中規則常變，你學會快速適應但難以深根。要鬆開的是：慢下來累積，不會錯過什麼。',
+    15: '你在自由與責任之間被拉扯著長大。要鬆開的是：你可以同時要兩個，只是要排順序。',
+    16: '你經歷過某種突然的崩解或落差，因此對「太好」有戒心。要鬆開的是：允許好事發生在自己身上。',
+    17: '你被期待要撐住、要成功、不能倒。要鬆開的是：示弱不會讓你失去已經建立的東西。',
+    18: '你很早看見大人的難處，把體諒變成本能。要鬆開的是：你也可以是那個被照顧的人。',
+}
+
+# ── 流月／流日提示（1-9）；只給短提示，詳解留在流年卡片避免重複 ──
+MD_FLOW = {
+    1: '起頭、提案、開新檔案的時機。',
+    2: '談合作、修補關係、把話說開。',
+    3: '表達、社交、把作品拿出來見人。',
+    4: '收拾、整理、把流程訂下來。',
+    5: '變動與機會多，適合出門、嘗試。',
+    6: '關於家人、伴侶與責任的事會浮上來。',
+    7: '往內看的時候，適合學習、獨處、沉澱。',
+    8: '談錢、談資源、推進實際成果。',
+    9: '收尾、放下、清理不再需要的東西。',
+}
+
+
 def build_data():
     """組成給前端 JS 用的 JSON（精油已轉成連結 HTML）"""
     lifepath = {}
@@ -620,10 +682,12 @@ def build_data():
     for k, d in NLP_RESULT.items():
         nlp_res[k] = dict(name=d['name'], icon=d['icon'], desc=d['desc'],
                           oilsHtml=ochips(d['oils']), oilwhy=d['oilwhy'])
+    challenge = {k: dict(name=v[0], text=v[1]) for k, v in CHALLENGE.items()}
     return dict(lifepath=lifepath, lines=lines, missing=missing,
                 zodiac=zodiac, nlpQ=nlp_q, nlpRes=nlp_res,
                 yearFlow=year_flow, compatDiff=compat_diff,
-                pinnacle=PINNACLE_THEME, combo=COMBO)
+                pinnacle=PINNACLE_THEME, combo=COMBO,
+                challenge=challenge, limit=LIMIT, mdFlow=MD_FLOW)
 
 
 # ── 數字意義速查（靜態，給 SEO/AI 爬蟲）─────────────────────
@@ -1166,11 +1230,20 @@ CALC_JS = r'''
     var e1=36-reduceNum(life),age=ty-y-(passed?0:1);
     var stages=[{num:p1,from:0,to:e1},{num:p2,from:e1+1,to:e1+9},{num:p3,from:e1+10,to:e1+18},{num:p4,from:e1+19,to:null}];
     var curStage=age<=e1?0:(age<=e1+9?1:(age<=e1+18?2:3));
+    // 挑戰數：一生反覆出現的功課。C1=|月-日|、C2=|年-日|、C3=|C1-C2|、C4=|年-月|
+    var ch1=Math.abs(rm-rd),ch2=Math.abs(ry-rd),ch3=Math.abs(ch1-ch2),ch4=Math.abs(ry-rm);
+    // 限制數：生月數＋生日數，不化約（範圍 2-18）
+    var limitNum=rm+rd;
+    // 流月／流日：以計算當下的月、日為準（流年已在上方算好）
+    var fMonth=reduceNum(cm+flow),fDay=reduceNum(cd+fMonth);
+    // 主修數：保留整條化約過程，例如 37/10/1；總和已是個位數時就是「純數」
+    var extra={ch:[ch1,ch2,ch3,ch4],limit:limitNum,course:chain.slice(),
+               fm:fMonth,fd:fDay,cm:cm,cd:cd};
     setNow(age);
-    render(life,bday,talent,zo,innate,counts,missing,active,flow,ty,first,stages,curStage,age,lunarNote,flowInfo,zodiac);
+    render(life,bday,talent,zo,innate,counts,missing,active,flow,ty,first,stages,curStage,age,lunarNote,flowInfo,zodiac,extra);
   };
 
-  function render(life,bday,talent,zo,innate,counts,missing,active,flow,ty,combo,stages,curStage,age,lunarNote,flowInfo,zodiac){
+  function render(life,bday,talent,zo,innate,counts,missing,active,flow,ty,combo,stages,curStage,age,lunarNote,flowInfo,zodiac,extra){
     var lp=D.lifepath[life],talentStr=(''+talent).split('').join(' '),h='';
     var isMaster=(life===11||life===22||life===33);
     h+='<div class="num-card" style="border-top:4px solid '+lp.color+';">';
@@ -1232,6 +1305,13 @@ CALC_JS = r'''
     h+='<div style="background:#FFF4E6;border-left:4px solid #E8A04B;border-radius:8px;padding:10px 14px;font-size:13.5px;line-height:1.8;margin-bottom:10px;"><b style="color:#B5701A;">✦ 今年重點：</b>'+yf.advice+'</div>';
     h+='<div style="font-size:13.5px;">🌿 今年的香氣陪伴：'+yf.oilsHtml+'</div>';
     h+='<div style="font-size:12px;color:#9A8AA8;margin-top:8px;">流年數＝出生月＋出生日＋年份，數字相加縮減而得；流年從你生日當天換新，生日還沒過就算在前一個流年（以上方「計算時間」為準）。</div></div>';
+    h+='<div class="num-card"><h3 class="num-h2">🗓️ 這個月 & 今天</h3>';
+    h+='<p style="font-size:13.5px;color:#7A6852;margin:0 0 10px;">流年之下還有更細的節奏。以計算當下（'+extra.cm+' 月 '+extra.cd+' 日）推算：</p>';
+    h+='<div style="display:flex;gap:10px;flex-wrap:wrap;">';
+    h+='<div style="flex:1;min-width:190px;background:#FBF7F1;border-radius:10px;padding:12px 14px;"><div style="font-size:12px;color:#9A8AA8;">流月數</div><div style="font-size:26px;font-weight:800;color:#7A5A8E;line-height:1.2;">'+extra.fm+'</div><div style="font-size:13.5px;line-height:1.8;color:#3D3328;margin-top:4px;">'+D.mdFlow[extra.fm]+'</div></div>';
+    h+='<div style="flex:1;min-width:190px;background:#FBF7F1;border-radius:10px;padding:12px 14px;"><div style="font-size:12px;color:#9A8AA8;">流日數</div><div style="font-size:26px;font-weight:800;color:#7A5A8E;line-height:1.2;">'+extra.fd+'</div><div style="font-size:13.5px;line-height:1.8;color:#3D3328;margin-top:4px;">'+D.mdFlow[extra.fd]+'</div></div>';
+    h+='</div>';
+    h+='<div style="font-size:12px;color:#9A8AA8;margin-top:8px;">流月數＝當月月份＋流年數；流日數＝當日日期＋流月數（皆縮減至個位）。這一段每天都會變，可以當成節奏參考，不是預言。</div></div>';
     h+='<div class="num-card"><h3 class="num-h2">⛰️ 人生四階段大運</h3>';
     h+='<p style="font-size:13.5px;color:#7A6852;margin:0 0 10px;">人生分成四個階段，每段被一個數字能量主導。你現在大約 '+age+' 歲，目前走在下方標示「你現在這裡」的那一段。</p>';
     var labels=['第一階段','第二階段','第三階段','第四階段'];
@@ -1243,6 +1323,26 @@ CALC_JS = r'''
       h+='<div style="flex:1;font-size:13.5px;line-height:1.8;color:#3D3328;">'+(on?'<b style="color:#B5701A;">▸ 你現在這裡：</b>':'')+D.pinnacle[st.num]+'</div></div>';
     });
     h+='<div style="font-size:12px;color:#9A8AA8;margin-top:6px;">※ 高峰數＝月+日、日+年、兩者相加、月+年（皆先縮減）；年齡為粗估，實際以生日為準。</div></div>';
+    var courseStr=extra.course.join(' / '),isPure=extra.course.length===1;
+    h+='<div class="num-card"><h3 class="num-h2">🎓 主修數 '+courseStr+'</h3>';
+    h+='<p style="font-size:13.5px;color:#7A6852;margin:0 0 10px;">主命數只留最後那個個位數，主修數則把「化約的過程」整條留下來。同樣是 '+life+' 號人，走 '+courseStr+' 這條路的體感和別人不一樣。</p>';
+    h+='<div style="background:#F4EFF8;border-left:4px solid #9B7BB8;border-radius:8px;padding:12px 14px;font-size:14.5px;line-height:1.9;color:#3D3328;">';
+    h+=(D.combo[combo]?D.combo[combo]:'你的生日數字總和已經是個位數 '+life+'，屬於「純數」——沒有中間的化約過程，'+lp.title+'的特質最直接、也最沒有緩衝。');
+    h+='</div>';
+    h+='<div style="font-size:12px;color:#9A8AA8;margin-top:8px;">主修數＝西元生日全部數字相加後，保留每一次化約的結果'+(isPure?'（你的總和一次就到個位，所以只有一階）':'')+'。</div></div>';
+    h+='<div class="num-card"><h3 class="num-h2">🎯 挑戰數 — 你一生要練的功課</h3>';
+    h+='<p style="font-size:13.5px;color:#7A6852;margin:0 0 10px;">這四個數字不是缺點，是會在人生不同階段反覆出現、逼你長大的題目。重複出現的數字，代表那個功課特別重。</p>';
+    var chLabels=['前半生主課題','中年課題','總結課題（一生最重）','後半生課題'];
+    extra.ch.forEach(function(c,i){
+      var cd2=D.challenge[c];
+      h+='<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 12px;margin:6px 0;border-radius:10px;border:1px solid '+(i===2?'#C8A673':'#EEE7D8')+';background:'+(i===2?'#FBF6EE':'#fff')+';">';
+      h+='<div style="min-width:66px;text-align:center;"><div style="font-size:11px;color:#9A8AA8;">'+chLabels[i]+'</div><div style="font-size:23px;font-weight:800;color:#8B6F3E;">'+c+'</div><div style="font-size:11px;color:#7A6852;">'+cd2.name+'</div></div>';
+      h+='<div style="flex:1;font-size:13.5px;line-height:1.8;color:#3D3328;">'+cd2.text+'</div></div>';
+    });
+    h+='<div style="font-size:12px;color:#9A8AA8;margin-top:6px;">※ 挑戰數＝|生月數−生日數|、|生年數−生日數|、兩者之差、|生年數−生月數|（各數先縮減至個位）。</div></div>';
+    h+='<div class="num-card"><h3 class="num-h2">🔓 限制數 '+extra.limit+' — 成長環境給的框</h3>';
+    h+='<div style="background:#FFF4E6;border-left:4px solid #E8A04B;border-radius:8px;padding:12px 14px;font-size:14.5px;line-height:1.9;color:#3D3328;">'+(D.limit[extra.limit]||'這個組合較少見，先參考你的挑戰數與空缺數，那兩項會給你更清楚的線索。')+'</div>';
+    h+='<div style="font-size:12px;color:#9A8AA8;margin-top:8px;">限制數＝生月數＋生日數（不縮減）。它描述的是你從小習得的行為模式，不是你的天花板——看見了就能鬆開。</div></div>';
     h+='<div class="num-card"><h3 class="num-h2">💞 人際合盤</h3><p style="font-size:14.5px;line-height:1.9;margin:0 0 14px;">'+lp.compat+'</p>';
     h+='<div style="background:#FBF7F1;border-radius:10px;padding:14px 16px;">';
     h+='<div style="font-size:14px;font-weight:700;color:#7A5A8E;margin-bottom:6px;">🔮 看你和某個人的緣分</div>';
