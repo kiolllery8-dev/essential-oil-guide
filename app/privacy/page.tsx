@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESC,
   alternates: { canonical: URL },
-  openGraph: { type: 'article', url: URL, title: TITLE, description: DESC, images: [{ url: DEFAULT_OG, width: 1200, height: 630 }] },
+  openGraph: { type: 'article', siteName: '精油能量圖譜', locale: 'zh_TW', url: URL, title: TITLE, description: DESC, images: [{ url: DEFAULT_OG, width: 1200, height: 630 }] },
   twitter: { title: TITLE, description: DESC, images: [DEFAULT_OG] },
 };
 

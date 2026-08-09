@@ -93,6 +93,8 @@ export const websiteSchema = {
   '@type': 'WebSite',
   '@id': `${SITE}/#website`,
   name: SITE_NAME,
+  // SERP 版位窄時 Google 會改用 alternateName；沒提供的話它會自己從網域猜
+  alternateName: ['精油圖譜', 'Intelliverse 精油能量圖譜'],
   url: SITE,
   inLanguage: 'zh-TW',
   publisher: { '@id': `${SITE}/#organization` },

@@ -139,6 +139,10 @@ export async function generateMetadata(
     ...(NOINDEX_SLUGS.has(slug) ? { robots: { index: false, follow: true } } : {}),
     openGraph: {
       type: slug.startsWith('article-') ? 'article' : 'website',
+      // 子路由的 openGraph 會整個覆蓋 layout 的，siteName／locale 沒補就會消失，
+      // 而 og:site_name 是 Google 判定 SERP 站名的來源之一。
+      siteName: '精油能量圖譜',
+      locale: 'zh_TW',
       url,
       title: page.title,
       description: page.description,

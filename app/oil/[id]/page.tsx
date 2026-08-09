@@ -85,6 +85,9 @@ export async function generateMetadata(
     alternates: { canonical: canonicalUrl },
     openGraph: {
       type: 'article',
+      // 同 [slug]：子路由 openGraph 會覆蓋 layout 的，要自己補回 siteName／locale
+      siteName: '精油能量圖譜',
+      locale: 'zh_TW',
       url: canonicalUrl,
       title,
       description: desc,

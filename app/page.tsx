@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
-    url: SITE,
+    siteName: '精油能量圖譜', locale: 'zh_TW', url: SITE,
     title: page.title,
     description: page.description,
     images: [{ url: ogImage, width: 1200, height: 630, alt: '精油能量圖譜' }],

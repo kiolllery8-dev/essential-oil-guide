@@ -1260,7 +1260,55 @@ CALC_JS = r'''
                fm:fMonth,fd:fDay,cm:cm,cd:cd};
     setNow(age);
     render(life,bday,talent,zo,innate,counts,missing,active,flow,ty,first,stages,curStage,age,lunarNote,flowInfo,zodiac,extra);
+    saveBirth();
   };
+
+  // ── 記住生日（只存在這台裝置的瀏覽器，不會送到任何伺服器）──────
+  // 目的：流日數每天都變，回訪時直接帶出來，不用重打生日。
+  var LS_KEY='iv_numerology_birth';
+  function saveBirth(){
+    try{
+      localStorage.setItem(LS_KEY,JSON.stringify({
+        y:ySel.value,m:mSel.value,d:dSel.value,
+        roc:isMinguo()?1:0,cal:calType(),
+        leap:(byId('num-leap')&&byId('num-leap').checked)?1:0}));
+    }catch(e){}
+  }
+  function clearBirth(){
+    try{localStorage.removeItem(LS_KEY);}catch(e){}
+    var b=byId('num-welcome');if(b)b.parentNode.removeChild(b);
+  }
+  function restoreBirth(){
+    var raw=null;
+    try{raw=localStorage.getItem(LS_KEY);}catch(e){return;}
+    if(!raw)return;
+    var v;try{v=JSON.parse(raw);}catch(e){return;}
+    if(!v||!v.y||!v.m||!v.d)return;
+    ySel.value=v.y;mSel.value=v.m;dSel.value=v.d;
+    var rocBox=byId('num-roc');if(rocBox)rocBox.checked=!!v.roc;
+    var leapBox=byId('num-leap');if(leapBox)leapBox.checked=!!v.leap;
+    if(v.cal){
+      var r=document.querySelector('input[name="num-cal"][value="'+v.cal+'"]');
+      if(r){r.checked=true;if(r.onchange)r.onchange();}
+    }
+    // 直接把命盤帶出來（回訪者要看的就是今天的流日）
+    byId('num-go').click();
+    var form=byId('num-y')?byId('num-y').closest('.num-card')||byId('num-y').parentNode:null;
+    if(!form||byId('num-welcome'))return;
+    var w=document.createElement('div');
+    w.id='num-welcome';
+    w.style.cssText='background:#F4EFF8;border:1px solid #D9CBE6;border-radius:10px;padding:12px 16px;margin-bottom:14px;font-size:14px;line-height:1.8;color:#5A4468;display:flex;gap:10px;align-items:center;flex-wrap:wrap;';
+    w.innerHTML='<span>👋 <b>歡迎回來</b>——已經幫你帶出上次的生日，下方是<b>今天</b>的流日與完整命盤。</span>'
+      +'<button type="button" id="num-forget" style="margin-left:auto;background:none;border:1px solid #C4B2D4;color:#7A5A8E;border-radius:8px;padding:5px 12px;font-size:12.5px;cursor:pointer;font-family:inherit;">換一個生日／清除紀錄</button>';
+    form.parentNode.insertBefore(w,form);
+    var fb=byId('num-forget');
+    if(fb)fb.onclick=function(){
+      clearBirth();
+      ySel.value='';mSel.value='';dSel.value='';
+      var box=byId('num-result');if(box)box.innerHTML='';
+    };
+  }
+  restoreBirth();
 
   function render(life,bday,talent,zo,innate,counts,missing,active,flow,ty,combo,stages,curStage,age,lunarNote,flowInfo,zodiac,extra){
     var lp=D.lifepath[life],talentStr=(''+talent).split('').join(' '),h='';
@@ -1375,6 +1423,35 @@ CALC_JS = r'''
     h+='<select id="partner-sel" class="num-sel" style="font-size:14px;padding:8px 12px;"><option value="">對方主命數…</option>';
     for(var pn=1;pn<=9;pn++)h+='<option value="'+pn+'">'+pn+' 號 · '+D.lifepath[pn].tree+'</option>';
     h+='</select><div id="partner-res" style="margin-top:12px;"></div></div></div>';
+    // ── 下一步：依算出來的結果動態產生導流，接住剛拿到結果那一刻的注意力 ──
+    var nx=[];
+    nx.push({href:'#lp-'+reduceNum(life),icon:'🔎',t:life+' 號人的完整解析',
+             s:'性格、感情、職涯與課題，比上面的摘要深得多'});
+    if(missing.length){
+      nx.push({href:'/oils/',icon:'🌿',t:'補空缺數 '+missing.join('、')+' 的精油',
+               s:'從 300+ 支精油裡找到對應你缺口的那幾支'});
+    }else{
+      nx.push({href:'/oils/',icon:'🌿',t:'你的主命數 '+life+' 對應精油',
+               s:'九宮格沒有空缺，直接看主命數的香氣方向'});
+    }
+    nx.push({href:'/blend/',icon:'⚗️',t:'把這些精油調成你的複方',
+             s:'互動工具，選情境就給你比例'});
+    nx.push({href:'/article-chakra-oils/',icon:'🌀',t:'你的數字對應哪個脈輪',
+             s:'七脈輪與精油的完整對照'});
+    nx.push({href:'/numerology-vs-fortune-telling/',icon:'🤔',t:'這算是算命嗎？',
+             s:'生命靈數與傳統算命的 7 個面向對照'});
+    nx.push({href:'/article-angel-numbers/',icon:'✨',t:'天使數字 1111、1414 的意思',
+             s:'常在生活裡重複出現的數字組合'});
+    h+='<div class="num-card" style="border-top:4px solid #7A5A8E;"><h3 class="num-h2">🧭 接下來可以看什麼</h3>';
+    h+='<p style="font-size:13.5px;color:#7A6852;margin:0 0 12px;">下面這幾條是依你剛算出來的結果挑的，不是通用清單。</p>';
+    h+='<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;">';
+    nx.forEach(function(o){
+      h+='<a href="'+o.href+'" style="display:block;text-decoration:none;background:#FBF7F1;border:1px solid #EEE7D8;border-radius:10px;padding:12px 14px;transition:border-color .15s;" onmouseover="this.style.borderColor=\'#C8A673\'" onmouseout="this.style.borderColor=\'#EEE7D8\'">';
+      h+='<div style="font-size:14.5px;font-weight:700;color:#7A5A8E;line-height:1.5;">'+o.icon+' '+o.t+'</div>';
+      h+='<div style="font-size:12.5px;color:#7A6852;line-height:1.7;margin-top:4px;">'+o.s+'</div></a>';
+    });
+    h+='</div>';
+    h+='<div style="margin-top:12px;padding:10px 14px;background:#F4EFF8;border-radius:8px;font-size:13.5px;line-height:1.8;color:#5A4468;">🗓️ <b>明天再來一次</b>——流日數每天都會變，我們會記住你的生日，下次打開直接帶出來。</div></div>';
     var box=byId('num-result');box.innerHTML=h;
     var ps=byId('partner-sel');
     if(ps)ps.onchange=function(){
