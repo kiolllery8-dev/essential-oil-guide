@@ -623,7 +623,7 @@ var LUNAR={
     h+='<div style="font-size:12px;color:#9A8AA8;margin-top:8px;">流月數＝當月月份＋流年數；流日數＝當日日期＋流月數（皆縮減至個位）。這一段每天都會變，可以當成節奏參考，不是預言。</div></div>';
     h+='<div class="num-card"><h3 class="num-h2">⛰️ 人生四階段大運（高峰數）</h3>';
     h+='<p style="font-size:13.5px;color:#7A6852;margin:0 0 4px;">人生分成四個階段，每一段被一個數字能量主導——那個數字會決定你在那段時間被推去練什麼、什麼事變容易、什麼事會卡。第一階最長，從出生到 '+extra.e1+' 歲；第二、第三階各九年；第四階是 '+(extra.e1+19)+' 歲以後的餘生。你現在大約 '+age+' 歲，走在下方標示「你現在這裡」的那一段。</p>';
-    h+='<p style="font-size:12.5px;color:#9A8AA8;margin:0 0 12px;">每一階都可以展開看完整說明。<b>第三、第四階若出現 10、11、22，不會化約成 1、2、4</b>——走過前兩階的人不會再回到從零學的狀態。</p>';
+    h+='<p style="font-size:12.5px;color:#9A8AA8;margin:0 0 12px;">每一階都可以展開看完整說明。<b>第三、第四階若出現 10、11、22，會保留原本的數字</b>——走過前兩階的人不會再回到從零學的狀態。</p>';
     var labels=['第一階段','第二階段','第三階段','第四階段'];
     stages.forEach(function(st,i){
       var on=i===curStage,pk=D.pinnacle[st.num]||null;
@@ -632,7 +632,7 @@ var LUNAR={
       h+='<details'+(on?' open':'')+' style="margin:8px 0;border-radius:10px;border:1px solid '+(on?'#C8A673':'#EEE7D8')+';background:'+(on?'#FBF6EE':'#fff')+';overflow:hidden;">';
       h+='<summary style="display:flex;gap:12px;align-items:center;padding:12px 14px;cursor:pointer;list-style:none;">';
       h+='<div style="min-width:70px;text-align:center;"><div style="font-size:11px;color:#9A8AA8;">'+labels[i]+'</div><div style="font-size:26px;font-weight:800;color:'+(big?'#7A5A8E':'#8B6F3E')+';line-height:1.1;">'+st.num+'</div><div style="font-size:11px;color:#7A6852;">'+range+'</div></div>';
-      h+='<div style="flex:1;"><div style="font-size:15px;font-weight:700;color:#3D3328;">'+(on?'<span style="color:#B5701A;">▸ 你現在這裡 · </span>':'')+(pk?pk.name:'')+(big?'<span style="font-size:11px;background:#EFE6F5;color:#7A5A8E;border-radius:5px;padding:2px 7px;margin-left:6px;">不化約</span>':'')+'</div>';
+      h+='<div style="flex:1;"><div style="font-size:15px;font-weight:700;color:#3D3328;">'+(on?'<span style="color:#B5701A;">▸ 你現在這裡 · </span>':'')+(pk?pk.name:'')+'</div>';
       h+='<div style="font-size:13.5px;line-height:1.7;color:#7A6852;margin-top:2px;">'+(pk?pk.core:'')+'</div></div>';
       h+='<span style="font-size:12px;color:#9A8AA8;flex:none;">展開 ▾</span></summary>';
       if(pk){
@@ -646,7 +646,7 @@ var LUNAR={
       }
       h+='</details>';
     });
-    h+='<div style="font-size:12px;color:#9A8AA8;margin-top:8px;">※ 年、月、日各自先化約成個位數，再套：第一高峰數＝生月數＋生日數、第二＝生日數＋生年數、第三＝第一＋第二、第四＝生月數＋生年數。<b>第三、四階遇到 10、11、22 不化約</b>。年齡分界：第一階 0–'+extra.e1+' 歲（36 減命運數 '+extra.destiny+'），第二階起每九年一段；年齡為粗估，實際以生日當天為準。</div></div>';
+    h+='<div style="font-size:12px;color:#9A8AA8;margin-top:8px;">※ 年、月、日各自先化約成個位數，再套：第一高峰數＝生月數＋生日數、第二＝生日數＋生年數、第三＝第一＋第二、第四＝生月數＋生年數。<b>第三、四階遇到 10、11、22 時保留原數</b>。年齡分界：第一階 0–'+extra.e1+' 歲（36 減命運數 '+extra.destiny+'），第二階起每九年一段；年齡為粗估，實際以生日當天為準。</div></div>';
     var courseStr=extra.course.join(' / '),isPure=extra.course.length===1;
     h+='<div class="num-card"><h3 class="num-h2">🎓 主修數 '+courseStr+'</h3>';
     h+='<p style="font-size:13.5px;color:#7A6852;margin:0 0 10px;">主命數只留最後那個個位數，主修數則把「化約的過程」整條留下來。同樣是 '+life+' 號人，走 '+courseStr+' 這條路的體感和別人不一樣。</p>';
