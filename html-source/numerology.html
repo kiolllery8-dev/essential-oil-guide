@@ -655,15 +655,22 @@ var LUNAR={
     h+='</div>';
     h+='<div style="font-size:12px;color:#9A8AA8;margin-top:8px;">主修數＝西元生日全部數字相加後，保留每一次化約的結果'+(isPure?'（你的總和一次就到個位，所以只有一階）':'')+'。</div></div>';
     h+='<div class="num-card"><h3 class="num-h2">🎯 挑戰數 — 你一生要練的功課</h3>';
-    h+='<p style="font-size:13.5px;color:#7A6852;margin:0 0 10px;">這四個數字不是缺點，是會在人生不同階段反覆出現、逼你長大的題目。重複出現的數字，代表那個功課特別重。</p>';
-    var chLabels=['前半生主課題','中年課題','總結課題（一生最重）','後半生課題'];
+    h+='<p style="font-size:13.5px;color:#7A6852;margin:0 0 10px;">這四個數字不是缺點，是會在人生不同階段反覆出現、逼你長大的題目。階段的年齡分界與上方的高峰數相同。重複出現的數字，代表那個功課在你身上特別重。</p>';
+    var chLabels=['第一階段','第二階段','第三階段','第四階段'];
+    var chNote=['','','（一生最重）',''];
     extra.ch.forEach(function(c,i){
-      var cd2=D.challenge[c];
-      h+='<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 12px;margin:6px 0;border-radius:10px;border:1px solid '+(i===2?'#C8A673':'#EEE7D8')+';background:'+(i===2?'#FBF6EE':'#fff')+';">';
-      h+='<div style="min-width:66px;text-align:center;"><div style="font-size:11px;color:#9A8AA8;">'+chLabels[i]+'</div><div style="font-size:23px;font-weight:800;color:#8B6F3E;">'+c+'</div><div style="font-size:11px;color:#7A6852;">'+cd2.name+'</div></div>';
-      h+='<div style="flex:1;font-size:13.5px;line-height:1.8;color:#3D3328;">'+cd2.text+'</div></div>';
+      var cd2=D.challenge[c],st=stages[i],on=i===curStage;
+      var range=st.to===null?(st.from+' 歲以後'):(st.from+'–'+st.to+' 歲');
+      h+='<details'+(on?' open':'')+' style="margin:8px 0;border-radius:10px;border:1px solid '+(on?'#C8A673':'#EEE7D8')+';background:'+(on?'#FBF6EE':'#fff')+';overflow:hidden;">';
+      h+='<summary style="display:flex;gap:12px;align-items:center;padding:12px 14px;cursor:pointer;list-style:none;">';
+      h+='<div style="min-width:70px;text-align:center;"><div style="font-size:11px;color:#9A8AA8;">'+chLabels[i]+'</div><div style="font-size:26px;font-weight:800;color:#8B6F3E;line-height:1.1;">'+c+'</div><div style="font-size:11px;color:#7A6852;">'+range+'</div></div>';
+      h+='<div style="flex:1;"><div style="font-size:15px;font-weight:700;color:#3D3328;">'+(on?'<span style="color:#B5701A;">▸ 你現在這裡 · </span>':'')+cd2.name+chNote[i]+'</div>';
+      h+='<div style="font-size:13.5px;line-height:1.7;color:#7A6852;margin-top:2px;">'+cd2.text.split('。')[0]+'。</div></div>';
+      h+='<span style="font-size:12px;color:#9A8AA8;flex:none;">展開 ▾</span></summary>';
+      h+='<div style="padding:0 16px 16px;"><div style="font-size:14.5px;line-height:1.95;color:#3D3328;">'+cd2.text+'</div></div>';
+      h+='</details>';
     });
-    h+='<div style="font-size:12px;color:#9A8AA8;margin-top:6px;">※ 挑戰數＝|生月數−生日數|、|生年數−生日數|、兩者之差、|生年數−生月數|（各數先縮減至個位）。</div></div>';
+    h+='<div style="font-size:12px;color:#9A8AA8;margin-top:6px;">※ 挑戰數＝|生月數−生日數|、|生年數−生日數|、兩者之差、|生年數−生月數|（各數先化約成個位數）。年齡分界與上方的高峰數相同——同一段人生，高峰數說你被推去發展什麼，挑戰數說你在那段時間會反覆卡在哪裡。第三階段的挑戰數影響最深，常被視為一生的主課題。</div></div>';
     var lim=D.limit[extra.limit];
     h+='<div class="num-card"><h3 class="num-h2">🔓 打破框架 — 限制數 '+extra.limit+'</h3>';
     if(lim){
