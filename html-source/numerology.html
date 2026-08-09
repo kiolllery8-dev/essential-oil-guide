@@ -465,19 +465,30 @@ var LUNAR={
     var zodiac=zodiacOfBirth(y,m,d);
     var rm=reduceNum(m),rd=reduceNum(d),ry=reduceNum(y);
     // ── 四階高峰數 ─────────────────────────────────────────────
-    // 元件用 reduceMaster（11 月＝11、數字和為 11／22 的年份保留原形），
-    // 否則高峰數 22 在數學上永遠不可能出現（純化約時 9+9=18 是上限）。
-    // 挑戰數／限制數仍用完整化約的 rm/rd/ry，兩套不共用。
-    var pm=reduceMaster(m),pd2=reduceMaster(d),py=reduceMaster(y);
-    // 第三、四階不化約 10／11／22：走過前兩階淬鍊的人，
-    // 不會再回到第一、二階那種「從零開始學」的狀態，所以這些數字保留原形。
+    // 規格：年、月、日各自化約成個位數後套公式（與 rm/rd/ry 同一組值）。
+    //   第一高峰數＝生月數＋生日數　第二＝生日數＋生年數
+    //   第三＝第一＋第二　　　　　　第四＝生月數＋生年數
+    // 第三、四階遇 10／11／22 不化約——隨著人生第三階段臨近，
+    // 走過前兩階淬鍊的人不會再回到「從零開始學」的狀態，
+    // 這些數字更強大的靈性影響在此格外重要。
     function pinnacleOf(sum,stage){
       if(stage>=3&&(sum===10||sum===11||sum===22))return sum;
       return reduceNum(sum);
     }
-    var p1=pinnacleOf(pm+pd2,1),p2=pinnacleOf(pd2+py,2);
-    var p3=pinnacleOf(p1+p2,3),p4=pinnacleOf(pm+py,4);
-    var e1=36-reduceNum(life),age=ty-y-(passed?0:1);
+    var p1=pinnacleOf(rm+rd,1),p2=pinnacleOf(rd+ry,2);
+    var p3=pinnacleOf(p1+p2,3),p4=pinnacleOf(rm+ry,4);
+    // 高峰期年齡分界：第一期 0 ~ (36 − 命運數)，之後每 9 年一段。
+    // 命運數取值依快速查閱表：主修數 10/1 取 10、大師數 11 取 11、
+    // 22/4 取 4（表中 22/4 與主命數 4 同為 0–32 歲）、其餘取主命數。
+    // 主命數 1 的化約鏈必定經過 10（最小生日數字和已大於 9），故一律取 10。
+    function destinyForAge(lifeNum){
+      if(lifeNum===11)return 11;
+      if(lifeNum===22)return 4;
+      if(lifeNum===33)return 6;
+      if(lifeNum===1)return 10;
+      return lifeNum;
+    }
+    var e1=36-destinyForAge(life),age=ty-y-(passed?0:1);
     var stages=[{num:p1,from:0,to:e1},{num:p2,from:e1+1,to:e1+9},{num:p3,from:e1+10,to:e1+18},{num:p4,from:e1+19,to:null}];
     var curStage=age<=e1?0:(age<=e1+9?1:(age<=e1+18?2:3));
     // 挑戰數：一生反覆出現的功課。C1=|月-日|、C2=|年-日|、C3=|C1-C2|、C4=|年-月|
@@ -488,7 +499,7 @@ var LUNAR={
     var fMonth=reduceNum(cm+flow),fDay=reduceNum(cd+fMonth);
     // 主修數：保留整條化約過程，例如 37/10/1；總和已是個位數時就是「純數」
     var extra={ch:[ch1,ch2,ch3,ch4],limit:limitNum,course:chain.slice(),
-               fm:fMonth,fd:fDay,cm:cm,cd:cd};
+               fm:fMonth,fd:fDay,cm:cm,cd:cd,e1:e1,destiny:destinyForAge(life)};
     setNow(age);
     render(life,bday,talent,zo,innate,counts,missing,active,flow,ty,first,stages,curStage,age,lunarNote,flowInfo,zodiac,extra);
     saveBirth();
@@ -635,7 +646,7 @@ var LUNAR={
       }
       h+='</details>';
     });
-    h+='<div style="font-size:12px;color:#9A8AA8;margin-top:8px;">※ 高峰數＝月＋日、日＋年、前兩者相加、月＋年。月、日、年先各自縮減（11 月與數字和為 11／22 的年份保留原形），第三、四階的 10／11／22 不再縮減。第一階從出生到 '+(36-reduceNum(life))+' 歲（36 減主命數），之後每九年一段；年齡為粗估，實際以生日當天為準。</div></div>';
+    h+='<div style="font-size:12px;color:#9A8AA8;margin-top:8px;">※ 年、月、日各自先化約成個位數，再套：第一高峰數＝生月數＋生日數、第二＝生日數＋生年數、第三＝第一＋第二、第四＝生月數＋生年數。<b>第三、四階遇到 10、11、22 不化約</b>。年齡分界：第一階 0–'+extra.e1+' 歲（36 減命運數 '+extra.destiny+'），第二階起每九年一段；年齡為粗估，實際以生日當天為準。</div></div>';
     var courseStr=extra.course.join(' / '),isPure=extra.course.length===1;
     h+='<div class="num-card"><h3 class="num-h2">🎓 主修數 '+courseStr+'</h3>';
     h+='<p style="font-size:13.5px;color:#7A6852;margin:0 0 10px;">主命數只留最後那個個位數，主修數則把「化約的過程」整條留下來。同樣是 '+life+' 號人，走 '+courseStr+' 這條路的體感和別人不一樣。</p>';
