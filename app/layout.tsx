@@ -90,7 +90,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800&display=swap"
           rel="stylesheet"
         />
-        <link rel="stylesheet" href="/assets/css/style.css" />
+        {/* 改 style.css 一定要同時 bump ?v= —— 2026-08-03 就是新 HTML 配到 Cloudflare
+            快取的舊 CSS，導致 nav 下拉整個破版 */}
+        <link rel="stylesheet" href="/assets/css/style.css?v=20260810" />
       </head>
       <body>
         <JsonLd data={[organizationSchema, websiteSchema]} />
