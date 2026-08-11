@@ -765,7 +765,12 @@ footer ul li a:hover { color: var(--white); }
    ======================================== */
 #backToTop {
   position: fixed;
-  bottom: 32px; right: 32px;
+  /* 客服泡泡 .ivc-btn（chat.intelliverse.tw/widget.js）是 right:20px bottom:20px
+     的 58×58 圓鈕，z-index 2147483600。原本 bottom:32px/right:32px 的這顆按鈕
+     整個被蓋在它底下，z-index 差了七個數量級——全站每一頁、每種螢幕都點不到。
+     改成疊在泡泡正上方：泡泡上緣在 bottom:78px，留 12px 間距 → bottom:90px；
+     right 對齊泡泡中心（20＋58/2－44/2＝27px）。 */
+  bottom: 90px; right: 27px;
   width: 44px; height: 44px;
   background: var(--green-mid);
   color: var(--white);
