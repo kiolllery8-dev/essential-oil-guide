@@ -1598,7 +1598,12 @@ footer ul li a:hover { color: var(--white); }
   .oil-compact-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
 }
 
-@media (max-width: 640px) {
+/* 導覽切換點：641px 以上橫排、768px 以下漢堡。
+   原本與手機版面共用 640 斷點，但 641–900px 這段橫排 7 個項目已經很擠
+   （實測 1024px 時 nav 右緣 809px、搜尋框左緣也是 809px，零餘裕），
+   故獨立成 768 斷點。版面相關規則仍留在下方的 640 區塊，
+   避免平板套用到手機尺寸的排版。 */
+@media (max-width: 768px) {
   /* === Mobile header：漢堡左、標題置中、抽屜從左滑入 === */
   header .header-inner {
     display: flex;
@@ -1684,6 +1689,9 @@ footer ul li a:hover { color: var(--white); }
   }
   /* 打開時禁止 body 滾動 */
   body.menu-open { overflow: hidden; }
+}
+
+@media (max-width: 640px) {
   .hero { padding: 50px 20px; }
   .footer-inner { grid-template-columns: 1fr; }
   .encyclo-grid { grid-template-columns: repeat(3, 1fr); }
