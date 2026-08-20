@@ -387,7 +387,7 @@ var LUNAR={
   refresh();
   function setNow(ageVal){var el=byId('calc-now');if(!el)return;var n=new Date();
     var t=n.getFullYear()+'/'+(n.getMonth()+1)+'/'+n.getDate()+' '+pad(n.getHours())+':'+pad(n.getMinutes());
-    el.innerHTML='🕒 計算時間 '+t+(ageVal!=null?('　·　🎂 <span style="font-size:22px;">'+ageVal+'</span> 歲'):'');}
+    el.innerHTML='🕒 計算時間 '+t+(ageVal!=null?(' · 🎂 <span style="font-size:22px;">'+ageVal+'</span> 歲'):'');}
   setNow(null);
 
   function zodiacOf(m,d){
@@ -439,8 +439,8 @@ var LUNAR={
       var isLeap=byId('num-leap')&&byId('num-leap').checked;
       var sol=LUNAR.lunar2solar(y,m,d,isLeap);
       if(!sol||sol===-1){alert('這個農曆日期不存在喔（可能該農曆月只有 29 天，或該年沒有這個閏月）。請確認後再試。');return;}
-      var ln='農曆 '+y+' 年 '+(isLeap?'閏':'')+m+' 月 '+d+' 日　＝　國曆 '+sol.y+'-'+pad(sol.m)+'-'+pad(sol.d);
-      lunarNote=lunarNote?(lunarNote+'　·　'+ln):ln;
+      var ln='農曆 '+y+' 年 '+(isLeap?'閏':'')+m+' 月 '+d+' 日 ＝ 國曆 '+sol.y+'-'+pad(sol.m)+'-'+pad(sol.d);
+      lunarNote=lunarNote?(lunarNote+' · '+ln):ln;
       y=sol.y;m=sol.m;d=sol.d;
     }
     var ymd=''+y+pad(m)+pad(d),digs=ymd.split('').map(Number);
@@ -466,8 +466,8 @@ var LUNAR={
     var rm=reduceNum(m),rd=reduceNum(d),ry=reduceNum(y);
     // ── 四階高峰數 ─────────────────────────────────────────────
     // 規格：年、月、日各自化約成個位數後套公式（與 rm/rd/ry 同一組值）。
-    //   第一高峰數＝生月數＋生日數　第二＝生日數＋生年數
-    //   第三＝第一＋第二　　　　　　第四＝生月數＋生年數
+    //   第一高峰數＝生月數＋生日數 第二＝生日數＋生年數
+    //   第三＝第一＋第二      第四＝生月數＋生年數
     // 第三、四階遇 10／11／22 不化約——隨著人生第三階段臨近，
     // 走過前兩階淬鍊的人不會再回到「從零開始學」的狀態，
     // 這些數字更強大的靈性影響在此格外重要。
@@ -557,7 +557,7 @@ var LUNAR={
     var isMaster=(life===11||life===22||life===33);
     h+='<div class="num-card" style="border-top:4px solid '+lp.color+';">';
     h+='<div style="text-align:center;margin-bottom:6px;"><span style="font-size:13px;color:#9A8AA8;">你的生命靈數</span><div style="font-size:28px;font-weight:800;color:#7A5A8E;">'+lp.emoji+' 主命數 '+life+'｜'+lp.tree+(isMaster?' <span style="display:inline-block;font-size:13px;font-weight:700;color:#fff;background:linear-gradient(135deg,#8A5FB5,#C9A93F);padding:2px 10px;border-radius:12px;vertical-align:middle;">✦ 大師數</span>':'')+'</div><div style="font-size:14px;color:#7A6852;">'+lp.keyword+'</div></div>';
-    h+='<div style="text-align:center;margin-bottom:2px;font-size:13px;color:#7A6852;"><span style="display:inline-block;width:11px;height:11px;border-radius:50%;background:'+lp.color+';margin-right:5px;vertical-align:-1px;"></span>代表色 '+lp.colorName+'　·　能量原型 '+lp.archetype+'</div>';
+    h+='<div style="text-align:center;margin-bottom:2px;font-size:13px;color:#7A6852;"><span style="display:inline-block;width:11px;height:11px;border-radius:50%;background:'+lp.color+';margin-right:5px;vertical-align:-1px;"></span>代表色 '+lp.colorName+' · 能量原型 '+lp.archetype+'</div>';
     h+='<div style="text-align:center;margin-bottom:4px;font-size:14px;color:#7A6852;">'+zodiac.emoji+' 生肖 <b style="color:#7A5A8E;font-size:16px;">'+zodiac.animal+'</b>'+(zodiac.beforeSpring?'<span style="font-size:12px;color:#9A8AA8;">（出生當年農曆 '+zodiac.lunarYear+' 年・春節前）</span>':'')+'</div>';
     if(lunarNote)h+='<div style="text-align:center;font-size:12.5px;color:#9A8AA8;margin-bottom:4px;">📅 '+lunarNote+'</div>';
     h+='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px;">';
@@ -566,7 +566,7 @@ var LUNAR={
     h+='</div></div>';
     h+='<div class="num-card" style="text-align:center;"><h3 class="num-h2" style="border:none;">你的九宮格與連線</h3>';
     h+=gridSvg(counts,active);
-    h+='<div style="font-size:12.5px;color:#7A6852;margin-top:8px;"><span style="color:#88BC88;font-weight:700;">━ 綠線</span> 主連線（天賦）　<span style="color:#C8A673;font-weight:700;">━ 棕線</span> 副連線　虛線圈＝空缺數</div></div>';
+    h+='<div style="font-size:12.5px;color:#7A6852;margin-top:8px;"><span style="color:#88BC88;font-weight:700;">━ 綠線</span> 主連線（天賦） <span style="color:#C8A673;font-weight:700;">━ 棕線</span> 副連線 虛線圈＝空缺數</div></div>';
     h+='<div class="num-card"><h3 class="num-h2">💠 核心性格 — 主命數 '+life+'（'+lp.tree+'）</h3>';
     h+='<p style="font-size:15px;line-height:1.9;margin:0 0 12px;">'+lp.desc+'</p>';
     h+='<div style="display:grid;gap:8px;font-size:14px;">';
@@ -578,7 +578,7 @@ var LUNAR={
     h+='</div></div>';
     h+='<div class="num-card"><h3 class="num-h2">🔗 連線天賦（'+active.length+' 條）</h3>';
     if(active.length){active.forEach(function(ln){
-      h+='<div class="num-line"><div style="min-width:54px;font-weight:800;color:'+(ln.type==='main'?'#5A7A4A':'#A6863F')+';">'+ln.nums.join('-')+'</div><div><b>'+ln.name+'</b>　'+ln.pos+'<div style="font-size:13px;color:#9A8A78;margin-top:3px;">⚠ '+ln.neg+'</div></div></div>';
+      h+='<div class="num-line"><div style="min-width:54px;font-weight:800;color:'+(ln.type==='main'?'#5A7A4A':'#A6863F')+';">'+ln.nums.join('-')+'</div><div><b>'+ln.name+'</b> '+ln.pos+'<div style="font-size:13px;color:#9A8A78;margin-top:3px;">⚠ '+ln.neg+'</div></div></div>';
     });}else{h+='<p style="font-size:14.5px;color:#7A6852;margin:0;">你目前沒有完整的三格連線——這代表你的能量比較分散、不被單一模式定義，反而更有彈性。可以多看主命數與空缺數來認識自己。</p>';}
     h+='</div>';
     h+='<div class="num-card"><h3 class="num-h2">💧 生日數（內在） '+bday+' & 天賦數 '+talentStr+'</h3>';
@@ -720,7 +720,7 @@ var LUNAR={
       if(!pv){pr.innerHTML='';return;}
       var cd=D.compatDiff[Math.abs(reduceNum(life)-pv)];
       var col=cd.score>=80?'#5FA85F':(cd.score>=60?'#E2872E':'#B56A6A');
-      pr.innerHTML='<div style="background:#fff;border:1px solid #E5D9C0;border-left:4px solid '+col+';border-radius:8px;padding:12px 14px;"><div style="font-weight:800;color:'+col+';font-size:15px;">'+life+' × '+pv+' → '+cd.name+'　<span style="font-size:13px;font-weight:600;">緣分指數 '+cd.score+'</span></div><div style="font-size:14px;line-height:1.8;margin-top:6px;color:#3D3328;">'+cd.text+'</div></div>';
+      pr.innerHTML='<div style="background:#fff;border:1px solid #E5D9C0;border-left:4px solid '+col+';border-radius:8px;padding:12px 14px;"><div style="font-weight:800;color:'+col+';font-size:15px;">'+life+' × '+pv+' → '+cd.name+' <span style="font-size:13px;font-weight:600;">緣分指數 '+cd.score+'</span></div><div style="font-size:14px;line-height:1.8;margin-top:6px;color:#3D3328;">'+cd.text+'</div></div>';
     };
   }
 
