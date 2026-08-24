@@ -1565,6 +1565,66 @@ footer ul li a:hover { color: var(--white); }
   border-color: var(--green-dark);
 }
 
+
+/* ── 內嵌 auto-fit／auto-fill grid 的最小軌道防溢出 ──
+   minmax(Npx, 1fr) 的下限是硬的：容器比 N 還窄時軌道不會縮，直接撐出去。
+   實際壞掉的是 /numerology/ 的 9 張深度卡：卡片內寬 226px 卻配 minmax(240px,1fr)，
+   子卡被推成 240px、右側 padding 從 24px 被吃到剩 11px，左右明顯不對稱。
+   min(Npx, 100%) 讓軌道在窄容器下退成滿版；容器 ≥ N 時與原本逐像素相同。
+   2026-08-22 實測 17 個含此樣式的頁面 ×（375px／1280px）：
+     只有 /numerology/ 的 9 處實際生效，其餘 0 處變動、桌機 0 處變動。
+   （全站 113 個內嵌 auto-fit grid 裡，60 個「軌道 >226px」是紙上風險，
+     實測多半直接坐在 335px 主欄內、從未溢出；這裡是防護網不是大改。）
+   不放進 @media：窄容器在任何視窗寬度都可能發生（如桌機三欄版面裡的小卡）。 */
+[style*="repeat(auto-fill,minmax(320px"],
+[style*="repeat(auto-fill, minmax(320px"] {
+  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)) !important;
+}
+[style*="repeat(auto-fit,minmax(300px"],
+[style*="repeat(auto-fit, minmax(300px"] {
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)) !important;
+}
+[style*="repeat(auto-fit,minmax(280px"],
+[style*="repeat(auto-fit, minmax(280px"] {
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)) !important;
+}
+[style*="repeat(auto-fit,minmax(260px"],
+[style*="repeat(auto-fit, minmax(260px"] {
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)) !important;
+}
+[style*="repeat(auto-fill,minmax(240px"],
+[style*="repeat(auto-fill, minmax(240px"] {
+  grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr)) !important;
+}
+[style*="repeat(auto-fit,minmax(240px"],
+[style*="repeat(auto-fit, minmax(240px"] {
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)) !important;
+}
+[style*="repeat(auto-fit,minmax(230px"],
+[style*="repeat(auto-fit, minmax(230px"] {
+  grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr)) !important;
+}
+[style*="repeat(auto-fill,minmax(220px"],
+[style*="repeat(auto-fill, minmax(220px"] {
+  grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr)) !important;
+}
+[style*="repeat(auto-fit,minmax(220px"],
+[style*="repeat(auto-fit, minmax(220px"] {
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)) !important;
+}
+[style*="repeat(auto-fill,minmax(200px"],
+[style*="repeat(auto-fill, minmax(200px"] {
+  grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)) !important;
+}
+[style*="repeat(auto-fill,minmax(140px"],
+[style*="repeat(auto-fill, minmax(140px"] {
+  grid-template-columns: repeat(auto-fill, minmax(min(140px, 100%), 1fr)) !important;
+}
+[style*="repeat(auto-fill,minmax(120px"],
+[style*="repeat(auto-fill, minmax(120px"] {
+  grid-template-columns: repeat(auto-fill, minmax(min(120px, 100%), 1fr)) !important;
+}
+
 /* ========================================
    RESPONSIVE
    ======================================== */
@@ -1703,4 +1763,49 @@ footer ul li a:hover { color: var(--white); }
   .compound-grid { grid-template-columns: 1fr; }
   .compound-hero h1 { font-size: 22px; }
   .compound-nav { gap: 6px; padding: 12px; }
+
+  /* ── /numerology/「生命靈數 1-9 對應精油一覽表」手機卡片化 ──
+     問題：4 欄表格的前兩欄有 white-space:nowrap，在 375px 吃掉 335px 中的 234px（70%），
+     只留 53px／51px 給最需要空間的「對應精油」與「香氣方向」，中文被壓成 3 字一行，
+     單列高度 595-728px、整張表 6045px（要滑 16 個螢幕），前兩欄則變成大片空白。
+     實測列高：375px→6045 / 480px→1650 / 640px→949 / 900px(桌機)→675。
+     ≤640px 改成一個靈數一張卡：欄寬回到滿版 ~300px，文字一字不刪，空白歸零。
+     td 的 border/padding/white-space 都是內嵌樣式，權重高，必須 !important 覆蓋。 */
+  .num-oil-table,
+  .num-oil-table tbody,
+  .num-oil-table tr,
+  .num-oil-table td { display: block; width: auto; }
+  .num-oil-table thead { display: none; }
+  .num-oil-table tr {
+    background: #fff;
+    border: 1px solid #E5D9C0;
+    border-left: 4px solid #7A5A8E;
+    border-radius: 12px;
+    margin: 0 0 12px;
+    overflow: hidden;
+  }
+  .num-oil-table td {
+    border: 0 !important;
+    white-space: normal !important;
+    text-align: left !important;
+    padding: 10px 14px !important;
+  }
+  /* 前兩格（數字＋原型關鍵字）合成卡片標頭 */
+  .num-oil-table td:nth-child(1),
+  .num-oil-table td:nth-child(2) { background: #F6F2F8; }
+  .num-oil-table td:nth-child(1) { padding-bottom: 0 !important; }
+  .num-oil-table td:nth-child(1) br { display: none; }
+  .num-oil-table td:nth-child(1) span { margin-left: 8px; }
+  .num-oil-table td:nth-child(2) { padding-top: 2px !important; }
+  /* thead 被隱藏後，用 data-l 把欄位名補回每張卡 */
+  .num-oil-table td[data-l]::before {
+    content: attr(data-l);
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #7A5A8E;
+    letter-spacing: .04em;
+    margin-bottom: 4px;
+  }
+  .num-oil-table td:nth-child(3) { border-top: 1px solid #EFE7D6 !important; }
 }
