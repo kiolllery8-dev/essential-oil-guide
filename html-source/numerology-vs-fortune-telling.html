@@ -64,8 +64,19 @@
 .cmp .foot .lav .t::before{background:var(--lav);}
 .cmp .foot .box p{font-size:13.5px;line-height:1.7;color:#555;font-weight:300;}
 .cmp .brandline{text-align:center;margin-top:30px;color:var(--brand-deep);font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:.28em;}
-.cmp .backlink{text-align:center;margin-top:22px;}
-.cmp .backlink a{color:var(--lav);text-decoration:none;font-size:14px;font-weight:500;border-bottom:1px solid var(--lav-soft);padding-bottom:2px;}
+.cmp .title-row{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:14px;}
+.cmp .title-row h1{grid-column:2;}
+.cmp .back-fab{
+  grid-column:1;justify-self:start;
+  display:inline-flex;align-items:center;gap:6px;
+  padding:8px 16px 8px 13px;border-radius:999px;
+  background:var(--paper);border:1px solid var(--cline);color:var(--lav);
+  font-size:13px;font-weight:600;text-decoration:none;white-space:nowrap;
+  box-shadow:0 8px 18px -10px #2e334455,0 1px 0 #fff inset;
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.cmp .back-fab:hover{transform:translateY(-2px);box-shadow:0 12px 22px -10px #2e334466,0 1px 0 #fff inset;}
+.cmp .back-fab .arrow{font-family:'Cormorant Garamond',serif;font-size:16px;line-height:1;}
 @media(max-width:640px){
   .cmp{padding:26px 12px 36px;}
   .cmp .row{grid-template-columns:1fr;gap:0;}
@@ -77,6 +88,8 @@
   .cmp .cell.c-lav::before{content:'生命靈數';display:block;font-size:11px;letter-spacing:.2em;color:var(--lav);font-weight:700;margin-bottom:5px;opacity:.6;}
   .cmp .c-ink{border-bottom:1px solid var(--cline);}
   .cmp .foot{grid-template-columns:1fr;}
+  .cmp .title-row{display:block;text-align:center;}
+  .cmp .back-fab{justify-self:auto;margin:0 0 14px;}
 }
 </style>
 </head>
@@ -84,7 +97,10 @@
 <div class="cmp">
 <div class="wrap">
 
-  <h1>算命／東方命理 <em>vs</em> 生命靈數</h1>
+  <div class="title-row">
+    <a class="back-fab" href="/numerology/"><span class="arrow">←</span>回到生命靈數計算器</a>
+    <h1>算命／東方命理 <em>vs</em> 生命靈數</h1>
+  </div>
   <p class="sub">七大面向完整對照表——一個看時機節律，一個看性格本質</p>
 
   <div class="breadcrumb"><div class="breadcrumb-inner">
@@ -203,7 +219,6 @@
   }
   </script>
 
-  <div class="backlink"><a href="/numerology/">← 回到生命靈數計算器</a></div>
 
 </div>
 </div>
