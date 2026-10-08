@@ -26,7 +26,9 @@
         if (result.innerText.trim().length < 100 || !result.getClientRects().length) return;
         calculationObserver.disconnect();
         emit('numerology_calculate', { tool: 'numerology' });
-        var heading = result.querySelector('h2, h3') || result.firstElementChild || result;
+        // The first life-path card has no heading; measure its short top section.
+        var firstCard = result.firstElementChild;
+        var heading = (firstCard && firstCard.firstElementChild) || firstCard || result;
         viewObserver = new IntersectionObserver(function (entries) {
           if (!entries.some(function (entry) { return entry.isIntersecting; })) return;
           viewObserver.disconnect();
