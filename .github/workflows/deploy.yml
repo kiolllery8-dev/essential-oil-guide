@@ -37,6 +37,12 @@ jobs:
           NEXT_PUBLIC_GA_ID: ${{ secrets.NEXT_PUBLIC_GA_ID }}
         run: npm run build
 
+      - name: Preserve the existing numerology SEO fields
+        run: node scripts/check-frozen-seo.mjs
+
+      - name: Protect every existing page and knowledge algorithms
+        run: python3 scripts/check-site-baseline.py
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

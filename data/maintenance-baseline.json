@@ -1,0 +1,2507 @@
+{
+  "schemaVersion": 1,
+  "routes": {
+    "/404/": {
+      "title": "找不到頁面 | 精油能量圖譜",
+      "description": "您訪問的頁面不存在。探索精油能量圖譜：400+ 精油化學分類、芳療應用、安全指南。",
+      "canonical": "https://intelliverse.tw/",
+      "robots": "noindex, follow"
+    },
+    "/about/": {
+      "title": "網站簡介 | 精油能量圖譜",
+      "description": "精油能量圖譜是由靈境智造 Intelliverse Studio 打造的中文精油知識庫，收錄 400+ 支精油的化學分類、芳療應用與安全資訊，以科學方法整理並以視覺化方式呈現。",
+      "canonical": "https://intelliverse.tw/about/",
+      "robots": "index, follow"
+    },
+    "/aromatherapy/": {
+      "title": "芳療應用指南 | 精油能量圖譜",
+      "description": "芳療應用完整指南：擴香方式、按摩稀釋比例、泡澡配方、居家清潔、助眠放鬆、專注提神——掌握精油的每一種使用方式。",
+      "canonical": "https://intelliverse.tw/aromatherapy/",
+      "robots": "index, follow"
+    },
+    "/article-angel-number-1111/": {
+      "title": "1111天使數字是什麼？意義、愛情與 11:11 許願全解析｜天使數字1111 | 精油能量圖譜",
+      "description": "1111天使數字是什麼？從新時代靈性文化到心理學的『選擇性注意』，完整解讀天使數字1111的意義、愛情與雙生火焰象徵、11:11許願儀式，以及它與生命靈數大師數 11 的關係。文末附乳香、檀香、薰衣草的靜心香氛儀式，陪你在看見 1111 時安定放鬆。屬心靈文化視角，非科學事實。",
+      "canonical": "https://intelliverse.tw/article-angel-number-1111/",
+      "robots": "index, follow"
+    },
+    "/article-angel-number-1133/": {
+      "title": "1133天使數字是什麼？雙大師數 11×33 的意義、愛情與自我成長解析｜天使數字1133 | 精油能量圖譜",
+      "description": "1133天使數字是什麼？它罕見地同時疊加 11 與 33 兩個大師數。本文從靈性文化與心理學的選擇性注意、巴納姆效應雙視角，完整解讀天使數字1133 的意義、愛情、事業與自我成長訊息，並說明它與生命靈數大師數 11、33 的關係。文末附茉莉、依蘭、薰衣草的靜心香氛儀式。屬心靈文化視角，非科學事實。",
+      "canonical": "https://intelliverse.tw/article-angel-number-1133/",
+      "robots": "index, follow"
+    },
+    "/article-angel-number-1414/": {
+      "title": "1414天使數字是什麼？意義、愛情與踏實新開始全解析｜天使數字1414 | 精油能量圖譜",
+      "description": "1414天使數字是什麼？從靈性文化到心理學的『頻率錯覺』，完整解讀天使數字1414的意義：愛情與雙生火焰、事業金錢的傳統象徵，以及它與生命靈數 1 和 4 的關聯（1+4+1+4=10→1 新開始）。文末附雪松、絲柏、乳香的扎根靜心香氛儀式，陪你邊前進邊安定。屬心靈文化視角，非科學事實。",
+      "canonical": "https://intelliverse.tw/article-angel-number-1414/",
+      "robots": "index, follow"
+    },
+    "/article-angel-number-4444/": {
+      "title": "4444天使數字是什麼？意義、愛情與 1144天使數字完整解析｜天使數字4444 | 精油能量圖譜",
+      "description": "4444天使數字是什麼？從西方靈性文化的『穩定、根基與守護』，到東亞對數字4的忌諱，再用心理學的選擇性注意與巴納姆效應誠實解讀。完整整理天使數字4444的意義、愛情與事業象徵，專節解析1144天使數字，文末附岩蘭草、廣藿香、檀香的大地系扎根香氛儀式。屬心靈文化視角，非科學事實。",
+      "canonical": "https://intelliverse.tw/article-angel-number-4444/",
+      "robots": "index, follow"
+    },
+    "/article-angel-numbers/": {
+      "title": "天使數字是什麼？意思、一覽表與 1111～4444 完整解讀｜天使數字總覽 | 精油能量圖譜",
+      "description": "天使數字是什麼？一次看懂天使數字意思與由來：從 Doreen Virtue 與新時代靈性文化，到心理學的頻率錯覺與選擇性注意，附 111 到 1234 天使數字一覽表、1111／1414／1133／4444 四組深度解析入口，以及與生命靈數的差異和靜心香氛儀式。屬心靈文化視角，非科學事實。",
+      "canonical": "https://intelliverse.tw/article-angel-numbers/",
+      "robots": "index, follow"
+    },
+    "/article-aroma-diffuser-machine/": {
+      "title": "香氛機推薦怎麼挑｜水氧機、無水香氛機、擴香儀差別與選購全解析 | 精油能量圖譜",
+      "description": "香氛機主要分三類：超音波水氧機、無水霧化香氛機、擴香儀，原理、香氣濃度、覆蓋坪數與耗油量差很多。本文用一張比較表帶你看懂水氧機與擴香儀的差別，依空間坪數、預算、要不要加水稀釋、家中有無貓狗給出香氛機推薦選購思路，再教你清潔保養與整夜開機、加精油還是香精、會不會發霉等常見疑問，附完整 FAQ。",
+      "canonical": "https://intelliverse.tw/article-aroma-diffuser-machine/",
+      "robots": "index, follow"
+    },
+    "/article-aromatherapist/": {
+      "title": "芳療師完整指南｜證照課程、薪水收入與職涯全解析 | 精油能量圖譜",
+      "description": "想成為芳療師卻不知從何開始？這篇由 30 年 IFA 認證芳療師撰寫的完整指南，帶你看懂芳療師的真實工作日常、比較 IFA／NAHA／IFPA 三大國際證照的時數與費用、盤點台灣的學習管道，並誠實分析學費投報與收入現實面。從 SPA 會館、教學講師到自營工作室的職涯路徑，還有自學可行性與入行前必知的心法，一次讀懂。",
+      "canonical": "https://intelliverse.tw/article-aromatherapist/",
+      "robots": "index, follow"
+    },
+    "/article-bath-oil/": {
+      "title": "精油泡澡完整指南｜泡澡球 DIY、正確稀釋與情境配方 | 精油能量圖譜",
+      "description": "精油泡澡不能把精油直接滴進水裡——精油不溶於水，會浮在水面以原始濃度刺激肌膚。本文教你用乳化劑、基底油、浴鹽或全脂牛奶正確稀釋，附放鬆／提神／舒緩緊繃三款泡澡精油情境配方，以及小蘇打加檸檬酸的泡澡球 DIY 步驟、泡澡球正確用法，還有水溫、時間與孕婦、長輩、嬰幼兒的安全提醒。",
+      "canonical": "https://intelliverse.tw/article-bath-oil/",
+      "robots": "index, follow"
+    },
+    "/article-beginners/": {
+      "title": "精油新手入門：5大居家必備精油完整選購指南 | 精油能量圖譜",
+      "description": "精油新手必看！精選5瓶覆蓋日常80%需求：薰衣草、茶樹、薄荷、甜橙、尤加利，附11大選購避坑要點與新手FAQ。",
+      "canonical": "https://intelliverse.tw/article-beginners/",
+      "robots": "index, follow"
+    },
+    "/article-car-fragrance/": {
+      "title": "車用香氛完整指南｜擴香夾、擴香石、精油 DIY 配方與安全 | 精油能量圖譜",
+      "description": "車用香氛怎麼選才對？本文比較擴香夾、擴香石、車用水氧機與化學香片四種車內香氛形式，說明為什麼想用天然精油取代化學香片，並附上依情境設計的車用香氛 DIY 配方：白天提神清新、下車放鬆、中和車內異味，同時提醒開車避免會讓人想睡的香調。再談夏季高溫下精油易變質的保存、材質與通風注意，最後教你誠實挑選適合自己車子的一套車用香氛。",
+      "canonical": "https://intelliverse.tw/article-car-fragrance/",
+      "robots": "index, follow"
+    },
+    "/article-chakra-oils/": {
+      "title": "七脈輪與對應精油｜脈輪顏色、情緒主題與香氛儀式全解 | 精油能量圖譜",
+      "description": "七脈輪與對應精油完整對照：從海底輪到頂輪，逐一整理七大脈輪的位置、代表顏色、情緒主題與傳統對應精油（岩蘭草、甜橙、檸檬、玫瑰、洋甘菊、乳香、檀香），附脈輪顏色速記表與擴香、按摩香氛儀式。脈輪屬心靈與文化範疇、非科學或醫療事實，個人感受因人而異，帶你溫柔認識這套能量對應系統。",
+      "canonical": "https://intelliverse.tw/article-chakra-oils/",
+      "robots": "index, follow"
+    },
+    "/article-chamomile-comparison/": {
+      "title": "洋甘菊完整指南｜羅馬 vs 德國洋甘菊差異、精油用法比較 | 精油能量圖譜",
+      "description": "羅馬洋甘菊以酯類為主、香氣甜柔；德國洋甘菊含母菊天藍烴呈深藍色，多用於肌膚舒緩。兩者並非同一植物，化學輪廓、價格與適用情境完整比較＋6 條 FAQ 一次看懂。",
+      "canonical": "https://intelliverse.tw/article-chamomile-comparison/",
+      "robots": "index, follow"
+    },
+    "/article-children/": {
+      "title": "兒童芳療完整指南｜0-12 歲分段安全使用清單 | 精油能量圖譜",
+      "description": "兒童精油須以年齡分段：0-6 個月避免；6 個月-2 歲擴香 0.25%；2-6 歲 0.5-1%；6-12 歲 1-2%。避用薄荷、丁香、肉桂、桉樹腦類。完整避用清單＋友善精油推薦＋情境配方＋6 條 FAQ。",
+      "canonical": "https://intelliverse.tw/article-children/",
+      "robots": "index, follow"
+    },
+    "/article-citrus-comparison/": {
+      "title": "柑橘類精油完整比較｜7 大柑橘精油的化學、光敏與適用情境 | 精油能量圖譜",
+      "description": "檸檬、甜橙、葡萄柚、佛手柑、苦橙葉、橙花、泰國青檸 — 7 大柑橘類精油深度比較。共通檸檬烯 70-95% 為何不能等同視之？光敏性對照表、化學分子拆解、適用情境分類、搭配配方、安全注意、6 條 FAQ 一次看懂。",
+      "canonical": "https://intelliverse.tw/article-citrus-comparison/",
+      "robots": "index, follow"
+    },
+    "/article-conifers/": {
+      "title": "松柏家族精油比較｜雲杉、冷杉、雪松、杜松、絲柏怎麼分 | 精油能量圖譜",
+      "description": "松柏類精油以 α-蒎烯、β-蒎烯、檸檬烯為共同主成分。歐洲赤松、黑雲杉、西伯利亞冷杉、大西洋雪松、杜松漿果、絲柏六大主流逐一拆解：化學差異、香氣輪廓、適用情境（呼吸、運動、空間、冥想）。完整用法與安全注意一次看懂。",
+      "canonical": "https://intelliverse.tw/article-conifers/",
+      "robots": "index, follow"
+    },
+    "/article-diffuser-stone/": {
+      "title": "擴香石完整指南｜材質、用法、缺點與DIY自製 | 精油能量圖譜",
+      "description": "擴香石是免插電、免加水的香氛小物，多以石膏、矽藻土或素燒陶瓷製成，靠孔隙吸附精油後緩慢散香。本文誠實比較擴香石的優點與缺點、精油該滴幾滴、能不能噴香水、DIY 自製石膏擴香石教學、適合的精油選擇與清潔保養方式，幫你判斷擴香石適不適合你的生活空間。",
+      "canonical": "https://intelliverse.tw/article-diffuser-stone/",
+      "robots": "index, follow"
+    },
+    "/article-diffusion-guide/": {
+      "title": "擴香完整攻略｜擴香瓶、擴香儀、水氧機五種方式比較與選購 | 精油能量圖譜",
+      "description": "擴香有五種主流方式：擴香瓶（藤枝）、擴香石、水氧機、擴香儀、擴香木，原理、香氣強度、成本與適用空間各不相同。本文用一張比較表帶你看懂擴香瓶的缺點、水氧機與擴香儀的差異，並依租屋小房間、客廳、辦公室與有貓狗的家庭給出選購思路與精油用量，附擴香安全提醒與常見問題 FAQ。",
+      "canonical": "https://intelliverse.tw/article-diffusion-guide/",
+      "robots": "index, follow"
+    },
+    "/article-dustmites/": {
+      "title": "洗衣加尤加利精油真的能殺80%塵蟎？醫師實驗解答 | 精油能量圖譜",
+      "description": "台中榮總醫師實驗證實：洗衣加尤加利精油可殺滅80%以上塵蟎。本文解析正確用法、最有效配方、以及哪些做法其實沒有用。",
+      "canonical": "https://intelliverse.tw/article-dustmites/",
+      "robots": "index, follow"
+    },
+    "/article-energizing-oils/": {
+      "title": "提神精油推薦 Top 6｜早晨提神方法、情境擴香與滾珠配方全指南 | 精油能量圖譜",
+      "description": "提神方法百百種，香氣是最溫柔的一種。本文整理薄荷、迷迭香、檸檬、葡萄柚、尤加利、黑胡椒 6 款提神精油的香氣特性，附早晨提神、工作午後、開車、讀書四種情境的擴香與滾珠比例，並誠實分享光照、喝水、微運動怎麼搭配，讓清醒感受更完整。精油屬情緒陪伴香氛，非藥物、不涉及醫療宣稱。",
+      "canonical": "https://intelliverse.tw/article-energizing-oils/",
+      "robots": "index, follow"
+    },
+    "/article-essential-oil-soap/": {
+      "title": "精油手工皂完整指南｜入皂精油挑選、比例與冷製皂留香 | 精油能量圖譜",
+      "description": "精油手工皂怎麼做才留香又溫和？本文從手工皂為什麼加精油談起，比較精油與香精入皂的差別，整理薰衣草、茶樹、廣藿香、香茅、天竺葵、雪松六款入皂精油的留香度與膚感溫和度表格，說明冷製皂與 MP 皂的加入時機、用量微量原則，以及敏感肌、蠶豆症、孕婦的安全提醒，一篇讀懂入皂精油的挑選與使用。",
+      "canonical": "https://intelliverse.tw/article-essential-oil-soap/",
+      "robots": "index, follow"
+    },
+    "/article-eucalyptus/": {
+      "title": "藍膠尤加利 vs 澳洲尤加利怎麼選？成分與用途完整比較 | 精油能量圖譜",
+      "description": "藍膠尤加利 vs 澳洲尤加利：詳細比較兩種尤加利精油的化學成分、香氣與應用差異、安全性與適用對象，幫你選擇最合適的尤加利精油。",
+      "canonical": "https://intelliverse.tw/article-eucalyptus/",
+      "robots": "index, follow"
+    },
+    "/article-extraction/": {
+      "title": "精油是怎麼來的？從植物到瓶中的萃取旅程 | 精油能量圖譜",
+      "description": "蒸餾法、冷壓法、溶劑萃取——精油萃取完整入門。植物部位影響取得方式：花、葉、果皮、樹皮、根部，各有合適的萃取方法。本文用生活化比喻解釋三大萃取法的差異與影響。",
+      "canonical": "https://intelliverse.tw/article-extraction/",
+      "robots": "index, follow"
+    },
+    "/article-hydrosols/": {
+      "title": "純露完整指南｜六大日常用法、選購與保存 | 精油能量圖譜",
+      "description": "純露不是「精油加水」，是植物蒸餾過程中分離出來的水相產物，pH 約 4-5，含微量水溶性精油成分。可作化妝水、空間噴霧、飲用、烹飪、嬰幼兒清潔、寵物保養。保存期 6-12 個月須冷藏。完整 5 大主流純露推薦＋飲用級 vs 化妝品級差異＋6 條 FAQ。",
+      "canonical": "https://intelliverse.tw/article-hydrosols/",
+      "robots": "index, follow"
+    },
+    "/article-insect-repellent/": {
+      "title": "天然驅蟲完整指南｜75款精油防蚊防蟲配方手冊 | 精油能量圖譜",
+      "description": "天然驅蟲完整指南：12 大驅蟲精油（檸檬尤加利、香茅、雪松、天竺葵等）的化學機制與安全使用，含戶外噴霧、居家防蟲、寵物友善、兒童專用共 18 種 DIY 配方。",
+      "canonical": "https://intelliverse.tw/article-insect-repellent/",
+      "robots": "index, follow"
+    },
+    "/article-lavender-comparison/": {
+      "title": "三大薰衣草精油完整比較｜真正/穗花/醒目/頭狀薰衣草 | 精油能量圖譜",
+      "description": "薰衣草精油原來有 4-5 種！真正薰衣草 vs 穗花薰衣草 vs 醒目薰衣草 vs 頭狀薰衣草化學成分、安全性、用途差異完整對比。IFA 芳療標準，買對薰衣草精油不踩雷。Lavandula 屬植物學詳解。",
+      "canonical": "https://intelliverse.tw/article-lavender-comparison/",
+      "robots": "index, follow"
+    },
+    "/article-massage-oil/": {
+      "title": "精油按摩完整指南｜按摩精油基底油挑選、稀釋比例與 DIY 配方 | 精油能量圖譜",
+      "description": "精油按摩是一場放鬆的香氛保養儀式，不是醫療行為。本文教你按摩精油的基底油怎麼挑（甜杏仁、荷荷芭、椰子分餾油）、按摩油 DIY 比例怎麼抓（全身 1-2%、局部 3%、臉部 0.5-1%，附滴數換算表），並分享肩頸、腿部、睡前情境配方、輕撫畫圈手法，以及經絡按摩的芳療視角，最後附上光敏性、貼膚測試與孕婦安全提醒。",
+      "canonical": "https://intelliverse.tw/article-massage-oil/",
+      "robots": "index, follow"
+    },
+    "/article-meditation-oils/": {
+      "title": "冥想是什麼？正念冥想入門、5 分鐘練習步驟與精油靜心儀式｜冥想入門指南 | 精油能量圖譜",
+      "description": "冥想是什麼？其實不是「什麼都不想」，而是練習把注意力溫柔地帶回當下。本文用白話帶你認識冥想與正念冥想的差異、5 分鐘呼吸錨點與身體掃描入門步驟、乳香、檀香、岩蘭草的靜心擴香儀式，並誠實整理科學研究的方向與限制，陪初學者安心開始第一次練習。",
+      "canonical": "https://intelliverse.tw/article-meditation-oils/",
+      "robots": "index, follow"
+    },
+    "/article-newbie-mistakes/": {
+      "title": "10 個新手最常犯的精油錯誤｜避雷型清單與正確做法 | 精油能量圖譜",
+      "description": "精油新手最常犯的 10 大錯誤：直接擦肌膚不稀釋、加在洗澡水、靠近眼睛、密閉長時間擴香、以精油取代醫療、忽略寵物兒童孕婦、買劣質油、開封後沒密封、跟直銷話術買。每項錯誤＋為何錯＋正確做法＋安全使用 5 大原則＋6 條 FAQ。",
+      "canonical": "https://intelliverse.tw/article-newbie-mistakes/",
+      "robots": "index, follow"
+    },
+    "/article-office/": {
+      "title": "上班族 5 支提神精油＋實際擴香配方 | 精油能量圖譜",
+      "description": "辦公室提神可用迷迭香、薄荷、檸檬、葡萄柚、尤加利。擴香「迷迭香 1：薄荷 1：檸檬 2」+ 100ml 水。滾珠瓶 2% 稀釋塗抹手腕／太陽穴。共用空間禮儀＋時段建議＋6 條 FAQ。",
+      "canonical": "https://intelliverse.tw/article-office/",
+      "robots": "index, follow"
+    },
+    "/article-pets/": {
+      "title": "寵物芳療完整指南｜貓狗安全 vs 危險精油對照表 | 精油能量圖譜",
+      "description": "貓咪缺乏葡萄糖醛酸轉移酶，茶樹、薄荷、尤加利、柑橘類為高危險；狗狗低劑量（≤ 0.5%）；鳥類飼養空間建議完全不使用。完整避用清單＋中毒徵兆 SOP＋擴香空間設計＋6 條 FAQ。",
+      "canonical": "https://intelliverse.tw/article-pets/",
+      "robots": "index, follow"
+    },
+    "/article-pregnancy/": {
+      "title": "孕期芳療完整指南｜哪些可用、哪些避開、稀釋比例 | 精油能量圖譜",
+      "description": "孕期精油須謹慎：初期（0-12 週）建議完全避免；中後期低劑量（≤ 1%）可用甜橙、檸檬、橘子、羅馬洋甘菊。鼠尾草、迷迭香、薄荷、肉桂類全程避用。完整避用清單＋可用清單＋6 條 FAQ。",
+      "canonical": "https://intelliverse.tw/article-pregnancy/",
+      "robots": "index, follow"
+    },
+    "/article-scented-candle/": {
+      "title": "香氛蠟燭完整指南｜成分解析、正確使用與挑選教學 | 精油能量圖譜",
+      "description": "香氛蠟燭怎麼用才對？本文從大豆蠟、蜂蠟、石蠟、椰子蠟四大蠟材比較，談到精油與香精的香味差別、第一次點燃的記憶圈、燭芯修剪與單次燃燒時間，並回答蠟油要不要倒掉、香氛蠟燭要不要開窗等常見疑問，最後附上誠實的挑選教學與 DIY 精油香氛蠟燭入門，一篇讀懂香氛蠟燭的使用與保養。",
+      "canonical": "https://intelliverse.tw/article-scented-candle/",
+      "robots": "index, follow"
+    },
+    "/article-sleep/": {
+      "title": "精油助眠完整指南：4款黃金配方讓你一覺到天亮 | 精油能量圖譜",
+      "description": "睡眠問題困擾現代人？本文整理4款科學佐證的助眠精油配方，從枕頭噴霧、泡浴到擴香，幫助你用芳療改善失眠。",
+      "canonical": "https://intelliverse.tw/article-sleep/",
+      "robots": "index, follow"
+    },
+    "/article-spiritual-aromatherapy/": {
+      "title": "心靈芳療完整指南｜七脈輪、情緒、冥想、塔羅、星座精油對應 | 精油能量圖譜",
+      "description": "心靈芳療把精油視為連結身心靈的工具。完整對照 7 個脈輪對應精油、6 種基本情緒選方、5 種冥想配方、塔羅大牌精油、12 星座氣質、能量空間淨化方法。本文為心靈／信仰／文化傳統整理，非醫療建議，個人感受因人而異。",
+      "canonical": "https://intelliverse.tw/article-spiritual-aromatherapy/",
+      "robots": "index, follow"
+    },
+    "/article-stress/": {
+      "title": "現代人的壓力急救包：12款精油紓壓配方全攻略 | 精油能量圖譜",
+      "description": "針對不同壓力類型，提供12款精油紓壓配方，從認知型、身體型到情緒型壓力，用芳療對症下藥。",
+      "canonical": "https://intelliverse.tw/article-stress/",
+      "robots": "index, follow"
+    },
+    "/article-tarot-basics/": {
+      "title": "塔羅牌解讀入門：78 張牌意義、22 張大牌正逆位速查與新手牌陣教學｜塔羅牌入門 | 精油能量圖譜",
+      "description": "塔羅牌解讀入門完整指南：一次看懂 78 張牌結構（22 張大阿爾克那＋56 張小阿爾克那）、15 世紀義大利源流與韋特塔羅，附 22 張大牌正逆位速查表、四元素小牌家族、單張日抽與三張牌陣教學，並用心理學的投射與巴納姆效應誠實定位塔羅，搭配乳香、檀香的抽牌前靜心香氛。屬心靈文化視角，非科學事實。",
+      "canonical": "https://intelliverse.tw/article-tarot-basics/",
+      "robots": "index, follow"
+    },
+    "/article-tcm-aromatherapy/": {
+      "title": "中醫芳療完整指南｜十二經絡、五行、寒熱屬性與精油對應表 | 精油能量圖譜",
+      "description": "中醫芳療把精油看成「能量」而不只是「化學分子」。從十二經絡歸經、五行（金木水火土）對應、寒熱屬性、體質類型到常見不適配方，一篇完整看懂中醫芳療思維。本文為研究文獻整理，非醫療建議，個別狀況請諮詢中醫師。",
+      "canonical": "https://intelliverse.tw/article-tcm-aromatherapy/",
+      "robots": "index, follow"
+    },
+    "/article-woody-fragrance/": {
+      "title": "木質調香水入門｜木質調精油挑選、前中後調與 DIY 配方 | 精油能量圖譜",
+      "description": "木質調香水散發沉穩溫暖的大地氣息，來自檀香、雪松、絲柏、岩蘭草、廣藿香與沒藥等木質調精油。本篇木質香調入門完整介紹香氣輪裡的木質家族、六款代表精油的香氣特徵、木質調在前中後調中多擔任定香的角色，並附上 DIY 木質調香氛的比例與示範配方，教你依情境、季節與膚質挑選專屬的木質調香水。",
+      "canonical": "https://intelliverse.tw/article-woody-fragrance/",
+      "robots": "index, follow"
+    },
+    "/author-yuling/": {
+      "title": "關於作者｜玉玲（IFA 國際芳療師）| 精油能量圖譜",
+      "description": "玉玲，IFA 國際芳療師協會認證、英國 IFPA 進階課程結業、台中建築設計背景、化妝品電商 8 年實務經驗。靈境智造 Intelliverse Studio 主理人,整合 30 年芳療專業與設計思維。",
+      "canonical": "https://intelliverse.tw/author-yuling/",
+      "robots": "noindex, follow"
+    },
+    "/blend/": {
+      "title": "調配精油｜依感覺與環境一鍵生成精油配方 | 精油能量圖譜",
+      "description": "依你的感覺或環境一鍵生成精油配方，或用自訂計算器自己選精油調配。內建調香金字塔（前中後調）平衡分析、基底油用量換算、光敏／孕婦／幼兒／貓安全旗標，46 支精油即點即連完整指南。",
+      "canonical": "https://intelliverse.tw/blend/",
+      "robots": "index, follow"
+    },
+    "/compounds-01/": {
+      "title": "單萜酮類(I) — 化學分類圖鑑 | 精油能量圖譜",
+      "description": "單萜酮類精油化學分類圖鑑：含酮類成分的精油完整介紹，包括側柏酮、樟腦、薄荷酮等重要化學成分。",
+      "canonical": "https://intelliverse.tw/compounds-01/",
+      "robots": "index, follow"
+    },
+    "/compounds-02/": {
+      "title": "香豆素與內酯類 — 化學分類圖鑑 | 精油能量圖譜",
+      "description": "香豆素與內酯類精油化學分類圖鑑：含呋喃香豆素、內酯等成分的精油完整介紹，包括光敏性成分與安全使用指南。",
+      "canonical": "https://intelliverse.tw/compounds-02/",
+      "robots": "index, follow"
+    },
+    "/compounds-03/": {
+      "title": "氧化物類精油 | 精油能量圖譜",
+      "description": "氧化物類精油完整圖鑑：芳樟葉、尤加利、白千層、迷迭香等 21 種精油的化學成分、功效與安全資訊。",
+      "canonical": "https://intelliverse.tw/compounds-03/",
+      "robots": "index, follow"
+    },
+    "/compounds-04/": {
+      "title": "倍半萜烯類精油 | 精油能量圖譜",
+      "description": "倍半萜烯類精油完整圖鑑：西洋蓍草、依蘭、沒藥、德國洋甘菊、薑等 29 種精油的化學成分、功效與安全資訊。",
+      "canonical": "https://intelliverse.tw/compounds-04/",
+      "robots": "index, follow"
+    },
+    "/compounds-05/": {
+      "title": "醛類精油化學分子索引 (V) | 精油能量圖譜",
+      "description": "醛類精油完整圖鑑：菖蒲、龍艾、茴香、肉豆蔻、粉紅蓮花、熱帶羅勒等 16 種精油的化學成分、功效與安全資訊。",
+      "canonical": "https://intelliverse.tw/compounds-05/",
+      "robots": "index, follow"
+    },
+    "/compounds-06/": {
+      "title": "酯類精油化學分子索引 (VI) | 精油能量圖譜",
+      "description": "酯類精油完整圖鑑：檸檬香桃木、檸檬香茅、山雞椒、香蜂草、檸檬馬鞭草等 15 種富含檸檬醛（Citral）的精油資訊。",
+      "canonical": "https://intelliverse.tw/compounds-06/",
+      "robots": "index, follow"
+    },
+    "/compounds-07a/": {
+      "title": "酯類精油化學分子索引 (VII-1) | 精油能量圖譜",
+      "description": "酯類精油完整圖鑑：同密助、羅馬洋甘菊、墨西哥沉香、苦橙葉、佛手柑、小飛蓬等 17 種酯類精油的化學成分、功效與安全資訊。",
+      "canonical": "https://intelliverse.tw/compounds-07a/",
+      "robots": "index, follow"
+    },
+    "/compounds-07b/": {
+      "title": "苯基酯類精油化學分子索引 (VII-2) | 精油能量圖譜",
+      "description": "苯基酯類精油完整圖鑑：銀合歡、大高良薑、波羅尼花、大花茉莉、小花茉莉、白玉蘭、秘魯香脂、晚香玉、五月玫瑰等 19 種苯基酯類精油。",
+      "canonical": "https://intelliverse.tw/compounds-07b/",
+      "robots": "index, follow"
+    },
+    "/compounds-07c/": {
+      "title": "芳香醛與芳香酯類精油化學分子索引 (VII-3) | 精油能量圖譜",
+      "description": "芳香醛與芳香酯類精油化學分子索引：蘇門答臘安息香、暹羅安息香、香草 — 富含安息香酸酯與香草醛的溫暖樹脂類精油。",
+      "canonical": "https://intelliverse.tw/compounds-07c/",
+      "robots": "index, follow"
+    },
+    "/compounds-08/": {
+      "title": "倍半萜酮類精油化學分子索引 (Page VIII) | 精油能量圖譜",
+      "description": "倍半萜酮類精油完整圖鑑：大西洋雪松、薑黃、義大利永久花、松紅梅等 16 支精油的化學成分、功效與安全提示。",
+      "canonical": "https://intelliverse.tw/compounds-08/",
+      "robots": "index, follow"
+    },
+    "/compounds-09/": {
+      "title": "單萜醇類精油化學分子索引 (Page IX) | 精油能量圖譜",
+      "description": "單萜醇類精油完整圖鑑：茶樹、天竺葵、玫瑰草、大馬士革玫瑰等 28 支精油的化學成分、功效與安全提示。",
+      "canonical": "https://intelliverse.tw/compounds-09/",
+      "robots": "index, follow"
+    },
+    "/compounds-10/": {
+      "title": "Page X 酚與芳香醛類 | 精油能量圖譜",
+      "description": "酚與芳香醛類精油完整圖鑑：中國肉桂、錫蘭肉桂、丁香花苞、野馬郁蘭、百里酚百里香等 22 支精油的化學成分、功效與安全指南。",
+      "canonical": "https://intelliverse.tw/compounds-10/",
+      "robots": "index, follow"
+    },
+    "/compounds-11/": {
+      "title": "Page XI 倍半萜醇類 | 精油能量圖譜",
+      "description": "倍半萜醇類精油完整圖鑑：檀香、廣藿香、岩蘭草、沉香、胡蘿蔔籽等 23 支精油的化學成分、功效與安全指南。",
+      "canonical": "https://intelliverse.tw/compounds-11/",
+      "robots": "index, follow"
+    },
+    "/compounds-12/": {
+      "title": "單萜烯類 (XII) — 精油化學成分圖鑑 | 精油能量圖譜",
+      "description": "單萜烯類是精油中最常見的成分類別，主要存在於柑橘類、針葉類與樹脂類精油中。收錄 50 種代表精油的化學組成、功效與安全資訊。",
+      "canonical": "https://intelliverse.tw/compounds-12/",
+      "robots": "index, follow"
+    },
+    "/contact/": {
+      "title": "聯絡我們 | 精油能量圖譜",
+      "description": "聯絡精油能量圖譜 / 靈境智造 Intelliverse Studio — 合作洽詢、內容指正、授權申請請來信 linsonder6@gmail.com。",
+      "canonical": "https://intelliverse.tw/contact/",
+      "robots": "index, follow"
+    },
+    "/disclaimer/": {
+      "title": "免責聲明 | 精油能量圖譜",
+      "description": "精油能量圖譜的內容為教育性知識整理，不構成醫療、診斷或治療建議。精油使用前請諮詢合格芳療師、醫師或藥師。",
+      "canonical": "https://intelliverse.tw/disclaimer/",
+      "robots": "index, follow"
+    },
+    "/encyclopedia/": {
+      "title": "大百科 — 精油知識完整指南 | 精油能量圖譜",
+      "description": "精油化學族群、萃取方式、調香前中後調、全球產區——建立完整精油知識體系的百科參考頁。",
+      "canonical": "https://intelliverse.tw/encyclopedia/",
+      "robots": "index, follow"
+    },
+    "/": {
+      "title": "精油能量圖譜｜中文精油百科、芳療應用與安全指南",
+      "description": "精油能量圖譜：400+ 種精油的化學分類、植物來源、芳療應用與安全使用。涵蓋薰衣草、茶樹、尤加利、薄荷、乳香等常見精油，從產地到用法，完整、正確、易懂的精油知識站。",
+      "canonical": "https://intelliverse.tw/",
+      "robots": "index, follow"
+    },
+    "/numerology/": {
+      "title": "生命靈數計算機｜免費算主命數＋1-9號人解析、配對與九宮格 | 精油能量圖譜",
+      "description": "輸入西元生日，免費計算你的生命靈數主命數、九宮格連線與空缺數，並附 1-9 號人完整性格解析、生命靈數配對速配表與對應精油方向。源自畢達哥拉斯占數，結合芳香療法的自我探索工具。",
+      "canonical": "https://intelliverse.tw/numerology/",
+      "robots": "index, follow"
+    },
+    "/numerology-vs-fortune-telling/": {
+      "title": "算命 vs 生命靈數對照表 | 精油能量圖譜",
+      "description": "東方命理（八字、紫微）vs 生命靈數：一個看時機運勢節奏，一個看性格天賦本質。七大面向逐項對照，幫你看懂兩套了解自己的系統有何不同。",
+      "canonical": "https://intelliverse.tw/numerology-vs-fortune-telling/",
+      "robots": "index, follow"
+    },
+    "/oil/100/": {
+      "title": "台灣紅檜精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "台灣紅檜（Chamaecyparis formosensis）：倍半萜烯類精油。主要成分 α-杜松醇、柏木醇、δ-杜松烯。常見芳療應用：清新淨化防蟲、安神鎮靜、空氣淨化、清新淨化、提振精神。萃取自木材蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/100/",
+      "robots": "index, follow"
+    },
+    "/oil/101/": {
+      "title": "日本扁柏精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "日本扁柏（Chamaecyparis obtusa）：倍半萜烯類精油。主要成分 α-杜松醇、δ-杜松烯、扁柏醇。常見芳療應用：清新淨化消臭、安眠鎮靜、森林浴效果、清新淨化、放鬆。萃取自木材蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/101/",
+      "robots": "index, follow"
+    },
+    "/oil/102/": {
+      "title": "沒藥精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "沒藥（Commiphora myrrha）：倍半萜烯類精油。主要成分 呋喃桉烷二烯、呋喃桉烷二烯酮、β-欖香烯。常見芳療應用：肌膚修護感、抗不適、口腔保健、舒緩、安撫情緒。萃取自樹脂蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-myrrh/",
+      "robots": "index, follow"
+    },
+    "/oil/103/": {
+      "title": "紅沒藥精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "紅沒藥（Commiphora guidottii）：倍半萜烯類精油。主要成分 α-紅沒藥醇、β-紅沒藥醇、倍半萜烯類。常見芳療應用：皮膚修復、舒緩、清新淨化、肌膚修護感、抗老化。萃取自樹脂蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/103/",
+      "robots": "index, follow"
+    },
+    "/oil/104/": {
+      "title": "古巴香脂精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "古巴香脂（Copaifera officinalis）：倍半萜烯類精油。主要成分 β-丁香油烴（40-70%）、α-古巴烯、δ-杜松烯。常見芳療應用：強效舒緩、放鬆、肌膚修護感、泌尿道保健、日常保養研究。萃取自樹脂蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/104/",
+      "robots": "index, follow"
+    },
+    "/oil/105/": {
+      "title": "馬鞭草破布子精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "馬鞭草破布子（Cordia verbenacea）：倍半萜烯類精油。主要成分 α-葎草烯、β-丁香油烴、大根老鸛草烯。常見芳療應用：強效舒緩、放鬆、溫暖舒緩、肌肉舒緩、關節保健。萃取自葉片蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/105/",
+      "robots": "index, follow"
+    },
+    "/oil/106/": {
+      "title": "香脂木精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "香脂木（Dacrydium fonkii）：倍半萜烯類精油。主要成分 δ-杜松烯、α-杜松醇、倍半萜烯類。常見芳療應用：安神鎮靜、防蟲、木質芳香、空氣清新淨化。萃取自木材蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/106/",
+      "robots": "index, follow"
+    },
+    "/oil/107/": {
+      "title": "古芸香脂精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "古芸香脂（Bulnesia sarmientoi）：倍半萜烯類精油。主要成分 癒創木醇、癒創木薁、α-癒創木烯。常見芳療應用：深度放鬆、舒緩、清新淨化、冥想靜心、皮膚修護。萃取自心材蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/107/",
+      "robots": "index, follow"
+    },
+    "/oil/108/": {
+      "title": "德國洋甘菊精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "德國洋甘菊（Matricaria chamomilla）：倍半萜烯類精油。主要成分 母菊天藍烴、α-紅沒藥醇氧化物、紅沒藥醇。常見芳療應用：強效舒緩、抗過敏、鎮靜安撫、皮膚修護、消化調理。萃取自花朵蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-german-chamomile/",
+      "robots": "index, follow"
+    },
+    "/oil/109/": {
+      "title": "蛇麻草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "蛇麻草（Humulus lupulus）：倍半萜烯類精油。主要成分 β-丁香油烴、α-葎草烯、β-月桂烯。常見芳療應用：鎮靜助眠、抗焦慮、消化促進、清新淨化、荷爾蒙調節。萃取自毬果蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/109/",
+      "robots": "index, follow"
+    },
+    "/oil/110/": {
+      "title": "聖約翰草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "聖約翰草（Hypericum perforatum）：倍半萜烯類精油。主要成分 β-丁香油烴、大根老鸛草烯、α-蒎烯。常見芳療應用：情緒放鬆、神經修復、放鬆、肌膚修護感、清新淨化。萃取自開花頂部蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/110/",
+      "robots": "index, follow"
+    },
+    "/oil/111/": {
+      "title": "刺檜木精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "刺檜木（Juniperus oxycedrus）：倍半萜烯類精油。主要成分 δ-杜松烯、α-杜松醇、β-丁香油烴。常見芳療應用：皮膚問題（濕疹、牛皮癬）、清新淨化、肌膚舒緩、頭皮護理、淨化清爽。萃取自木材與果實蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/111/",
+      "robots": "index, follow"
+    },
+    "/oil/112/": {
+      "title": "維吉尼亞雪松精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "維吉尼亞雪松（Juniperus virginiana）：倍半萜烯類精油。主要成分 α-柏木烯、側柏烯、雪松醇。常見芳療應用：淋巴淨化清爽、靜脈曲張、安神助眠、驅蟲、皮膚收斂。萃取自木材蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/112/",
+      "robots": "index, follow"
+    },
+    "/oil/113/": {
+      "title": "穗甘松精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "穗甘松（Nardostachys jatamansi）：倍半萜烯類精油。主要成分 廣藿香醇、α-廣藿香烯、β-癒創木烯、纈草酮。常見芳療應用：深度鎮靜、失眠改善、心靈平靜、皮膚再生、舒緩。萃取自根部蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/113/",
+      "robots": "index, follow"
+    },
+    "/oil/114/": {
+      "title": "中國甘松精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "中國甘松（Nardostachys chinensis）：倍半萜烯類精油。主要成分 廣藿香醇、甘松酮、β-癒創木烯。常見芳療應用：安神定志、助眠、抗焦慮、消化調理、皮膚修護。萃取自根部蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/114/",
+      "robots": "index, follow"
+    },
+    "/oil/115/": {
+      "title": "番石榴葉精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "番石榴葉（Psidium guajava）：倍半萜烯類精油。主要成分 β-丁香油烴、α-葎草烯、1,8-桉油醇。常見芳療應用：清新淨化、抗氧化、舒緩、血糖調節、止瀉。萃取自葉片蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/115/",
+      "robots": "index, follow"
+    },
+    "/oil/116/": {
+      "title": "五味子精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "五味子（Schisandra chinensis）：倍半萜烯類精油。主要成分 β-葎草烯、依蘭油烯、β-丁香油烴。常見芳療應用：肝臟保護、抗氧化、增強體力、安神寧心、日常保養。萃取自果實蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/116/",
+      "robots": "index, follow"
+    },
+    "/oil/117/": {
+      "title": "一枝黃花精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "一枝黃花（Solidago canadensis）：倍半萜烯類精油。主要成分 大根老鸛草烯、α-蒎烯、β-蒎烯、檸檬烯。常見芳療應用：肝臟淨化清爽、泌尿道保健、循環暢快、舒緩、血壓調節。萃取自開花全草蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/117/",
+      "robots": "index, follow"
+    },
+    "/oil/118/": {
+      "title": "摩洛哥藍艾菊精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "摩洛哥藍艾菊（Tanacetum annuum）：倍半萜烯類精油。主要成分 母菊天藍烴、沙賓烯、β-月桂烯。常見芳療應用：強效抗過敏、抗組織胺、舒緩、皮膚修護、肌膚舒緩。萃取自開花全草蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/118/",
+      "robots": "index, follow"
+    },
+    "/oil/119/": {
+      "title": "印度香附草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "印度香附草（Cyperus scariosus）：倍半萜烯類精油。主要成分 莎草酮、α-莎草醇、β-莎草烯。常見芳療應用：安撫情緒、鎮靜安神、舒緩、消化調理、肌膚保養。萃取自根莖蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/119/",
+      "robots": "index, follow"
+    },
+    "/oil/120/": {
+      "title": "薑精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "薑（Zingiber officinale）：倍半萜烯類精油。主要成分 α-薑黃烯、β-倍半水芹烯、α-薑烯、薑醇。常見芳療應用：溫暖循環、止嘔、消化促進、肌肉放鬆、舒緩。萃取自根莖蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-ginger/",
+      "robots": "index, follow"
+    },
+    "/oil/122/": {
+      "title": "菖蒲精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "菖蒲（Acorus calamus）：醛類精油。主要成分 β-細辛醚 (69-96%)、α-細辛醚、菖蒲酮、菖蒲萜烯、芹子烯。常見芳療應用：助消化、解痙攣、清新淨化、抑制真菌、降溫清涼舒適、平喘、抗血栓、放鬆；傳統用於護理中樞神經系統疾病、。萃取自根莖，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/122/",
+      "robots": "index, follow"
+    },
+    "/oil/123/": {
+      "title": "龍艾精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "龍艾（Artemisia dracunculus）：醛類精油。主要成分 甲基醚蒔蘿腦 / 草蒿腦 (Estragole, 73-82%)。常見芳療應用：助消化、放鬆、舒緩、清涼舒適、清新淨化、日常保養、保肝、降血糖、甲狀腺調節。萃取自全株地上部分，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/123/",
+      "robots": "index, follow"
+    },
+    "/oil/124/": {
+      "title": "茴香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "茴香（Foeniculum vulgare）：醛類精油。主要成分 反式茴香腦 (trans-Anethole, 68-88%)。常見芳療應用：促進消化、清新淨化、抗氧化、舒緩、類雌激素作用、循環暢快、呼吸清新。萃取自種子，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-sweet-fennel/",
+      "robots": "index, follow"
+    },
+    "/oil/125/": {
+      "title": "金合歡茶樹精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "金合歡茶樹（Melaleuca decora）：醛類精油。主要成分 甲基丁香酚 (Methyl eugenol, 92.4%)。常見芳療應用：清新淨化、放鬆、局部麻醉、驅蟲；以苯丙烯類為主的獨特 Melaleuca 精油。萃取自嫩枝葉，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/125/",
+      "robots": "index, follow"
+    },
+    "/oil/126/": {
+      "title": "鹹亞茶樹精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "鹹亞茶樹（Melaleuca cajuputi）：醛類精油。主要成分 1,8-桉油醇 (1,8-Cineole, 42-65%)。常見芳療應用：強效清新淨化、呼吸道暢通、緩解肌肉酸痛、免疫支持、驅蟲。萃取自葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/126/",
+      "robots": "index, follow"
+    },
+    "/oil/127/": {
+      "title": "肉豆蔻精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "肉豆蔻（Myristica fragrans）：醛類精油。主要成分 莎賓烯 (Sabinene, 29%)、α-蒎烯 (10%)。常見芳療應用：暖身循環暢快、緩解肌肉關節痛、助消化、清新淨化、放鬆、抗氧化；傳統阿育吠陀用藥。萃取自種子（核仁），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/127/",
+      "robots": "index, follow"
+    },
+    "/oil/128/": {
+      "title": "粉紅蓮花精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "粉紅蓮花（Nelumbo nucifera）：醛類精油。主要成分 沉香醇 (Linalool)、β-石竹烯、α-松油醇。常見芳療應用：深度鎮靜安神、抗焦慮、舒緩、安撫放鬆、皮膚修復、冥想輔助；荷葉鹼為多巴胺受體促效劑。萃取自花朵（溶劑萃取原精），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/128/",
+      "robots": "index, follow"
+    },
+    "/oil/129/": {
+      "title": "熱帶羅勒精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "熱帶羅勒（Ocimum basilicum ct. methyl chavicol）：醛類精油。主要成分 甲基醚蒔蘿腦 / 草蒿腦。常見芳療應用：強效安撫放鬆、消化調理、清新淨化、放鬆、舒緩、肌肉放鬆；適用於腸胃脹氣與經期不適。萃取自開花全株，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/129/",
+      "robots": "index, follow"
+    },
+    "/oil/130/": {
+      "title": "露兜花精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "露兜花（Pandanus odorifer）：醛類精油。主要成分 苯乙基甲醚。常見芳療應用：鎮靜安神、抗焦慮、清新淨化、浪漫氛圍、頭痛緩解；傳統阿育吠陀藥材，廣泛用於香料與香水工業。萃取自雄花，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/130/",
+      "robots": "index, follow"
+    },
+    "/oil/131/": {
+      "title": "歐白芷精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "歐白芷（Angelica archangelica）：醛類精油。主要成分 α-蒎烯 (21-30%)、δ-3-蒈烯 (14-17%)。常見芳療應用：促進消化、日常保養、呼吸清新淨化、抗焦慮、循環按摩；傳統歐洲草藥。萃取自根部，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/131/",
+      "robots": "index, follow"
+    },
+    "/oil/132/": {
+      "title": "平葉歐芹精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "平葉歐芹（Petroselinum crispum）：醛類精油。主要成分 芹菜腦 (Apiole, 30-62%)。常見芳療應用：循環暢快淨化清爽、促進消化、抗氧化、清新淨化、經期前後香氛陪伴循環暢快、緩解經期不適；傳統用於腎臟保。萃取自種子或葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/132/",
+      "robots": "index, follow"
+    },
+    "/oil/133/": {
+      "title": "洋茴香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "洋茴香（Pimpinella anisum）：醛類精油。主要成分 反式茴香腦 (trans-Anethole, 87-97%)。常見芳療應用：促進消化、安撫放鬆、呼吸清新呼吸放鬆、清新淨化、催乳、類雌激素作用、鎮靜助眠。萃取自種子，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/133/",
+      "robots": "index, follow"
+    },
+    "/oil/134/": {
+      "title": "西部黃松精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "西部黃松（Pinus ponderosa）：醛類精油。主要成分 β-蒎烯 (21-55%)。常見芳療應用：呼吸道暢通、呼吸清新解鬱、肌肉舒緩放鬆、清新淨化、抗氧化；原住民傳統用於維生素 C 補充。萃取自針葉，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/134/",
+      "robots": "index, follow"
+    },
+    "/oil/135/": {
+      "title": "洋茴香蘿文莎葉精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "洋茴香蘿文莎葉（Ravensara anisata）：醛類精油。主要成分 甲基醚蒔蘿腦。常見芳療應用：消化調理、安撫放鬆、清新淨化；產於馬達加斯加的特有種精油。萃取自樹皮或葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/135/",
+      "robots": "index, follow"
+    },
+    "/oil/136/": {
+      "title": "防風精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "防風（Saposhnikovia divaricata）：醛類精油。主要成分 α-松油醇乙酸酯。常見芳療應用：促進消化、循環暢快淨化清爽、祛風放鬆、抗氧化、清新淨化；歐洲傳統草藥，用於關節炎與水腫。萃取自根部或葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/136/",
+      "robots": "index, follow"
+    },
+    "/oil/137/": {
+      "title": "甜萬壽菊精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "甜萬壽菊（Tagetes lucida）：醛類精油。主要成分 草蒿腦。常見芳療應用：消化調理、安撫放鬆、抗氧化、舒緩、清新淨化；墨西哥傳統藥用植物（Pericón），可替代龍艾使用。萃取自開花全株地上部分，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/137/",
+      "robots": "index, follow"
+    },
+    "/oil/139/": {
+      "title": "檸檬香桃木精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "檸檬香桃木（Backhousia citriodora）：酯類精油。主要成分 牻牛兒醛 (Geranial, 52%)。常見芳療應用：強效清新淨化、抗氧化、抗生物膜；檸檬醛含量為所有精油之冠（超越檸檬香茅）。萃取自葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/139/",
+      "robots": "index, follow"
+    },
+    "/oil/140/": {
+      "title": "泰國青檸葉精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "泰國青檸葉（Citrus hystrix）：酯類精油。主要成分 L-香茅醛 (L-Citronellal, 58-81%)。常見芳療應用：清新淨化（對呼吸道病原菌效果顯著）、抗氧化、抗白血病細胞、鎮咳、驅蟲；東南亞傳統藥用與烹飪植物。萃取自葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/140/",
+      "robots": "index, follow"
+    },
+    "/oil/141/": {
+      "title": "檸檬葉精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "檸檬葉（Citrus limon (Petitgrain)）：酯類精油。主要成分 檸檬烯 (Limonene)、牻牛兒醛 (Geranial)。常見芳療應用：清新淨化、抗氧化、鎮靜放鬆、提振精神、空氣淨化、日常保養細胞活性（體外研究）。萃取自葉片與嫩枝，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/141/",
+      "robots": "index, follow"
+    },
+    "/oil/142/": {
+      "title": "檸檬香茅精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "檸檬香茅（Cymbopogon citratus）：酯類精油。主要成分 檸檬醛。常見芳療應用：強效清新淨化、日常保養、抗氧化、舒緩、驅蟲；GRAS 認證安全食品添加物。萃取自全株草葉，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/142/",
+      "robots": "index, follow"
+    },
+    "/oil/143/": {
+      "title": "爪哇香茅精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "爪哇香茅（Cymbopogon winterianus）：酯類精油。主要成分 香茅醛 (Citronellal, 30-55%)。常見芳療應用：驅蚊驅蟲（天然植物性防蚊）、清新淨化、舒緩、除臭、提振精神；香料與日化工業重要原料。萃取自全株草葉，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-citronella/",
+      "robots": "index, follow"
+    },
+    "/oil/144/": {
+      "title": "檸檬尤加利精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "檸檬尤加利（Corymbia citriodora）：酯類精油。主要成分 香茅醛 (Citronellal, 56-80%)。常見芳療應用：驅蚊防蟲（WHO 認可有效成分 PMD）、清新淨化、舒緩放鬆、清涼舒適；與一般尤加利不同，桉油醇含量。萃取自葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-lemon-eucalyptus/",
+      "robots": "index, follow"
+    },
+    "/oil/145/": {
+      "title": "史密斯尤加利精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "史密斯尤加利（Eucalyptus smithii）：酯類精油。主要成分 1,8-桉油醇。常見芳療應用：呼吸道暢通、呼吸清新淨化、肌肉舒緩；所有尤加利品種中最溫和的一種。萃取自葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/145/",
+      "robots": "index, follow"
+    },
+    "/oil/146/": {
+      "title": "檸檬細籽精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "檸檬細籽（Leptospermum petersonii）：酯類精油。主要成分 檸檬醛。常見芳療應用：清新淨化、防腐清新淨化、驅蚊驅蟲；澳洲原生檸檬茶樹，高檸檬醛含量。萃取自葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/146/",
+      "robots": "index, follow"
+    },
+    "/oil/147/": {
+      "title": "檸檬馬鞭草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "檸檬馬鞭草（Aloysia citrodora）：酯類精油。主要成分 牻牛兒醛 (Geranial, 19-29%)。常見芳療應用：鎮靜安神、抗焦慮、助眠、舒緩、抗氧化、促進消化、抗增殖（體外研究）；被譽為「精油中的香檳」。萃取自葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/147/",
+      "robots": "index, follow"
+    },
+    "/oil/148/": {
+      "title": "山雞椒精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "山雞椒（Litsea cubeba）：酯類精油。主要成分 檸檬醛。常見芳療應用：清新淨化、舒緩、提振精神、情緒放鬆、促進消化、驅蟲；中國傳統藥材「山蒼子」。萃取自果實，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/148/",
+      "robots": "index, follow"
+    },
+    "/oil/149/": {
+      "title": "蜂蜜香桃木精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "蜂蜜香桃木（Melaleuca teretifolia）：酯類精油。主要成分 檸檬醛 (Citral = Neral + Geranial)。常見芳療應用：清新淨化、舒緩、鎮靜放鬆、皮膚保養；Melaleuca 家族中檸檬醛含量最高的品種。萃取自花朵、葉片與嫩枝，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/149/",
+      "robots": "index, follow"
+    },
+    "/oil/150/": {
+      "title": "香蜂草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "香蜂草（Melissa officinalis）：酯類精油。主要成分 香茅醛 (Citronellal, ~10%)。常見芳療應用：鎮靜安神、抗焦慮、助眠、清新淨化（尤其針對唇疱疹病毒 HSV）、放鬆、促進消化、抗氧化。萃取自開花全株地上部分，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-melissa/",
+      "robots": "index, follow"
+    },
+    "/oil/151/": {
+      "title": "檸檬桉粉精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "檸檬桉粉（Eucalyptus staigeriana）：酯類精油。主要成分 檸檬烯 (Limonene, 7-32%)。常見芳療應用：抗不適、清新淨化、防腐清新淨化、呼吸清新、舒緩、促進消化；帶有果香檸檬與迷迭香氣息的獨特尤加利。萃取自葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/151/",
+      "robots": "index, follow"
+    },
+    "/oil/152/": {
+      "title": "紫蘇精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "紫蘇（Perilla frutescens）：酯類精油。主要成分 紫蘇醛 (Perillaldehyde, 50-60%) 或紫蘇酮。常見芳療應用：抗氧化、清新淨化、舒緩、日常保養、情緒放鬆、鎮靜助眠、食品防腐（解魚蟹毒）；東亞傳統藥食兩用植物。萃取自葉片與全株地上部分，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/152/",
+      "robots": "index, follow"
+    },
+    "/oil/153/": {
+      "title": "馬魯科精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "馬魯科（Aeollanthus suaveolens）：酯類精油。主要成分 沉香醇 (Linalool, 31-49%)。常見芳療應用：抗氧化、細胞毒性（日常保養潛力）、清新淨化、鎮靜安神、抗癲癇；亞馬遜傳統民間草藥（catinga d。萃取自全株地上部分，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/153/",
+      "robots": "index, follow"
+    },
+    "/oil/156/": {
+      "title": "零陵香豆精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "零陵香豆（Dipteryx odorata）：酯類精油。主要成分 香豆素 (60~90%)、肉桂酸衍生物、香草醛、苯甲醛。常見芳療應用：鎮靜安撫放鬆、淋巴引流、舒緩呼吸道、增添溫暖香氣基調。萃取自種子（豆莢），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/156/",
+      "robots": "index, follow"
+    },
+    "/oil/157/": {
+      "title": "羅馬洋甘菊精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "羅馬洋甘菊（Chamaemelum nobile）：酯類精油。主要成分 當歸酸異丁酯 (13~36%)、當歸酸異戊酯 (8~30%)。常見芳療應用：強效安撫放鬆、鎮靜神經、助眠、舒緩、緩解消化不適、安撫情緒躁動。萃取自花朵（蒸餾），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-roman-chamomile/",
+      "robots": "index, follow"
+    },
+    "/oil/158/": {
+      "title": "墨西哥沉香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "墨西哥沉香（Bursera delpechiana）：酯類精油。主要成分 沉香醇 (30~50%)、乙酸沉香酯 (20~40%)、乙酸香葉酯。常見芳療應用：抗焦慮、鎮靜放鬆、清新淨化、皮膚修護、調理油性肌膚。萃取自木材，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/158/",
+      "robots": "index, follow"
+    },
+    "/oil/159/": {
+      "title": "苦橙葉精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "苦橙葉（Citrus aurantium (leaves)）：酯類精油。主要成分 乙酸沉香酯 (47~58%)、沉香醇 (20~25%)。常見芳療應用：安撫放鬆、鎮靜安眠、平衡自律神經、緩解焦慮與恐慌、皮膚再生。萃取自葉片（蒸餾），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-petitgrain/",
+      "robots": "index, follow"
+    },
+    "/oil/160/": {
+      "title": "佛手柑精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "佛手柑（Citrus bergamia）：酯類精油。主要成分 檸烯 (37%)、乙酸沉香酯 (24~35%)。常見芳療應用：情緒放鬆、提振情緒、舒緩放鬆、清新淨化、助消化、平衡皮脂。萃取自果皮（冷壓），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-bergamot/",
+      "robots": "index, follow"
+    },
+    "/oil/161/": {
+      "title": "小飛蓬精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "小飛蓬（Erigeron canadensis）：酯類精油。主要成分 D-檸烯 (68%)、母菊酯 (4.5%)。常見芳療應用：舒緩、緊緻、循環暢快、驅蚊蟲、肌膚修護感、收斂。萃取自全草（蒸餾），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/161/",
+      "robots": "index, follow"
+    },
+    "/oil/162/": {
+      "title": "崗松精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "崗松（Baeckea frutescens）：酯類精油。主要成分 α-蒎烯、β-蒎烯 (約60%)、檸烯、1,8-桉油醇 (7%)。常見芳療應用：清新淨化、舒緩、抗氧化、驅蚊蟲、皮膚保護、舒緩風濕痠痛。萃取自枝葉（蒸餾），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/162/",
+      "robots": "index, follow"
+    },
+    "/oil/163/": {
+      "title": "玫瑰尤加利精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "玫瑰尤加利（Eucalyptus rhodantha）：酯類精油。主要成分 乙酸香葉酯 (高含量)、香葉醇、1,8-桉油醇、α-蒎烯。常見芳療應用：清新淨化、舒緩呼吸道、鎮靜安撫、皮膚護理、淨化空氣。萃取自葉片（蒸餾），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/163/",
+      "robots": "index, follow"
+    },
+    "/oil/164/": {
+      "title": "黃葵精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "黃葵（Abelmoschus moschatus）：酯類精油。主要成分 乙酸法尼酯 (58%)、癸酸乙酯 (4.8%)。常見芳療應用：清新淨化、抗氧化、鎮靜、調節荷爾蒙、天然麝香替代品、皮膚潤澤。萃取自種子（蒸餾），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/164/",
+      "robots": "index, follow"
+    },
+    "/oil/165/": {
+      "title": "真正薰衣草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "真正薰衣草（Lavandula angustifolia）：酯類精油。主要成分 乙酸沉香酯 (25~47%)、沉香醇 (20~40%)、乙酸薰衣草酯。常見芳療應用：鎮靜安眠、皮膚修復、抗焦慮、舒緩放鬆、平衡情緒、萬用精油。萃取自花穗（蒸餾），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-lavender/",
+      "robots": "index, follow"
+    },
+    "/oil/166/": {
+      "title": "醒目薰衣草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "醒目薰衣草（Lavandula × intermedia）：酯類精油。主要成分 沉香醇 (24~35%)、乙酸沉香酯 (20~32%)。常見芳療應用：肌肉放鬆、舒緩放鬆、舒緩呼吸道、肌膚修護感、鎮靜但較提振。萃取自花穗（蒸餾），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-lavandin/",
+      "robots": "index, follow"
+    },
+    "/oil/167/": {
+      "title": "檸檬薄荷精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "檸檬薄荷（Mentha citrata）：酯類精油。主要成分 乙酸沉香酯 (2~45%)、沉香醇 (34~77%)、α-松油醇。常見芳療應用：鎮靜安撫放鬆、舒緩、清新淨化、助消化、舒緩壓力性頭痛。萃取自全草（蒸餾），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/167/",
+      "robots": "index, follow"
+    },
+    "/oil/168/": {
+      "title": "含笑精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "含笑（Magnolia figo）：酯類精油。主要成分 苯甲酸甲酯、乙酸苯酯、大根香葉烯 D、β-欖香烯、丁香油烯。常見芳療應用：鎮靜安神、清新淨化、改善呼吸道、舒緩焦慮、護膚亮澤、調理情緒。萃取自花朵（溶劑萃取），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/168/",
+      "robots": "index, follow"
+    },
+    "/oil/169/": {
+      "title": "紅香桃木精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "紅香桃木（Myrtus communis (ct. myrtenyl acetate)）：酯類精油。主要成分 乙酸桃金娘烯酯 (12~33%)、1,8-桉油醇 (20~43%)。常見芳療應用：呼吸清新淨化、甲狀腺調節、皮膚收斂、促進靜脈與淋巴循環。萃取自葉片與嫩枝（蒸餾），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/169/",
+      "robots": "index, follow"
+    },
+    "/oil/170/": {
+      "title": "水果鼠尾草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "水果鼠尾草（Salvia dorisiana）：酯類精油。主要成分 甲基紫蘇酸酯、沉香醇、乙酸沉香酯、1,8-桉油醇、β-丁香烯。常見芳療應用：清新淨化、提振精神、消化促進、放鬆情緒、空間淨化。萃取自全草（蒸餾），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/170/",
+      "robots": "index, follow"
+    },
+    "/oil/171/": {
+      "title": "快樂鼠尾草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "快樂鼠尾草（Salvia sclarea）：酯類精油。主要成分 乙酸沉香酯 (45~75%)、沉香醇 (10~20%)、α-松油醇。常見芳療應用：荷爾蒙平衡（類雌激素）、安撫放鬆、浪漫氛圍、情緒放鬆、緩解經期不適。萃取自花穗與葉片（蒸餾），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-clary-sage/",
+      "robots": "index, follow"
+    },
+    "/oil/172/": {
+      "title": "鷹爪豆精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "鷹爪豆（Spartium junceum）：酯類精油。主要成分 沉香醇 (26%)、十四烷酸 (23%)、樟腦 (14%)。常見芳療應用：鎮靜安撫、清新淨化、護膚保濕、舒緩肌肉緊繃、增添甜美花香基調。萃取自花朵（溶劑萃取），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/172/",
+      "robots": "index, follow"
+    },
+    "/oil/174/": {
+      "title": "銀合歡精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "銀合歡（Acacia dealbata）：苯基酯類精油。主要成分 苯乙醇、茴香酸甲酯、棕櫚酸乙酯、(Z)-十七碳-8-烯、十七烷。常見芳療應用：抗焦慮、鎮靜安撫、皮膚潤澤保濕、抗氧化、調理敏感肌膚。萃取自花朵（溶劑萃取），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/174/",
+      "robots": "index, follow"
+    },
+    "/oil/175/": {
+      "title": "大高良薑精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "大高良薑（Alpinia galanga）：苯基酯類精油。主要成分 肉桂酸甲酯、肉桂酸乙酯、1'-乙醯氧基蒟醬醋酸酯、法尼烯 (64%)。常見芳療應用：清新淨化、舒緩放鬆、促進消化、驅蟲、抗氧化、溫經散寒。萃取自根莖（蒸餾），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/175/",
+      "robots": "index, follow"
+    },
+    "/oil/176/": {
+      "title": "蘭香草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "蘭香草（Caryopteris incana）：苯基酯類精油。主要成分 草蒿腦 (24.8%)、沉香醇 (14%)。常見芳療應用：驅蟲殺蟲、清新淨化、抗氧化、舒緩、空間淨化。萃取自全草（蒸餾），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/176/",
+      "robots": "index, follow"
+    },
+    "/oil/177/": {
+      "title": "波羅尼花精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "波羅尼花（Boronia megastigma）：苯基酯類精油。主要成分 β-紫羅蘭酮、(Z)-十七碳-8-烯、乙酸十二醇酯、茉莉酮酸甲酯。常見芳療應用：情緒放鬆、鎮靜安撫、浪漫氛圍、舒緩情緒緊張、高級香水調配。萃取自花朵（溶劑萃取），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/177/",
+      "robots": "index, follow"
+    },
+    "/oil/178/": {
+      "title": "蘇剛達精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "蘇剛達（Camphora glaucescens）：苯基酯類精油。主要成分 肉桂酸甲酯 (14%)、1,8-桉油醇 (13%)。常見芳療應用：呼吸清新淨化、舒緩肌肉疼痛、帶來呼吸清新感。萃取自果實，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/178/",
+      "robots": "index, follow"
+    },
+    "/oil/179/": {
+      "title": "桔葉精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "桔葉（Citrus reticulata (leaves)）：苯基酯類精油。主要成分 鄰氨基苯甲酸二甲酯、檜烯 (42%)、γ-松油烯、沉香醇、檸烯。常見芳療應用：安撫放鬆、鎮靜安眠、舒緩焦慮、助消化、平衡神經系統。萃取自葉片（蒸餾），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/179/",
+      "robots": "index, follow"
+    },
+    "/oil/180/": {
+      "title": "沙漠花精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "沙漠花（Cistus ladanifer）：苯基酯類精油。主要成分 綠花白千層醇 (17.6%)、反式-松香芹醇 (11%)。常見芳療應用：緊緻收斂、肌膚修護感、清新淨化、日常保養、皮膚老化修護、疤痕淡化。萃取自枝葉與樹脂（蒸餾），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/180/",
+      "robots": "index, follow"
+    },
+    "/oil/181/": {
+      "title": "芳香白珠精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "芳香白珠（Gaultheria fragrantissima）：苯基酯類精油。主要成分 水楊酸甲酯 (96~99%)、α-蒎烯（微量）、月桂烯（微量）。常見芳療應用：強效舒緩放鬆、舒緩肌肉關節疼痛、溫暖舒緩、促進血液循環。萃取自葉片（蒸餾），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/181/",
+      "robots": "index, follow"
+    },
+    "/oil/182/": {
+      "title": "大花茉莉精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "大花茉莉（Jasminum grandiflorum）：苯基酯類精油。主要成分 乙酸苄酯 (20~40%)、沉香醇 (5~15%)。常見芳療應用：情緒放鬆、浪漫氛圍、荷爾蒙調節、皮膚彈性修護、子宮調理、增強自信。萃取自花朵（溶劑萃取），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-jasmine/",
+      "robots": "index, follow"
+    },
+    "/oil/183/": {
+      "title": "小花茉莉精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "小花茉莉（Jasminum sambac）：苯基酯類精油。主要成分 乙酸苄酯 (10.5%)、苯甲酸己烯酯 (7.9%)。常見芳療應用：鎮靜安神、情緒放鬆、浪漫氛圍、滋養皮膚、舒緩經期不適、提升幸福感。萃取自花朵（溶劑萃取），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/183/",
+      "robots": "index, follow"
+    },
+    "/oil/184/": {
+      "title": "蘇合香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "蘇合香（Liquidambar orientalis）：苯基酯類精油。主要成分 肉桂酸苯丙酯 (33~50%)、苯乙醇肉桂酸酯、肉桂酸苄酯。常見芳療應用：呼吸清新舒緩、提神清新淨化、舒緩呼吸道痙攣、安撫心悸。萃取自樹脂（溶劑萃取），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/184/",
+      "robots": "index, follow"
+    },
+    "/oil/185/": {
+      "title": "白玉蘭精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "白玉蘭（Magnolia × alba）：苯基酯類精油。主要成分 沉香醇 (70~73%)、α-松油醇 (6%)、苯乙醇 (2.6%)。常見芳療應用：鎮靜安神、抗焦慮、亮澤保養、清新淨化、舒緩頭痛、提升睡眠品質。萃取自花朵（蒸餾或溶劑萃取），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/185/",
+      "robots": "index, follow"
+    },
+    "/oil/186/": {
+      "title": "滇玉蘭精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "滇玉蘭（Magnolia laevifolia）：苯基酯類精油。主要成分 乙酸龍腦酯 (12.4%)、樟腦 (8.8%)。常見芳療應用：清新淨化、鎮靜安神、呼吸清新、舒緩肌肉疼痛、芳香調理。萃取自花朵或葉片（蒸餾），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/186/",
+      "robots": "index, follow"
+    },
+    "/oil/187/": {
+      "title": "秘魯香脂精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "秘魯香脂（Myroxylon balsamum var. pereirae）：苯基酯類精油。主要成分 肉桂酸苄酯 (50~60%)、苯甲酸苄酯、肉桂酸桂皮酯、橙花叔醇。常見芳療應用：肌膚修護感、殺疥蟲、肌膚舒緩、清新淨化防腐、呼吸清新、皮膚保護。萃取自樹脂，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/187/",
+      "robots": "index, follow"
+    },
+    "/oil/188/": {
+      "title": "水仙精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "水仙（Narcissus poeticus）：苯基酯類精油。主要成分 乙酸苄酯 (24%)、苄醇 (21%)、苯甲酸苄酯 (2.2%)。常見芳療應用：鎮靜安神、安撫放鬆、浪漫氛圍、舒緩情緒、高級香水定香。萃取自花朵（溶劑萃取），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/188/",
+      "robots": "index, follow"
+    },
+    "/oil/189/": {
+      "title": "牡丹花精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "牡丹花（Paeonia × suffruticosa）：苯基酯類精油。主要成分 香茅醇、香葉醇、芳樟醇、苯乙醇、丹皮酚（間苯三酚三甲醚）。常見芳療應用：抗氧化、舒緩、循環按摩、亮澤保養、鎮靜安神、調理月經。萃取自花瓣（蒸餾或溶劑萃取），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/189/",
+      "robots": "index, follow"
+    },
+    "/oil/190/": {
+      "title": "紅花緬梔精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "紅花緬梔（Plumeria rubra）：苯基酯類精油。主要成分 水楊酸苄酯 (26.7%)、苯甲酸苄酯 (22.3%)。常見芳療應用：鎮靜放鬆、浪漫氛圍、皮膚滋潤、舒緩焦慮、熱帶風情香氛。萃取自花朵（溶劑萃取），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/190/",
+      "robots": "index, follow"
+    },
+    "/oil/191/": {
+      "title": "晚香玉精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "晚香玉（Polianthes tuberosa）：苯基酯類精油。主要成分 苯甲酸甲酯、鄰氨基苯甲酸甲酯、苯甲酸苄酯、苄醇、法尼醇、橙花醇、吲哚。常見芳療應用：浪漫氛圍、鎮靜安神、情緒放鬆、滋養肌膚、舒緩壓力、高級香水調配。萃取自花朵（溶劑萃取），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/191/",
+      "robots": "index, follow"
+    },
+    "/oil/192/": {
+      "title": "五月玫瑰精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "五月玫瑰（Rosa × centifolia）：苯基酯類精油。主要成分 苯乙醇 (50~63%)、香茅醇、香葉醇、橙花醇、沉香醇、丁香酚。常見芳療應用：情緒放鬆、荷爾蒙平衡、浪漫氛圍、皮膚修護保濕、收斂、子宮調理。萃取自花瓣（溶劑萃取），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-rose/",
+      "robots": "index, follow"
+    },
+    "/oil/194/": {
+      "title": "蘇門答臘安息香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "蘇門答臘安息香（Styrax benzoin）：芳香醛與芳香酯精油。主要成分 肉桂酸松柏酯 (Coniferyl cinnamate)。常見芳療應用：肌膚修護感、皮膚龜裂修護、清新淨化防腐、呼吸清新、鎮靜安神、促進血液循環；傳統用於薰香淨化與宗教儀式。萃取自樹脂（溶劑萃取），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/194/",
+      "robots": "index, follow"
+    },
+    "/oil/195/": {
+      "title": "暹羅安息香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "暹羅安息香（Styrax tonkinensis）：芳香醛與芳香酯精油。主要成分 安息香酸松柏酯。常見芳療應用：深度鎮靜安神、抗焦慮、肌膚修護感、皮膚保濕修護、清新淨化防腐、呼吸清新；香氣比蘇門答臘品種更純淨甜美。萃取自樹脂（溶劑萃取），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/195/",
+      "robots": "index, follow"
+    },
+    "/oil/196/": {
+      "title": "香草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "香草（Vanilla planifolia）：芳香醛與芳香酯精油。主要成分 香草醛 (Vanillin, 2-15%)。常見芳療應用：鎮靜安神、抗焦慮、情緒放鬆、浪漫氛圍、抗氧化、舒緩；廣泛用於香水基調、食品調味與芳療。萃取自豆莢（溶劑萃取原精或 CO2 萃取），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/196/",
+      "robots": "index, follow"
+    },
+    "/oil/198/": {
+      "title": "阿密茴精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "阿密茴（Ammi visnaga）：倍半萜酮類精油。主要成分 異戊基-2-甲基丁酸酯、異戊基異丁酸酯、沉香醇。常見芳療應用：支氣管擴張、緩解氣喘、安撫放鬆、擴張冠狀動脈、循環暢快、緩解腎結石。萃取自種子（果實），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/198/",
+      "robots": "index, follow"
+    },
+    "/oil/199/": {
+      "title": "澳洲藍絲柏（鑽石級）精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "澳洲藍絲柏（鑽石級）（Callitris columellaris）：倍半萜酮類精油。主要成分 癒創木醇（Guaiol）、癒創木烯（Guaiazulene）。常見芳療應用：鎮靜安神、清新淨化防腐、肌膚修護感、驅蟲、淨化空氣。萃取自木材，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/199/",
+      "robots": "index, follow"
+    },
+    "/oil/200/": {
+      "title": "印蒿精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "印蒿（Artemisia pallens）：倍半萜酮類精油。主要成分 順式-印蒿酮（cis-Davanone）43%、橙花醇 10%。常見芳療應用：經期前後香氛陪伴、更年期身心陪伴、清新淨化、促進皮膚再生、安撫助眠。萃取自花朵與全草，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/200/",
+      "robots": "index, follow"
+    },
+    "/oil/201/": {
+      "title": "大西洋雪松精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "大西洋雪松（Cedrus atlantica）：倍半萜酮類精油。主要成分 大西洋酮（Atlantone）、β-喜馬雪松烯、α-喜馬雪松烯。常見芳療應用：呼吸清新排黏液、促進淋巴循環、消脂緊膚、助眠安神、驅蟲防蛀。萃取自木材，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-cedarwood/",
+      "robots": "index, follow"
+    },
+    "/oil/202/": {
+      "title": "喜馬拉雅雪松精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "喜馬拉雅雪松（Cedrus deodara）：倍半萜酮類精油。主要成分 大西洋酮（Atlantone）、α-喜馬雪松烯、β-喜馬雪松烯。常見芳療應用：促進淋巴代謝、呼吸清新呼吸放鬆、緩解關節炎、養髮護髮、安定神經。萃取自木材，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/202/",
+      "robots": "index, follow"
+    },
+    "/oil/203/": {
+      "title": "杭白菊精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "杭白菊（Chrysanthemum × morifolium）：倍半萜酮類精油。主要成分 樟腦（Camphor）、1,8-桉油醇、龍腦、乙酸龍腦酯、β-薑黃烯。常見芳療應用：清熱明目、抗氧化、清新淨化、舒緩頭痛、鎮靜安神。萃取自花朵，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/203/",
+      "robots": "index, follow"
+    },
+    "/oil/204/": {
+      "title": "薑黃精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "薑黃（Curcuma longa）：倍半萜酮類精油。主要成分 薑黃酮（Turmerone）60%。常見芳療應用：強效抗氧化、舒緩、促進消化、日常保養、肌膚修護感、日常保養。萃取自根莖，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/204/",
+      "robots": "index, follow"
+    },
+    "/oil/205/": {
+      "title": "莪朮精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "莪朮（Curcuma zedoaria）：倍半萜酮類精油。主要成分 莪朮醇（Curcumol）、蓬莪朮酮、吉馬酮（Germacrone）。常見芳療應用：循環按摩、舒緩放鬆、日常保養。萃取自根莖，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/205/",
+      "robots": "index, follow"
+    },
+    "/oil/206/": {
+      "title": "莎草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "莎草（Cyperus rotundus）：倍半萜酮類精油。主要成分 α-香附酮（α-Cyperone）。常見芳療應用：疏肝理氣、經期前後香氛陪伴放鬆、行氣消脹、清新淨化抗氧化。萃取自根莖（塊莖），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/206/",
+      "robots": "index, follow"
+    },
+    "/oil/207/": {
+      "title": "義大利永久花精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "義大利永久花（Helichrysum italicum）：倍半萜酮類精油。主要成分 義大利雙酮（Italidione）、乙酸橙花酯、橙花醇、γ-薑黃烯。常見芳療應用：舒緩放鬆、肌膚煥活、修復疤痕、舒緩、日常保養、抗過敏。萃取自花朵，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-helichrysum/",
+      "robots": "index, follow"
+    },
+    "/oil/208/": {
+      "title": "大根老鸛草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "大根老鸛草（Geranium macrorrhizum）：倍半萜酮類精油。主要成分 大根老鸛草酮（Germacrone）、α-沒藥醇、α-桉葉醇。常見芳療應用：舒緩清新淨化、平衡雌激素、促進淋巴循環、舒緩濕疹、改善油性膚質。萃取自全草，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/208/",
+      "robots": "index, follow"
+    },
+    "/oil/209/": {
+      "title": "薰衣草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "薰衣草（Lavandula stoechas）：倍半萜酮類精油。主要成分 葑酮（Fenchone）、樟腦（Camphor）、1,8-桉油醇。常見芳療應用：呼吸清新排黏液、肌膚修護感、清新淨化舒緩、驅蟲、頭痛緩解。萃取自花朵與全草，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-lavender/",
+      "robots": "index, follow"
+    },
+    "/oil/210/": {
+      "title": "馬纓丹精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "馬纓丹（Lantana camara）：倍半萜酮類精油。主要成分 β-丁香油烴（β-Caryophyllene）23%。常見芳療應用：清新淨化、驅蟲防蚊、鎮靜舒緩、清涼舒適、舒緩呼吸道不適。萃取自葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/210/",
+      "robots": "index, follow"
+    },
+    "/oil/211/": {
+      "title": "松紅梅精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "松紅梅（Leptospermum scoparium）：倍半萜酮類精油。主要成分 細籽酮（Leptospermone）12–18%。常見芳療應用：強效清新淨化、肌膚修護感、抗過敏、舒緩皮膚炎症、私密護理。萃取自葉片與嫩枝，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/211/",
+      "robots": "index, follow"
+    },
+    "/oil/212/": {
+      "title": "桂花精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "桂花（Osmanthus fragrans）：倍半萜酮類精油。主要成分 反式-β-紫羅蘭酮、沉香醇、牻牛兒醇、γ-癸內酯、二氫-β-紫羅蘭酮。常見芳療應用：安眠舒壓、紓解經前症候群、抗氧化、撫平皺紋、提神醒腦。萃取自花朵（溶劑萃取），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/212/",
+      "robots": "index, follow"
+    },
+    "/oil/213/": {
+      "title": "紫羅蘭精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "紫羅蘭（Viola odorata）：倍半萜酮類精油。主要成分 α-紫羅蘭酮（α-Ionone）、巴馬酮（Parmone）、壬二烯醇。常見芳療應用：舒緩緊張情緒、舒緩、改善失眠、護膚保濕、緩解頭痛。萃取自葉片（溶劑萃取），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/213/",
+      "robots": "index, follow"
+    },
+    "/oil/216/": {
+      "title": "花梨木精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "花梨木（Aniba rosaeodora）：單萜醇類精油。主要成分 沉香醇（Linalool）80–97%、α-萜品醇、橙花醇。常見芳療應用：清新淨化、提振免疫、安撫情緒、護膚再生、情緒放鬆。萃取自木材，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/216/",
+      "robots": "index, follow"
+    },
+    "/oil/217/": {
+      "title": "芳樟精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "芳樟（Cinnamomum camphora ct. linalool）：單萜醇類精油。主要成分 沉香醇（Linalool）85–96%、α-萜品醇、樟腦微量。常見芳療應用：清新淨化、舒緩神經緊張、護膚保濕、提振免疫、驅蚊蟲。萃取自木材與葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/217/",
+      "robots": "index, follow"
+    },
+    "/oil/218/": {
+      "title": "橙花精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "橙花（Citrus aurantium (flowers)）：單萜醇類精油。主要成分 沉香醇（Linalool）30–40%、乙酸沉香酯、橙花醇。常見芳療應用：抗焦慮、助眠安神、肌膚煥活、亮澤淡斑、抗老化、調理心悸。萃取自花朵，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-neroli/",
+      "robots": "index, follow"
+    },
+    "/oil/219/": {
+      "title": "芳樟葉精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "芳樟葉（Cinnamomum camphora ct. linalool (leaf)）：單萜醇類精油。主要成分 沉香醇（Linalool）80–90%、乙酸沉香酯、α-萜品醇。常見芳療應用：抗不適、舒緩肌肉痠痛、安撫神經、驅蟲防蚊、淨化空氣。萃取自葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/219/",
+      "robots": "index, follow"
+    },
+    "/oil/220/": {
+      "title": "巨紫荊精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "巨紫荊（Cercis chingii）：單萜醇類精油。主要成分 沉香醇（Linalool）、α-萜品醇、α-蒎烯、β-蒎烯、單萜醇類。常見芳療應用：清新淨化、舒緩情緒、循環按摩、改善皮膚粗糙。萃取自花朵，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/220/",
+      "robots": "index, follow"
+    },
+    "/oil/221/": {
+      "title": "香葉草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "香葉草（Pelargonium graveolens）：單萜醇類精油。主要成分 香茅醇（Citronellol）25–40%。常見芳療應用：平衡荷爾蒙、調理皮膚（控油保濕）、驅蚊蟲、清新淨化、舒緩焦慮。萃取自葉片與花朵，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/221/",
+      "robots": "index, follow"
+    },
+    "/oil/222/": {
+      "title": "玫瑰草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "玫瑰草（Cymbopogon martinii）：單萜醇類精油。主要成分 牻牛兒醇（Geraniol）75–85%、乙酸牻牛兒酯、沉香醇。常見芳療應用：強效清新淨化、保濕潤膚、肌膚煥活、平衡皮脂、助產。萃取自全草，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-palmarosa/",
+      "robots": "index, follow"
+    },
+    "/oil/223/": {
+      "title": "忍冬精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "忍冬（Lonicera japonica）：單萜醇類精油。主要成分 沉香醇（Linalool）20%、反式-橙花叔醇 16%。常見芳療應用：清熱解毒、清新淨化、清涼舒適、日常保養力、舒緩皮膚炎症。萃取自花朵，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/223/",
+      "robots": "index, follow"
+    },
+    "/oil/224/": {
+      "title": "茶樹精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "茶樹（Melaleuca alternifolia）：單萜醇類精油。主要成分 萜品烯-4-醇（Terpinen-4-ol）30–48%。常見芳療應用：廣譜清新淨化、舒緩、日常保養、肌膚保養、淨化空氣。萃取自葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-tea-tree/",
+      "robots": "index, follow"
+    },
+    "/oil/225/": {
+      "title": "沼澤茶樹精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "沼澤茶樹（Melaleuca ericifolia）：單萜醇類精油。主要成分 沉香醇（Linalool）50%、1,8-桉油醇、α-蒎烯。常見芳療應用：溫和清新淨化、舒緩呼吸道、安撫鎮靜、改善暗瘡、適合敏感族群。萃取自葉片與嫩枝，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/225/",
+      "robots": "index, follow"
+    },
+    "/oil/226/": {
+      "title": "胡椒薄荷精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "胡椒薄荷（Mentha × piperita）：單萜醇類精油。主要成分 薄荷醇（Menthol）30–50%、薄荷酮 14–32%。常見芳療應用：提神醒腦、緩解頭痛、助消化、肌膚舒緩清涼舒適、暢通呼吸道、放鬆。萃取自全草，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-peppermint/",
+      "robots": "index, follow"
+    },
+    "/oil/227/": {
+      "title": "蜂香薄荷精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "蜂香薄荷（Monarda fistulosa）：單萜醇類精油。主要成分 牻牛兒醇（Geraniol）、百里香酚（Thymol）31%。常見芳療應用：強效清新淨化、提振免疫、抗寄生蟲、皮膚防護、舒緩呼吸道。萃取自全草，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/227/",
+      "robots": "index, follow"
+    },
+    "/oil/228/": {
+      "title": "可因氏月橘精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "可因氏月橘（Murraya koenigii）：單萜醇類精油。主要成分 沉香醇（Linalool）33%、欖香醇 7%、乙酸牻牛兒酯 6%。常見芳療應用：清新淨化、抗氧化、舒緩、肌膚修護感、降血糖輔助。萃取自葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/228/",
+      "robots": "index, follow"
+    },
+    "/oil/229/": {
+      "title": "檸檬荊芥精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "檸檬荊芥（Nepeta cataria var. citriodora）：單萜醇類精油。主要成分 荊芥內酯（Nepetalactone）、香茅醛、牻牛兒醇、沉香醇。常見芳療應用：驅蚊蟲（效果優於 DEET）、鎮靜安撫、助消化、舒緩焦慮與憂鬱。萃取自全草，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/229/",
+      "robots": "index, follow"
+    },
+    "/oil/230/": {
+      "title": "甜羅勒精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "甜羅勒（Ocimum basilicum ct. linalool）：單萜醇類精油。主要成分 沉香醇（Linalool）40–55%、丁香酚、1,8-桉油醇。常見芳療應用：安撫放鬆、助消化、緩解肌肉疼痛、提振精神、清新淨化、緩解經痛。萃取自全草，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-sweet-basil/",
+      "robots": "index, follow"
+    },
+    "/oil/231/": {
+      "title": "甜馬郁蘭精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "甜馬郁蘭（Origanum majorana）：單萜醇類精油。主要成分 萜品烯-4-醇（Terpinen-4-ol）20–30%、γ-萜品烯。常見芳療應用：鎮靜安神、放鬆、舒緩肌肉痙攣、助消化、暖身循環暢快、改善失眠。萃取自全草（開花部位），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/231/",
+      "robots": "index, follow"
+    },
+    "/oil/232/": {
+      "title": "野洋甘菊精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "野洋甘菊（Cladanthus mixtus）：單萜醇類精油。主要成分 棉杉菊醇（Santolina alcohol）、艾蒿醇。常見芳療應用：舒緩抗過敏、放鬆（經痛、偏頭痛）、日常保養、利水除濕、舒緩情緒。萃取自花朵，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/232/",
+      "robots": "index, follow"
+    },
+    "/oil/233/": {
+      "title": "天竺葵精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "天竺葵（Pelargonium × asperum）：單萜醇類精油。主要成分 香茅醇（Citronellol）20–40%、牻牛兒醇 8–18%。常見芳療應用：平衡荷爾蒙、收斂緊緻、調理各種膚質、清新淨化、緩解焦慮與PMS。萃取自葉片與花朵，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-geranium/",
+      "robots": "index, follow"
+    },
+    "/oil/234/": {
+      "title": "大馬士革玫瑰精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "大馬士革玫瑰（Rosa × damascena）：單萜醇類精油。主要成分 香茅醇（Citronellol）34–55%、牻牛兒醇 8–22%。常見芳療應用：美膚抗老、平衡荷爾蒙、情緒放鬆、強心日常保養、清新淨化、浪漫氛圍。萃取自花瓣，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-rose/",
+      "robots": "index, follow"
+    },
+    "/oil/235/": {
+      "title": "苦水玫瑰精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "苦水玫瑰（Rosa damascena var. semperflorens）：單萜醇類精油。主要成分 香茅醇、牻牛兒醇、橙花醇、苯基乙醇、十九烷、金合歡醇。常見芳療應用：亮澤淡斑、抗老化、舒緩經痛、改善睡眠、清新淨化、提振情緒。萃取自花瓣，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/235/",
+      "robots": "index, follow"
+    },
+    "/oil/236/": {
+      "title": "鳳梨鼠尾草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "鳳梨鼠尾草（Salvia elegans）：單萜醇類精油。主要成分 沉香醇（Linalool）、β-石竹烯、萜品烯-4-醇、α-萜品醇。常見芳療應用：舒緩消化不良、鎮靜安神、清涼舒適、清新淨化、清新空氣。萃取自葉片與花朵，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/236/",
+      "robots": "index, follow"
+    },
+    "/oil/237/": {
+      "title": "龍腦百里香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "龍腦百里香（Thymus satureioides）：單萜醇類精油。主要成分 龍腦（Borneol）24–35%、α-萜品醇 3–15%。常見芳療應用：激勵免疫系統、清新淨化、舒緩關節痠痛、促進血液循環、暖身。萃取自全草，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/237/",
+      "robots": "index, follow"
+    },
+    "/oil/238/": {
+      "title": "沉香醇百里香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "沉香醇百里香（Thymus vulgaris ct. linalool）：單萜醇類精油。主要成分 沉香醇（Linalool）60–80%、乙酸沉香酯、萜品烯-4-醇。常見芳療應用：溫和清新淨化、日常保養力、改善呼吸道、護膚肌膚保養、舒緩壓力。萃取自全草，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-thyme/",
+      "robots": "index, follow"
+    },
+    "/oil/239/": {
+      "title": "側柏醇百里香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "側柏醇百里香（Thymus vulgaris ct. thujanol）：單萜醇類精油。主要成分 側柏醇（trans-4-Thujanol）12–42%、沉香醇。常見芳療應用：日常保養解毒、溫和清新淨化、改善咽喉炎、促進血液循環、暖身。萃取自全草，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/239/",
+      "robots": "index, follow"
+    },
+    "/oil/240/": {
+      "title": "牻牛兒醇百里香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "牻牛兒醇百里香（Thymus vulgaris ct. geraniol）：單萜醇類精油。主要成分 牻牛兒醇（Geraniol）11–30%、乙酸香葉酯 14–50%。常見芳療應用：強效清新淨化、婦科護理、皮膚保養、促進循環代謝。萃取自全草，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/240/",
+      "robots": "index, follow"
+    },
+    "/oil/241/": {
+      "title": "竹葉花椒精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "竹葉花椒（Zanthoxylum armatum）：單萜醇類精油。主要成分 沉香醇（Linalool）50%、右旋檸檬烯 22%。常見芳療應用：抗不適（腸胃道、呼吸道）、放鬆（肌肉骨骼）、促進循環、暖身祛寒。萃取自果實，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/241/",
+      "robots": "index, follow"
+    },
+    "/oil/242/": {
+      "title": "食茱萸精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "食茱萸（Zanthoxylum ailanthoides）：單萜醇類精油。主要成分 β-蒎烯 29–62%、β-萜品醇 53%（春季）、α-蒎烯。常見芳療應用：散寒祛濕、放鬆舒緩、促進消化、抗氧化、台灣原住民傳統保健。萃取自葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/242/",
+      "robots": "index, follow"
+    },
+    "/oil/243/": {
+      "title": "花椒精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "花椒（Zanthoxylum bungeanum）：單萜醇類精油。主要成分 沉香醇（Linalool）、右旋檸檬烯（D-Limonene）。常見芳療應用：溫中散寒、放鬆除濕、促進消化、清新淨化防腐、放鬆、護髮肌膚舒緩。萃取自果皮，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/243/",
+      "robots": "index, follow"
+    },
+    "/oil/246/": {
+      "title": "中國肉桂精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "中國肉桂（Cinnamomum cassia）：酚與芳香醛類精油。主要成分 肉桂醛 Cinnamaldehyde (80-90%)。常見芳療應用：強力清新淨化、促進血液循環、暖身驅寒、補強神經、緩解肌肉緊張、助消化。萃取自樹皮及帶葉枝幹，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/246/",
+      "robots": "index, follow"
+    },
+    "/oil/247/": {
+      "title": "台灣土肉桂精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "台灣土肉桂（Cinnamomum osmophloeum）：酚與芳香醛類精油。主要成分 肉桂醛 Cinnamaldehyde (40-81%)。常見芳療應用：清新淨化、抗白蟻、降血糖、降血脂、舒緩、抗氧化、亮澤。萃取自葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/247/",
+      "robots": "index, follow"
+    },
+    "/oil/248/": {
+      "title": "印度肉桂精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "印度肉桂（Cinnamomum tamala）：酚與芳香醛類精油。主要成分 丁香酚 Eugenol、芳樟醇 Linalool。常見芳療應用：降血糖、降血脂、舒緩、養肝、健胃、助循環、局部暖身、舒緩肌肉骨骼疼痛。萃取自葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/248/",
+      "robots": "index, follow"
+    },
+    "/oil/249/": {
+      "title": "錫蘭肉桂精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "錫蘭肉桂（Cinnamomum verum）：酚與芳香醛類精油。主要成分 樹皮：肉桂醛 Cinnamaldehyde (65-80%)。常見芳療應用：強效清新淨化、促進循環、暖身、助消化、提振免疫、抗氧化。萃取自樹皮或葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/249/",
+      "robots": "index, follow"
+    },
+    "/oil/25/": {
+      "title": "利古里亞草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "利古里亞草（Artemisia ligustica）：單萜酮/烯類精油。主要成分 側柏酮、樟腦、1,8-桉油醇。常見芳療應用：呼吸清新、帶來呼吸清新感、經期前後香氛陪伴、清新淨化。萃取自全株蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/25/",
+      "robots": "index, follow"
+    },
+    "/oil/250/": {
+      "title": "頭狀百里香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "頭狀百里香（Thymus capitatus）：酚與芳香醛類精油。主要成分 香芹酚 Carvacrol (60-73%)。常見芳療應用：強效清新淨化、抗寄生蟲、日常保養、舒緩。萃取自開花頂端，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/250/",
+      "robots": "index, follow"
+    },
+    "/oil/251/": {
+      "title": "小茴香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "小茴香（Cuminum cyminum）：酚與芳香醛類精油。主要成分 小茴香醛 Cuminaldehyde (27-45%)。常見芳療應用：助消化、驅風、清新淨化、抗氧化、鎮靜神經、促進食慾。萃取自種子，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/251/",
+      "robots": "index, follow"
+    },
+    "/oil/252/": {
+      "title": "丁香花苞精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "丁香花苞（Syzygium aromaticum）：酚與芳香醛類精油。主要成分 丁香酚 Eugenol (72-89%)。常見芳療應用：強效清新淨化、放鬆（尤其牙痛）、抗寄生蟲、促進循環、助消化、抗氧化。萃取自花苞，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-clove/",
+      "robots": "index, follow"
+    },
+    "/oil/253/": {
+      "title": "丁香羅勒精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "丁香羅勒（Ocimum gratissimum）：酚與芳香醛類精油。主要成分 丁香酚 Eugenol (43-69%)。常見芳療應用：清新淨化、舒緩、驅蟲、助消化、清涼舒適。萃取自葉片及花頂，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/253/",
+      "robots": "index, follow"
+    },
+    "/oil/254/": {
+      "title": "神聖羅勒精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "神聖羅勒（Ocimum tenuiflorum）：酚與芳香醛類精油。主要成分 丁香酚 Eugenol (30-60%)。常見芳療應用：適應原（抗壓力）、清新淨化、抗氧化、舒緩、日常保養、降血糖、呼吸道保健。萃取自葉片及花頂，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/254/",
+      "robots": "index, follow"
+    },
+    "/oil/255/": {
+      "title": "野馬郁蘭精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "野馬郁蘭（Origanum vulgare）：酚與芳香醛類精油。主要成分 香芹酚 Carvacrol (30-70%)。常見芳療應用：最強效天然抗生素之一、清新淨化、抗寄生蟲、日常保養、舒緩放鬆。萃取自開花頂端，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/255/",
+      "robots": "index, follow"
+    },
+    "/oil/256/": {
+      "title": "嚴愛草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "嚴愛草（Satureja hortensis）：酚與芳香醛類精油。主要成分 香芹酚 Carvacrol (11-67%)。常見芳療應用：清新淨化、抗氧化、安撫放鬆、助消化、驅風、抗腹瀉、舒緩。萃取自開花全草，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/256/",
+      "robots": "index, follow"
+    },
+    "/oil/257/": {
+      "title": "希臘野馬郁蘭精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "希臘野馬郁蘭（Origanum heracleoticum）：酚與芳香醛類精油。主要成分 香芹酚 Carvacrol (70-86%)。常見芳療應用：頂級抗不適精油、清新淨化、日常保養、抗寄生蟲。萃取自開花頂端，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/257/",
+      "robots": "index, follow"
+    },
+    "/oil/258/": {
+      "title": "多香果精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "多香果（Pimenta dioica）：酚與芳香醛類精油。主要成分 丁香酚 Eugenol (60-90%)。常見芳療應用：放鬆、清新淨化、助消化、驅風、暖身、促進循環、安撫放鬆。萃取自果實或葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/258/",
+      "robots": "index, follow"
+    },
+    "/oil/259/": {
+      "title": "西印度月桂精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "西印度月桂（Pimenta racemosa）：酚與芳香醛類精油。主要成分 丁香酚 Eugenol (50-60%)。常見芳療應用：放鬆、促進頭髮生長、清新淨化、促進循環、暖身、提振精神、緩解肌肉疼痛。萃取自葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/259/",
+      "robots": "index, follow"
+    },
+    "/oil/26/": {
+      "title": "圓葉當歸精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "圓葉當歸（Levisticum officinale）：單萜酮/烯類精油。主要成分 苯酞類（藁本內酯）、萜烯類、側柏酮。常見芳療應用：淨化清爽循環暢快、促進消化、祛風、安撫放鬆。萃取自根部蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/26/",
+      "robots": "index, follow"
+    },
+    "/oil/260/": {
+      "title": "到手香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "到手香（Coleus amboinicus）：酚與芳香醛類精油。主要成分 香芹酚 Carvacrol (28-89%)。常見芳療應用：清新淨化、驅蟲、抗氧化、舒緩、助消化、呼吸道保健、防黴。萃取自葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/260/",
+      "robots": "index, follow"
+    },
+    "/oil/261/": {
+      "title": "重味過江藤精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "重味過江藤（Lippia origanoides）：酚與芳香醛類精油。主要成分 香芹酚 Carvacrol (33-44%)。常見芳療應用：強效清新淨化、抗氧化、防腐保鮮、口腔保健。萃取自葉片及開花頂端，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/261/",
+      "robots": "index, follow"
+    },
+    "/oil/262/": {
+      "title": "黑種草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "黑種草（Nigella sativa）：酚與芳香醛類精油。主要成分 百里醌 Thymoquinone (30-63%)。常見芳療應用：強效抗氧化、日常保養、舒緩、清新淨化、日常保養輔助、支持呼吸道、日常保養、降血糖。萃取自種子，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/262/",
+      "robots": "index, follow"
+    },
+    "/oil/263/": {
+      "title": "冬季香薄荷精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "冬季香薄荷（Satureja montana）：酚與芳香醛類精油。主要成分 香芹酚 Carvacrol (25-70%)。常見芳療應用：強效清新淨化、抗寄生蟲、日常保養、助消化、驅風、暖身提振。萃取自開花全草，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/263/",
+      "robots": "index, follow"
+    },
+    "/oil/264/": {
+      "title": "希臘香薄荷精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "希臘香薄荷（Satureja thymbra）：酚與芳香醛類精油。主要成分 香芹酚 Carvacrol (4-40%) 或百里酚 Thymol。常見芳療應用：清新淨化、抗氧化、日常保養、舒緩放鬆。萃取自開花全草，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/264/",
+      "robots": "index, follow"
+    },
+    "/oil/265/": {
+      "title": "百里酚百里香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "百里酚百里香（Thymus vulgaris ct. Thymol）：酚與芳香醛類精油。主要成分 百里酚 Thymol (23-60%)。常見芳療應用：強效清新淨化（呼吸道保養）、呼吸清新淨化、日常保養、促進循環、驅蟲、抗疲勞提振。萃取自開花全草，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/265/",
+      "robots": "index, follow"
+    },
+    "/oil/266/": {
+      "title": "野地百里香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "野地百里香（Thymus serpyllum）：酚與芳香醛類精油。主要成分 香芹酚 Carvacrol (27-48%) 或百里酚 Thymol。常見芳療應用：清新淨化、呼吸清新、呼吸放鬆、助消化、驅風、安撫放鬆、提振精神、鎮靜安眠（因化學型而異）。萃取自開花全草，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/266/",
+      "robots": "index, follow"
+    },
+    "/oil/267/": {
+      "title": "印度藏茴香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "印度藏茴香（Trachyspermum ammi）：酚與芳香醛類精油。主要成分 百里酚 Thymol (50-72%)。常見芳療應用：強效清新淨化、驅風、助消化、安撫放鬆、驅蟲、呼吸道保健、解毒。萃取自種子，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/267/",
+      "robots": "index, follow"
+    },
+    "/oil/27/": {
+      "title": "側柏酮白蒿精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "側柏酮白蒿（Artemisia herba-alba）：單萜酮/烯類精油。主要成分 側柏酮、樟腦、1,8-桉油醇、龍腦。常見芳療應用：驅蟲、抗寄生蟲、呼吸清新、舒緩。萃取自全株蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/27/",
+      "robots": "index, follow"
+    },
+    "/oil/270/": {
+      "title": "阿米香樹精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "阿米香樹（Amyris balsamifera）：倍半萜醇類精油。主要成分 纈草醇 Valerianol (30-50%)、欖香醇 Elemol。常見芳療應用：鎮靜安神、助眠、靜脈循環、安撫放鬆、定香劑、皮膚保濕。萃取自木材，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/270/",
+      "robots": "index, follow"
+    },
+    "/oil/271/": {
+      "title": "沉香樹精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "沉香樹（Aquilaria malaccensis）：倍半萜醇類精油。主要成分 沉香醇 Agarospirol、β-桉葉醇 β-Eudesmol。常見芳療應用：深度鎮靜安神、冥想輔助、舒緩、皮膚修復、助消化、平衡神經系統。萃取自含樹脂的心材，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/271/",
+      "robots": "index, follow"
+    },
+    "/oil/272/": {
+      "title": "玉檀木精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "玉檀木（Bulnesia sarmientoi）：倍半萜醇類精油。主要成分 癒創木醇 Guaiol (42-72%)。常見芳療應用：鎮靜安神、舒緩、靜脈循環促進、皮膚修復、清新淨化、定香劑。萃取自心材木屑，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/272/",
+      "robots": "index, follow"
+    },
+    "/oil/273/": {
+      "title": "降香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "降香（Dalbergia odorifera）：倍半萜醇類精油。主要成分 反式-橙花叔醇 trans-Nerolidol (30%)。常見芳療應用：循環按摩、放鬆、心肌保護、抗氧化、鎮靜安神、舒緩。萃取自心材，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/273/",
+      "robots": "index, follow"
+    },
+    "/oil/274/": {
+      "title": "胡蘿蔔籽精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "胡蘿蔔籽（Daucus carota）：倍半萜醇類精油。主要成分 胡蘿蔔醇 Carotol (19-76%)。常見芳療應用：卓越皮膚修復與再生、日常保養解毒、腎臟保健、抗老化、調理膚色、促進細胞更新。萃取自種子，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/274/",
+      "robots": "index, follow"
+    },
+    "/oil/275/": {
+      "title": "暹羅木精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "暹羅木（Fokienia hodginsii）：倍半萜醇類精油。主要成分 柏木醇 Cedrol、焦杉醇 Fokienol。常見芳療應用：鎮靜安神、促進淋巴循環、舒緩、呼吸道保健、皮膚調理。萃取自木材，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/275/",
+      "robots": "index, follow"
+    },
+    "/oil/276/": {
+      "title": "白草果精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "白草果（Aframomum daniellii）：倍半萜醇類精油。主要成分 桉油醇 1,8-Cineole、β-蒎烯 β-Pinene。常見芳療應用：助消化、驅風、清新淨化、抗氧化、暖身、放鬆。萃取自種子，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/276/",
+      "robots": "index, follow"
+    },
+    "/oil/277/": {
+      "title": "黏答答土木香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "黏答答土木香（Inula graveolens）：倍半萜醇類精油。主要成分 龍腦乙酸酯 Bornyl Acetate。常見芳療應用：強效化黏液、呼吸道保健（支氣管炎）、抗卡他性炎、呼吸清新淨化。萃取自開花全草，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/277/",
+      "robots": "index, follow"
+    },
+    "/oil/278/": {
+      "title": "昆士亞精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "昆士亞（Kunzea ambigua）：倍半萜醇類精油。主要成分 α-蒎烯 α-Pinene、1,8-桉油醇 1,8-Cineole。常見芳療應用：舒緩放鬆、舒緩肌肉關節、清新淨化、肌膚修護感、情緒舒緩。萃取自葉片及嫩枝，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/278/",
+      "robots": "index, follow"
+    },
+    "/oil/279/": {
+      "title": "厚朴精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "厚朴（Magnolia officinalis）：倍半萜醇類精油。主要成分 厚朴酚 Magnolol、和厚朴酚 Honokiol。常見芳療應用：深度鎮靜安神、抗焦慮、舒緩、助消化、清新淨化、日常保養輔助、肌肉放鬆。萃取自樹皮，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/279/",
+      "robots": "index, follow"
+    },
+    "/oil/28/": {
+      "title": "艾葉精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "艾葉（Artemisia argyi）：單萜酮/烯類精油。主要成分 側柏酮、1,8-桉油醇、樟腦、龍腦。常見芳療應用：溫經散寒、緊緻經期前後香氛陪伴、清新淨化、驅蚊蟲。萃取自葉片蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/28/",
+      "robots": "index, follow"
+    },
+    "/oil/280/": {
+      "title": "橙花叔醇綠花白千層精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "橙花叔醇綠花白千層（Melaleuca quinquenervia ct. Nerolidol）：倍半萜醇類精油。主要成分 反式-橙花叔醇 trans-Nerolidol (80-90%)。常見芳療應用：皮膚修復與再生、舒緩、清新淨化、雌激素樣作用、靜脈保健、放射線損傷修護。萃取自葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/280/",
+      "robots": "index, follow"
+    },
+    "/oil/281/": {
+      "title": "香脂果豆木精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "香脂果豆木（Myroxylon balsamum）：倍半萜醇類精油。主要成分 苯甲酸苄酯 Benzyl Benzoate。常見芳療應用：皮膚修復、清新淨化、肌膚修護感、呼吸清新、呼吸放鬆、定香劑。萃取自樹脂，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/281/",
+      "robots": "index, follow"
+    },
+    "/oil/282/": {
+      "title": "新喀里多尼亞松精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "新喀里多尼亞松（Callitris pancheri）：倍半萜醇類精油。主要成分 癒創木醇 Guaiol、布蘭瑟醇 Bulnesol。常見芳療應用：舒緩、鎮靜、皮膚保健、靜脈循環促進、清新淨化。萃取自木材，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/282/",
+      "robots": "index, follow"
+    },
+    "/oil/283/": {
+      "title": "羌活精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "羌活（Hansenia weberbaueriana）：倍半萜醇類精油。主要成分 羌活醇 Notopterol。常見芳療應用：祛風散寒、放鬆（頭痛、關節痛）、舒緩、解表、利濕。萃取自根莖，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/283/",
+      "robots": "index, follow"
+    },
+    "/oil/284/": {
+      "title": "蓽澄茄精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "蓽澄茄（Litsea cubeba）：倍半萜醇類精油。主要成分 檸檬醛 Citral (60-80%)、沉香醇 Linalool。常見芳療應用：清新淨化、舒緩、助消化、驅蟲、提振情緒、放鬆。萃取自果實，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/284/",
+      "robots": "index, follow"
+    },
+    "/oil/285/": {
+      "title": "廣藿香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "廣藿香（Pogostemon cablin）：倍半萜醇類精油。主要成分 廣藿香醇 Patchoulol (26-40%)。常見芳療應用：卓越皮膚修復（疤痕、妊娠紋）、舒緩、肌膚煥活、靜脈循環、清新淨化、助消化、情緒安定。萃取自葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-patchouli/",
+      "robots": "index, follow"
+    },
+    "/oil/286/": {
+      "title": "狹長葉鼠尾草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "狹長葉鼠尾草（Salvia stenophylla）：倍半萜醇類精油。主要成分 沉香醇 Linalool、α-紅沒藥醇 α-Bisabolol。常見芳療應用：皮膚保健、清新淨化、抗氧化、舒緩、肌膚修護感。萃取自全草，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/286/",
+      "robots": "index, follow"
+    },
+    "/oil/287/": {
+      "title": "檀香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "檀香（Santalum album）：倍半萜醇類精油。主要成分 α-檀香醇 α-Santalol (41-55%)。常見芳療應用：皮膚修復（乾燥、老化、痘痘）、深度鎮靜安神、泌尿道保健、舒緩、冥想輔助、浪漫氛圍。萃取自心材，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-sandalwood/",
+      "robots": "index, follow"
+    },
+    "/oil/288/": {
+      "title": "太平洋檀香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "太平洋檀香（Santalum austrocaledonicum）：倍半萜醇類精油。主要成分 α-檀香醇 α-Santalol、β-檀香醇 β-Santalol。常見芳療應用：皮膚修復、鎮靜安神、舒緩、泌尿道保健、浪漫氛圍、冥想輔助。萃取自心材，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/288/",
+      "robots": "index, follow"
+    },
+    "/oil/289/": {
+      "title": "塔斯馬尼亞胡椒精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "塔斯馬尼亞胡椒（Tasmannia lanceolata）：倍半萜醇類精油。主要成分 多瀕二醛 Polygodial、α-蒎烯 α-Pinene、β-蒎烯。常見芳療應用：強效清新淨化、舒緩放鬆、防腐保鮮、驅蟲、抗氧化。萃取自葉片及果實，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/289/",
+      "robots": "index, follow"
+    },
+    "/oil/29/": {
+      "title": "艾蒿精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "艾蒿（Artemisia vulgaris）：單萜酮/烯類精油。主要成分 側柏酮、樟腦、1,8-桉油醇、β-石竹烯。常見芳療應用：經期前後香氛陪伴放鬆、驅蟲、舒緩、促進消化。萃取自全株蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/29/",
+      "robots": "index, follow"
+    },
+    "/oil/290/": {
+      "title": "纈草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "纈草（Valeriana officinalis）：倍半萜醇類精油。主要成分 乙酸龍腦酯 Bornyl Acetate (2-36%)。常見芳療應用：強效鎮靜安眠、抗焦慮、安撫放鬆、神經系統修護、緩解緊張性頭痛。萃取自根部，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/290/",
+      "robots": "index, follow"
+    },
+    "/oil/291/": {
+      "title": "印度纈草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "印度纈草（Valeriana jatamansi）：倍半萜醇類精油。主要成分 廣藿香醇 Patchoulol、馬兜鈴烯 Aristolene。常見芳療應用：深度鎮靜安神、抗焦慮、抗癲癇輔助、皮膚修復、接地安定、冥想輔助。萃取自根莖，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/291/",
+      "robots": "index, follow"
+    },
+    "/oil/292/": {
+      "title": "岩蘭草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "岩蘭草（Chrysopogon zizanioides）：倍半萜醇類精油。主要成分 岩蘭草醇 Vetiverol (18-50%)。常見芳療應用：深度接地安定、鎮靜安神、促進循環、皮膚修復（痘疤、妊娠紋）、日常保養、抗氧化。萃取自根部，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-vetiver/",
+      "robots": "index, follow"
+    },
+    "/oil/294/": {
+      "title": "歐洲冷杉精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "歐洲冷杉（Abies alba）：單萜烯類精油。主要成分 乙酸龍腦酯 (30%)、莰烯 (20%)、δ-3-蒈烯 (14%)。常見芳療應用：呼吸道支持、清新淨化、提振精神、舒緩肌肉痠痛、淨化空氣。萃取自針葉，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/294/",
+      "robots": "index, follow"
+    },
+    "/oil/295/": {
+      "title": "膠冷杉精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "膠冷杉（Abies balsamea）：單萜烯類精油。主要成分 β-蒎烯 (15–40%)、α-蒎烯 (10–30%)。常見芳療應用：呼吸道暢通、放鬆舒緩、放鬆肌肉、淨化空氣、情緒安撫。萃取自針葉與嫩枝，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/295/",
+      "robots": "index, follow"
+    },
+    "/oil/296/": {
+      "title": "西伯利亞冷杉精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "西伯利亞冷杉（Abies sibirica）：單萜烯類精油。主要成分 乙酸龍腦酯 (30–45%)、莰烯 (10%)、α-蒎烯 (9%)。常見芳療應用：淨化空氣、清新淨化、呼吸道支持、提振情緒、舒緩壓力。萃取自針葉，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/296/",
+      "robots": "index, follow"
+    },
+    "/oil/297/": {
+      "title": "蒔蘿（全株）精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "蒔蘿（全株）（Anethum graveolens）：單萜烯類精油。主要成分 α-水芹烯 (20–35%)、檸檬烯 (10–38%)。常見芳療應用：助消化、祛脹氣、促進食慾、鎮靜安神、清新淨化。萃取自全株蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/297/",
+      "robots": "index, follow"
+    },
+    "/oil/298/": {
+      "title": "歐白芷根精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "歐白芷根（Angelica archangelica）：單萜烯類精油。主要成分 α-蒎烯 (21%)、δ-3-蒈烯 (17%)、檸檬烯 (16%)。常見芳療應用：助消化、祛風、強化免疫、淨化淋巴、安撫焦慮。萃取自根部，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/298/",
+      "robots": "index, follow"
+    },
+    "/oil/299/": {
+      "title": "白芷精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "白芷（Angelica dahurica）：單萜烯類精油。主要成分 α-蒎烯 (45–46%)、沙賓烯 (3–9%)。常見芳療應用：放鬆（頭痛、牙痛）、清新淨化、通鼻竅、亮澤淡斑。萃取自根部，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/299/",
+      "robots": "index, follow"
+    },
+    "/oil/30/": {
+      "title": "艾草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "艾草（Artemisia princeps）：單萜酮/烯類精油。主要成分 側柏酮、樟腦、龍腦、1,8-桉油醇。常見芳療應用：溫經緊緻、散寒除濕、清新淨化、驅蚊。萃取自葉片蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/30/",
+      "robots": "index, follow"
+    },
+    "/oil/300/": {
+      "title": "獨活精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "獨活（Angelica pubescens）：單萜烯類精油。主要成分 α-蒎烯 (22–38%)、對傘花烴 (12%)、檸檬烯 (9%)。常見芳療應用：祛風除濕、舒緩風濕疼痛、放鬆、改善頭痛、助眠。萃取自根部，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/300/",
+      "robots": "index, follow"
+    },
+    "/oil/301/": {
+      "title": "乳香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "乳香（Boswellia sacra / B. carterii）：單萜烯類精油。主要成分 α-蒎烯 (5–68%)、檸檬烯 (6–34%)。常見芳療應用：皮膚修復抗老、鎮靜安神、日常保養、舒緩日常保養、冥想靈修。萃取自樹脂，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-frankincense/",
+      "robots": "index, follow"
+    },
+    "/oil/302/": {
+      "title": "印度乳香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "印度乳香（Boswellia serrata）：單萜烯類精油。主要成分 α-側柏烯 (55–75%)、α-蒎烯 (3–8%)。常見芳療應用：強效舒緩（關節炎）、免疫支持、呼吸道保健、皮膚修復、清新淨化。萃取自樹脂，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/302/",
+      "robots": "index, follow"
+    },
+    "/oil/303/": {
+      "title": "秘魯聖木精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "秘魯聖木（Bursera graveolens）：單萜烯類精油。主要成分 α-松油醇 (19%)、檸檬烯 (13–27%)。常見芳療應用：淨化能量場、提振靈性、抗焦慮、舒緩放鬆、日常保養。萃取自木材，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/303/",
+      "robots": "index, follow"
+    },
+    "/oil/304/": {
+      "title": "欖香脂精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "欖香脂（Canarium luzonicum）：單萜烯類精油。主要成分 檸檬烯 (20–55%)、α-水芹烯 (10–17%)。常見芳療應用：皮膚修復再生、肌膚修護感、呼吸清新、免疫提升、情緒平衡。萃取自樹脂，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/304/",
+      "robots": "index, follow"
+    },
+    "/oil/305/": {
+      "title": "岩玫瑰精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "岩玫瑰（Cistus ladanifer）：單萜烯類精油。主要成分 α-蒎烯 (30–50%)、莰烯 (5–8%)。常見芳療應用：緊緻收斂、肌膚修護感、抗老化皮膚修復、日常保養、清新淨化。萃取自葉片與嫩枝，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/305/",
+      "robots": "index, follow"
+    },
+    "/oil/306/": {
+      "title": "苦橙精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "苦橙（Citrus aurantium）：單萜烯類精油。主要成分 檸檬烯 (85–95%)、月桂烯 (1–2%)。常見芳療應用：助消化、提振食慾、清新淨化、情緒提振、疏肝理氣。萃取自果皮冷壓，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/306/",
+      "robots": "index, follow"
+    },
+    "/oil/307/": {
+      "title": "泰國青檸精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "泰國青檸（Citrus hystrix）：單萜烯類精油。主要成分 β-蒎烯 (21–34%)、沙賓烯 (15–32%)。常見芳療應用：清新淨化防蟲、淨化空氣、助消化、提振精神、抗焦慮。萃取自果皮，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/307/",
+      "robots": "index, follow"
+    },
+    "/oil/308/": {
+      "title": "日本柚子精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "日本柚子（Citrus junos）：單萜烯類精油。主要成分 檸檬烯 (65–80%)、γ-萜品烯 (8–12%)。常見芳療應用：放鬆舒壓、促進血液循環、抗氧化、提振情緒、美容護膚。萃取自果皮冷壓，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/308/",
+      "robots": "index, follow"
+    },
+    "/oil/309/": {
+      "title": "萊姆精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "萊姆（Citrus aurantiifolia）：單萜烯類精油。主要成分 檸檬烯 (45–60%)、β-蒎烯 (10–18%)。常見芳療應用：提振精神、淨化空氣、助消化、清新淨化、收斂控油。萃取自果皮冷壓，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/309/",
+      "robots": "index, follow"
+    },
+    "/oil/31/": {
+      "title": "假剪股穎風輪菜精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "假剪股穎風輪菜（Clinopodium nepeta）：單萜酮/烯類精油。主要成分 胡薄荷酮、薄荷酮、異薄荷酮、檸檬烯。常見芳療應用：消化調理、清新淨化、驅風、呼吸清新。萃取自全株蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/31/",
+      "robots": "index, follow"
+    },
+    "/oil/310/": {
+      "title": "檸檬精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "檸檬（Citrus limon）：單萜烯類精油。主要成分 檸檬烯 (60–75%)、β-蒎烯 (8–14%)。常見芳療應用：提神醒腦、淨化清新淨化、促進循環、助消化、亮澤淡斑。萃取自果皮冷壓，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-lemon/",
+      "robots": "index, follow"
+    },
+    "/oil/311/": {
+      "title": "葡萄柚精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "葡萄柚（Citrus paradisi）：單萜烯類精油。主要成分 檸檬烯 (88–95%)、月桂烯 (1–3%)。常見芳療應用：提振情緒、促進代謝、消除水腫、控油收斂、食慾調節。萃取自果皮冷壓，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-grapefruit/",
+      "robots": "index, follow"
+    },
+    "/oil/312/": {
+      "title": "桔（紅/綠）精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "桔（紅/綠）（Citrus reticulata）：單萜烯類精油。主要成分 檸檬烯 (65–75%)、γ-萜品烯 (15–22%)。常見芳療應用：助眠安神、緩解焦慮、助消化、促進循環、適合兒童。萃取自果皮冷壓，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/312/",
+      "robots": "index, follow"
+    },
+    "/oil/313/": {
+      "title": "岬角白梅精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "岬角白梅（Coleonema album）：單萜烯類精油。主要成分 β-水芹烯 (32%)、δ-3-蒈烯 (11%)。常見芳療應用：清新淨化、抗氧化、皮膚保養、放鬆身心、淨化空氣。萃取自葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/313/",
+      "robots": "index, follow"
+    },
+    "/oil/314/": {
+      "title": "海茴香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "海茴香（Crithmum maritimum）：單萜烯類精油。主要成分 γ-萜品烯 (32–37%)、沙賓烯 (9–21%)。常見芳療應用：排水消腫、橘皮組織改善、促進循環、抗氧化、皮膚緊實。萃取自全株地上部分，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/314/",
+      "robots": "index, follow"
+    },
+    "/oil/315/": {
+      "title": "絲柏精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "絲柏（Cupressus sempervirens）：單萜烯類精油。主要成分 α-蒎烯 (48–52%)、δ-3-蒈烯 (20–22%)。常見芳療應用：收斂緊緻、促進靜脈循環、改善水腫、調節油脂、呼吸道暢通。萃取自針葉與嫩枝，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-cypress/",
+      "robots": "index, follow"
+    },
+    "/oil/316/": {
+      "title": "非洲藍香茅精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "非洲藍香茅（Cymbopogon validus）：單萜烯類精油。主要成分 香葉醛 + 橙花醛（檸檬醛）(40–60%)。常見芳療應用：清新淨化、驅蟲防蚊、舒緩放鬆、提振精神、淨化空氣。萃取自葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/316/",
+      "robots": "index, follow"
+    },
+    "/oil/317/": {
+      "title": "白松香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "白松香（Ferula galbaniflua）：單萜烯類精油。主要成分 β-蒎烯 (38–62%)、α-蒎烯 (5–10%)。常見芳療應用：肌膚修護感、舒緩放鬆、呼吸清新、促進循環、皮膚修復。萃取自樹脂，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/317/",
+      "robots": "index, follow"
+    },
+    "/oil/318/": {
+      "title": "連翹精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "連翹（Forsythia suspensa）：單萜烯類精油。主要成分 α-蒎烯 (15–25%)、沙賓烯 (5–10%)。常見芳療應用：清熱解毒、清新淨化、消腫散結、清涼舒適、皮膚舒緩。萃取自果實，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/318/",
+      "robots": "index, follow"
+    },
+    "/oil/319/": {
+      "title": "高地杜松精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "高地杜松（Juniperus communis var. montana）：單萜烯類精油。主要成分 α-蒎烯 (33–80%)、沙賓烯 (5–15%)。常見芳療應用：循環暢快淨化清爽、淨化淋巴、舒緩放鬆、提振精神、淨化能量。萃取自針葉與嫩枝，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/319/",
+      "robots": "index, follow"
+    },
+    "/oil/32/": {
+      "title": "藏茴香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "藏茴香（Carum carvi）：單萜酮/烯類精油。主要成分 香芹酮（葛縷酮）、檸檬烯。常見芳療應用：促進消化、驅風排氣、安撫放鬆、呼吸清新。萃取自種子蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/32/",
+      "robots": "index, follow"
+    },
+    "/oil/320/": {
+      "title": "杜松漿果精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "杜松漿果（Juniperus communis）：單萜烯類精油。主要成分 α-蒎烯 (51–62%)、月桂烯 (7–9%)、沙賓烯 (6%)。常見芳療應用：循環暢快淨化清爽、消除水腫、溫暖舒緩、淨化心靈、收斂毛孔。萃取自漿果，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-juniper/",
+      "robots": "index, follow"
+    },
+    "/oil/321/": {
+      "title": "刺檜漿果精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "刺檜漿果（Juniperus oxycedrus）：單萜烯類精油。主要成分 α-蒎烯 (23–65%)、月桂烯 (11–15%)。常見芳療應用：皮膚修復（牛皮癬、濕疹）、清新淨化消毒、促進頭皮健康、舒緩。萃取自漿果，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/321/",
+      "robots": "index, follow"
+    },
+    "/oil/322/": {
+      "title": "卡奴卡精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "卡奴卡（Kunzea ericoides）：單萜烯類精油。主要成分 α-蒎烯 (1–63%)、1,8-桉油醇 (4–15%)。常見芳療應用：舒緩放鬆、肌肉舒緩、清新淨化、肌膚修護感、關節保健。萃取自葉片與嫩枝，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/322/",
+      "robots": "index, follow"
+    },
+    "/oil/323/": {
+      "title": "落葉松精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "落葉松（Larix decidua）：單萜烯類精油。主要成分 α-蒎烯 (54–72%)、β-蒎烯 (6–16%)。常見芳療應用：呼吸道暢通、清新淨化、提振精神、強化信心、淨化空氣。萃取自樹脂與針葉，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/323/",
+      "robots": "index, follow"
+    },
+    "/oil/324/": {
+      "title": "格陵蘭喇叭茶精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "格陵蘭喇叭茶（Rhododendron groenlandicum）：單萜烯類精油。主要成分 沙賓烯 (16–22%)、α-蒎烯 (10–16%)。常見芳療應用：肝臟淨化清爽、助眠、舒緩、安撫放鬆、腎臟與前列腺保健。萃取自葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/324/",
+      "robots": "index, follow"
+    },
+    "/oil/325/": {
+      "title": "黑雲杉精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "黑雲杉（Picea mariana）：單萜烯類精油。主要成分 乙酸龍腦酯 (30–39%)、莰烯 (10–25%)。常見芳療應用：腎上腺支持、提振能量、呼吸道暢通、清新淨化、情緒穩定。萃取自針葉，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-black-spruce/",
+      "robots": "index, follow"
+    },
+    "/oil/326/": {
+      "title": "挪威雲杉精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "挪威雲杉（Picea abies）：單萜烯類精油。主要成分 乙酸龍腦酯 (20–35%)、莰烯 (8–15%)。常見芳療應用：呼吸道支持、淨化空氣、舒緩壓力、促進循環、清新淨化。萃取自針葉，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/326/",
+      "robots": "index, follow"
+    },
+    "/oil/327/": {
+      "title": "科西嘉黑松精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "科西嘉黑松（Pinus nigra subsp. laricio）：單萜烯類精油。主要成分 α-蒎烯 (50–67%)、β-蒎烯 (2–5%)。常見芳療應用：呼吸道暢通、類可體松作用、提振精神、清新淨化、舒緩關節不適。萃取自針葉，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/327/",
+      "robots": "index, follow"
+    },
+    "/oil/328/": {
+      "title": "海松精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "海松（Pinus pinaster）：單萜烯類精油。主要成分 α-蒎烯 (25–40%)、β-蒎烯 (22–29%)。常見芳療應用：呼吸道保健、清新淨化、促進血液循環、舒緩肌肉疼痛、提振活力。萃取自針葉與嫩枝，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/328/",
+      "robots": "index, follow"
+    },
+    "/oil/329/": {
+      "title": "歐洲赤松精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "歐洲赤松（Pinus sylvestris）：單萜烯類精油。主要成分 α-蒎烯 (30–55%)、β-蒎烯 (5–15%)。常見芳療應用：呼吸道暢通、類可體松效果、提振精神與體力、清新淨化消毒、舒緩風濕。萃取自針葉，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/329/",
+      "robots": "index, follow"
+    },
+    "/oil/33/": {
+      "title": "藍米柏精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "藍米柏（Fokienia hodginsii）：單萜酮/烯類精油。主要成分 側柏酮、α-蒎烯、δ-3-蒈烯、樟腦。常見芳療應用：鎮靜安神、防蟲防腐、清新淨化、呼吸道保養。萃取自木材蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/33/",
+      "robots": "index, follow"
+    },
+    "/oil/330/": {
+      "title": "黑胡椒精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "黑胡椒（Piper nigrum）：單萜烯類精油。主要成分 β-石竹烯 (15–30%)、檸檬烯 (12–25%)。常見芳療應用：促進循環、暖身溫經、舒緩肌肉疼痛、助消化、提振食慾。萃取自果實，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-black-pepper/",
+      "robots": "index, follow"
+    },
+    "/oil/331/": {
+      "title": "熏陸香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "熏陸香（Pistacia lentiscus）：單萜烯類精油。主要成分 α-蒎烯 (20–79%)、月桂烯 (3–33%)。常見芳療應用：促進靜脈與淋巴循環、消腫排水、消化保健、清新淨化、呼吸暢通。萃取自葉片與樹脂，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/331/",
+      "robots": "index, follow"
+    },
+    "/oil/332/": {
+      "title": "奇歐島熏陸香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "奇歐島熏陸香（Pistacia lentiscus var. chia）：單萜烯類精油。主要成分 α-蒎烯 (30–75%)、月桂烯 (3–60%)。常見芳療應用：消化保健（胃潰瘍）、抗幽門螺旋桿菌、抗氧化、肌膚修護感、口腔保健。萃取自樹脂（乳香脂），使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/332/",
+      "robots": "index, follow"
+    },
+    "/oil/333/": {
+      "title": "巴西乳香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "巴西乳香（Protium heptaphyllum）：單萜烯類精油。主要成分 松油烯 (29%)、檸檬烯 (17%)、α-水芹烯 (17%)。常見芳療應用：舒緩放鬆、清新淨化抗氧化、肌膚修護感、呼吸道支持、靈性淨化。萃取自樹脂，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/333/",
+      "robots": "index, follow"
+    },
+    "/oil/334/": {
+      "title": "道格拉斯杉精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "道格拉斯杉（Pseudotsuga menziesii）：單萜烯類精油。主要成分 β-蒎烯 (6–23%)、沙賓烯 (3–17%)。常見芳療應用：呼吸道支持、提振精神、清新淨化、情緒穩定、森林浴替代。萃取自針葉與嫩枝，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/334/",
+      "robots": "index, follow"
+    },
+    "/oil/335/": {
+      "title": "雅麗菊精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "雅麗菊（Lippia graveolens）：單萜烯類精油。主要成分 百里酚 (10–43%)、香荊芥酚 (22–44%)。常見芳療應用：強效清新淨化、免疫提升、舒緩放鬆、消化支持。萃取自葉片與花，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/335/",
+      "robots": "index, follow"
+    },
+    "/oil/336/": {
+      "title": "髯花杜鵑精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "髯花杜鵑（Rhododendron anthopogon）：單萜烯類精油。主要成分 α-蒎烯 (22–37%)、β-蒎烯 (10–16%)。常見芳療應用：清新淨化、呼吸道保健、鎮靜安神、靈修冥想、高原適應。萃取自葉片與花，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/336/",
+      "robots": "index, follow"
+    },
+    "/oil/337/": {
+      "title": "馬達加斯加鹽膚木精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "馬達加斯加鹽膚木（Rhus taratana）：單萜烯類精油。主要成分 α-蒎烯 (45%)、β-蒎烯 (20–23%)。常見芳療應用：呼吸道暢通、舒緩清新淨化、提振精神、免疫支持、情緒穩定。萃取自葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/337/",
+      "robots": "index, follow"
+    },
+    "/oil/338/": {
+      "title": "秘魯胡椒精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "秘魯胡椒（Schinus molle）：單萜烯類精油。主要成分 α-水芹烯 (35–40%)。常見芳療應用：清新淨化防腐、驅蟲防蚊、舒緩放鬆、促進循環、提振情緒。萃取自果實與葉片，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/338/",
+      "robots": "index, follow"
+    },
+    "/oil/339/": {
+      "title": "巴西胡椒精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "巴西胡椒（Schinus terebinthifolia）：單萜烯類精油。主要成分 δ-3-蒈烯 (30–69%)、α-蒎烯 (4–16%)。常見芳療應用：清新淨化消毒、肌膚修護感、舒緩、驅蟲、促進循環。萃取自果實，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/339/",
+      "robots": "index, follow"
+    },
+    "/oil/34/": {
+      "title": "檸檬精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "檸檬（Citrus limon）：單萜酮/烯類精油。主要成分 檸檬烯、β-蒎烯、γ-萜品烯、香茅醛、微量酮類。常見芳療應用：提振精神、淨化空氣、促進消化、亮澤抗氧化。萃取自果皮冷壓，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-lemon/",
+      "robots": "index, follow"
+    },
+    "/oil/340/": {
+      "title": "香榧精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "香榧（Torreya nucifera）：單萜烯類精油。主要成分 dl-檸檬烯 (30–44%)、δ-3-蒈烯 (9–15%)。常見芳療應用：清新淨化抗口腔病原菌、舒緩、減壓放鬆、抗氧化、皮膚保健。萃取自針葉與果實，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/340/",
+      "robots": "index, follow"
+    },
+    "/oil/341/": {
+      "title": "加拿大鐵杉精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "加拿大鐵杉（Tsuga canadensis）：單萜烯類精油。主要成分 乙酸龍腦酯 (27–39%)、α-蒎烯 (16–24%)。常見芳療應用：呼吸道暢通、接地穩定、情緒安撫、淨化空氣、清新淨化。萃取自針葉與嫩枝，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/341/",
+      "robots": "index, follow"
+    },
+    "/oil/342/": {
+      "title": "貞節樹精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "貞節樹（Vitex agnus-castus）：單萜烯類精油。主要成分 1,8-桉油醇 + 檸檬烯 (13–31%)、沙賓烯 (9–22%)。常見芳療應用：調節女性荷爾蒙、緩解經前症候群、更年期支持、催乳、情緒穩定。萃取自果實，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/342/",
+      "robots": "index, follow"
+    },
+    "/oil/343/": {
+      "title": "泰國蔘薑精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "泰國蔘薑（Zingiber cassumunar）：單萜烯類精油。主要成分 沙賓烯 (24–44%)、松油烯-4-醇 (29–49%)。常見芳療應用：強效舒緩（扭傷、關節炎）、舒緩肌肉疼痛、清新淨化、促進循環、抗氧化。萃取自根莖，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/343/",
+      "robots": "index, follow"
+    },
+    "/oil/35/": {
+      "title": "薄荷尤加利精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "薄荷尤加利（Eucalyptus dives ct. piperitone）：單萜酮/烯類精油。主要成分 胡椒酮、α-水芹烯、對薄荷-1-烯。常見芳療應用：強力呼吸清新、暢通呼吸道、抗不適、促進黏液排出。萃取自葉片蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/35/",
+      "robots": "index, follow"
+    },
+    "/oil/36/": {
+      "title": "多苞葉尤加利精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "多苞葉尤加利（Eucalyptus polybractea ct. cryptone）：單萜酮/烯類精油。主要成分 隱酮、對繖花烴、α-蒎烯、1,8-桉油醇。常見芳療應用：清新淨化、泌尿道不適、婦科不適、呼吸清新。萃取自葉片蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/36/",
+      "robots": "index, follow"
+    },
+    "/oil/37/": {
+      "title": "牛膝草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "牛膝草（Hyssopus officinalis）：單萜酮/烯類精油。主要成分 松樟酮（異松樟酮）、β-蒎烯、1,8-桉油醇。常見芳療應用：呼吸清新淨化、調節血壓、肌膚修護感。萃取自全株蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/37/",
+      "robots": "index, follow"
+    },
+    "/oil/38/": {
+      "title": "頭狀薰衣草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "頭狀薰衣草（Lavandula stoechas）：單萜酮/烯類精油。主要成分 冰片酮、樟腦、1,8-桉油醇、α-蒎烯。常見芳療應用：強力呼吸清新、肌膚修護感、清新淨化、耳鼻喉不適。萃取自花穗蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/38/",
+      "robots": "index, follow"
+    },
+    "/oil/39/": {
+      "title": "白膠脂精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "白膠脂（Pistacia lentiscus）：單萜酮/烯類精油。主要成分 α-蒎烯、月桂烯、馬鞭草烯酮、萜品烯-4-醇。常見芳療應用：靜脈與淋巴循環促進、消腫、安撫放鬆、前列腺保養。萃取自嫩枝蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/39/",
+      "robots": "index, follow"
+    },
+    "/oil/40/": {
+      "title": "馬郁蘭精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "馬郁蘭（Origanum majorana）：單萜酮/烯類精油。主要成分 萜品烯-4-醇、γ-萜品烯、α-萜品烯、沉香醇、微量酮類。常見芳療應用：鎮靜安眠、肌肉舒緩、放鬆、調節自律神經。萃取自花穗蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/40/",
+      "robots": "index, follow"
+    },
+    "/oil/41/": {
+      "title": "綠薄荷精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "綠薄荷（Mentha spicata）：單萜酮/烯類精油。主要成分 香芹酮（葛縷酮）、檸檬烯、1,8-桉油醇。常見芳療應用：促進消化、驅風排氣、清新口氣、溫和提神。萃取自全株蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-spearmint/",
+      "robots": "index, follow"
+    },
+    "/oil/42/": {
+      "title": "胡椒薄荷精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "胡椒薄荷（Mentha × piperita）：單萜酮/烯類精油。主要成分 薄荷醇、薄荷酮、1,8-桉油醇、異薄荷酮。常見芳療應用：放鬆肌膚舒緩、提神醒腦、促進消化、清涼舒適降溫。萃取自全株蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-peppermint/",
+      "robots": "index, follow"
+    },
+    "/oil/43/": {
+      "title": "檸檬草與香茅精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "檸檬草與香茅（Cymbopogon citratus / C. nardus）：單萜酮/烯類精油。主要成分 香茅醛、香葉醇、檸檬醛（橙花醛+香葉醛）。常見芳療應用：驅蚊蟲、清新淨化、促進消化、肌肉舒緩。萃取自葉片蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/43/",
+      "robots": "index, follow"
+    },
+    "/oil/44/": {
+      "title": "馬鞭草酮迷迭香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "馬鞭草酮迷迭香（Rosmarinus officinalis ct. verbenone）：單萜酮/烯類精油。主要成分 馬鞭草酮、α-蒎烯、乙酸龍腦酯、樟腦。常見芳療應用：肝膽淨化清爽、肌膚煥活、呼吸清新、護膚抗老化。萃取自花穗蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/44/",
+      "robots": "index, follow"
+    },
+    "/oil/45/": {
+      "title": "薰衣草葉鼠尾草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "薰衣草葉鼠尾草（Salvia lavandulifolia）：單萜酮/烯類精油。主要成分 1,8-桉油醇、樟腦、α-蒎烯、沉香醇。常見芳療應用：增強記憶力、提神醒腦、清新淨化、呼吸道保養。萃取自全株蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/45/",
+      "robots": "index, follow"
+    },
+    "/oil/46/": {
+      "title": "鼠尾草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "鼠尾草（Salvia officinalis）：單萜酮/烯類精油。主要成分 側柏酮、樟腦、1,8-桉油醇、α-蒎烯。常見芳療應用：經期前後香氛陪伴經期前後香氛陪伴、類雌激素作用、清新淨化、呼吸清新。萃取自全株蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/46/",
+      "robots": "index, follow"
+    },
+    "/oil/47/": {
+      "title": "桉油醇迷迭香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "桉油醇迷迭香（Rosmarinus officinalis ct. cineole）：單萜酮/烯類精油。主要成分 1,8-桉油醇、樟腦、α-蒎烯、龍腦。常見芳療應用：暢通呼吸道、提神醒腦、促進血液循環、清新淨化。萃取自花穗蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-rosemary/",
+      "robots": "index, follow"
+    },
+    "/oil/48/": {
+      "title": "芳香萬壽菊精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "芳香萬壽菊（Tagetes minuta）：單萜酮/烯類精油。主要成分 側柏酮、β-石竹烯、羅勒烯、檸檬烯。常見芳療應用：清新淨化、肌膚呵護、抗寄生蟲、肌膚修護感。萃取自花朵蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/48/",
+      "robots": "index, follow"
+    },
+    "/oil/49/": {
+      "title": "萬壽菊精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "萬壽菊（Tagetes erecta）：單萜酮/烯類精油。主要成分 側柏酮、萬壽菊酮、羅勒烯、檸檬烯。常見芳療應用：清新淨化、皮膚修護、驅蟲、肌膚修護感。萃取自花朵蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/49/",
+      "robots": "index, follow"
+    },
+    "/oil/50/": {
+      "title": "夏白菊精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "夏白菊（Tanacetum parthenium）：單萜酮/烯類精油。主要成分 樟腦、小白菊內酯、龍腦、β-石竹烯。常見芳療應用：緩解偏頭痛、舒緩放鬆、經期前後香氛陪伴、抗過敏。萃取自花朵蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/50/",
+      "robots": "index, follow"
+    },
+    "/oil/51/": {
+      "title": "艾菊精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "艾菊（Tanacetum vulgare）：單萜酮/烯類精油。主要成分 側柏酮、樟腦、龍腦、1,8-桉油醇。常見芳療應用：驅蟲、抗寄生蟲、舒緩、促進消化。萃取自花朵與葉片蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/51/",
+      "robots": "index, follow"
+    },
+    "/oil/52/": {
+      "title": "側柏精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "側柏（Thuja occidentalis）：單萜酮/烯類精油。主要成分 側柏酮（α-側柏酮+β-側柏酮）、冰片酮、沙賓烯。常見芳療應用：清新淨化（疣）、皮膚增生、驅蟲、日常保養。萃取自枝葉蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/52/",
+      "robots": "index, follow"
+    },
+    "/oil/54/": {
+      "title": "中國當歸精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "中國當歸（Angelica sinensis）：香豆素與內酯類精油。主要成分 藁本內酯、正丁烯基苯酞、α-蒎烯、呋喃香豆素。常見芳療應用：補血經期前後香氛陪伴、循環按摩、潤腸通便、放鬆安神。萃取自根部蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/54/",
+      "robots": "index, follow"
+    },
+    "/oil/55/": {
+      "title": "印度當歸精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "印度當歸（Angelica glauca）：香豆素與內酯類精油。主要成分 藁本內酯、苯酞類、β-水芹烯、呋喃香豆素。常見芳療應用：經期前後香氛陪伴放鬆、祛風散寒、助消化、鎮靜安神。萃取自根部蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/55/",
+      "robots": "index, follow"
+    },
+    "/oil/56/": {
+      "title": "芹菜籽精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "芹菜籽（Apium graveolens）：香豆素與內酯類精油。主要成分 苯酞類（丁基苯酞、瑟丹酸內酯）、檸檬烯、β-月桂烯。常見芳療應用：淨化清爽循環暢快、助消化、放鬆、安撫放鬆、淡斑。萃取自種子蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/56/",
+      "robots": "index, follow"
+    },
+    "/oil/57/": {
+      "title": "辣根精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "辣根（Armoracia rusticana）：香豆素與內酯類精油。主要成分 異硫氰酸烯丙酯、苯乙基異硫氰酸酯、微量內酯類。常見芳療應用：強力清新淨化、促進血液循環、呼吸清新、緩解關節疼痛。萃取自根部蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/57/",
+      "robots": "index, follow"
+    },
+    "/oil/58/": {
+      "title": "蒼朮精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "蒼朮（Atractylodes lancea）：香豆素與內酯類精油。主要成分 蒼朮素（蒼朮醇）、蒼朮酮、β-桉葉醇、茅朮醇。常見芳療應用：燥濕健脾、祛風散寒、明目、清新淨化。萃取自根莖蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/58/",
+      "robots": "index, follow"
+    },
+    "/oil/59/": {
+      "title": "薑黃精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "薑黃（Curcuma longa）：香豆素與內酯類精油。主要成分 薑黃酮、芳香薑黃酮、α-薑黃烯、β-倍半水芹烯。常見芳療應用：強力舒緩、抗氧化、促進肝膽代謝、緩解關節疼痛、亮澤淡斑。萃取自根莖蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/59/",
+      "robots": "index, follow"
+    },
+    "/oil/60/": {
+      "title": "蛇床子精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "蛇床子（Cnidium monnieri）：香豆素與內酯類精油。主要成分 蛇床子素（歐前胡素）、異歐前胡素、佛手柑內酯、香豆素類。常見芳療應用：清新淨化、肌膚舒緩、溫暖活力、殺蟲、濕疹調理。萃取自果實蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/60/",
+      "robots": "index, follow"
+    },
+    "/oil/61/": {
+      "title": "新幾內亞厚殼桂精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "新幾內亞厚殼桂（Cryptocarya massoy）：香豆素與內酯類精油。主要成分 馬索亞內酯（C-10內酯、C-12內酯）、苯甲醛。常見芳療應用：強力清新淨化、促進消化、緩解腹瀉、溫暖身體。萃取自樹皮蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/61/",
+      "robots": "index, follow"
+    },
+    "/oil/62/": {
+      "title": "阿魏精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "阿魏（Ferula assa-foetida）：香豆素與內酯類精油。主要成分 二硫化物類、阿魏酸、繖形酮、香豆素、呋喃香豆素。常見芳療應用：驅風排氣、助消化、安撫放鬆、鎮靜、抗寄生蟲。萃取自樹脂蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/62/",
+      "robots": "index, follow"
+    },
+    "/oil/63/": {
+      "title": "土木香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "土木香（Inula helenium）：香豆素與內酯類精油。主要成分 土木香內酯、異土木香內酯、土木香醇、α-蒎烯。常見芳療應用：強力呼吸清新淨化（尤其抗結核桿菌）、促進呼吸道健康、舒緩。萃取自根部蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/63/",
+      "robots": "index, follow"
+    },
+    "/oil/64/": {
+      "title": "大花土木香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "大花土木香（Inula graveolens）：香豆素與內酯類精油。主要成分 龍腦乙酸酯、龍腦、土木香內酯、樟腦。常見芳療應用：強力呼吸清新排黏液、支氣管炎、鼻竇炎、抗卡他性炎症。萃取自花朵蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/64/",
+      "robots": "index, follow"
+    },
+    "/oil/65/": {
+      "title": "川芎精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "川芎（Conioselinum anthriscoides）：香豆素與內酯類精油。主要成分 藁本內酯、川芎嗪、丁基苯酞、新蛇床內酯。常見芳療應用：循環暢快行氣、祛風放鬆、緩解頭痛、促進血液循環。萃取自根莖蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/65/",
+      "robots": "index, follow"
+    },
+    "/oil/66/": {
+      "title": "歐白芷精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "歐白芷（Angelica archangelica）：單萜酮/烯類精油。主要成分 α-蒎烯、δ-3-蒈烯、苯酞類、微量呋喃香豆素。常見芳療應用：促進消化、日常保養健脾、安撫放鬆、安撫神經。萃取自根部蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/66/",
+      "robots": "index, follow"
+    },
+    "/oil/67/": {
+      "title": "歐防風精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "歐防風（Pastinaca sativa）：單萜酮/烯類精油。主要成分 肉豆蔻醚、月桂烯、β-蒎烯、辛醛。常見芳療應用：促進消化、清新淨化、驅風、緩解肌肉痠痛。萃取自種子蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/67/",
+      "robots": "index, follow"
+    },
+    "/oil/68/": {
+      "title": "木香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "木香（Dolomiaea costus）：單萜酮/烯類精油。主要成分 木香烴內酯、去氫木香內酯、α-木香醇、β-欖香烯。常見芳療應用：行氣放鬆、溫中和胃、舒緩、清新淨化、驅蟲。萃取自根部蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/68/",
+      "robots": "index, follow"
+    },
+    "/oil/70/": {
+      "title": "芳樟葉精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "芳樟葉（Cinnamomum camphora ct. linalool）：氧化物類精油。主要成分 1,8-桉油醇、沉香醇、樟腦。常見芳療應用：呼吸清新、抗不適、呼吸道保健、清新淨化、提振免疫。萃取自葉片蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/70/",
+      "robots": "index, follow"
+    },
+    "/oil/71/": {
+      "title": "小高良薑精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "小高良薑（Alpinia officinarum）：氧化物類精油。主要成分 1,8-桉油醇、乙酸龍腦酯、樟腦。常見芳療應用：消化促進、舒緩、放鬆、溫暖循環、清新淨化。萃取自根莖蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/71/",
+      "robots": "index, follow"
+    },
+    "/oil/72/": {
+      "title": "月桂精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "月桂（Laurus nobilis）：氧化物類精油。主要成分 1,8-桉油醇、沉香醇、丁香酚、乙酸萜品酯。常見芳療應用：清新淨化、消化促進、放鬆、淋巴淨化清爽。萃取自葉片蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-bay/",
+      "robots": "index, follow"
+    },
+    "/oil/73/": {
+      "title": "桉油醇樟精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "桉油醇樟（Cinnamomum camphora ct. cineole）：氧化物類精油。主要成分 1,8-桉油醇（高比例）、沙賓烯、α-萜品醇。常見芳療應用：強效呼吸清新、呼吸道暢通、抗卡他性發炎、清新淨化。萃取自葉片蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-ravintsara/",
+      "robots": "index, follow"
+    },
+    "/oil/74/": {
+      "title": "妙嘉白千層精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "妙嘉白千層（Melaleuca viridiflora）：氧化物類精油。主要成分 1,8-桉油醇、α-萜品醇、檸檬烯。常見芳療應用：抗不適、呼吸道保健、皮膚修復、提振免疫、放射線防護。萃取自葉片蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/74/",
+      "robots": "index, follow"
+    },
+    "/oil/75/": {
+      "title": "豆蔻精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "豆蔻（Elettaria cardamomum）：氧化物類精油。主要成分 1,8-桉油醇、乙酸萜品酯、沉香醇、α-萜品醇。常見芳療應用：促進消化、止嘔、安撫放鬆、呼吸清新、溫暖脾胃。萃取自種子蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/75/",
+      "robots": "index, follow"
+    },
+    "/oil/76/": {
+      "title": "藍膠尤加利精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "藍膠尤加利（Eucalyptus globulus）：氧化物類精油。主要成分 1,8-桉油醇（60-85%）、α-蒎烯、檸檬烯。常見芳療應用：強效呼吸清新、呼吸道暢通、清新淨化、清涼舒適、提振精神。萃取自葉片蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-eucalyptus/",
+      "robots": "index, follow"
+    },
+    "/oil/77/": {
+      "title": "史密斯尤加利精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "史密斯尤加利（Eucalyptus smithii）：氧化物類精油。主要成分 1,8-桉油醇（60-75%）、α-蒎烯、對傘花烴。常見芳療應用：溫和呼吸清新、呼吸道保健、清新淨化、提振免疫、適合兒童。萃取自葉片蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/77/",
+      "robots": "index, follow"
+    },
+    "/oil/78/": {
+      "title": "澳洲尤加利精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "澳洲尤加利（Eucalyptus radiata）：氧化物類精油。主要成分 1,8-桉油醇（60-75%）、α-萜品醇、檸檬醛。常見芳療應用：呼吸清新淨化、抗卡他性發炎、日常保養、提神醒腦。萃取自葉片蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/78/",
+      "robots": "index, follow"
+    },
+    "/oil/79/": {
+      "title": "露兜永久花精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "露兜永久花（Helichrysum gymnocephalum）：氧化物類精油。主要成分 1,8-桉油醇、對傘花烴、α-蒎烯。常見芳療應用：抗不適、呼吸清新淨化、呼吸道保健、日常保養。萃取自開花植株蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/79/",
+      "robots": "index, follow"
+    },
+    "/oil/80/": {
+      "title": "高地牛膝草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "高地牛膝草（Hyssopus officinalis var. decumbens）：氧化物類精油。主要成分 1,8-桉油醇、沉香醇、β-蒎烯。常見芳療應用：呼吸清新、呼吸道保健、清新淨化、呼吸清新。萃取自開花頂部蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/80/",
+      "robots": "index, follow"
+    },
+    "/oil/81/": {
+      "title": "印度月桂（桂葉）精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "印度月桂（桂葉）（Cinnamomum tamala）：氧化物類精油。主要成分 1,8-桉油醇、丁香酚、肉桂醛。常見芳療應用：清新淨化、促消化、暖身循環暢快、放鬆、呼吸道保健。萃取自葉片蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/81/",
+      "robots": "index, follow"
+    },
+    "/oil/82/": {
+      "title": "穗花薰衣草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "穗花薰衣草（Lavandula latifolia）：氧化物類精油。主要成分 1,8-桉油醇、沉香醇、樟腦。常見芳療應用：強效清新淨化、燒燙傷修復、呼吸清新、驅蟲、舒緩放鬆。萃取自開花頂部蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-spike-lavender/",
+      "robots": "index, follow"
+    },
+    "/oil/83/": {
+      "title": "白千層精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "白千層（Melaleuca cajuputi）：氧化物類精油。主要成分 1,8-桉油醇（50-65%）、α-萜品醇、檸檬烯。常見芳療應用：呼吸道保養、放鬆、溫暖舒緩、驅蟲、肌膚呵護。萃取自葉片與嫩枝蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/83/",
+      "robots": "index, follow"
+    },
+    "/oil/84/": {
+      "title": "綠花白千層精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "綠花白千層（Melaleuca quinquenervia ct. cineole）：氧化物類精油。主要成分 1,8-桉油醇（45-65%）、綠花白千層醇、α-萜品醇。常見芳療應用：抗不適、提振免疫、肌膚修護感、放射線防護、靜脈曲張。萃取自葉片蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/84/",
+      "robots": "index, follow"
+    },
+    "/oil/85/": {
+      "title": "掃帚茶樹精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "掃帚茶樹（Leptospermum scoparium）：氧化物類精油。主要成分 1,8-桉油醇、檸檬醛、倍半萜烯類。常見芳療應用：強效清新淨化、皮膚修復、清新淨化、舒緩、肌膚修護感。萃取自葉片與嫩枝蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/85/",
+      "robots": "index, follow"
+    },
+    "/oil/86/": {
+      "title": "香桃木精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "香桃木（Myrtus communis ct. cineole）：氧化物類精油。主要成分 1,8-桉油醇、α-蒎烯、沉香醇、乙酸香桃木酯。常見芳療應用：溫和呼吸清新、兒童呼吸道、助眠、甲狀腺調節、皮膚收斂。萃取自葉片與嫩枝蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/86/",
+      "robots": "index, follow"
+    },
+    "/oil/87/": {
+      "title": "桉油醇迷迭香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "桉油醇迷迭香（Rosmarinus officinalis ct. cineole）：氧化物類精油。主要成分 1,8-桉油醇（38-55%）、α-蒎烯、樟腦、龍腦。常見芳療應用：呼吸清新、提神醒腦、促進循環、肌肉酸痛、增強記憶力。萃取自開花頂部蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-rosemary/",
+      "robots": "index, follow"
+    },
+    "/oil/88/": {
+      "title": "三葉鼠尾草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "三葉鼠尾草（Salvia fruticosa）：氧化物類精油。主要成分 1,8-桉油醇（40-60%）、樟腦、α-蒎烯。常見芳療應用：清新淨化、呼吸道保健、口腔保健、抗氧化、記憶力。萃取自全草蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/88/",
+      "robots": "index, follow"
+    },
+    "/oil/89/": {
+      "title": "圓葉當歸精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "圓葉當歸（Levisticum officinale）：氧化物類精油。主要成分 1,8-桉油醇、β-水芹烯、鄰苯二甲酸內酯。常見芳療應用：淨化清爽循環暢快、消化促進、安撫放鬆、肝臟養護、清新淨化。萃取自根部蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/89/",
+      "robots": "index, follow"
+    },
+    "/oil/90/": {
+      "title": "鳳梨香百里香精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "鳳梨香百里香（Thymus mastichina）：氧化物類精油。主要成分 1,8-桉油醇（50-75%）、沉香醇、α-萜品醇。常見芳療應用：呼吸清新、呼吸道保健、清新淨化、提振免疫、緩解鼻竇炎。萃取自開花全草蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/90/",
+      "robots": "index, follow"
+    },
+    "/oil/92/": {
+      "title": "西洋蓍草精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "西洋蓍草（Achillea millefolium）：倍半萜烯類精油。主要成分 母菊天藍烴、β-蒎烯、樟腦、1,8-桉油醇。常見芳療應用：舒緩、肌膚修護感、緊緻、緩解經痛、消化調理。萃取自開花全草蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-yarrow/",
+      "robots": "index, follow"
+    },
+    "/oil/93/": {
+      "title": "樹蘭精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "樹蘭（Aglaia odorata）：倍半萜烯類精油。主要成分 β-丁香油烴、大根老鸛草烯、沉香醇。常見芳療應用：鎮靜安神、抗焦慮、芳香怡人、清新淨化、情緒平衡。萃取自花朵蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/93/",
+      "robots": "index, follow"
+    },
+    "/oil/94/": {
+      "title": "樹艾精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "樹艾（Artemisia arborescens）：倍半萜烯類精油。主要成分 母菊天藍烴、樟腦、β-側柏酮。常見芳療應用：抗過敏、舒緩、抗組織胺、皮膚修護、呼吸道保健。萃取自全草蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/94/",
+      "robots": "index, follow"
+    },
+    "/oil/95/": {
+      "title": "澳洲藍絲柏精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "澳洲藍絲柏（Callitris columellaris）：倍半萜烯類精油。主要成分 癒創木薁、二氫母菊天藍烴、癒創木醇。常見芳療應用：強效舒緩、抗過敏、皮膚修護、鎮靜、肌膚舒緩。萃取自木材蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/95/",
+      "robots": "index, follow"
+    },
+    "/oil/96/": {
+      "title": "大麻精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "大麻（Cannabis sativa）：倍半萜烯類精油。主要成分 β-丁香油烴、β-月桂烯、葎草烯（不含THC）。常見芳療應用：舒緩、放鬆、抗焦慮、肌肉放鬆、安眠。萃取自花穗蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/96/",
+      "robots": "index, follow"
+    },
+    "/oil/97/": {
+      "title": "依蘭精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "依蘭（Cananga odorata）：倍半萜烯類精油。主要成分 大根老鸛草烯、β-丁香油烴、沉香醇、乙酸苄酯。常見芳療應用：放鬆、抗焦慮、浪漫氛圍、平衡皮脂、情緒放鬆。萃取自花朵蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil-ylang-ylang/",
+      "robots": "index, follow"
+    },
+    "/oil/98/": {
+      "title": "大葉依蘭精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "大葉依蘭（Cananga odorata var. macrophylla）：倍半萜烯類精油。主要成分 大根老鸛草烯、β-丁香油烴、苯甲酸苄酯。常見芳療應用：放鬆身心、平衡油脂、護髮、降壓、清新淨化。萃取自花朵蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/98/",
+      "robots": "index, follow"
+    },
+    "/oil/99/": {
+      "title": "卡塔菲精油功效｜成分、香氣、使用與安全 | 精油能量圖譜",
+      "description": "卡塔菲（Cedrelopsis grevei）：倍半萜烯類精油。主要成分 β-丁香油烴、異石竹烯、δ-杜松烯。常見芳療應用：強效舒緩、關節放鬆、肌肉舒緩、溫暖舒緩、促進循環。萃取自樹皮蒸餾，使用前請參考安全指南。",
+      "canonical": "https://intelliverse.tw/oil/99/",
+      "robots": "index, follow"
+    },
+    "/oil-bay/": {
+      "title": "月桂精油完整指南｜希臘勝利桂冠的芳香植物｜Bay Laurel Oil | 精油能量圖譜",
+      "description": "月桂精油（Laurus nobilis）：樟科氧化物類精油，1,8-桉油醇+沉香醇主成分，是希臘羅馬象徵勝利的神聖植物。淋巴循環、呼吸保健、消化支持，香氣獨特辛香帶草本。需與西印度月桂（Pimenta racemosa）區別。",
+      "canonical": "https://intelliverse.tw/oil-bay/",
+      "robots": "index, follow"
+    },
+    "/oil-bergamot/": {
+      "title": "佛手柑精油完整指南｜成分、香氣、FCF光敏性與用法 | 精油能量圖譜",
+      "description": "佛手柑（Citrus bergamia）精油：芸香科柑橘類，義大利卡拉布里亞最佳產地，冷壓果皮萃取。主成分檸烯37%、乙酸沉香酯24-35%、沉香醇。含光敏性佛手柑素，塗抹後12小時避免日曬。FCF版本、情緒疏壓、消化香氛、調香基底完整解析。",
+      "canonical": "https://intelliverse.tw/oil-bergamot/",
+      "robots": "index, follow"
+    },
+    "/oil-black-pepper/": {
+      "title": "黑胡椒精油完整指南｜成分、暖身循環、肌肉舒緩與男士香水基底 | 精油能量圖譜",
+      "description": "黑胡椒（Piper nigrum）精油：單萜烯類，主成分β-石竹烯、檸檬烯。香氣溫熱辛辣，常見於運動後按摩、暖身香氛與男士香水中後調。完整成分、5 種日常用法與 FAQ 一次看懂。",
+      "canonical": "https://intelliverse.tw/oil-black-pepper/",
+      "robots": "index, follow"
+    },
+    "/oil-black-spruce/": {
+      "title": "黑雲杉精油完整指南｜加拿大原住民的能量精油｜Black Spruce Oil | 精油能量圖譜",
+      "description": "黑雲杉精油（Picea mariana）：加拿大原住民傳統使用的針葉精油，含乙酸龍腦酯30%+蒎烯類，被稱為「腎上腺疲勞」的代表精油。森林浴感、能量提振、肌肉緊繃舒緩。與其他松柏類精油溫和不刺激，是芳療師最愛的「無風險」針葉精油之一。",
+      "canonical": "https://intelliverse.tw/oil-black-spruce/",
+      "robots": "index, follow"
+    },
+    "/oil-cedarwood/": {
+      "title": "雪松精油功效與完整指南｜Cedarwood Oil | 精油能量圖譜",
+      "description": "雪松精油（Cedrus atlantica）：大地般的穩定氣息，放鬆助眠氛圍，頭皮呵護的沉穩木質香。",
+      "canonical": "https://intelliverse.tw/oil-cedarwood/",
+      "robots": "index, follow"
+    },
+    "/oil-citronella/": {
+      "title": "香茅精油完整指南｜爪哇香茅、錫蘭香茅、非洲藍香茅差異 | 精油能量圖譜",
+      "description": "香茅精油以爪哇香茅（Cymbopogon winterianus）為國際主流，香茅醛 30-55%、牻牛兒醇與香茅醇是核心成分。本文解析爪哇 vs 錫蘭香茅、與非洲藍香茅化學差異、天然驅蚊配方、6 種日常用法、敏感肌與孕期警示。",
+      "canonical": "https://intelliverse.tw/oil-citronella/",
+      "robots": "index, follow"
+    },
+    "/oil-clary-sage/": {
+      "title": "快樂鼠尾草精油完整指南｜女性週期的守護精油，PMS 必備 | 精油能量圖譜",
+      "description": "快樂鼠尾草精油（Salvia sclarea）：唇形科高酯類精油，乙酸沉香酯 45-75%，是女性週期平衡、PMS 舒緩的代表精油。含香紫蘇醇（類雌激素），孕期全程避免，哺乳期謹慎，需與真正鼠尾草區別使用。",
+      "canonical": "https://intelliverse.tw/oil-clary-sage/",
+      "robots": "index, follow"
+    },
+    "/oil-clove/": {
+      "title": "丁香花苞精油完整指南｜高酚類化學成分、安全濃度與使用限制 | 精油能量圖譜",
+      "description": "丁香花苞（Syzygium aromaticum）精油屬於高酚類強刺激精油，主要成分丁香酚 72-89%、乙酸丁香酯、β-石竹烯。常見於牙痛應急、口腔噴霧、節慶調香。皮膚刺激性強，建議稀釋 ≤ 0.5%，孕婦與服用抗凝血藥物者避用。完整化學輪廓、安全限制、與丁香羅勒區隔一次看懂。",
+      "canonical": "https://intelliverse.tw/oil-clove/",
+      "robots": "index, follow"
+    },
+    "/oil-cypress/": {
+      "title": "絲柏精油完整指南｜α-蒎烯成分、靜脈循環應用與荷爾蒙慎用 | 精油能量圖譜",
+      "description": "絲柏（Cupressus sempervirens）精油由針葉與嫩枝蒸餾，主要成分 α-蒎烯 48-52%、δ-3-蒈烯 20-22%、檸檬烯、雪松醇。柏科單萜烯類，常見於靜脈循環按摩、水腫舒緩、油性肌膚調節、呼吸暢通擴香。孕婦避用，荷爾蒙依賴性疾病者慎用。完整化學輪廓、與杜松/雪松差異一次看懂。",
+      "canonical": "https://intelliverse.tw/oil-cypress/",
+      "robots": "index, follow"
+    },
+    "/oil-eucalyptus/": {
+      "title": "尤加利精油功效與完整指南｜Eucalyptus Oil | 精油能量圖譜",
+      "description": "尤加利精油（Eucalyptus radiata）：呼吸清新的代表，1,8-桉油醇帶來暢快通透感，溫和日常型澳洲尤加利完整介紹。",
+      "canonical": "https://intelliverse.tw/oil-eucalyptus/",
+      "robots": "index, follow"
+    },
+    "/oil-frankincense/": {
+      "title": "乳香精油功效與完整指南｜Frankincense Oil | 精油能量圖譜",
+      "description": "乳香精油（Boswellia carterii）：千年靈性聖油，深化呼吸、抗老化皮膚，冥想與靜心必備精油。",
+      "canonical": "https://intelliverse.tw/oil-frankincense/",
+      "robots": "index, follow"
+    },
+    "/oil-geranium/": {
+      "title": "天竺葵精油完整指南｜平價玫瑰的平衡大師｜Geranium Oil | 精油能量圖譜",
+      "description": "天竺葵精油（Pelargonium × asperum）：牻牛兒苗科單萜醇類，香茅醇+牻牛兒醇主成分，香氣似玫瑰而價格只有玫瑰的1/15。女性週期平衡、皮膚保養、情緒調節的全方位精油。波旁島/埃及/中國三大產地各有風味。",
+      "canonical": "https://intelliverse.tw/oil-geranium/",
+      "robots": "index, follow"
+    },
+    "/oil-german-chamomile/": {
+      "title": "德國洋甘菊精油完整指南 | 藍色精油的舒緩傳奇 | 精油能量圖譜",
+      "description": "德國洋甘菊（Matricaria chamomilla）：芳療界的深藍舒緩珍品，蒸餾後自然形成的深藍色母菊天藍烴讓它成為敏感肌與日常肌膚保養的首選，與羅馬洋甘菊完全不同。",
+      "canonical": "https://intelliverse.tw/oil-german-chamomile/",
+      "robots": "index, follow"
+    },
+    "/oil-ginger/": {
+      "title": "薑精油完整指南｜溫暖循環、消化舒緩、暈車止嘔與安全使用 | 精油能量圖譜",
+      "description": "薑精油（Zingiber officinale）：薑科倍半萜烯類，根莖蒸汽蒸餾。主成分 α-薑黃烯、β-倍半水芹烯。溫暖辛辣香氣，用於秋冬暖身、消化舒緩、暈車嗅吸、情緒激勵。蒸餾版 vs CO₂ 超臨界萃取版差異、搭配黑胡椒與肉桂的配方實例，IFA 認證芳療師完整指南。",
+      "canonical": "https://intelliverse.tw/oil-ginger/",
+      "robots": "index, follow"
+    },
+    "/oil-grapefruit/": {
+      "title": "葡萄柚精油完整指南｜清爽提神、藥物交互作用必知｜Grapefruit Oil | 精油能量圖譜",
+      "description": "葡萄柚精油（Citrus paradisi）：芸香科柑橘類，果皮冷壓，檸檬烯88-95%，圓柚酮賦予獨特苦香。提神清爽、循環支持、控油保養。重要：與降血壓/降血脂/免疫抑制劑有嚴重藥物交互作用；光敏性塗抹後12小時避光。",
+      "canonical": "https://intelliverse.tw/oil-grapefruit/",
+      "robots": "index, follow"
+    },
+    "/oil-helichrysum/": {
+      "title": "永久花精油完整指南｜肌膚煥活修護的義大利皇后｜Helichrysum Oil | 精油能量圖譜",
+      "description": "義大利永久花精油（Helichrysum italicum）：菊科倍半萜酮類，義大利雙酮主成分，肌膚煥活、修護感的珍稀花香代表。疤痕淡化、老化皮膚修護、情緒創傷支持。高單價，菊科過敏者貼膚測試。",
+      "canonical": "https://intelliverse.tw/oil-helichrysum/",
+      "robots": "index, follow"
+    },
+    "/oil-jasmine/": {
+      "title": "茉莉精油完整指南｜大花茉莉、小花茉莉差異與原精化學輪廓 | 精油能量圖譜",
+      "description": "茉莉精油以大花茉莉（Jasminum grandiflorum）與小花茉莉（J. sambac）為兩大主流。乙酸苄酯 20-40%、沉香醇與微量吲哚是其化學特徵。本文解析原精萃取、夜間採花原因、孕期警示與 6 種日常香氛用法。",
+      "canonical": "https://intelliverse.tw/oil-jasmine/",
+      "robots": "index, follow"
+    },
+    "/oil-juniper/": {
+      "title": "杜松漿果精油完整指南｜α-蒎烯成分、利水排毒應用與孕婦禁忌 | 精油能量圖譜",
+      "description": "杜松漿果（Juniperus communis）精油由果實蒸餾，主要成分 α-蒎烯 51-62%、月桂烯、沙賓烯、檸檬烯。柏科單萜烯類，常見於利水排毒按摩、淨化擴香、空間淨化儀式。腎臟疾病者與孕婦避用。完整化學輪廓、與杜松枝葉的差異、琴酒風味來源一次看懂。",
+      "canonical": "https://intelliverse.tw/oil-juniper/",
+      "robots": "index, follow"
+    },
+    "/oil-lavandin/": {
+      "title": "醒目薰衣草精油完整指南｜商業薰衣草的真相｜Lavandin Oil | 精油能量圖譜",
+      "description": "醒目薰衣草精油（Lavandula × intermedia）：真正薰衣草與穗花薰衣草的天然雜交種，含樟腦5-10%，產量高、價格親民。Grosso/Super/Abrialis三大栽培種比較。香水工業/居家清潔/洗滌劑的主要薰衣草。",
+      "canonical": "https://intelliverse.tw/oil-lavandin/",
+      "robots": "index, follow"
+    },
+    "/oil-lavender/": {
+      "title": "薰衣草精油功效與完整指南｜Lavender Oil | 精油能量圖譜",
+      "description": "薰衣草精油（Lavandula angustifolia）：芳療界最萬能的精油，鎮靜安眠、皮膚修復、抗焦慮，幾乎無禁忌，入門首選。",
+      "canonical": "https://intelliverse.tw/oil-lavender/",
+      "robots": "index, follow"
+    },
+    "/oil-lemon/": {
+      "title": "檸檬精油功效與完整指南｜Lemon Oil | 精油能量圖譜",
+      "description": "檸檬精油（Citrus limon）：清新銳利的淨化精油，空間清新、提振注意力、居家清潔好幫手，柑橘類精油的萬用代表。",
+      "canonical": "https://intelliverse.tw/oil-lemon/",
+      "robots": "index, follow"
+    },
+    "/oil-lemon-eucalyptus/": {
+      "title": "檸檬尤加利精油完整指南｜CDC認證的天然驅蚊精油 | 精油能量圖譜",
+      "description": "檸檬尤加利精油（Corymbia citriodora，舊名 Eucalyptus citriodora）：與一般尤加利化學完全不同，檸檬醛主成分85%。美國CDC列為DEET替代品的天然驅蚊精油。蚊蟲叮咬、空間清新、運動後肌肉舒緩。注意：與一般尤加利的安全考量不同。",
+      "canonical": "https://intelliverse.tw/oil-lemon-eucalyptus/",
+      "robots": "index, follow"
+    },
+    "/oil-mandarin/": {
+      "title": "柑橘精油完整指南 | 芸香科最溫柔的柑橘｜Mandarin Oil | 精油能量圖譜",
+      "description": "柑橘精油（Citrus reticulata）是柑橘家族中最溫柔細緻的成員，自古入中藥陳皮，安撫兒童、助眠、支持消化、淋巴循環，孕期可用，帶有獨特花香尾韻，是全家日常香氛首選。",
+      "canonical": "https://intelliverse.tw/oil-mandarin/",
+      "robots": "index, follow"
+    },
+    "/oil-marjoram/": {
+      "title": "甜馬鬱蘭精油完整指南｜最溫和的放鬆精油，男性安撫首選 | 精油能量圖譜",
+      "description": "甜馬鬱蘭精油（Origanum majorana）：唇形科溫和鎮靜代表，萜品烯-4-醇主成分，IFA 課程中「陽性安撫」精油。睡前放鬆、肌肉舒緩、自律神經調節，勿與野馬鬱蘭（高酚類）混淆。",
+      "canonical": "https://intelliverse.tw/oil-marjoram/",
+      "robots": "index, follow"
+    },
+    "/oil-melissa/": {
+      "title": "香蜂草精油完整指南 | 芳療界最珍貴的檸檬香草｜Melissa Oil | 精油能量圖譜",
+      "description": "香蜂草精油（Melissa officinalis）：精油界最昂貴的品種之一，產量極少但效果卓越。以清新檸檬甜香著稱，在情緒支持、日常香氛與肌膚保養上獨樹一格。IFA芳療課程必學精油。",
+      "canonical": "https://intelliverse.tw/oil-melissa/",
+      "robots": "index, follow"
+    },
+    "/oil-myrrh/": {
+      "title": "沒藥精油完整指南｜成分、與紅沒藥差異、用法與安全｜Myrrh Oil | 精油能量圖譜",
+      "description": "沒藥（Commiphora myrrha）精油：橄欖科沒藥屬，由樹脂蒸餾萃取。主要成分呋喃桉烷二烯、呋喃桉烷二烯酮、β-欖香烯。聖經三禮物之一，與乳香並稱古老聖香。本文同步比較沒藥 vs 紅沒藥（C. guidottii）vs 乳香差異、完整成分、用法、孕婦與糖尿病者安全注意。",
+      "canonical": "https://intelliverse.tw/oil-myrrh/",
+      "robots": "index, follow"
+    },
+    "/oil-neroli/": {
+      "title": "橙花精油完整指南｜最溫柔的花朵精油，孕婦與嬰幼兒首選 | 精油能量圖譜",
+      "description": "橙花精油（Citrus aurantium flowers）：一噸苦橙花僅能萃取1公斤精油，是最珍貴的花朵精油之一。沉香醇30-40%，無光敏性，孕婦中後期安全，IFA課程中「心靈療癒」代表精油。",
+      "canonical": "https://intelliverse.tw/oil-neroli/",
+      "robots": "index, follow"
+    },
+    "/oil-palmarosa/": {
+      "title": "玫瑰草精油功效與完整指南｜肌膚保養與平價玫瑰替代｜Palmarosa Oil | 精油能量圖譜",
+      "description": "玫瑰草（Cymbopogon martinii）精油：禾本科單萜醇類，由全草蒸餾。牻牛兒醇（Geraniol）含量高達 75-85%，香氣神似玫瑰，是平價玫瑰替代品。常用於肌膚保濕、平衡油脂、清爽護膚。本文完整對比玫瑰草、玫瑰、玫瑰天竺葵三者差異，化學成分、用法、孕期提醒與 FAQ 一次看懂。",
+      "canonical": "https://intelliverse.tw/oil-palmarosa/",
+      "robots": "index, follow"
+    },
+    "/oil-patchouli/": {
+      "title": "廣藿香精油完整指南｜成分、香氣、用法與安全｜Patchouli Oil | 精油能量圖譜",
+      "description": "廣藿香（Pogostemon cablin）精油：唇形科廣藿香屬，由葉片蒸餾萃取。主要成分廣藿香醇 26-40%、α-癒創木烯、廣藿香酮、β-石竹烯。1960s 嬉皮文化代表香、印度傳統衣物防蟲香料、卓越的天然定香基底。完整成分、6 種用法與孕婦低劑量可用提醒。",
+      "canonical": "https://intelliverse.tw/oil-patchouli/",
+      "robots": "index, follow"
+    },
+    "/oil-peppermint/": {
+      "title": "薄荷精油功效與完整指南｜Peppermint Oil | 精油能量圖譜",
+      "description": "薄荷精油（Mentha × piperita）：強烈清涼，提神醒腦、舒緩緊繃、清新暢快，草本類精油中最廣泛使用的一款。",
+      "canonical": "https://intelliverse.tw/oil-peppermint/",
+      "robots": "index, follow"
+    },
+    "/oil-petitgrain/": {
+      "title": "苦橙葉精油完整指南｜成分、香氣、用法與橙花平價替代方案 | 精油能量圖譜",
+      "description": "苦橙葉（Citrus aurantium leaves）精油由葉片蒸餾，主要成分乙酸沉香酯 47-58%、沉香醇 20-25%。安全性高無光敏性，常見於日常香氛、睡前擴香、按摩稀釋。是橙花的平價替代，香氣清新帶花草感，孕婦中後期可低劑量使用。完整化學輪廓、5 種用法、與橙花/苦橙差異一次看懂。",
+      "canonical": "https://intelliverse.tw/oil-petitgrain/",
+      "robots": "index, follow"
+    },
+    "/oil-ravintsara/": {
+      "title": "桉油醇樟精油完整指南｜Ravintsara vs Ravensara 混淆必讀 | 精油能量圖譜",
+      "description": "桉油醇樟 Ravintsara（Cinnamomum camphora ct. cineole）：樟科氧化物類，1,8-桉油醇 50-65% 主成分，馬達加斯加產，是強效呼吸保健代表精油。⚠️ 與羅文莎葉 Ravensara aromatica 名字相似但截然不同，購買必須確認學名。",
+      "canonical": "https://intelliverse.tw/oil-ravintsara/",
+      "robots": "index, follow"
+    },
+    "/oil-roman-chamomile/": {
+      "title": "羅馬洋甘菊精油完整指南 | 最溫和的花朵精油｜Roman Chamomile Oil | 精油能量圖譜",
+      "description": "羅馬洋甘菊精油（Chamaemelum nobile）：芳療界最溫柔的精油之一，以甜蘋果香著稱，酯類含量高達 75-80%，特別適合嬰幼兒（2 歲以上）、敏感族群、孕中後期使用。IFA 課程中最常用於情緒安撫與睡眠支持。",
+      "canonical": "https://intelliverse.tw/oil-roman-chamomile/",
+      "robots": "index, follow"
+    },
+    "/oil-rose/": {
+      "title": "玫瑰精油完整指南｜3000朵花釀一滴，芳療之后｜Rose Oil | 精油能量圖譜",
+      "description": "玫瑰精油：大馬士革（Rosa damascena）、五月玫瑰（Rosa centifolia）、苦水玫瑰三大主流。蒸餾奧圖保留完整化學輪廓；溶劑萃取原精香氣最濃郁。3000-5000朵花僅產1ml，是最高單價的精油之王。IFA「女性精油之首」。",
+      "canonical": "https://intelliverse.tw/oil-rose/",
+      "robots": "index, follow"
+    },
+    "/oil-rosemary/": {
+      "title": "迷迭香精油功效與完整指南｜Rosemary Oil | 精油能量圖譜",
+      "description": "迷迭香精油（Salvia rosmarinus）：提振記憶與專注力，頭皮養護的活力草本，香氣清新有勁。",
+      "canonical": "https://intelliverse.tw/oil-rosemary/",
+      "robots": "index, follow"
+    },
+    "/oil-sandalwood/": {
+      "title": "檀香精油完整指南｜印度老山、太平洋檀香差異與化學輪廓 | 精油能量圖譜",
+      "description": "檀香（Santalum album）以印度邁索爾老山檀為公認最頂級，α-檀香醇佔 41-55% 是核心化學成分。本文解析印度老山與太平洋檀香 S. austrocaledonicum 的差異、CITES 公約管制現況、冥想與肌膚保養用法、稀釋安全與孕期建議。",
+      "canonical": "https://intelliverse.tw/oil-sandalwood/",
+      "robots": "index, follow"
+    },
+    "/oil-spearmint/": {
+      "title": "綠薄荷精油完整指南｜兒童友善的溫和薄荷｜Spearmint Oil | 精油能量圖譜",
+      "description": "綠薄荷精油（Mentha spicata）：薄荷家族中最溫和的成員，香芹酮主成分（70%）替代薄荷腦，兒童友善（3歲以上）、孕婦中後期可用。消化舒緩、口氣清新、情緒提振，比薄荷更柔和的選擇。",
+      "canonical": "https://intelliverse.tw/oil-spearmint/",
+      "robots": "index, follow"
+    },
+    "/oil-spike-lavender/": {
+      "title": "穗花薰衣草精油完整指南｜呼吸系統的強效薰衣草 | 精油能量圖譜",
+      "description": "穗花薰衣草精油（Lavandula latifolia）：含桉油醇25-35%+樟腦8-20%，與真正薰衣草化學截然不同。「呼吸系統薰衣草」之稱，蚊蟲叮咬急救、肌肉痠痛、空間清新代表。需與真正薰衣草和醒目薰衣草明確區分。",
+      "canonical": "https://intelliverse.tw/oil-spike-lavender/",
+      "robots": "index, follow"
+    },
+    "/oil-sweet-basil/": {
+      "title": "甜羅勒精油完整指南 | 地中海廚房的靈魂香草｜Sweet Basil Oil | 精油能量圖譜",
+      "description": "甜羅勒精油（Ocimum basilicum ct. linalool）：廚房香草之王，IFA認可的神經養護精油，沉香醇型甜羅勒安全溫和，消化支持、神經滋養、提振注意力，是職場族與學生族必備。",
+      "canonical": "https://intelliverse.tw/oil-sweet-basil/",
+      "robots": "index, follow"
+    },
+    "/oil-sweet-fennel/": {
+      "title": "甜茴香精油完整指南 | 消化系統與荷爾蒙的守護者｜Sweet Fennel Oil | 精油能量圖譜",
+      "description": "甜茴香精油（Foeniculum vulgare var. dulce）：地中海最重要的消化系香草精油，以反式茴香腦著稱，擅長消化舒緩與女性荷爾蒙平衡支持，是芳療師調配女性配方的必備油。",
+      "canonical": "https://intelliverse.tw/oil-sweet-fennel/",
+      "robots": "index, follow"
+    },
+    "/oil-sweet-orange/": {
+      "title": "甜橙精油功效與完整指南｜Sweet Orange Oil | 精油能量圖譜",
+      "description": "甜橙精油（Citrus sinensis）：溫暖陽光的柑橘香氣，驅散焦慮與憂鬱，最親切的入門情緒精油。",
+      "canonical": "https://intelliverse.tw/oil-sweet-orange/",
+      "robots": "index, follow"
+    },
+    "/oil-tea-tree/": {
+      "title": "茶樹精油功效與完整指南｜Tea Tree Oil | 精油能量圖譜",
+      "description": "茶樹精油（Melaleuca alternifolia）：清新淨化的萬用精油，常見於肌膚呵護與居家清潔情境，是芳療入門必備。",
+      "canonical": "https://intelliverse.tw/oil-tea-tree/",
+      "robots": "index, follow"
+    },
+    "/oil-thyme/": {
+      "title": "百里香精油完整指南 | 地中海最強香草精油｜Thyme Oil | 精油能量圖譜",
+      "description": "百里香精油（Thymus vulgaris）：地中海最強勁的香草精油，擁有多種化學型（chemotype），從高強度的酚類CT到溫和的沉香醇CT，適用範圍涵蓋免疫保健到兒童配方，是IFA芳療師必備的萬能草藥油。",
+      "canonical": "https://intelliverse.tw/oil-thyme/",
+      "robots": "index, follow"
+    },
+    "/oil-vetiver/": {
+      "title": "岩蘭草精油完整指南｜冥想接地之王，最深沉的精油｜Vetiver Oil | 精油能量圖譜",
+      "description": "岩蘭草精油（Chrysopogon zizanioides）：禾本科根部蒸餾精油，倍半萜醇>70%，香氣如濕潤泥土和森林地面，被稱為「寧靜的精油」「冥想接地之王」。高壓族群、睡眠障礙、皮膚修復的首選，陳年後香氣更圓潤。",
+      "canonical": "https://intelliverse.tw/oil-vetiver/",
+      "robots": "index, follow"
+    },
+    "/oil-yarrow/": {
+      "title": "西洋蓍草精油完整指南｜阿基里斯的傷藥，藍色精油之姊｜Yarrow Oil | 精油能量圖譜",
+      "description": "西洋蓍草精油（Achillea millefolium）：菊科藍色精油（含母菊天藍烴），希臘戰士阿基里斯的傳統傷口處理植物。皮膚保養、敏感肌舒緩、女性週期支持。與德國洋甘菊化學相似但效果不同。孕期避免；菊科過敏者貼膚測試。",
+      "canonical": "https://intelliverse.tw/oil-yarrow/",
+      "robots": "index, follow"
+    },
+    "/oil-ylang-ylang/": {
+      "title": "依蘭精油功效與完整指南｜Ylang Ylang Oil | 精油能量圖譜",
+      "description": "依蘭精油（Cananga odorata）：濃郁異國花香，舒緩情緒張力、調節心跳，護髮效果絕佳的花香類精油。",
+      "canonical": "https://intelliverse.tw/oil-ylang-ylang/",
+      "robots": "index, follow"
+    },
+    "/oils/": {
+      "title": "精油推薦與完全索引｜46 支精油完整指南 + 300+ 化學分類 | 精油能量圖譜",
+      "description": "精油推薦怎麼選？46 支精油完整指南（每篇 5000+ 字 IFA 標準）+ 302 支化學分子 datasheet。新手入門推薦、14 大化學分類、拉丁學名、安全注意、購買辨識一次查。",
+      "canonical": "https://intelliverse.tw/oils/",
+      "robots": "index, follow"
+    },
+    "/privacy/": {
+      "title": "隱私政策 | 精油能量圖譜",
+      "description": "精油能量圖譜隱私政策：本站為靜態內容網站，不主動收集個人識別資訊。Google Analytics（若啟用）僅用於網站匿名流量統計。",
+      "canonical": "https://intelliverse.tw/privacy/",
+      "robots": "index, follow"
+    },
+    "/references/": {
+      "title": "引用來源與參考資料｜精油能量圖譜",
+      "description": "精油能量圖譜引用的所有專業書籍、學術論文、官方機構、植物學分類來源。包含 Tisserand & Young、Pierre Franchomme、IFA 教材、PubMed 論文、Wikipedia 等權威資料。",
+      "canonical": "https://intelliverse.tw/references/",
+      "robots": "index, follow"
+    },
+    "/safety/": {
+      "title": "精油安全指南 | 精油能量圖譜",
+      "description": "精油安全使用完整指南：稀釋濃度、特殊族群禁忌、光敏性精油、急救處理、儲存保鮮與選購要點，幫助您建立全面的精油安全知識。",
+      "canonical": "https://intelliverse.tw/safety/",
+      "robots": "index, follow"
+    },
+    "/search/": {
+      "title": "全站搜尋 | 精油能量圖譜",
+      "description": "在精油能量圖譜全站快速搜尋 300+ 支精油、化學分子索引、芳療應用、安全指南與專題文章——幫你一鍵找到想要的精油知識。",
+      "canonical": "https://intelliverse.tw/search/",
+      "robots": "noindex, follow"
+    }
+  },
+  "protectedFiles": {
+    "scripts/build_numerology_page.py": "3089ffa0ab9ed1b2f4b344252e8414dd96c8a3896871487a8093001cc3d5f283",
+    "data/oils.json": "ddc4fb76184ad0a1028921bd2ceec4fe8ad97309eff112e60b54d9c4b78fb814",
+    "html-source/numerology.html": "51fd73049e97f1bd67938b42fcbe626eaf052b11c2b5500b8b5c448d6c2529b7",
+    "html-source/safety.html": "6c724bdd01e287456ee058d18e575931886a8f9796fcc033db72139b7261a5f7"
+  }
+}
