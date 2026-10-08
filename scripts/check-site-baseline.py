@@ -42,7 +42,8 @@ def snapshot(out):
         routes[url] = p.fields
     if not routes: raise ValueError('No exported pages; run npm run build first')
     return {'schemaVersion': 1, 'routes': routes, 'protectedFiles': {
-        name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest()
+        # Git checks out CRLF on Windows and LF on Linux; protect text, not checkout endings.
+        name: hashlib.sha256((ROOT / name).read_text(encoding='utf-8').encode('utf-8')).hexdigest()
         for name in PROTECTED}}
 
 def differences(expected, actual):

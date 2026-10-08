@@ -2499,9 +2499,9 @@
     }
   },
   "protectedFiles": {
-    "scripts/build_numerology_page.py": "3089ffa0ab9ed1b2f4b344252e8414dd96c8a3896871487a8093001cc3d5f283",
-    "data/oils.json": "ddc4fb76184ad0a1028921bd2ceec4fe8ad97309eff112e60b54d9c4b78fb814",
-    "html-source/numerology.html": "51fd73049e97f1bd67938b42fcbe626eaf052b11c2b5500b8b5c448d6c2529b7",
-    "html-source/safety.html": "6c724bdd01e287456ee058d18e575931886a8f9796fcc033db72139b7261a5f7"
+    "scripts/build_numerology_page.py": "d8788692d269834d27934a79045a9bc7b6c7d97166ef554f528a058ff884af98",
+    "data/oils.json": "5f49bf2a2a5190ba6de2dd7c7729121b3384792162e4b28a06f29afcc831e4de",
+    "html-source/numerology.html": "31eeb1734263841ae3d0ee5b7f7f63d28ea354c206ef39be4c237e0c5b12c996",
+    "html-source/safety.html": "6123cc5fbd9b31e85cd7942e2a585b04e1910e4f3a7cd6c1b1328aabeaf619a8"
   }
 }
