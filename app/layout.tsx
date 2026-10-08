@@ -179,6 +179,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Script src="/assets/js/faq-accordion.js" strategy="afterInteractive" />
         <Script src="https://chat.intelliverse.tw/widget.js" strategy="afterInteractive" />
         <Analytics />
+        <Script src="/assets/js/site-events.js" strategy="afterInteractive" />
       </body>
     </html>
   );
