@@ -59,6 +59,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
+          retention-days: 30
 
   deploy:
     if: ${{ !inputs.rehearse_recovery && github.ref == 'refs/heads/master' }}
