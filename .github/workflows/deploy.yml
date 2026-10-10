@@ -4,6 +4,17 @@ on:
   push:
     branches: [master]
   workflow_dispatch:
+    inputs:
+      rehearse_recovery:
+        description: 'Download and validate a prior artifact without deploying'
+        type: boolean
+        default: false
+      previous_run_id:
+        description: 'Successful master Pages run to rehearse'
+        type: string
+      expected_master_sha:
+        description: 'Exact current master SHA; abort if it changes'
+        type: string
 
 permissions:
   contents: read
@@ -11,11 +22,12 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: true
+  group: ${{ inputs.rehearse_recovery && format('pages-rehearsal-{0}', github.run_id) || 'pages' }}
+  cancel-in-progress: false
 
 jobs:
   build:
+    if: ${{ !inputs.rehearse_recovery }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -49,12 +61,20 @@ jobs:
           path: ./out
 
   deploy:
+    if: ${{ !inputs.rehearse_recovery && github.ref == 'refs/heads/master' }}
     needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Refuse a stale master build
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          latest=$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/master" --jq '.object.sha')
+          test "$latest" = "$GITHUB_SHA"
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
@@ -94,3 +114,30 @@ jobs:
                   print(f'{ep} -> {e}')  # 通知失敗不擋部署
           PY
         continue-on-error: true
+
+  recovery-rehearsal:
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.rehearse_recovery }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Restore previous artifact into isolated output
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PREVIOUS_RUN: ${{ inputs.previous_run_id }}
+          EXPECTED_MASTER: ${{ inputs.expected_master_sha }}
+        run: python scripts/prepare-pages-recovery.py --run-id "$PREVIOUS_RUN" --expected-master "$EXPECTED_MASTER"
+      - name: Check original frozen fields and every protected route
+        run: |
+          node scripts/check-frozen-seo.mjs
+          python scripts/check-site-baseline.py
+      - name: Retain rehearsal evidence only
+        uses: actions/upload-artifact@v4
+        with:
+          name: recovery-rehearsal-evidence
+          path: recovery-rehearsal.json
