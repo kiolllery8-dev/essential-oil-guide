@@ -123,7 +123,9 @@ jobs:
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.rehearse_recovery }}
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      # GitHub requires repository write access to read an unpublished draft.
+      # The recovery script uses GET/download only; no Pages or OIDC permission.
+      contents: write
       actions: read
     steps:
       - uses: actions/checkout@v4
