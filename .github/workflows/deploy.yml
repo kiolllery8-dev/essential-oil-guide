@@ -15,6 +15,9 @@ on:
       expected_master_sha:
         description: 'Exact current master SHA; abort if it changes'
         type: string
+      backup_release_id:
+        description: 'Optional unpublished provenance-verified backup if source artifact expired'
+        type: string
 
 permissions:
   contents: read
@@ -132,7 +135,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           PREVIOUS_RUN: ${{ inputs.previous_run_id }}
           EXPECTED_MASTER: ${{ inputs.expected_master_sha }}
-        run: python scripts/prepare-pages-recovery.py --run-id "$PREVIOUS_RUN" --expected-master "$EXPECTED_MASTER"
+          BACKUP_RELEASE: ${{ inputs.backup_release_id }}
+        run: python scripts/prepare-pages-recovery.py --run-id "$PREVIOUS_RUN" --expected-master "$EXPECTED_MASTER" --backup-release-id "$BACKUP_RELEASE"
       - name: Check original frozen fields and every protected route
         run: |
           node scripts/check-frozen-seo.mjs
