@@ -146,9 +146,13 @@ jobs:
         env:
           REHEARSE: ${{ inputs.rehearse_recovery }}
           RESTORE: ${{ inputs.restore_previous }}
+          EXPECTED_MASTER: ${{ inputs.expected_master_sha }}
         run: |
           test "$REHEARSE:$RESTORE" != 'true:true'
-          if [ "$RESTORE" = true ]; then test "$GITHUB_REF" = 'refs/heads/master'; fi
+          if [ "$RESTORE" = true ]; then
+            test "$GITHUB_REF" = 'refs/heads/master'
+            test "$GITHUB_SHA" = "$EXPECTED_MASTER"
+          fi
       - name: Restore previous artifact into isolated output
         id: prepare
         env:

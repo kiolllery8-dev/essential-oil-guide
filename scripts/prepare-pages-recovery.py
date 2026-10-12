@@ -2,6 +2,7 @@
 import argparse
 import hashlib
 import json
+import os
 import re
 import subprocess
 import tarfile
@@ -14,13 +15,26 @@ def api(path):
     return json.loads(subprocess.check_output(['gh', 'api', 'repos/' + REPO + '/' + path], text=True))
 
 
-def current_deployment(expected_master, expected_deployment):
+def current_deployment(expected_master, expected_deployment, current_run_id=None):
     if not re.fullmatch(r'[0-9a-f]{40}', expected_master) or not re.fullmatch(r'[0-9]+', expected_deployment):
         raise ValueError('Exact master SHA and deployment ID are required')
     if api('git/ref/heads/master')['object']['sha'] != expected_master:
         raise ValueError('Master changed; abort recovery and revalidate')
-    deployments = api('deployments?environment=github-pages&per_page=1')
-    if len(deployments) != 1 or str(deployments[0]['id']) != expected_deployment:
+    deployments = api('deployments?environment=github-pages&per_page=2')
+    # An environment job creates its own in-progress deployment before steps run.
+    # Exclude only the newest one, identified by this run's exact GitHub job URL,
+    # SHA and GitHub Actions app. Never skip completed or foreign deployments.
+    if deployments and current_run_id and re.fullmatch(r'[0-9]+', current_run_id):
+        latest = deployments[0]
+        latest_statuses = api('deployments/' + str(latest['id']) + '/statuses?per_page=1')
+        status = latest_statuses[0] if latest_statuses else {}
+        own_url = r'https://github\.com/' + re.escape(REPO) + r'/actions/runs/' + current_run_id + r'/job/[0-9]+'
+        if (latest['sha'] == expected_master and
+                (latest.get('performed_via_github_app') or {}).get('slug') == 'github-actions' and
+                status.get('state') in ('queued', 'in_progress') and
+                re.fullmatch(own_url, status.get('log_url', ''))):
+            deployments = deployments[1:]
+    if not deployments or str(deployments[0]['id']) != expected_deployment:
         raise ValueError('Later deployment exists; refuse to replace it')
     if deployments[0]['sha'] != expected_master:
         raise ValueError('Deployment does not match the expected master')
@@ -76,7 +90,7 @@ def main():
         raise ValueError('Exact numeric run ID and master SHA are required')
     if args.backup_release_id and not re.fullmatch(r'[0-9]+', args.backup_release_id):
         raise ValueError('Backup release ID must be numeric')
-    current_deployment(args.expected_master, args.expected_deployment_id)
+    current_deployment(args.expected_master, args.expected_deployment_id, os.environ.get('GITHUB_RUN_ID'))
     if args.check_only:
         print('Current master and deployment snapshot still match'); return
     head = api('git/ref/heads/master')['object']['sha']
@@ -109,7 +123,6 @@ def main():
               **source,
               'artifactSha256': hashlib.sha256(archive.read_bytes()).hexdigest()}
     Path('recovery-rehearsal.json').write_text(json.dumps(report, indent=2) + '\n')
-    import os
     if os.environ.get('GITHUB_OUTPUT'):
         with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
             output.write('source_sha=' + run['head_sha'] + '\n')
