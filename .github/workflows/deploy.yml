@@ -11,8 +11,8 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: true
+  group: ${{ github.ref == 'refs/heads/master' && 'pages' || format('pages-build-{0}', github.run_id) }}
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -43,18 +43,32 @@ jobs:
       - name: Protect every existing page and knowledge algorithms
         run: python3 scripts/check-site-baseline.py
 
+      - name: Test deployment version marker
+        run: python3 scripts/test-deployment-version.py
+
+      - name: Bind public version marker to the guarded export
+        run: python3 scripts/write-deployment-version.py
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
 
   deploy:
+    if: ${{ github.ref == 'refs/heads/master' }}
     needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Refuse a stale master build
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          latest=$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/master" --jq '.object.sha')
+          test "$latest" = "$GITHUB_SHA"
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
