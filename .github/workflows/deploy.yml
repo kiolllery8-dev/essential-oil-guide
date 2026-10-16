@@ -66,7 +66,10 @@ jobs:
         run: python3 scripts/check-site-baseline.py
 
       - name: Test deployment version marker
-        run: python3 scripts/test-deployment-version.py
+        run: |
+          python3 scripts/test-deployment-version.py
+          python3 scripts/test-public-deployment.py
+          python3 scripts/test-public-deployment-http.py
 
       - name: Bind public version marker to the guarded export
         run: python3 scripts/write-deployment-version.py
@@ -135,6 +138,9 @@ jobs:
   recovery-rehearsal:
     if: ${{ github.event_name == 'workflow_dispatch' && (inputs.rehearse_recovery || inputs.restore_previous) }}
     runs-on: ubuntu-latest
+    outputs:
+      source_sha: ${{ steps.prepare.outputs.source_sha }}
+      source_run_attempt: ${{ steps.prepare.outputs.source_run_attempt }}
     permissions:
       # GitHub requires repository write access to read an unpublished draft.
       # The recovery script uses GET/download only; no Pages or OIDC permission.
@@ -172,6 +178,19 @@ jobs:
         run: |
           node scripts/check-frozen-seo.mjs
           python scripts/check-site-baseline.py
+      - name: Require a verifiable original marker before an actual restore
+        if: ${{ inputs.restore_previous && !inputs.rehearse_recovery }}
+        env:
+          PREVIOUS_RUN: ${{ inputs.previous_run_id }}
+          SOURCE_SHA: ${{ steps.prepare.outputs.source_sha }}
+          SOURCE_ATTEMPT: ${{ steps.prepare.outputs.source_run_attempt }}
+        run: |
+          python3 - <<'PY'
+          import importlib.util, os
+          spec = importlib.util.spec_from_file_location('public_check', 'scripts/verify-public-deployment.py')
+          module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+          module.inspect_export('out', os.environ['SOURCE_SHA'], os.environ['PREVIOUS_RUN'], os.environ['SOURCE_ATTEMPT'])
+          PY
       - name: Checkout verified previous source for a fresh formal build
         uses: actions/checkout@v4
         with:
@@ -232,3 +251,79 @@ jobs:
         uses: actions/deploy-pages@v4
         with:
           artifact_name: github-pages-recovery
+
+  verify-public:
+    needs: deploy
+    if: ${{ !inputs.rehearse_recovery && !inputs.restore_previous && github.ref == 'refs/heads/master' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+          path: public-check-download
+      - name: Safely recover the exact deployed export for comparison
+        run: |
+          python3 - <<'PY'
+          import importlib.util
+          from pathlib import Path
+          spec = importlib.util.spec_from_file_location('recovery', 'scripts/prepare-pages-recovery.py')
+          module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+          module.extract(Path('public-check-download/artifact.tar'), Path('public-check-out'))
+          PY
+      - name: Check public marker and all exported HTML bytes
+        env:
+          EXPECTED_SHA: ${{ github.sha }}
+          EXPECTED_RUN: ${{ github.run_id }}
+          EXPECTED_ATTEMPT: ${{ github.run_attempt }}
+        run: python3 scripts/verify-public-deployment.py --out public-check-out --expected-source-sha "$EXPECTED_SHA" --expected-run-id "$EXPECTED_RUN" --expected-run-attempt "$EXPECTED_ATTEMPT"
+      - uses: actions/upload-artifact@v4
+        if: ${{ always() }}
+        with:
+          name: public-verification-evidence
+          path: public-verification.json
+          if-no-files-found: error
+          retention-days: 30
+
+  verify-restored-public:
+    needs: [restore-deploy, recovery-rehearsal]
+    if: ${{ inputs.restore_previous && !inputs.rehearse_recovery && github.ref == 'refs/heads/master' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: github-pages-recovery
+          path: public-check-download
+      - name: Safely recover the original artifact for comparison
+        run: |
+          python3 - <<'PY'
+          import importlib.util
+          from pathlib import Path
+          spec = importlib.util.spec_from_file_location('recovery', 'scripts/prepare-pages-recovery.py')
+          module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+          module.extract(Path('public-check-download/artifact.tar'), Path('public-check-out'))
+          PY
+      - name: Check original public identity and every restored HTML page
+        env:
+          SOURCE_SHA: ${{ needs.recovery-rehearsal.outputs.source_sha }}
+          SOURCE_RUN: ${{ inputs.previous_run_id }}
+          SOURCE_ATTEMPT: ${{ needs.recovery-rehearsal.outputs.source_run_attempt }}
+        run: python3 scripts/verify-public-deployment.py --out public-check-out --expected-source-sha "$SOURCE_SHA" --expected-run-id "$SOURCE_RUN" --expected-run-attempt "$SOURCE_ATTEMPT"
+      - uses: actions/upload-artifact@v4
+        if: ${{ always() }}
+        with:
+          name: restored-public-verification-evidence
+          path: public-verification.json
+          if-no-files-found: error
+          retention-days: 30

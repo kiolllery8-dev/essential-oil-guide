@@ -101,6 +101,9 @@ def main():
         raise ValueError('Recovery source must be a successful master Pages workflow')
     if not re.fullmatch(r'[0-9a-f]{40}', run['head_sha']):
         raise ValueError('Invalid source commit')
+    source_attempt = str(run.get('run_attempt', ''))
+    if not re.fullmatch(r'[1-9][0-9]*', source_attempt):
+        raise ValueError('Invalid source run attempt')
     artifacts = api('actions/runs/' + args.run_id + '/artifacts')['artifacts']
     candidates = [artifact for artifact in artifacts if artifact['name'] == 'github-pages' and not artifact['expired']]
     download = Path('recovery-download')
@@ -126,6 +129,7 @@ def main():
     if os.environ.get('GITHUB_OUTPUT'):
         with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
             output.write('source_sha=' + run['head_sha'] + '\n')
+            output.write('source_run_attempt=' + source_attempt + '\n')
     print(json.dumps(report, indent=2))
 
 

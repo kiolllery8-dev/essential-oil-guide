@@ -23,3 +23,19 @@ Feature-branch dispatches build and package only; deployment requires master
 and rechecks its latest SHA immediately before the Pages action. That check
 does not make external deployments atomic. Automatic publication remains gated
 outside this workflow; this draft does not enable it.
+
+The integration draft adds `verify-public-deployment.py`: it first recomputes
+the original export digest, compares the public marker with exact source/run/
+attempt identity, then fetches every exported `index.html` route, including
+noindex pages, and compares raw HTML bytes. It rechecks the marker afterwards.
+Redirects, oversized replies, stale markers, modified HTML and missing legacy
+markers fail closed. No browser scripts, analytics or chat widgets execute.
+This checks HTML bytes, not all external images or browser functionality.
+CDN rewriting is an unresolved verification failure, never normalized away.
+
+Normal deployments and restores retain separate public-verification artifacts.
+An actual restore now requires a matching original marker before uploading a
+recovery artifact; old backups lacking one remain usable for an isolated
+artifact rehearsal, but are not accepted for automatic production restoration.
+The integration changes still require an independent review and real Pages
+acceptance. They do not enable automatic publication.
