@@ -32,7 +32,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: ${{ inputs.rehearse_recovery && format('pages-rehearsal-{0}', github.run_id) || 'pages' }}
+  group: ${{ (inputs.rehearse_recovery || github.ref != 'refs/heads/master') && format('pages-check-{0}', github.run_id) || 'pages' }}
   cancel-in-progress: false
 
 jobs:
@@ -64,6 +64,12 @@ jobs:
 
       - name: Protect every existing page and knowledge algorithms
         run: python3 scripts/check-site-baseline.py
+
+      - name: Test deployment version marker
+        run: python3 scripts/test-deployment-version.py
+
+      - name: Bind public version marker to the guarded export
+        run: python3 scripts/write-deployment-version.py
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
