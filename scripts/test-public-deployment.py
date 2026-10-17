@@ -81,5 +81,18 @@ class Tests(unittest.TestCase):
     def test_redirect_refused_before_following(self):
         with self.assertRaises(ValueError): reader.RejectRedirect().redirect_request(None)
 
+    def test_direct_html_and_verification_files_are_checked(self):
+        (self.out/reader.MARKER).unlink()
+        for name in ('atlas.html','oil-detail.html','google-test.html','404.html'):
+            (self.out/name).write_bytes(b'Legacy or verification HTML')
+            self.public[name]=(self.out/name).read_bytes()
+        writer.write_marker(self.out,SHA,'123','1')
+        self.public[reader.MARKER]=(self.out/reader.MARKER).read_bytes()
+        self.assertEqual(self.verify()['checkedPages'],6)
+        self.public['atlas.html']=b'Changed legacy HTML'
+        result=self.verify()
+        self.assertFalse(result['passed'])
+        self.assertTrue(any(row['path']=='/atlas.html' for row in result['errors']))
+
 
 if __name__=='__main__': unittest.main()

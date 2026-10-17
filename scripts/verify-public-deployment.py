@@ -52,8 +52,9 @@ def inspect_export(output, sha, run_id, attempt):
         if name == MARKER: continue
         digest = hashlib.sha256(path.read_bytes()).hexdigest()
         rows.append([name, digest])
-        if name == 'index.html' or name.endswith('/index.html'):
-            pages.append((name[:-10], digest))
+        if name.endswith('.html'):
+            public_path = name[:-10] if name == 'index.html' or name.endswith('/index.html') else name
+            pages.append((public_path, digest))
     digest = hashlib.sha256(json.dumps(rows, ensure_ascii=False, separators=(',', ':')).encode()).hexdigest()
     expected = {'schemaVersion': 1, 'sourceSha': sha, 'runId': run_id,
                 'runAttempt': attempt, 'exportDigest': digest, 'fileCount': len(rows)}

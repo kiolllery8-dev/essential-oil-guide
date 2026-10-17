@@ -26,8 +26,9 @@ outside this workflow; this draft does not enable it.
 
 The integration draft adds `verify-public-deployment.py`: it first recomputes
 the original export digest, compares the public marker with exact source/run/
-attempt identity, then fetches every exported `index.html` route, including
-noindex pages, and compares raw HTML bytes. It rechecks the marker afterwards.
+attempt identity, then fetches every exported HTML file, including direct legacy
+paths, verification files and noindex pages, and compares raw HTML bytes.
+Directory index files use their public directory URL. It rechecks the marker afterwards.
 Redirects, oversized replies, stale markers, modified HTML and missing legacy
 markers fail closed. No browser scripts, analytics or chat widgets execute.
 This checks HTML bytes, not all external images or browser functionality.
