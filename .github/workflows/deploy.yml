@@ -1,329 +1,55 @@
-name: Deploy Next.js to GitHub Pages
-
+name: Isolated build attempt identity fixture
 on:
-  push:
-    branches: [master]
   workflow_dispatch:
-    inputs:
-      rehearse_recovery:
-        description: 'Download and validate a prior artifact without deploying'
-        type: boolean
-        default: false
-      restore_previous:
-        description: 'Restore previous artifact; master only, never combine with rehearsal'
-        type: boolean
-        default: false
-      previous_run_id:
-        description: 'Successful master Pages run to rehearse'
-        type: string
-      expected_master_sha:
-        description: 'Exact current master SHA; abort if it changes'
-        type: string
-      backup_release_id:
-        description: 'Optional unpublished provenance-verified backup if source artifact expired'
-        type: string
-      expected_deployment_id:
-        description: 'Exact latest github-pages deployment ID; refuse a later deployment'
-        type: string
-
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: ${{ (inputs.rehearse_recovery || github.ref != 'refs/heads/master') && format('pages-check-{0}', github.run_id) || 'pages' }}
-  cancel-in-progress: false
-
 jobs:
-  build:
-    if: ${{ !inputs.rehearse_recovery && !inputs.restore_previous }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # 完整歷史：gen-content-dates 需要每檔真實 git 日期
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build Next.js (static export)
-        env:
-          NEXT_PUBLIC_GA_ID: ${{ secrets.NEXT_PUBLIC_GA_ID }}
-        run: npm run build
-
-      - name: Preserve the existing numerology SEO fields
-        run: node scripts/check-frozen-seo.mjs
-
-      - name: Protect every existing page and knowledge algorithms
-        run: python3 scripts/check-site-baseline.py
-
-      - name: Test deployment version marker
-        run: |
-          python3 scripts/test-deployment-version.py
-          python3 scripts/test-public-deployment.py
-          python3 scripts/test-public-deployment-http.py
-
-      - name: Bind public version marker to the guarded export
-        run: python3 scripts/write-deployment-version.py
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./out
-          retention-days: 30
-
-  deploy:
-    if: ${{ !inputs.rehearse_recovery && !inputs.restore_previous && github.ref == 'refs/heads/master' }}
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Refuse a stale master build
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          latest=$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/master" --jq '.object.sha')
-          test "$latest" = "$GITHUB_SHA"
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
-      # IndexNow：部署後自動通知 Bing/Yandex（Copilot/ChatGPT 都吃 Bing 索引；GEO P0）
-      # 只推最近 3 天內容有變動的 URL（sitemap lastmod 為 git 內容日期，避免整包 358 條洗版）
-      - name: Notify IndexNow (Bing/Yandex)
-        run: |
-          curl -s https://intelliverse.tw/sitemap.xml -o sitemap.xml
-          python3 - <<'PY'
-          import xml.etree.ElementTree as ET, json, urllib.request, datetime
-          ns = {'sm': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
-          root = ET.parse('sitemap.xml').getroot()
-          cutoff = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=3)
-          urls = []
-          for u in root.findall('sm:url', ns):
-              loc = u.find('sm:loc', ns); lm = u.find('sm:lastmod', ns)
-              if loc is None: continue
-              if lm is not None:
-                  try:
-                      if datetime.datetime.fromisoformat(lm.text.replace('Z', '+00:00')) < cutoff:
-                          continue
-                  except Exception: pass
-              urls.append(loc.text)
-          urls = urls[:200]
-          if not urls:
-              print('IndexNow: 無近期變動 URL，跳過'); raise SystemExit
-          key = 'cb187285fac7ad8ef500998dea9b6f6f2487cb90db7a73528bc650f68189212c'
-          body = json.dumps({'host': 'intelliverse.tw', 'key': key,
-                             'keyLocation': f'https://intelliverse.tw/{key}.txt', 'urlList': urls}).encode()
-          for ep in ('https://api.indexnow.org/IndexNow', 'https://www.bing.com/indexnow'):
-              req = urllib.request.Request(ep, data=body, headers={'Content-Type': 'application/json; charset=utf-8'}, method='POST')
-              try:
-                  with urllib.request.urlopen(req, timeout=30) as r:
-                      print(f'{ep} -> {r.status} ({len(urls)} URLs)')
-              except Exception as e:
-                  print(f'{ep} -> {e}')  # 通知失敗不擋部署
-          PY
-        continue-on-error: true
-
-  recovery-rehearsal:
-    if: ${{ github.event_name == 'workflow_dispatch' && (inputs.rehearse_recovery || inputs.restore_previous) }}
+  fixture-build:
+    if: ${{ github.ref != 'refs/heads/master' }}
     runs-on: ubuntu-latest
     outputs:
-      source_sha: ${{ steps.prepare.outputs.source_sha }}
-      source_run_attempt: ${{ steps.prepare.outputs.source_run_attempt }}
-    permissions:
-      # GitHub requires repository write access to read an unpublished draft.
-      # The recovery script uses GET/download only; no Pages or OIDC permission.
-      contents: write
-      actions: read
-      deployments: read
+      artifact_attempt: ${{ steps.identity.outputs.artifact_attempt }}
     steps:
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Validate mutually exclusive recovery modes
+      - name: Record original build identity
+        id: identity
         env:
-          REHEARSE: ${{ inputs.rehearse_recovery }}
-          RESTORE: ${{ inputs.restore_previous }}
-          EXPECTED_MASTER: ${{ inputs.expected_master_sha }}
-        run: |
-          test "$REHEARSE:$RESTORE" != 'true:true'
-          if [ "$RESTORE" = true ]; then
-            test "$GITHUB_REF" = 'refs/heads/master'
-            test "$GITHUB_SHA" = "$EXPECTED_MASTER"
-          fi
-      - name: Restore previous artifact into isolated output
-        id: prepare
-        env:
-          GH_TOKEN: ${{ github.token }}
-          PREVIOUS_RUN: ${{ inputs.previous_run_id }}
-          EXPECTED_MASTER: ${{ inputs.expected_master_sha }}
-          BACKUP_RELEASE: ${{ inputs.backup_release_id }}
-          EXPECTED_DEPLOYMENT: ${{ inputs.expected_deployment_id }}
-        run: python scripts/prepare-pages-recovery.py --run-id "$PREVIOUS_RUN" --expected-master "$EXPECTED_MASTER" --backup-release-id "$BACKUP_RELEASE" --expected-deployment-id "$EXPECTED_DEPLOYMENT"
-      - name: Check original frozen fields and every protected route
-        run: |
-          node scripts/check-frozen-seo.mjs
-          python scripts/check-site-baseline.py
-      - name: Require a verifiable original marker before an actual restore
-        if: ${{ inputs.restore_previous && !inputs.rehearse_recovery }}
-        env:
-          PREVIOUS_RUN: ${{ inputs.previous_run_id }}
-          SOURCE_SHA: ${{ steps.prepare.outputs.source_sha }}
-          SOURCE_ATTEMPT: ${{ steps.prepare.outputs.source_run_attempt }}
+          BUILD_RUN: ${{ github.run_id }}
+          BUILD_ATTEMPT: ${{ github.run_attempt }}
         run: |
           python3 - <<'PY'
-          import importlib.util, os
-          spec = importlib.util.spec_from_file_location('public_check', 'scripts/verify-public-deployment.py')
-          module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
-          module.inspect_export('out', os.environ['SOURCE_SHA'], os.environ['PREVIOUS_RUN'], os.environ['SOURCE_ATTEMPT'])
+          import json, os
+          with open('fixture-identity.json', 'w') as f:
+              json.dump({'runId': os.environ['BUILD_RUN'], 'buildAttempt': os.environ['BUILD_ATTEMPT']}, f)
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write('artifact_attempt=' + os.environ['BUILD_ATTEMPT'] + '\n')
           PY
-      - name: Checkout verified previous source for a fresh formal build
-        uses: actions/checkout@v4
+      - uses: actions/upload-artifact@v4
         with:
-          ref: ${{ steps.prepare.outputs.source_sha }}
-          path: recovery-source
-          fetch-depth: 0
-          persist-credentials: false
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - name: Build and guard the previous source without changing the original artifact
-        working-directory: recovery-source
-        env:
-          NEXT_PUBLIC_GA_ID: ${{ secrets.NEXT_PUBLIC_GA_ID }}
-        run: |
-          npm ci
-          npm run build
-          node scripts/check-frozen-seo.mjs
-          python scripts/check-site-baseline.py
-      - name: Stage verified original artifact only for an explicit restore
-        if: ${{ inputs.restore_previous && !inputs.rehearse_recovery }}
-        uses: actions/upload-pages-artifact@v3
-        with:
-          name: github-pages-recovery
-          path: ./out
-          retention-days: 30
-      - name: Retain rehearsal evidence only
-        uses: actions/upload-artifact@v4
-        with:
-          name: recovery-rehearsal-evidence
-          path: recovery-rehearsal.json
-
-  restore-deploy:
-    if: ${{ inputs.restore_previous && !inputs.rehearse_recovery && github.ref == 'refs/heads/master' }}
-    needs: recovery-rehearsal
+          name: attempt-identity-fixture
+          path: fixture-identity.json
+          retention-days: 7
+  fixture-verify:
+    if: ${{ github.ref != 'refs/heads/master' }}
+    needs: fixture-build
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      deployments: read
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.restore.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-      - name: Recheck master and deployment immediately before restoring
-        env:
-          GH_TOKEN: ${{ github.token }}
-          PREVIOUS_RUN: ${{ inputs.previous_run_id }}
-          EXPECTED_MASTER: ${{ inputs.expected_master_sha }}
-          EXPECTED_DEPLOYMENT: ${{ inputs.expected_deployment_id }}
-        run: python3 scripts/prepare-pages-recovery.py --check-only --run-id "$PREVIOUS_RUN" --expected-master "$EXPECTED_MASTER" --expected-deployment-id "$EXPECTED_DEPLOYMENT"
-      - name: Restore verified Pages artifact
-        id: restore
-        uses: actions/deploy-pages@v4
-        with:
-          artifact_name: github-pages-recovery
-
-  verify-public:
-    needs: deploy
-    if: ${{ !inputs.rehearse_recovery && !inputs.restore_previous && github.ref == 'refs/heads/master' }}
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      actions: read
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
       - uses: actions/download-artifact@v4
         with:
-          name: github-pages
-          path: public-check-download
-      - name: Safely recover the exact deployed export for comparison
+          name: attempt-identity-fixture
+      - name: Compare original build output with retained artifact
+        env:
+          CURRENT_RUN: ${{ github.run_id }}
+          CURRENT_ATTEMPT: ${{ github.run_attempt }}
+          ORIGINAL_BUILD_ATTEMPT: ${{ needs.fixture-build.outputs.artifact_attempt }}
         run: |
           python3 - <<'PY'
-          import importlib.util
-          from pathlib import Path
-          spec = importlib.util.spec_from_file_location('recovery', 'scripts/prepare-pages-recovery.py')
-          module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
-          module.extract(Path('public-check-download/artifact.tar'), Path('public-check-out'))
+          import json, os
+          identity = json.load(open('fixture-identity.json'))
+          assert identity['runId'] == os.environ['CURRENT_RUN']
+          assert identity['buildAttempt'] == os.environ['ORIGINAL_BUILD_ATTEMPT']
+          print(json.dumps({'currentAttempt': os.environ['CURRENT_ATTEMPT'], 'originalBuildAttempt': os.environ['ORIGINAL_BUILD_ATTEMPT'], 'artifact': identity}))
+          if os.environ['CURRENT_ATTEMPT'] == '1':
+              raise SystemExit('Intentional isolated fixture failure: rerun only this failed job')
+          assert os.environ['CURRENT_ATTEMPT'] == '2'
+          assert identity['buildAttempt'] == '1'
           PY
-      - name: Check public marker and all exported HTML bytes
-        env:
-          EXPECTED_SHA: ${{ github.sha }}
-          EXPECTED_RUN: ${{ github.run_id }}
-          EXPECTED_ATTEMPT: ${{ github.run_attempt }}
-        run: python3 scripts/verify-public-deployment.py --out public-check-out --expected-source-sha "$EXPECTED_SHA" --expected-run-id "$EXPECTED_RUN" --expected-run-attempt "$EXPECTED_ATTEMPT"
-      - uses: actions/upload-artifact@v4
-        if: ${{ always() }}
-        with:
-          name: public-verification-evidence
-          path: public-verification.json
-          if-no-files-found: error
-          retention-days: 30
-
-  verify-restored-public:
-    needs: [restore-deploy, recovery-rehearsal]
-    if: ${{ inputs.restore_previous && !inputs.rehearse_recovery && github.ref == 'refs/heads/master' }}
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      actions: read
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-      - uses: actions/download-artifact@v4
-        with:
-          name: github-pages-recovery
-          path: public-check-download
-      - name: Safely recover the original artifact for comparison
-        run: |
-          python3 - <<'PY'
-          import importlib.util
-          from pathlib import Path
-          spec = importlib.util.spec_from_file_location('recovery', 'scripts/prepare-pages-recovery.py')
-          module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
-          module.extract(Path('public-check-download/artifact.tar'), Path('public-check-out'))
-          PY
-      - name: Check original public identity and every restored HTML page
-        env:
-          SOURCE_SHA: ${{ needs.recovery-rehearsal.outputs.source_sha }}
-          SOURCE_RUN: ${{ inputs.previous_run_id }}
-          SOURCE_ATTEMPT: ${{ needs.recovery-rehearsal.outputs.source_run_attempt }}
-        run: python3 scripts/verify-public-deployment.py --out public-check-out --expected-source-sha "$SOURCE_SHA" --expected-run-id "$SOURCE_RUN" --expected-run-attempt "$SOURCE_ATTEMPT"
-      - uses: actions/upload-artifact@v4
-        if: ${{ always() }}
-        with:
-          name: restored-public-verification-evidence
-          path: public-verification.json
-          if-no-files-found: error
-          retention-days: 30
