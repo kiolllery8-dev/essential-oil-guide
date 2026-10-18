@@ -35,6 +35,15 @@ This checks HTML bytes, not all external images or browser functionality.
 CDN rewriting is an unresolved verification failure, never normalized away.
 
 Normal deployments and restores retain separate public-verification artifacts.
+Each verification attempt uses a distinct artifact name so a failed attempt's
+evidence is retained. Normal verification obtains the original marker attempt
+from the successful build job's output. A partial rerun advances the workflow
+attempt without rebuilding its retained export, so the current workflow attempt
+must not be substituted for that original build identity. An isolated GitHub
+Actions partial-rerun experiment (run 39088515104) confirmed this behavior.
+Recovery preparation still derives its source attempt from the source workflow's
+latest attempt; recovery of a partially rerun source needs separate validation
+before it can be accepted. This change does not resolve that recovery limitation.
 An actual restore now requires a matching original marker before uploading a
 recovery artifact; old backups lacking one remain usable for an isolated
 artifact rehearsal, but are not accepted for automatic production restoration.

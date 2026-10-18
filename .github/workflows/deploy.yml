@@ -39,6 +39,8 @@ jobs:
   build:
     if: ${{ !inputs.rehearse_recovery && !inputs.restore_previous }}
     runs-on: ubuntu-latest
+    outputs:
+      artifact_attempt: ${{ steps.version.outputs.artifact_attempt }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -72,7 +74,10 @@ jobs:
           python3 scripts/test-public-deployment-http.py
 
       - name: Bind public version marker to the guarded export
-        run: python3 scripts/write-deployment-version.py
+        id: version
+        run: |
+          python3 scripts/write-deployment-version.py
+          echo "artifact_attempt=$GITHUB_RUN_ATTEMPT" >> "$GITHUB_OUTPUT"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -253,7 +258,7 @@ jobs:
           artifact_name: github-pages-recovery
 
   verify-public:
-    needs: deploy
+    needs: [build, deploy]
     if: ${{ !inputs.rehearse_recovery && !inputs.restore_previous && github.ref == 'refs/heads/master' }}
     runs-on: ubuntu-latest
     permissions:
@@ -280,12 +285,12 @@ jobs:
         env:
           EXPECTED_SHA: ${{ github.sha }}
           EXPECTED_RUN: ${{ github.run_id }}
-          EXPECTED_ATTEMPT: ${{ github.run_attempt }}
+          EXPECTED_ATTEMPT: ${{ needs.build.outputs.artifact_attempt }}
         run: python3 scripts/verify-public-deployment.py --out public-check-out --expected-source-sha "$EXPECTED_SHA" --expected-run-id "$EXPECTED_RUN" --expected-run-attempt "$EXPECTED_ATTEMPT"
       - uses: actions/upload-artifact@v4
         if: ${{ always() }}
         with:
-          name: public-verification-evidence
+          name: public-verification-evidence-${{ github.run_attempt }}
           path: public-verification.json
           if-no-files-found: error
           retention-days: 30
@@ -323,7 +328,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: ${{ always() }}
         with:
-          name: restored-public-verification-evidence
+          name: restored-public-verification-evidence-${{ github.run_attempt }}
           path: public-verification.json
           if-no-files-found: error
           retention-days: 30
