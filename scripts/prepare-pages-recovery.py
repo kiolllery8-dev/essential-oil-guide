@@ -1,14 +1,58 @@
 """Download a verified successful Pages artifact for a non-deploying rehearsal."""
 import argparse
 import hashlib
+import importlib.util
 import json
 import os
 import re
 import subprocess
 import tarfile
+from datetime import datetime
 from pathlib import Path
 
 REPO = 'kiolllery8-dev/essential-oil-guide'
+
+
+def original_build_attempt(output, run, artifact):
+    """Bind a marked retained export to its successful original build attempt."""
+    latest = str(run['run_attempt'])
+    marker = Path(output) / 'deployment-version.json'
+    if not marker.exists():
+        # Legacy exports remain rehearsal-only; actual restore rejects no marker.
+        return latest
+    attempt = json.loads(marker.read_text(encoding='utf-8')).get('runAttempt', '')
+    if not isinstance(attempt, str) or not re.fullmatch(r'[1-9][0-9]*', attempt) or int(attempt) > int(latest):
+        raise ValueError('Invalid original build attempt')
+    spec = importlib.util.spec_from_file_location('public_check', Path(__file__).with_name('verify-public-deployment.py'))
+    verifier = importlib.util.module_from_spec(spec); spec.loader.exec_module(verifier)
+    verifier.inspect_export(output, run['head_sha'], str(run['id']), attempt)
+    if artifact is None:
+        raise ValueError('Marked draft backups need original artifact timing provenance')
+    response = api('actions/runs/' + str(run['id']) + '/attempts/' + attempt + '/jobs?per_page=100')
+    jobs = response['jobs']
+    if response['total_count'] > len(jobs):
+        raise ValueError('Incomplete original build job evidence')
+    builds = [job for job in jobs if job['name'] == 'build']
+    if len(builds) != 1:
+        raise ValueError('Exactly one original build is required')
+    build = builds[0]
+    required = ('Build Next.js (static export)', 'Preserve the existing numerology SEO fields',
+                'Protect every existing page and knowledge algorithms',
+                'Bind public version marker to the guarded export', 'Upload artifact')
+    if (str(build['run_id']) != str(run['id']) or str(build['run_attempt']) != attempt or
+            build['head_sha'] != run['head_sha'] or build['status'] != 'completed' or
+            build['conclusion'] != 'success' or any(
+                len([step for step in build['steps'] if step['name'] == name and
+                     step['conclusion'] == 'success']) != 1 for name in required)):
+        raise ValueError('Original build identity or required steps did not pass')
+    created = datetime.fromisoformat(artifact['created_at'].replace('Z', '+00:00'))
+    started = datetime.fromisoformat(build['started_at'].replace('Z', '+00:00'))
+    completed = datetime.fromisoformat(build['completed_at'].replace('Z', '+00:00'))
+    origin = artifact.get('workflow_run') or {}
+    if (str(origin.get('id')) != str(run['id']) or origin.get('head_sha') != run['head_sha'] or
+            origin.get('head_branch') != 'master' or not started <= created <= completed):
+        raise ValueError('Artifact does not belong to the original build window')
+    return attempt
 
 
 def api(path):
@@ -119,9 +163,11 @@ def main():
     else:
         raise ValueError('Exactly one retained Pages artifact or explicit verified draft backup is required')
     extract(archive, Path('out'))
+    source_attempt = original_build_attempt(Path('out'), run, candidates[0] if candidates else None)
     report = {'scope': 'github-actions-artifact-recovery-rehearsal',
               'productionDeploymentPerformed': False, 'sourceRunId': args.run_id,
               'sourceSha': run['head_sha'], 'expectedMaster': head,
+              'sourceRunAttempt': source_attempt,
               'expectedDeploymentId': args.expected_deployment_id,
               **source,
               'artifactSha256': hashlib.sha256(archive.read_bytes()).hexdigest()}

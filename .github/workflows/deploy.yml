@@ -72,6 +72,7 @@ jobs:
           python3 scripts/test-deployment-version.py
           python3 scripts/test-public-deployment.py
           python3 scripts/test-public-deployment-http.py
+          python3 scripts/test-recovery-attempt.py
 
       - name: Bind public version marker to the guarded export
         id: version
