@@ -73,6 +73,7 @@ jobs:
           python3 scripts/test-public-deployment.py
           python3 scripts/test-public-deployment-http.py
           python3 scripts/test-recovery-attempt.py
+          python3 scripts/test-cloudflare-deployment.py
 
       - name: Bind public version marker to the guarded export
         id: version
@@ -283,16 +284,27 @@ jobs:
           module.extract(Path('public-check-download/artifact.tar'), Path('public-check-out'))
           PY
       - name: Check public marker and all exported HTML bytes
+        # Retain the original raw-byte result even when the approved edge
+        # transformations make it fail. The separate exact gate below is mandatory.
+        continue-on-error: true
         env:
           EXPECTED_SHA: ${{ github.sha }}
           EXPECTED_RUN: ${{ github.run_id }}
           EXPECTED_ATTEMPT: ${{ needs.build.outputs.artifact_attempt }}
         run: python3 scripts/verify-public-deployment.py --out public-check-out --expected-source-sha "$EXPECTED_SHA" --expected-run-id "$EXPECTED_RUN" --expected-run-attempt "$EXPECTED_ATTEMPT"
+      - name: Require exact reconstruction of approved Cloudflare transformations
+        env:
+          EXPECTED_SHA: ${{ github.sha }}
+          EXPECTED_RUN: ${{ github.run_id }}
+          EXPECTED_ATTEMPT: ${{ needs.build.outputs.artifact_attempt }}
+        run: python3 scripts/verify-cloudflare-deployment.py --out public-check-out --expected-source-sha "$EXPECTED_SHA" --expected-run-id "$EXPECTED_RUN" --expected-run-attempt "$EXPECTED_ATTEMPT"
       - uses: actions/upload-artifact@v4
         if: ${{ always() }}
         with:
           name: public-verification-evidence-${{ github.run_attempt }}
-          path: public-verification.json
+          path: |
+            public-verification.json
+            cloudflare-verification.json
           if-no-files-found: error
           retention-days: 30
 
@@ -321,15 +333,24 @@ jobs:
           module.extract(Path('public-check-download/artifact.tar'), Path('public-check-out'))
           PY
       - name: Check original public identity and every restored HTML page
+        continue-on-error: true
         env:
           SOURCE_SHA: ${{ needs.recovery-rehearsal.outputs.source_sha }}
           SOURCE_RUN: ${{ inputs.previous_run_id }}
           SOURCE_ATTEMPT: ${{ needs.recovery-rehearsal.outputs.source_run_attempt }}
         run: python3 scripts/verify-public-deployment.py --out public-check-out --expected-source-sha "$SOURCE_SHA" --expected-run-id "$SOURCE_RUN" --expected-run-attempt "$SOURCE_ATTEMPT"
+      - name: Require exact Cloudflare reconstruction of the original restored export
+        env:
+          SOURCE_SHA: ${{ needs.recovery-rehearsal.outputs.source_sha }}
+          SOURCE_RUN: ${{ inputs.previous_run_id }}
+          SOURCE_ATTEMPT: ${{ needs.recovery-rehearsal.outputs.source_run_attempt }}
+        run: python3 scripts/verify-cloudflare-deployment.py --out public-check-out --expected-source-sha "$SOURCE_SHA" --expected-run-id "$SOURCE_RUN" --expected-run-attempt "$SOURCE_ATTEMPT"
       - uses: actions/upload-artifact@v4
         if: ${{ always() }}
         with:
           name: restored-public-verification-evidence-${{ github.run_attempt }}
-          path: public-verification.json
+          path: |
+            public-verification.json
+            cloudflare-verification.json
           if-no-files-found: error
           retention-days: 30

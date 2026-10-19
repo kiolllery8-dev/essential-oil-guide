@@ -51,3 +51,9 @@ recovery artifact; old backups lacking one remain usable for an isolated
 artifact rehearsal, but are not accepted for automatic production restoration.
 The integration changes still require an independent review and real Pages
 acceptance. They do not enable automatic publication.
+
+The 2026-10-19 owner-approved draft adds a separate exact Cloudflare checker;
+see `cloudflare-exact-verification.md`. The raw checker and its failure reports
+remain unchanged. The draft adds a mandatory reconstruction gate for precisely
+pinned/reversible transformations, pending independent review and actual Pages
+acceptance. It does not retroactively turn prior workflow failures into success.
