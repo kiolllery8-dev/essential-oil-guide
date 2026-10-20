@@ -128,6 +128,19 @@ class Tests(unittest.TestCase):
         public=beacon(public.replace(b'<script>',edge.DECODER+b'<script>',1))
         with self.assertRaises(ValueError): edge.reconstruct(original,public)
 
+    def test_non_html_whitespace_cannot_create_a_fake_href(self):
+        for whitespace in (b'\x0b',b'\x85',b'\xa0'):
+            original=b'<html><body><a '+whitespace+b'href="mailto:'+EMAIL+b'">label</a><script>x()</script></body></html>'
+            public=original.replace(b'href="mailto:'+EMAIL+b'"',b'href="/cdn-cgi/l/email-protection#'+encoded()+b'"')
+            public=beacon(public.replace(b'<script>',edge.DECODER+b'<script>',1))
+            with self.subTest(whitespace=whitespace), self.assertRaises(ValueError): edge.reconstruct(original,public)
+
+    def test_html_form_feed_separator_is_accepted(self):
+        original=b'<html><body><a\x0chref="mailto:'+EMAIL+b'">label</a><script>x()</script></body></html>'
+        public=original.replace(b'href="mailto:'+EMAIL+b'"',b'href="/cdn-cgi/l/email-protection#'+encoded()+b'"')
+        public=beacon(public.replace(b'<script>',edge.DECODER+b'<script>',1))
+        self.assertTrue(edge.reconstruct(original,public))
+
     def test_all_exported_html_noindex_and_legacy_are_checked(self):
         with tempfile.TemporaryDirectory() as directory:
             output=Path(directory); (output/'index.html').write_bytes(self.original)

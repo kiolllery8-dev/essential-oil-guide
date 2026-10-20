@@ -23,6 +23,7 @@ HEX = rb'([0-9a-f]{4,512})'
 SPAN = re.compile(rb'<span class="__cf_email__" data-cfemail="'+HEX+rb'">\[email&#160;protected\]</span>')
 PLAIN = re.compile(rb'<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="'+HEX+rb'">\[email&#160;protected\]</a>')
 HREF_VALUE = re.compile(rb'/cdn-cgi/l/email-protection#'+HEX)
+HTML_SPACE = rb'[\x09\x0a\x0c\x0d\x20]*'
 
 
 def href_edit(token, start):
@@ -31,7 +32,7 @@ def href_edit(token, start):
         return None
     position = 2; hrefs = []
     while position < len(token):
-        whitespace = re.match(rb'\s*', token[position:]); position += whitespace.end()
+        whitespace = re.match(HTML_SPACE, token[position:]); position += whitespace.end()
         if token[position:] in (b'>', b'/>'):
             break
         name = re.match(rb'[A-Za-z_:][A-Za-z0-9_.:-]*', token[position:])
@@ -39,11 +40,11 @@ def href_edit(token, start):
             raise ValueError('Unsupported attribute syntax')
         name_start = position; position += name.end()
         key = name.group().lower()
-        whitespace = re.match(rb'\s*', token[position:]); position += whitespace.end()
+        whitespace = re.match(HTML_SPACE, token[position:]); position += whitespace.end()
         value_start = value_end = None; quote = None
         if token[position:position+1] == b'=':
             position += 1
-            whitespace = re.match(rb'\s*', token[position:]); position += whitespace.end()
+            whitespace = re.match(HTML_SPACE, token[position:]); position += whitespace.end()
             quote = token[position:position+1]
             if quote in (b'"', b"'"):
                 value_start = position+1; value_end = token.find(quote, value_start)
@@ -51,7 +52,7 @@ def href_edit(token, start):
                 position = value_end+1
             else:
                 value_start = position
-                value = re.match(rb'[^\s>]+', token[position:])
+                value = re.match(rb'[^\x09\x0a\x0c\x0d\x20>]+', token[position:])
                 if not value: raise ValueError('Missing attribute value')
                 position += value.end(); value_end = position
         if key == b'href':
