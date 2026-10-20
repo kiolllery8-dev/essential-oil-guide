@@ -110,6 +110,24 @@ class Tests(unittest.TestCase):
         public=beacon(original.replace(EMAIL,self.span()).replace(b'<script>',edge.DECODER+b'<script>',1))
         with self.assertRaises(ValueError): edge.reconstruct(original,public)
 
+    def test_href_looking_text_inside_another_attribute_is_not_rewritten(self):
+        original=b'<html><body><a title=\' href="mailto:'+EMAIL+b'"\'>label</a><script>x()</script></body></html>'
+        public=original.replace(b' href="mailto:'+EMAIL+b'"',b' href="/cdn-cgi/l/email-protection#'+encoded()+b'"')
+        public=beacon(public.replace(b'<script>',edge.DECODER+b'<script>',1))
+        with self.assertRaises(ValueError): edge.reconstruct(original,public)
+
+    def test_actual_href_with_quoted_decoy_still_reconstructs(self):
+        original=b'<html><body><a title=\' href="unrelated"\' href="mailto:'+EMAIL+b'">label</a><script>x()</script></body></html>'
+        public=original.replace(b'href="mailto:'+EMAIL+b'"',b'href="/cdn-cgi/l/email-protection#'+encoded()+b'"')
+        public=beacon(public.replace(b'<script>',edge.DECODER+b'<script>',1))
+        self.assertTrue(edge.reconstruct(original,public))
+
+    def test_duplicate_real_href_is_rejected(self):
+        original=b'<html><body><a href="other" href="mailto:'+EMAIL+b'">label</a><script>x()</script></body></html>'
+        public=original.replace(b'href="mailto:'+EMAIL+b'"',b'href="/cdn-cgi/l/email-protection#'+encoded()+b'"')
+        public=beacon(public.replace(b'<script>',edge.DECODER+b'<script>',1))
+        with self.assertRaises(ValueError): edge.reconstruct(original,public)
+
     def test_all_exported_html_noindex_and_legacy_are_checked(self):
         with tempfile.TemporaryDirectory() as directory:
             output=Path(directory); (output/'index.html').write_bytes(self.original)

@@ -22,7 +22,52 @@ DECODER = b'<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudfla
 HEX = rb'([0-9a-f]{4,512})'
 SPAN = re.compile(rb'<span class="__cf_email__" data-cfemail="'+HEX+rb'">\[email&#160;protected\]</span>')
 PLAIN = re.compile(rb'<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="'+HEX+rb'">\[email&#160;protected\]</a>')
-HREF = re.compile(rb' href="/cdn-cgi/l/email-protection#'+HEX+rb'"')
+HREF_VALUE = re.compile(rb'/cdn-cgi/l/email-protection#'+HEX)
+
+
+def href_edit(token, start):
+    """Locate actual attributes without scanning inside quoted attribute values."""
+    if not token.startswith(b'<a'):
+        return None
+    position = 2; hrefs = []
+    while position < len(token):
+        whitespace = re.match(rb'\s*', token[position:]); position += whitespace.end()
+        if token[position:] in (b'>', b'/>'):
+            break
+        name = re.match(rb'[A-Za-z_:][A-Za-z0-9_.:-]*', token[position:])
+        if not name:
+            raise ValueError('Unsupported attribute syntax')
+        name_start = position; position += name.end()
+        key = name.group().lower()
+        whitespace = re.match(rb'\s*', token[position:]); position += whitespace.end()
+        value_start = value_end = None; quote = None
+        if token[position:position+1] == b'=':
+            position += 1
+            whitespace = re.match(rb'\s*', token[position:]); position += whitespace.end()
+            quote = token[position:position+1]
+            if quote in (b'"', b"'"):
+                value_start = position+1; value_end = token.find(quote, value_start)
+                if value_end < 0: raise ValueError('Unclosed attribute value')
+                position = value_end+1
+            else:
+                value_start = position
+                value = re.match(rb'[^\s>]+', token[position:])
+                if not value: raise ValueError('Missing attribute value')
+                position += value.end(); value_end = position
+        if key == b'href':
+            hrefs.append((name_start, value_start, value_end, quote))
+    if len(hrefs) > 1:
+        raise ValueError('Duplicate actual href attributes')
+    if not hrefs or hrefs[0][1] is None:
+        return None
+    name_start, value_start, value_end, quote = hrefs[0]
+    value = token[value_start:value_end]
+    match = HREF_VALUE.fullmatch(value)
+    if match:
+        if quote != b'"' or token[name_start:value_end+1] != b'href="'+value+b'"':
+            raise ValueError('Unknown protected href template')
+        return (start+value_start, start+value_end, b'mailto:'+decode_email(match.group(1)))
+    return None
 
 
 def decode_email(encoded):
@@ -65,13 +110,9 @@ class EmailReconstructor(HTMLParser):
             self.edits.append((start, match.end(), decode_email(match.group(1))))
             self.emails.append(match.end())
         elif tag == 'a':
-            matches = list(HREF.finditer(token))
-            if len(matches) > 1:
-                raise ValueError('Ambiguous protected href')
-            if matches:
-                match = matches[0]
-                replacement = b' href="mailto:' + decode_email(match.group(1)) + b'"'
-                self.edits.append((start+match.start(), start+match.end(), replacement))
+            edit = href_edit(token, start)
+            if edit:
+                self.edits.append(edit)
                 self.emails.append(start+len(token))
 
     def handle_endtag(self, tag):
