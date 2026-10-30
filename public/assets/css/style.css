@@ -1809,3 +1809,6 @@ footer ul li a:hover { color: var(--white); }
   }
   .num-oil-table td:nth-child(3) { border-top: 1px solid #EFE7D6 !important; }
 }
+
+/* Keep restored inbound fragment headings below the sticky navigation. */
+[data-legacy-anchor] { scroll-margin-top: 10rem; }
