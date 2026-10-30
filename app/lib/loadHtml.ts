@@ -1,5 +1,6 @@
 import { readFileSync } from 'fs';
 import { join } from 'path';
+import { addLegacyAnchors } from './legacyAnchors';
 
 export interface LoadedPage {
   title: string;
@@ -78,7 +79,7 @@ export function loadPage(filename: string): LoadedPage {
   const raw = readFileSync(file, 'utf-8');
   const headStyles = extractHeadStyles(raw);
   const headJsonLd = extractHeadJsonLd(raw);
-  const body = rewriteLinks(extractMain(raw));
+  const body = addLegacyAnchors(filename, rewriteLinks(extractMain(raw)));
   // Prepend page-specific <style> + head 內的 JSON-LD（schema 不能被丟掉）
   const bodyHtml = [headStyles, headJsonLd, body].filter(Boolean).join('\n');
   return {
