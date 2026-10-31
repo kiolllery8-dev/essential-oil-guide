@@ -336,7 +336,8 @@ function doSearch(q) {
 
   resultCount.textContent = '找到 ' + uniq.length + ' 筆「' + q + '」相關結果';
   if (uniq.length === 0) {
-    resultList.innerHTML = '<div class="no-result"><div class="no-result-icon">🔍</div><div style="font-size:16px;font-weight:600;color:var(--text-dark);">找不到「' + q + '」相關內容</div><div style="font-size:13px;margin-top:8px;">請嘗試：薰衣草、助眠、兒童、萃取、紓壓...</div></div>';
+    resultList.innerHTML = '<div class="no-result"><div class="no-result-icon">🔍</div><div class="no-result-query" style="font-size:16px;font-weight:600;color:var(--text-dark);"></div><div style="font-size:13px;margin-top:8px;">請嘗試：薰衣草、助眠、兒童、萃取、紓壓...</div></div>';
+    resultList.querySelector('.no-result-query').textContent = '找不到「' + q + '」相關內容';
     return;
   }
   var html = '';
