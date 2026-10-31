@@ -289,7 +289,9 @@ function doSearch(q) {
     if (totalScore > 30) {
       results.push({
         title: page.title,
-        url: page.url,
+        url: page.url.replace(/^([a-z][a-z0-9-]*)\.html(?=([?#]|$))/, function(_match, slug) {
+          return slug === 'index' ? '/' : '/' + slug + '/';
+        }),
         breadcrumb: '首頁 › ' + page.cat,
         cat: page.cat,
         snippet: page.desc || (page.h2s && page.h2s.slice(0,3).join(' · ')) || page.title,
