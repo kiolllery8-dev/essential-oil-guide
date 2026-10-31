@@ -351,8 +351,8 @@ function doSearch(q) {
 
 // Load BOTH full-site index AND oils.json in parallel, then run URL-param search
 Promise.all([
-  fetch('assets/data/search-index.json').then(function(r){ return r.json(); }).catch(function(){ return []; }),
-  fetch('assets/data/oils.json').then(function(r){ return r.json(); }).catch(function(){ return []; })
+  fetch('/assets/data/search-index.json').then(function(r){ return r.json(); }).catch(function(){ return []; }),
+  fetch('/assets/data/oils.json').then(function(r){ return r.json(); }).catch(function(){ return []; })
 ]).then(function(pair){
   fullSiteIndex = pair[0] || [];
   oilDataLoaded = pair[1] || [];
